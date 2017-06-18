@@ -183,6 +183,16 @@ class TreadmillAutomation : public QMainWindow
         QGroupBox* quadrantTwoGroupBox;
         QGroupBox* recordGroupBox;
 
+        QGroupBox* timeGroupBox;
+        QHBoxLayout* timeGroupBoxLayout;
+        QLabel* timeAccelLabel;
+        QFont timeAccelLabelFont;
+        QDoubleSpinBox* timeAccelSpinBox;
+        QFont timeAccelSpinBoxFont;
+        QLabel* timeDecelLabel;
+        QFont timeDecelLabelFont;
+        QDoubleSpinBox* timeDecelSpinBox;
+        QFont timeDecelSpinBoxFont;
 };
 
 #endif
