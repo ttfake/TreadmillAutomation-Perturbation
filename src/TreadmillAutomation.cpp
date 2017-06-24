@@ -220,7 +220,7 @@ void TreadmillAutomation::populateTreadmillPerturbationTab()
     accelerationLabel->setFont(accelerationLabelFont);
     accelerationLabel->setText("Acceleration: ");
     accelerationLabel->setSizePolicy(QSizePolicy::Minimum, QSizePolicy::Fixed);
-    accelerationLabel->setFixedSize(90,180);
+    accelerationLabel->setFixedSize(150,180);
     accelerationDecelerationHorizontalLayout->addWidget(accelerationLabel);
     acceleration = new QDoubleSpinBox;
     accelerationSpinBoxFont.setFamily("Times");
@@ -240,7 +240,7 @@ void TreadmillAutomation::populateTreadmillPerturbationTab()
     decelerationLabel->setFont(decelerationLabelFont);
     decelerationLabel->setText("Deceleration: ");
     decelerationLabel->setSizePolicy(QSizePolicy::Minimum, QSizePolicy::Fixed);
-    decelerationLabel->setFixedSize(90,180);
+    decelerationLabel->setFixedSize(150,180);
     accelerationDecelerationHorizontalLayout->addWidget(decelerationLabel);
     deceleration = new QDoubleSpinBox;
     decelerationSpinBoxFont.setFamily("Times");
