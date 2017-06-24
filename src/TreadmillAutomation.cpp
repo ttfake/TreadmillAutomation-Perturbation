@@ -211,7 +211,7 @@ void TreadmillAutomation::populateTreadmillPerturbationTab()
     accelDecelGroupBox->setLayout(accelerationDecelerationHorizontalLayout);
 
     quadrantOnePerturbationLayout->addWidget(accelDecelGroupBox);
-    perturbationTabLayout->addWidget(quadrantOneGroupBox);
+    perturbationTabLayout->addWidget(quadrantOneGroupBox, 0,0);
 
     accelerationLabel = new QLabel;
     accelerationLabelFont.setFamily("Times");
@@ -254,19 +254,53 @@ void TreadmillAutomation::populateTreadmillPerturbationTab()
     accelerationDecelerationHorizontalLayout->addWidget(deceleration);
     
     timeGroupBox = new QGroupBox;
+    timeGroupBox->setSizePolicy(QSizePolicy::Minimum, QSizePolicy::Fixed);
+    quadrantOnePerturbationLayout->addWidget(timeGroupBox);
     timeGroupBoxLayout = new QHBoxLayout;
+    timeGroupBox->setLayout(timeGroupBoxLayout);
     timeAccelLabel = new QLabel;
-    //timeAccelLabelFont;
+    timeAccelLabelFont.setFamily("Times");
+    timeAccelLabelFont.setWeight(75);
+    timeAccelLabelFont.setPointSize(12);
+    timeAccelLabel->setText("Acceleration Time");
+    timeAccelLabel->setFont(timeAccelLabelFont);
+    timeAccelLabel->setSizePolicy(QSizePolicy::Minimum, QSizePolicy::Fixed);
+    timeAccelLabel->setFixedSize(190,180);
+    timeGroupBoxLayout->addWidget(timeAccelLabel);
     timeAccelSpinBox = new QDoubleSpinBox;
-    //timeAccelSpinBoxFont;
+    timeAccelSpinBoxFont.setFamily("Times");
+    timeAccelSpinBoxFont.setWeight(75);
+    timeAccelSpinBoxFont.setPointSize(12);
+    timeAccelSpinBox->setFont(timeAccelSpinBoxFont);
+    timeAccelSpinBox->setFixedSize(160,40);
+    timeAccelSpinBox->setSuffix("  ms");
+    timeAccelSpinBox->setSizePolicy(QSizePolicy::Minimum, QSizePolicy::Fixed); 
+    timeGroupBoxLayout->addWidget(timeAccelSpinBox);
+
+
+    
     timeDecelLabel = new QLabel;
-    //timeDecelLabelFont;
+    timeDecelLabelFont.setFamily("Times");
+    timeDecelLabelFont.setWeight(75);
+    timeDecelLabelFont.setPointSize(12);
+    timeDecelLabel->setFont(timeDecelLabelFont);
+    timeDecelLabel->setText("Deceleration Time");
+    timeDecelLabel->setSizePolicy(QSizePolicy::Minimum, QSizePolicy::Fixed);
+    timeDecelLabel->setFixedSize(190,180);
+    timeGroupBoxLayout->addWidget(timeDecelLabel);
     timeDecelSpinBox = new QDoubleSpinBox;
-    //timeDecelSpinBoxFont;
+    timeDecelSpinBoxFont.setFamily("Times");
+    timeDecelSpinBoxFont.setWeight(75);
+    timeDecelSpinBoxFont.setPointSize(12);
+    timeDecelSpinBox->setFont(timeDecelSpinBoxFont);
+    timeDecelSpinBox->setSuffix("  ms");
+    timeDecelSpinBox->setSizePolicy(QSizePolicy::Minimum, QSizePolicy::Fixed);
+    timeDecelSpinBox->setFixedSize(160,40);
+    timeGroupBoxLayout->addWidget(timeDecelSpinBox);
 
 
     quadrantTwoGroupBox = new QGroupBox;
-    perturbationTabLayout->addWidget(quadrantTwoGroupBox);
+    perturbationTabLayout->addWidget(quadrantTwoGroupBox, 0,1);
 
     
 
@@ -323,6 +357,13 @@ void TreadmillAutomation::onClickConnect()
 		connected();
 	}
 
+}
+
+void TreadmillAutomation::startAccelTimer(int duration, int accel)
+{
+
+    accelTimer.start(duration);
+    connect(&accelTimer, SIGNAL(timeout()), this, SLOT(slotTimeout()));
 }
 
 

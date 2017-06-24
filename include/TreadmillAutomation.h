@@ -22,6 +22,8 @@
 #include <iostream>
 #include <QDoubleSpinBox>
 #include <QPalette>
+#include <QTimeEdit>
+#include <QTimer>
 
 #ifdef _WIN32
 
@@ -187,12 +189,16 @@ class TreadmillAutomation : public QMainWindow
         QHBoxLayout* timeGroupBoxLayout;
         QLabel* timeAccelLabel;
         QFont timeAccelLabelFont;
+        QTimer accelTimer;
         QDoubleSpinBox* timeAccelSpinBox;
         QFont timeAccelSpinBoxFont;
         QLabel* timeDecelLabel;
         QFont timeDecelLabelFont;
         QDoubleSpinBox* timeDecelSpinBox;
+        QTimer* decelTimer;
         QFont timeDecelSpinBoxFont;
+
+        void startAccelTimer(int duration, int accel);
 };
 
 #endif
