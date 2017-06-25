@@ -210,9 +210,110 @@ void TreadmillAutomation::populateTreadmillPerturbationTab()
     accelerationDecelerationHorizontalLayout = new QHBoxLayout;
     accelDecelGroupBox->setLayout(accelerationDecelerationHorizontalLayout);
 
-    quadrantOnePerturbationLayout->addWidget(accelDecelGroupBox);
+
     perturbationTabLayout->addWidget(quadrantOneGroupBox, 0,0);
 
+    speedGroupBox = new QGroupBox;
+    frontSpeedGroupBox = new QGroupBox;
+    frontSpeedHorizontalLayout = new QHBoxLayout;
+    frontSpeedGroupBox->setLayout(frontSpeedHorizontalLayout);
+    speedGroupBox->setSizePolicy(QSizePolicy::Minimum, QSizePolicy::Fixed);
+    speedGroupBoxGridLayout = new QGridLayout;
+    speedGroupBox->setLayout(speedGroupBoxGridLayout);
+    speedGroupBoxGridLayout->addWidget(frontSpeedGroupBox);
+    
+    speedLeftFrontLabel = new QLabel;
+    speedLeftFrontLabel->setSizePolicy(QSizePolicy::Minimum, QSizePolicy::Fixed);
+    speedLeftFrontLabel->setText("Left Front Speed: ");
+    speedLeftFrontLabel->setFixedSize(150,180);
+    speedLeftFrontLabelFont.setFamily("Times");
+    speedLeftFrontLabelFont.setWeight(75);
+    speedLeftFrontLabelFont.setPointSize(12);
+    speedLeftFrontLabel->setFont(speedLeftFrontLabelFont);
+    frontSpeedHorizontalLayout->addWidget(speedLeftFrontLabel);
+    leftFrontSpeedSetpoint = new QDoubleSpinBox;
+    leftFrontSpeedSetpointFont.setFamily("Times");
+    leftFrontSpeedSetpointFont.setWeight(75);
+    leftFrontSpeedSetpointFont.setPointSize(12);
+    leftFrontSpeedSetpoint->setFont(leftFrontSpeedSetpointFont);
+    leftFrontSpeedSetpoint->setSuffix("  m/s");
+    leftFrontSpeedSetpoint->setFixedSize(160,40);
+    connect(leftFrontSpeedSetpoint, SIGNAL(valueChanged(double)), SLOT(setLeftFrontSpeedValue(double)));
+    frontSpeedHorizontalLayout->addWidget(leftFrontSpeedSetpoint);
+
+    speedRightFrontLabel = new QLabel;
+    speedRightFrontLabel->setText("Right Front Speed: ");
+    speedRightFrontLabel->setSizePolicy(QSizePolicy::Minimum, QSizePolicy::Fixed);
+    speedRightFrontLabel->setFixedSize(150,180);
+    speedRightFrontLabelFont.setFamily("Times");
+    speedRightFrontLabelFont.setWeight(75);
+    speedRightFrontLabelFont.setPointSize(12);
+    speedRightFrontLabel->setFont(speedRightFrontLabelFont);
+    frontSpeedHorizontalLayout->addWidget(speedRightFrontLabel);
+    rightFrontSpeedSetpoint = new QDoubleSpinBox;
+    rightFrontSpeedSetpointFont.setFamily("Times");
+    rightFrontSpeedSetpointFont.setWeight(75);
+    rightFrontSpeedSetpointFont.setPointSize(12);
+    rightFrontSpeedSetpoint->setFont(rightFrontSpeedSetpointFont);
+    rightFrontSpeedSetpoint->setSuffix("  m/s");
+    rightFrontSpeedSetpoint->setSizePolicy(QSizePolicy::Minimum, QSizePolicy::Fixed);
+    rightFrontSpeedSetpoint->setFixedSize(160,40);
+    connect(rightFrontSpeedSetpoint, SIGNAL(valueChanged(double)), SLOT(setRightFrontSpeedValue(double)));
+    frontSpeedHorizontalLayout->addWidget(rightFrontSpeedSetpoint);
+    
+
+    rearSpeedGroupBox = new QGroupBox;
+    rearSpeedGroupBox->setSizePolicy(QSizePolicy::Minimum, QSizePolicy::Fixed);
+    rearSpeedHorizontalLayout = new QHBoxLayout;
+    rearSpeedGroupBox->setLayout(rearSpeedHorizontalLayout);
+    speedGroupBoxGridLayout->addWidget(rearSpeedGroupBox);
+    speedLeftRearLabel = new QLabel;
+    speedLeftRearLabel->setText("Left Rear Speed: ");
+    speedLeftRearLabel->setSizePolicy(QSizePolicy::Minimum, QSizePolicy::Fixed);
+    speedLeftRearLabel->setFixedSize(150, 180);
+    rearSpeedHorizontalLayout->addWidget(speedLeftRearLabel);
+    speedLeftRearLabelFont.setFamily("Times");
+    speedLeftRearLabelFont.setWeight(75);
+    speedLeftRearLabelFont.setPointSize(12);
+    speedLeftRearLabel->setFont(speedLeftRearLabelFont);
+    leftRearSpeedSetpoint = new QDoubleSpinBox;
+    leftRearSpeedSetpoint->setSizePolicy(QSizePolicy::Minimum, QSizePolicy::Fixed);
+    leftRearSpeedSetpointFont.setFamily("Times");
+    leftRearSpeedSetpointFont.setWeight(75);
+    leftRearSpeedSetpointFont.setPointSize(12);
+    leftRearSpeedSetpoint->setFont(speedLeftRearLabelFont);
+    leftRearSpeedSetpoint->setSuffix("  m/s");
+    leftRearSpeedSetpoint->setSizePolicy(QSizePolicy::Minimum, QSizePolicy::Fixed);
+    leftRearSpeedSetpoint->setFixedSize(160,40);
+    connect(leftRearSpeedSetpoint, SIGNAL(valueChanged(double)), SLOT(setLeftRearSpeedValue(double)));
+    rearSpeedHorizontalLayout->addWidget(leftRearSpeedSetpoint);
+
+    rightRearSpeedSetpoint = new QDoubleSpinBox;
+    speedRightRearLabel = new QLabel;
+    speedRightRearLabel->setText("Right Rear Speed: ");
+    speedRightRearLabel->setSizePolicy(QSizePolicy::Minimum, QSizePolicy::Fixed);
+    speedRightRearLabel->setFixedSize(150,180);
+    speedRightRearLabelFont.setFamily("Times");
+    speedRightRearLabelFont.setWeight(75);
+    speedRightRearLabelFont.setPointSize(12);
+    speedRightRearLabel->setFont(speedRightRearLabelFont);
+    rearSpeedHorizontalLayout->addWidget(speedRightRearLabel);
+    rightRearSpeedSetpoint = new QDoubleSpinBox;
+    rightRearSpeedSetpoint->setSuffix("  m/s");
+    rightRearSpeedSetpointFont.setFamily("Times");
+    rightRearSpeedSetpointFont.setWeight(75);
+    rightRearSpeedSetpointFont.setPointSize(12);
+    rightRearSpeedSetpoint->setFont(rightRearSpeedSetpointFont);
+    rightRearSpeedSetpoint->setSizePolicy(QSizePolicy::Minimum, QSizePolicy::Fixed);
+    rightRearSpeedSetpoint->setFixedSize(160,40);
+    connect(rightRearSpeedSetpoint, SIGNAL(valueChanged(double)), SLOT(setRightRearSpeedValue(double)));
+    rearSpeedHorizontalLayout->addWidget(rightRearSpeedSetpoint);
+
+    quadrantOnePerturbationLayout->addWidget(speedGroupBox);
+
+
+    quadrantOnePerturbationLayout->addWidget(accelDecelGroupBox);
+    
     accelerationLabel = new QLabel;
     accelerationLabelFont.setFamily("Times");
     accelerationLabelFont.setWeight(75);
@@ -231,8 +332,9 @@ void TreadmillAutomation::populateTreadmillPerturbationTab()
     acceleration->setFont(accelerationSpinBoxFont);
     acceleration->setSizePolicy(QSizePolicy::Minimum, QSizePolicy::Fixed);
     acceleration->setFixedSize(160,40);
+    connect(acceleration, SIGNAL(valueChanged(double)), SLOT(setAccelerationValue(double)));
     accelerationDecelerationHorizontalLayout->addWidget(acceleration);
-
+    
     decelerationLabel = new QLabel;
     decelerationLabelFont.setFamily("Times");
     decelerationLabelFont.setWeight(75);
@@ -251,6 +353,7 @@ void TreadmillAutomation::populateTreadmillPerturbationTab()
     deceleration->setFont(decelerationLabelFont);
     deceleration->setSizePolicy(QSizePolicy::Minimum, QSizePolicy::Fixed);
     deceleration->setFixedSize(160,40);
+    connect(deceleration, SIGNAL(valueChanged(double)), SLOT(setDecelerationValue(double)));
     accelerationDecelerationHorizontalLayout->addWidget(deceleration);
     
     timeGroupBox = new QGroupBox;
@@ -262,7 +365,7 @@ void TreadmillAutomation::populateTreadmillPerturbationTab()
     timeAccelLabelFont.setFamily("Times");
     timeAccelLabelFont.setWeight(75);
     timeAccelLabelFont.setPointSize(12);
-    timeAccelLabel->setText("Acceleration Time");
+    timeAccelLabel->setText("Acceleration Time: ");
     timeAccelLabel->setFont(timeAccelLabelFont);
     timeAccelLabel->setSizePolicy(QSizePolicy::Minimum, QSizePolicy::Fixed);
     timeAccelLabel->setFixedSize(190,180);
@@ -274,9 +377,11 @@ void TreadmillAutomation::populateTreadmillPerturbationTab()
     timeAccelSpinBox->setFont(timeAccelSpinBoxFont);
     timeAccelSpinBox->setFixedSize(160,40);
     timeAccelSpinBox->setSuffix("  ms");
-    timeAccelSpinBox->setSizePolicy(QSizePolicy::Minimum, QSizePolicy::Fixed); 
-    timeGroupBoxLayout->addWidget(timeAccelSpinBox);
+    timeAccelSpinBox->setRange(0.00, 100000000.00);
 
+    timeAccelSpinBox->setSizePolicy(QSizePolicy::Minimum, QSizePolicy::Fixed); 
+    connect(timeAccelSpinBox, SIGNAL(valueChanged(double)), SLOT(setAccelerationTimeValue(double)));
+    timeGroupBoxLayout->addWidget(timeAccelSpinBox);
 
     
     timeDecelLabel = new QLabel;
@@ -284,7 +389,7 @@ void TreadmillAutomation::populateTreadmillPerturbationTab()
     timeDecelLabelFont.setWeight(75);
     timeDecelLabelFont.setPointSize(12);
     timeDecelLabel->setFont(timeDecelLabelFont);
-    timeDecelLabel->setText("Deceleration Time");
+    timeDecelLabel->setText("Deceleration Time: ");
     timeDecelLabel->setSizePolicy(QSizePolicy::Minimum, QSizePolicy::Fixed);
     timeDecelLabel->setFixedSize(190,180);
     timeGroupBoxLayout->addWidget(timeDecelLabel);
@@ -296,18 +401,138 @@ void TreadmillAutomation::populateTreadmillPerturbationTab()
     timeDecelSpinBox->setSuffix("  ms");
     timeDecelSpinBox->setSizePolicy(QSizePolicy::Minimum, QSizePolicy::Fixed);
     timeDecelSpinBox->setFixedSize(160,40);
+    timeDecelSpinBox->setRange(0.00, 100000000.00);
     timeGroupBoxLayout->addWidget(timeDecelSpinBox);
+    connect(timeDecelSpinBox, SIGNAL(valueChanged(double)), SLOT(setDecelerationTimeValue(double)));
 
+
+    startPertRunGroupBox = new QGroupBox;
+    startPertRunGroupBox->setSizePolicy(QSizePolicy::Minimum, QSizePolicy::Fixed);
+    startPertRunGroupBoxLayout = new QHBoxLayout;
+    startPertRunGroupBox->setLayout(startPertRunGroupBoxLayout);
+    startPertRun = new QPushButton;
+    startPertRun->setSizePolicy(QSizePolicy::Minimum, QSizePolicy::Fixed);
+    startPertRun->setFixedSize(200,40);
+    startPertRun->setText("Start");    
+    startPertRunGroupBoxLayout->addWidget(startPertRun);
+    quadrantOnePerturbationLayout->addWidget(startPertRunGroupBox);
+
+    connect(startPertRun, SIGNAL(clicked()), SLOT(startAccelTimer()));
 
     quadrantTwoGroupBox = new QGroupBox;
     perturbationTabLayout->addWidget(quadrantTwoGroupBox, 0,1);
 
-    
+}
 
+void TreadmillAutomation::setAccelerationTimeValue(double maccelTimeValue)
+{
 
+    accelerationTimeValue = maccelTimeValue;
+
+    std::cout << "Acceleration Time Set to: " << accelerationTimeValue << std::endl;
+}
+
+void TreadmillAutomation::setDecelerationTimeValue(double mdecelTimeValue)
+{
+    decelerationTimeValue = mdecelTimeValue;
+
+    std::cout << "Deceleration Time Set to: " << decelerationTimeValue << std::endl;
+}
+
+void TreadmillAutomation::setAccelerationValue(double maccelValue)
+{
+    accelerationValue = maccelValue;
+    std::cout << "Acceleration Value Set to: " << accelerationValue << std::endl;
+}
+
+void TreadmillAutomation::setDecelerationValue(double mdecelValue)
+{
+    decelerationValue = mdecelValue;
+    std::cout << "Deceleration Set to: " << decelerationValue << std::endl;
+}
+
+void TreadmillAutomation::setLeftFrontSpeedValue(double mleftFrontSpeedValue)
+{
+
+    leftSpeedFrontValue = mleftFrontSpeedValue;
+    std::cout << "Left Front Speed Set to: " << leftSpeedFrontValue << std::endl;
+}
+
+void TreadmillAutomation::setLeftFrontSpeedValueFromIncoming(qint16 mleftFrontSpeedValue)
+{
+    leftSpeedFrontValue = static_cast<double>(mleftFrontSpeedValue);
+}
+
+void TreadmillAutomation::setRightFrontSpeedValue(double mrightFrontSpeedValue)
+{
+    rightSpeedFrontValue = mrightFrontSpeedValue;  
+    std::cout << "Right Front Speed Set to: " << rightSpeedFrontValue << std::endl;
 
 }
 
+void TreadmillAutomation::setRightFrontSpeedValueFromIncoming(qint16 mrightFrontSpeedValue)
+{
+  rightSpeedFrontValue = static_cast<double>(mrightFrontSpeedValue); 
+}
+
+void TreadmillAutomation::setLeftRearSpeedValue(double mleftRearSpeedValue)
+{
+    leftSpeedRearValue = mleftRearSpeedValue;
+    std::cout << "Left Rear Speed Set to: " << leftSpeedRearValue << std::endl;
+
+}
+
+void TreadmillAutomation::setLeftRearSpeedValueFromIncoming(qint16 mleftRearSpeedValue)
+{
+    leftSpeedRearValue = static_cast<double>(mleftRearSpeedValue);
+}
+
+void TreadmillAutomation::setRightRearSpeedValue(double mrightRearSpeedValue)
+{
+    rightSpeedRearValue = mrightRearSpeedValue;
+    std::cout << "Right Rear Speed Set to: " << rightSpeedRearValue << std::endl;
+
+}
+
+void TreadmillAutomation::setRightRearSpeedValueFromIncoming(qint16 mrightRearSpeedValue)
+{
+    rightSpeedRearValue = static_cast<double>(mrightRearSpeedValue);
+}
+
+double TreadmillAutomation::getAccelerationTimeValue()
+{
+    return accelerationTimeValue;
+}
+
+double TreadmillAutomation::getDecelerationTimeValue()
+{
+    return decelerationTimeValue;
+}
+
+double TreadmillAutomation::getAccelerationValue()
+{
+    return accelerationValue;
+}
+double TreadmillAutomation::getDecelerationValue()
+{
+    return decelerationValue;
+}
+double TreadmillAutomation::getLeftFrontSpeedValue()
+{
+    return leftSpeedFrontValue;
+}
+double TreadmillAutomation::getRightFrontSpeedValue()
+{
+    return rightSpeedFrontValue;
+}
+double TreadmillAutomation::getLeftRearSpeedValue()
+{
+    return leftSpeedRearValue;
+}
+double TreadmillAutomation::getRightRearSpeedValue()
+{
+    return rightSpeedRearValue;
+}
 
 void TreadmillAutomation::onClickConnect()
 {
@@ -359,13 +584,63 @@ void TreadmillAutomation::onClickConnect()
 
 }
 
-void TreadmillAutomation::startAccelTimer(int duration, int accel)
+void TreadmillAutomation::startAccelTimer()
 {
-
-    accelTimer.start(duration);
-    connect(&accelTimer, SIGNAL(timeout()), this, SLOT(slotTimeout()));
+    double retAccelValue = getAccelerationTimeValue();
+    qDebug("Acceleration will commence for %f", retAccelValue);
+    sendSetpoints(TreadmillProperty::ACCEL, NormalSetpoint);
+    accelTimer.start(retAccelValue);
+    connect(&accelTimer, SIGNAL(timeout()), SLOT(startDecelTimer()));
 }
 
+void TreadmillAutomation::startDecelTimer()
+{
+
+    accelTimer.stop();
+    double retDecelValue = getDecelerationTimeValue();
+
+
+
+    const int packetSize = 32;
+	int fullPackets = socket->bytesAvailable() / packetSize;
+	if (!fullPackets) return;
+	if (fullPackets > 1) socket->read((fullPackets - 1) * packetSize);
+	const QByteArray data = socket->read(packetSize);
+	qDebug("Deceleration Started...");
+    qDebug("Data Received: %s.", qPrintable(data.toHex()));
+	QDataStream ds(data);
+    qDebug("Loading Datastream");
+	quint8 format;
+	qint16 speed[4];
+	qint16 angle;
+	ds >> format;
+	if (format != 0) return;
+	ds >> speed[0];
+	ds >> speed[1];
+	ds >> speed[2];
+	ds >> speed[3];
+	ds >> angle;
+
+    qDebug("Datastream loaded");
+
+    setRightFrontSpeedValueFromIncoming(speed[0]);
+    setLeftFrontSpeedValueFromIncoming(speed[1]);
+    setRightRearSpeedValueFromIncoming(speed[2]);
+    setLeftRearSpeedValueFromIncoming(speed[3]);
+    qDebug("Sending Setpoints...");
+    sendSetpoints(TreadmillProperty::DECEL, NormalSetpoint);
+    qDebug("Starting Timer...");
+    qDebug("Deceleration will commence for %f", retDecelValue);
+    decelTimer.start(retDecelValue);
+    connect(&decelTimer, SIGNAL(timeout()), SLOT(slotTimeout()));
+
+}
+
+void TreadmillAutomation::slotTimeout()
+{
+    std::cout << "Trial Ended" << std::endl;
+    decelTimer.stop();
+}
 
 
 void TreadmillAutomation::onClickDisconnect()
@@ -379,7 +654,7 @@ void TreadmillAutomation::connected()
     {
 		// Register ourselves for feedback by sending a zero-acceleration setpoint to the
 		// treadmill control panel. Such setpoint is otherwise ignored.
-		sendSetpoints(FeedbackRegistrationSetpoint);
+		sendSetpoints(TreadmillProperty::DEFAULT, FeedbackRegistrationSetpoint);
 	}
 	else if (useLibrary->isChecked()) 
     {
@@ -408,43 +683,139 @@ void TreadmillAutomation::error(QAbstractSocket::SocketError)
 
 }
 
-void TreadmillAutomation::sendSetpoints(SetpointType t)
+void TreadmillAutomation::sendSetpoints(TreadmillProperty mproperty, SetpointType mt)
 {
-	if (lftRghtTie->isChecked())
+
+/*	if (lftRghtTie->isChecked())
 	{
 		rightFrontSpeedSetpoint->setValue(leftFrontSpeedSetpoint->value());
 		rightRearSpeedSetpoint->setValue(leftRearSpeedSetpoint->value());
-	}
+	}*/
 	std::cout << "setSetpoints activated" << std::endl;
 	if (useLibrary->isChecked()) {
-		sendSetpointsLibrary(t);
+		sendSetpointsLibrary(mt);
 	}
 	else {
-		sendSetpointsDirectly(t);
+		sendSetpointsDirectly(mproperty, mt);
 	}
 
 }
 
-void TreadmillAutomation::sendSetpointsDirectly(SetpointType)
+void TreadmillAutomation::sendSetpointsDirectly(TreadmillProperty mproperty, SetpointType mt)
+{
+    QByteArray data;
+	QDataStream ds(&data, QIODevice::WriteOnly);
+	QByteArray filler(27, 0);
+    qint16 speed[4];
+    qint16 angle;
+    qint16 accel;
+    char ldata[64];
+    switch(mproperty){
+        case TreadmillProperty::DEFAULT:
+            std::cout << "DEFAULT selected" << std::endl;
+            break;
+        case TreadmillProperty::ACCEL:
+            std::cout << "ACCEL selected" << std::endl;
+
+            speed[0] = getRightFrontSpeedValue();
+            speed[1] = getLeftFrontSpeedValue();
+            speed[2] = getRightRearSpeedValue();
+            speed[3] = getLeftRearSpeedValue();
+            accel = (mt == NormalSetpoint) ? getAccelerationValue() * 1000.0 : 0.0;
+            angle = 0;
+            ds << (quint8)0; // format
+					         // straight
+            ds << speed[0];
+            ds << speed[1];
+            ds << speed[2];
+            ds << speed[3];
+            ds << accel;
+            ds << accel;
+            ds << accel;
+            ds << accel;
+            ds << angle;
+            // 1s complement
+            ds << (qint16)(speed[0] ^ 0xFFFF);
+            ds << (qint16)(speed[1] ^ 0xFFFF);
+            ds << (qint16)(speed[2] ^ 0xFFFF);
+            ds << (qint16)(speed[3] ^ 0xFFFF);
+            ds << (qint16)(accel ^ 0xFFFF);
+            ds << (qint16)(accel ^ 0xFFFF);
+            ds << (qint16)(accel ^ 0xFFFF);
+            ds << (qint16)(accel ^ 0xFFFF);
+            ds << (qint16)(angle ^ 0xFFFF);
+            ds.writeRawData(filler.data(), filler.size());
+
+            memcpy(ldata, data.data(), 64);
+            Q_ASSERT(data.size() == 64);
+            socket->write(data);
+            break;
+        case TreadmillProperty::DECEL:
+            std::cout << "DECEL selected" << std::endl;
+            speed[0] = getRightFrontSpeedValue();
+            speed[1] = getLeftFrontSpeedValue();
+            speed[2] = getRightRearSpeedValue();
+            speed[3] = getLeftRearSpeedValue();
+            accel = (mt == NormalSetpoint) ? getDecelerationValue() * 1000.0 : 0.0;
+            angle = 0;
+            ds << (quint8)0; // format
+					         // straight
+            ds << speed[0];
+            ds << speed[1];
+            ds << speed[2];
+            ds << speed[3];
+            ds << accel;
+            ds << accel;
+            ds << accel;
+            ds << accel;
+            ds << angle;
+            // 1s complement
+            ds << (qint16)(speed[0] ^ 0xFFFF);
+            ds << (qint16)(speed[1] ^ 0xFFFF);
+            ds << (qint16)(speed[2] ^ 0xFFFF);
+            ds << (qint16)(speed[3] ^ 0xFFFF);
+            ds << (qint16)(accel ^ 0xFFFF);
+            ds << (qint16)(accel ^ 0xFFFF);
+            ds << (qint16)(accel ^ 0xFFFF);
+            ds << (qint16)(accel ^ 0xFFFF);
+            ds << (qint16)(angle ^ 0xFFFF);
+            ds.writeRawData(filler.data(), filler.size());
+            memcpy(ldata, data.data(), 64);
+            Q_ASSERT(data.size() == 64);
+            socket->write(data);
+            break;
+
+            break;
+        case TreadmillProperty::SPEED:
+            std::cout << "SPEED selected " << std::endl;
+            break;
+        case TreadmillProperty::INCLIN:
+            std::cout << "INCLIN selected" << std::endl;
+            break;
+        default:
+                std::cout << "None Selected" << std::endl;
+                break;
+
+    }
+
+
+}
+
+void TreadmillAutomation::sendSetpointsLibrary(SetpointType mt)
 {
 
 }
 
-void TreadmillAutomation::sendSetpointsLibrary(SetpointType)
+void TreadmillAutomation::error(int mn)
 {
-
-}
-
-void TreadmillAutomation::error(int n)
-{
-	showWarning(this, "Network Error", QString("Error %1").arg(n));
+	showWarning(this, "Network Error", QString("Error %1").arg(mn));
 	disconnected();
 }
 
-static void showWarning(QWidget * parent, const QString & title, const QString & text)
+static void showWarning(QWidget * mparent, const QString & mtitle, const QString & mtext)
 {
-	Q_ASSERT(parent);
-	QMessageBox * box = new QMessageBox(QMessageBox::Warning, title, text, QMessageBox::Ok, parent);
+	Q_ASSERT(mparent);
+	QMessageBox * box = new QMessageBox(QMessageBox::Warning, mtitle, mtext, QMessageBox::Ok, mparent);
 	box->setWindowModality(Qt::WindowModal);
 	box->setAttribute(Qt::WA_DeleteOnClose);
 	box->show();
