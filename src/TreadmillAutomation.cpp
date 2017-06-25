@@ -587,7 +587,8 @@ void TreadmillAutomation::onClickConnect()
 void TreadmillAutomation::startAccelTimer()
 {
     double retAccelValue = getAccelerationTimeValue();
-    qDebug("Acceleration will commence for %f", retAccelValue);
+    const int millisecondConversion = 1000;
+    qDebug("Acceleration will commence for %f seconds", retAccelValue/millisecondConversion);
     sendSetpoints(TreadmillProperty::ACCEL, NormalSetpoint);
     accelTimer.start(retAccelValue);
     connect(&accelTimer, SIGNAL(timeout()), SLOT(startDecelTimer()));
@@ -598,8 +599,7 @@ void TreadmillAutomation::startDecelTimer()
 
     accelTimer.stop();
     double retDecelValue = getDecelerationTimeValue();
-
-
+    const int millisecondConversion = 1000;
 
     const int packetSize = 32;
 	int fullPackets = socket->bytesAvailable() / packetSize;
@@ -630,7 +630,7 @@ void TreadmillAutomation::startDecelTimer()
     qDebug("Sending Setpoints...");
     sendSetpoints(TreadmillProperty::DECEL, NormalSetpoint);
     qDebug("Starting Timer...");
-    qDebug("Deceleration will commence for %f", retDecelValue);
+    qDebug("Deceleration will commence for %f seconds", retDecelValue/millisecondConversion);
     decelTimer.start(retDecelValue);
     connect(&decelTimer, SIGNAL(timeout()), SLOT(slotTimeout()));
 
@@ -640,12 +640,42 @@ void TreadmillAutomation::slotTimeout()
 {
     std::cout << "Trial Ended" << std::endl;
     decelTimer.stop();
+    const int packetSize = 32;
+
+    int fullPackets = socket->bytesAvailable() / packetSize;
+	if (!fullPackets) return;
+	if (fullPackets > 1) socket->read((fullPackets - 1) * packetSize);
+	const QByteArray data = socket->read(packetSize);
+    QDataStream ds(data);
+	quint8 format;
+	qint16 speed[4];
+	qint16 angle;
+	ds >> format;
+	if (format != 0) return;
+	ds >> speed[0];
+	ds >> speed[1];
+	ds >> speed[2];
+	ds >> speed[3];
+    setRightFrontSpeedValueFromIncoming(speed[0]);
+    setLeftFrontSpeedValueFromIncoming(speed[1]);
+    setRightRearSpeedValueFromIncoming(speed[2]);
+    setLeftRearSpeedValueFromIncoming(speed[3]);
+    sendSetpoints(TreadmillProperty::DEFAULT, NormalSetpoint);
+
+
 }
 
 
 void TreadmillAutomation::onClickDisconnect()
 {
+    socket->close();
+    connectBtn->setDisabled(false);
+	disconnectBtn->setEnabled(false);
+	useLibrary->setDisabled(false);
+	tcpRadioButton->setDisabled(false);
+	udpRadioButton->setDisabled(false);
 
+    std::cout << "Client Disconnected" << std::endl;
 }
 
 void TreadmillAutomation::connected()
@@ -713,6 +743,37 @@ void TreadmillAutomation::sendSetpointsDirectly(TreadmillProperty mproperty, Set
     switch(mproperty){
         case TreadmillProperty::DEFAULT:
             std::cout << "DEFAULT selected" << std::endl;
+            speed[0] = getRightFrontSpeedValue();
+            speed[1] = getLeftFrontSpeedValue();
+            speed[2] = getRightRearSpeedValue();
+            speed[3] = getLeftRearSpeedValue();
+            accel = 0;
+            angle = 0;
+            ds << (quint8)0; // format
+					         // straight
+            ds << speed[0];
+            ds << speed[1];
+            ds << speed[2];
+            ds << speed[3];
+            ds << accel;
+            ds << accel;
+            ds << accel;
+            ds << accel;
+            ds << angle;
+            // 1s complement
+            ds << (qint16)(speed[0] ^ 0xFFFF);
+            ds << (qint16)(speed[1] ^ 0xFFFF);
+            ds << (qint16)(speed[2] ^ 0xFFFF);
+            ds << (qint16)(speed[3] ^ 0xFFFF);
+            ds << (qint16)(accel ^ 0xFFFF);
+            ds << (qint16)(accel ^ 0xFFFF);
+            ds << (qint16)(accel ^ 0xFFFF);
+            ds << (qint16)(accel ^ 0xFFFF);
+            ds << (qint16)(angle ^ 0xFFFF);
+            ds.writeRawData(filler.data(), filler.size());
+            memcpy(ldata, data.data(), 64);
+            Q_ASSERT(data.size() == 64);
+            socket->write(data);
             break;
         case TreadmillProperty::ACCEL:
             std::cout << "ACCEL selected" << std::endl;
