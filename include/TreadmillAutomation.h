@@ -24,6 +24,11 @@
 #include <QPalette>
 #include <QTimeEdit>
 #include <QTimer>
+<<<<<<< HEAD
+=======
+#include <QMap>
+#include <QSignalMapper>
+>>>>>>> Dev
 
 #ifdef _WIN32
 
@@ -66,6 +71,16 @@ enum SetpointType { NormalSetpoint, FeedbackRegistrationSetpoint };
 
 static void showWarning(QWidget * parent, const QString & title, const QString & text);
 
+enum TreadmillProperty
+{
+    DEFAULT,
+    ACCEL,
+    DECEL,
+    SPEED,
+    INCLIN
+
+};
+
 class TreadmillAutomation : public QMainWindow
 {
 
@@ -90,10 +105,21 @@ class TreadmillAutomation : public QMainWindow
         void disconnected();
         void readyRead();
         void error(QAbstractSocket::SocketError);
-        void sendSetpoints(SetpointType t = NormalSetpoint);
-        void sendSetpointsDirectly(SetpointType t);
+        void sendSetpoints(TreadmillProperty property = TreadmillProperty::DEFAULT, SetpointType t = NormalSetpoint);
+        void sendSetpointsDirectly(TreadmillProperty property = TreadmillProperty::DEFAULT, SetpointType t = NormalSetpoint);
         void sendSetpointsLibrary(SetpointType t);
-
+        void startAccelTimer();
+        void startDecelTimer();
+        void setAccelerationTimeValue(double accelValue);
+        void setDecelerationTimeValue(double decelTimeValue);
+        void setLeftFrontSpeedValue(double leftFrontSpeedValue);
+        void setLeftRearSpeedValue(double leftRearSpeedValue);
+        void setRightFrontSpeedValue(double rightFrontSpeedValue);
+        void setRightRearSpeedValue(double rightRearSpeedValue);
+        void setAccelerationValue(double accelerationValue);
+        void setDecelerationValue(double decelerationValue);
+        void slotTimeout();
+    
     private:
         QWidget* centralWidget;
         QVBoxLayout* centralWidgetLayout;
@@ -165,10 +191,36 @@ class TreadmillAutomation : public QMainWindow
         QVBoxLayout* quadrantTwoPerturbationLayout;
         QGroupBox* accelDecelGroupBox;
         QHBoxLayout* accelerationDecelerationHorizontalLayout;
+        QGroupBox* speedGroupBox;
+        QGridLayout* speedGroupBoxGridLayout;
+        QGroupBox* frontSpeedGroupBox;
+        QHBoxLayout* frontSpeedHorizontalLayout;
+
+
+        QLabel* speedLeftFrontLabel;
+        QFont speedLeftFrontLabelFont;
         QDoubleSpinBox* leftFrontSpeedSetpoint;
-        QDoubleSpinBox* leftRearSpeedSetpoint;
+        QFont leftFrontSpeedSetpointFont;
+        
+        QLabel* speedRightFrontLabel;
+        QFont speedRightFrontLabelFont;
         QDoubleSpinBox* rightFrontSpeedSetpoint;
+        QFont rightFrontSpeedSetpointFont;
+        
+        QGroupBox* rearSpeedGroupBox;
+        QHBoxLayout* rearSpeedHorizontalLayout;
+        
+        QLabel* speedLeftRearLabel;
+        QFont speedLeftRearLabelFont;
+        QDoubleSpinBox* leftRearSpeedSetpoint;
+        QFont leftRearSpeedSetpointFont;
+        
         QDoubleSpinBox* rightRearSpeedSetpoint;
+        QLabel* speedRightRearLabel;
+        QFont speedRightRearLabelFont;
+        QFont rightRearSpeedSetpointFont;
+
+        
         QFont accelerationLabelFont;
         QLabel* accelerationLabel;
         QFont accelerationSpinBoxFont;
@@ -181,7 +233,7 @@ class TreadmillAutomation : public QMainWindow
         QPlainTextEdit* accelerationDuration;
         QLabel* decelerationDurationLabel;
         QPlainTextEdit* decelerationDuration;
-        QPushButton* startPertRun;
+
         QGroupBox* quadrantTwoGroupBox;
         QGroupBox* recordGroupBox;
 
@@ -191,14 +243,55 @@ class TreadmillAutomation : public QMainWindow
         QFont timeAccelLabelFont;
         QTimer accelTimer;
         QDoubleSpinBox* timeAccelSpinBox;
+        QLabel* accelTimeDurationLabel;
+        QFont accelTimeDurationFont;
+        QDoubleSpinBox* accelTimeDurationSpinBox;
+
         QFont timeAccelSpinBoxFont;
         QLabel* timeDecelLabel;
         QFont timeDecelLabelFont;
         QDoubleSpinBox* timeDecelSpinBox;
+<<<<<<< HEAD
         QTimer* decelTimer;
         QFont timeDecelSpinBoxFont;
 
         void startAccelTimer(int duration, int accel);
+=======
+        QTimer decelTimer;
+        QFont timeDecelSpinBoxFont;
+
+        QGroupBox* startPertRunGroupBox;
+        QHBoxLayout* startPertRunGroupBoxLayout;
+        QPushButton* startPertRun;
+        
+        double getAccelerationValue();
+        double getAccelerationTimeValue();
+        double getDecelerationValue();
+        double getDecelerationTimeValue();
+        double getLeftFrontSpeedValue();
+        double getRightFrontSpeedValue();
+        double getLeftRearSpeedValue();
+        double getRightRearSpeedValue();
+
+        void setLeftFrontSpeedValueFromIncoming(qint16 leftFrontSpeedValue);
+        void setLeftRearSpeedValueFromIncoming(qint16 leftRearSpeedValue);
+        void setRightFrontSpeedValueFromIncoming(qint16 rightFrontSpeedValue);
+        void setRightRearSpeedValueFromIncoming(qint16 rightRearSpeedValue);
+        void setAccelerationValueFromIncoming(qint16 accelerationValue);
+        void setDecelerationValueFromIncoming(qint16 decelerationValue);
+
+        
+        
+        double accelerationTimeValue;
+        double decelerationTimeValue;
+        double accelerationValue;
+        double decelerationValue;
+        double leftSpeedFrontValue;
+        double leftSpeedRearValue;
+        double rightSpeedFrontValue;
+        double rightSpeedRearValue;
+
+>>>>>>> Dev
 };
 
 #endif
