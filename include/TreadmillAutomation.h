@@ -71,10 +71,10 @@ static void showWarning(QWidget * parent, const QString & title, const QString &
 enum TreadmillProperty
 {
     DEFAULT,
-    ACCEL,
-    DECEL,
+    ACCELERATION,
+    DECELERATION,
     SPEED,
-    INCLIN
+    INCLINATION
 
 };
 

@@ -589,7 +589,7 @@ void TreadmillAutomation::startAccelTimer()
     double retAccelValue = getAccelerationTimeValue();
     const int millisecondConversion = 1000;
     qDebug("Acceleration will commence for %f seconds", retAccelValue/millisecondConversion);
-    sendSetpoints(TreadmillProperty::ACCEL, NormalSetpoint);
+    sendSetpoints(TreadmillProperty::ACCELERATION, NormalSetpoint);
     accelTimer.start(retAccelValue);
     connect(&accelTimer, SIGNAL(timeout()), SLOT(startDecelTimer()));
 }
@@ -628,7 +628,7 @@ void TreadmillAutomation::startDecelTimer()
     setRightRearSpeedValueFromIncoming(speed[2]);
     setLeftRearSpeedValueFromIncoming(speed[3]);
     qDebug("Sending Setpoints...");
-    sendSetpoints(TreadmillProperty::DECEL, NormalSetpoint);
+    sendSetpoints(TreadmillProperty::DECELERATION, NormalSetpoint);
     qDebug("Starting Timer...");
     qDebug("Deceleration will commence for %f seconds", retDecelValue/millisecondConversion);
     decelTimer.start(retDecelValue);
@@ -743,6 +743,7 @@ void TreadmillAutomation::sendSetpointsDirectly(TreadmillProperty mproperty, Set
     switch(mproperty){
         case TreadmillProperty::DEFAULT:
             std::cout << "DEFAULT selected" << std::endl;
+            std::cout << "Setting Treadmill Acceleration to 0" << std::endl;
             speed[0] = getRightFrontSpeedValue();
             speed[1] = getLeftFrontSpeedValue();
             speed[2] = getRightRearSpeedValue();
@@ -775,8 +776,8 @@ void TreadmillAutomation::sendSetpointsDirectly(TreadmillProperty mproperty, Set
             Q_ASSERT(data.size() == 64);
             socket->write(data);
             break;
-        case TreadmillProperty::ACCEL:
-            std::cout << "ACCEL selected" << std::endl;
+        case TreadmillProperty::ACCELERATION:
+            std::cout << "ACCELERATION selected" << std::endl;
 
             speed[0] = getRightFrontSpeedValue();
             speed[1] = getLeftFrontSpeedValue();
@@ -811,7 +812,7 @@ void TreadmillAutomation::sendSetpointsDirectly(TreadmillProperty mproperty, Set
             Q_ASSERT(data.size() == 64);
             socket->write(data);
             break;
-        case TreadmillProperty::DECEL:
+        case TreadmillProperty::DECELERATION:
             std::cout << "DECEL selected" << std::endl;
             speed[0] = getRightFrontSpeedValue();
             speed[1] = getLeftFrontSpeedValue();
@@ -850,7 +851,7 @@ void TreadmillAutomation::sendSetpointsDirectly(TreadmillProperty mproperty, Set
         case TreadmillProperty::SPEED:
             std::cout << "SPEED selected " << std::endl;
             break;
-        case TreadmillProperty::INCLIN:
+        case TreadmillProperty::INCLINATION:
             std::cout << "INCLIN selected" << std::endl;
             break;
         default:
