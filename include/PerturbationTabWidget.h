@@ -1,81 +1,78 @@
-#ifndef TREADMILLAUTOMATION_H
-#define TREADMILLAUTOMATION_H
+#ifndef PERTURBATIONTABWIDGET_H
+#define PERTURBATIONTABWIDGET_H
 
-#pragma once
-
-#include <QtWidgets/QApplication>
-#include <QtWidgets/QMainWindow>
-#include <QLibrary>
-#include <QAbstractSocket>
-#include <QVBoxLayout>
-#include <QMenuBar>
-#include <QPushButton>
-#include <QLabel>
-#include <QGroupBox>
-#include <QPlainTextEdit>
-#include <QRadioButton>
+#include <QWidget>
+#include <QGridLayout>
 #include <QCheckBox>
-#include <QAbstractSocket>
-#include <QTcpSocket>
-#include <QUdpSocket>
-#include <QMessageBox>
-#include <iostream>
+#include <QVBoxLayout>
+#include <QGroupBox>
+#include <QHBoxLayout>
+#include <QLabel>
+#include <QFont>
 #include <QDoubleSpinBox>
-#include <QPalette>
-#include <QTimeEdit>
+#include <QPlainTextEdit>
 #include <QTimer>
-#include <QMap>
-#include <QSignalMapper>
+#include <QPushButton>
+#include <iostream>
+#include <QAbstractSocket>
 
-#include "NetworkTabWidget.h"
-#include "PerturbationTabWidget.h"
-
-class TreadmillAutomation : public QMainWindow
+class PerturbationTabWidget : public QWidget
 {
-
     Q_OBJECT
 
+        enum TreadmillProperty
+        {
+            DEFAULT,
+            ACCEL,
+            DECEL,
+            SPEED,
+            INCLIN
+
+        };
+    enum SetpointType { NormalSetpoint, FeedbackRegistrationSetpoint };
+
+
     public:
-        TreadmillAutomation(QWidget *parent=0, Qt::WindowFlags flags=0);
-        ~TreadmillAutomation();
-        void createFileMenu();
-        void createTabWidget();
-        void createNetworkTab();
-        void populateNetworkTab();
-        void createTreadmillPerturbationTab();
-        void populateTreadmillPerturbationTab();
-        void error(int);
-        NetworkTabWidget* networkTabWidget;
-        PerturbationTabWidget* perturbationTabWidget;
-        bool useLibraryCheckBox;
+        static PerturbationTabWidget* getInstance();
+        double getLeftFrontSpeedValue();
+        double getRightFrontSpeedValue();
+        double getAccelerationValue();
+        double getAccelerationTimeValue();
+        double getDecelerationValue();
+        double getDecelerationTimeValue();
+        void setLeftFrontSpeedValueFromIncoming(qint16 mleftFrontSpeedValue);
+        void setRightFrontSpeedValueFromIncoming(qint16 mrightFrontSpeedValue);
+        void setUseLibraryStatus(bool useLibCheckBox);
+        bool useLibraryCheckBoxStatus;
+        void setSocket(QAbstractSocket* socket);
 
-    public slots:
+    private slots:
+        void setLeftFrontSpeedValue(double mleftFrontSpeedValue);
+        void setRightFrontSpeedValue(double mrightFrontSpeedValue);
+        void setAccelerationValue(double maccelerationValue);
+        void setAccelerationTimeValue(double maccelTimeValue);
+        void setDecelerationValue(double mdecelValue);
+        void setDecelerationTimeValue(double mdecelTimeValue);
+        void startAccelTimer();
+        void sendSetpoints(TreadmillProperty mproperty, SetpointType mt);
+        void sendSetpointsDirectly(TreadmillProperty mproperty, SetpointType mt);
+        void sendSetpointsLibrary(SetpointType mt);
+        void startDecelTimer();
+        void slotTimeout();
+        void addTimer(int state);
 
-        void setUseLibraryStatus();
-        void setSocket();
 
     private:
-        QWidget* centralWidget;
-        QVBoxLayout* centralWidgetLayout;
-        t_TREADMILL_initialize TREADMILL_initialize;
-        t_TREADMILL_initializeUDP TREADMILL_initializeUDP;
-        t_TREADMILL_setSpeed TREADMILL_setSpeed;
-        t_TREADMILL_setSpeed4 TREADMILL_setSpeed4;
-        t_TREADMILL_close TREADMILL_close;
 
-        //createFileMenu
-        QMenuBar* menuBar;
-        QMenu* menuFile;
-        QAction *exitAct;
-        
-        //createTabWidget
-        QTabWidget* centralTabWidget;
-        QGridLayout* centralGridLayout;
+        PerturbationTabWidget(QWidget* parent = 0, Qt::WindowFlags flags = 0);
+        ~PerturbationTabWidget();
+        static PerturbationTabWidget* _perturbationTabWidget;
 
         //createRemoteTab
         QWidget* perturbationTab;
         QGridLayout* perturbationTabLayout;
-        
+        void createTreadmillPerturbationTab();
+        void populateTreadmillPerturbationTab();
 
         //populateTreadmillPerturbationTab
         QCheckBox* lftRghtTie;
@@ -95,26 +92,26 @@ class TreadmillAutomation : public QMainWindow
         QFont speedLeftFrontLabelFont;
         QDoubleSpinBox* leftFrontSpeedSetpoint;
         QFont leftFrontSpeedSetpointFont;
-        
+
         QLabel* speedRightFrontLabel;
         QFont speedRightFrontLabelFont;
         QDoubleSpinBox* rightFrontSpeedSetpoint;
         QFont rightFrontSpeedSetpointFont;
-        
+
         QGroupBox* rearSpeedGroupBox;
         QHBoxLayout* rearSpeedHorizontalLayout;
-        
+
         QLabel* speedLeftRearLabel;
         QFont speedLeftRearLabelFont;
         QDoubleSpinBox* leftRearSpeedSetpoint;
         QFont leftRearSpeedSetpointFont;
-        
+
         QDoubleSpinBox* rightRearSpeedSetpoint;
         QLabel* speedRightRearLabel;
         QFont speedRightRearLabelFont;
         QFont rightRearSpeedSetpointFont;
 
-        
+
         QFont accelerationLabelFont;
         QLabel* accelerationLabel;
         QFont accelerationSpinBoxFont;
@@ -131,6 +128,11 @@ class TreadmillAutomation : public QMainWindow
         QGroupBox* quadrantTwoGroupBox;
         QGroupBox* recordGroupBox;
 
+        QCheckBox* timerCheckBox;
+        QGroupBox* timerCheckBoxGroupBox;
+        QHBoxLayout* timerCheckBoxGroupBoxLayout;
+        QFont timerCheckBoxLabelFont;
+        QLabel* timerCheckBoxLabel;
         QGroupBox* timeGroupBox;
         QHBoxLayout* timeGroupBoxLayout;
         QLabel* timeAccelLabel;
@@ -151,26 +153,9 @@ class TreadmillAutomation : public QMainWindow
         QGroupBox* startPertRunGroupBox;
         QHBoxLayout* startPertRunGroupBoxLayout;
         QPushButton* startPertRun;
-        
-        double getAccelerationValue();
-        double getAccelerationTimeValue();
-        double getDecelerationValue();
-        double getDecelerationTimeValue();
-        double getLeftFrontSpeedValue();
-        double getRightFrontSpeedValue();
-        double getLeftRearSpeedValue();
-        double getRightRearSpeedValue();
 
-        void setLeftFrontSpeedValueFromIncoming(qint16 leftFrontSpeedValue);
-        void setLeftRearSpeedValueFromIncoming(qint16 leftRearSpeedValue);
-        void setRightFrontSpeedValueFromIncoming(qint16 rightFrontSpeedValue);
-        void setRightRearSpeedValueFromIncoming(qint16 rightRearSpeedValue);
-        void setAccelerationValueFromIncoming(qint16 accelerationValue);
-        void setDecelerationValueFromIncoming(qint16 decelerationValue);
-        template<typename T, typename U> void addWidgetToLayout(T* widget, U* layout);
+        QAbstractSocket* pertSocket;
 
-        
-        
         double accelerationTimeValue;
         double decelerationTimeValue;
         double accelerationValue;
@@ -180,6 +165,6 @@ class TreadmillAutomation : public QMainWindow
         double rightSpeedFrontValue;
         double rightSpeedRearValue;
 
-};
 
+};
 #endif

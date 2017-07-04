@@ -10,6 +10,7 @@ set (CMAKE_INCLUDE_CURRENT_DIR ON)
 set (CMAKE_ARCHIVE_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/../lib)
 set (CMAKE_LIBRARY_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/../lib)
 set (CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/../bin)
+set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -O0 -ggdb")
 set (CMAKE_AUTOMOC ON)
 file(GLOB SOURCES "src/*.cpp")
 
@@ -18,8 +19,9 @@ find_package(Qt5Network REQUIRED)
 find_package(Qt5DataVisualization REQUIRED)
 
 
-qt5_wrap_cpp(moc_TreadmillAutomation.cpp TreadmillAutomation.cpp
-    TreadmillAutomation.h)
+qt5_wrap_cpp(moc_TreadmillAutomation.cpp moc_PerturbationTabWidget.cpp TreadmillAutomation.cpp
+    TreadmillAutomation.h NetworkTabWidget.cpp NetworkTabWidget.h,
+    PerturbationTabWidget.cpp PerturbationTabWidget.h)
 
 
 add_executable(TreadmillAutomation ${SOURCES})
