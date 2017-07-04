@@ -35,18 +35,47 @@ void PerturbationTabWidget::createTreadmillPerturbationTab()
 
 void PerturbationTabWidget::populateTreadmillPerturbationTab()
 {
+    addQuadrantOne();
+    addQuadrantTwo();
+    addQuadrantThree();
+    addQuadrantFour();
+}
+
+void PerturbationTabWidget::addQuadrantOne()
+{
     quadrantOneGroupBox = new QGroupBox;
     quadrantOnePerturbationLayout = new QVBoxLayout;
     quadrantOneGroupBox->setLayout(quadrantOnePerturbationLayout);
-    accelDecelGroupBox = new QGroupBox;
-    accelDecelGroupBox->setSizePolicy(QSizePolicy::Minimum, QSizePolicy::Fixed);
-
-    accelerationDecelerationHorizontalLayout = new QHBoxLayout;
-    accelDecelGroupBox->setLayout(accelerationDecelerationHorizontalLayout);
-
-
     perturbationTabLayout->addWidget(quadrantOneGroupBox, 0,0);
+    addSpeedGroupBox();
+    addAccelDecelGroupBox();
+    addTimerGroupBox();
+    addStartPertRunGroupBox();
+}
 
+void PerturbationTabWidget::addQuadrantTwo()
+{
+    quadrantTwoGroupBox = new QGroupBox;
+    perturbationTabLayout->addWidget(quadrantTwoGroupBox, 0,1);
+}
+
+void PerturbationTabWidget::addQuadrantThree()
+{
+    quadrantThreeGroupBox = new QGroupBox;
+    perturbationTabLayout->addWidget(quadrantThreeGroupBox, 1,0);
+
+}
+
+void PerturbationTabWidget::addQuadrantFour()
+{
+    quadrantFourGroupBox = new QGroupBox;
+    perturbationTabLayout->addWidget(quadrantFourGroupBox, 1,1);
+
+}
+
+
+void PerturbationTabWidget::addSpeedGroupBox()
+{
     speedGroupBox = new QGroupBox;
     frontSpeedGroupBox = new QGroupBox;
     frontSpeedHorizontalLayout = new QHBoxLayout;
@@ -96,54 +125,10 @@ void PerturbationTabWidget::populateTreadmillPerturbationTab()
     frontSpeedHorizontalLayout->addWidget(rightFrontSpeedSetpoint);
 
     quadrantOnePerturbationLayout->addWidget(speedGroupBox);
+}
 
-
-    quadrantOnePerturbationLayout->addWidget(accelDecelGroupBox);
-    
-    accelerationLabel = new QLabel;
-    accelerationLabelFont.setFamily("Times");
-    accelerationLabelFont.setWeight(75);
-    accelerationLabelFont.setPointSize(12);
-    accelerationLabel->setFont(accelerationLabelFont);
-    accelerationLabel->setText("Acceleration: ");
-    accelerationLabel->setSizePolicy(QSizePolicy::Minimum, QSizePolicy::Fixed);
-    accelerationLabel->setFixedSize(150,180);
-    accelerationDecelerationHorizontalLayout->addWidget(accelerationLabel);
-    acceleration = new QDoubleSpinBox;
-    accelerationSpinBoxFont.setFamily("Times");
-    accelerationSpinBoxFont.setWeight(75);
-    accelerationSpinBoxFont.setPointSize(12);
-    acceleration->setSuffix("  m/s²");
-    acceleration->setRange(0.00, 10.00);
-    acceleration->setFont(accelerationSpinBoxFont);
-    acceleration->setSizePolicy(QSizePolicy::Minimum, QSizePolicy::Fixed);
-    acceleration->setFixedSize(160,40);
-    connect(acceleration, SIGNAL(valueChanged(double)), SLOT(setAccelerationValue(double)));
-    accelerationDecelerationHorizontalLayout->addWidget(acceleration);
-    
-    decelerationLabel = new QLabel;
-    decelerationLabelFont.setFamily("Times");
-    decelerationLabelFont.setWeight(75);
-    decelerationLabelFont.setPointSize(12);
-    decelerationLabel->setFont(decelerationLabelFont);
-    decelerationLabel->setText("Deceleration: ");
-    decelerationLabel->setSizePolicy(QSizePolicy::Minimum, QSizePolicy::Fixed);
-    decelerationLabel->setFixedSize(150,180);
-    accelerationDecelerationHorizontalLayout->addWidget(decelerationLabel);
-    deceleration = new QDoubleSpinBox;
-    decelerationSpinBoxFont.setFamily("Times");
-    decelerationSpinBoxFont.setWeight(75);
-    decelerationSpinBoxFont.setPointSize(12);
-    deceleration->setSuffix("  m/s²");
-    deceleration->setRange(-10.00, 0.00);
-    deceleration->setFont(decelerationLabelFont);
-    deceleration->setSizePolicy(QSizePolicy::Minimum, QSizePolicy::Fixed);
-    deceleration->setFixedSize(160,40);
-    connect(deceleration, SIGNAL(valueChanged(double)), SLOT(setDecelerationValue(double)));
-    accelerationDecelerationHorizontalLayout->addWidget(deceleration);
-    
-
-    
+void PerturbationTabWidget::addTimerGroupBox()
+{
     timeGroupBox = new QGroupBox;
     timeGroupBox->setSizePolicy(QSizePolicy::Minimum, QSizePolicy::Fixed);
     quadrantOnePerturbationLayout->addWidget(timeGroupBox);
@@ -207,13 +192,74 @@ void PerturbationTabWidget::populateTreadmillPerturbationTab()
     timerCheckBoxLabel->setText("Use Timer:");
     timerCheckBoxGroupBoxLayout->addWidget(timerCheckBoxLabel);
     timerCheckBoxGroupBoxLayout->addWidget(timerCheckBox);
-
+    
     quadrantOnePerturbationLayout->addWidget(timerCheckBoxGroupBox);
     quadrantOnePerturbationLayout->addWidget(timeGroupBox);
     timeGroupBox->hide();
 
     connect(timerCheckBox, SIGNAL(stateChanged(int)), SLOT(addTimer(int)));
 
+
+}
+
+
+void PerturbationTabWidget::addAccelDecelGroupBox()
+{
+    accelDecelGroupBox = new QGroupBox;
+    accelDecelGroupBox->setSizePolicy(QSizePolicy::Minimum, QSizePolicy::Fixed);
+
+    accelerationDecelerationHorizontalLayout = new QHBoxLayout;
+    accelDecelGroupBox->setLayout(accelerationDecelerationHorizontalLayout);
+    
+    accelerationLabel = new QLabel;
+    accelerationLabelFont.setFamily("Times");
+    accelerationLabelFont.setWeight(75);
+    accelerationLabelFont.setPointSize(12);
+    accelerationLabel->setFont(accelerationLabelFont);
+    accelerationLabel->setText("Acceleration: ");
+    accelerationLabel->setSizePolicy(QSizePolicy::Minimum, QSizePolicy::Fixed);
+    accelerationLabel->setFixedSize(150,180);
+    accelerationDecelerationHorizontalLayout->addWidget(accelerationLabel);
+    acceleration = new QDoubleSpinBox;
+    accelerationSpinBoxFont.setFamily("Times");
+    accelerationSpinBoxFont.setWeight(75);
+    accelerationSpinBoxFont.setPointSize(12);
+    acceleration->setSuffix("  m/s²");
+    acceleration->setRange(0.00, 10.00);
+    acceleration->setFont(accelerationSpinBoxFont);
+    acceleration->setSizePolicy(QSizePolicy::Minimum, QSizePolicy::Fixed);
+    acceleration->setFixedSize(160,40);
+    connect(acceleration, SIGNAL(valueChanged(double)), SLOT(setAccelerationValue(double)));
+    accelerationDecelerationHorizontalLayout->addWidget(acceleration);
+    
+
+    decelerationLabel = new QLabel;
+    decelerationLabelFont.setFamily("Times");
+    decelerationLabelFont.setWeight(75);
+    decelerationLabelFont.setPointSize(12);
+    decelerationLabel->setFont(decelerationLabelFont);
+    decelerationLabel->setText("Deceleration: ");
+    decelerationLabel->setSizePolicy(QSizePolicy::Minimum, QSizePolicy::Fixed);
+    decelerationLabel->setFixedSize(150,180);
+    accelerationDecelerationHorizontalLayout->addWidget(decelerationLabel);
+    deceleration = new QDoubleSpinBox;
+    decelerationSpinBoxFont.setFamily("Times");
+    decelerationSpinBoxFont.setWeight(75);
+    decelerationSpinBoxFont.setPointSize(12);
+    deceleration->setSuffix("  m/s²");
+    deceleration->setRange(-10.00, 0.00);
+    deceleration->setFont(decelerationLabelFont);
+    deceleration->setSizePolicy(QSizePolicy::Minimum, QSizePolicy::Fixed);
+    deceleration->setFixedSize(160,40);
+    connect(deceleration, SIGNAL(valueChanged(double)), SLOT(setDecelerationValue(double)));
+    
+    accelerationDecelerationHorizontalLayout->addWidget(deceleration);
+
+    quadrantOnePerturbationLayout->addWidget(accelDecelGroupBox);
+}
+
+void PerturbationTabWidget::addStartPertRunGroupBox()
+{
     startPertRunGroupBox = new QGroupBox;
     startPertRunGroupBox->setSizePolicy(QSizePolicy::Minimum, QSizePolicy::Fixed);
     startPertRunGroupBoxLayout = new QHBoxLayout;
@@ -228,10 +274,9 @@ void PerturbationTabWidget::populateTreadmillPerturbationTab()
 
     connect(startPertRun, SIGNAL(clicked()), SLOT(startAccelTimer()));
 
-    quadrantTwoGroupBox = new QGroupBox;
-    perturbationTabLayout->addWidget(quadrantTwoGroupBox, 0,1);
 
 }
+
 
 void PerturbationTabWidget::addTimer(int state)
 {
@@ -245,9 +290,6 @@ void PerturbationTabWidget::addTimer(int state)
         timeGroupBox->hide();
         startPertRun->hide();
     }
-    
-        
-
 }
 
 void PerturbationTabWidget::setAccelerationTimeValue(double maccelTimeValue)
@@ -354,88 +396,96 @@ void PerturbationTabWidget::sendSetpoints(TreadmillProperty mproperty, SetpointT
 
 void PerturbationTabWidget::sendSetpointsDirectly(TreadmillProperty mproperty, SetpointType mt)
 {
-    QByteArray data;
-	QDataStream ds(&data, QIODevice::WriteOnly);
-	QByteArray filler(27, 0);
-    qint16 speed[4];
-    qint16 angle;
-    qint16 accel;
-    char ldata[64];
-    switch(mproperty){
+    QByteArray accelData;
+    QByteArray decelData;
+    QDataStream accelDataStream(&accelData, QIODevice::WriteOnly);
+    QDataStream decelDataStream(&decelData, QIODevice::WriteOnly);
+    QByteArray accelFiller(27, 0);
+    QByteArray decelFiller(27, 0);
+    qint16 accelSpeed[4];
+    qint16 decelSpeed[4];
+    qint16 accelAngle;
+    qint16 decelAngle;
+    qint16 accelAccel;
+    qint16 decelAccel;
+    char accelLdata[64];
+    char decelLdata[64];
+
+        switch(mproperty){
         case TreadmillProperty::DEFAULT:
             std::cout << "DEFAULT selected" << std::endl;
             break;
         case TreadmillProperty::ACCEL:
+                        
             std::cout << "ACCEL selected" << std::endl;
 
-            speed[0] = getRightFrontSpeedValue();
-            speed[1] = getLeftFrontSpeedValue();
-            speed[2] = 0;
-            speed[3] = 0;
-            accel = (mt == NormalSetpoint) ? getAccelerationValue() * 1000.0 : 0.0;
-            angle = 0;
-            ds << (quint8)0; // format
+            accelSpeed[0] = getRightFrontSpeedValue();
+            accelSpeed[1] = getLeftFrontSpeedValue();
+            accelSpeed[2] = 0;
+            accelSpeed[3] = 0;
+            accelAccel = (mt == NormalSetpoint) ? getAccelerationValue() * 1000.0 : 0.0;
+            accelAngle = 0;
+            accelDataStream << (quint8)0; // format
 					         // straight
-            ds << speed[0];
-            ds << speed[1];
-            ds << speed[2];
-            ds << speed[3];
-            ds << accel;
-            ds << accel;
-            ds << accel;
-            ds << accel;
-            ds << angle;
+            accelDataStream << accelSpeed[0];
+            accelDataStream << accelSpeed[1];
+            accelDataStream << accelSpeed[2];
+            accelDataStream << accelSpeed[3];
+            accelDataStream << accelAccel;
+            accelDataStream << accelAccel;
+            accelDataStream << accelAccel;
+            accelDataStream << accelAccel;
+            accelDataStream << accelAngle;
             // 1s complement
-            ds << (qint16)(speed[0] ^ 0xFFFF);
-            ds << (qint16)(speed[1] ^ 0xFFFF);
-            ds << (qint16)(speed[2] ^ 0xFFFF);
-            ds << (qint16)(speed[3] ^ 0xFFFF);
-            ds << (qint16)(accel ^ 0xFFFF);
-            ds << (qint16)(accel ^ 0xFFFF);
-            ds << (qint16)(accel ^ 0xFFFF);
-            ds << (qint16)(accel ^ 0xFFFF);
-            ds << (qint16)(angle ^ 0xFFFF);
-            ds.writeRawData(filler.data(), filler.size());
-
-            memcpy(ldata, data.data(), 64);
-            Q_ASSERT(data.size() == 64);
-            pertSocket->write(data);
+            accelDataStream << (qint16)(accelSpeed[0] ^ 0xFFFF);
+            accelDataStream << (qint16)(accelSpeed[1] ^ 0xFFFF);
+            accelDataStream << (qint16)(accelSpeed[2] ^ 0xFFFF);
+            accelDataStream << (qint16)(accelSpeed[3] ^ 0xFFFF);
+            accelDataStream << (qint16)(accelAccel ^ 0xFFFF);
+            accelDataStream << (qint16)(accelAccel ^ 0xFFFF);
+            accelDataStream << (qint16)(accelAccel ^ 0xFFFF);
+            accelDataStream << (qint16)(accelAccel ^ 0xFFFF);
+            accelDataStream << (qint16)(accelAngle ^ 0xFFFF);
+            accelDataStream.writeRawData(accelFiller.data(), accelFiller.size());
+            qDebug("Sending Acceleration: %s", qPrintable(accelData.toHex()));
+            memcpy(accelLdata, accelData.data(), 64);
+            Q_ASSERT(accelData.size() == 64);
+            pertSocket->write(accelData);
             break;
         case TreadmillProperty::DECEL:
             std::cout << "DECEL selected" << std::endl;
-            speed[0] = getRightFrontSpeedValue();
-            speed[1] = getLeftFrontSpeedValue();
-            speed[2] = 0;
-            speed[3] = 0;
-            accel = (mt == NormalSetpoint) ? getDecelerationValue() * 1000.0 : 0.0;
-            angle = 0;
-            ds << (quint8)0; // format
+            decelSpeed[0] = getRightFrontSpeedValue();
+            decelSpeed[1] = getLeftFrontSpeedValue();
+            decelSpeed[2] = 0;
+            decelSpeed[3] = 0;
+            decelAccel = (mt == NormalSetpoint) ? getDecelerationValue() * 1000.0 : 0.0;
+            decelAngle = 0;
+            decelDataStream << (quint8)0; // format
 					         // straight
-            ds << speed[0];
-            ds << speed[1];
-            ds << speed[2];
-            ds << speed[3];
-            ds << accel;
-            ds << accel;
-            ds << accel;
-            ds << accel;
-            ds << angle;
+            decelDataStream << decelSpeed[0];
+            decelDataStream << decelSpeed[1];
+            decelDataStream << decelSpeed[2];
+            decelDataStream << decelSpeed[3];
+            decelDataStream << decelAccel;
+            decelDataStream << decelAccel;
+            decelDataStream << decelAccel;
+            decelDataStream << decelAccel;
+            decelDataStream << decelAngle;
             // 1s complement
-            ds << (qint16)(speed[0] ^ 0xFFFF);
-            ds << (qint16)(speed[1] ^ 0xFFFF);
-            ds << (qint16)(speed[2] ^ 0xFFFF);
-            ds << (qint16)(speed[3] ^ 0xFFFF);
-            ds << (qint16)(accel ^ 0xFFFF);
-            ds << (qint16)(accel ^ 0xFFFF);
-            ds << (qint16)(accel ^ 0xFFFF);
-            ds << (qint16)(accel ^ 0xFFFF);
-            ds << (qint16)(angle ^ 0xFFFF);
-            ds.writeRawData(filler.data(), filler.size());
-            memcpy(ldata, data.data(), 64);
-            Q_ASSERT(data.size() == 64);
-            pertSocket->write(data);
-            break;
-
+            decelDataStream << (qint16)(decelSpeed[0] ^ 0xFFFF);
+            decelDataStream << (qint16)(decelSpeed[1] ^ 0xFFFF);
+            decelDataStream << (qint16)(decelSpeed[2] ^ 0xFFFF);
+            decelDataStream << (qint16)(decelSpeed[3] ^ 0xFFFF);
+            decelDataStream << (qint16)(decelAccel ^ 0xFFFF);
+            decelDataStream << (qint16)(decelAccel ^ 0xFFFF);
+            decelDataStream << (qint16)(decelAccel ^ 0xFFFF);
+            decelDataStream << (qint16)(decelAccel ^ 0xFFFF);
+            decelDataStream << (qint16)(decelAngle ^ 0xFFFF);
+            decelDataStream.writeRawData(decelFiller.data(), decelFiller.size());
+            qDebug("Sending Deceleration: %s", qPrintable(decelData.toHex()));
+            memcpy(decelLdata, decelData.data(), 64);
+            Q_ASSERT(decelData.size() == 64);
+            pertSocket->write(decelData);
             break;
         case TreadmillProperty::SPEED:
             std::cout << "SPEED selected " << std::endl;
@@ -461,7 +511,6 @@ void PerturbationTabWidget::sendSetpointsLibrary(SetpointType mt)
 void PerturbationTabWidget::startAccelTimer()
 {
     double retAccelValue = getAccelerationTimeValue();
-    const int millisecondConversion = 1000;
     qDebug("Acceleration will commence for %f seconds", retAccelValue/millisecondConversion);
     sendSetpoints(TreadmillProperty::ACCEL, NormalSetpoint);
     accelTimer.start(retAccelValue);
@@ -494,13 +543,14 @@ void PerturbationTabWidget::startDecelTimer()
 	ds >> angle;
 
     qDebug("Datastream loaded");
-
+    qDebug("Incoming Right Speed: %i", speed[0]);
+    qDebug("Incoming Left Speed: %i", speed[1]);
     setRightFrontSpeedValueFromIncoming(speed[0]);
     setLeftFrontSpeedValueFromIncoming(speed[1]);
     qDebug("Sending Setpoints...");
     sendSetpoints(TreadmillProperty::DECEL, NormalSetpoint);
     qDebug("Starting Timer...");
-    qDebug("Deceleration will commence for %f", retDecelValue);
+    qDebug("Deceleration will commence for %f seconds", retDecelValue/millisecondConversion);
     decelTimer.start(retDecelValue);
     connect(&decelTimer, SIGNAL(timeout()), SLOT(slotTimeout()));
 

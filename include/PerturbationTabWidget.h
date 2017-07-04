@@ -73,10 +73,20 @@ class PerturbationTabWidget : public QWidget
         QGridLayout* perturbationTabLayout;
         void createTreadmillPerturbationTab();
         void populateTreadmillPerturbationTab();
+        void addQuadrantOne();
+        void addSpeedGroupBox();
+        void addAccelDecelGroupBox();
+        void addTimerGroupBox();
+        void addStartPertRunGroupBox();
+        void addQuadrantTwo();
+        void addQuadrantThree();
+        void addQuadrantFour();
 
         //populateTreadmillPerturbationTab
         QCheckBox* lftRghtTie;
         QGroupBox* quadrantOneGroupBox;
+        QGroupBox* quadrantThreeGroupBox;
+        QGroupBox* quadrantFourGroupBox;
         QVBoxLayout* quadrantOneGroupBoxLayout;
         QVBoxLayout* quadrantOnePerturbationLayout;
         QVBoxLayout* quadrantTwoPerturbationLayout;
@@ -155,6 +165,7 @@ class PerturbationTabWidget : public QWidget
         QPushButton* startPertRun;
 
         QAbstractSocket* pertSocket;
+        const int millisecondConversion = 1000;
 
         double accelerationTimeValue;
         double decelerationTimeValue;

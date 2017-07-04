@@ -168,8 +168,7 @@ class TreadmillAutomation : public QMainWindow
         void setAccelerationValueFromIncoming(qint16 accelerationValue);
         void setDecelerationValueFromIncoming(qint16 decelerationValue);
         template<typename T, typename U> void addWidgetToLayout(T* widget, U* layout);
-
-        
+                
         
         double accelerationTimeValue;
         double decelerationTimeValue;
