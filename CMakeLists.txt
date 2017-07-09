@@ -21,7 +21,8 @@ find_package(Qt5DataVisualization REQUIRED)
 
 qt5_wrap_cpp(moc_TreadmillAutomation.cpp moc_PerturbationTabWidget.cpp TreadmillAutomation.cpp
     TreadmillAutomation.h NetworkTabWidget.cpp NetworkTabWidget.h,
-    PerturbationTabWidget.cpp PerturbationTabWidget.h)
+    PerturbationTabWidget.cpp PerturbationTabWidget.h SendSetpoints.cpp
+    SendSetpoints.h)
 
 
 add_executable(TreadmillAutomation ${SOURCES})

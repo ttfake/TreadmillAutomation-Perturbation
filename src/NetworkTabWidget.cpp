@@ -20,7 +20,9 @@ NetworkTabWidget::NetworkTabWidget(QWidget* parent, Qt::WindowFlags flags)
 	TREADMILL_setSpeed = (t_TREADMILL_setSpeed)(lib.resolve("TREADMILL_setSpeed"));
 	TREADMILL_setSpeed4 = (t_TREADMILL_setSpeed4)(lib.resolve("TREADMILL_setSpeed4"));
 	TREADMILL_close = (t_TREADMILL_close)(lib.resolve("TREADMILL_close"));
-    
+  
+    sendSetpoints = SendSetpoints::getInstance();
+
     
     createNetworkTabWidget();
     populateNetworkTab();
@@ -52,6 +54,8 @@ void NetworkTabWidget::createNetworkTabWidget()
 
 void NetworkTabWidget::populateNetworkTab()
 {
+    const QString hostIpAddress = "127.0.0.1";
+    const QString portNumber = "4000";
     hostLabelFont.setFamily("Times");
     hostLabelFont.setWeight(75);
     hostLabelFont.setPointSize(12);
@@ -63,6 +67,7 @@ void NetworkTabWidget::populateNetworkTab()
     hostTextBox = new QPlainTextEdit;
     hostTextBox->setSizePolicy(QSizePolicy::Minimum, QSizePolicy::Fixed);
     hostTextBox->setFixedSize(200,30);
+    hostTextBox->appendPlainText(hostIpAddress);
     
     portLabelFont.setFamily("Times");
     portLabelFont.setWeight(75);
@@ -75,6 +80,7 @@ void NetworkTabWidget::populateNetworkTab()
     portTextBox = new QPlainTextEdit;
     portTextBox->setSizePolicy(QSizePolicy::Minimum, QSizePolicy::Fixed);
     portTextBox->setFixedSize(200,30);
+    portTextBox->appendPlainText(portNumber);
 
 
     networkGroupBox = new QGroupBox;
@@ -124,6 +130,7 @@ void NetworkTabWidget::populateNetworkTab()
     udpLabel->setFixedSize(50,40);
     udpLabel->setText("UDP: ");
     tcpRadioButton = new QRadioButton;
+    tcpRadioButton->setChecked(true);
     udpRadioButton = new QRadioButton;
     networkTcpUdbGroupBox = new QGroupBox;
     networkTcpUdbGroupBox->setSizePolicy(QSizePolicy::Minimum, QSizePolicy::Fixed);
@@ -162,6 +169,7 @@ void NetworkTabWidget::populateNetworkTab()
     horizontalNetworkButtonGroupBoxLayout->addWidget(disconnectBtn);
 
     connect(connectBtn, SIGNAL(clicked()), this, SLOT(onClickConnect()));
+    connect(disconnectBtn, SIGNAL(clicked()), this, SLOT(onClickDisconnect()));
 }
 
 void NetworkTabWidget::setAccelerationValue(double maccelerationValue)
@@ -221,10 +229,11 @@ void NetworkTabWidget::onClickConnect()
 {
     ok = 0;
     base = 10;
+    
+    sendSetpoints->setUseLibraryStatus(useLibrary->isChecked());
 
     if (!useLibrary->isChecked()) 
     {
-		delete socket;
 		if (tcpRadioButton->isChecked())
 		{
 			socket = new QTcpSocket;
@@ -245,7 +254,7 @@ void NetworkTabWidget::onClickConnect()
 	}
 	else
 	{
-		int rc;
+        int rc;
 		if (tcpRadioButton->isChecked())
 		{
 			rc = TREADMILL_initialize((hostTextBox->toPlainText()).toLatin1().data(), \
@@ -273,7 +282,8 @@ void NetworkTabWidget::connected()
     {
         // Register ourselves for feedback by sending a zero-acceleration setpoint to the
         // treadmill control panel. Such setpoint is otherwise ignored.
-        sendSetpoints(TreadmillProperty::DEFAULT, FeedbackRegistrationSetpoint);
+        //sendSetpoints->sendSetpoints(sendSetpoints->TreadmillProperty::DEFAULT, \
+                sendSetpoints->FeedbackRegistrationSetpoint);
     }
     else if (useLibrary->isChecked()) 
     {
@@ -291,161 +301,6 @@ void NetworkTabWidget::connected()
 bool NetworkTabWidget::getUseLibraryIsCheckedStatus()
 {
     return useLibrary->isChecked();
-}
-
-void NetworkTabWidget::sendSetpoints(TreadmillProperty mproperty, SetpointType mt)
-{
-
-/*	if (lftRghtTie->isChecked())
-	{
-		rightFrontSpeedSetpoint->setValue(leftFrontSpeedSetpoint->value());
-		rightRearSpeedSetpoint->setValue(leftRearSpeedSetpoint->value());
-	}*/
-	std::cout << "setSetpoints activated" << std::endl;
-	if (useLibrary->isChecked()) {
-		sendSetpointsLibrary(mt);
-	}
-	else {
-		sendSetpointsDirectly(mproperty, mt);
-	}
-
-}
-
-void NetworkTabWidget::sendSetpointsDirectly(TreadmillProperty mproperty, SetpointType mt)
-{
-    QByteArray data;
-	QDataStream ds(&data, QIODevice::WriteOnly);
-	QByteArray filler(27, 0);
-    qint16 speed[4];
-    qint16 angle;
-    qint16 accel;
-    char ldata[64];
-    switch(mproperty){
-        case TreadmillProperty::DEFAULT:
-            std::cout << "DEFAULT selected" << std::endl;
-            std::cout << "Setting Treadmill Acceleration to 0" << std::endl;
-            speed[0] = getRightFrontSpeedValue();
-            speed[1] = getLeftFrontSpeedValue();
-            speed[2] = 0;
-            speed[3] = 0;
-            accel = 0;
-            angle = 0;
-            ds << (quint8)0; // format
-					         // straight
-            ds << speed[0];
-            ds << speed[1];
-            ds << speed[2];
-            ds << speed[3];
-            ds << accel;
-            ds << accel;
-            ds << accel;
-            ds << accel;
-            ds << angle;
-            // 1s complement
-            ds << (qint16)(speed[0] ^ 0xFFFF);
-            ds << (qint16)(speed[1] ^ 0xFFFF);
-            ds << (qint16)(speed[2] ^ 0xFFFF);
-            ds << (qint16)(speed[3] ^ 0xFFFF);
-            ds << (qint16)(accel ^ 0xFFFF);
-            ds << (qint16)(accel ^ 0xFFFF);
-            ds << (qint16)(accel ^ 0xFFFF);
-            ds << (qint16)(accel ^ 0xFFFF);
-            ds << (qint16)(angle ^ 0xFFFF);
-            ds.writeRawData(filler.data(), filler.size());
-            memcpy(ldata, data.data(), 64);
-            Q_ASSERT(data.size() == 64);
-            socket->write(data);
-            break;
-        case TreadmillProperty::ACCELERATION:
-            std::cout << "ACCELERATION selected" << std::endl;
-
-            speed[0] = getRightFrontSpeedValue();
-            speed[1] = getLeftFrontSpeedValue();
-            speed[2] = 0; 
-            speed[3] = 0;
-            accel = (mt == NormalSetpoint) ? getAccelerationValue() * 1000.0 : 0.0;
-            angle = 0;
-            ds << (quint8)0; // format
-					         // straight
-            ds << speed[0];
-            ds << speed[1];
-            ds << speed[2];
-            ds << speed[3];
-            ds << accel;
-            ds << accel;
-            ds << accel;
-            ds << accel;
-            ds << angle;
-            // 1s complement
-            ds << (qint16)(speed[0] ^ 0xFFFF);
-            ds << (qint16)(speed[1] ^ 0xFFFF);
-            ds << (qint16)(speed[2] ^ 0xFFFF);
-            ds << (qint16)(speed[3] ^ 0xFFFF);
-            ds << (qint16)(accel ^ 0xFFFF);
-            ds << (qint16)(accel ^ 0xFFFF);
-            ds << (qint16)(accel ^ 0xFFFF);
-            ds << (qint16)(accel ^ 0xFFFF);
-            ds << (qint16)(angle ^ 0xFFFF);
-            ds.writeRawData(filler.data(), filler.size());
-
-            memcpy(ldata, data.data(), 64);
-            Q_ASSERT(data.size() == 64);
-            socket->write(data);
-            break;
-        case TreadmillProperty::DECELERATION:
-            std::cout << "DECEL selected" << std::endl;
-            speed[0] = getRightFrontSpeedValue();
-            speed[1] = getLeftFrontSpeedValue();
-            speed[2] = 0; 
-            speed[3] = 0;
-            accel = (mt == NormalSetpoint) ? getDecelerationValue() * 1000.0 : 0.0;
-            angle = 0;
-            ds << (quint8)0; // format
-					         // straight
-            ds << speed[0];
-            ds << speed[1];
-            ds << speed[2];
-            ds << speed[3];
-            ds << accel;
-            ds << accel;
-            ds << accel;
-            ds << accel;
-            ds << angle;
-            // 1s complement
-            ds << (qint16)(speed[0] ^ 0xFFFF);
-            ds << (qint16)(speed[1] ^ 0xFFFF);
-            ds << (qint16)(speed[2] ^ 0xFFFF);
-            ds << (qint16)(speed[3] ^ 0xFFFF);
-            ds << (qint16)(accel ^ 0xFFFF);
-            ds << (qint16)(accel ^ 0xFFFF);
-            ds << (qint16)(accel ^ 0xFFFF);
-            ds << (qint16)(accel ^ 0xFFFF);
-            ds << (qint16)(angle ^ 0xFFFF);
-            ds.writeRawData(filler.data(), filler.size());
-            memcpy(ldata, data.data(), 64);
-            Q_ASSERT(data.size() == 64);
-            socket->write(data);
-            break;
-
-            break;
-        case TreadmillProperty::SPEED:
-            std::cout << "SPEED selected " << std::endl;
-            break;
-        case TreadmillProperty::INCLINATION:
-            std::cout << "INCLIN selected" << std::endl;
-            break;
-        default:
-                std::cout << "None Selected" << std::endl;
-                break;
-
-    }
-}
-
-
-
-void NetworkTabWidget::sendSetpointsLibrary(SetpointType mt)
-{
-
 }
 
 

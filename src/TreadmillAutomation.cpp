@@ -7,13 +7,14 @@ TreadmillAutomation::TreadmillAutomation(QWidget *parent, Qt::WindowFlags flags)
     setCentralWidget(centralWidget);
     centralWidgetLayout = new QVBoxLayout;
     centralWidget->setLayout(centralWidgetLayout);
+    perturbationTabWidget = PerturbationTabWidget::getInstance();
     createFileMenu();
     createTabWidget();
     networkTabWidget = NetworkTabWidget::getInstance();
     centralTabWidget->addTab(networkTabWidget, "Network");
     connect(networkTabWidget->connectBtn, SIGNAL(clicked()), SLOT(setUseLibraryStatus()));
     connect(networkTabWidget->connectBtn, SIGNAL(clicked()), SLOT(setSocket()));
-    perturbationTabWidget = PerturbationTabWidget::getInstance();
+
     centralTabWidget->addTab(perturbationTabWidget, "Perturbation");
 }
 
@@ -33,7 +34,55 @@ void TreadmillAutomation::createFileMenu()
     exitAct->setText("Exit");
     menuBar->addMenu(menuFile);
     connect(exitAct, SIGNAL(triggered()), this, SLOT(close()));
+
+    menuView = new QMenu(menuBar);
+    menuView->setObjectName(QStringLiteral("menuView"));
+    menuView->setTitle(QApplication::translate("TreadmillAutomation", "View", Q_NULLPTR));
+    timerViewAct = new QAction();
+    timerViewAct->setCheckable(true);
+    menuView->addAction(timerViewAct);
+    timerViewAct->setText("Show Timer");
+    connect(timerViewAct, SIGNAL(changed()), SLOT(showTimer()));
+    
+    maxSpeedViewAct = new QAction();
+    maxSpeedViewAct->setCheckable(true);
+    menuView->addAction(maxSpeedViewAct);
+    maxSpeedViewAct->setText("Show Max Speed Settings");
+    connect(maxSpeedViewAct, SIGNAL(changed()), SLOT(showMaxSpeedBox()));
+
+    menuBar->addMenu(menuView);
     centralWidgetLayout->setMenuBar(menuBar);
+}
+
+void TreadmillAutomation::showMaxSpeedBox()
+{
+    bool checked = false;
+    if(maxSpeedViewAct->isChecked())
+    {
+        checked = true;
+        perturbationTabWidget->showMaxSpeedBox(checked);
+    }
+    else
+    {
+        checked = false;
+        perturbationTabWidget->showMaxSpeedBox(checked);
+    }
+
+}
+
+void TreadmillAutomation::showTimer()
+{
+    bool checked = false;
+    if(timerViewAct->isChecked())
+    {
+        checked = true;
+        perturbationTabWidget->showTimer(checked);
+    }
+    else
+    {
+        checked = false;
+        perturbationTabWidget->showTimer(checked);
+    }
 }
 
 void TreadmillAutomation::createTabWidget()

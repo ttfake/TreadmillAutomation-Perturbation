@@ -16,22 +16,12 @@
 #include <iostream>
 #include <QAbstractSocket>
 
+#include "SendSetpoints.h"
+
 class PerturbationTabWidget : public QWidget
 {
     Q_OBJECT
-
-        enum TreadmillProperty
-        {
-            DEFAULT,
-            ACCEL,
-            DECEL,
-            SPEED,
-            INCLIN
-
-        };
-    enum SetpointType { NormalSetpoint, FeedbackRegistrationSetpoint };
-
-
+ 
     public:
         static PerturbationTabWidget* getInstance();
         double getLeftFrontSpeedValue();
@@ -46,6 +36,12 @@ class PerturbationTabWidget : public QWidget
         bool useLibraryCheckBoxStatus;
         void setSocket(QAbstractSocket* socket);
 
+    
+        
+    public slots:
+        void showTimer(bool state);
+        void showMaxSpeedBox(bool state);
+
     private slots:
         void setLeftFrontSpeedValue(double mleftFrontSpeedValue);
         void setRightFrontSpeedValue(double mrightFrontSpeedValue);
@@ -54,12 +50,13 @@ class PerturbationTabWidget : public QWidget
         void setDecelerationValue(double mdecelValue);
         void setDecelerationTimeValue(double mdecelTimeValue);
         void startAccelTimer();
-        void sendSetpoints(TreadmillProperty mproperty, SetpointType mt);
-        void sendSetpointsDirectly(TreadmillProperty mproperty, SetpointType mt);
-        void sendSetpointsLibrary(SetpointType mt);
         void startDecelTimer();
         void slotTimeout();
-        void addTimer(int state);
+        void startMaxSpeedRun();
+        void startMaxSpeedDecel();
+        void setMaxLeftSpeed(double mMaxLeftSpeed);
+        void setMaxRightSpeed(double mMaxRightSpeed);
+        void maxSpeedTimeout();
 
 
     private:
@@ -67,6 +64,8 @@ class PerturbationTabWidget : public QWidget
         PerturbationTabWidget(QWidget* parent = 0, Qt::WindowFlags flags = 0);
         ~PerturbationTabWidget();
         static PerturbationTabWidget* _perturbationTabWidget;
+
+        SendSetpoints* sendSetpoints;
 
         //createRemoteTab
         QWidget* perturbationTab;
@@ -78,10 +77,17 @@ class PerturbationTabWidget : public QWidget
         void addAccelDecelGroupBox();
         void addTimerGroupBox();
         void addStartPertRunGroupBox();
+        void addStartEndSpeedGroupBox();
         void addQuadrantTwo();
         void addQuadrantThree();
         void addQuadrantFour();
+        void addMaxSpeedGroupBox();
+        void addStartMaxSpeedRunGroupBox();
+        double getMaxLeftSpeed();
+        double getMaxRightSpeed();
 
+
+        
         //populateTreadmillPerturbationTab
         QCheckBox* lftRghtTie;
         QGroupBox* quadrantOneGroupBox;
@@ -92,34 +98,40 @@ class PerturbationTabWidget : public QWidget
         QVBoxLayout* quadrantTwoPerturbationLayout;
         QGroupBox* accelDecelGroupBox;
         QHBoxLayout* accelerationDecelerationHorizontalLayout;
+        
         QGroupBox* speedGroupBox;
-        QGridLayout* speedGroupBoxGridLayout;
-        QGroupBox* frontSpeedGroupBox;
-        QHBoxLayout* frontSpeedHorizontalLayout;
-
-
+        QHBoxLayout* speedGroupBoxHorizontalLayout;
         QLabel* speedLeftFrontLabel;
         QFont speedLeftFrontLabelFont;
         QDoubleSpinBox* leftFrontSpeedSetpoint;
         QFont leftFrontSpeedSetpointFont;
+ 
 
+        QGroupBox* maxSpeedGroupBox;
+        QHBoxLayout* maxSpeedGroupBoxLayout;
+        QLabel* maxLeftSpeedLabel;
+        QFont maxLeftSpeedLabelFont;
+        QDoubleSpinBox* maxLeftSpeedSpinBox;
+        QFont maxLeftSpeedSpinBoxFont;
+        QLabel* maxRightSpeedLabel;
+        QFont maxRightSpeedLabelFont;
+        QDoubleSpinBox* maxRightSpeedSpinBox;
+        QFont maxRightSpeedSpinBoxFont;
+
+        QGroupBox* startMaxSpeedRunGroupBox;
+        QHBoxLayout* startMaxSpeedRunGroupBoxLayout;
+        QPushButton* startMaxSpeedRunBtn;
+        QFont startMaxSpeedRunBtnFont;
+
+        double maxLeftSpeed;
+        double maxRightSpeed;
+        double maxRunTime;
+        double maxDecelRunTime;
+        
         QLabel* speedRightFrontLabel;
         QFont speedRightFrontLabelFont;
         QDoubleSpinBox* rightFrontSpeedSetpoint;
         QFont rightFrontSpeedSetpointFont;
-
-        QGroupBox* rearSpeedGroupBox;
-        QHBoxLayout* rearSpeedHorizontalLayout;
-
-        QLabel* speedLeftRearLabel;
-        QFont speedLeftRearLabelFont;
-        QDoubleSpinBox* leftRearSpeedSetpoint;
-        QFont leftRearSpeedSetpointFont;
-
-        QDoubleSpinBox* rightRearSpeedSetpoint;
-        QLabel* speedRightRearLabel;
-        QFont speedRightRearLabelFont;
-        QFont rightRearSpeedSetpointFont;
 
 
         QFont accelerationLabelFont;
@@ -138,16 +150,10 @@ class PerturbationTabWidget : public QWidget
         QGroupBox* quadrantTwoGroupBox;
         QGroupBox* recordGroupBox;
 
-        QCheckBox* timerCheckBox;
-        QGroupBox* timerCheckBoxGroupBox;
-        QHBoxLayout* timerCheckBoxGroupBoxLayout;
-        QFont timerCheckBoxLabelFont;
-        QLabel* timerCheckBoxLabel;
         QGroupBox* timeGroupBox;
         QHBoxLayout* timeGroupBoxLayout;
         QLabel* timeAccelLabel;
         QFont timeAccelLabelFont;
-        QTimer accelTimer;
         QDoubleSpinBox* timeAccelSpinBox;
         QLabel* accelTimeDurationLabel;
         QFont accelTimeDurationFont;
@@ -157,14 +163,19 @@ class PerturbationTabWidget : public QWidget
         QLabel* timeDecelLabel;
         QFont timeDecelLabelFont;
         QDoubleSpinBox* timeDecelSpinBox;
-        QTimer decelTimer;
         QFont timeDecelSpinBoxFont;
 
         QGroupBox* startPertRunGroupBox;
         QHBoxLayout* startPertRunGroupBoxLayout;
-        QPushButton* startPertRun;
+        QPushButton* startPertRunBtn;
+        QFont startPertRunBtnFont;
 
         QAbstractSocket* pertSocket;
+
+        QGroupBox* startEndSpeedGroupBox;
+        QGridLayout* startEndSpeedGroupBoxGridLayout;
+
+
         const int millisecondConversion = 1000;
 
         double accelerationTimeValue;

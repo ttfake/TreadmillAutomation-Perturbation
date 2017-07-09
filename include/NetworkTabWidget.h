@@ -17,23 +17,9 @@
 #include <QLibrary>
 #include <iostream>
 
+#include "SendSetpoints.h"
 #include "treadmill-remote.h"
 
-#ifdef _WIN32
-
-#include <windows.h>
-#ifdef TREADMILLREMOTEDLL_EXPORTS
-#define TREADMILLREMOTEDLL_API
-#else
-#define TREADMILLREMOTEDLL_API
-#endif
-
-#else
-
-#define WINAPI
-#define TREADMILLREMOTEDLL_API
-
-#endif
 
 enum TreadmillProperty
 {
@@ -66,13 +52,11 @@ class NetworkTabWidget : public QWidget
 
         NetworkTabWidget(QWidget* parent=0, Qt::WindowFlags flags = 0);
         ~NetworkTabWidget();
-        void onClickDisconnect();
+        SendSetpoints* sendSetpoints;
+
 
         void paintEvent(QPaintEvent* paintEvent);
 
-        void sendSetpoints(TreadmillProperty mproperty, SetpointType mt);
-        void sendSetpointsDirectly(TreadmillProperty mproperty, SetpointType mt);
-        void sendSetpointsLibrary(SetpointType mt);
         void setAccelerationValue(double maccelerationValue);
         void setDecelerationValue(double mdecelerationValue);
         void setLeftFrontSpeedValue(double mleftSpeedFrontValue);
@@ -146,6 +130,7 @@ class NetworkTabWidget : public QWidget
     
     public slots:
         void onClickConnect();
+        void onClickDisconnect();
         void connected();
         void disconnected();
         void readyRead();

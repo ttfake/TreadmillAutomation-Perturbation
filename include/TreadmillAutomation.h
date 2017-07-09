@@ -54,6 +54,11 @@ class TreadmillAutomation : public QMainWindow
         void setUseLibraryStatus();
         void setSocket();
 
+    private slots:
+
+        void showMaxSpeedBox();
+        void showTimer();
+
     private:
         QWidget* centralWidget;
         QVBoxLayout* centralWidgetLayout;
@@ -66,36 +71,18 @@ class TreadmillAutomation : public QMainWindow
         //createFileMenu
         QMenuBar* menuBar;
         QMenu* menuFile;
+        QMenu* menuView;
         QAction *exitAct;
+        QAction* timerViewAct;
+        QAction* maxSpeedViewAct;
         
         //createTabWidget
         QTabWidget* centralTabWidget;
         QGridLayout* centralGridLayout;
 
-        //createRemoteTab
-        QWidget* perturbationTab;
-        QGridLayout* perturbationTabLayout;
-        
 
         //populateTreadmillPerturbationTab
-        QCheckBox* lftRghtTie;
-        QGroupBox* quadrantOneGroupBox;
-        QVBoxLayout* quadrantOneGroupBoxLayout;
-        QVBoxLayout* quadrantOnePerturbationLayout;
-        QVBoxLayout* quadrantTwoPerturbationLayout;
-        QGroupBox* accelDecelGroupBox;
-        QHBoxLayout* accelerationDecelerationHorizontalLayout;
-        QGroupBox* speedGroupBox;
-        QGridLayout* speedGroupBoxGridLayout;
-        QGroupBox* frontSpeedGroupBox;
-        QHBoxLayout* frontSpeedHorizontalLayout;
-
-
-        QLabel* speedLeftFrontLabel;
-        QFont speedLeftFrontLabelFont;
-        QDoubleSpinBox* leftFrontSpeedSetpoint;
-        QFont leftFrontSpeedSetpointFont;
-        
+                
         QLabel* speedRightFrontLabel;
         QFont speedRightFrontLabelFont;
         QDoubleSpinBox* rightFrontSpeedSetpoint;
