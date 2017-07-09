@@ -16,7 +16,7 @@ class SendSetpoints
 
         enum TreadmillProperty
         {
-            DEFAULT,
+            ZERO,
             ACCEL,
             DECEL,
             SPEED,
@@ -32,12 +32,18 @@ class SendSetpoints
         void setAccelerationValue(double mAccelValue);
         void setDecelerationValue(double mdecelValue);
         void setSocket(QAbstractSocket* mSocket);
+        void setUseMaxSpeed(bool mMaxSpeedChecked);
+        void setMaxRightSpeed(double mMaxRightSpeed);
+        void setMaxLeftSpeed(double mMaxLeftSpeed);
+        double getMaxRightSpeed();
+        double getMaxLeftSpeed();
 
     
     private:
     
         static SendSetpoints* _sendSetpoints;
         bool useLibraryCheckBoxStatus;
+        bool maxSpeedChecked;
         double getRightFrontSpeedValue();
         double getLeftFrontSpeedValue();
         double getAccelerationValue();
@@ -47,6 +53,8 @@ class SendSetpoints
         double decelerationValue;
         double leftSpeedFrontValue;
         double rightSpeedFrontValue;
+        double maxRightSpeed;
+        double maxLeftSpeed;
 
 
         QAbstractSocket* pertSocket;

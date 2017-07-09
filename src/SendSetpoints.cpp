@@ -1,4 +1,4 @@
-#include "SendSetpoints.h"
+#include "include/SendSetpoints.h"
 
 SendSetpoints* SendSetpoints::_sendSetpoints = 0;
 
@@ -111,8 +111,8 @@ void SendSetpoints::sendSetpointsDirectly(TreadmillProperty mproperty, SetpointT
     const qint16 scaleFactor = 1000;
 
         switch(mproperty){
-        case TreadmillProperty::DEFAULT:
-            std::cout << "DEFAULT selected" << std::endl;
+        case TreadmillProperty::ZERO:
+            std::cout << "ZERO selected" << std::endl;
             std::cout << "Stopping Treadmill" << std::endl;
             accelSpeed[0] = 0;
             accelSpeed[1] = 0;
@@ -142,7 +142,7 @@ void SendSetpoints::sendSetpointsDirectly(TreadmillProperty mproperty, SetpointT
             accelDataStream << (qint16)(accelAccel ^ 0xFFFF);
             accelDataStream << (qint16)(accelAngle ^ 0xFFFF);
             accelDataStream.writeRawData(accelFiller.data(), accelFiller.size());
-            qDebug("Sending Acceleration: %s", qPrintable(accelData.toHex()));
+            qDebug("Sending Deceleration: %s", qPrintable(accelData.toHex()));
             memcpy(accelLdata, accelData.data(), 64);
             Q_ASSERT(accelData.size() == 64);
             pertSocket->write(accelData);
@@ -185,7 +185,7 @@ void SendSetpoints::sendSetpointsDirectly(TreadmillProperty mproperty, SetpointT
             pertSocket->write(accelData);
             break;
         case TreadmillProperty::DECEL:
-            std::cout << "DECEL selected" << std::endl;
+            std::cout << "DECELERATIOM selected" << std::endl;
             decelSpeed[0] = getRightFrontSpeedValue() * scaleFactor;
             decelSpeed[1] = getLeftFrontSpeedValue() * scaleFactor;
             decelSpeed[2] = 0;
@@ -238,4 +238,28 @@ void SendSetpoints::sendSetpointsLibrary(bool useLibCheckBox)
 
 }
 
+void SendSetpoints::setUseMaxSpeed(bool mMaxSpeedChecked)
+{
+    maxSpeedChecked = mMaxSpeedChecked;
+}
+
+void SendSetpoints::setMaxRightSpeed(double mMaxRightSpeed)
+{
+    maxRightSpeed = mMaxRightSpeed;
+}
+
+double SendSetpoints::getMaxRightSpeed()
+{
+    return maxRightSpeed;
+}
+
+void SendSetpoints::setMaxLeftSpeed(double mMaxLeftSpeed)
+{
+   maxLeftSpeed = mMaxLeftSpeed; 
+}
+
+double SendSetpoints::getMaxLeftSpeed()
+{
+    return maxLeftSpeed;
+}
 

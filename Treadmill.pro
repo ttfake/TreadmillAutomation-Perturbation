@@ -1,6 +1,16 @@
-HEADERS = include/TreadmillAutomation.h
-SOURCES = src/main.cpp \
-          src/TreadmillAutomation.cpp
+HEADERS = ../include/TreadmillAutomation.h \
+          ../include/NetworkTabWidget.h \
+          ../include/NetworkTabWidgetLights.h \
+          ../include/PerturbationTabWidget.h \
+          ../include/SendSetpoints.h \
+          ../include/treadmill-remote.h
+SOURCES = ../src/main.cpp \
+          ../src/TreadmillAutomation.cpp \
+          ../src/NetworkTabWidget.cpp \
+          ../src/NetworkTabWidgetLights.cpp \
+          ../src/PerturbationTabWidget.cpp \
+          ../src/SendSetpoints.cpp 
+
 TARGET = TreadmillAutomation
 
 QT += core gui opengl network datavisualization widgets 

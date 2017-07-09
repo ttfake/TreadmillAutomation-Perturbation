@@ -27,8 +27,9 @@
 #include <QMap>
 #include <QSignalMapper>
 
-#include "NetworkTabWidget.h"
-#include "PerturbationTabWidget.h"
+#include "include/NetworkTabWidget.h"
+#include "include/PerturbationTabWidget.h"
+#include "include/SendSetpoints.h"
 
 class TreadmillAutomation : public QMainWindow
 {
@@ -47,6 +48,7 @@ class TreadmillAutomation : public QMainWindow
         void error(int);
         NetworkTabWidget* networkTabWidget;
         PerturbationTabWidget* perturbationTabWidget;
+        SendSetpoints* sendSetpointObject;
         bool useLibraryCheckBox;
 
     public slots:

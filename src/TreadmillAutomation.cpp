@@ -8,6 +8,7 @@ TreadmillAutomation::TreadmillAutomation(QWidget *parent, Qt::WindowFlags flags)
     centralWidgetLayout = new QVBoxLayout;
     centralWidget->setLayout(centralWidgetLayout);
     perturbationTabWidget = PerturbationTabWidget::getInstance();
+    sendSetpointObject = SendSetpoints::getInstance();
     createFileMenu();
     createTabWidget();
     networkTabWidget = NetworkTabWidget::getInstance();
@@ -61,11 +62,13 @@ void TreadmillAutomation::showMaxSpeedBox()
     {
         checked = true;
         perturbationTabWidget->showMaxSpeedBox(checked);
+        sendSetpointObject->setUseMaxSpeed(checked);
     }
     else
     {
         checked = false;
         perturbationTabWidget->showMaxSpeedBox(checked);
+        sendSetpointObject->setUseMaxSpeed(checked);
     }
 
 }

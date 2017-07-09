@@ -1,4 +1,4 @@
-#include "PerturbationTabWidget.h"
+#include "include/PerturbationTabWidget.h"
 
 PerturbationTabWidget* PerturbationTabWidget::_perturbationTabWidget = 0;
 
@@ -101,7 +101,7 @@ void PerturbationTabWidget::addMaxSpeedGroupBox()
     maxLeftSpeedSpinBoxFont.setWeight(75);
     maxLeftSpeedSpinBoxFont.setPointSize(12);
     maxLeftSpeedSpinBox->setFont(maxLeftSpeedSpinBoxFont);
-    connect(maxLeftSpeedSpinBox, SIGNAL(valueChanged(double)), SLOT(setMaxLeftSpeed(double)));
+    //connect(maxLeftSpeedSpinBox, SIGNAL(valueChanged(double)), SLOT(setMaxLeftSpeed(double)));
     maxSpeedGroupBoxLayout->addWidget(maxLeftSpeedSpinBox);
     maxRightSpeedLabel = new QLabel;
     maxRightSpeedLabel->setSizePolicy(QSizePolicy::Minimum, QSizePolicy::Fixed);
@@ -120,7 +120,7 @@ void PerturbationTabWidget::addMaxSpeedGroupBox()
     maxRightSpeedSpinBoxFont.setWeight(75);
     maxRightSpeedSpinBoxFont.setPointSize(12);
     maxRightSpeedSpinBox->setFont(maxRightSpeedSpinBoxFont);
-    connect(maxRightSpeedSpinBox, SIGNAL(valueChanged(double)), SLOT(setMaxRightSpeed(double)));
+    //connect(maxRightSpeedSpinBox, SIGNAL(valueChanged(double)), SLOT(setMaxRightSpeed(double)));
     maxSpeedGroupBoxLayout->addWidget(maxRightSpeedSpinBox);
 
 
@@ -132,6 +132,7 @@ void PerturbationTabWidget::addMaxSpeedGroupBox()
 void PerturbationTabWidget::setMaxLeftSpeed(double mMaxLeftSpeed)
 {
     maxLeftSpeed = mMaxLeftSpeed;
+    sendSetpoints->setMaxLeftSpeed(maxLeftSpeed);
 }
 
 double PerturbationTabWidget::getMaxLeftSpeed()
@@ -142,6 +143,7 @@ double PerturbationTabWidget::getMaxLeftSpeed()
 void PerturbationTabWidget::setMaxRightSpeed(double mMaxRightSpeed)
 {
     maxRightSpeed = mMaxRightSpeed;
+    sendSetpoints->setMaxRightSpeed(maxRightSpeed);
 }
 
 double PerturbationTabWidget::getMaxRightSpeed()
@@ -189,7 +191,6 @@ void PerturbationTabWidget::addSpeedGroupBox()
     leftFrontSpeedSetpoint->setFont(leftFrontSpeedSetpointFont);
     leftFrontSpeedSetpoint->setSuffix("  m/s");
     leftFrontSpeedSetpoint->setFixedSize(160,40);
-    connect(leftFrontSpeedSetpoint, SIGNAL(valueChanged(double)), SLOT(setLeftFrontSpeedValue(double)));
     speedGroupBoxHorizontalLayout->addWidget(leftFrontSpeedSetpoint);
 
     speedRightFrontLabel = new QLabel;
@@ -209,7 +210,6 @@ void PerturbationTabWidget::addSpeedGroupBox()
     rightFrontSpeedSetpoint->setSuffix("  m/s");
     rightFrontSpeedSetpoint->setSizePolicy(QSizePolicy::Minimum, QSizePolicy::Fixed);
     rightFrontSpeedSetpoint->setFixedSize(160,40);
-    connect(rightFrontSpeedSetpoint, SIGNAL(valueChanged(double)), SLOT(setRightFrontSpeedValue(double)));
     speedGroupBoxHorizontalLayout->addWidget(rightFrontSpeedSetpoint);
 
     quadrantOnePerturbationLayout->addWidget(speedGroupBox);
@@ -241,7 +241,7 @@ void PerturbationTabWidget::addTimerGroupBox()
     timeAccelSpinBox->setRange(0.00, 100000000.00);
 
     timeAccelSpinBox->setSizePolicy(QSizePolicy::Minimum, QSizePolicy::Fixed); 
-    connect(timeAccelSpinBox, SIGNAL(valueChanged(double)), SLOT(setAccelerationTimeValue(double)));
+    //connect(timeAccelSpinBox, SIGNAL(valueChanged(double)), SLOT(setAccelerationTimeValue(double)));
     timeGroupBoxLayout->addWidget(timeAccelSpinBox);
 
     
@@ -264,7 +264,7 @@ void PerturbationTabWidget::addTimerGroupBox()
     timeDecelSpinBox->setFixedSize(160,40);
     timeDecelSpinBox->setRange(0.00, 100000000.00);
     timeGroupBoxLayout->addWidget(timeDecelSpinBox);
-    connect(timeDecelSpinBox, SIGNAL(valueChanged(double)), SLOT(setDecelerationTimeValue(double)));
+    //connect(timeDecelSpinBox, SIGNAL(valueChanged(double)), SLOT(setDecelerationTimeValue(double)));
 
     quadrantOnePerturbationLayout->addWidget(timeGroupBox);
     timeGroupBox->hide();
@@ -298,7 +298,6 @@ void PerturbationTabWidget::addAccelDecelGroupBox()
     acceleration->setFont(accelerationSpinBoxFont);
     acceleration->setSizePolicy(QSizePolicy::Minimum, QSizePolicy::Fixed);
     acceleration->setFixedSize(160,40);
-    connect(acceleration, SIGNAL(valueChanged(double)), SLOT(setAccelerationValue(double)));
     accelerationDecelerationHorizontalLayout->addWidget(acceleration);
     
 
@@ -320,7 +319,6 @@ void PerturbationTabWidget::addAccelDecelGroupBox()
     deceleration->setFont(decelerationLabelFont);
     deceleration->setSizePolicy(QSizePolicy::Minimum, QSizePolicy::Fixed);
     deceleration->setFixedSize(160,40);
-    connect(deceleration, SIGNAL(valueChanged(double)), SLOT(setDecelerationValue(double)));
     
     accelerationDecelerationHorizontalLayout->addWidget(deceleration);
 
@@ -351,6 +349,12 @@ void PerturbationTabWidget::addStartMaxSpeedRunGroupBox()
 
 void PerturbationTabWidget::startMaxSpeedRun()
 {
+    setMaxLeftSpeed(maxLeftSpeedSpinBox->value());
+    setMaxRightSpeed(maxRightSpeedSpinBox->value());
+    setAccelerationValue(acceleration->value());
+    setDecelerationValue(deceleration->value());
+    setLeftFrontSpeedValue(leftFrontSpeedSetpoint->value());
+    setRightFrontSpeedValue(rightFrontSpeedSetpoint->value());
     maxRunTime = getMaxLeftSpeed() / getAccelerationValue();
     qDebug("Acceleration will commence for %f seconds", maxRunTime);
     sendSetpoints->sendSetpoints(SendSetpoints::TreadmillProperty::ACCEL, SendSetpoints::NormalSetpoint);
@@ -361,6 +365,10 @@ void PerturbationTabWidget::startMaxSpeedDecel()
 {
     std::cout << "Acceleration Run has ended" << std::endl;
     maxDecelRunTime = getMaxLeftSpeed() / abs(getDecelerationValue());
+    setRightFrontSpeedValue(abs(getDecelerationValue()) * (maxDecelRunTime) + \
+            getRightFrontSpeedValue());
+    setLeftFrontSpeedValue(abs(getDecelerationValue()) * (maxDecelRunTime) + \
+            getLeftFrontSpeedValue());
     qDebug("Deceleration will commence for %f seconds", maxDecelRunTime);
     sendSetpoints->sendSetpoints(SendSetpoints::TreadmillProperty::DECEL, SendSetpoints::NormalSetpoint);
     QTimer::singleShot(maxDecelRunTime * millisecondConversion, this, SLOT(maxSpeedTimeout()));
@@ -369,6 +377,7 @@ void PerturbationTabWidget::startMaxSpeedDecel()
 
 void PerturbationTabWidget::maxSpeedTimeout()
 {
+    sendSetpoints->sendSetpoints(SendSetpoints::ZERO, SendSetpoints::NormalSetpoint);
     std::cout << "Deceleration Run has ended" << std::endl;
 }
 
@@ -500,6 +509,13 @@ void PerturbationTabWidget::setUseLibraryStatus(bool useLibCheckBox)
 
 void PerturbationTabWidget::startAccelTimer()
 {
+
+    setAccelerationValue(acceleration->value());
+    setDecelerationValue(deceleration->value());
+    setLeftFrontSpeedValue(leftFrontSpeedSetpoint->value());
+    setRightFrontSpeedValue(rightFrontSpeedSetpoint->value());
+    setAccelerationTimeValue(timeAccelSpinBox->value());
+    setDecelerationTimeValue(timeDecelSpinBox->value());
     double retAccelValue = getAccelerationTimeValue();
     qDebug("Acceleration will commence for %f seconds", retAccelValue/millisecondConversion);
     sendSetpoints->sendSetpoints(SendSetpoints::TreadmillProperty::ACCEL, SendSetpoints::NormalSetpoint);
@@ -509,44 +525,23 @@ void PerturbationTabWidget::startAccelTimer()
 void PerturbationTabWidget::startDecelTimer()
 {
 
-    double retDecelValue = getDecelerationTimeValue();
-    const int packetSize = 32;
-	int fullPackets = pertSocket->bytesAvailable() / packetSize;
-	if (!fullPackets) return;
-	if (fullPackets > 1) pertSocket->read((fullPackets - 1) * packetSize);
-	const QByteArray data = pertSocket->read(packetSize);
-	qDebug("Deceleration Started...");
-    qDebug("Data Received: %s.", qPrintable(data.toHex()));
-	QDataStream ds(data);
-    qDebug("Loading Datastream");
-	quint8 format;
-	qint16 speed[4];
-	qint16 angle;
-	ds >> format;
-	if (format != 0) return;
-	ds >> speed[0];
-	ds >> speed[1];
-	ds >> speed[2];
-	ds >> speed[3];
-	ds >> angle;
-
-    qDebug("Datastream loaded");
-    qDebug("Incoming Right Speed: %i", speed[0]);
-    qDebug("Incoming Left Speed: %i", speed[1]);
-    setRightFrontSpeedValueFromIncoming(speed[0]);
-    setLeftFrontSpeedValueFromIncoming(speed[1]);
+    double retDecelTimeValue = getDecelerationTimeValue();
+    setRightFrontSpeedValue(abs(getDecelerationValue()) * (retDecelTimeValue / millisecondConversion) + \
+            getRightFrontSpeedValue());
+    setLeftFrontSpeedValue(abs(getDecelerationValue()) * (retDecelTimeValue / millisecondConversion) + \
+            getLeftFrontSpeedValue());
     qDebug("Sending Setpoints...");
     sendSetpoints->sendSetpoints(SendSetpoints::TreadmillProperty::DECEL, SendSetpoints::NormalSetpoint);
     qDebug("Starting Timer...");
-    qDebug("Deceleration will commence for %f seconds", retDecelValue/millisecondConversion);
-    QTimer::singleShot(retDecelValue, this, SLOT(slotTimeout()));
+    qDebug("Deceleration will commence for %f seconds", retDecelTimeValue/millisecondConversion);
+    QTimer::singleShot(retDecelTimeValue, this, SLOT(slotTimeout()));
 
 }
 
 void PerturbationTabWidget::slotTimeout()
 {
+    sendSetpoints->sendSetpoints(SendSetpoints::ZERO, SendSetpoints::NormalSetpoint);
     std::cout << "Trial Ended" << std::endl;
-
 }
 
 
