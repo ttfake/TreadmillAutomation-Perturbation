@@ -15,6 +15,7 @@
 #include <QPushButton>
 #include <iostream>
 #include <QAbstractSocket>
+#include <cmath>
 
 #include "SendSetpoints.h"
 

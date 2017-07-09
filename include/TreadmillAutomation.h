@@ -83,64 +83,7 @@ class TreadmillAutomation : public QMainWindow
         QGridLayout* centralGridLayout;
 
 
-        //populateTreadmillPerturbationTab
-                
-        QLabel* speedRightFrontLabel;
-        QFont speedRightFrontLabelFont;
-        QDoubleSpinBox* rightFrontSpeedSetpoint;
-        QFont rightFrontSpeedSetpointFont;
-        
-        QGroupBox* rearSpeedGroupBox;
-        QHBoxLayout* rearSpeedHorizontalLayout;
-        
-        QLabel* speedLeftRearLabel;
-        QFont speedLeftRearLabelFont;
-        QDoubleSpinBox* leftRearSpeedSetpoint;
-        QFont leftRearSpeedSetpointFont;
-        
-        QDoubleSpinBox* rightRearSpeedSetpoint;
-        QLabel* speedRightRearLabel;
-        QFont speedRightRearLabelFont;
-        QFont rightRearSpeedSetpointFont;
-
-        
-        QFont accelerationLabelFont;
-        QLabel* accelerationLabel;
-        QFont accelerationSpinBoxFont;
-        QDoubleSpinBox* acceleration;
-        QLabel* decelerationLabel;
-        QFont decelerationLabelFont;
-        QFont decelerationSpinBoxFont;
-        QDoubleSpinBox* deceleration;
-        QLabel* accelerationDurationLabel;
-        QPlainTextEdit* accelerationDuration;
-        QLabel* decelerationDurationLabel;
-        QPlainTextEdit* decelerationDuration;
-
-        QGroupBox* quadrantTwoGroupBox;
-        QGroupBox* recordGroupBox;
-
-        QGroupBox* timeGroupBox;
-        QHBoxLayout* timeGroupBoxLayout;
-        QLabel* timeAccelLabel;
-        QFont timeAccelLabelFont;
-        QTimer accelTimer;
-        QDoubleSpinBox* timeAccelSpinBox;
-        QLabel* accelTimeDurationLabel;
-        QFont accelTimeDurationFont;
-        QDoubleSpinBox* accelTimeDurationSpinBox;
-
-        QFont timeAccelSpinBoxFont;
-        QLabel* timeDecelLabel;
-        QFont timeDecelLabelFont;
-        QDoubleSpinBox* timeDecelSpinBox;
-        QTimer decelTimer;
-        QFont timeDecelSpinBoxFont;
-
-        QGroupBox* startPertRunGroupBox;
-        QHBoxLayout* startPertRunGroupBoxLayout;
-        QPushButton* startPertRun;
-        
+            
         double getAccelerationValue();
         double getAccelerationTimeValue();
         double getDecelerationValue();

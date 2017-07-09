@@ -364,10 +364,10 @@ void PerturbationTabWidget::startMaxSpeedRun()
 void PerturbationTabWidget::startMaxSpeedDecel()
 {
     std::cout << "Acceleration Run has ended" << std::endl;
-    maxDecelRunTime = getMaxLeftSpeed() / abs(getDecelerationValue());
-    setRightFrontSpeedValue(abs(getDecelerationValue()) * (maxDecelRunTime) + \
+    maxDecelRunTime = getMaxLeftSpeed() / std::abs(getDecelerationValue());
+    setRightFrontSpeedValue(std::abs(getDecelerationValue()) * (maxDecelRunTime) + \
             getRightFrontSpeedValue());
-    setLeftFrontSpeedValue(abs(getDecelerationValue()) * (maxDecelRunTime) + \
+    setLeftFrontSpeedValue(std::abs(getDecelerationValue()) * (maxDecelRunTime) + \
             getLeftFrontSpeedValue());
     qDebug("Deceleration will commence for %f seconds", maxDecelRunTime);
     sendSetpoints->sendSetpoints(SendSetpoints::TreadmillProperty::DECEL, SendSetpoints::NormalSetpoint);
@@ -526,9 +526,9 @@ void PerturbationTabWidget::startDecelTimer()
 {
 
     double retDecelTimeValue = getDecelerationTimeValue();
-    setRightFrontSpeedValue(abs(getDecelerationValue()) * (retDecelTimeValue / millisecondConversion) + \
+    setRightFrontSpeedValue(std::abs(getDecelerationValue()) * (retDecelTimeValue / millisecondConversion) + \
             getRightFrontSpeedValue());
-    setLeftFrontSpeedValue(abs(getDecelerationValue()) * (retDecelTimeValue / millisecondConversion) + \
+    setLeftFrontSpeedValue(std::abs(getDecelerationValue()) * (retDecelTimeValue / millisecondConversion) + \
             getLeftFrontSpeedValue());
     qDebug("Sending Setpoints...");
     sendSetpoints->sendSetpoints(SendSetpoints::TreadmillProperty::DECEL, SendSetpoints::NormalSetpoint);
