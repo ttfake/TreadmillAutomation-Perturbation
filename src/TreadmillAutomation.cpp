@@ -45,33 +45,10 @@ void TreadmillAutomation::createFileMenu()
     timerViewAct->setText("Show Timer");
     connect(timerViewAct, SIGNAL(changed()), SLOT(showTimer()));
     
-    maxSpeedViewAct = new QAction();
-    maxSpeedViewAct->setCheckable(true);
-    menuView->addAction(maxSpeedViewAct);
-    maxSpeedViewAct->setText("Show Max Speed Settings");
-    connect(maxSpeedViewAct, SIGNAL(changed()), SLOT(showMaxSpeedBox()));
-
     menuBar->addMenu(menuView);
     centralWidgetLayout->setMenuBar(menuBar);
 }
 
-void TreadmillAutomation::showMaxSpeedBox()
-{
-    bool checked = false;
-    if(maxSpeedViewAct->isChecked())
-    {
-        checked = true;
-        perturbationTabWidget->showMaxSpeedBox(checked);
-        sendSetpointObject->setUseMaxSpeed(checked);
-    }
-    else
-    {
-        checked = false;
-        perturbationTabWidget->showMaxSpeedBox(checked);
-        sendSetpointObject->setUseMaxSpeed(checked);
-    }
-
-}
 
 void TreadmillAutomation::showTimer()
 {

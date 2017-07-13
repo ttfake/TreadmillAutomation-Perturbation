@@ -58,7 +58,6 @@ class TreadmillAutomation : public QMainWindow
 
     private slots:
 
-        void showMaxSpeedBox();
         void showTimer();
 
     private:

@@ -36,12 +36,13 @@ class PerturbationTabWidget : public QWidget
         void setUseLibraryStatus(bool useLibCheckBox);
         bool useLibraryCheckBoxStatus;
         void setSocket(QAbstractSocket* socket);
+        void addDecelerationSpeedGroupBox();
+        double calculateSpeed();
 
     
         
     public slots:
         void showTimer(bool state);
-        void showMaxSpeedBox(bool state);
 
     private slots:
         void setLeftFrontSpeedValue(double mleftFrontSpeedValue);
@@ -53,12 +54,6 @@ class PerturbationTabWidget : public QWidget
         void startAccelTimer();
         void startDecelTimer();
         void slotTimeout();
-        void startMaxSpeedRun();
-        void startMaxSpeedDecel();
-        void setMaxLeftSpeed(double mMaxLeftSpeed);
-        void setMaxRightSpeed(double mMaxRightSpeed);
-        void maxSpeedTimeout();
-
 
     private:
 
@@ -82,12 +77,7 @@ class PerturbationTabWidget : public QWidget
         void addQuadrantTwo();
         void addQuadrantThree();
         void addQuadrantFour();
-        void addMaxSpeedGroupBox();
-        void addStartMaxSpeedRunGroupBox();
-        double getMaxLeftSpeed();
-        double getMaxRightSpeed();
-
-
+        
         
         //populateTreadmillPerturbationTab
         QCheckBox* lftRghtTie;
@@ -119,16 +109,6 @@ class PerturbationTabWidget : public QWidget
         QDoubleSpinBox* maxRightSpeedSpinBox;
         QFont maxRightSpeedSpinBoxFont;
 
-        QGroupBox* startMaxSpeedRunGroupBox;
-        QHBoxLayout* startMaxSpeedRunGroupBoxLayout;
-        QPushButton* startMaxSpeedRunBtn;
-        QFont startMaxSpeedRunBtnFont;
-
-        double maxLeftSpeed;
-        double maxRightSpeed;
-        double maxRunTime;
-        double maxDecelRunTime;
-        
         QLabel* speedRightFrontLabel;
         QFont speedRightFrontLabelFont;
         QDoubleSpinBox* rightFrontSpeedSetpoint;
@@ -147,6 +127,18 @@ class PerturbationTabWidget : public QWidget
         QPlainTextEdit* accelerationDuration;
         QLabel* decelerationDurationLabel;
         QPlainTextEdit* decelerationDuration;
+
+        QGroupBox* decelSpeedGroupBox;
+        QHBoxLayout* decelSpeedGroupBoxHorizontalLayout;
+        QLabel* decelSpeedLeftLabel;
+        QLabel* decelSpeedRightLabel;
+        QFont decelSpeedLeftLabelFont;
+        QFont decelSpeedRightLabelFont;
+        QFont leftDecelSpeedSetpointFont;
+        QFont rightDecelSpeedSetpointFont;
+        QDoubleSpinBox* leftDecelSpeedSetpoint;
+        QDoubleSpinBox* rightDecelSpeedSetpoint;
+
 
         QGroupBox* quadrantTwoGroupBox;
         QGroupBox* recordGroupBox;
