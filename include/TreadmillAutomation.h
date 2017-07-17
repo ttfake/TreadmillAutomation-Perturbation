@@ -25,9 +25,11 @@
 #include <QTimeEdit>
 #include <QTimer>
 #include <QMap>
+#include <QThread>
 #include <QSignalMapper>
 
 #include "include/NetworkTabWidget.h"
+#include "MccDaqInterface.h"
 #include "include/PerturbationTabWidget.h"
 #include "include/SendSetpoints.h"
 
@@ -47,6 +49,7 @@ class TreadmillAutomation : public QMainWindow
         void populateTreadmillPerturbationTab();
         void error(int);
         NetworkTabWidget* networkTabWidget;
+        MccDaqInterface* mccDaqInterface;
         PerturbationTabWidget* perturbationTabWidget;
         SendSetpoints* sendSetpointObject;
         bool useLibraryCheckBox;
@@ -55,11 +58,11 @@ class TreadmillAutomation : public QMainWindow
 
         void setUseLibraryStatus();
         void setSocket();
+        void showDaqDataBox();
 
     private slots:
-
         void showTimer();
-
+        void errorString(QString s);
     private:
         QWidget* centralWidget;
         QVBoxLayout* centralWidgetLayout;
@@ -75,11 +78,15 @@ class TreadmillAutomation : public QMainWindow
         QMenu* menuView;
         QAction *exitAct;
         QAction* timerViewAct;
-        QAction* maxSpeedViewAct;
+        QAction* daqViewAct;
         
         //createTabWidget
         QTabWidget* centralTabWidget;
         QGridLayout* centralGridLayout;
+
+
+        QThread* daqThread;
+        QSignalMapper* daqSignalMapper;
 
 
             
@@ -98,8 +105,13 @@ class TreadmillAutomation : public QMainWindow
         void setRightRearSpeedValueFromIncoming(qint16 rightRearSpeedValue);
         void setAccelerationValueFromIncoming(qint16 accelerationValue);
         void setDecelerationValueFromIncoming(qint16 decelerationValue);
-        template<typename T, typename U> void addWidgetToLayout(T* widget, U* layout);
-                
+        template<typename T, typename U> void addWidgetToLayout(T* widget, U* layout)
+        {
+            layout->addWidget(widget);
+
+        };
+
+      
         
         double accelerationTimeValue;
         double decelerationTimeValue;

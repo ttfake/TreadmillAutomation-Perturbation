@@ -57,12 +57,16 @@ void PerturbationTabWidget::addQuadrantOne()
 void PerturbationTabWidget::addQuadrantTwo()
 {
     quadrantTwoGroupBox = new QGroupBox;
+    quadrantTwoPerturbationLayout = new QVBoxLayout;
+    quadrantTwoGroupBox->setLayout(quadrantTwoPerturbationLayout);
     perturbationTabLayout->addWidget(quadrantTwoGroupBox, 0,1);
 }
 
 void PerturbationTabWidget::addQuadrantThree()
 {
     quadrantThreeGroupBox = new QGroupBox;
+    quadrantThreePerturbationLayout = new QVBoxLayout;
+    quadrantThreeGroupBox->setLayout(quadrantThreePerturbationLayout);
     perturbationTabLayout->addWidget(quadrantThreeGroupBox, 1,0);
 
 }
@@ -70,7 +74,10 @@ void PerturbationTabWidget::addQuadrantThree()
 void PerturbationTabWidget::addQuadrantFour()
 {
     quadrantFourGroupBox = new QGroupBox;
+    quadrantFourPerturbationLayout = new QVBoxLayout;
+    quadrantFourGroupBox->setLayout(quadrantFourPerturbationLayout);
     perturbationTabLayout->addWidget(quadrantFourGroupBox, 1,1);
+    addDaqDataGroupBox();
 
 }
 
@@ -451,5 +458,49 @@ double PerturbationTabWidget::calculateSpeed()
 {
     return (getAccelerationValue() * getAccelerationTimeValue()/millisecondConversion); 
 }
+
+void PerturbationTabWidget::addDaqDataGroupBox()
+{
+
+    daqDataGroupBox = new QGroupBox;
+    daqDataGroupBox->setSizePolicy(QSizePolicy::Minimum, QSizePolicy::Fixed);
+    daqDataGroupBoxVerticalLayout = new QVBoxLayout;
+    daqDataGroupBox->setLayout(daqDataGroupBoxVerticalLayout);
+    daqDataLabel = new QLabel;
+    daqDataLabel->setSizePolicy(QSizePolicy::Minimum, QSizePolicy::Fixed);
+    daqDataLabel->setFixedSize(220,100);
+    daqDataLabelFont.setFamily("Times");
+    daqDataLabelFont.setWeight(75);
+    daqDataLabelFont.setPointSize(12);
+    daqDataLabel->setFont(daqDataLabelFont);
+    daqDataLabel->setText("Forceplate Data: ");
+    daqDataGroupBoxVerticalLayout->addWidget(daqDataLabel);
+    daqDataPlainTextEditBox = new QPlainTextEdit;
+    daqDataPlainTextEditBoxFont.setFamily("Times");
+    daqDataPlainTextEditBoxFont.setWeight(75);
+    daqDataPlainTextEditBoxFont.setPointSize(12);
+    daqDataPlainTextEditBox->setFont(daqDataPlainTextEditBoxFont);
+    daqDataPlainTextEditBox->setReadOnly(true);
+    daqDataGroupBoxVerticalLayout->addWidget(daqDataPlainTextEditBox);
+    quadrantFourPerturbationLayout->addWidget(daqDataGroupBox);
+    
+    daqDataGroupBox->hide();
+
+}
+
+void PerturbationTabWidget::showDaqDataBox(bool checked)
+{
+    if(checked)
+    {
+        daqDataGroupBox->show();
+    }
+    else
+    {
+        daqDataGroupBox->hide();
+    }
+}
+
+
+
 
 #include "../include/moc_PerturbationTabWidget.cpp"

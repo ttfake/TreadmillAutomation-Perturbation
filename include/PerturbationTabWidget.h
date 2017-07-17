@@ -1,6 +1,9 @@
 #ifndef PERTURBATIONTABWIDGET_H
 #define PERTURBATIONTABWIDGET_H
 
+#include <windows.h>
+#include <iostream>
+#include <iomanip>
 #include <QWidget>
 #include <QGridLayout>
 #include <QCheckBox>
@@ -13,15 +16,18 @@
 #include <QPlainTextEdit>
 #include <QTimer>
 #include <QPushButton>
-#include <iostream>
+
 #include <QAbstractSocket>
 #include <cmath>
-
+#include <QGraphicsScene>
 #include "SendSetpoints.h"
 
 class PerturbationTabWidget : public QWidget
 {
     Q_OBJECT
+
+        
+
  
     public:
         static PerturbationTabWidget* getInstance();
@@ -38,9 +44,14 @@ class PerturbationTabWidget : public QWidget
         void setSocket(QAbstractSocket* socket);
         void addDecelerationSpeedGroupBox();
         double calculateSpeed();
+        void addDaqDataGroupBox();
+        void showDaqDataBox(bool checked);
+        template<typename T> void updateDaqDataBox(T data)
+        {
+            QString dataString = QString::number(data, 'e', 12);
+            daqDataPlainTextEditBox->appendPlainText(dataString);
+        }
 
-    
-        
     public slots:
         void showTimer(bool state);
 
@@ -87,6 +98,8 @@ class PerturbationTabWidget : public QWidget
         QVBoxLayout* quadrantOneGroupBoxLayout;
         QVBoxLayout* quadrantOnePerturbationLayout;
         QVBoxLayout* quadrantTwoPerturbationLayout;
+        QVBoxLayout* quadrantThreePerturbationLayout;
+        QVBoxLayout* quadrantFourPerturbationLayout;
         QGroupBox* accelDecelGroupBox;
         QHBoxLayout* accelerationDecelerationHorizontalLayout;
         
@@ -180,6 +193,14 @@ class PerturbationTabWidget : public QWidget
         double rightSpeedFrontValue;
         double rightSpeedRearValue;
 
+        QGroupBox* daqDataGroupBox;
+        QVBoxLayout* daqDataGroupBoxVerticalLayout;
+        QLabel* daqDataLabel;
+        QFont daqDataLabelFont;
+        QPlainTextEdit* daqDataPlainTextEditBox;
+        QFont daqDataPlainTextEditBoxFont;
+
+       
 
 };
 #endif

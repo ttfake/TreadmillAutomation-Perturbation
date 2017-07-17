@@ -7,6 +7,7 @@ TreadmillAutomation::TreadmillAutomation(QWidget *parent, Qt::WindowFlags flags)
     setCentralWidget(centralWidget);
     centralWidgetLayout = new QVBoxLayout;
     centralWidget->setLayout(centralWidgetLayout);
+
     perturbationTabWidget = PerturbationTabWidget::getInstance();
     sendSetpointObject = SendSetpoints::getInstance();
     createFileMenu();
@@ -15,7 +16,7 @@ TreadmillAutomation::TreadmillAutomation(QWidget *parent, Qt::WindowFlags flags)
     centralTabWidget->addTab(networkTabWidget, "Network");
     connect(networkTabWidget->connectBtn, SIGNAL(clicked()), SLOT(setUseLibraryStatus()));
     connect(networkTabWidget->connectBtn, SIGNAL(clicked()), SLOT(setSocket()));
-
+    
     centralTabWidget->addTab(perturbationTabWidget, "Perturbation");
 }
 
@@ -44,7 +45,15 @@ void TreadmillAutomation::createFileMenu()
     menuView->addAction(timerViewAct);
     timerViewAct->setText("Show Timer");
     connect(timerViewAct, SIGNAL(changed()), SLOT(showTimer()));
-    
+
+    daqViewAct = new QAction();
+    daqViewAct->setCheckable(true);
+    menuView->addAction(daqViewAct);
+    daqViewAct->setText("Show DAQ Data View");
+    connect(daqViewAct, SIGNAL(changed()), SLOT(showDaqDataBox()));
+    mccDaqInterface = MccDaqInterface::getInstance();
+    connect(daqViewAct, SIGNAL(changed()), mccDaqInterface, SLOT(beginDataCollection()));
+
     menuBar->addMenu(menuView);
     centralWidgetLayout->setMenuBar(menuBar);
 }
@@ -64,6 +73,22 @@ void TreadmillAutomation::showTimer()
         perturbationTabWidget->showTimer(checked);
     }
 }
+
+void TreadmillAutomation::showDaqDataBox()
+{
+    bool checked = false;
+    if(daqViewAct->isChecked())
+    {
+        checked = true;
+        perturbationTabWidget->showDaqDataBox(checked);
+    }
+    else
+    {
+        checked = false;
+        perturbationTabWidget->showDaqDataBox(checked);
+    }
+}
+
 
 void TreadmillAutomation::createTabWidget()
 {
@@ -91,11 +116,11 @@ void TreadmillAutomation::setUseLibraryStatus()
     pertWidget->setUseLibraryStatus(useLibraryCheckBox);
 }
 
-template<typename T, typename U> void TreadmillAutomation::addWidgetToLayout(T* widget, U* layout)
+void TreadmillAutomation::errorString(QString s)
 {
-    layout->addWidget(widget);
+    qDebug() << s;
+}
 
-};
 
 static void showWarning(QWidget * mparent, const QString & mtitle, const QString & mtext)
 {
