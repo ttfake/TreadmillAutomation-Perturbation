@@ -5,6 +5,7 @@
 #include <conio.h>
 #include <QObject>
 #include <QThread>
+#include <vector>
 #include "cbw.h"
 #include "PerturbationTabWidget.h"
 
@@ -18,10 +19,15 @@ class MccDaqInterface : public QObject
 
     public slots:
         void beginDataCollection();
+    
+    signals:
+        void updatePertPlainTextBox();
+
     private:
 
         MccDaqInterface();
         ~MccDaqInterface();
+        void updateDaqDataBox();
         static MccDaqInterface* _mccDaqInterfaceInstance;
 
         static const int numChans = 4;
@@ -41,6 +47,7 @@ class MccDaqInterface : public QObject
         int PortNum, Direction, CounterNum;
         WORD *ADData;
         float RevLevel = (float)CURRENTREVNUM;
+        std::vector<double> dataVector;
 
         PerturbationTabWidget* pertTabWidget;
 };

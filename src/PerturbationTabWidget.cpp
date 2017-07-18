@@ -500,7 +500,4 @@ void PerturbationTabWidget::showDaqDataBox(bool checked)
     }
 }
 
-
-
-
 #include "../include/moc_PerturbationTabWidget.cpp"

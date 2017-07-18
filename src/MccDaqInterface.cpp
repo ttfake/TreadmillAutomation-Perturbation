@@ -5,6 +5,7 @@ MccDaqInterface* MccDaqInterface::_mccDaqInterfaceInstance = 0;
 MccDaqInterface::MccDaqInterface()
 {
     pertTabWidget = PerturbationTabWidget::getInstance();
+    connect(this, SIGNAL(updatePertPlainTextBox()), SLOT(updateDaqDataBox()));
 }
 
 MccDaqInterface::~MccDaqInterface()
@@ -24,15 +25,16 @@ MccDaqInterface* MccDaqInterface::getInstance()
 
 void MccDaqInterface::beginDataCollection()
 {
-    qDebug("beggining data collection");
+    qDebug("beginning data collection");
 
     ULStat = cbDeclareRevision(&RevLevel);
 
-    ADData = static_cast<WORD*>(cbWinBufAlloc(5 * 5));
+    qDebug("%d", ULStat);
+
+    ADData = static_cast<WORD*>(cbWinBufAlloc(numPoints * numChans));
     if (!ADData)    /* Make sure it is a valid pointer */
     {
         std::cout << "\nout of memory\n" << std::endl;
-        exit(1);
     }
 
     /* Initiate error handling
@@ -122,12 +124,16 @@ void MccDaqInterface::beginDataCollection()
             {
                 printf ("Channel 0   Data point: %3ld   ", DataIndex);
                 printf ("  Value: %d  \n",ADData[DataIndex]);
+                dataVector.push_back(ADData[DataIndex]);
                 DataIndex++;
                 printf ("FIRSTPORTA  Data point: %3ld   ", DataIndex);
                 printf ("  Value: %d  \n",ADData[DataIndex]);
+                dataVector.push_back(ADData[DataIndex]);
                 DataIndex++;
                 printf ("Counter 0   Data point: %3ld   ", DataIndex);
                 printf ("  Value: %u  ",ADData[DataIndex] + (ADData[DataIndex+1]<<16));   // 32-bit counter
+                dataVector.push_back(ADData[DataIndex] + (ADData[DataIndex+1]<<16));
+                emit(updatePertPlainTextBox());
 
 
             }
@@ -142,5 +148,13 @@ void MccDaqInterface::beginDataCollection()
 
     cbWinBufFree(ADData);
 
+}
+
+void MccDaqInterface::updateDaqDataBox()
+{
+    for(const auto& dataElement : dataVector)
+    {
+        pertTabWidget->updateDaqDataBox(dataElement);
+    }
 }
 #include "../include/moc_MccDaqInterface.cpp"

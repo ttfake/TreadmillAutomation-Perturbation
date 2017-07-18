@@ -121,6 +121,13 @@ void TreadmillAutomation::errorString(QString s)
     qDebug() << s;
 }
 
+void TreadmillAutomation::startDataCollectionThread()
+{
+    daqThread = new QThread;
+
+
+}
+
 
 static void showWarning(QWidget * mparent, const QString & mtitle, const QString & mtext)
 {

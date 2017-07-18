@@ -59,10 +59,12 @@ class TreadmillAutomation : public QMainWindow
         void setUseLibraryStatus();
         void setSocket();
         void showDaqDataBox();
+        void startDataCollectionThread();
 
     private slots:
         void showTimer();
         void errorString(QString s);
+    
     private:
         QWidget* centralWidget;
         QVBoxLayout* centralWidgetLayout;
@@ -84,11 +86,8 @@ class TreadmillAutomation : public QMainWindow
         QTabWidget* centralTabWidget;
         QGridLayout* centralGridLayout;
 
-
         QThread* daqThread;
         QSignalMapper* daqSignalMapper;
-
-
             
         double getAccelerationValue();
         double getAccelerationTimeValue();

@@ -26,9 +26,6 @@ class PerturbationTabWidget : public QWidget
 {
     Q_OBJECT
 
-        
-
- 
     public:
         static PerturbationTabWidget* getInstance();
         double getLeftFrontSpeedValue();
