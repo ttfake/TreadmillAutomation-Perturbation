@@ -19,15 +19,16 @@ class MccDaqInterface : public QObject
 
     public slots:
         void beginDataCollection();
-    
+        void updateDaqDataBox();
     signals:
         void updatePertPlainTextBox();
+        void finished();
 
     private:
 
         MccDaqInterface();
         ~MccDaqInterface();
-        void updateDaqDataBox();
+
         static MccDaqInterface* _mccDaqInterfaceInstance;
 
         static const int numChans = 4;
