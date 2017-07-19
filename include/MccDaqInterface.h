@@ -49,7 +49,9 @@ class MccDaqInterface : public QObject
         WORD *ADData;
         float RevLevel = (float)CURRENTREVNUM;
         std::vector<double> dataVector;
-
+        QString forcePlateDataString;
+        QFile* forcePlateDataFile;
+        QTextStream* stream;
         PerturbationTabWidget* pertTabWidget;
 };
 #endif

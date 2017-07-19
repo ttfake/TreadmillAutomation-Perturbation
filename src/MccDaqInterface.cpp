@@ -27,6 +27,15 @@ void MccDaqInterface::beginDataCollection()
 {
     qDebug("beginning data collection");
 
+    forcePlateDataString = "forcePlateData.csv";
+
+    forcePlateDataFile = new QFile(forcePlateDataString);
+    
+    if ( forcePlateDataFile->open(QIODevice::ReadWrite) )
+    {
+        stream = new QTextStream(forcePlateDataFile);
+    }
+
     ULStat = cbDeclareRevision(&RevLevel);
 
     qDebug("%d", ULStat);
@@ -125,14 +134,22 @@ void MccDaqInterface::beginDataCollection()
                 printf ("Channel 0   Data point: %3ld   ", DataIndex);
                 printf ("  Value: %d  \n",ADData[DataIndex]);
                 dataVector.push_back(ADData[DataIndex]);
+                QString dataPoint1String(QString::number(ADData[DataIndex],'e',12));
+                stream->setString(&dataPoint1String,QIODevice::ReadWrite);
                 DataIndex++;
                 printf ("FIRSTPORTA  Data point: %3ld   ", DataIndex);
                 printf ("  Value: %d  \n",ADData[DataIndex]);
                 dataVector.push_back(ADData[DataIndex]);
+                QString dataPoint2String(QString::number(ADData[DataIndex],'e',12));
+                stream->setString(&dataPoint2String,QIODevice::ReadWrite);
                 DataIndex++;
                 printf ("Counter 0   Data point: %3ld   ", DataIndex);
                 printf ("  Value: %u  ",ADData[DataIndex] + (ADData[DataIndex+1]<<16));   // 32-bit counter
                 dataVector.push_back(ADData[DataIndex] + (ADData[DataIndex+1]<<16));
+                QString dataPoint3String(QString::number((ADData[DataIndex] + \
+                                ADData[DataIndex+1]<<16),'e',12));
+                stream->setString(&dataPoint3String,QIODevice::ReadWrite);
+
                 emit(updatePertPlainTextBox());
 
 

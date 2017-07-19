@@ -19,7 +19,7 @@
 
 #include <QAbstractSocket>
 #include <cmath>
-#include <QGraphicsScene>
+
 #include "SendSetpoints.h"
 
 class PerturbationTabWidget : public QWidget
