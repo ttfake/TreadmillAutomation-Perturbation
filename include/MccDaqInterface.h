@@ -5,6 +5,7 @@
 #include <conio.h>
 #include <QObject>
 #include <QThread>
+#include <QTime>
 #include <vector>
 #include "cbw.h"
 #include "PerturbationTabWidget.h"
@@ -19,9 +20,7 @@ class MccDaqInterface : public QObject
 
     public slots:
         void beginDataCollection();
-        void updateDaqDataBox();
     signals:
-        void updatePertPlainTextBox();
         void finished();
 
     private:

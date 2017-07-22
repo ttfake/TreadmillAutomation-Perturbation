@@ -16,11 +16,12 @@
 #include <QPlainTextEdit>
 #include <QTimer>
 #include <QPushButton>
-
 #include <QAbstractSocket>
+#include <QComboBox>
 #include <cmath>
 
 #include "SendSetpoints.h"
+#include "MccDaqConnectButtonWidget.h"
 
 class PerturbationTabWidget : public QWidget
 {
@@ -62,7 +63,7 @@ class PerturbationTabWidget : public QWidget
         void startAccelTimer();
         void startDecelTimer();
         void slotTimeout();
-
+        void setColor();
     private:
 
         PerturbationTabWidget(QWidget* parent = 0, Qt::WindowFlags flags = 0);
@@ -197,7 +198,25 @@ class PerturbationTabWidget : public QWidget
         QPlainTextEdit* daqDataPlainTextEditBox;
         QFont daqDataPlainTextEditBoxFont;
 
-       
+        //addDaqControlGroupBox
+        void addDaqControlGroupBox();
+        QGroupBox* daqControlGroupBox;
+        QVBoxLayout* daqControlGroupBoxLayout;
+        QGroupBox* numberOfChannelsGroupBox;
+        QHBoxLayout* numberOfChannelsGroupBoxLayout;
+        MccDaqConnectButtonWidget* mccDaqConnectButtonWidget;
+        QFont mccDaqConnectButtonFont;
+        QLabel* numberOfChannelsLabel;
+        QFont numberOfChannelsLabelFont;
+        QComboBox* numberOfChannelsComboBox
+        QFont numberOfChannelsComboBoxFont;
+        void addChannelGrid();
+        bool clicked;
 
+        //addChannelGrid
+        QGroupBox* channelGridGroupBox;
+        QHBoxLayout* channelGridGroupBoxLayout;
+        struct ChannelGrid;
+        std::vector<ChannelGrid*> channelGridVector;
 };
 #endif

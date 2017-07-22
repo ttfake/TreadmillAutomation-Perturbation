@@ -5,7 +5,6 @@ MccDaqInterface* MccDaqInterface::_mccDaqInterfaceInstance = 0;
 MccDaqInterface::MccDaqInterface()
 {
     pertTabWidget = PerturbationTabWidget::getInstance();
-    connect(this, SIGNAL(updatePertPlainTextBox()), SLOT(updateDaqDataBox()));
 }
 
 MccDaqInterface::~MccDaqInterface()
@@ -30,12 +29,7 @@ void MccDaqInterface::beginDataCollection()
     forcePlateDataString = "forcePlateData.csv";
 
     forcePlateDataFile = new QFile(forcePlateDataString);
-    
-    if ( forcePlateDataFile->open(QIODevice::ReadWrite) )
-    {
-        stream = new QTextStream(forcePlateDataFile);
-    }
-
+   
     ULStat = cbDeclareRevision(&RevLevel);
 
     qDebug("%d", ULStat);
@@ -45,7 +39,7 @@ void MccDaqInterface::beginDataCollection()
     {
         std::cout << "\nout of memory\n" << std::endl;
     }
-
+    
     /* Initiate error handling
        Parameters:
        PRINTALL :all warnings and errors encountered will be printed
@@ -59,7 +53,7 @@ void MccDaqInterface::beginDataCollection()
 
 
 	/* load the arrays with values */
-    ChanArray[0] = 0;
+    ChanArray[0] = 3;
 	ChanTypeArray[0] = ANALOG;
     GainArray[0] = BIP10VOLTS;
 
@@ -108,7 +102,8 @@ void MccDaqInterface::beginDataCollection()
 	Rate = 1000;								             /* sampling rate (samples per second) */
 	Options = CONVERTDATA + BACKGROUND + CONTINUOUS;         /* data collection options */
 
-	ULStat = cbDaqInScan(BoardNum, ChanArray, ChanTypeArray, GainArray, ChanCount, &Rate, &PreTrigCount, &TotalCount, ADData, Options);
+	ULStat = cbDaqInScan(BoardNum, ChanArray, ChanTypeArray, GainArray, \
+            ChanCount, &Rate, &PreTrigCount, &TotalCount, ADData, Options);
 
 	if(ULStat == NOERRORS)
 		Status = RUNNING;
@@ -131,28 +126,32 @@ void MccDaqInterface::beginDataCollection()
             DataIndex = CurIndex -  CurIndex % numChans - numChans;
             if(DataIndex>0)
             {
+                if (!forcePlateDataFile->open(QIODevice::ReadWrite | QIODevice::Text | QIODevice::Append))
+                    return;
+
+                QTextStream forcePlateDataStream(forcePlateDataFile);
+
+
                 printf ("Channel 0   Data point: %3ld   ", DataIndex);
                 printf ("  Value: %d  \n",ADData[DataIndex]);
-                dataVector.push_back(ADData[DataIndex]);
+                pertTabWidget->updateDaqDataBox(ADData[DataIndex]);
                 QString dataPoint1String(QString::number(ADData[DataIndex],'e',12));
-                stream->setString(&dataPoint1String,QIODevice::ReadWrite);
+                forcePlateDataStream << QTime::currentTime().toString() << ",";
+                forcePlateDataStream << dataPoint1String << ",";
                 DataIndex++;
                 printf ("FIRSTPORTA  Data point: %3ld   ", DataIndex);
                 printf ("  Value: %d  \n",ADData[DataIndex]);
-                dataVector.push_back(ADData[DataIndex]);
+                pertTabWidget->updateDaqDataBox(ADData[DataIndex]);
                 QString dataPoint2String(QString::number(ADData[DataIndex],'e',12));
-                stream->setString(&dataPoint2String,QIODevice::ReadWrite);
+                forcePlateDataStream << dataPoint2String << ",";
                 DataIndex++;
                 printf ("Counter 0   Data point: %3ld   ", DataIndex);
                 printf ("  Value: %u  ",ADData[DataIndex] + (ADData[DataIndex+1]<<16));   // 32-bit counter
-                dataVector.push_back(ADData[DataIndex] + (ADData[DataIndex+1]<<16));
+                pertTabWidget->updateDaqDataBox(ADData[DataIndex] + (ADData[DataIndex+1]<<16));
                 QString dataPoint3String(QString::number((ADData[DataIndex] + \
                                 ADData[DataIndex+1]<<16),'e',12));
-                stream->setString(&dataPoint3String,QIODevice::ReadWrite);
-
-                emit(updatePertPlainTextBox());
-
-
+                forcePlateDataStream << dataPoint3String << '\n';
+                forcePlateDataFile->close(); 
             }
         }
     }
@@ -167,11 +166,4 @@ void MccDaqInterface::beginDataCollection()
 
 }
 
-void MccDaqInterface::updateDaqDataBox()
-{
-    for(const auto& dataElement : dataVector)
-    {
-        pertTabWidget->updateDaqDataBox(dataElement);
-    }
-}
 #include "../include/moc_MccDaqInterface.cpp"

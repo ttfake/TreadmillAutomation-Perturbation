@@ -8,6 +8,7 @@ PerturbationTabWidget::PerturbationTabWidget(QWidget* parent, Qt::WindowFlags fl
     sendSetpoints = SendSetpoints::getInstance();
     createTreadmillPerturbationTab();
     populateTreadmillPerturbationTab();
+    clicked = true;
 }
 
 PerturbationTabWidget::~PerturbationTabWidget()
@@ -24,6 +25,15 @@ PerturbationTabWidget* PerturbationTabWidget::getInstance()
 
     return _perturbationTabWidget;
 }
+
+struct PerturbationTabWidget::ChannelGrid
+{
+    QPlainTextEdit* channelNumber = new QPlainTextEdit;
+    QComboBox* portComboBox = new QComboBox;
+    QCheckBox* activeCheckBox = new QCheckBox;
+    QPlainTextEdit* channelLabelPlainTextBox = new QPlainTextEdit;
+
+};
 
 
 void PerturbationTabWidget::createTreadmillPerturbationTab()
@@ -60,6 +70,7 @@ void PerturbationTabWidget::addQuadrantTwo()
     quadrantTwoPerturbationLayout = new QVBoxLayout;
     quadrantTwoGroupBox->setLayout(quadrantTwoPerturbationLayout);
     perturbationTabLayout->addWidget(quadrantTwoGroupBox, 0,1);
+    addDaqControlGroupBox();
 }
 
 void PerturbationTabWidget::addQuadrantThree()
@@ -309,6 +320,57 @@ void PerturbationTabWidget::addStartPertRunGroupBox()
 
     connect(startPertRunBtn, SIGNAL(clicked()), SLOT(startAccelTimer()));
 }
+
+void PerturbationTabWidget::addDaqControlGroupBox()
+{
+
+    daqControlGroupBox = new QGroupBox;
+    daqControlGroupBox->setSizePolicy(QSizePolicy::Minimum, QSizePolicy::Fixed);
+    daqControlGroupBoxLayout = new QVBoxLayout;
+    mccDaqConnectButtonWidget = new MccDaqConnectButtonWidget();
+    mccDaqConnectButtonWidget->setSizePolicy(QSizePolicy::Minimum, QSizePolicy::Fixed);
+    mccDaqConnectButtonWidget->setFixedSize(150,40);
+    mccDaqConnectButtonFont.setFamily("Times");
+    mccDaqConnectButtonFont.setWeight(80);
+    mccDaqConnectButtonFont.setPointSize(12);
+    mccDaqConnectButtonFont.setBold(true);
+    mccDaqConnectButtonWidget->setFont(mccDaqConnectButtonFont);
+    mccDaqConnectButtonWidget->setText("DAQ");
+    daqControlGroupBox->setLayout(daqControlGroupBoxLayout);
+    connect(mccDaqConnectButtonWidget, SIGNAL(clicked()), SLOT(setColor()));
+    daqControlGroupBoxLayout->addWidget(mccDaqConnectButtonWidget);
+    numberOfChannelsComboBox = new QComboBox;
+    numberOfChannelsLabel = new QLabel;
+    numberOfChannelsLabelFont.setFamily("Times");
+    numberOfChannelsLabelFont.setWeight("80");
+    numberOfChannelsLabelFont.setPointSize(12);
+    numberOfChannelsLabelFont.setBolt(true);
+    numberOfChannelsLabel->setFont(numberOfChannelsLabelFont);
+    numberOfChannelsLabel->setText("No. of Channels: ");
+    numberOfChannelsComboBoxFont;
+
+
+    quadrantTwoPerturbationLayout->addWidget(daqControlGroupBox);
+
+
+}
+
+
+void PerturbationTabWidget::setColor()
+{
+    if(clicked)
+    {
+        mccDaqConnectButtonWidget->changeDaqConnectLight(Qt::green);
+        clicked = false;
+    }
+    else
+    {
+        mccDaqConnectButtonWidget->changeDaqConnectLight(Qt::red);
+        clicked = true;
+    }
+
+}
+
 
 
 void PerturbationTabWidget::showTimer(bool state)
