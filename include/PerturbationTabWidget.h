@@ -227,6 +227,7 @@ class PerturbationTabWidget : public QWidget
         QGroupBox* channelsHeadingGroupBox;
         QFont channelsHeadingGroupBoxFont;
         QHBoxLayout* channelsHeadingGroupBoxLayout;
+        QFont daqControlScrollGroupBoxFont;
         QLabel* channelNumberLabel;
         QLabel* channelPortLabel;
         QLabel* channelActiveLabel;
