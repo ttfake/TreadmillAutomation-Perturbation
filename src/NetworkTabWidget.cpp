@@ -84,6 +84,11 @@ void NetworkTabWidget::populateNetworkTab()
 
 
     networkGroupBox = new QGroupBox;
+    networkGroupBoxFont.setFamily("Times");
+    networkGroupBoxFont.setWeight(80);
+    networkGroupBoxFont.setPointSize(12);
+    networkGroupBoxFont.setBold(true);
+    networkGroupBox->setFont(networkGroupBoxFont);
     networkGroupBox->setSizePolicy(QSizePolicy::Minimum, QSizePolicy::Fixed);
     verticalNetworkGroupBoxLayout = new QVBoxLayout;
     networkGroupBox->setLayout(verticalNetworkGroupBoxLayout);

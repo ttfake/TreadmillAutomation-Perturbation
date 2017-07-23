@@ -28,7 +28,9 @@ PerturbationTabWidget* PerturbationTabWidget::getInstance()
 
 struct PerturbationTabWidget::ChannelGrid
 {
-    QPlainTextEdit* channelNumber = new QPlainTextEdit;
+    QGroupBox* channelRowGroupBox = new QGroupBox;
+    QHBoxLayout* channelRowGroupBoxHorizonalLayout = new QHBoxLayout;
+    QPlainTextEdit* channelNumberPlainTextBox = new QPlainTextEdit;
     QComboBox* portComboBox = new QComboBox;
     QCheckBox* activeCheckBox = new QCheckBox;
     QPlainTextEdit* channelLabelPlainTextBox = new QPlainTextEdit;
@@ -339,20 +341,71 @@ void PerturbationTabWidget::addDaqControlGroupBox()
     daqControlGroupBox->setLayout(daqControlGroupBoxLayout);
     connect(mccDaqConnectButtonWidget, SIGNAL(clicked()), SLOT(setColor()));
     daqControlGroupBoxLayout->addWidget(mccDaqConnectButtonWidget);
-    numberOfChannelsComboBox = new QComboBox;
+    
+    
+    numberOfChannelsGroupBox = new QGroupBox;
+    numberOfChannelsGroupBoxFont.setFamily("Times");
+    numberOfChannelsGroupBoxFont.setWeight(80);
+    numberOfChannelsGroupBoxFont.setPointSize(12);
+    numberOfChannelsGroupBoxFont.setBold(true);
+    numberOfChannelsGroupBox->setFont(numberOfChannelsGroupBoxFont);
+    numberOfChannelsGroupBoxLayout = new QHBoxLayout;
+    daqControlGroupBoxLayout->addWidget(numberOfChannelsGroupBox);
+    numberOfChannelsGroupBox->setLayout(numberOfChannelsGroupBoxLayout);
     numberOfChannelsLabel = new QLabel;
-    numberOfChannelsLabelFont.setFamily("Times");
-    numberOfChannelsLabelFont.setWeight("80");
-    numberOfChannelsLabelFont.setPointSize(12);
-    numberOfChannelsLabelFont.setBolt(true);
-    numberOfChannelsLabel->setFont(numberOfChannelsLabelFont);
+    numberOfChannelsLabel->setSizePolicy(QSizePolicy::Minimum, QSizePolicy::Fixed);
+    numberOfChannelsLabel->setFixedSize(150,40);
     numberOfChannelsLabel->setText("No. of Channels: ");
-    numberOfChannelsComboBoxFont;
+    numberOfChannelsGroupBoxLayout->addWidget(numberOfChannelsLabel);
+    numberOfChannelsSpinBox = new QSpinBox;
+    numberOfChannelsSpinBox->setSizePolicy(QSizePolicy::Minimum, QSizePolicy::Fixed);
+    numberOfChannelsSpinBox->setFixedSize(150,40);
+    numberOfChannelsSpinBox->setAlignment(Qt::AlignCenter);
+    numberOfChannelsSpinBox->setRange(0,64);
+    numberOfChannelsGroupBoxLayout->addWidget(numberOfChannelsSpinBox);
+    setNumChannels = new QPushButton;
+    setNumChannels->setText("Set No. of Channels");
+    setNumChannels->setSizePolicy(QSizePolicy::Minimum, QSizePolicy::Fixed);
+    setNumChannels->setFixedSize(180,40);
+    numberOfChannelsGroupBoxLayout->addWidget(setNumChannels);
+
+    connect(setNumChannels, SIGNAL(clicked()), SLOT(addChannels()));
+
+    channelsHeadingGroupBox = new QGroupBox;
+    daqControlGroupBoxLayout->addWidget(channelsHeadingGroupBox);
+    channelsHeadingGroupBoxLayout = new QHBoxLayout;
+    channelsHeadingGroupBox->setLayout(channelsHeadingGroupBoxLayout);
+    channelsHeadingGroupBoxFont.setFamily("Times");
+    channelsHeadingGroupBoxFont.setWeight(80);
+    channelsHeadingGroupBoxFont.setPointSize(12);
+    channelsHeadingGroupBoxFont.setBold(true);
+    channelsHeadingGroupBox->setFont(channelsHeadingGroupBoxFont);
+    channelNumberLabel = new QLabel;
+    channelNumberLabel->setSizePolicy(QSizePolicy::Minimum, QSizePolicy::Fixed);
+    channelNumberLabel->setText("Channel Number");
+    channelPortLabel = new QLabel;
+    channelPortLabel->setSizePolicy(QSizePolicy::Minimum, QSizePolicy::Fixed);
+    channelPortLabel->setText("Port");
+    channelActiveLabel = new QLabel;
+    channelActiveLabel->setSizePolicy(QSizePolicy::Minimum, QSizePolicy::Fixed);
+    channelActiveLabel->setText("Active");
+    channelLabelLabel = new QLabel;
+    channelLabelLabel->setSizePolicy(QSizePolicy::Minimum, QSizePolicy::Fixed);
+    channelLabelLabel->setText("Channel Name");
+    channelsHeadingGroupBoxLayout->addWidget(channelNumberLabel);
+    channelsHeadingGroupBoxLayout->addWidget(channelPortLabel);
+    channelsHeadingGroupBoxLayout->addWidget(channelActiveLabel);
+    channelsHeadingGroupBoxLayout->addWidget(channelLabelLabel);
+
+    daqControlGroupBoxScrollArea = new QScrollArea;
+    daqControlGroupBoxLayout->addWidget(daqControlGroupBoxScrollArea);
+    daqControlScrollGroupBox = new QGroupBox;
+    daqControlScrollGroupBoxVerticalLayout = new QVBoxLayout;
+    daqControlScrollGroupBox->setLayout(daqControlScrollGroupBoxVerticalLayout);
+    daqControlGroupBoxScrollArea->setWidget(daqControlScrollGroupBox);
 
 
     quadrantTwoPerturbationLayout->addWidget(daqControlGroupBox);
-
-
 }
 
 
@@ -371,6 +424,17 @@ void PerturbationTabWidget::setColor()
 
 }
 
+void PerturbationTabWidget::addChannels()
+{
+    for(int i = 0; i < numberOfChannelsSpinBox->value(); i++)
+    {
+        channelGridVector.append(new ChannelGrid);
+        ChannelGrid* tempChannelGrid = channelGridVector.last();
+        tempChannelGrid->channelRowGroupBox->setLayout(tempChannelGrid->channelRowGroupBoxHorizonalLayout);
+        qDebug("Attempting to add channel");
+        daqControlScrollGroupBoxVerticalLayout->addWidget(tempChannelGrid->channelRowGroupBox);
+    }
+}
 
 
 void PerturbationTabWidget::showTimer(bool state)

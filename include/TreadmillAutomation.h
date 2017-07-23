@@ -110,7 +110,6 @@ class TreadmillAutomation : public QMainWindow
 
         };
 
-      
         
         double accelerationTimeValue;
         double decelerationTimeValue;

@@ -87,6 +87,7 @@ class NetworkTabWidget : public QWidget
         
         //populateNetworkTab
         QGroupBox *networkGroupBox;
+        QFont networkGroupBoxFont;
         QVBoxLayout* verticalNetworkGroupBoxLayout;
         QHBoxLayout* horizontalNetworkGroupBoxLayout; 
         QPushButton* disconnectBtn;

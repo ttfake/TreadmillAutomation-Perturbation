@@ -18,6 +18,8 @@
 #include <QPushButton>
 #include <QAbstractSocket>
 #include <QComboBox>
+#include <QVector>
+#include <QScrollArea>
 #include <cmath>
 
 #include "SendSetpoints.h"
@@ -64,6 +66,7 @@ class PerturbationTabWidget : public QWidget
         void startDecelTimer();
         void slotTimeout();
         void setColor();
+        void addChannels();
     private:
 
         PerturbationTabWidget(QWidget* parent = 0, Qt::WindowFlags flags = 0);
@@ -93,6 +96,7 @@ class PerturbationTabWidget : public QWidget
         QGroupBox* quadrantOneGroupBox;
         QGroupBox* quadrantThreeGroupBox;
         QGroupBox* quadrantFourGroupBox;
+
         QVBoxLayout* quadrantOneGroupBoxLayout;
         QVBoxLayout* quadrantOnePerturbationLayout;
         QVBoxLayout* quadrantTwoPerturbationLayout;
@@ -193,6 +197,7 @@ class PerturbationTabWidget : public QWidget
 
         QGroupBox* daqDataGroupBox;
         QVBoxLayout* daqDataGroupBoxVerticalLayout;
+
         QLabel* daqDataLabel;
         QFont daqDataLabelFont;
         QPlainTextEdit* daqDataPlainTextEditBox;
@@ -201,22 +206,32 @@ class PerturbationTabWidget : public QWidget
         //addDaqControlGroupBox
         void addDaqControlGroupBox();
         QGroupBox* daqControlGroupBox;
-        QVBoxLayout* daqControlGroupBoxLayout;
+        QVBoxLayout* daqControlGroupBoxLayout; 
+        QScrollArea* daqControlGroupBoxScrollArea;
+        QGroupBox* daqControlScrollGroupBox;
+        QVBoxLayout* daqControlScrollGroupBoxVerticalLayout;
         QGroupBox* numberOfChannelsGroupBox;
+        QFont numberOfChannelsGroupBoxFont;
         QHBoxLayout* numberOfChannelsGroupBoxLayout;
         MccDaqConnectButtonWidget* mccDaqConnectButtonWidget;
         QFont mccDaqConnectButtonFont;
         QLabel* numberOfChannelsLabel;
-        QFont numberOfChannelsLabelFont;
-        QComboBox* numberOfChannelsComboBox
-        QFont numberOfChannelsComboBoxFont;
+        QSpinBox* numberOfChannelsSpinBox;
+        QPushButton* setNumChannels;
         void addChannelGrid();
         bool clicked;
 
         //addChannelGrid
         QGroupBox* channelGridGroupBox;
         QHBoxLayout* channelGridGroupBoxLayout;
+        QGroupBox* channelsHeadingGroupBox;
+        QFont channelsHeadingGroupBoxFont;
+        QHBoxLayout* channelsHeadingGroupBoxLayout;
+        QLabel* channelNumberLabel;
+        QLabel* channelPortLabel;
+        QLabel* channelActiveLabel;
+        QLabel* channelLabelLabel;
         struct ChannelGrid;
-        std::vector<ChannelGrid*> channelGridVector;
+        QVector<ChannelGrid*> channelGridVector;
 };
 #endif
