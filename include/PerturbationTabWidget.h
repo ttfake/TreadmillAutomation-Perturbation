@@ -20,10 +20,12 @@
 #include <QComboBox>
 #include <QVector>
 #include <QScrollArea>
+#include <QTableView>
 #include <cmath>
 
 #include "SendSetpoints.h"
 #include "MccDaqConnectButtonWidget.h"
+#include "include/ChannelModel.h"
 
 class PerturbationTabWidget : public QWidget
 {
@@ -218,6 +220,8 @@ class PerturbationTabWidget : public QWidget
         QLabel* numberOfChannelsLabel;
         QSpinBox* numberOfChannelsSpinBox;
         QPushButton* setNumChannels;
+        QTableView* channelTableView;
+        ChannelModel* channelModel;
         void addChannelGrid();
         bool clicked;
 

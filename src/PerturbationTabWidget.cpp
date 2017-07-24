@@ -397,21 +397,22 @@ void PerturbationTabWidget::addDaqControlGroupBox()
     channelsHeadingGroupBoxLayout->addWidget(channelActiveLabel);
     channelsHeadingGroupBoxLayout->addWidget(channelLabelLabel);
 
-    daqControlGroupBoxScrollArea = new QScrollArea;
-    daqControlGroupBoxScrollArea->setWidgetResizable(true);
-    daqControlGroupBoxScrollArea->adjustSize();
-    daqControlGroupBoxLayout->addWidget(daqControlGroupBoxScrollArea);
-    daqControlScrollGroupBox = new QGroupBox;
-    daqControlScrollGroupBox->adjustSize();
-    daqControlScrollGroupBoxFont.setFamily("Times");
-    daqControlScrollGroupBoxFont.setWeight(80);
-    daqControlScrollGroupBoxFont.setPointSize(12);
-    daqControlScrollGroupBoxFont.setBold(true);
-    daqControlScrollGroupBox->setFont(daqControlScrollGroupBoxFont);
-    daqControlScrollGroupBoxVerticalLayout = new QVBoxLayout;
-    daqControlScrollGroupBox->adjustSize();
-    daqControlScrollGroupBox->setLayout(daqControlScrollGroupBoxVerticalLayout);
-    daqControlGroupBoxScrollArea->setWidget(daqControlScrollGroupBox);
+    //    daqControlGroupBoxScrollArea = new QScrollArea;
+//    daqControlGroupBoxScrollArea->setWidgetResizable(true);
+//    daqControlGroupBoxScrollArea->adjustSize();
+//    daqControlGroupBoxLayout->addWidget(daqControlGroupBoxScrollArea);
+//    daqControlScrollGroupBox = new QGroupBox;
+//    daqControlScrollGroupBox = new QTableView;
+//    daqControlScrollGroupBox->adjustSize();
+//    daqControlScrollGroupBoxFont.setFamily("Times");
+//    daqControlScrollGroupBoxFont.setWeight(80);
+//    daqControlScrollGroupBoxFont.setPointSize(12);
+//    daqControlScrollGroupBoxFont.setBold(true);
+//    daqControlScrollGroupBox->setFont(daqControlScrollGroupBoxFont);
+//    daqControlScrollGroupBoxVerticalLayout = new QVBoxLayout;
+//    daqControlScrollGroupBox->adjustSize();
+//    daqControlScrollGroupBox->setLayout(daqControlScrollGroupBoxVerticalLayout);
+//    daqControlGroupBoxScrollArea->setWidget(daqControlScrollGroupBox);
 
     quadrantTwoPerturbationLayout->addWidget(daqControlGroupBox);
 }
@@ -434,13 +435,20 @@ void PerturbationTabWidget::setColor()
 
 void PerturbationTabWidget::addChannels()
 {
+
+    channelModel = new ChannelModel(0);
+    channelModel->setRowCount(numberOfChannelsSpinBox->value());
+    channelTableView = new QTableView;
+    daqControlGroupBoxLayout->addWidget(channelTableView);
+    channelTableView->setModel(channelModel);
+
     if(!channelGridVector.empty())
     {
         channelGridVector.clear();
     }
     for(int i = 0; i < numberOfChannelsSpinBox->value(); i++)
     {
-        channelGridVector.append(new ChannelGrid);
+/*        channelGridVector.append(new ChannelGrid);
         ChannelGrid* tempChannelGrid = channelGridVector.last();
         tempChannelGrid->channelRowGroupBox->setLayout(tempChannelGrid->channelRowGroupBoxHorizontalLayout);
         tempChannelGrid->channelRowGroupBox->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding);
@@ -460,6 +468,7 @@ void PerturbationTabWidget::addChannels()
         tempChannelGrid->channelRowGroupBoxHorizontalLayout->addWidget(tempChannelGrid->activeCheckBox);
 
         daqControlScrollGroupBoxVerticalLayout->addWidget(tempChannelGrid->channelRowGroupBox);
+        */
     }
 }
 
