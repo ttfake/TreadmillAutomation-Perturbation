@@ -327,21 +327,37 @@ void PerturbationTabWidget::addDaqControlGroupBox()
 {
 
     daqControlGroupBox = new QGroupBox;
+    daqControlGroupBoxFont.setFamily("Times");
+    daqControlGroupBoxFont.setWeight(80);
+    daqControlGroupBoxFont.setPointSize(12);
+    daqControlGroupBoxFont.setBold(true);
     daqControlGroupBox->adjustSize();
+    daqControlGroupBox->setFont(daqControlGroupBoxFont);
     daqControlGroupBoxLayout = new QVBoxLayout;
+    daqPushButtonBox = new QGroupBox;
+    daqControlGroupBoxLayout->addWidget(daqPushButtonBox);
+    daqPushButtonBoxLayout = new QHBoxLayout;
+    daqPushButtonBox->setLayout(daqPushButtonBoxLayout);
+    scanForDaqDev = new QPushButton;
+    scanForDaqDev->setFixedSize(200,40);
+    scanForDaqDev->setText("Scan For DAQ Devices");
+    daqDevMenu = new QMenu;
+    daqDevMenu->addAction(tr("Device"));
+    scanForDaqDev->setMenu(daqDevMenu);
+    daqPushButtonBoxLayout->addWidget(scanForDaqDev);
     mccDaqConnectButtonWidget = new MccDaqConnectButtonWidget();
     mccDaqConnectButtonWidget->setSizePolicy(QSizePolicy::Minimum, QSizePolicy::Fixed);
-    mccDaqConnectButtonWidget->setFixedSize(150,40);
+    mccDaqConnectButtonWidget->setFixedSize(180,40);
     mccDaqConnectButtonFont.setFamily("Times");
     mccDaqConnectButtonFont.setWeight(80);
     mccDaqConnectButtonFont.setPointSize(12);
     mccDaqConnectButtonFont.setBold(true);
     mccDaqConnectButtonWidget->setFont(mccDaqConnectButtonFont);
-    mccDaqConnectButtonWidget->setText("DAQ");
+    mccDaqConnectButtonWidget->setText("DAQ Connect");
+    daqPushButtonBoxLayout->addWidget(mccDaqConnectButtonWidget);
     daqControlGroupBox->setLayout(daqControlGroupBoxLayout);
     connect(mccDaqConnectButtonWidget, SIGNAL(clicked()), SLOT(setColor()));
-    daqControlGroupBoxLayout->addWidget(mccDaqConnectButtonWidget);
-    
+    daqControlGroupBoxLayout->addWidget(daqPushButtonBox);
     
     numberOfChannelsGroupBox = new QGroupBox;
     numberOfChannelsGroupBoxFont.setFamily("Times");
@@ -370,49 +386,12 @@ void PerturbationTabWidget::addDaqControlGroupBox()
     numberOfChannelsGroupBoxLayout->addWidget(setNumChannels);
 
     connect(setNumChannels, SIGNAL(clicked()), SLOT(addChannels()));
-
-    channelsHeadingGroupBox = new QGroupBox;
-    daqControlGroupBoxLayout->addWidget(channelsHeadingGroupBox);
-    channelsHeadingGroupBoxLayout = new QHBoxLayout;
-    channelsHeadingGroupBox->setLayout(channelsHeadingGroupBoxLayout);
-    channelsHeadingGroupBoxFont.setFamily("Times");
-    channelsHeadingGroupBoxFont.setWeight(80);
-    channelsHeadingGroupBoxFont.setPointSize(12);
-    channelsHeadingGroupBoxFont.setBold(true);
-    channelsHeadingGroupBox->setFont(channelsHeadingGroupBoxFont);
-    channelNumberLabel = new QLabel;
-    channelNumberLabel->setSizePolicy(QSizePolicy::Minimum, QSizePolicy::Fixed);
-    channelNumberLabel->setText("Channel");
-    channelPortLabel = new QLabel;
-    channelPortLabel->setSizePolicy(QSizePolicy::Minimum, QSizePolicy::Fixed);
-    channelPortLabel->setText("Port");
-    channelActiveLabel = new QLabel;
-    channelActiveLabel->setSizePolicy(QSizePolicy::Minimum, QSizePolicy::Fixed);
-    channelActiveLabel->setText("Active");
-    channelLabelLabel = new QLabel;
-    channelLabelLabel->setSizePolicy(QSizePolicy::Minimum, QSizePolicy::Fixed);
-    channelLabelLabel->setText("Type");
-    channelsHeadingGroupBoxLayout->addWidget(channelNumberLabel);
-    channelsHeadingGroupBoxLayout->addWidget(channelPortLabel);
-    channelsHeadingGroupBoxLayout->addWidget(channelActiveLabel);
-    channelsHeadingGroupBoxLayout->addWidget(channelLabelLabel);
-
-    //    daqControlGroupBoxScrollArea = new QScrollArea;
-//    daqControlGroupBoxScrollArea->setWidgetResizable(true);
-//    daqControlGroupBoxScrollArea->adjustSize();
-//    daqControlGroupBoxLayout->addWidget(daqControlGroupBoxScrollArea);
-//    daqControlScrollGroupBox = new QGroupBox;
-//    daqControlScrollGroupBox = new QTableView;
-//    daqControlScrollGroupBox->adjustSize();
-//    daqControlScrollGroupBoxFont.setFamily("Times");
-//    daqControlScrollGroupBoxFont.setWeight(80);
-//    daqControlScrollGroupBoxFont.setPointSize(12);
-//    daqControlScrollGroupBoxFont.setBold(true);
-//    daqControlScrollGroupBox->setFont(daqControlScrollGroupBoxFont);
-//    daqControlScrollGroupBoxVerticalLayout = new QVBoxLayout;
-//    daqControlScrollGroupBox->adjustSize();
-//    daqControlScrollGroupBox->setLayout(daqControlScrollGroupBoxVerticalLayout);
-//    daqControlGroupBoxScrollArea->setWidget(daqControlScrollGroupBox);
+    
+    channelTableWidget = new QTableWidget;
+    channelTableWidget->setColumnCount(4);
+    daqControlGroupBoxLayout->addWidget(channelTableWidget);
+    channelHeaderStringList << "Channel" << "Label" << "Active" << "Port";
+    channelTableWidget->setHorizontalHeaderLabels(channelHeaderStringList);
 
     quadrantTwoPerturbationLayout->addWidget(daqControlGroupBox);
 }
@@ -435,40 +414,32 @@ void PerturbationTabWidget::setColor()
 
 void PerturbationTabWidget::addChannels()
 {
+    channelTableWidget->setRowCount(numberOfChannelsSpinBox->value());
 
-    channelModel = new ChannelModel(0);
-    channelModel->setRowCount(numberOfChannelsSpinBox->value());
-    channelTableView = new QTableView;
-    daqControlGroupBoxLayout->addWidget(channelTableView);
-    channelTableView->setModel(channelModel);
-
+    
     if(!channelGridVector.empty())
     {
         channelGridVector.clear();
     }
     for(int i = 0; i < numberOfChannelsSpinBox->value(); i++)
     {
-/*        channelGridVector.append(new ChannelGrid);
-        ChannelGrid* tempChannelGrid = channelGridVector.last();
-        tempChannelGrid->channelRowGroupBox->setLayout(tempChannelGrid->channelRowGroupBoxHorizontalLayout);
-        tempChannelGrid->channelRowGroupBox->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding);
-        qDebug("Attempting to add channel");
-        QString intToString = QString::number(i);
-        tempChannelGrid->channelNumberPlainTextBox->appendPlainText(intToString);
-        tempChannelGrid->channelNumberPlainTextBox-> \
-            setSizePolicy(QSizePolicy::Minimum, QSizePolicy::Fixed);
-        tempChannelGrid->channelNumberPlainTextBox->setFixedSize(50,50);
-        tempChannelGrid->channelNumberPlainTextBox->setReadOnly(true);
-        tempChannelGrid->channelRowGroupBoxHorizontalLayout-> \
-            addWidget(tempChannelGrid->channelNumberPlainTextBox);
-        tempChannelGrid->portComboBox->setSizePolicy(QSizePolicy::Minimum, QSizePolicy::Fixed);
-        tempChannelGrid->portComboBox->setFixedSize(100,50);
-        tempChannelGrid->channelRowGroupBoxHorizontalLayout->addWidget(tempChannelGrid->portComboBox);
-
-        tempChannelGrid->channelRowGroupBoxHorizontalLayout->addWidget(tempChannelGrid->activeCheckBox);
-
-        daqControlScrollGroupBoxVerticalLayout->addWidget(tempChannelGrid->channelRowGroupBox);
-        */
+        QTableWidgetItem* channel = new QTableWidgetItem(tr("%1").arg(i));
+        channel->setTextAlignment(Qt::AlignCenter);
+        channelTableWidget->setItem(i, 0, channel);
+        QComboBox* portCombo = new QComboBox;
+        QStringList portList;
+        portList << "FIRSTPORTA" << "AUXPORT";
+        portCombo->addItems(portList);
+        channelTableWidget->setCellWidget(i, 3, static_cast<QWidget*>(portCombo));
+        QGroupBox* checkBoxGroupBox = new QGroupBox;
+        QHBoxLayout* checkBoxGroupBoxLayout = new QHBoxLayout;
+        checkBoxGroupBox->setLayout(checkBoxGroupBoxLayout);
+        checkBoxGroupBoxLayout->setAlignment(Qt::AlignCenter);
+        QCheckBox* activeCheck = new QCheckBox;
+        activeCheck->setSizePolicy(QSizePolicy::Minimum, QSizePolicy::Fixed);
+        activeCheck->setFixedSize(20,20);
+        checkBoxGroupBoxLayout->addWidget(activeCheck);
+        channelTableWidget->setCellWidget(i, 2, static_cast<QWidget*>(checkBoxGroupBox));
     }
 }
 
