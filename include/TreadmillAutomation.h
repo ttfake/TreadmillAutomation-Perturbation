@@ -29,7 +29,6 @@
 #include <QSignalMapper>
 
 #include "include/NetworkTabWidget.h"
-#include "MccDaqInterface.h"
 #include "include/PerturbationTabWidget.h"
 #include "include/SendSetpoints.h"
 
@@ -59,7 +58,6 @@ class TreadmillAutomation : public QMainWindow
         void setUseLibraryStatus();
         void setSocket();
         void showDaqDataBox();
-        void startDataCollectionThread();
 
     private slots:
         void showTimer();
@@ -86,7 +84,6 @@ class TreadmillAutomation : public QMainWindow
         QTabWidget* centralTabWidget;
         QGridLayout* centralGridLayout;
 
-        QThread* daqThread;
         QSignalMapper* daqSignalMapper;
             
         double getAccelerationValue();

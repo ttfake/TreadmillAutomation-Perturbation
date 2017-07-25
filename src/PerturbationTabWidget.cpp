@@ -9,6 +9,8 @@ PerturbationTabWidget::PerturbationTabWidget(QWidget* parent, Qt::WindowFlags fl
     createTreadmillPerturbationTab();
     populateTreadmillPerturbationTab();
     clicked = true;
+    pmccDaqInterface = MccDaqInterface::getInstance();
+
 }
 
 PerturbationTabWidget::~PerturbationTabWidget()
@@ -25,18 +27,6 @@ PerturbationTabWidget* PerturbationTabWidget::getInstance()
 
     return _perturbationTabWidget;
 }
-
-struct PerturbationTabWidget::ChannelGrid
-{
-    QGroupBox* channelRowGroupBox = new QGroupBox;
-    QHBoxLayout* channelRowGroupBoxHorizontalLayout = new QHBoxLayout;
-    QPlainTextEdit* channelNumberPlainTextBox = new QPlainTextEdit;
-    QComboBox* portComboBox = new QComboBox;
-    QCheckBox* activeCheckBox = new QCheckBox;
-    QPlainTextEdit* channelLabelPlainTextBox = new QPlainTextEdit;
-
-};
-
 
 void PerturbationTabWidget::createTreadmillPerturbationTab()
 {
@@ -338,13 +328,17 @@ void PerturbationTabWidget::addDaqControlGroupBox()
     daqControlGroupBoxLayout->addWidget(daqPushButtonBox);
     daqPushButtonBoxLayout = new QHBoxLayout;
     daqPushButtonBox->setLayout(daqPushButtonBoxLayout);
+    
     scanForDaqDev = new QPushButton;
     scanForDaqDev->setFixedSize(200,40);
-    scanForDaqDev->setText("Scan For DAQ Devices");
+    scanForDaqDev->setText("Discover DAQ Devices");
     daqDevMenu = new QMenu;
     daqDevMenu->addAction(tr("Device"));
     scanForDaqDev->setMenu(daqDevMenu);
+    connect(scanForDaqDev, SIGNAL(clicked()), SLOT(scanForDaqDevice()));
     daqPushButtonBoxLayout->addWidget(scanForDaqDev);
+    
+    
     mccDaqConnectButtonWidget = new MccDaqConnectButtonWidget();
     mccDaqConnectButtonWidget->setSizePolicy(QSizePolicy::Minimum, QSizePolicy::Fixed);
     mccDaqConnectButtonWidget->setFixedSize(180,40);
@@ -388,9 +382,9 @@ void PerturbationTabWidget::addDaqControlGroupBox()
     connect(setNumChannels, SIGNAL(clicked()), SLOT(addChannels()));
     
     channelTableWidget = new QTableWidget;
-    channelTableWidget->setColumnCount(4);
+    channelTableWidget->setColumnCount(5);
     daqControlGroupBoxLayout->addWidget(channelTableWidget);
-    channelHeaderStringList << "Channel" << "Label" << "Active" << "Port";
+    channelHeaderStringList << "Channel" << "Label" << "Active" << "Port" << "Type";
     channelTableWidget->setHorizontalHeaderLabels(channelHeaderStringList);
 
     quadrantTwoPerturbationLayout->addWidget(daqControlGroupBox);
@@ -417,10 +411,6 @@ void PerturbationTabWidget::addChannels()
     channelTableWidget->setRowCount(numberOfChannelsSpinBox->value());
 
     
-    if(!channelGridVector.empty())
-    {
-        channelGridVector.clear();
-    }
     for(int i = 0; i < numberOfChannelsSpinBox->value(); i++)
     {
         QTableWidgetItem* channel = new QTableWidgetItem(tr("%1").arg(i));
@@ -440,6 +430,12 @@ void PerturbationTabWidget::addChannels()
         activeCheck->setFixedSize(20,20);
         checkBoxGroupBoxLayout->addWidget(activeCheck);
         channelTableWidget->setCellWidget(i, 2, static_cast<QWidget*>(checkBoxGroupBox));
+        QComboBox* typeCombo = new QComboBox;
+        QStringList typeComboList;
+        typeComboList << "ANALOG" << "DIGITAL8" << "DIGITAL16";
+        typeCombo->addItems(typeComboList);
+        channelTableWidget->setCellWidget(i, 4, static_cast<QWidget*>(typeCombo));
+
     }
 }
 
@@ -632,5 +628,22 @@ void PerturbationTabWidget::showDaqDataBox(bool checked)
         daqDataGroupBox->hide();
     }
 }
+
+void PerturbationTabWidget::scanForDaqDevice()
+{
+
+}
+
+void PerturbationTabWidget::startDataCollectionThread()
+{
+    daqThread = new QThread;
+    pmccDaqInterface->moveToThread(daqThread);
+    connect(daqThread, SIGNAL(started()), pmccDaqInterface, SLOT(beginDataCollection()));
+    connect(pmccDaqInterface, SIGNAL(finished()), daqThread, SLOT(quit()));
+    connect(pmccDaqInterface, SIGNAL(finished()), daqThread, SLOT(deleteLater()));
+    connect(daqThread, SIGNAL(finished()), daqThread, SLOT(deleteLater()));
+    daqThread->start();
+}
+
 
 #include "../include/moc_PerturbationTabWidget.cpp"

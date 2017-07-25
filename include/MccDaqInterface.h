@@ -7,8 +7,11 @@
 #include <QThread>
 #include <QTime>
 #include <vector>
-#include "cbw.h"
-#include "PerturbationTabWidget.h"
+#include <QMenu>
+#include <QFile>
+#include <QTextStream>
+#include <QPlainTextEdit>
+#include "MccDaqDiscovery.h"
 
 class MccDaqInterface : public QObject
 {
@@ -25,6 +28,12 @@ class MccDaqInterface : public QObject
 
     private:
 
+        template<typename T> void updateDaqDataBox(T data)
+        {
+            QString dataString = QString::number(data, 'e', 12);
+            daqBox->appendPlainText(dataString);
+        }
+
         MccDaqInterface();
         ~MccDaqInterface();
 
@@ -32,6 +41,7 @@ class MccDaqInterface : public QObject
 
         static const int numChans = 4;
         static const int numPoints = 10000;
+        static const int MAXNUMDEVS = 100;
 
         int Row, Col;
         int  BoardNum = 0;
@@ -51,6 +61,9 @@ class MccDaqInterface : public QObject
         QString forcePlateDataString;
         QFile* forcePlateDataFile;
         QTextStream* stream;
-        PerturbationTabWidget* pertTabWidget;
+        MccDaqDiscovery* mccDaqDisc;
+        void setDaqDataBox(QPlainTextEdit* mdaqBox);
+        QPlainTextEdit* daqBox;
+        void startChannelScan(QMenu* mmenu);
 };
 #endif

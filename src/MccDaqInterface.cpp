@@ -4,7 +4,7 @@ MccDaqInterface* MccDaqInterface::_mccDaqInterfaceInstance = 0;
 
 MccDaqInterface::MccDaqInterface()
 {
-    pertTabWidget = PerturbationTabWidget::getInstance();
+    mccDaqDisc = new MccDaqDiscovery;
 }
 
 MccDaqInterface::~MccDaqInterface()
@@ -134,20 +134,20 @@ void MccDaqInterface::beginDataCollection()
 
                 printf ("Channel 0   Data point: %3ld   ", DataIndex);
                 printf ("  Value: %d  \n",ADData[DataIndex]);
-                pertTabWidget->updateDaqDataBox(ADData[DataIndex]);
+                updateDaqDataBox(ADData[DataIndex]);
                 QString dataPoint1String(QString::number(ADData[DataIndex],'e',12));
                 forcePlateDataStream << QTime::currentTime().toString() << ",";
                 forcePlateDataStream << dataPoint1String << ",";
                 DataIndex++;
                 printf ("FIRSTPORTA  Data point: %3ld   ", DataIndex);
                 printf ("  Value: %d  \n",ADData[DataIndex]);
-                pertTabWidget->updateDaqDataBox(ADData[DataIndex]);
+                updateDaqDataBox(ADData[DataIndex]);
                 QString dataPoint2String(QString::number(ADData[DataIndex],'e',12));
                 forcePlateDataStream << dataPoint2String << ",";
                 DataIndex++;
                 printf ("Counter 0   Data point: %3ld   ", DataIndex);
                 printf ("  Value: %u  ",ADData[DataIndex] + (ADData[DataIndex+1]<<16));   // 32-bit counter
-                pertTabWidget->updateDaqDataBox(ADData[DataIndex] + (ADData[DataIndex+1]<<16));
+                updateDaqDataBox(ADData[DataIndex] + (ADData[DataIndex+1]<<16));
                 QString dataPoint3String(QString::number((ADData[DataIndex] + \
                                 ADData[DataIndex+1]<<16),'e',12));
                 forcePlateDataStream << dataPoint3String << '\n';
@@ -163,6 +163,16 @@ void MccDaqInterface::beginDataCollection()
     ULStat = cbStopBackground (BoardNum,DAQIFUNCTION);
 
     cbWinBufFree(ADData);
+}
+
+void MccDaqInterface::setDaqDataBox(QPlainTextEdit* mdaqBox)
+{
+    daqBox = new QPlainTextEdit;
+    daqBox = mdaqBox;
+}
+
+void MccDaqInterface::startChannelScan(QMenu* mmenu)
+{
 
 }
 

@@ -51,7 +51,6 @@ void TreadmillAutomation::createFileMenu()
     menuView->addAction(daqViewAct);
     daqViewAct->setText("Show DAQ Data View");
     connect(daqViewAct, SIGNAL(changed()), SLOT(showDaqDataBox()));
-    connect(daqViewAct, SIGNAL(changed()), SLOT(startDataCollectionThread()));
     
     menuBar->addMenu(menuView);
     centralWidgetLayout->setMenuBar(menuBar);
@@ -120,17 +119,6 @@ void TreadmillAutomation::errorString(QString s)
     qDebug() << s;
 }
 
-void TreadmillAutomation::startDataCollectionThread()
-{
-    daqThread = new QThread;
-    mccDaqInterface = MccDaqInterface::getInstance();
-    mccDaqInterface->moveToThread(daqThread);
-    connect(daqThread, SIGNAL(started()), mccDaqInterface, SLOT(beginDataCollection()));
-    connect(mccDaqInterface, SIGNAL(finished()), daqThread, SLOT(quit()));
-    connect(mccDaqInterface, SIGNAL(finished()), daqThread, SLOT(deleteLater()));
-    connect(daqThread, SIGNAL(finished()), daqThread, SLOT(deleteLater()));
-    daqThread->start();
-}
 
 
 static void showWarning(QWidget * mparent, const QString & mtitle, const QString & mtext)

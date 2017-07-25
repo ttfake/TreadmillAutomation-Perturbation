@@ -23,10 +23,12 @@
 #include <QTableWidget>
 #include <QStringList>
 #include <QMenu>
+#include <QThread>
 #include <cmath>
 
 #include "SendSetpoints.h"
 #include "MccDaqConnectButtonWidget.h"
+#include "MccDaqInterface.h"
 
 class PerturbationTabWidget : public QWidget
 {
@@ -49,12 +51,6 @@ class PerturbationTabWidget : public QWidget
         double calculateSpeed();
         void addDaqDataGroupBox();
         void showDaqDataBox(bool checked);
-        template<typename T> void updateDaqDataBox(T data)
-        {
-            QString dataString = QString::number(data, 'e', 12);
-            daqDataPlainTextEditBox->appendPlainText(dataString);
-        }
-
     public slots:
         void showTimer(bool state);
 
@@ -70,6 +66,7 @@ class PerturbationTabWidget : public QWidget
         void slotTimeout();
         void setColor();
         void addChannels();
+        void scanForDaqDevice();
     private:
 
         PerturbationTabWidget(QWidget* parent = 0, Qt::WindowFlags flags = 0);
@@ -198,6 +195,7 @@ class PerturbationTabWidget : public QWidget
         double rightSpeedFrontValue;
         double rightSpeedRearValue;
 
+        QThread* daqThread;
         QGroupBox* daqDataGroupBox;
         QVBoxLayout* daqDataGroupBoxVerticalLayout;
 
@@ -210,6 +208,7 @@ class PerturbationTabWidget : public QWidget
         void addDaqControlGroupBox();
         QGroupBox* daqControlGroupBox;
         QVBoxLayout* daqControlGroupBoxLayout; 
+        
         QScrollArea* daqControlGroupBoxScrollArea;
         QGroupBox* daqControlScrollGroupBox;
         QVBoxLayout* daqControlScrollGroupBoxVerticalLayout;
@@ -231,6 +230,9 @@ class PerturbationTabWidget : public QWidget
         QPushButton* setNumChannels;
         QTableWidget* channelTableWidget;
         QStringList channelHeaderStringList;
+        MccDaqInterface* pmccDaqInterface;
+        void startDataCollectionThread();
+
         void addChannelGrid();
         bool clicked;
 
@@ -241,11 +243,5 @@ class PerturbationTabWidget : public QWidget
         QFont channelsHeadingGroupBoxFont;
         QHBoxLayout* channelsHeadingGroupBoxLayout;
         QFont daqControlScrollGroupBoxFont;
-        QLabel* channelNumberLabel;
-        QLabel* channelPortLabel;
-        QLabel* channelActiveLabel;
-        QLabel* channelLabelLabel;
-        struct ChannelGrid;
-        QVector<ChannelGrid*> channelGridVector;
 };
 #endif
