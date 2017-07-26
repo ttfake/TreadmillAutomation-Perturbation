@@ -2,10 +2,12 @@
 #define MCCDAQDISCOVERY_H
 
 #include <QMenu>
+#include <QPushButton>
+#include <QSignalMapper>
 #include <conio.h>
 #include "cbw.h"
 
-class MccDaqDiscovery : QObject
+class MccDaqDiscovery : public QObject
 {
     Q_OBJECT
 
@@ -13,6 +15,12 @@ class MccDaqDiscovery : QObject
         MccDaqDiscovery();
         ~MccDaqDiscovery();
         void discoverDaqDevices(QMenu* deviceMenu);
+        void setDaqSelectButton(QPushButton* mdaqButton);
+
+    public slots:
+        void selectDevice(QString devName);
+    signals:
+        void setText(QString devName);
 
     private:
         static const int MAXNUMDEVS = 100;
@@ -33,6 +41,6 @@ class MccDaqDiscovery : QObject
         int PortNum, Direction, CounterNum;
         WORD *ADData;
         float RevLevel = (float)CURRENTREVNUM;
-
+        QPushButton* discDaqButton;
 };
 #endif

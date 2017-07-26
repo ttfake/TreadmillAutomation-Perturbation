@@ -7,6 +7,7 @@
 #include <QThread>
 #include <QTime>
 #include <vector>
+#include <tuple>
 #include <QMenu>
 #include <QFile>
 #include <QTextStream>
@@ -19,12 +20,17 @@ class MccDaqInterface : public QObject
     
     public:
         static MccDaqInterface* getInstance();
-
-
+        void startChannelScan(QMenu* mmenu);
+        void setDaqButton(QPushButton* mdaqButton);
+        void dataCollectionSetup();
+        void setNumberOfChannels(int chs);
     public slots:
         void beginDataCollection();
+        void setDaqButtonText(QString daqTitleText);
+
     signals:
         void finished();
+        void setDaqTitleText(QString title);
 
     private:
 
@@ -39,7 +45,7 @@ class MccDaqInterface : public QObject
 
         static MccDaqInterface* _mccDaqInterfaceInstance;
 
-        static const int numChans = 4;
+        int numChans;
         static const int numPoints = 10000;
         static const int MAXNUMDEVS = 100;
 
@@ -47,9 +53,6 @@ class MccDaqInterface : public QObject
         int  BoardNum = 0;
         int Options;
         long PreTrigCount, TotalCount, Rate, ChanCount;
-        short ChanArray[numChans];
-        short ChanTypeArray[numChans];
-        short GainArray[numChans];
         int ULStat = 0;
         short Status = IDLE;
         long CurCount;
@@ -64,6 +67,7 @@ class MccDaqInterface : public QObject
         MccDaqDiscovery* mccDaqDisc;
         void setDaqDataBox(QPlainTextEdit* mdaqBox);
         QPlainTextEdit* daqBox;
-        void startChannelScan(QMenu* mmenu);
+        std::tuple<short*,short*,short*> channelConfig; 
+                
 };
 #endif

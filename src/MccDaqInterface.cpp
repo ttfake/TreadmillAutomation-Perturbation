@@ -5,6 +5,8 @@ MccDaqInterface* MccDaqInterface::_mccDaqInterfaceInstance = 0;
 MccDaqInterface::MccDaqInterface()
 {
     mccDaqDisc = new MccDaqDiscovery;
+    connect(mccDaqDisc, SIGNAL(setText(QString)), this, SLOT(setDaqButtonText(QString)));
+
 }
 
 MccDaqInterface::~MccDaqInterface()
@@ -24,6 +26,10 @@ MccDaqInterface* MccDaqInterface::getInstance()
 
 void MccDaqInterface::beginDataCollection()
 {
+    std::vector<short> ChanArray;
+    std::vector<short> ChanTypeArray;
+    std::vector<short> GainArray;
+
     qDebug("beginning data collection");
 
     forcePlateDataString = "forcePlateData.csv";
@@ -40,6 +46,7 @@ void MccDaqInterface::beginDataCollection()
         std::cout << "\nout of memory\n" << std::endl;
     }
     
+    
     /* Initiate error handling
        Parameters:
        PRINTALL :all warnings and errors encountered will be printed
@@ -53,21 +60,21 @@ void MccDaqInterface::beginDataCollection()
 
 
 	/* load the arrays with values */
-    ChanArray[0] = 3;
-	ChanTypeArray[0] = ANALOG;
-    GainArray[0] = BIP10VOLTS;
+    ChanArray.push_back(3);
+	ChanTypeArray.push_back(ANALOG);
+    GainArray.push_back(BIP10VOLTS);
 
-    ChanArray[1] = FIRSTPORTA;
-	ChanTypeArray[1] = DIGITAL16;
-    GainArray[1] = NOTUSED;
+    ChanArray.push_back(FIRSTPORTA);
+	ChanTypeArray.push_back(DIGITAL16);
+    GainArray.push_back(NOTUSED);
 
-	ChanArray[2] = 0;
-	ChanTypeArray[2] = CTR32LOW;
-    GainArray[2] = NOTUSED;
+	ChanArray.push_back(0);
+	ChanTypeArray.push_back(CTR32LOW);
+    GainArray.push_back(NOTUSED);
 
-	ChanArray[3] = 0;
-	ChanTypeArray[3] = CTR32HIGH;
-    GainArray[3] = NOTUSED;
+	ChanArray.push_back(0);
+	ChanTypeArray.push_back(CTR32HIGH);
+    GainArray.push_back(NOTUSED);
 
 	/* configure FIRSTPORTA and FIRSTPORTB for digital input */
 	
@@ -102,7 +109,8 @@ void MccDaqInterface::beginDataCollection()
 	Rate = 1000;								             /* sampling rate (samples per second) */
 	Options = CONVERTDATA + BACKGROUND + CONTINUOUS;         /* data collection options */
 
-	ULStat = cbDaqInScan(BoardNum, ChanArray, ChanTypeArray, GainArray, \
+	ULStat = cbDaqInScan(BoardNum, static_cast<short*>(&ChanArray[0]), \
+            static_cast<short*>(&ChanTypeArray[0]), static_cast<short*>(&GainArray[0]), \
             ChanCount, &Rate, &PreTrigCount, &TotalCount, ADData, Options);
 
 	if(ULStat == NOERRORS)
@@ -165,6 +173,11 @@ void MccDaqInterface::beginDataCollection()
     cbWinBufFree(ADData);
 }
 
+void MccDaqInterface::setDaqButtonText(QString daqTitleText)
+{
+    emit setDaqTitleText(daqTitleText);
+}
+
 void MccDaqInterface::setDaqDataBox(QPlainTextEdit* mdaqBox)
 {
     daqBox = new QPlainTextEdit;
@@ -173,7 +186,17 @@ void MccDaqInterface::setDaqDataBox(QPlainTextEdit* mdaqBox)
 
 void MccDaqInterface::startChannelScan(QMenu* mmenu)
 {
+    mccDaqDisc->discoverDaqDevices(mmenu);
+}
 
+void MccDaqInterface::dataCollectionSetup()
+{
+
+}
+
+void MccDaqInterface::setNumberOfChannels(int mchs)
+{
+    numChans = mchs;
 }
 
 #include "../include/moc_MccDaqInterface.cpp"

@@ -10,6 +10,7 @@ PerturbationTabWidget::PerturbationTabWidget(QWidget* parent, Qt::WindowFlags fl
     populateTreadmillPerturbationTab();
     clicked = true;
     pmccDaqInterface = MccDaqInterface::getInstance();
+    scanForDaqDevice();
 
 }
 
@@ -333,11 +334,10 @@ void PerturbationTabWidget::addDaqControlGroupBox()
     scanForDaqDev->setFixedSize(200,40);
     scanForDaqDev->setText("Discover DAQ Devices");
     daqDevMenu = new QMenu;
-    daqDevMenu->addAction(tr("Device"));
     scanForDaqDev->setMenu(daqDevMenu);
-    connect(scanForDaqDev, SIGNAL(clicked()), SLOT(scanForDaqDevice()));
     daqPushButtonBoxLayout->addWidget(scanForDaqDev);
-    
+    pmccDaqInterface = MccDaqInterface::getInstance();
+    connect(pmccDaqInterface, SIGNAL(setDaqTitleText(QString)), this, SLOT(setDaqText(QString)));
     
     mccDaqConnectButtonWidget = new MccDaqConnectButtonWidget();
     mccDaqConnectButtonWidget->setSizePolicy(QSizePolicy::Minimum, QSizePolicy::Fixed);
@@ -409,7 +409,7 @@ void PerturbationTabWidget::setColor()
 void PerturbationTabWidget::addChannels()
 {
     channelTableWidget->setRowCount(numberOfChannelsSpinBox->value());
-
+    pmccDaqInterface->setNumberOfChannels(numberOfChannelsSpinBox->value());
     
     for(int i = 0; i < numberOfChannelsSpinBox->value(); i++)
     {
@@ -631,7 +631,7 @@ void PerturbationTabWidget::showDaqDataBox(bool checked)
 
 void PerturbationTabWidget::scanForDaqDevice()
 {
-
+    pmccDaqInterface->startChannelScan(daqDevMenu);
 }
 
 void PerturbationTabWidget::startDataCollectionThread()
@@ -645,5 +645,14 @@ void PerturbationTabWidget::startDataCollectionThread()
     daqThread->start();
 }
 
+void PerturbationTabWidget::setDaqText(QString title)
+{
+    scanForDaqDev->setText(title);
+}
+
+void PerturbationTabWidget::setupDataCollection()
+{
+    pmccDaqInterface->dataCollectionSetup();
+}
 
 #include "../include/moc_PerturbationTabWidget.cpp"

@@ -25,7 +25,6 @@ void MccDaqDiscovery::discoverDaqDevices(QMenu* deviceMenu)
 	/* Declare UL Revision Level */
 	UDStat = cbDeclareRevision(&RevLevel);
 
-
     /* Initiate error handling
        Parameters:
            PRINTALL :all warnings and errors encountered will be printed
@@ -48,16 +47,18 @@ void MccDaqDiscovery::discoverDaqDevices(QMenu* deviceMenu)
 
 	if(numberOfDevices > 0)
 	{
-		printf ("Discovered %d DAQ device(s).\n", numberOfDevices);
 
 		for(BoardNum = 0; BoardNum < numberOfDevices; BoardNum++)
 		{
 			DeviceDescriptor = inventory[BoardNum];
 
-			printf ("\nDevice Name: %s\n", DeviceDescriptor.ProductName);
-            deviceMenu->addAction(DeviceDescriptor.ProductName);
-			printf ("Device Identifier: %s\n", DeviceDescriptor.UniqueID);
-			printf ("Assigned Board Number: %d\n\n", BoardNum);
+            QAction* tempAction = new QAction;
+            tempAction->setText(DeviceDescriptor.ProductName);
+            deviceMenu->addAction(tempAction);
+            QSignalMapper* tempSigMapper = new QSignalMapper;
+            tempSigMapper->setMapping(tempAction, QString(DeviceDescriptor.ProductName));
+            connect(tempAction, SIGNAL(triggered()), tempSigMapper, SLOT(map()));
+            connect(tempSigMapper, SIGNAL(mapped(QString)), SLOT(selectDevice(QString)));
 
 			/* Creates a device object within the Universal Library and 
 			   assign a board number to the specified DAQ device with cbCreateDaqDevice()
@@ -69,6 +70,11 @@ void MccDaqDiscovery::discoverDaqDevices(QMenu* deviceMenu)
 			UDStat = cbCreateDaqDevice(BoardNum, DeviceDescriptor);
 		}
     }
+}
+
+void MccDaqDiscovery::selectDevice(QString devName)
+{
+    emit setText(devName);
 }
 
 

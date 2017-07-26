@@ -67,6 +67,9 @@ class PerturbationTabWidget : public QWidget
         void setColor();
         void addChannels();
         void scanForDaqDevice();
+        void setDaqText(QString daqText);
+        void setupDataCollection();
+    
     private:
 
         PerturbationTabWidget(QWidget* parent = 0, Qt::WindowFlags flags = 0);
@@ -243,5 +246,7 @@ class PerturbationTabWidget : public QWidget
         QFont channelsHeadingGroupBoxFont;
         QHBoxLayout* channelsHeadingGroupBoxLayout;
         QFont daqControlScrollGroupBoxFont;
+
+
 };
 #endif
