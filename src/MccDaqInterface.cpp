@@ -26,9 +26,9 @@ MccDaqInterface* MccDaqInterface::getInstance()
 
 void MccDaqInterface::beginDataCollection()
 {
-    std::vector<short> ChanArray;
-    std::vector<short> ChanTypeArray;
-    std::vector<short> GainArray;
+    std::vector<short> ChanVector;
+    std::vector<short> ChanTypeVector;
+    std::vector<short> GainVector;
 
     qDebug("beginning data collection");
 
@@ -60,21 +60,29 @@ void MccDaqInterface::beginDataCollection()
 
 
 	/* load the arrays with values */
-    ChanArray.push_back(3);
-	ChanTypeArray.push_back(ANALOG);
-    GainArray.push_back(BIP10VOLTS);
+    ChanVector.push_back(0);
+	ChanTypeVector.push_back(ANALOG);
+    GainVector.push_back(BIP10VOLTS);
 
-    ChanArray.push_back(FIRSTPORTA);
-	ChanTypeArray.push_back(DIGITAL16);
-    GainArray.push_back(NOTUSED);
+    ChanVector.push_back(FIRSTPORTA);
+	ChanTypeVector.push_back(DIGITAL16);
+    GainVector.push_back(NOTUSED);
 
-	ChanArray.push_back(0);
-	ChanTypeArray.push_back(CTR32LOW);
-    GainArray.push_back(NOTUSED);
+	ChanVector.push_back(0);
+	ChanTypeVector.push_back(CTR32LOW);
+    GainVector.push_back(NOTUSED);
 
-	ChanArray.push_back(0);
-	ChanTypeArray.push_back(CTR32HIGH);
-    GainArray.push_back(NOTUSED);
+	ChanVector.push_back(0);
+	ChanTypeVector.push_back(CTR32HIGH);
+    GainVector.push_back(NOTUSED);
+
+    short ChanArray[ChanVector.size()];
+    std::copy(ChanVector.begin(), ChanVector.end(), ChanArray);
+    qDebug("%d", ChanArray[0]);
+    short ChanTypeArray[ChanTypeVector.size()];
+    std::copy(ChanTypeVector.begin(), ChanTypeVector.end(), ChanTypeArray);
+    short GainArray[GainVector.size()];
+    std::copy(GainVector.begin(), GainVector.end(), GainArray);
 
 	/* configure FIRSTPORTA and FIRSTPORTB for digital input */
 	
@@ -109,8 +117,8 @@ void MccDaqInterface::beginDataCollection()
 	Rate = 1000;								             /* sampling rate (samples per second) */
 	Options = CONVERTDATA + BACKGROUND + CONTINUOUS;         /* data collection options */
 
-	ULStat = cbDaqInScan(BoardNum, static_cast<short*>(&ChanArray[0]), \
-            static_cast<short*>(&ChanTypeArray[0]), static_cast<short*>(&GainArray[0]), \
+	ULStat = cbDaqInScan(BoardNum, ChanArray, \
+            ChanTypeArray, GainArray, \
             ChanCount, &Rate, &PreTrigCount, &TotalCount, ADData, Options);
 
 	if(ULStat == NOERRORS)

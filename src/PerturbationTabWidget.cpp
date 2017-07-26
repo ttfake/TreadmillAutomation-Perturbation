@@ -351,6 +351,7 @@ void PerturbationTabWidget::addDaqControlGroupBox()
     daqPushButtonBoxLayout->addWidget(mccDaqConnectButtonWidget);
     daqControlGroupBox->setLayout(daqControlGroupBoxLayout);
     connect(mccDaqConnectButtonWidget, SIGNAL(clicked()), SLOT(setColor()));
+    connect(mccDaqConnectButtonWidget, SIGNAL(clicked()), pmccDaqInterface, SLOT(beginDataCollection()));
     daqControlGroupBoxLayout->addWidget(daqPushButtonBox);
     
     numberOfChannelsGroupBox = new QGroupBox;
