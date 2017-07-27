@@ -26,10 +26,13 @@ MccDaqInterface* MccDaqInterface::getInstance()
 
 void MccDaqInterface::beginDataCollection()
 {
+
     std::vector<short> ChanVector;
     std::vector<short> ChanTypeVector;
     std::vector<short> GainVector;
-
+    BoardNum = 0;
+    ULStat = 0;
+    
     qDebug("beginning data collection");
 
     forcePlateDataString = "forcePlateData.csv";
@@ -40,7 +43,7 @@ void MccDaqInterface::beginDataCollection()
 
     qDebug("%d", ULStat);
 
-    ADData = static_cast<WORD*>(cbWinBufAlloc(numPoints * numChans));
+    ADData = static_cast<WORD*>(cbWinBufAlloc(NUMPOINTS * NUMCHANS));
     if (!ADData)    /* Make sure it is a valid pointer */
     {
         std::cout << "\nout of memory\n" << std::endl;
@@ -77,12 +80,29 @@ void MccDaqInterface::beginDataCollection()
     GainVector.push_back(NOTUSED);
 
     short ChanArray[ChanVector.size()];
-    std::copy(ChanVector.begin(), ChanVector.end(), ChanArray);
     qDebug("%d", ChanArray[0]);
     short ChanTypeArray[ChanTypeVector.size()];
-    std::copy(ChanTypeVector.begin(), ChanTypeVector.end(), ChanTypeArray);
     short GainArray[GainVector.size()];
+
+
+    std::copy(ChanVector.begin(), ChanVector.end(), ChanArray);
+    std::copy(ChanTypeVector.begin(), ChanTypeVector.end(), ChanTypeArray);
     std::copy(GainVector.begin(), GainVector.end(), GainArray);
+    
+    for(const auto& item : ChanArray)
+    {
+        qDebug("Channel Element %d", item);
+    }
+
+    for(const auto& item : ChanTypeArray)
+    {
+        qDebug("Channel Type Element %d", item);
+    }
+
+    for(const auto& item : GainArray)
+    {
+        qDebug("Gain Element %d", item);
+    }
 
 	/* configure FIRSTPORTA and FIRSTPORTB for digital input */
 	
@@ -93,10 +113,15 @@ void MccDaqInterface::beginDataCollection()
 	PortNum = FIRSTPORTB;
 	ULStat = cbDConfigPort (BoardNum, PortNum, Direction);
 
+    qDebug("UL Status %i", ULStat);
+
+    qDebug("Configuring Scan");
 	// configure counter 0
 	CounterNum = ChanArray[2];
     ULStat = cbCConfigScan(BoardNum, CounterNum, ROLLOVER, CTR_DEBOUNCE_NONE, 0, CTR_RISING_EDGE, \
             0, CounterNum);
+
+    qDebug("Configuration finished");
 
     /* Collect the values with cbDaqInScan() in BACKGROUND mode, CONTINUOUSLY
         Parameters:
@@ -111,15 +136,17 @@ void MccDaqInterface::beginDataCollection()
             ADData[]    :the array for the collected data values
             Options     :data collection options  */
 
-    ChanCount = numChans;
+    ChanCount = NUMCHANS;
 	PreTrigCount =0;
-	TotalCount = numPoints * numChans;
+	TotalCount = NUMPOINTS * NUMCHANS;
 	Rate = 1000;								             /* sampling rate (samples per second) */
 	Options = CONVERTDATA + BACKGROUND + CONTINUOUS;         /* data collection options */
 
+    qDebug("Starting scan");
 	ULStat = cbDaqInScan(BoardNum, ChanArray, \
             ChanTypeArray, GainArray, \
             ChanCount, &Rate, &PreTrigCount, &TotalCount, ADData, Options);
+    qDebug("Error code is %d", ULStat);
 
 	if(ULStat == NOERRORS)
 		Status = RUNNING;
@@ -139,7 +166,7 @@ void MccDaqInterface::beginDataCollection()
         /* check the current status of the background operation */
         if (Status == RUNNING)
         {
-            DataIndex = CurIndex -  CurIndex % numChans - numChans;
+            DataIndex = CurIndex -  CurIndex % NUMCHANS - NUMCHANS;
             if(DataIndex>0)
             {
                 if (!forcePlateDataFile->open(QIODevice::ReadWrite | QIODevice::Text | QIODevice::Append))
@@ -176,6 +203,8 @@ void MccDaqInterface::beginDataCollection()
        Parameters:
        BoardNum    :the number used by CB.CFG to describe this board 
        FunctionType: A/D operation (DAQIFUNCTION)*/  
+    qDebug("Exited");
+    
     ULStat = cbStopBackground (BoardNum,DAQIFUNCTION);
 
     cbWinBufFree(ADData);
@@ -204,7 +233,8 @@ void MccDaqInterface::dataCollectionSetup()
 
 void MccDaqInterface::setNumberOfChannels(int mchs)
 {
-    numChans = mchs;
+    NUMCHANS = mchs;
+    qDebug("Number of Channels: %d", NUMCHANS);
 }
 
 #include "../include/moc_MccDaqInterface.cpp"

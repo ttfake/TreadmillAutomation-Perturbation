@@ -24,6 +24,7 @@ class MccDaqInterface : public QObject
         void setDaqButton(QPushButton* mdaqButton);
         void dataCollectionSetup();
         void setNumberOfChannels(int chs);
+    
     public slots:
         void beginDataCollection();
         void setDaqButtonText(QString daqTitleText);
@@ -45,15 +46,15 @@ class MccDaqInterface : public QObject
 
         static MccDaqInterface* _mccDaqInterfaceInstance;
 
-        int numChans;
-        static const int numPoints = 10000;
+        int NUMCHANS;
+        static const int NUMPOINTS = 10000;
         static const int MAXNUMDEVS = 100;
 
         int Row, Col;
         int  BoardNum = 0;
         int Options;
         long PreTrigCount, TotalCount, Rate, ChanCount;
-        int ULStat = 0;
+        int ULStat;
         short Status = IDLE;
         long CurCount;
         long CurIndex, DataIndex;
@@ -67,7 +68,7 @@ class MccDaqInterface : public QObject
         MccDaqDiscovery* mccDaqDisc;
         void setDaqDataBox(QPlainTextEdit* mdaqBox);
         QPlainTextEdit* daqBox;
-        std::tuple<short*,short*,short*> channelConfig; 
-                
+        std::tuple<short*,short*,short*> channelConfig;
+        
 };
 #endif

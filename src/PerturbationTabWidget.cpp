@@ -351,7 +351,11 @@ void PerturbationTabWidget::addDaqControlGroupBox()
     daqPushButtonBoxLayout->addWidget(mccDaqConnectButtonWidget);
     daqControlGroupBox->setLayout(daqControlGroupBoxLayout);
     connect(mccDaqConnectButtonWidget, SIGNAL(clicked()), SLOT(setColor()));
-    connect(mccDaqConnectButtonWidget, SIGNAL(clicked()), pmccDaqInterface, SLOT(beginDataCollection()));
+//    connect(mccDaqConnectButtonWidget, SIGNAL(clicked()), \
+            pmccDaqInterface, SLOT(beginDataCollection()));
+    connect(mccDaqConnectButtonWidget, SIGNAL(clicked()), \
+            SLOT(startDataCollectionThread()));
+
     daqControlGroupBoxLayout->addWidget(daqPushButtonBox);
     
     numberOfChannelsGroupBox = new QGroupBox;
@@ -592,26 +596,30 @@ double PerturbationTabWidget::calculateSpeed()
 void PerturbationTabWidget::addDaqDataGroupBox()
 {
 
+
     daqDataGroupBox = new QGroupBox;
+    daqDataGroupBoxFont.setFamily("Times");
+    daqDataGroupBoxFont.setWeight(75);
+    daqDataGroupBoxFont.setPointSize(12);
+    daqDataGroupBoxFont.setBold(true);
+    daqDataGroupBox->setFont(daqDataGroupBoxFont);
+
     daqDataGroupBox->setSizePolicy(QSizePolicy::Minimum, QSizePolicy::Fixed);
     daqDataGroupBoxVerticalLayout = new QVBoxLayout;
     daqDataGroupBox->setLayout(daqDataGroupBoxVerticalLayout);
     daqDataLabel = new QLabel;
     daqDataLabel->setSizePolicy(QSizePolicy::Minimum, QSizePolicy::Fixed);
     daqDataLabel->setFixedSize(220,100);
-    daqDataLabelFont.setFamily("Times");
-    daqDataLabelFont.setWeight(75);
-    daqDataLabelFont.setPointSize(12);
-    daqDataLabel->setFont(daqDataLabelFont);
     daqDataLabel->setText("Forceplate Data: ");
     daqDataGroupBoxVerticalLayout->addWidget(daqDataLabel);
+    
+    daqDataStreamTableWidget = new QTableWidget;
+    daqDataStreamTableWidget->setColumnCount(2);
     daqDataPlainTextEditBox = new QPlainTextEdit;
-    daqDataPlainTextEditBoxFont.setFamily("Times");
-    daqDataPlainTextEditBoxFont.setWeight(75);
-    daqDataPlainTextEditBoxFont.setPointSize(12);
-    daqDataPlainTextEditBox->setFont(daqDataPlainTextEditBoxFont);
     daqDataPlainTextEditBox->setReadOnly(true);
-    daqDataGroupBoxVerticalLayout->addWidget(daqDataPlainTextEditBox);
+    daqDataStreamHeaderStringList << "Channel" << "Value";
+    daqDataStreamTableWidget->setHorizontalHeaderLabels(daqDataStreamHeaderStringList);
+    daqDataGroupBoxVerticalLayout->addWidget(daqDataStreamTableWidget);
     quadrantFourPerturbationLayout->addWidget(daqDataGroupBox);
     
     daqDataGroupBox->hide();

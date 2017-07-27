@@ -20,10 +20,10 @@
 #include <QComboBox>
 #include <QVector>
 #include <QScrollArea>
-#include <QTableWidget>
 #include <QStringList>
 #include <QMenu>
 #include <QThread>
+#include <QTableWidget>
 #include <cmath>
 
 #include "SendSetpoints.h"
@@ -69,7 +69,8 @@ class PerturbationTabWidget : public QWidget
         void scanForDaqDevice();
         void setDaqText(QString daqText);
         void setupDataCollection();
-    
+        void startDataCollectionThread();
+
     private:
 
         PerturbationTabWidget(QWidget* parent = 0, Qt::WindowFlags flags = 0);
@@ -203,9 +204,12 @@ class PerturbationTabWidget : public QWidget
         QVBoxLayout* daqDataGroupBoxVerticalLayout;
 
         QLabel* daqDataLabel;
-        QFont daqDataLabelFont;
+        QFont daqDataGroupBoxFont;
+        QTableWidget* daqDataStreamTableWidget;
         QPlainTextEdit* daqDataPlainTextEditBox;
+        QTableWidget* daqStreamingDataTableWidget;
         QFont daqDataPlainTextEditBoxFont;
+        QStringList daqDataStreamHeaderStringList;
 
         //addDaqControlGroupBox
         void addDaqControlGroupBox();
@@ -222,7 +226,6 @@ class PerturbationTabWidget : public QWidget
         QHBoxLayout* daqPushButtonBoxLayout;
         QFont daqControlGroupBoxFont;
 
-
         QPushButton* scanForDaqDev;
         QMenu* daqDevMenu;
         
@@ -234,8 +237,7 @@ class PerturbationTabWidget : public QWidget
         QTableWidget* channelTableWidget;
         QStringList channelHeaderStringList;
         MccDaqInterface* pmccDaqInterface;
-        void startDataCollectionThread();
-
+        
         void addChannelGrid();
         bool clicked;
 
