@@ -12,6 +12,7 @@ link_directories(${LINK_DIRECTORIES} ${CMAKE_BINARY_DIR}/../lib
     /usr/local/mxe/mxe/usr/x86_64-w64-mingw32.shared/qt5/lib)
 set (CMAKE_INCLUDE_CURRENT_DIR ON)
 set (CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/../bin)
+SET(GCC_COVERAGE_COMPILE_FLAGS "-gstabs")
 
 file(GLOB SOURCES "src/*.cpp")
 

@@ -35,7 +35,9 @@ class PerturbationTabWidget : public QWidget
     Q_OBJECT
 
     public:
-        static PerturbationTabWidget* getInstance();
+        PerturbationTabWidget(QWidget* parent = 0, Qt::WindowFlags flags = 0);
+        ~PerturbationTabWidget();
+
         double getLeftFrontSpeedValue();
         double getRightFrontSpeedValue();
         double getAccelerationValue();
@@ -73,12 +75,9 @@ class PerturbationTabWidget : public QWidget
 
     private:
 
-        PerturbationTabWidget(QWidget* parent = 0, Qt::WindowFlags flags = 0);
-        ~PerturbationTabWidget();
-        static PerturbationTabWidget* _perturbationTabWidget;
-
         SendSetpoints* sendSetpoints;
-
+        MccDaqInterface* pmccDaqInterface;
+        
         //createRemoteTab
         QWidget* perturbationTab;
         QGridLayout* perturbationTabLayout;
@@ -236,7 +235,7 @@ class PerturbationTabWidget : public QWidget
         QPushButton* setNumChannels;
         QTableWidget* channelTableWidget;
         QStringList channelHeaderStringList;
-        MccDaqInterface* pmccDaqInterface;
+
         
         void addChannelGrid();
         bool clicked;

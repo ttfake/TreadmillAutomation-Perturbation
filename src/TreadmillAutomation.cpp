@@ -8,7 +8,7 @@ TreadmillAutomation::TreadmillAutomation(QWidget *parent, Qt::WindowFlags flags)
     centralWidgetLayout = new QVBoxLayout;
     centralWidget->setLayout(centralWidgetLayout);
 
-    perturbationTabWidget = PerturbationTabWidget::getInstance();
+    perturbationTabWidget = new PerturbationTabWidget;
     sendSetpointObject = SendSetpoints::getInstance();
     createFileMenu();
     createTabWidget();
@@ -99,19 +99,16 @@ void TreadmillAutomation::createTabWidget()
 void TreadmillAutomation::setSocket()
 {
     NetworkTabWidget* netWidget = NetworkTabWidget::getInstance();
-    PerturbationTabWidget* pertWidget = PerturbationTabWidget::getInstance();
     QAbstractSocket* socket = netWidget->getSocketInstance();
-    pertWidget->setSocket(socket);
+    perturbationTabWidget->setSocket(socket);
 
 }
 
 void TreadmillAutomation::setUseLibraryStatus()
 {
     NetworkTabWidget* netWidget = NetworkTabWidget::getInstance();
-    PerturbationTabWidget* pertWidget = PerturbationTabWidget::getInstance();
-
     useLibraryCheckBox = netWidget->getUseLibraryIsCheckedStatus();
-    pertWidget->setUseLibraryStatus(useLibraryCheckBox);
+    perturbationTabWidget->setUseLibraryStatus(useLibraryCheckBox);
 }
 
 void TreadmillAutomation::errorString(QString s)

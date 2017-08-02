@@ -1,6 +1,5 @@
 #include "MccDaqInterface.h"
 
-MccDaqInterface* MccDaqInterface::_mccDaqInterfaceInstance = 0;
 
 MccDaqInterface::MccDaqInterface()
 {
@@ -14,16 +13,6 @@ MccDaqInterface::~MccDaqInterface()
 
 }
 
-MccDaqInterface* MccDaqInterface::getInstance()
-{
-    if(_mccDaqInterfaceInstance == NULL)
-    {
-        _mccDaqInterfaceInstance = new MccDaqInterface();
-    }
-
-    return _mccDaqInterfaceInstance;
-}
-
 void MccDaqInterface::beginDataCollection()
 {
 
@@ -32,6 +21,9 @@ void MccDaqInterface::beginDataCollection()
     std::vector<short> GainVector;
     BoardNum = 0;
     ULStat = 0;
+
+    ULStat = cbIgnoreInstaCal();
+    qDebug("UL Stat of Ignore InstaCal call: %d", ULStat);
     
     qDebug("beginning data collection");
 
@@ -41,7 +33,7 @@ void MccDaqInterface::beginDataCollection()
    
     ULStat = cbDeclareRevision(&RevLevel);
 
-    qDebug("%d", ULStat);
+    qDebug("cbDeclareRevision ULStat: %d", ULStat);
 
     ADData = static_cast<WORD*>(cbWinBufAlloc(NUMPOINTS * NUMCHANS));
     if (!ADData)    /* Make sure it is a valid pointer */
@@ -80,7 +72,6 @@ void MccDaqInterface::beginDataCollection()
     GainVector.push_back(NOTUSED);
 
     short ChanArray[ChanVector.size()];
-    qDebug("%d", ChanArray[0]);
     short ChanTypeArray[ChanTypeVector.size()];
     short GainArray[GainVector.size()];
 
@@ -108,7 +99,9 @@ void MccDaqInterface::beginDataCollection()
 	
 	PortNum = FIRSTPORTA;
     Direction = DIGITALIN;
+    qDebug("BoardNumber %d", BoardNum);
     ULStat = cbDConfigPort (BoardNum, PortNum, Direction);
+    qDebug("cbDConfigPort UL Stat: %d", ULStat);
 
 	PortNum = FIRSTPORTB;
 	ULStat = cbDConfigPort (BoardNum, PortNum, Direction);

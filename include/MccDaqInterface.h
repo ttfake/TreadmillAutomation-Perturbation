@@ -19,7 +19,9 @@ class MccDaqInterface : public QObject
     Q_OBJECT
     
     public:
-        static MccDaqInterface* getInstance();
+        MccDaqInterface();
+        ~MccDaqInterface();
+
         void startChannelScan(QMenu* mmenu);
         void setDaqButton(QPushButton* mdaqButton);
         void dataCollectionSetup();
@@ -41,17 +43,12 @@ class MccDaqInterface : public QObject
             daqBox->appendPlainText(dataString);
         }
 
-        MccDaqInterface();
-        ~MccDaqInterface();
-
-        static MccDaqInterface* _mccDaqInterfaceInstance;
-
         int NUMCHANS;
         static const int NUMPOINTS = 10000;
         static const int MAXNUMDEVS = 100;
 
         int Row, Col;
-        int  BoardNum = 0;
+        int  BoardNum;
         int Options;
         long PreTrigCount, TotalCount, Rate, ChanCount;
         int ULStat;

@@ -1,7 +1,5 @@
 #include "include/PerturbationTabWidget.h"
 
-PerturbationTabWidget* PerturbationTabWidget::_perturbationTabWidget = 0;
-
 
 PerturbationTabWidget::PerturbationTabWidget(QWidget* parent, Qt::WindowFlags flags)
 {
@@ -9,7 +7,7 @@ PerturbationTabWidget::PerturbationTabWidget(QWidget* parent, Qt::WindowFlags fl
     createTreadmillPerturbationTab();
     populateTreadmillPerturbationTab();
     clicked = true;
-    pmccDaqInterface = MccDaqInterface::getInstance();
+
     scanForDaqDevice();
 
 }
@@ -17,16 +15,6 @@ PerturbationTabWidget::PerturbationTabWidget(QWidget* parent, Qt::WindowFlags fl
 PerturbationTabWidget::~PerturbationTabWidget()
 {
 
-}
-
-PerturbationTabWidget* PerturbationTabWidget::getInstance()
-{
-    if(_perturbationTabWidget == NULL)
-    {
-        _perturbationTabWidget = new PerturbationTabWidget();
-    }
-
-    return _perturbationTabWidget;
 }
 
 void PerturbationTabWidget::createTreadmillPerturbationTab()
@@ -51,7 +39,7 @@ void PerturbationTabWidget::addQuadrantOne()
     quadrantOnePerturbationLayout = new QVBoxLayout;
     quadrantOneGroupBox->setLayout(quadrantOnePerturbationLayout);
     perturbationTabLayout->addWidget(quadrantOneGroupBox, 0,0);
-    addSpeedGroupBox();
+    //addSpeedGroupBox();
     addAccelDecelGroupBox();
     addTimerGroupBox();
     addStartPertRunGroupBox();
@@ -261,7 +249,7 @@ void PerturbationTabWidget::addAccelDecelGroupBox()
     accelerationSpinBoxFont.setWeight(75);
     accelerationSpinBoxFont.setPointSize(12);
     acceleration->setSuffix("  m/s²");
-    acceleration->setRange(0.00, 15.00);
+    acceleration->setRange(-15.00, 15.00);
     acceleration->setFont(accelerationSpinBoxFont);
     acceleration->setSizePolicy(QSizePolicy::Minimum, QSizePolicy::Fixed);
     acceleration->setFixedSize(160,40);
@@ -282,7 +270,7 @@ void PerturbationTabWidget::addAccelDecelGroupBox()
     decelerationSpinBoxFont.setWeight(75);
     decelerationSpinBoxFont.setPointSize(12);
     deceleration->setSuffix("  m/s²");
-    deceleration->setRange(0.00, 15.00);
+    deceleration->setRange(-15.00, 15.00);
     deceleration->setFont(decelerationLabelFont);
     deceleration->setSizePolicy(QSizePolicy::Minimum, QSizePolicy::Fixed);
     deceleration->setFixedSize(160,40);
@@ -336,7 +324,8 @@ void PerturbationTabWidget::addDaqControlGroupBox()
     daqDevMenu = new QMenu;
     scanForDaqDev->setMenu(daqDevMenu);
     daqPushButtonBoxLayout->addWidget(scanForDaqDev);
-    pmccDaqInterface = MccDaqInterface::getInstance();
+
+    pmccDaqInterface = new MccDaqInterface;
     connect(pmccDaqInterface, SIGNAL(setDaqTitleText(QString)), this, SLOT(setDaqText(QString)));
     
     mccDaqConnectButtonWidget = new MccDaqConnectButtonWidget();
