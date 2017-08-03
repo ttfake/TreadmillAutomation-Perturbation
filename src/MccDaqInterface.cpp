@@ -226,7 +226,7 @@ void MccDaqInterface::dataCollectionSetup()
 
 void MccDaqInterface::setNumberOfChannels(int mchs)
 {
-    NUMCHANS = mchs;
+//    NUMCHANS = mchs;
     qDebug("Number of Channels: %d", NUMCHANS);
 }
 

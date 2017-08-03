@@ -14,6 +14,8 @@
 #include <QPlainTextEdit>
 #include "MccDaqDiscovery.h"
 
+#define NUMCHANS 4
+
 class MccDaqInterface : public QObject
 {
     Q_OBJECT
@@ -43,7 +45,7 @@ class MccDaqInterface : public QObject
             daqBox->appendPlainText(dataString);
         }
 
-        int NUMCHANS;
+//        int NUMCHANS;
         static const int NUMPOINTS = 10000;
         static const int MAXNUMDEVS = 100;
 
