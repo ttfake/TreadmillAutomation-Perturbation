@@ -26,6 +26,7 @@ find_package(Qt5Network REQUIRED)
 #    NetworkTabWidget.cpp NetworkTabWidget.h PerturbationTabWidget.cpp
 #    PerturbationTabWidget.h SendSetpoints.cpp SendSetpoints.h)
 
+#add_executable(TreadmillAutomation WIN32 ${SOURCES})
 add_executable(TreadmillAutomation ${SOURCES})
 target_link_libraries(TreadmillAutomation Qt5::Widgets Qt5::Network
     cbw64

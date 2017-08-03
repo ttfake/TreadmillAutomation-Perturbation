@@ -22,7 +22,7 @@ void MccDaqInterface::beginDataCollection()
     BoardNum = 0;
     ULStat = 0;
 
-    ULStat = cbIgnoreInstaCal();
+   
     qDebug("UL Stat of Ignore InstaCal call: %d", ULStat);
     
     qDebug("beginning data collection");
@@ -69,6 +69,22 @@ void MccDaqInterface::beginDataCollection()
 
 	ChanVector.push_back(0);
 	ChanTypeVector.push_back(CTR32HIGH);
+    GainVector.push_back(NOTUSED);
+
+    ChanVector.push_back(1);
+    ChanTypeVector.push_back(ANALOG);
+    GainVector.push_back(BIP10VOLTS);
+
+    ChanVector.push_back(FIRSTPORTA);
+    ChanTypeVector.push_back(DIGITAL16);
+    GainVector.push_back(NOTUSED);
+
+    ChanVector.push_back(0);
+    ChanTypeVector.push_back(CTR32LOW);
+    GainVector.push_back(NOTUSED);
+
+    ChanVector.push_back(0);
+    ChanTypeVector.push_back(CTR32HIGH);
     GainVector.push_back(NOTUSED);
 
     short ChanArray[ChanVector.size()];
@@ -170,20 +186,20 @@ void MccDaqInterface::beginDataCollection()
 
                 printf ("Channel 0   Data point: %3ld   ", DataIndex);
                 printf ("  Value: %d  \n",ADData[DataIndex]);
-                updateDaqDataBox(ADData[DataIndex]);
+                //updateDaqDataBox(ADData[DataIndex]);
                 QString dataPoint1String(QString::number(ADData[DataIndex],'e',12));
                 forcePlateDataStream << QTime::currentTime().toString() << ",";
                 forcePlateDataStream << dataPoint1String << ",";
                 DataIndex++;
                 printf ("FIRSTPORTA  Data point: %3ld   ", DataIndex);
                 printf ("  Value: %d  \n",ADData[DataIndex]);
-                updateDaqDataBox(ADData[DataIndex]);
+                //updateDaqDataBox(ADData[DataIndex]);
                 QString dataPoint2String(QString::number(ADData[DataIndex],'e',12));
                 forcePlateDataStream << dataPoint2String << ",";
                 DataIndex++;
                 printf ("Counter 0   Data point: %3ld   ", DataIndex);
                 printf ("  Value: %u  ",ADData[DataIndex] + (ADData[DataIndex+1]<<16));   // 32-bit counter
-                updateDaqDataBox(ADData[DataIndex] + (ADData[DataIndex+1]<<16));
+                //updateDaqDataBox(ADData[DataIndex] + (ADData[DataIndex+1]<<16));
                 QString dataPoint3String(QString::number((ADData[DataIndex] + \
                                 ADData[DataIndex+1]<<16),'e',12));
                 forcePlateDataStream << dataPoint3String << '\n';
@@ -224,9 +240,9 @@ void MccDaqInterface::dataCollectionSetup()
 
 }
 
-void MccDaqInterface::setNumberOfChannels(int mchs)
+void MccDaqInterface::setNumberOfChannels(long mchs)
 {
-//    NUMCHANS = mchs;
+    NUMCHANS = mchs;
     qDebug("Number of Channels: %d", NUMCHANS);
 }
 
