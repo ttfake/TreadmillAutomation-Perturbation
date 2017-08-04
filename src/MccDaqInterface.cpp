@@ -186,7 +186,7 @@ void MccDaqInterface::beginDataCollection()
 
                 printf ("Channel 0   Data point: %3ld   ", DataIndex);
                 printf ("  Value: %d  \n",ADData[DataIndex]);
-                //updateDaqDataBox(ADData[DataIndex]);
+                emit updateDaqDataBoxSignal(ADData[DataIndex]);
                 QString dataPoint1String(QString::number(ADData[DataIndex],'e',12));
                 forcePlateDataStream << QTime::currentTime().toString() << ",";
                 forcePlateDataStream << dataPoint1String << ",";

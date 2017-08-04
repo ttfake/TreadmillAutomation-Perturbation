@@ -55,6 +55,7 @@ class PerturbationTabWidget : public QWidget
         void showDaqDataBox(bool checked);
     public slots:
         void showTimer(bool state);
+        void updatedaqDataPlainTextEditBox(WORD data);
 
     private slots:
         void setLeftFrontSpeedValue(double mleftFrontSpeedValue);

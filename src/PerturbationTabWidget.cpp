@@ -3,11 +3,15 @@
 
 PerturbationTabWidget::PerturbationTabWidget(QWidget* parent, Qt::WindowFlags flags)
 {
+    pmccDaqInterface = new MccDaqInterface;
+
+    connect(pmccDaqInterface, SIGNAL(updateDaqDataBoxSignal(WORD)), \
+                SLOT(updatedaqDataPlainTextEditBox(WORD)));
+
     sendSetpoints = SendSetpoints::getInstance();
     createTreadmillPerturbationTab();
     populateTreadmillPerturbationTab();
     clicked = true;
-
     scanForDaqDevice();
 
 }
@@ -325,7 +329,7 @@ void PerturbationTabWidget::addDaqControlGroupBox()
     scanForDaqDev->setMenu(daqDevMenu);
     daqPushButtonBoxLayout->addWidget(scanForDaqDev);
 
-    pmccDaqInterface = new MccDaqInterface;
+//    pmccDaqInterface = new MccDaqInterface;
     connect(pmccDaqInterface, SIGNAL(setDaqTitleText(QString)), this, SLOT(setDaqText(QString)));
     
     mccDaqConnectButtonWidget = new MccDaqConnectButtonWidget();
@@ -651,6 +655,12 @@ void PerturbationTabWidget::setDaqText(QString title)
 void PerturbationTabWidget::setupDataCollection()
 {
     pmccDaqInterface->dataCollectionSetup();
+}
+
+void PerturbationTabWidget::updatedaqDataPlainTextEditBox(WORD data)
+{
+    QString dataString = QString::number(data, 'e', 12);
+    daqDataPlainTextEditBox->appendPlainText(dataString); 
 }
 
 #include "../include/moc_PerturbationTabWidget.cpp"

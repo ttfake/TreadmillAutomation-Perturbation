@@ -36,14 +36,9 @@ class MccDaqInterface : public QObject
     signals:
         void finished();
         void setDaqTitleText(QString title);
+        void updateDaqDataBoxSignal(WORD data);
 
     private:
-
-        template<typename T> void updateDaqDataBox(T data)
-        {
-            QString dataString = QString::number(data, 'e', 12);
-            daqBox->appendPlainText(dataString);
-        }
 
         long NUMCHANS;
         static const int NUMPOINTS = 10000;
