@@ -5,8 +5,14 @@ PerturbationTabWidget::PerturbationTabWidget(QWidget* parent, Qt::WindowFlags fl
 {
     pmccDaqInterface = new MccDaqInterface;
 
-    connect(pmccDaqInterface, SIGNAL(updateDaqDataBoxSignal(WORD)), \
-                SLOT(updatedaqDataPlainTextEditBox(WORD)));
+    connect(pmccDaqInterface, SIGNAL(updateDaqDataBoxSignal(uint16_t)), \
+                this, SLOT(updateDaqDataStreamTableWidget(uint16_t)));
+
+    connect(pmccDaqInterface, SIGNAL(updateRowCount(int)), \
+                this, SLOT(setRowCount(int)));
+
+    connect(pmccDaqInterface, SIGNAL(updateCol(int)), \
+                this, SLOT(updateCol(int)));
 
     sendSetpoints = SendSetpoints::getInstance();
     createTreadmillPerturbationTab();
@@ -73,7 +79,7 @@ void PerturbationTabWidget::addQuadrantFour()
     quadrantFourPerturbationLayout = new QVBoxLayout;
     quadrantFourGroupBox->setLayout(quadrantFourPerturbationLayout);
     perturbationTabLayout->addWidget(quadrantFourGroupBox, 1,1);
-    addDaqDataGroupBox();
+
 
 }
 
@@ -328,8 +334,6 @@ void PerturbationTabWidget::addDaqControlGroupBox()
     daqDevMenu = new QMenu;
     scanForDaqDev->setMenu(daqDevMenu);
     daqPushButtonBoxLayout->addWidget(scanForDaqDev);
-
-//    pmccDaqInterface = new MccDaqInterface;
     connect(pmccDaqInterface, SIGNAL(setDaqTitleText(QString)), this, SLOT(setDaqText(QString)));
     
     mccDaqConnectButtonWidget = new MccDaqConnectButtonWidget();
@@ -382,7 +386,7 @@ void PerturbationTabWidget::addDaqControlGroupBox()
     channelTableWidget = new QTableWidget;
     channelTableWidget->setColumnCount(5);
     daqControlGroupBoxLayout->addWidget(channelTableWidget);
-    channelHeaderStringList << "Channel" << "Label" << "Active" << "Port" << "Type";
+    channelHeaderStringList << "Channel" << "Label" << "Active" << "Type" << "Gain";
     channelTableWidget->setHorizontalHeaderLabels(channelHeaderStringList);
 
     quadrantTwoPerturbationLayout->addWidget(daqControlGroupBox);
@@ -408,17 +412,18 @@ void PerturbationTabWidget::addChannels()
 {
     channelTableWidget->setRowCount(numberOfChannelsSpinBox->value());
     pmccDaqInterface->setNumberOfChannels(numberOfChannelsSpinBox->value());
-    
-    for(int i = 0; i < numberOfChannelsSpinBox->value(); i++)
+    numChannels = numberOfChannelsSpinBox->value();
+    for(int i = 0; i < numChannels; i++)
     {
         QTableWidgetItem* channel = new QTableWidgetItem(tr("%1").arg(i));
         channel->setTextAlignment(Qt::AlignCenter);
         channelTableWidget->setItem(i, 0, channel);
-        QComboBox* portCombo = new QComboBox;
-        QStringList portList;
-        portList << "FIRSTPORTA" << "AUXPORT";
-        portCombo->addItems(portList);
-        channelTableWidget->setCellWidget(i, 3, static_cast<QWidget*>(portCombo));
+        QComboBox* gainCombo = new QComboBox;
+        QStringList gainList;
+        gainList << "BIP10VOLTS" << "BIP5VOLTS" << "BIP2PT5VOLTS" << "BIP1PT25VOLTS" << "UNI10VOLTS" \
+                    << "UNI5VOLTS" << "UNI2PT5VOLTS" << "UNI1PT25VOLTS";
+        gainCombo->addItems(gainList);
+        channelTableWidget->setCellWidget(i, 4, static_cast<QWidget*>(gainCombo));
         QGroupBox* checkBoxGroupBox = new QGroupBox;
         QHBoxLayout* checkBoxGroupBoxLayout = new QHBoxLayout;
         checkBoxGroupBox->setLayout(checkBoxGroupBoxLayout);
@@ -432,9 +437,10 @@ void PerturbationTabWidget::addChannels()
         QStringList typeComboList;
         typeComboList << "ANALOG" << "DIGITAL8" << "DIGITAL16";
         typeCombo->addItems(typeComboList);
-        channelTableWidget->setCellWidget(i, 4, static_cast<QWidget*>(typeCombo));
+        channelTableWidget->setCellWidget(i, 3, static_cast<QWidget*>(typeCombo));
 
     }
+     addDaqDataGroupBox();
 }
 
 
@@ -454,7 +460,6 @@ void PerturbationTabWidget::showTimer(bool state)
 
 void PerturbationTabWidget::setAccelerationTimeValue(double maccelTimeValue)
 {
-
     accelerationTimeValue = maccelTimeValue;
 
     std::cout << "Acceleration Time Set to: " << accelerationTimeValue << std::endl;
@@ -588,8 +593,6 @@ double PerturbationTabWidget::calculateSpeed()
 
 void PerturbationTabWidget::addDaqDataGroupBox()
 {
-
-
     daqDataGroupBox = new QGroupBox;
     daqDataGroupBoxFont.setFamily("Times");
     daqDataGroupBoxFont.setWeight(75);
@@ -607,27 +610,41 @@ void PerturbationTabWidget::addDaqDataGroupBox()
     daqDataGroupBoxVerticalLayout->addWidget(daqDataLabel);
     
     daqDataStreamTableWidget = new QTableWidget;
-    daqDataStreamTableWidget->setColumnCount(2);
-    daqDataPlainTextEditBox = new QPlainTextEdit;
-    daqDataPlainTextEditBox->setReadOnly(true);
-    daqDataStreamHeaderStringList << "Channel" << "Value";
+    daqDataStreamTableWidget->setColumnCount(numChannels);
+
+    for(int i = 0; i <= numChannels; i++)
+    {
+        QString channel = QString("Channel %1").arg(i);
+        daqDataStreamHeaderStringList << channel;
+    }
+
     daqDataStreamTableWidget->setHorizontalHeaderLabels(daqDataStreamHeaderStringList);
     daqDataGroupBoxVerticalLayout->addWidget(daqDataStreamTableWidget);
     quadrantFourPerturbationLayout->addWidget(daqDataGroupBox);
-    
+
     daqDataGroupBox->hide();
 
 }
 
 void PerturbationTabWidget::showDaqDataBox(bool checked)
 {
-    if(checked)
+    if(checked && daqDataGroupBox != NULL)
     {
         daqDataGroupBox->show();
     }
-    else
+    else if(daqDataGroupBox != NULL)
     {
         daqDataGroupBox->hide();
+    }
+    else
+    {
+        QMessageBox daqDataBoxAlert;
+        daqDataBoxAlert.setText("You must enter the number of Channels in the \n " \
+                                    "\"No. of Channels Box\" and click the \n" \
+                                    "\"Set No. of Channels\" button in the\n" \
+                                    "\"Perturbation\" tab before viewing the" \
+                                    "Daq Streaming Box.");
+        daqDataBoxAlert.exec();
     }
 }
 
@@ -657,10 +674,23 @@ void PerturbationTabWidget::setupDataCollection()
     pmccDaqInterface->dataCollectionSetup();
 }
 
-void PerturbationTabWidget::updatedaqDataPlainTextEditBox(WORD data)
+void PerturbationTabWidget::setRowCount(int mRowCount)
+{
+    rowCount = mRowCount;
+}
+
+void PerturbationTabWidget::updateCol(int mColNo)
+{
+    colNo = mColNo;
+}
+
+void PerturbationTabWidget::updateDaqDataStreamTableWidget(uint16_t data)
 {
     QString dataString = QString::number(data, 'e', 12);
-    daqDataPlainTextEditBox->appendPlainText(dataString); 
+    daqDataStreamTableWidget->setRowCount(rowCount);
+    QTableWidgetItem* channel = new QTableWidgetItem(dataString);
+    channel->setTextAlignment(Qt::AlignCenter);
+    daqDataStreamTableWidget->setItem(rowCount-1, colNo, channel);
 }
 
 #include "../include/moc_PerturbationTabWidget.cpp"

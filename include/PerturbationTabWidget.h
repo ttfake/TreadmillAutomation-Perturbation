@@ -24,6 +24,7 @@
 #include <QMenu>
 #include <QThread>
 #include <QTableWidget>
+#include <QMessageBox>
 #include <cmath>
 
 #include "SendSetpoints.h"
@@ -55,7 +56,8 @@ class PerturbationTabWidget : public QWidget
         void showDaqDataBox(bool checked);
     public slots:
         void showTimer(bool state);
-        void updatedaqDataPlainTextEditBox(WORD data);
+        void updateDaqDataStreamTableWidget(uint16_t data);
+        void updateCol(int mColNo);
 
     private slots:
         void setLeftFrontSpeedValue(double mleftFrontSpeedValue);
@@ -73,6 +75,7 @@ class PerturbationTabWidget : public QWidget
         void setDaqText(QString daqText);
         void setupDataCollection();
         void startDataCollectionThread();
+        void setRowCount(int mRowCount);
 
     private:
 
@@ -234,6 +237,7 @@ class PerturbationTabWidget : public QWidget
         QLabel* numberOfChannelsLabel;
         QSpinBox* numberOfChannelsSpinBox;
         QPushButton* setNumChannels;
+        int numChannels;
         QTableWidget* channelTableWidget;
         QStringList channelHeaderStringList;
 
@@ -248,6 +252,10 @@ class PerturbationTabWidget : public QWidget
         QFont channelsHeadingGroupBoxFont;
         QHBoxLayout* channelsHeadingGroupBoxLayout;
         QFont daqControlScrollGroupBoxFont;
+
+
+        int rowCount;
+        int colNo;
 
 
 };

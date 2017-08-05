@@ -36,7 +36,9 @@ class MccDaqInterface : public QObject
     signals:
         void finished();
         void setDaqTitleText(QString title);
-        void updateDaqDataBoxSignal(WORD data);
+        void updateDaqDataBoxSignal(uint16_t data);
+        void updateRowCount(int mRowCount);
+        void updateCol(int mColCount);
 
     private:
 
@@ -63,6 +65,8 @@ class MccDaqInterface : public QObject
         void setDaqDataBox(QPlainTextEdit* mdaqBox);
         QPlainTextEdit* daqBox;
         std::tuple<short*,short*,short*> channelConfig;
+        int rowCount;
+        int channel;
         
 };
 #endif

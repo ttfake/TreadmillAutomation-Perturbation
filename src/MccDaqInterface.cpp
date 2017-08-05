@@ -4,6 +4,7 @@
 MccDaqInterface::MccDaqInterface()
 {
     mccDaqDisc = new MccDaqDiscovery;
+    qRegisterMetaType<uint16_t>("uint16_t");
     connect(mccDaqDisc, SIGNAL(setText(QString)), this, SLOT(setDaqButtonText(QString)));
 
 }
@@ -21,6 +22,7 @@ void MccDaqInterface::beginDataCollection()
     std::vector<short> GainVector;
     BoardNum = 0;
     ULStat = 0;
+    rowCount = 0;
 
    
     qDebug("UL Stat of Ignore InstaCal call: %d", ULStat);
@@ -59,33 +61,9 @@ void MccDaqInterface::beginDataCollection()
 	ChanTypeVector.push_back(ANALOG);
     GainVector.push_back(BIP10VOLTS);
 
-    ChanVector.push_back(FIRSTPORTA);
-	ChanTypeVector.push_back(DIGITAL16);
-    GainVector.push_back(NOTUSED);
-
-	ChanVector.push_back(0);
-	ChanTypeVector.push_back(CTR32LOW);
-    GainVector.push_back(NOTUSED);
-
-	ChanVector.push_back(0);
-	ChanTypeVector.push_back(CTR32HIGH);
-    GainVector.push_back(NOTUSED);
-
     ChanVector.push_back(1);
     ChanTypeVector.push_back(ANALOG);
     GainVector.push_back(BIP10VOLTS);
-
-    ChanVector.push_back(FIRSTPORTA);
-    ChanTypeVector.push_back(DIGITAL16);
-    GainVector.push_back(NOTUSED);
-
-    ChanVector.push_back(0);
-    ChanTypeVector.push_back(CTR32LOW);
-    GainVector.push_back(NOTUSED);
-
-    ChanVector.push_back(0);
-    ChanTypeVector.push_back(CTR32HIGH);
-    GainVector.push_back(NOTUSED);
 
     short ChanArray[ChanVector.size()];
     short ChanTypeArray[ChanTypeVector.size()];
@@ -96,20 +74,6 @@ void MccDaqInterface::beginDataCollection()
     std::copy(ChanTypeVector.begin(), ChanTypeVector.end(), ChanTypeArray);
     std::copy(GainVector.begin(), GainVector.end(), GainArray);
     
-    for(const auto& item : ChanArray)
-    {
-        qDebug("Channel Element %d", item);
-    }
-
-    for(const auto& item : ChanTypeArray)
-    {
-        qDebug("Channel Type Element %d", item);
-    }
-
-    for(const auto& item : GainArray)
-    {
-        qDebug("Gain Element %d", item);
-    }
 
 	/* configure FIRSTPORTA and FIRSTPORTB for digital input */
 	
@@ -124,13 +88,6 @@ void MccDaqInterface::beginDataCollection()
 
     qDebug("UL Status %i", ULStat);
 
-    qDebug("Configuring Scan");
-	// configure counter 0
-	CounterNum = ChanArray[2];
-    ULStat = cbCConfigScan(BoardNum, CounterNum, ROLLOVER, CTR_DEBOUNCE_NONE, 0, CTR_RISING_EDGE, \
-            0, CounterNum);
-
-    qDebug("Configuration finished");
 
     /* Collect the values with cbDaqInScan() in BACKGROUND mode, CONTINUOUSLY
         Parameters:
@@ -151,6 +108,7 @@ void MccDaqInterface::beginDataCollection()
 	Rate = 1000;								             /* sampling rate (samples per second) */
 	Options = CONVERTDATA + BACKGROUND + CONTINUOUS;         /* data collection options */
 
+    channel = 0;
     qDebug("Starting scan");
 	ULStat = cbDaqInScan(BoardNum, ChanArray, \
             ChanTypeArray, GainArray, \
@@ -170,7 +128,7 @@ void MccDaqInterface::beginDataCollection()
            CurIndex  :index to the last data value transferred 
            FunctionType: A/D operation (DAQIFUNCTION)*/
 
-        ULStat = cbGetStatus (BoardNum, &Status, &CurCount, &CurIndex,DAQIFUNCTION);
+        ULStat = cbGetStatus (BoardNum, &Status, &CurCount, &CurIndex, DAQIFUNCTION);
 
         /* check the current status of the background operation */
         if (Status == RUNNING)
@@ -178,32 +136,35 @@ void MccDaqInterface::beginDataCollection()
             DataIndex = CurIndex -  CurIndex % NUMCHANS - NUMCHANS;
             if(DataIndex>0)
             {
+                emit updateRowCount(rowCount);
                 if (!forcePlateDataFile->open(QIODevice::ReadWrite | QIODevice::Text | QIODevice::Append))
                     return;
 
                 QTextStream forcePlateDataStream(forcePlateDataFile);
 
+                for(channel = 0; channel < NUMCHANS; channel++)
+                {
+                    emit updateCol(channel);
+                    emit updateDaqDataBoxSignal(static_cast<uint16_t>(ADData[DataIndex]));
+                    QString channel0("Channel 0");
+                    forcePlateDataStream << channel0 << ",";
+                    QString dataPoint1String(QString::number(ADData[DataIndex],'e',12));
+                    forcePlateDataStream << QTime::currentTime().toString() << ",";
+                    forcePlateDataStream << dataPoint1String << "\n";
+                    DataIndex++;
+                }
 
-                printf ("Channel 0   Data point: %3ld   ", DataIndex);
-                printf ("  Value: %d  \n",ADData[DataIndex]);
-                emit updateDaqDataBoxSignal(ADData[DataIndex]);
-                QString dataPoint1String(QString::number(ADData[DataIndex],'e',12));
-                forcePlateDataStream << QTime::currentTime().toString() << ",";
-                forcePlateDataStream << dataPoint1String << ",";
-                DataIndex++;
-                printf ("FIRSTPORTA  Data point: %3ld   ", DataIndex);
-                printf ("  Value: %d  \n",ADData[DataIndex]);
-                //updateDaqDataBox(ADData[DataIndex]);
-                QString dataPoint2String(QString::number(ADData[DataIndex],'e',12));
-                forcePlateDataStream << dataPoint2String << ",";
-                DataIndex++;
-                printf ("Counter 0   Data point: %3ld   ", DataIndex);
-                printf ("  Value: %u  ",ADData[DataIndex] + (ADData[DataIndex+1]<<16));   // 32-bit counter
-                //updateDaqDataBox(ADData[DataIndex] + (ADData[DataIndex+1]<<16));
-                QString dataPoint3String(QString::number((ADData[DataIndex] + \
-                                ADData[DataIndex+1]<<16),'e',12));
-                forcePlateDataStream << dataPoint3String << '\n';
+                //channel = 1;
+                //emit updateCol(channel);
+                //emit updateDaqDataBoxSignal(static_cast<uint16_t>(ADData[DataIndex]));
+                //QString channel1("Channel 1");
+                //forcePlateDataStream << channel1 << ",";
+                //QString dataPoint2String(QString::number(ADData[DataIndex],'e',12));
+                //forcePlateDataStream << QTime::currentTime().toString() << ",";
+                //forcePlateDataStream << dataPoint2String << "\n";
                 forcePlateDataFile->close(); 
+                rowCount++;
+
             }
         }
     }
