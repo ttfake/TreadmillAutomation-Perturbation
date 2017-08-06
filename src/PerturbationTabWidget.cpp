@@ -14,6 +14,8 @@ PerturbationTabWidget::PerturbationTabWidget(QWidget* parent, Qt::WindowFlags fl
     connect(pmccDaqInterface, SIGNAL(updateCol(int)), \
                 this, SLOT(updateCol(int)));
 
+    connect(pmccDaqInterface, SIGNAL(getActiveState(int)), this, SLOT(getActiveState(int)));
+
     sendSetpoints = SendSetpoints::getInstance();
     createTreadmillPerturbationTab();
     populateTreadmillPerturbationTab();
@@ -425,13 +427,14 @@ void PerturbationTabWidget::addChannels()
         gainCombo->addItems(gainList);
         channelTableWidget->setCellWidget(i, 4, static_cast<QWidget*>(gainCombo));
         QGroupBox* checkBoxGroupBox = new QGroupBox;
+        checkBoxGroupBox->isCheckable();
         QHBoxLayout* checkBoxGroupBoxLayout = new QHBoxLayout;
         checkBoxGroupBox->setLayout(checkBoxGroupBoxLayout);
         checkBoxGroupBoxLayout->setAlignment(Qt::AlignCenter);
-        QCheckBox* activeCheck = new QCheckBox;
-        activeCheck->setSizePolicy(QSizePolicy::Minimum, QSizePolicy::Fixed);
-        activeCheck->setFixedSize(20,20);
-        checkBoxGroupBoxLayout->addWidget(activeCheck);
+//        QCheckBox* activeCheck = new QCheckBox;
+//        activeCheck->setSizePolicy(QSizePolicy::Minimum, QSizePolicy::Fixed);
+//        activeCheck->setFixedSize(20,20);
+//        checkBoxGroupBoxLayout->addWidget(activeCheck);
         channelTableWidget->setCellWidget(i, 2, static_cast<QWidget*>(checkBoxGroupBox));
         QComboBox* typeCombo = new QComboBox;
         QStringList typeComboList;
@@ -643,7 +646,7 @@ void PerturbationTabWidget::showDaqDataBox(bool checked)
                                     "\"No. of Channels Box\" and click the \n" \
                                     "\"Set No. of Channels\" button in the\n" \
                                     "\"Perturbation\" tab before viewing the" \
-                                    "Daq Streaming Box.");
+                                    " Daq Streaming Box.");
         daqDataBoxAlert.exec();
     }
 }
@@ -691,6 +694,22 @@ void PerturbationTabWidget::updateDaqDataStreamTableWidget(uint16_t data)
     QTableWidgetItem* channel = new QTableWidgetItem(dataString);
     channel->setTextAlignment(Qt::AlignCenter);
     daqDataStreamTableWidget->setItem(rowCount-1, colNo, channel);
+}
+
+bool PerturbationTabWidget::getActiveState(int channel)
+{
+    QGroupBox* activeChannelGroupBox = static_cast<QGroupBox*>(channelTableWidget->cellWidget(channel, 2));
+    return activeChannelGroupBox->isChecked();
+}
+
+void PerturbationTabWidget::getChannelType(int channel)
+{
+
+}
+
+void PerturbationTabWidget::getGainType(int channel)
+{
+
 }
 
 #include "../include/moc_PerturbationTabWidget.cpp"

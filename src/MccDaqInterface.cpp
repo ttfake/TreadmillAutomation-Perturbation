@@ -23,9 +23,6 @@ void MccDaqInterface::beginDataCollection()
     BoardNum = 0;
     ULStat = 0;
     rowCount = 0;
-
-   
-    qDebug("UL Stat of Ignore InstaCal call: %d", ULStat);
     
     qDebug("beginning data collection");
 
@@ -53,18 +50,38 @@ void MccDaqInterface::beginDataCollection()
     */
     cbErrHandling (PRINTALL, DONTSTOP);
 
-    std::cout << "Data are being collected in the BACKGROUND, CONTINUOUSLY\n" << std::endl;
+    std::cout << "Continuous data collection has begun in the BACKGROUND.\n" << std::endl;
 
+    /* load the arrays with values */
+    
+    for(channel = 0; channel < NUMCHANS; channel++)
+    {
+        bool activeChannel = emit getActiveState(channel);
 
-	/* load the arrays with values */
-    ChanVector.push_back(0);
-	ChanTypeVector.push_back(ANALOG);
-    GainVector.push_back(BIP10VOLTS);
+        if(activeChannel)
+        {
+            qDebug("Channel %i is set to active", channel);
+        }
 
-    ChanVector.push_back(1);
-    ChanTypeVector.push_back(ANALOG);
-    GainVector.push_back(BIP10VOLTS);
+        if (!forcePlateDataFile->open(QIODevice::ReadWrite | QIODevice::Text | QIODevice::Append))
+            return;
 
+        ChanVector.push_back(channel);
+        ChanTypeVector.push_back(ANALOG);
+        GainVector.push_back(BIP10VOLTS);
+
+        QTextStream forcePlateDataStream(forcePlateDataFile);
+
+        QString channelHeaderString("Channel ");
+        channelHeaderString += QString::number(channel);
+        channelHeaderString += ",";
+
+        forcePlateDataStream << channelHeaderString;
+
+        forcePlateDataFile->close(); 
+    }
+    
+    
     short ChanArray[ChanVector.size()];
     short ChanTypeArray[ChanTypeVector.size()];
     short GainArray[GainVector.size()];
@@ -117,6 +134,8 @@ void MccDaqInterface::beginDataCollection()
 
 	if(ULStat == NOERRORS)
 		Status = RUNNING;
+
+    
     
     while (!_kbhit() && Status==RUNNING)
     {

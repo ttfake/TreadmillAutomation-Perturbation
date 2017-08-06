@@ -39,6 +39,9 @@ class MccDaqInterface : public QObject
         void updateDaqDataBoxSignal(uint16_t data);
         void updateRowCount(int mRowCount);
         void updateCol(int mColCount);
+        bool getActiveState(int mchannel);
+        void getChannelType(int mchannel);
+        void getGainType(int mchannel);
 
     private:
 
