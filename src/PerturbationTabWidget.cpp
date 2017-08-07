@@ -350,8 +350,6 @@ void PerturbationTabWidget::addDaqControlGroupBox()
     daqPushButtonBoxLayout->addWidget(mccDaqConnectButtonWidget);
     daqControlGroupBox->setLayout(daqControlGroupBoxLayout);
     connect(mccDaqConnectButtonWidget, SIGNAL(clicked()), SLOT(setColor()));
-//    connect(mccDaqConnectButtonWidget, SIGNAL(clicked()), \
-            pmccDaqInterface, SLOT(beginDataCollection()));
     connect(mccDaqConnectButtonWidget, SIGNAL(clicked()), \
             SLOT(startDataCollectionThread()));
 
@@ -431,10 +429,12 @@ void PerturbationTabWidget::addChannels()
         QHBoxLayout* checkBoxGroupBoxLayout = new QHBoxLayout;
         checkBoxGroupBox->setLayout(checkBoxGroupBoxLayout);
         checkBoxGroupBoxLayout->setAlignment(Qt::AlignCenter);
-//        QCheckBox* activeCheck = new QCheckBox;
-//        activeCheck->setSizePolicy(QSizePolicy::Minimum, QSizePolicy::Fixed);
-//        activeCheck->setFixedSize(20,20);
-//        checkBoxGroupBoxLayout->addWidget(activeCheck);
+        QCheckBox* activeCheck = new QCheckBox;
+        QString activeCheckBoxName = QString("activeCheck%1").arg(i);
+        activeCheck->setObjectName(activeCheckBoxName);
+        activeCheck->setSizePolicy(QSizePolicy::Minimum, QSizePolicy::Fixed);
+        activeCheck->setFixedSize(20,20);
+        checkBoxGroupBoxLayout->addWidget(activeCheck);
         channelTableWidget->setCellWidget(i, 2, static_cast<QWidget*>(checkBoxGroupBox));
         QComboBox* typeCombo = new QComboBox;
         QStringList typeComboList;
@@ -696,10 +696,16 @@ void PerturbationTabWidget::updateDaqDataStreamTableWidget(uint16_t data)
     daqDataStreamTableWidget->setItem(rowCount-1, colNo, channel);
 }
 
-bool PerturbationTabWidget::getActiveState(int channel)
+void PerturbationTabWidget::getActiveState(int channel)
 {
     QGroupBox* activeChannelGroupBox = static_cast<QGroupBox*>(channelTableWidget->cellWidget(channel, 2));
-    return activeChannelGroupBox->isChecked();
+    QString activeCheckSearchString = QString("activeCheck%1").arg(channel);
+    QCheckBox* activeCheckBoxFound = activeChannelGroupBox->findChild<QCheckBox*>(activeCheckSearchString);
+
+    if(activeCheckBoxFound->isChecked())
+    {
+        pmccDaqInterface->setCurrentChannelActiveState(true);
+    }
 }
 
 void PerturbationTabWidget::getChannelType(int channel)

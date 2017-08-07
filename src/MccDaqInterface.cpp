@@ -56,14 +56,31 @@ void MccDaqInterface::beginDataCollection()
     
     for(channel = 0; channel < NUMCHANS; channel++)
     {
-        bool activeChannel = emit getActiveState(channel);
+        emit getActiveState(channel);
 
-        if(activeChannel)
+        QThread::msleep(30);
+        if (!forcePlateDataFile->open(QIODevice::ReadWrite | QIODevice::Text | QIODevice::Append))
+            return;
+
+        if(activeState)
         {
             qDebug("Channel %i is set to active", channel);
+            ChanVector.push_back(channel);
+            ChanTypeVector.push_back(ANALOG);
+            GainVector.push_back(BIP10VOLTS);
+
+            QTextStream forcePlateDataStream(forcePlateDataFile);
+
+            QString channelHeaderString("Channel ");
+            channelHeaderString += QString::number(channel);
+            channelHeaderString += ",";
+
+            forcePlateDataStream << channelHeaderString;
+
+            activeState = false;
         }
 
-        if (!forcePlateDataFile->open(QIODevice::ReadWrite | QIODevice::Text | QIODevice::Append))
+/*        if (!forcePlateDataFile->open(QIODevice::ReadWrite | QIODevice::Text | QIODevice::Append))
             return;
 
         ChanVector.push_back(channel);
@@ -77,8 +94,9 @@ void MccDaqInterface::beginDataCollection()
         channelHeaderString += ",";
 
         forcePlateDataStream << channelHeaderString;
+*/
+        forcePlateDataFile->close();
 
-        forcePlateDataFile->close(); 
     }
     
     
@@ -224,6 +242,11 @@ void MccDaqInterface::setNumberOfChannels(long mchs)
 {
     NUMCHANS = mchs;
     qDebug("Number of Channels: %d", NUMCHANS);
+}
+
+void MccDaqInterface::setCurrentChannelActiveState(bool mactiveState)
+{
+    activeState = mactiveState;
 }
 
 #include "../include/moc_MccDaqInterface.cpp"

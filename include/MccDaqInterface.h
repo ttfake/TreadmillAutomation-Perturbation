@@ -12,6 +12,7 @@
 #include <QFile>
 #include <QTextStream>
 #include <QPlainTextEdit>
+#include <QThread>
 #include "MccDaqDiscovery.h"
 
 
@@ -28,6 +29,7 @@ class MccDaqInterface : public QObject
         void setDaqButton(QPushButton* mdaqButton);
         void dataCollectionSetup();
         void setNumberOfChannels(long chs);
+        void setCurrentChannelActiveState(bool mactiveState);
     
     public slots:
         void beginDataCollection();
@@ -39,7 +41,7 @@ class MccDaqInterface : public QObject
         void updateDaqDataBoxSignal(uint16_t data);
         void updateRowCount(int mRowCount);
         void updateCol(int mColCount);
-        bool getActiveState(int mchannel);
+        void getActiveState(int mchannel);
         void getChannelType(int mchannel);
         void getGainType(int mchannel);
 
@@ -70,6 +72,8 @@ class MccDaqInterface : public QObject
         std::tuple<short*,short*,short*> channelConfig;
         int rowCount;
         int channel;
+        bool activeState;
+
         
 };
 #endif

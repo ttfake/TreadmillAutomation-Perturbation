@@ -58,7 +58,7 @@ class PerturbationTabWidget : public QWidget
         void showTimer(bool state);
         void updateDaqDataStreamTableWidget(uint16_t data);
         void updateCol(int mColNo);
-        bool getActiveState(int channel);
+        void getActiveState(int channel);
         void getChannelType(int channel);
         void getGainType(int channel);
 
