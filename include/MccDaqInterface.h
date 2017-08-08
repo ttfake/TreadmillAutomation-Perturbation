@@ -45,6 +45,7 @@ class MccDaqInterface : public QObject
         void getActiveState(int mchannel);
         void getChannelType(int mchannel);
         void getGainType(int mchannel);
+        void setCurrentChannel(int mchannel);
 
     private:
 
@@ -76,7 +77,6 @@ class MccDaqInterface : public QObject
         bool activeState;
         long chs;
         std::vector<int> channelVector;
-
-        
+                
 };
 #endif

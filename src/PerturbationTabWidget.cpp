@@ -16,6 +16,8 @@ PerturbationTabWidget::PerturbationTabWidget(QWidget* parent, Qt::WindowFlags fl
 
     connect(pmccDaqInterface, SIGNAL(getActiveState(int)), this, SLOT(getActiveState(int)));
 
+    connect(pmccDaqInterface, SIGNAL(setCurrentChannel(int)), this, SLOT(setChannel(int)));
+
     sendSetpoints = SendSetpoints::getInstance();
     createTreadmillPerturbationTab();
     populateTreadmillPerturbationTab();
@@ -700,13 +702,97 @@ void PerturbationTabWidget::updateCol(int mColNo)
     colNo = mColNo;
 }
 
-void PerturbationTabWidget::updateDaqDataStreamTableWidget(double data)
+void PerturbationTabWidget::updateDaqDataStreamTableWidget(double voltage)
 {
-    QString dataString = QString::number(data, 'g', 12);
-    daqDataStreamTableWidget->setRowCount(rowCount);
-    QTableWidgetItem* channel = new QTableWidgetItem(dataString);
-    channel->setTextAlignment(Qt::AlignCenter);
-    daqDataStreamTableWidget->setItem(rowCount-1, colNo, channel);
+    forceCoefficientX = 500;
+    forceCoefficientY = 500;
+    forceCoefficientZ = 1000;
+    momentCoefficientX = 800;
+    momentCoefficientY = 400;
+    momentCoefficientZ = 400;
+    scale = 10;
+    switch(currentChannel)
+    {
+        case 0:
+            {
+                forceX = forceCoefficientX * (voltage / scale);
+                QString dataString = QString::number(forceX, 'g', 12);
+                QTableWidgetItem* channel = new QTableWidgetItem(dataString);
+                daqDataStreamTableWidget->setRowCount(rowCount);
+                channel->setTextAlignment(Qt::AlignCenter);
+                daqDataStreamTableWidget->setItem(rowCount-1, colNo, channel);
+
+                break;
+            }
+        case 1:
+            {
+                forceY = forceCoefficientY * (voltage / scale);
+                QString dataString = QString::number(forceY, 'g', 12);
+                QTableWidgetItem* channel = new QTableWidgetItem(dataString);
+                daqDataStreamTableWidget->setRowCount(rowCount);
+                channel->setTextAlignment(Qt::AlignCenter);
+                daqDataStreamTableWidget->setItem(rowCount-1, colNo, channel);
+
+                break;
+            }
+        case 2:
+            {
+                forceZ = forceCoefficientZ * (voltage / scale);
+                QString dataString = QString::number(forceZ, 'g', 12);
+                QTableWidgetItem* channel = new QTableWidgetItem(dataString);
+                daqDataStreamTableWidget->setRowCount(rowCount);
+                channel->setTextAlignment(Qt::AlignCenter);
+                daqDataStreamTableWidget->setItem(rowCount-1, colNo, channel);
+
+                break;
+            }
+        case 3:
+            {
+                momentX = momentCoefficientX * (voltage / scale);
+                QString dataString = QString::number(momentX, 'g', 12);
+                QTableWidgetItem* channel = new QTableWidgetItem(dataString);
+                daqDataStreamTableWidget->setRowCount(rowCount);
+                channel->setTextAlignment(Qt::AlignCenter);
+                daqDataStreamTableWidget->setItem(rowCount-1, colNo, channel);
+
+                break;
+            }
+        case 4:
+            {
+                momentY = momentCoefficientY * (voltage / scale);
+                QString dataString = QString::number(momentY, 'g', 12);
+                QTableWidgetItem* channel = new QTableWidgetItem(dataString);
+                daqDataStreamTableWidget->setRowCount(rowCount);
+                channel->setTextAlignment(Qt::AlignCenter);
+                daqDataStreamTableWidget->setItem(rowCount-1, colNo, channel);
+
+                break;
+            }
+        case 5:
+            {
+                momentZ = momentCoefficientZ * (voltage / scale);
+                QString dataString = QString::number(momentZ, 'g', 12);
+                QTableWidgetItem* channel = new QTableWidgetItem(dataString);
+                daqDataStreamTableWidget->setRowCount(rowCount);
+                channel->setTextAlignment(Qt::AlignCenter);
+                daqDataStreamTableWidget->setItem(rowCount-1, colNo, channel);
+
+                break;
+            }
+        case 6:
+            {
+                forceX = momentCoefficientZ * (voltage / scale);
+                QString dataString = QString::number(forceX, 'g', 12);
+                QTableWidgetItem* channel = new QTableWidgetItem(dataString);
+                daqDataStreamTableWidget->setRowCount(rowCount);
+                channel->setTextAlignment(Qt::AlignCenter);
+                daqDataStreamTableWidget->setItem(rowCount-1, colNo, channel);
+
+                break;
+            }
+
+    }
+
 }
 
 void PerturbationTabWidget::getActiveState(int channel)
@@ -729,6 +815,11 @@ void PerturbationTabWidget::getChannelType(int channel)
 void PerturbationTabWidget::getGainType(int channel)
 {
 
+}
+
+void PerturbationTabWidget::setChannel(int mchannel)
+{
+    currentChannel = mchannel;
 }
 
 #include "../include/moc_PerturbationTabWidget.cpp"

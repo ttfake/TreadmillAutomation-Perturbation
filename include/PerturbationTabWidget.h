@@ -61,6 +61,7 @@ class PerturbationTabWidget : public QWidget
         void getActiveState(int channel);
         void getChannelType(int channel);
         void getGainType(int channel);
+        void setChannel(int mchannel);
 
     private slots:
         void setLeftFrontSpeedValue(double mleftFrontSpeedValue);
@@ -260,6 +261,20 @@ class PerturbationTabWidget : public QWidget
         int rowCount;
         int colNo;
 
-
+        int currentChannel;
+        
+        double forceCoefficientX;
+        double forceCoefficientY;
+        double forceCoefficientZ;
+        double momentCoefficientX;
+        double momentCoefficientY;
+        double momentCoefficientZ;
+        double forceX;
+        double forceY;
+        double forceZ;
+        double momentX;
+        double momentY;
+        double momentZ;
+        double scale;
 };
 #endif

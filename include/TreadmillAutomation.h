@@ -117,6 +117,8 @@ class TreadmillAutomation : public QMainWindow
         double rightSpeedFrontValue;
         double rightSpeedRearValue;
 
+        void uncheckDaqDataView();
+
 };
 
 #endif

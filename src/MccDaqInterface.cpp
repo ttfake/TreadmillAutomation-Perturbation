@@ -24,7 +24,7 @@ void MccDaqInterface::beginDataCollection()
     ULStat = 0;
     rowCount = 0;
     chs = 0;
-    
+   
     qDebug("beginning data collection");
 
     forcePlateDataString = "forcePlateData.csv";
@@ -62,6 +62,7 @@ void MccDaqInterface::beginDataCollection()
         QThread::msleep(30);
         if (!forcePlateDataFile->open(QIODevice::ReadWrite | QIODevice::Text | QIODevice::Append))
             return;
+        QTextStream forcePlateDataStream(forcePlateDataFile);
 
         if(activeState)
         {
@@ -70,8 +71,7 @@ void MccDaqInterface::beginDataCollection()
             ChanTypeVector.push_back(ANALOG);
             GainVector.push_back(BIP10VOLTS);
 
-            QTextStream forcePlateDataStream(forcePlateDataFile);
-
+            
             QString channelHeaderString("Channel ");
             channelHeaderString += QString::number(channel);
             channelHeaderString += ",";
@@ -84,7 +84,6 @@ void MccDaqInterface::beginDataCollection()
         }
 
         forcePlateDataFile->close();
-
     }
 
     setNumberOfChannels(chs);
@@ -173,14 +172,17 @@ void MccDaqInterface::beginDataCollection()
                 for(channel = 0; channel < NUMCHANS; channel++)
                 {
                     emit updateCol(channelVector[channel]);
-//                    emit updateDaqDataBoxSignal(static_cast<uint16_t>(ADData[DataIndex]));
+                    emit setCurrentChannel(channel);
                     double voltage = ((20.0 / pow(2.0,16)) * ADData[DataIndex]) - 10.0;
+
                     emit updateDaqDataBoxSignal(voltage);
                     QString dataPoint1String(QString::number(ADData[DataIndex],'e',12));
                     forcePlateDataStream << QTime::currentTime().toString() << ",";
-                    forcePlateDataStream << dataPoint1String << "\n";
+                    forcePlateDataStream << dataPoint1String << ",";
                     DataIndex++;
                 }
+
+                forcePlateDataStream << "\n";
 
                 forcePlateDataFile->close(); 
                 rowCount++;
