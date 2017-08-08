@@ -43,4 +43,9 @@ void MccDaqConnectButtonWidget::changeDaqConnectLight(QColor mcolor)
 
 }
 
+QColor MccDaqConnectButtonWidget::getDaqConnectLightColor()
+{
+    return color;
+}
+
 #include "../include/moc_MccDaqConnectButtonWidget.cpp"

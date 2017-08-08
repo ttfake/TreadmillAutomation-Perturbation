@@ -23,6 +23,7 @@ void MccDaqInterface::beginDataCollection()
     BoardNum = 0;
     ULStat = 0;
     rowCount = 0;
+    chs = 0;
     
     qDebug("beginning data collection");
 
@@ -64,7 +65,7 @@ void MccDaqInterface::beginDataCollection()
 
         if(activeState)
         {
-            qDebug("Channel %i is set to active", channel);
+            channelVector.push_back(channel);
             ChanVector.push_back(channel);
             ChanTypeVector.push_back(ANALOG);
             GainVector.push_back(BIP10VOLTS);
@@ -77,28 +78,17 @@ void MccDaqInterface::beginDataCollection()
 
             forcePlateDataStream << channelHeaderString;
 
+            chs++;
+
             activeState = false;
         }
 
-/*        if (!forcePlateDataFile->open(QIODevice::ReadWrite | QIODevice::Text | QIODevice::Append))
-            return;
-
-        ChanVector.push_back(channel);
-        ChanTypeVector.push_back(ANALOG);
-        GainVector.push_back(BIP10VOLTS);
-
-        QTextStream forcePlateDataStream(forcePlateDataFile);
-
-        QString channelHeaderString("Channel ");
-        channelHeaderString += QString::number(channel);
-        channelHeaderString += ",";
-
-        forcePlateDataStream << channelHeaderString;
-*/
         forcePlateDataFile->close();
 
     }
-    
+
+    setNumberOfChannels(chs);
+    chs = 0;
     
     short ChanArray[ChanVector.size()];
     short ChanTypeArray[ChanTypeVector.size()];
@@ -179,26 +169,19 @@ void MccDaqInterface::beginDataCollection()
 
                 QTextStream forcePlateDataStream(forcePlateDataFile);
 
+                
                 for(channel = 0; channel < NUMCHANS; channel++)
                 {
-                    emit updateCol(channel);
-                    emit updateDaqDataBoxSignal(static_cast<uint16_t>(ADData[DataIndex]));
-                    QString channel0("Channel 0");
-                    forcePlateDataStream << channel0 << ",";
+                    emit updateCol(channelVector[channel]);
+//                    emit updateDaqDataBoxSignal(static_cast<uint16_t>(ADData[DataIndex]));
+                    double voltage = ((20.0 / pow(2.0,16)) * ADData[DataIndex]) - 10.0;
+                    emit updateDaqDataBoxSignal(voltage);
                     QString dataPoint1String(QString::number(ADData[DataIndex],'e',12));
                     forcePlateDataStream << QTime::currentTime().toString() << ",";
                     forcePlateDataStream << dataPoint1String << "\n";
                     DataIndex++;
                 }
 
-                //channel = 1;
-                //emit updateCol(channel);
-                //emit updateDaqDataBoxSignal(static_cast<uint16_t>(ADData[DataIndex]));
-                //QString channel1("Channel 1");
-                //forcePlateDataStream << channel1 << ",";
-                //QString dataPoint2String(QString::number(ADData[DataIndex],'e',12));
-                //forcePlateDataStream << QTime::currentTime().toString() << ",";
-                //forcePlateDataStream << dataPoint2String << "\n";
                 forcePlateDataFile->close(); 
                 rowCount++;
 
@@ -247,6 +230,12 @@ void MccDaqInterface::setNumberOfChannels(long mchs)
 void MccDaqInterface::setCurrentChannelActiveState(bool mactiveState)
 {
     activeState = mactiveState;
+}
+
+void MccDaqInterface::setRunningState(int runningState)
+{
+    Status = IDLE;
+
 }
 
 #include "../include/moc_MccDaqInterface.cpp"

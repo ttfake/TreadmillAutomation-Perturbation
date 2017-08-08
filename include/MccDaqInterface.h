@@ -13,6 +13,7 @@
 #include <QTextStream>
 #include <QPlainTextEdit>
 #include <QThread>
+#include <cmath>
 #include "MccDaqDiscovery.h"
 
 
@@ -30,7 +31,7 @@ class MccDaqInterface : public QObject
         void dataCollectionSetup();
         void setNumberOfChannels(long chs);
         void setCurrentChannelActiveState(bool mactiveState);
-    
+        void setRunningState(int runningState);
     public slots:
         void beginDataCollection();
         void setDaqButtonText(QString daqTitleText);
@@ -38,7 +39,7 @@ class MccDaqInterface : public QObject
     signals:
         void finished();
         void setDaqTitleText(QString title);
-        void updateDaqDataBoxSignal(uint16_t data);
+        void updateDaqDataBoxSignal(double data);
         void updateRowCount(int mRowCount);
         void updateCol(int mColCount);
         void getActiveState(int mchannel);
@@ -73,6 +74,8 @@ class MccDaqInterface : public QObject
         int rowCount;
         int channel;
         bool activeState;
+        long chs;
+        std::vector<int> channelVector;
 
         
 };

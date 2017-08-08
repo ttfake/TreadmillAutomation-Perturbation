@@ -56,7 +56,7 @@ class PerturbationTabWidget : public QWidget
         void showDaqDataBox(bool checked);
     public slots:
         void showTimer(bool state);
-        void updateDaqDataStreamTableWidget(uint16_t data);
+        void updateDaqDataStreamTableWidget(double data);
         void updateCol(int mColNo);
         void getActiveState(int channel);
         void getChannelType(int channel);

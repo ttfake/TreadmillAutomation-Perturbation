@@ -5,8 +5,8 @@ PerturbationTabWidget::PerturbationTabWidget(QWidget* parent, Qt::WindowFlags fl
 {
     pmccDaqInterface = new MccDaqInterface;
 
-    connect(pmccDaqInterface, SIGNAL(updateDaqDataBoxSignal(uint16_t)), \
-                this, SLOT(updateDaqDataStreamTableWidget(uint16_t)));
+    connect(pmccDaqInterface, SIGNAL(updateDaqDataBoxSignal(double)), \
+                this, SLOT(updateDaqDataStreamTableWidget(double)));
 
     connect(pmccDaqInterface, SIGNAL(updateRowCount(int)), \
                 this, SLOT(setRowCount(int)));
@@ -349,10 +349,9 @@ void PerturbationTabWidget::addDaqControlGroupBox()
     mccDaqConnectButtonWidget->setText("DAQ Connect");
     daqPushButtonBoxLayout->addWidget(mccDaqConnectButtonWidget);
     daqControlGroupBox->setLayout(daqControlGroupBoxLayout);
-    connect(mccDaqConnectButtonWidget, SIGNAL(clicked()), SLOT(setColor()));
     connect(mccDaqConnectButtonWidget, SIGNAL(clicked()), \
             SLOT(startDataCollectionThread()));
-
+    connect(mccDaqConnectButtonWidget, SIGNAL(clicked()), SLOT(setColor()));
     daqControlGroupBoxLayout->addWidget(daqPushButtonBox);
     
     numberOfChannelsGroupBox = new QGroupBox;
@@ -658,13 +657,27 @@ void PerturbationTabWidget::scanForDaqDevice()
 
 void PerturbationTabWidget::startDataCollectionThread()
 {
-    daqThread = new QThread;
-    pmccDaqInterface->moveToThread(daqThread);
-    connect(daqThread, SIGNAL(started()), pmccDaqInterface, SLOT(beginDataCollection()));
-    connect(pmccDaqInterface, SIGNAL(finished()), daqThread, SLOT(quit()));
-    connect(pmccDaqInterface, SIGNAL(finished()), daqThread, SLOT(deleteLater()));
-    connect(daqThread, SIGNAL(finished()), daqThread, SLOT(deleteLater()));
-    daqThread->start();
+    if(mccDaqConnectButtonWidget->getDaqConnectLightColor() == Qt::red)
+    {
+        if(daqThread == NULL)
+        {
+            daqThread = new QThread;
+
+            pmccDaqInterface->moveToThread(daqThread);
+        }
+
+
+        connect(daqThread, SIGNAL(started()), pmccDaqInterface, SLOT(beginDataCollection()));
+        connect(pmccDaqInterface, SIGNAL(finished()), daqThread, SLOT(quit()));
+        daqThread->start();
+    }
+
+    else if(mccDaqConnectButtonWidget->getDaqConnectLightColor() == Qt::green)
+    {
+        qDebug("Terminating Thread.");
+        pmccDaqInterface->setRunningState(IDLE);
+        emit pmccDaqInterface->finished();
+    }
 }
 
 void PerturbationTabWidget::setDaqText(QString title)
@@ -687,9 +700,9 @@ void PerturbationTabWidget::updateCol(int mColNo)
     colNo = mColNo;
 }
 
-void PerturbationTabWidget::updateDaqDataStreamTableWidget(uint16_t data)
+void PerturbationTabWidget::updateDaqDataStreamTableWidget(double data)
 {
-    QString dataString = QString::number(data, 'e', 12);
+    QString dataString = QString::number(data, 'g', 12);
     daqDataStreamTableWidget->setRowCount(rowCount);
     QTableWidgetItem* channel = new QTableWidgetItem(dataString);
     channel->setTextAlignment(Qt::AlignCenter);

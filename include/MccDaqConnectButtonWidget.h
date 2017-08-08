@@ -15,6 +15,8 @@ class MccDaqConnectButtonWidget : public QPushButton
         MccDaqConnectButtonWidget();
         ~MccDaqConnectButtonWidget();
         void changeDaqConnectLight(QColor mcolor);
+        QColor getDaqConnectLightColor();
+
     private:
         void paintEvent(QPaintEvent* paintEvent) override;
         QHBoxLayout* mccDaqConnectButtonWidgetLayout; 
