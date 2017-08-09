@@ -29,6 +29,7 @@
 
 #include "SendSetpoints.h"
 #include "MccDaqConnectButtonWidget.h"
+#include "MccDaqRecordButtonWidget.h"
 #include "MccDaqInterface.h"
 
 class PerturbationTabWidget : public QWidget
@@ -54,6 +55,7 @@ class PerturbationTabWidget : public QWidget
         double calculateSpeed();
         void addDaqDataGroupBox();
         void showDaqDataBox(bool checked);
+
     public slots:
         void showTimer(bool state);
         void updateDaqDataStreamTableWidget(double data);
@@ -73,7 +75,8 @@ class PerturbationTabWidget : public QWidget
         void startAccelTimer();
         void startDecelTimer();
         void slotTimeout();
-        void setColor();
+        void setDaqConnectColor();
+        void setDaqRecordColor();
         void addChannels();
         void scanForDaqDevice();
         void setDaqText(QString daqText);
@@ -237,7 +240,9 @@ class PerturbationTabWidget : public QWidget
         QMenu* daqDevMenu;
         
         MccDaqConnectButtonWidget* mccDaqConnectButtonWidget;
+        MccDaqRecordButtonWidget* mccDaqRecordButtonWidget;
         QFont mccDaqConnectButtonFont;
+        QFont mccDaqRecordButtonFont;
         QLabel* numberOfChannelsLabel;
         QSpinBox* numberOfChannelsSpinBox;
         QPushButton* setNumChannels;
@@ -263,18 +268,5 @@ class PerturbationTabWidget : public QWidget
 
         int currentChannel;
         
-        double forceCoefficientX;
-        double forceCoefficientY;
-        double forceCoefficientZ;
-        double momentCoefficientX;
-        double momentCoefficientY;
-        double momentCoefficientZ;
-        double forceX;
-        double forceY;
-        double forceZ;
-        double momentX;
-        double momentY;
-        double momentZ;
-        double scale;
 };
 #endif

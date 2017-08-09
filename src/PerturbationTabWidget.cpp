@@ -353,8 +353,22 @@ void PerturbationTabWidget::addDaqControlGroupBox()
     daqControlGroupBox->setLayout(daqControlGroupBoxLayout);
     connect(mccDaqConnectButtonWidget, SIGNAL(clicked()), \
             SLOT(startDataCollectionThread()));
-    connect(mccDaqConnectButtonWidget, SIGNAL(clicked()), SLOT(setColor()));
+    connect(mccDaqConnectButtonWidget, SIGNAL(clicked()), SLOT(setDaqConnectColor()));
     daqControlGroupBoxLayout->addWidget(daqPushButtonBox);
+
+    mccDaqRecordButtonWidget = new MccDaqRecordButtonWidget;
+    mccDaqRecordButtonWidget->setSizePolicy(QSizePolicy::Minimum, QSizePolicy::Fixed);
+    mccDaqRecordButtonWidget->setFixedSize(180,40);
+    mccDaqRecordButtonFont.setFamily("Times");
+    mccDaqRecordButtonFont.setWeight(80);
+    mccDaqRecordButtonFont.setPointSize(12);
+    mccDaqRecordButtonFont.setBold(true);
+    mccDaqRecordButtonWidget->setFont(mccDaqRecordButtonFont);
+    mccDaqRecordButtonWidget->setText("DAQ Record");
+    daqPushButtonBoxLayout->addWidget(mccDaqRecordButtonWidget);
+    connect(mccDaqRecordButtonWidget, SIGNAL(clicked()), SLOT(setDaqRecordColor()));
+    daqControlGroupBox->setLayout(daqControlGroupBoxLayout);
+
     
     numberOfChannelsGroupBox = new QGroupBox;
     numberOfChannelsGroupBoxFont.setFamily("Times");
@@ -394,7 +408,7 @@ void PerturbationTabWidget::addDaqControlGroupBox()
 }
 
 
-void PerturbationTabWidget::setColor()
+void PerturbationTabWidget::setDaqConnectColor()
 {
     if(clicked)
     {
@@ -408,6 +422,22 @@ void PerturbationTabWidget::setColor()
     }
 
 }
+
+void PerturbationTabWidget::setDaqRecordColor()
+{
+    if(clicked)
+    {
+        mccDaqRecordButtonWidget->changeDaqRecordLight(Qt::green);
+        clicked = false;
+    }
+    else
+    {
+        mccDaqRecordButtonWidget->changeDaqRecordLight(Qt::red);
+        clicked = true;
+    }
+
+}
+
 
 void PerturbationTabWidget::addChannels()
 {
@@ -560,6 +590,7 @@ void PerturbationTabWidget::startAccelTimer()
     double retAccelValue = getAccelerationTimeValue();
     qDebug("Acceleration will commence for %f seconds", retAccelValue/millisecondConversion);
     sendSetpoints->sendSetpoints(SendSetpoints::TreadmillProperty::ACCEL, SendSetpoints::NormalSetpoint);
+    pmccDaqInterface->setPerturbationTrigger(true);
     QTimer::singleShot(retAccelValue, this, SLOT(startDecelTimer()));
 }
 
@@ -702,97 +733,13 @@ void PerturbationTabWidget::updateCol(int mColNo)
     colNo = mColNo;
 }
 
-void PerturbationTabWidget::updateDaqDataStreamTableWidget(double voltage)
+void PerturbationTabWidget::updateDaqDataStreamTableWidget(double force)
 {
-    forceCoefficientX = 500;
-    forceCoefficientY = 500;
-    forceCoefficientZ = 1000;
-    momentCoefficientX = 800;
-    momentCoefficientY = 400;
-    momentCoefficientZ = 400;
-    scale = 10;
-    switch(currentChannel)
-    {
-        case 0:
-            {
-                forceX = forceCoefficientX * (voltage / scale);
-                QString dataString = QString::number(forceX, 'g', 12);
-                QTableWidgetItem* channel = new QTableWidgetItem(dataString);
-                daqDataStreamTableWidget->setRowCount(rowCount);
-                channel->setTextAlignment(Qt::AlignCenter);
-                daqDataStreamTableWidget->setItem(rowCount-1, colNo, channel);
-
-                break;
-            }
-        case 1:
-            {
-                forceY = forceCoefficientY * (voltage / scale);
-                QString dataString = QString::number(forceY, 'g', 12);
-                QTableWidgetItem* channel = new QTableWidgetItem(dataString);
-                daqDataStreamTableWidget->setRowCount(rowCount);
-                channel->setTextAlignment(Qt::AlignCenter);
-                daqDataStreamTableWidget->setItem(rowCount-1, colNo, channel);
-
-                break;
-            }
-        case 2:
-            {
-                forceZ = forceCoefficientZ * (voltage / scale);
-                QString dataString = QString::number(forceZ, 'g', 12);
-                QTableWidgetItem* channel = new QTableWidgetItem(dataString);
-                daqDataStreamTableWidget->setRowCount(rowCount);
-                channel->setTextAlignment(Qt::AlignCenter);
-                daqDataStreamTableWidget->setItem(rowCount-1, colNo, channel);
-
-                break;
-            }
-        case 3:
-            {
-                momentX = momentCoefficientX * (voltage / scale);
-                QString dataString = QString::number(momentX, 'g', 12);
-                QTableWidgetItem* channel = new QTableWidgetItem(dataString);
-                daqDataStreamTableWidget->setRowCount(rowCount);
-                channel->setTextAlignment(Qt::AlignCenter);
-                daqDataStreamTableWidget->setItem(rowCount-1, colNo, channel);
-
-                break;
-            }
-        case 4:
-            {
-                momentY = momentCoefficientY * (voltage / scale);
-                QString dataString = QString::number(momentY, 'g', 12);
-                QTableWidgetItem* channel = new QTableWidgetItem(dataString);
-                daqDataStreamTableWidget->setRowCount(rowCount);
-                channel->setTextAlignment(Qt::AlignCenter);
-                daqDataStreamTableWidget->setItem(rowCount-1, colNo, channel);
-
-                break;
-            }
-        case 5:
-            {
-                momentZ = momentCoefficientZ * (voltage / scale);
-                QString dataString = QString::number(momentZ, 'g', 12);
-                QTableWidgetItem* channel = new QTableWidgetItem(dataString);
-                daqDataStreamTableWidget->setRowCount(rowCount);
-                channel->setTextAlignment(Qt::AlignCenter);
-                daqDataStreamTableWidget->setItem(rowCount-1, colNo, channel);
-
-                break;
-            }
-        case 6:
-            {
-                forceX = momentCoefficientZ * (voltage / scale);
-                QString dataString = QString::number(forceX, 'g', 12);
-                QTableWidgetItem* channel = new QTableWidgetItem(dataString);
-                daqDataStreamTableWidget->setRowCount(rowCount);
-                channel->setTextAlignment(Qt::AlignCenter);
-                daqDataStreamTableWidget->setItem(rowCount-1, colNo, channel);
-
-                break;
-            }
-
-    }
-
+    QString dataString = QString::number(force, 'g', 12);
+    QTableWidgetItem* channel = new QTableWidgetItem(dataString);
+    daqDataStreamTableWidget->setRowCount(rowCount);
+    channel->setTextAlignment(Qt::AlignCenter);
+    daqDataStreamTableWidget->setItem(rowCount-1, colNo, channel);
 }
 
 void PerturbationTabWidget::getActiveState(int channel)

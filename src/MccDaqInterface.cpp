@@ -3,9 +3,27 @@
 
 MccDaqInterface::MccDaqInterface()
 {
+    forceCoefficientXKey = 0;
+    forceCoefficientX = 500.00;
+    forceCoefficientYKey = 1;
+    forceCoefficientY = 500.00;
+    forceCoefficientZKey = 2;
+    forceCoefficientZ = 1000.00;
+    momentCoefficientXKey = 3;
+    momentCoefficientX = 800.00;
+    momentCoefficientYKey = 4;
+    momentCoefficientY = 400.00;
+    momentCoefficientZKey = 5;
+    momentCoefficientZ = 400.00;
+    scale = 10;
+
     mccDaqDisc = new MccDaqDiscovery;
     qRegisterMetaType<uint16_t>("uint16_t");
     connect(mccDaqDisc, SIGNAL(setText(QString)), this, SLOT(setDaqButtonText(QString)));
+    channelCoefficientMap.insert({ {forceCoefficientXKey, forceCoefficientX}, \
+            {forceCoefficientYKey, forceCoefficientY}, {forceCoefficientZKey, forceCoefficientZ}, \
+            {momentCoefficientXKey, momentCoefficientX}, {momentCoefficientYKey, momentCoefficientY}, \
+            {momentCoefficientZKey, momentCoefficientZ} });
 
 }
 
@@ -54,16 +72,16 @@ void MccDaqInterface::beginDataCollection()
     std::cout << "Continuous data collection has begun in the BACKGROUND.\n" << std::endl;
 
     /* load the arrays with values */
-    
+    if (!forcePlateDataFile->open(QIODevice::ReadWrite | QIODevice::Text | QIODevice::Append))
+            return;
+        QTextStream forcePlateDataStream(forcePlateDataFile);
+
     for(channel = 0; channel < NUMCHANS; channel++)
     {
         emit getActiveState(channel);
 
         QThread::msleep(30);
-        if (!forcePlateDataFile->open(QIODevice::ReadWrite | QIODevice::Text | QIODevice::Append))
-            return;
-        QTextStream forcePlateDataStream(forcePlateDataFile);
-
+        
         if(activeState)
         {
             channelVector.push_back(channel);
@@ -73,7 +91,7 @@ void MccDaqInterface::beginDataCollection()
 
             
             QString channelHeaderString("Channel ");
-            channelHeaderString += QString::number(channel);
+            channelHeaderString += QString::number(channel + 1);
             channelHeaderString += ",";
 
             forcePlateDataStream << channelHeaderString;
@@ -82,9 +100,10 @@ void MccDaqInterface::beginDataCollection()
 
             activeState = false;
         }
-
-        forcePlateDataFile->close();
     }
+
+    forcePlateDataStream << "Perturbation";
+    forcePlateDataFile->close();
 
     setNumberOfChannels(chs);
     chs = 0;
@@ -174,11 +193,22 @@ void MccDaqInterface::beginDataCollection()
                     emit updateCol(channelVector[channel]);
                     emit setCurrentChannel(channel);
                     double voltage = ((20.0 / pow(2.0,16)) * ADData[DataIndex]) - 10.0;
-
-                    emit updateDaqDataBoxSignal(voltage);
+                    double force = channelCoefficientMap[channel] * (voltage / scale);
+                    emit updateDaqDataBoxSignal(force);
                     QString dataPoint1String(QString::number(ADData[DataIndex],'e',12));
                     forcePlateDataStream << QTime::currentTime().toString() << ",";
                     forcePlateDataStream << dataPoint1String << ",";
+                    if(pertTrigger)
+                    {
+                        forcePlateDataStream << QString::number(1);
+                        setPerturbationTrigger(false);
+                    }
+                    else
+                    {
+                        forcePlateDataStream << QString::number(0);
+                    }
+
+
                     DataIndex++;
                 }
 
@@ -237,7 +267,16 @@ void MccDaqInterface::setCurrentChannelActiveState(bool mactiveState)
 void MccDaqInterface::setRunningState(int runningState)
 {
     Status = IDLE;
+}
 
+void MccDaqInterface::setPerturbationTrigger(bool mpertTrigger)
+{
+    pertTrigger = mpertTrigger;
+}
+
+void MccDaqInterface::setRecordBool(bool mrecordBool)
+{
+    recordBool = mrecordBool;
 }
 
 #include "../include/moc_MccDaqInterface.cpp"

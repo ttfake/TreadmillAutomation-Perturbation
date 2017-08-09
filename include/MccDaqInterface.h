@@ -14,6 +14,7 @@
 #include <QPlainTextEdit>
 #include <QThread>
 #include <cmath>
+#include <map>
 #include "MccDaqDiscovery.h"
 
 
@@ -32,6 +33,9 @@ class MccDaqInterface : public QObject
         void setNumberOfChannels(long chs);
         void setCurrentChannelActiveState(bool mactiveState);
         void setRunningState(int runningState);
+        void setPerturbationTrigger(bool mpertTrigger);
+        void setRecordBool(bool mrecordBool);
+    
     public slots:
         void beginDataCollection();
         void setDaqButtonText(QString daqTitleText);
@@ -77,6 +81,23 @@ class MccDaqInterface : public QObject
         bool activeState;
         long chs;
         std::vector<int> channelVector;
-                
+        std::map<int,double> channelCoefficientMap;
+        int forceCoefficientXKey;
+        double forceCoefficientX;
+        int forceCoefficientYKey;
+        double forceCoefficientY;
+        int forceCoefficientZKey;
+        double forceCoefficientZ;
+        int momentCoefficientXKey;
+        double momentCoefficientX;
+        int momentCoefficientYKey;
+        double momentCoefficientY;
+        int momentCoefficientZKey;
+        double momentCoefficientZ;
+        double scale;
+        bool pertTrigger;
+        bool recordBool;
+
+
 };
 #endif
