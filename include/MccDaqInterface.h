@@ -35,6 +35,7 @@ class MccDaqInterface : public QObject
         void setRunningState(int runningState);
         void setPerturbationTrigger(bool mpertTrigger);
         void setRecordBool(bool mrecordBool);
+        void setDaqLogFileName(QString mfileName);
     
     public slots:
         void beginDataCollection();
@@ -82,22 +83,38 @@ class MccDaqInterface : public QObject
         long chs;
         std::vector<int> channelVector;
         std::map<int,double> channelCoefficientMap;
-        int forceCoefficientXKey;
-        double forceCoefficientX;
-        int forceCoefficientYKey;
-        double forceCoefficientY;
-        int forceCoefficientZKey;
-        double forceCoefficientZ;
-        int momentCoefficientXKey;
-        double momentCoefficientX;
-        int momentCoefficientYKey;
-        double momentCoefficientY;
-        int momentCoefficientZKey;
-        double momentCoefficientZ;
+        
+        int leftForceCoefficientXKey;
+        double leftForceCoefficientX;
+        int leftForceCoefficientYKey;
+        double leftForceCoefficientY;
+        int leftForceCoefficientZKey;
+        double leftForceCoefficientZ;
+        int leftMomentCoefficientXKey;
+        double leftMomentCoefficientX;
+        int leftMomentCoefficientYKey;
+        double leftMomentCoefficientY;
+        int leftMomentCoefficientZKey;
+        double leftMomentCoefficientZ;
+
+        int rightForceCoefficientXKey;
+        double rightForceCoefficientX;
+        int rightForceCoefficientYKey;
+        double rightForceCoefficientY;
+        int rightForceCoefficientZKey;
+        double rightForceCoefficientZ;
+        int rightMomentCoefficientXKey;
+        double rightMomentCoefficientX;
+        int rightMomentCoefficientYKey;
+        double rightMomentCoefficientY;
+        int rightMomentCoefficientZKey;
+        double rightMomentCoefficientZ;
+
+        
+        
         double scale;
         bool pertTrigger;
         bool recordBool;
-
-
+        QString daqLogFileName;
 };
 #endif

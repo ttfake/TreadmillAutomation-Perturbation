@@ -21,8 +21,5 @@ class MccDaqRecordButtonWidget : public QPushButton
         void paintEvent(QPaintEvent* paintEvent) override;
         QHBoxLayout* mccDaqRecordButtonWidgetLayout; 
         QColor color;
-
-
-
 };
 #endif

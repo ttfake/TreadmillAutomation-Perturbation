@@ -25,7 +25,10 @@
 #include <QThread>
 #include <QTableWidget>
 #include <QMessageBox>
+#include <QFileDialog>
 #include <cmath>
+#include <cstdlib>
+#include <ctime>
 
 #include "SendSetpoints.h"
 #include "MccDaqConnectButtonWidget.h"
@@ -64,6 +67,7 @@ class PerturbationTabWidget : public QWidget
         void getChannelType(int channel);
         void getGainType(int channel);
         void setChannel(int mchannel);
+        void randomDelay();
 
     private slots:
         void setLeftFrontSpeedValue(double mleftFrontSpeedValue);
@@ -77,12 +81,14 @@ class PerturbationTabWidget : public QWidget
         void slotTimeout();
         void setDaqConnectColor();
         void setDaqRecordColor();
+        void setDaqRecordBool();
         void addChannels();
         void scanForDaqDevice();
         void setDaqText(QString daqText);
         void setupDataCollection();
         void startDataCollectionThread();
         void setRowCount(int mRowCount);
+        void setDaqLogFileName(); 
 
     private:
 
@@ -267,6 +273,8 @@ class PerturbationTabWidget : public QWidget
         int colNo;
 
         int currentChannel;
+
+        bool recordClicked;
         
 };
 #endif

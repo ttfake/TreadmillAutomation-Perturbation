@@ -22,6 +22,7 @@ PerturbationTabWidget::PerturbationTabWidget(QWidget* parent, Qt::WindowFlags fl
     createTreadmillPerturbationTab();
     populateTreadmillPerturbationTab();
     clicked = true;
+    recordClicked = true;
     scanForDaqDevice();
 
 }
@@ -312,8 +313,7 @@ void PerturbationTabWidget::addStartPertRunGroupBox()
     startPertRunBtn->setFont(startPertRunBtnFont);
     quadrantOnePerturbationLayout->addWidget(startPertRunGroupBox);
     startPertRunGroupBox->hide();
-
-    connect(startPertRunBtn, SIGNAL(clicked()), SLOT(startAccelTimer()));
+    connect(startPertRunBtn, SIGNAL(clicked()), SLOT(randomDelay()));
 }
 
 void PerturbationTabWidget::addDaqControlGroupBox()
@@ -351,6 +351,7 @@ void PerturbationTabWidget::addDaqControlGroupBox()
     mccDaqConnectButtonWidget->setText("DAQ Connect");
     daqPushButtonBoxLayout->addWidget(mccDaqConnectButtonWidget);
     daqControlGroupBox->setLayout(daqControlGroupBoxLayout);
+    connect(mccDaqConnectButtonWidget, SIGNAL(clicked()), SLOT(setDaqLogFileName()));
     connect(mccDaqConnectButtonWidget, SIGNAL(clicked()), \
             SLOT(startDataCollectionThread()));
     connect(mccDaqConnectButtonWidget, SIGNAL(clicked()), SLOT(setDaqConnectColor()));
@@ -366,6 +367,7 @@ void PerturbationTabWidget::addDaqControlGroupBox()
     mccDaqRecordButtonWidget->setFont(mccDaqRecordButtonFont);
     mccDaqRecordButtonWidget->setText("DAQ Record");
     daqPushButtonBoxLayout->addWidget(mccDaqRecordButtonWidget);
+    connect(mccDaqRecordButtonWidget, SIGNAL(clicked()), SLOT(setDaqRecordBool()));
     connect(mccDaqRecordButtonWidget, SIGNAL(clicked()), SLOT(setDaqRecordColor()));
     daqControlGroupBox->setLayout(daqControlGroupBoxLayout);
 
@@ -425,15 +427,15 @@ void PerturbationTabWidget::setDaqConnectColor()
 
 void PerturbationTabWidget::setDaqRecordColor()
 {
-    if(clicked)
+    if(recordClicked)
     {
         mccDaqRecordButtonWidget->changeDaqRecordLight(Qt::green);
-        clicked = false;
+        recordClicked = false;
     }
     else
     {
         mccDaqRecordButtonWidget->changeDaqRecordLight(Qt::red);
-        clicked = true;
+        recordClicked = true;
     }
 
 }
@@ -576,6 +578,13 @@ double PerturbationTabWidget::getRightFrontSpeedValue()
 void PerturbationTabWidget::setUseLibraryStatus(bool useLibCheckBox)
 {
     useLibraryCheckBoxStatus = useLibCheckBox;
+}
+
+void PerturbationTabWidget::randomDelay()
+{
+    int randomTime = (rand() % (11 - 3) + 3) * 1000;
+    qDebug("Random Time: %i", randomTime);
+    QTimer::singleShot(randomTime, this, SLOT(startAccelTimer()));
 }
 
 void PerturbationTabWidget::startAccelTimer()
@@ -735,7 +744,7 @@ void PerturbationTabWidget::updateCol(int mColNo)
 
 void PerturbationTabWidget::updateDaqDataStreamTableWidget(double force)
 {
-    QString dataString = QString::number(force, 'g', 12);
+    QString dataString = QString::number(force, 'f', 4);
     QTableWidgetItem* channel = new QTableWidgetItem(dataString);
     daqDataStreamTableWidget->setRowCount(rowCount);
     channel->setTextAlignment(Qt::AlignCenter);
@@ -767,6 +776,33 @@ void PerturbationTabWidget::getGainType(int channel)
 void PerturbationTabWidget::setChannel(int mchannel)
 {
     currentChannel = mchannel;
+}
+
+void PerturbationTabWidget::setDaqRecordBool()
+{
+    if(mccDaqRecordButtonWidget->getDaqRecordLightColor() == Qt::red)
+    {
+        pmccDaqInterface->setRecordBool(true);
+    }
+
+    else if(mccDaqRecordButtonWidget->getDaqRecordLightColor() == Qt::green)
+    {
+        pmccDaqInterface->setRecordBool(false);
+    }
+
+}
+
+void PerturbationTabWidget::setDaqLogFileName()
+{
+    if(mccDaqConnectButtonWidget->getDaqConnectLightColor() == Qt::red)
+    {
+        QString fileName = QFileDialog::getSaveFileName(this, tr("Save File"), \
+                "C:\\Users\\User\\Desktop\\HReflex_Binaries-master\\untitled.csv", \
+                tr("CSV (*.csv)"));
+
+        pmccDaqInterface->setDaqLogFileName(fileName);
+
+    }
 }
 
 #include "../include/moc_PerturbationTabWidget.cpp"
