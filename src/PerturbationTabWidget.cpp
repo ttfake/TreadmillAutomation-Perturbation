@@ -25,6 +25,8 @@ PerturbationTabWidget::PerturbationTabWidget(QWidget* parent, Qt::WindowFlags fl
     recordClicked = true;
     scanForDaqDevice();
 
+
+
 }
 
 PerturbationTabWidget::~PerturbationTabWidget()
@@ -75,7 +77,7 @@ void PerturbationTabWidget::addQuadrantThree()
     quadrantThreePerturbationLayout = new QVBoxLayout;
     quadrantThreeGroupBox->setLayout(quadrantThreePerturbationLayout);
     perturbationTabLayout->addWidget(quadrantThreeGroupBox, 1,0);
-
+    addRecordDataStreamVelocityBox();
 }
 
 void PerturbationTabWidget::addQuadrantFour()
@@ -313,7 +315,8 @@ void PerturbationTabWidget::addStartPertRunGroupBox()
     startPertRunBtn->setFont(startPertRunBtnFont);
     quadrantOnePerturbationLayout->addWidget(startPertRunGroupBox);
     startPertRunGroupBox->hide();
-    connect(startPertRunBtn, SIGNAL(clicked()), SLOT(randomDelay()));
+    recTreadmillStream = new RecordTreadmillStream;
+    connect(startPertRunBtn, SIGNAL(clicked()), SLOT(startAccelTimer()));
 }
 
 void PerturbationTabWidget::addDaqControlGroupBox()
@@ -409,6 +412,12 @@ void PerturbationTabWidget::addDaqControlGroupBox()
     quadrantTwoPerturbationLayout->addWidget(daqControlGroupBox);
 }
 
+void PerturbationTabWidget::addRecordDataStreamVelocityBox()
+{
+
+    quadrantThreePerturbationLayout->addWidget(recTreadmillStream);
+
+}
 
 void PerturbationTabWidget::setDaqConnectColor()
 {
@@ -510,14 +519,14 @@ void PerturbationTabWidget::setDecelerationTimeValue(double mdecelTimeValue)
 
 void PerturbationTabWidget::setAccelerationValue(double maccelValue)
 {
-    accelerationValue = maccelValue;
+    accelerationValue = fabs(maccelValue);
     sendSetpoints->setAccelerationValue(accelerationValue);
     std::cout << "Acceleration Value Set to: " << accelerationValue << std::endl;
 }
 
 void PerturbationTabWidget::setDecelerationValue(double mdecelValue)
 {
-    decelerationValue = mdecelValue;
+    decelerationValue = fabs(mdecelValue);
     sendSetpoints->setDecelerationValue(decelerationValue);
     std::cout << "Deceleration Set to: " << decelerationValue << std::endl;
 }
@@ -589,7 +598,7 @@ void PerturbationTabWidget::randomDelay()
 
 void PerturbationTabWidget::startAccelTimer()
 {
-
+    recTreadmillStream->setRecord();
     setAccelerationValue(acceleration->value());
     setDecelerationValue(deceleration->value());
     setAccelerationTimeValue(timeAccelSpinBox->value());
@@ -605,7 +614,6 @@ void PerturbationTabWidget::startAccelTimer()
 
 void PerturbationTabWidget::startDecelTimer()
 {
-
     double retDecelTimeValue = getDecelerationTimeValue();
     setRightFrontSpeedValue(0);
     setLeftFrontSpeedValue(0);
@@ -614,12 +622,14 @@ void PerturbationTabWidget::startDecelTimer()
     qDebug("Starting Timer...");
     qDebug("Deceleration will commence for %f seconds", retDecelTimeValue/millisecondConversion);
     QTimer::singleShot(retDecelTimeValue, this, SLOT(slotTimeout()));
+
 }
 
 void PerturbationTabWidget::slotTimeout()
 {
     sendSetpoints->sendSetpoints(SendSetpoints::ZERO, SendSetpoints::NormalSetpoint);
     std::cout << "Trial Ended" << std::endl;
+    //recTreadmillStream->stopRecord();
 }
 
 
@@ -627,12 +637,13 @@ void PerturbationTabWidget::slotTimeout()
 void PerturbationTabWidget::setSocket(QAbstractSocket* socket)
 {
     pertSocket = socket;
+    recTreadmillStream->setSocket(pertSocket);
     sendSetpoints->setSocket(socket);
 }
 
 double PerturbationTabWidget::calculateSpeed()
 {
-    return (getAccelerationValue() * getAccelerationTimeValue()/millisecondConversion); 
+    return (acceleration->value() * getAccelerationTimeValue()/millisecondConversion); 
 }
 
 void PerturbationTabWidget::addDaqDataGroupBox()

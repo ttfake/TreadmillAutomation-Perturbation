@@ -119,13 +119,13 @@ void MccDaqInterface::beginDataCollection()
 
             forcePlateDataStream << channelHeaderString;
 
-            double voltage = ((20.0 / pow(2.0,16)) * 38993.92) - 10.0;
-            double force = channelCoefficientMap[channel] * (voltage / scale);
-
-            QString dataPoint1String(QString::number(force,'f',4));
-
-            qDebug("Force: %f", force);
-
+//            double voltage = ((20.0 / pow(2.0,16)) * 38993.92) - 10.0;
+//            double force = channelCoefficientMap[channel] * (voltage / scale);
+//
+//            QString dataPoint1String(QString::number(force,'f',4));
+//
+//            qDebug("Force: %f", force);
+//
             chs++;
 
             activeState = false;
@@ -226,10 +226,12 @@ void MccDaqInterface::beginDataCollection()
                 {
                     emit updateCol(channelVector[channel]);
                     emit setCurrentChannel(channel);
-                    double voltage = ((20.0 / pow(2.0,16)) * ADData[DataIndex]) - 10.0;
+                    double voltage = ((20.0 / pow(2.0,16)) * static_cast<double>(ADData[DataIndex])) - 10.0;
                     double force = channelCoefficientMap[channel] * (voltage / scale);
-                    emit updateDaqDataBoxSignal(force);
+                    emit updateDaqDataBoxSignal(voltage);
+                    qDebug("Force: %f", force);
                     QString dataPoint1String(QString::number(force,'f',4));
+                    qDebug("dataPoint1String: %f", dataPoint1String);
                     if(recordBool)
                     {
                         forcePlateDataStream << dataPoint1String << ",";

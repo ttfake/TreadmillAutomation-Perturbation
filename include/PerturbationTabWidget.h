@@ -34,6 +34,7 @@
 #include "MccDaqConnectButtonWidget.h"
 #include "MccDaqRecordButtonWidget.h"
 #include "MccDaqInterface.h"
+#include "RecordTreadmillStream.h"
 
 class PerturbationTabWidget : public QWidget
 {
@@ -109,7 +110,7 @@ class PerturbationTabWidget : public QWidget
         void addQuadrantTwo();
         void addQuadrantThree();
         void addQuadrantFour();
-        
+        void addRecordDataStreamVelocityBox(); 
         
         //populateTreadmillPerturbationTab
         QCheckBox* lftRghtTie;
@@ -275,6 +276,10 @@ class PerturbationTabWidget : public QWidget
         int currentChannel;
 
         bool recordClicked;
+
+        RecordTreadmillStream* recTreadmillStream;
+
+        
         
 };
 #endif
