@@ -316,6 +316,10 @@ void PerturbationTabWidget::addStartPertRunGroupBox()
     quadrantOnePerturbationLayout->addWidget(startPertRunGroupBox);
     startPertRunGroupBox->hide();
     recTreadmillStream = new RecordTreadmillStream;
+    connect(recTreadmillStream, SIGNAL(setRightSpeed(QString)), 
+            this, SLOT(setCurrentRightBeltSpeed(QString)));
+    connect(recTreadmillStream, SIGNAL(setLeftSpeed(QString)), 
+            this, SLOT(setCurrentLeftBeltSpeed(QString)));
     connect(startPertRunBtn, SIGNAL(clicked()), SLOT(startAccelTimer()));
 }
 
@@ -609,7 +613,17 @@ void PerturbationTabWidget::startAccelTimer()
     qDebug("Acceleration will commence for %f seconds", retAccelValue/millisecondConversion);
     sendSetpoints->sendSetpoints(SendSetpoints::TreadmillProperty::ACCEL, SendSetpoints::NormalSetpoint);
     pmccDaqInterface->setPerturbationTrigger(true);
-    QTimer::singleShot(retAccelValue, this, SLOT(startDecelTimer()));
+    QTimer::singleShot(retAccelValue, this, SLOT(velocityCorrection()));
+}
+
+void PerturbationTabWidget::velocityCorrection()
+{
+    int errorCorrectedValue = 0;
+    if(currentRightSpeed < rightSpeedFrontValue)
+    {
+        errorCorrectedValue = (currentRightSpeed - rightSpeedFrontValue) / accelerationValue;
+    }
+    QTimer::singleShot(errorCorrectedValue, this, SLOT(startDecelTimer()));
 }
 
 void PerturbationTabWidget::startDecelTimer()
@@ -814,6 +828,16 @@ void PerturbationTabWidget::setDaqLogFileName()
         pmccDaqInterface->setDaqLogFileName(fileName);
 
     }
+}
+
+void PerturbationTabWidget::setCurrentRightBeltSpeed(QString mcurrentRightSpeed)
+{
+    currentRightSpeed = mcurrentRightSpeed.toInt();
+}
+
+void PerturbationTabWidget::setCurrentLeftBeltSpeed(QString mcurrentLeftSpeed)
+{
+    currentLeftSpeed = mcurrentLeftSpeed.toInt();
 }
 
 #include "../include/moc_PerturbationTabWidget.cpp"

@@ -109,7 +109,9 @@ void RecordTreadmillStream::readyRead()
    
    rightSpeedFeedback->setText(QString("%1 m/s").arg(speed[0]/1000.0, 0, 'f', 3));
    QString rightVelocity(QString("%1 m/s").arg(speed[0]/1000.0, 0, 'f', 3));
+   emit setRightSpeed(rightVelocity);
    QString leftVelocity(QString("%1 m/s").arg(speed[1]/1000.0, 0, 'f', 3));
+   emit setLeftSpeed(leftVelocity);
 
    if(recordBool)
    {

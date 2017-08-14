@@ -32,6 +32,10 @@ class RecordTreadmillStream : public QMainWindow
         void readyRead();
         void setRecord();
 
+    signals:
+        setRightSpeed(QString mrightSpeed);
+        setLeftSpeed(QString mleftSpeed);
+
     private:
         void populateRecordStreamGroupBox();
         QWidget* centralWidget;
