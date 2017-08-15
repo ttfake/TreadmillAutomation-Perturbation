@@ -90,7 +90,8 @@ class PerturbationTabWidget : public QWidget
         void startDataCollectionThread();
         void setRowCount(int mRowCount);
         void setDaqLogFileName(); 
-        void velocityCorrection();
+        void setCurrentRightBeltSpeed(double mcurrentRightSpeed);
+        void setCurrentLeftBeltSpeed(double mcurrentLeftSpeed);
 
     private:
 
@@ -280,8 +281,6 @@ class PerturbationTabWidget : public QWidget
 
         RecordTreadmillStream* recTreadmillStream;
 
-        void setCurrentRightBeltSpeed(QString mcurrentRightSpeed);
-        void setCurrentLeftBeltSpeed(QString mcurrentLeftSpeed);
         int currentRightSpeed;
         int currentLeftSpeed;
 

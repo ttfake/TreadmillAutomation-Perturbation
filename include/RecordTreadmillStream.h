@@ -16,9 +16,10 @@
 #include <QTextStream>
 #include <QTime>
 #include <QAbstractSocket>
+#include <QThread>
 #include "include/MccDaqRecordButtonWidget.h"
+#include "include/DataCollection.h"
 
-static void showWarning(QWidget * parent, const QString & title, const QString & text);
 
 class RecordTreadmillStream : public QMainWindow
 { 
@@ -29,12 +30,14 @@ class RecordTreadmillStream : public QMainWindow
         void setSocket(QAbstractSocket* msocket);
         void stopRecord();
     public slots:
-        void readyRead();
+//        void readyRead();
         void setRecord();
+        void setCurrentRightBeltSpeed(double);
+        void setCurrentLeftBeltSpeed(double);
 
     signals:
-        setRightSpeed(QString mrightSpeed);
-        setLeftSpeed(QString mleftSpeed);
+        setRightSpeed(double mrightSpeed);
+        setLeftSpeed(double mleftSpeed);
 
     private:
         void populateRecordStreamGroupBox();
@@ -63,7 +66,9 @@ class RecordTreadmillStream : public QMainWindow
         bool recordBool;
         QFile* velocityDataFile;
         void setVelocityFileName();
-
-
+        DataCollection* dataCollect;
+        QThread* dataCollectThread;
+        double currentRightBeltVelocity;
+        double currentLeftBeltVelocity;
 };
 #endif
