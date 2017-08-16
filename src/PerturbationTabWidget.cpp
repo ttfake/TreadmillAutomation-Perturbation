@@ -316,11 +316,9 @@ void PerturbationTabWidget::addStartPertRunGroupBox()
     quadrantOnePerturbationLayout->addWidget(startPertRunGroupBox);
     startPertRunGroupBox->hide();
     recTreadmillStream = new RecordTreadmillStream;
-    connect(recTreadmillStream, SIGNAL(setRightSpeed(double)), 
-            this, SLOT(setCurrentRightBeltSpeed(double)));
-    connect(recTreadmillStream, SIGNAL(setLeftSpeed(double)), 
-            this, SLOT(setCurrentLeftBeltSpeed(double)));
-    connect(startPertRunBtn, SIGNAL(clicked()), SLOT(startAccelTimer()));
+    connect(recTreadmillStream, SIGNAL(treadmillStarted(double)), 
+            this, SLOT(treadmillWait(double)));
+    connect(startPertRunBtn, SIGNAL(clicked()), SLOT(startTreadmill()));
 }
 
 void PerturbationTabWidget::addDaqControlGroupBox()
@@ -599,7 +597,7 @@ void PerturbationTabWidget::randomDelay()
     QTimer::singleShot(randomTime, this, SLOT(startAccelTimer()));
 }
 
-void PerturbationTabWidget::startAccelTimer()
+void PerturbationTabWidget::startTreadmill()
 {
     recTreadmillStream->setRecord();
     setAccelerationValue(acceleration->value());
@@ -608,17 +606,18 @@ void PerturbationTabWidget::startAccelTimer()
     setDecelerationTimeValue(timeDecelSpinBox->value());
     setLeftFrontSpeedValue(calculateSpeed());
     setRightFrontSpeedValue(calculateSpeed());
-    double retAccelValue;
-    qDebug("Acceleration will commence for %f seconds", retAccelValue/millisecondConversion);
+    //qDebug("Acceleration will commence for %f seconds", retAccelValue/millisecondConversion);
     sendSetpoints->sendSetpoints(SendSetpoints::TreadmillProperty::ACCEL, SendSetpoints::NormalSetpoint);
-    while(currentRightSpeed <= 0)
-    {
-        qDebug("%f", currentRightSpeed);
-        Sleep(5);
-    }
+    recTreadmillStream->setSocket(pertSocket);
+ }
 
-    double timeSinceStart = currentRightSpeed / getAccelerationValue();
-    retAccelValue = timeSinceStart - getAccelerationTimeValue();
+void PerturbationTabWidget::treadmillWait(double mvelocity)
+{
+    double retAccelValue;
+    double timeSinceStart = (mvelocity / getAccelerationValue()) * 1000;
+    retAccelValue = fabs( getAccelerationTimeValue() - timeSinceStart );
+
+    qDebug("Deceleration Time Set To: %f", retAccelValue);
 
     pmccDaqInterface->setPerturbationTrigger(true);
 
@@ -651,7 +650,6 @@ void PerturbationTabWidget::slotTimeout()
 void PerturbationTabWidget::setSocket(QAbstractSocket* socket)
 {
     pertSocket = socket;
-    recTreadmillStream->setSocket(pertSocket);
     sendSetpoints->setSocket(socket);
 }
 
@@ -828,19 +826,6 @@ void PerturbationTabWidget::setDaqLogFileName()
         pmccDaqInterface->setDaqLogFileName(fileName);
 
     }
-}
-
-void PerturbationTabWidget::setCurrentRightBeltSpeed(double mcurrentRightSpeed)
-{
-
-    currentRightSpeed = mcurrentRightSpeed;
-    qDebug("Current Right Speed: %f", mcurrentRightSpeed);
-}
-
-void PerturbationTabWidget::setCurrentLeftBeltSpeed(double mcurrentLeftSpeed)
-{
-    currentLeftSpeed = mcurrentLeftSpeed;
-    qDebug("Current Left Speed: %f", mcurrentLeftSpeed);
 }
 
 #include "../include/moc_PerturbationTabWidget.cpp"

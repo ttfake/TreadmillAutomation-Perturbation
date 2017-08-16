@@ -10,10 +10,9 @@ static void showWarning(QWidget * parent, const QString & title, const QString &
    box->show();
 }
 
-DataCollection::DataCollection (QAbstractSocket* msocket)
+DataCollection::DataCollection ()
 {
-    socket = msocket;
-    connect(socket, SIGNAL(readyRead()), SLOT(readyRead()));
+    record = false;
 }
 
 DataCollection::~DataCollection()
@@ -21,9 +20,17 @@ DataCollection::~DataCollection()
 
 }
 
+void DataCollection::setSocket(QAbstractSocket* msocket)
+{
+    socket = msocket;
+    connect(socket, SIGNAL(readyRead()), SLOT(readyRead()));
+}
+
 void DataCollection::startDataCollection()
 {
+    qDebug("Data Collection Started");
     while(socket->canReadLine());
+    qDebug("No Data to read");
 }
 
 void DataCollection::readyRead()
@@ -50,10 +57,33 @@ void DataCollection::readyRead()
    ds >> speed[2];
    ds >> speed[3];
    ds >> angle;
-   
-   emit setRightSpeed(static_cast<double>(speed[0]/1000));
-   emit setLeftSpeed(static_cast<double>(speed[1]/1000));
+  
+   double velocity = static_cast<double>(speed[0]) / 1000;
+   qDebug("Velocity: %f", velocity);
+   if((velocity > 0.00) && !record)
+   {
+       emit treadmillStarted(velocity);
+       emit stopThread();
+   }
 
+   if(record)
+   {
+       if (!velocityDataFile->open(QIODevice::ReadWrite | QIODevice::Text | QIODevice::Append))
+           return;
+       QTextStream velocityTextStream(velocityDataFile);
+       velocityTextStream << QString::number(QDateTime::currentMSecsSinceEpoch()) << ",";
+       velocityTextStream << velocity << "\n";
+       velocityDataFile->close();
+   }
 }
 
+void DataCollection::setRecord(bool mrecord)
+{
+    record = mrecord;
+}
+
+void DataCollection::setDataFile(QFile* mfile)
+{
+    velocityDataFile = mfile;
+}
 #include "../include/moc_DataCollection.cpp"

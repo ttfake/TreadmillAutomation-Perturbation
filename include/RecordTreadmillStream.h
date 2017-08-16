@@ -20,7 +20,6 @@
 #include "include/MccDaqRecordButtonWidget.h"
 #include "include/DataCollection.h"
 
-
 class RecordTreadmillStream : public QMainWindow
 { 
     Q_OBJECT
@@ -30,14 +29,11 @@ class RecordTreadmillStream : public QMainWindow
         void setSocket(QAbstractSocket* msocket);
         void stopRecord();
     public slots:
-//        void readyRead();
         void setRecord();
-        void setCurrentRightBeltSpeed(double);
-        void setCurrentLeftBeltSpeed(double);
-
+        void treadmillStartedSlot(double);
+        void stopThread();
     signals:
-        setRightSpeed(double mrightSpeed);
-        setLeftSpeed(double mleftSpeed);
+        void treadmillStarted(double);
 
     private:
         void populateRecordStreamGroupBox();
@@ -70,5 +66,7 @@ class RecordTreadmillStream : public QMainWindow
         QThread* dataCollectThread;
         double currentRightBeltVelocity;
         double currentLeftBeltVelocity;
+        DataCollection* dataRecord;
+        QThread* dataRecordThread;
 };
 #endif

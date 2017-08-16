@@ -3,30 +3,38 @@
 
 #pragma once
 
-#include <QtWidgets/QMainWindow>
 #include <QTcpSocket>
 #include <QMessageBox>
 #include <QTextStream>
 #include <QTime>
 #include <QAbstractSocket>
 #include <QObject>
+#include <QThread>
+#include <QFile>
+#include <QTime>
 
 static void showWarning(QWidget * parent, const QString & title, const QString & text);
 
-class DataCollection : public QMainWindow
+class DataCollection : public QObject
 {
     Q_OBJECT
     public:
-        DataCollection(QAbstractSocket* msocket);
+        DataCollection();
         ~DataCollection();
+        void setSocket(QAbstractSocket* msocket);
+        void setDataFile(QFile*);
+        void setRecord(bool);
     private slots:
         void readyRead();
+        void startDataCollection();
     signals:
-        void setRightSpeed(double);
-        void setLeftSpeed(double);
+        void treadmillStarted(double);
+        void stopThread();
+        void finished();
     private:
         QAbstractSocket* socket;
-        void startDataCollection();
+        bool record;
+        QFile* velocityDataFile;
 
 };
 #endif

@@ -77,7 +77,7 @@ class PerturbationTabWidget : public QWidget
         void setAccelerationTimeValue(double maccelTimeValue);
         void setDecelerationValue(double mdecelValue);
         void setDecelerationTimeValue(double mdecelTimeValue);
-        void startAccelTimer();
+        void startTreadmill();
         void startDecelTimer();
         void slotTimeout();
         void setDaqConnectColor();
@@ -89,9 +89,8 @@ class PerturbationTabWidget : public QWidget
         void setupDataCollection();
         void startDataCollectionThread();
         void setRowCount(int mRowCount);
-        void setDaqLogFileName(); 
-        void setCurrentRightBeltSpeed(double mcurrentRightSpeed);
-        void setCurrentLeftBeltSpeed(double mcurrentLeftSpeed);
+        void setDaqLogFileName();
+        void treadmillWait(double);
 
     private:
 

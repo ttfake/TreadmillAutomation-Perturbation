@@ -10,8 +10,6 @@ RecordTreadmillStream::RecordTreadmillStream (QWidget *parent, Qt::WindowFlags f
     centralWidgetLayout = new QVBoxLayout;
     centralWidget->setLayout(centralWidgetLayout);
     populateRecordStreamGroupBox();
-
-
 }
 
 RecordTreadmillStream::~RecordTreadmillStream()
@@ -21,14 +19,31 @@ RecordTreadmillStream::~RecordTreadmillStream()
 
 void RecordTreadmillStream::setSocket(QAbstractSocket* msocket)
 {
-    socket = msocket;
-    dataCollect = new DataCollection(socket);
-    dataCollectThread = new QThread;
-    dataCollect->moveToThread(dataCollectThread);
-    connect(dataCollectThread, SIGNAL(started()), dataCollect, SLOT(startDataCollection()));
-    connect(dataCollect, SIGNAL(setRightSpeed(double)), this, SLOT(setCurrentRightBeltSpeed(double)));
-    connect(dataCollect, SIGNAL(setLeftSpeed(double)), this, SLOT(setCurrentLeftBeltSpeed(double)));
-    dataCollectThread->start();
+    if(socket == NULL)
+    {
+        socket = msocket;
+        dataCollect = new DataCollection();
+        dataCollect->setSocket(socket);
+        connect(dataCollect, SIGNAL(stopThread()), this, SLOT(stopThread()));
+        dataCollectThread = new QThread;
+        dataCollect->moveToThread(dataCollectThread);
+        connect(dataCollectThread, SIGNAL(started()), dataCollect, SLOT(startDataCollection()));
+        connect(dataCollect, SIGNAL(finished()), dataCollectThread, SLOT(quit()));
+        connect(dataCollect, SIGNAL(treadmillStarted(double)), this, SLOT(treadmillStartedSlot(double)));
+        dataCollectThread->start();
+
+        dataRecord = new DataCollection();
+        dataRecord->setSocket(socket);
+        dataRecord->setRecord(true);
+        dataRecord->setDataFile(velocityDataFile);
+        connect(dataRecord, SIGNAL(stopThread()), this, SLOT(stopThread()));
+        dataRecordThread = new QThread;
+        dataRecord->moveToThread(dataRecordThread);
+        connect(dataRecordThread, SIGNAL(started()), dataRecord, SLOT(startDataCollection()));
+        connect(dataRecord, SIGNAL(finished()), dataRecordThread, SLOT(quit()));
+        connect(dataRecord, SIGNAL(treadmillStarted(double)), this, SLOT(treadmillStartedSlot(double)));
+        dataRecordThread->start();
+    }
 }
 
 void RecordTreadmillStream::populateRecordStreamGroupBox()
@@ -80,58 +95,6 @@ void RecordTreadmillStream::populateRecordStreamGroupBox()
 
 }
 
-void RecordTreadmillStream::setCurrentRightBeltSpeed(double mcurrentRightSpeed)
-{
-    currentRightBeltVelocity = mcurrentRightSpeed;
-}
-
-void RecordTreadmillStream::setCurrentLeftBeltSpeed(double mcurrentLeftSpeed)
-{
-    currentLeftBeltVelocity = mcurrentLeftSpeed;
-}
-
-/*void RecordTreadmillStream::readyRead()
-{
-   // ** Incoming Packet format 0 **
-   // [u8] format specifier (0)
-   // [4 x s16] belt 0..3 speed in mm/s
-   // [s16] incline angle in 0.01 deg
-   // [21 x u8] padding
-   // Size: 1 + (8+2) + 21 = 22 + 10 = 32 bytes
-   const int packetSize = 32;
-   int fullPackets = socket->bytesAvailable() / packetSize;
-   if (! fullPackets) return;
-   if (fullPackets > 1) socket->read((fullPackets-1) * packetSize);
-   const QByteArray data = socket->read(packetSize);
-   QDataStream ds(data);
-   quint8 format;
-   qint16 speed[4];
-   qint16 angle;
-   ds >> format;
-   if (format != 0) return;
-   ds >> speed[0];
-   ds >> speed[1];
-   ds >> speed[2];
-   ds >> speed[3];
-   ds >> angle;
-
-   rightSpeedFeedback->setText(QString("%1 m/s").arg(speed[0]/1000.0, 0, 'f', 3));
-   QString rightVelocity(QString("%1 m/s").arg(speed[0]/1000.0, 0, 'f', 3));
-   QString leftVelocity(QString("%1 m/s").arg(speed[1]/1000.0, 0, 'f', 3));
-
-   if(recordBool)
-   {
-       if (!velocityDataFile->open(QIODevice::ReadWrite | QIODevice::Text | QIODevice::Append))
-            return;
-       QTextStream velocityTextStream(velocityDataFile);
-       velocityTextStream << QString::number(QDateTime::currentMSecsSinceEpoch()) << ",";
-       velocityTextStream << rightVelocity << ",";
-       velocityTextStream << leftVelocity  << "\n";
-       velocityDataFile->close();
-   }
-   leftSpeedFeedback->setText(QString("%1 m/s").arg(speed[1]/1000.0, 0, 'f', 3));
-}
-*/
 
 void RecordTreadmillStream::setRecord()
 {
@@ -141,7 +104,7 @@ void RecordTreadmillStream::setRecord()
         setVelocityFileName();
         
         recordButton->changeDaqRecordLight(Qt::green);
-        connect(socket, SIGNAL(readyRead()), SLOT(readyRead()));
+//        connect(socket, SIGNAL(readyRead()), SLOT(readyRead()));
         recordBool = true;
     }
     else
@@ -167,8 +130,19 @@ void RecordTreadmillStream::setVelocityFileName()
             return;
     QTextStream velocityTextStream(velocityDataFile);
 
-    velocityTextStream << "Right" << "," << "Left" << "\n";
+    velocityTextStream << "Time" << "," << "Right" << "," << "Left" << "\n";
     velocityDataFile->close();
+}
+
+void RecordTreadmillStream::treadmillStartedSlot(double mvelocity)
+{
+    emit treadmillStarted(mvelocity);
+}
+
+void RecordTreadmillStream::stopThread()
+{
+    emit dataCollect->finished();
+
 }
 
 #include "../include/moc_RecordTreadmillStream.cpp"
