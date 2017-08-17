@@ -5,7 +5,7 @@ RecordTreadmillStream::RecordTreadmillStream (QWidget *parent, Qt::WindowFlags f
     centralWidget(new QWidget)
 {
     recordBool = false;
-
+    recording = false;
     setCentralWidget(centralWidget);
     centralWidgetLayout = new QVBoxLayout;
     centralWidget->setLayout(centralWidgetLayout);
@@ -19,31 +19,49 @@ RecordTreadmillStream::~RecordTreadmillStream()
 
 void RecordTreadmillStream::setSocket(QAbstractSocket* msocket)
 {
-    if(socket == NULL)
+//    if(socket == NULL)
+//    {
+    if(dataCollectThread == NULL)
     {
-        socket = msocket;
-        dataCollect = new DataCollection();
-        dataCollect->setSocket(socket);
-        connect(dataCollect, SIGNAL(stopThread()), this, SLOT(stopThread()));
         dataCollectThread = new QThread;
-        dataCollect->moveToThread(dataCollectThread);
-        connect(dataCollectThread, SIGNAL(started()), dataCollect, SLOT(startDataCollection()));
-        connect(dataCollect, SIGNAL(finished()), dataCollectThread, SLOT(quit()));
-        connect(dataCollect, SIGNAL(treadmillStarted(double)), this, SLOT(treadmillStartedSlot(double)));
-        dataCollectThread->start();
+    }
 
+    socket = msocket;
+    dataCollect = new DataCollection();
+    dataCollect->setSocket(socket);
+
+    connect(dataCollect, SIGNAL(stopThread()), this, SLOT(stopThread()));
+    dataCollect->moveToThread(dataCollectThread);
+
+    connect(dataCollectThread, SIGNAL(started()), dataCollect, SLOT(startDataCollection()));
+    connect(dataCollect, SIGNAL(finished()), dataCollectThread, SLOT(quit()));
+    connect(dataCollect, SIGNAL(treadmillStarted(double)), this, SLOT(treadmillStartedSlot(double)));
+    dataCollectThread->start();
+    startRecording();
+
+    //    }
+}
+
+void RecordTreadmillStream::startRecording()
+{
+
+    if(!recording)
+    {
+        recording = true;
+        dataRecordThread = new QThread;
         dataRecord = new DataCollection();
         dataRecord->setSocket(socket);
         dataRecord->setRecord(true);
         dataRecord->setDataFile(velocityDataFile);
         connect(dataRecord, SIGNAL(stopThread()), this, SLOT(stopThread()));
-        dataRecordThread = new QThread;
+
         dataRecord->moveToThread(dataRecordThread);
         connect(dataRecordThread, SIGNAL(started()), dataRecord, SLOT(startDataCollection()));
         connect(dataRecord, SIGNAL(finished()), dataRecordThread, SLOT(quit()));
         connect(dataRecord, SIGNAL(treadmillStarted(double)), this, SLOT(treadmillStartedSlot(double)));
         dataRecordThread->start();
     }
+
 }
 
 void RecordTreadmillStream::populateRecordStreamGroupBox()
@@ -100,11 +118,8 @@ void RecordTreadmillStream::setRecord()
 {
     if(recordButton->getDaqRecordLightColor() == Qt::red)
     {
-
-        setVelocityFileName();
         
         recordButton->changeDaqRecordLight(Qt::green);
-//        connect(socket, SIGNAL(readyRead()), SLOT(readyRead()));
         recordBool = true;
     }
     else

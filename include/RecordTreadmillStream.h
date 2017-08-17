@@ -28,6 +28,7 @@ class RecordTreadmillStream : public QMainWindow
         ~RecordTreadmillStream();
         void setSocket(QAbstractSocket* msocket);
         void stopRecord();
+        void setVelocityFileName();
     public slots:
         void setRecord();
         void treadmillStartedSlot(double);
@@ -61,12 +62,14 @@ class RecordTreadmillStream : public QMainWindow
         MccDaqRecordButtonWidget* recordButton;
         bool recordBool;
         QFile* velocityDataFile;
-        void setVelocityFileName();
+
         DataCollection* dataCollect;
         QThread* dataCollectThread;
         double currentRightBeltVelocity;
         double currentLeftBeltVelocity;
         DataCollection* dataRecord;
         QThread* dataRecordThread;
+        bool recording;
+        void startRecording();
 };
 #endif

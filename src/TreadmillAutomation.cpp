@@ -31,6 +31,10 @@ void TreadmillAutomation::createFileMenu()
     menuFile = new QMenu(menuBar);
     menuFile->setObjectName(QStringLiteral("menuFile"));
     menuFile->setTitle(QApplication::translate("TreadmillAutomation", "File", Q_NULLPTR));
+    saveVelocityDataAct = new QAction;
+    menuFile->addAction(saveVelocityDataAct);
+    saveVelocityDataAct->setText("Save Velocity Data");
+    connect(saveVelocityDataAct, SIGNAL(triggered()), perturbationTabWidget, SLOT(saveVelocityData()));
     exitAct = new QAction();
     menuFile->addAction(exitAct);
     exitAct->setText("Exit");

@@ -614,7 +614,7 @@ void PerturbationTabWidget::startTreadmill()
 void PerturbationTabWidget::treadmillWait(double mvelocity)
 {
     double retAccelValue;
-    double timeSinceStart = (mvelocity / getAccelerationValue()) * 1000;
+    double timeSinceStart = fabs((mvelocity / fabs(getAccelerationValue())) * 1000.00);
     retAccelValue = fabs( getAccelerationTimeValue() - timeSinceStart );
 
     qDebug("Deceleration Time Set To: %f", retAccelValue);
@@ -635,6 +635,7 @@ void PerturbationTabWidget::startDecelTimer()
     qDebug("Starting Timer...");
     qDebug("Deceleration will commence for %f seconds", retDecelTimeValue/millisecondConversion);
     QTimer::singleShot(retDecelTimeValue, this, SLOT(slotTimeout()));
+    recTreadmillStream->setRecord();
 
 }
 
@@ -826,6 +827,11 @@ void PerturbationTabWidget::setDaqLogFileName()
         pmccDaqInterface->setDaqLogFileName(fileName);
 
     }
+}
+
+void PerturbationTabWidget::saveVelocityData()
+{
+    recTreadmillStream->setVelocityFileName();
 }
 
 #include "../include/moc_PerturbationTabWidget.cpp"

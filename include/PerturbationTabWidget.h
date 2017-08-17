@@ -69,7 +69,7 @@ class PerturbationTabWidget : public QWidget
         void getGainType(int channel);
         void setChannel(int mchannel);
         void randomDelay();
-
+        void saveVelocityData();
     private slots:
         void setLeftFrontSpeedValue(double mleftFrontSpeedValue);
         void setRightFrontSpeedValue(double mrightFrontSpeedValue);
@@ -282,6 +282,7 @@ class PerturbationTabWidget : public QWidget
 
         int currentRightSpeed;
         int currentLeftSpeed;
+        
 
         
         

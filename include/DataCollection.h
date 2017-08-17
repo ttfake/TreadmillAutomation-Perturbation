@@ -12,6 +12,7 @@
 #include <QThread>
 #include <QFile>
 #include <QTime>
+#include <cmath>
 
 static void showWarning(QWidget * parent, const QString & title, const QString & text);
 

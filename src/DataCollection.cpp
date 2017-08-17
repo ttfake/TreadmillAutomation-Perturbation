@@ -59,6 +59,7 @@ void DataCollection::readyRead()
    ds >> angle;
   
    double velocity = static_cast<double>(speed[0]) / 1000;
+   velocity = fabs(velocity);
    qDebug("Velocity: %f", velocity);
    if((velocity > 0.00) && !record)
    {
