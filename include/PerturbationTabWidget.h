@@ -59,6 +59,8 @@ class PerturbationTabWidget : public QWidget
         double calculateSpeed();
         void addDaqDataGroupBox();
         void showDaqDataBox(bool checked);
+        void setHost(QString mhost);
+        void setPort(QString mport);
 
     public slots:
         void showTimer(bool state);
@@ -282,6 +284,9 @@ class PerturbationTabWidget : public QWidget
 
         int currentRightSpeed;
         int currentLeftSpeed;
+
+        QString host;
+        QString port;
         
 
         

@@ -26,21 +26,24 @@ class RecordTreadmillStream : public QMainWindow
     public:
         RecordTreadmillStream(QWidget *parent = 0, Qt::WindowFlags flags = 0);
         ~RecordTreadmillStream();
-        void setSocket(QAbstractSocket* msocket);
         void stopRecord();
         void setVelocityFileName();
+        void setHost(QString);
+        void setPort(QString);
+        void startDataCollection();
+        void setSharedSocket(QAbstractSocket*);
     public slots:
         void setRecord();
         void treadmillStartedSlot(double);
         void stopThread();
     signals:
         void treadmillStarted(double);
-
+        void setEmitComplete();
     private:
         void populateRecordStreamGroupBox();
         QWidget* centralWidget;
         QVBoxLayout* centralWidgetLayout;
-        QAbstractSocket* socket;
+        QAbstractSocket* sharedSocket;
         QGroupBox* recordGroupBox;
         QVBoxLayout* recordGroupBoxVerticalLayout;
         QFont recordGroupBoxFont;
@@ -62,7 +65,6 @@ class RecordTreadmillStream : public QMainWindow
         MccDaqRecordButtonWidget* recordButton;
         bool recordBool;
         QFile* velocityDataFile;
-
         DataCollection* dataCollect;
         QThread* dataCollectThread;
         double currentRightBeltVelocity;
@@ -71,5 +73,7 @@ class RecordTreadmillStream : public QMainWindow
         QThread* dataRecordThread;
         bool recording;
         void startRecording();
+        QString host;
+        QString port;
 };
 #endif

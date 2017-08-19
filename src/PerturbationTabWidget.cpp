@@ -606,9 +606,9 @@ void PerturbationTabWidget::startTreadmill()
     setDecelerationTimeValue(timeDecelSpinBox->value());
     setLeftFrontSpeedValue(calculateSpeed());
     setRightFrontSpeedValue(calculateSpeed());
-    //qDebug("Acceleration will commence for %f seconds", retAccelValue/millisecondConversion);
     sendSetpoints->sendSetpoints(SendSetpoints::TreadmillProperty::ACCEL, SendSetpoints::NormalSetpoint);
-    recTreadmillStream->setSocket(pertSocket);
+    recTreadmillStream->setSharedSocket(pertSocket);
+    recTreadmillStream->startDataCollection();
  }
 
 void PerturbationTabWidget::treadmillWait(double mvelocity)
@@ -636,7 +636,7 @@ void PerturbationTabWidget::startDecelTimer()
     qDebug("Deceleration will commence for %f seconds", retDecelTimeValue/millisecondConversion);
     QTimer::singleShot(retDecelTimeValue, this, SLOT(slotTimeout()));
     recTreadmillStream->setRecord();
-
+    emit recTreadmillStream->setEmitComplete();
 }
 
 void PerturbationTabWidget::slotTimeout()
@@ -728,11 +728,8 @@ void PerturbationTabWidget::startDataCollectionThread()
         if(daqThread == NULL)
         {
             daqThread = new QThread;
-
             pmccDaqInterface->moveToThread(daqThread);
         }
-
-
         connect(daqThread, SIGNAL(started()), pmccDaqInterface, SLOT(beginDataCollection()));
         connect(pmccDaqInterface, SIGNAL(finished()), daqThread, SLOT(quit()));
         daqThread->start();
@@ -832,6 +829,22 @@ void PerturbationTabWidget::setDaqLogFileName()
 void PerturbationTabWidget::saveVelocityData()
 {
     recTreadmillStream->setVelocityFileName();
+}
+
+void PerturbationTabWidget::setHost(QString mhost)
+{
+    host = mhost;
+    recTreadmillStream->setHost(host);
+    qDebug("From PerturbationTabWidget: The host is %s ", qPrintable(host));
+    
+}
+
+void PerturbationTabWidget::setPort(QString mport)
+{
+    port = mport;
+    recTreadmillStream->setPort(port);
+    qDebug("From PerturbationTabWidget: The port is %s ", qPrintable(port));
+
 }
 
 #include "../include/moc_PerturbationTabWidget.cpp"

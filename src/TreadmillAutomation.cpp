@@ -104,7 +104,13 @@ void TreadmillAutomation::setSocket()
 {
     NetworkTabWidget* netWidget = NetworkTabWidget::getInstance();
     QAbstractSocket* socket = netWidget->getSocketInstance();
+    QString host(netWidget->getHost());
+    QString port(netWidget->getPort());
     perturbationTabWidget->setSocket(socket);
+//    qDebug("From TreadmillAutomation: The host is %s ", qPrintable(host));
+    perturbationTabWidget->setHost(host);
+//    qDebug("From TreadmillAutomation: The port is %s ", qPrintable(port));
+    perturbationTabWidget->setPort(port);
 
 }
 

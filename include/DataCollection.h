@@ -8,13 +8,14 @@
 #include <QTextStream>
 #include <QTime>
 #include <QAbstractSocket>
+#include <QTcpSocket>
 #include <QObject>
 #include <QThread>
 #include <QFile>
 #include <QTime>
 #include <cmath>
 
-static void showWarning(QWidget * parent, const QString & title, const QString & text);
+static void showWarning(const QString & title, const QString & text);
 
 class DataCollection : public QObject
 {
@@ -22,20 +23,29 @@ class DataCollection : public QObject
     public:
         DataCollection();
         ~DataCollection();
-        void setSocket(QAbstractSocket* msocket);
+        void createSocket();
+        void setHost(QString);
+        void setPort(QString);
         void setDataFile(QFile*);
         void setRecord(bool);
+        void setSocket(QAbstractSocket*);
     private slots:
         void readyRead();
         void startDataCollection();
+        void setEmitComplete();
+        void error(QAbstractSocket::SocketError);
+        void error();
     signals:
         void treadmillStarted(double);
         void stopThread();
         void finished();
     private:
-        QAbstractSocket* socket;
+        QTcpSocket* dataCollectionSocket;
+        QAbstractSocket* sharedSocket;
         bool record;
         QFile* velocityDataFile;
-
+        QString host;
+        QString port;
+        bool emitComplete;
 };
 #endif

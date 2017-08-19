@@ -45,8 +45,9 @@ class NetworkTabWidget : public QWidget
         bool getUseLibraryIsCheckedStatus();
         void populateNetworkTab();
         void createNetworkTabWidget();
+        QString getHost();
+        QString getPort();
         QPushButton* connectBtn;
-
 
     private:
 
@@ -65,9 +66,9 @@ class NetworkTabWidget : public QWidget
         double getDecelerationValue();
         double getLeftFrontSpeedValue();
         double getRightFrontSpeedValue();
+        void setHost(QString);
+        void setPort(QString);
 
-        
-        
         
         typedef int (WINAPI *t_TREADMILL_initialize)(char *, char *);
         t_TREADMILL_initialize TREADMILL_initialize;
@@ -128,6 +129,8 @@ class NetworkTabWidget : public QWidget
         double leftFrontSpeedValue;
         double rightFrontSpeedValue;
 
+        QString portText;
+        QString hostText;
     
     public slots:
         void onClickConnect();
@@ -136,15 +139,9 @@ class NetworkTabWidget : public QWidget
         void disconnected();
         void readyRead();
         void error(QAbstractSocket::SocketError);
-
-
+    
 
         //paintEvent
-
-
-
-
-
 };
 
 

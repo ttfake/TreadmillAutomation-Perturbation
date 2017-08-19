@@ -6,6 +6,7 @@ RecordTreadmillStream::RecordTreadmillStream (QWidget *parent, Qt::WindowFlags f
 {
     recordBool = false;
     recording = false;
+    dataCollectThread = NULL;
     setCentralWidget(centralWidget);
     centralWidgetLayout = new QVBoxLayout;
     centralWidget->setLayout(centralWidgetLayout);
@@ -17,18 +18,30 @@ RecordTreadmillStream::~RecordTreadmillStream()
 
 }
 
-void RecordTreadmillStream::setSocket(QAbstractSocket* msocket)
+void RecordTreadmillStream::setSharedSocket(QAbstractSocket* msharedSocket)
 {
-//    if(socket == NULL)
-//    {
+    sharedSocket = msharedSocket;
+}
+
+void RecordTreadmillStream::startDataCollection()
+{
     if(dataCollectThread == NULL)
     {
+        qDebug("Creating Thread");
         dataCollectThread = new QThread;
     }
+    else
+    {
+        emit dataCollect->finished();
+    }
 
-    socket = msocket;
+
     dataCollect = new DataCollection();
-    dataCollect->setSocket(socket);
+    dataCollect->setHost(host);
+    dataCollect->setPort(port);
+    dataCollect->setSocket(sharedSocket);
+    dataCollect->setRecord(true);
+    dataCollect->setDataFile(velocityDataFile);
 
     connect(dataCollect, SIGNAL(stopThread()), this, SLOT(stopThread()));
     dataCollect->moveToThread(dataCollectThread);
@@ -36,10 +49,18 @@ void RecordTreadmillStream::setSocket(QAbstractSocket* msocket)
     connect(dataCollectThread, SIGNAL(started()), dataCollect, SLOT(startDataCollection()));
     connect(dataCollect, SIGNAL(finished()), dataCollectThread, SLOT(quit()));
     connect(dataCollect, SIGNAL(treadmillStarted(double)), this, SLOT(treadmillStartedSlot(double)));
+    connect(this, SIGNAL(setEmitComplete()), dataCollect, SLOT(setEmitComplete()));
     dataCollectThread->start();
-    startRecording();
+}
 
-    //    }
+void RecordTreadmillStream::setHost(QString mhost)
+{
+    host = mhost;
+}
+
+void RecordTreadmillStream::setPort(QString mport)
+{
+    port = mport;
 }
 
 void RecordTreadmillStream::startRecording()
@@ -50,11 +71,12 @@ void RecordTreadmillStream::startRecording()
         recording = true;
         dataRecordThread = new QThread;
         dataRecord = new DataCollection();
-        dataRecord->setSocket(socket);
         dataRecord->setRecord(true);
         dataRecord->setDataFile(velocityDataFile);
+        dataRecord->setHost(host);
+        dataRecord->setPort(port);
+        dataRecord->setSocket(sharedSocket);
         connect(dataRecord, SIGNAL(stopThread()), this, SLOT(stopThread()));
-
         dataRecord->moveToThread(dataRecordThread);
         connect(dataRecordThread, SIGNAL(started()), dataRecord, SLOT(startDataCollection()));
         connect(dataRecord, SIGNAL(finished()), dataRecordThread, SLOT(quit()));
@@ -157,7 +179,6 @@ void RecordTreadmillStream::treadmillStartedSlot(double mvelocity)
 void RecordTreadmillStream::stopThread()
 {
     emit dataCollect->finished();
-
 }
 
 #include "../include/moc_RecordTreadmillStream.cpp"

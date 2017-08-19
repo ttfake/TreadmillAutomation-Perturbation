@@ -253,7 +253,9 @@ void NetworkTabWidget::onClickConnect()
 		connect(socket, SIGNAL(error(QAbstractSocket::SocketError)), SLOT(error(QAbstractSocket::SocketError)));
 		connect(socket, SIGNAL(readyRead()), SLOT(readyRead()));
         port = portTextBox->toPlainText();
-		qDebug("New connection made on port %d.", port.toUInt(ok, base));;
+		qDebug("New connection made on port %d.", port.toUInt(ok, base));
+        setHost(hostTextBox->toPlainText());
+        setPort(port);
 		socket->connectToHost(hostTextBox->toPlainText(), port.toUInt(ok, base));
 
 	}
@@ -344,7 +346,25 @@ void NetworkTabWidget::error(QAbstractSocket::SocketError)
 
 }
 
+void NetworkTabWidget::setHost(QString mhost)
+{
+    hostText = mhost;
+}
 
+void NetworkTabWidget::setPort(QString mport)
+{
+    portText = mport;
+}
+
+QString NetworkTabWidget::getHost()
+{
+    return hostText;
+}
+
+QString NetworkTabWidget::getPort()
+{
+    return portText;
+}
 
 static void showWarning(QWidget * mparent, const QString & mtitle, const QString & mtext)
 {
@@ -354,8 +374,6 @@ static void showWarning(QWidget * mparent, const QString & mtitle, const QString
 	box->setAttribute(Qt::WA_DeleteOnClose);
 	box->show();
 }
-
-
 
 
 
