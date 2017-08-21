@@ -29,6 +29,11 @@ class DataCollection : public QObject
         void setDataFile(QFile*);
         void setRecord(bool);
         void setSocket(QAbstractSocket*);
+
+    public slots:
+
+        void startRecording();
+
     private slots:
         void readyRead();
         void startDataCollection();

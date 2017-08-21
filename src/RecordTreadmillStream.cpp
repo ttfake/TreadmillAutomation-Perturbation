@@ -7,6 +7,7 @@ RecordTreadmillStream::RecordTreadmillStream (QWidget *parent, Qt::WindowFlags f
     recordBool = false;
     recording = false;
     dataCollectThread = NULL;
+    dataRecordThread = NULL;
     setCentralWidget(centralWidget);
     centralWidgetLayout = new QVBoxLayout;
     centralWidget->setLayout(centralWidgetLayout);
@@ -40,7 +41,7 @@ void RecordTreadmillStream::startDataCollection()
     dataCollect->setHost(host);
     dataCollect->setPort(port);
     dataCollect->setSocket(sharedSocket);
-    dataCollect->setRecord(true);
+    //dataCollect->setRecord(true);
     dataCollect->setDataFile(velocityDataFile);
 
     connect(dataCollect, SIGNAL(stopThread()), this, SLOT(stopThread()));
@@ -51,6 +52,7 @@ void RecordTreadmillStream::startDataCollection()
     connect(dataCollect, SIGNAL(treadmillStarted(double)), this, SLOT(treadmillStartedSlot(double)));
     connect(this, SIGNAL(setEmitComplete()), dataCollect, SLOT(setEmitComplete()));
     dataCollectThread->start();
+    startRecording();
 }
 
 void RecordTreadmillStream::setHost(QString mhost)
@@ -65,11 +67,15 @@ void RecordTreadmillStream::setPort(QString mport)
 
 void RecordTreadmillStream::startRecording()
 {
-
     if(!recording)
     {
+        if(dataRecordThread == NULL)
+        {
+            qDebug("Creating Thread dataRecordThread");
+            dataRecordThread = new QThread;
+        }
+
         recording = true;
-        dataRecordThread = new QThread;
         dataRecord = new DataCollection();
         dataRecord->setRecord(true);
         dataRecord->setDataFile(velocityDataFile);
@@ -78,12 +84,11 @@ void RecordTreadmillStream::startRecording()
         dataRecord->setSocket(sharedSocket);
         connect(dataRecord, SIGNAL(stopThread()), this, SLOT(stopThread()));
         dataRecord->moveToThread(dataRecordThread);
-        connect(dataRecordThread, SIGNAL(started()), dataRecord, SLOT(startDataCollection()));
+        connect(dataRecordThread, SIGNAL(started()), dataRecord, SLOT(startRecording()));
         connect(dataRecord, SIGNAL(finished()), dataRecordThread, SLOT(quit()));
         connect(dataRecord, SIGNAL(treadmillStarted(double)), this, SLOT(treadmillStartedSlot(double)));
         dataRecordThread->start();
     }
-
 }
 
 void RecordTreadmillStream::populateRecordStreamGroupBox()

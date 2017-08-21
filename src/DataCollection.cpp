@@ -23,7 +23,15 @@ DataCollection::~DataCollection()
 void DataCollection::setSocket(QAbstractSocket* msharedSocket)
 {
     sharedSocket = msharedSocket;
-    connect(sharedSocket, SIGNAL(readyRead()), SLOT(readyRead()));
+    if(!record)
+    {
+        connect(sharedSocket, SIGNAL(readyRead()), SLOT(readyRead()));
+    }
+
+    else if(record)
+    {
+        connect(sharedSocket, SIGNAL(readyRead()), SLOT(startRecording()));
+    }
 }
 
 void DataCollection::createSocket()
@@ -104,15 +112,45 @@ void DataCollection::readyRead()
        emitComplete = true;
    }
 
-   if(record)
-   {
-       if (!velocityDataFile->open(QIODevice::ReadWrite | QIODevice::Text | QIODevice::Append))
-           return;
-       QTextStream velocityTextStream(velocityDataFile);
-       velocityTextStream << QString::number(QDateTime::currentMSecsSinceEpoch()) << ",";
-       velocityTextStream << velocity << "\n";
-       velocityDataFile->close();
-   }
+}
+
+void DataCollection::startRecording()
+{
+   // ** Incoming Packet format 0 **
+   // [u8] format specifier (0)
+   // [4 x s16] belt 0..3 speed in mm/s
+   // [s16] incline angle in 0.01 deg
+   // [21 x u8] padding
+   // Size: 1 + (8+2) + 21 = 22 + 10 = 32 bytes
+   
+    qDebug("Starting Data Recording");
+    const int packetSize = 32;
+    int fullPackets = sharedSocket->bytesAvailable() / packetSize;
+    if (! fullPackets) return;
+    if (fullPackets > 1) sharedSocket->read((fullPackets-1) * packetSize);
+    const QByteArray data = sharedSocket->read(packetSize);
+    QDataStream ds(data);
+    quint8 format;
+    qint16 speed[4];
+    qint16 angle;
+    ds >> format;
+    if (format != 0) return;
+    ds >> speed[0];
+    ds >> speed[1];
+    ds >> speed[2];
+    ds >> speed[3];
+    ds >> angle;
+
+    double velocity = static_cast<double>(speed[0]) / 1000;
+    velocity = fabs(velocity);
+    qDebug("Velocity: %f", velocity);
+
+    if (!velocityDataFile->open(QIODevice::ReadWrite | QIODevice::Text | QIODevice::Append))
+        return;
+    QTextStream velocityTextStream(velocityDataFile);
+    velocityTextStream << QString::number(QDateTime::currentMSecsSinceEpoch()) << ",";
+    velocityTextStream << velocity << "\n";
+    velocityDataFile->close();
 }
 
 void DataCollection::setRecord(bool mrecord)
