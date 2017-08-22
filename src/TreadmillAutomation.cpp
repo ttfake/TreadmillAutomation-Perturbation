@@ -50,6 +50,11 @@ void TreadmillAutomation::createFileMenu()
     timerViewAct->setText("Show Timer");
     connect(timerViewAct, SIGNAL(changed()), SLOT(showTimer()));
 
+    menuQualisys = new QMenu(menuBar);
+    menuQualisys->setObjectName(QStringLiteral("menuQualisys"));
+    menuQualisys->setTitle(QApplication::translate("TreadmillAutomation", "Qualisys", Q_NULLPTR));
+
+
     daqViewAct = new QAction();
     daqViewAct->setCheckable(true);
     menuView->addAction(daqViewAct);
@@ -57,6 +62,7 @@ void TreadmillAutomation::createFileMenu()
     connect(daqViewAct, SIGNAL(changed()), SLOT(showDaqDataBox()));
     
     menuBar->addMenu(menuView);
+    menuBar->addMenu(menuQualisys);
     centralWidgetLayout->setMenuBar(menuBar);
 }
 

@@ -76,6 +76,7 @@ class TreadmillAutomation : public QMainWindow
         QMenuBar* menuBar;
         QMenu* menuFile;
         QMenu* menuView;
+        QMenu* menuQualisys;
         QAction* saveVelocityDataAct;
         QAction *exitAct;
         QAction* timerViewAct;
