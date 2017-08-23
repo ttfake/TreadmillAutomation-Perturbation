@@ -31,6 +31,7 @@
 #include "include/NetworkTabWidget.h"
 #include "include/PerturbationTabWidget.h"
 #include "include/SendSetpoints.h"
+#include "include/QualisysInterface.h"
 
 class TreadmillAutomation : public QMainWindow
 {
@@ -120,6 +121,8 @@ class TreadmillAutomation : public QMainWindow
         double rightSpeedRearValue;
 
         void uncheckDaqDataView();
+        QualisysInterface* newQualisysIface;
+        QAction* connectQualisysAction;
 
 };
 
