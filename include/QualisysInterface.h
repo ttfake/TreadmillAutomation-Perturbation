@@ -8,6 +8,7 @@
 #include <QWidget>
 #include <QMessageBox>
 #include <iostream>
+#include "../include/RTClientSDK/Network.h"
 
 static void showWarning(QWidget * mparent, const QString & mtitle, const QString & mtext);
 
