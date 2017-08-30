@@ -4,6 +4,9 @@
 #include <winsock2.h>
 #include <windows.h>
 #include <QTcpSocket>
+#include <QString>
+#include <QAbstractSocket>
+#include <QByteArray>
 #define  WIN32_LEAN_AND_MEAN
 
 

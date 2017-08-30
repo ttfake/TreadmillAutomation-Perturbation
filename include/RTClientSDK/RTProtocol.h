@@ -8,6 +8,7 @@
 #include <string>
 #include <TCHAR.H>
 #include <iostream>
+#include <QString>
 
 
 #pragma warning (disable : 4251)
@@ -574,7 +575,7 @@ private:
 private:
     CNetwork*                     mpoNetwork;
     CRTPacket*                    mpoRTPacket;
-    char                          maDataBuff[65536];
+    char*                         maDataBuff;
     CRTPacket::EEvent             meLastEvent;
     CRTPacket::EEvent             meState;  // Same as meLastEvent but without EventCameraSettingsChanged
     int                           mnMinorVersion;

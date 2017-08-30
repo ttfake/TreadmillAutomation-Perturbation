@@ -32,5 +32,5 @@ find_package(Qt5Network REQUIRED)
 #add_executable(TreadmillAutomation WIN32 ${SOURCES})
 add_executable(TreadmillAutomation ${SOURCES})
 target_link_libraries(TreadmillAutomation Qt5::Widgets Qt5::Network
-    cbw64 ws2_32
+    cbw64 libRTClientSDK.a ws2_32
     )

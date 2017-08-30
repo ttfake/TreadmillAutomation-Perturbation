@@ -8,19 +8,17 @@
 CNetwork::CNetwork()
 {
     mhSocket             = new QTcpSocket;
-    mnLastError          = 0;
-    maErrorStr[0]        = 0;
 }
 
 
 CNetwork::~CNetwork()
 {
-    WSACleanup();
 }
 
 bool CNetwork::Connect(char* pServerAddr, unsigned short nPort)
 {
-    
+    QString qualisysHost(pServerAddr);
+    mhSocket->connectToHost(pServerAddr, nPort);
 
     return true;
 } // Connect
@@ -44,11 +42,12 @@ bool CNetwork::Connected()
 int CNetwork::Receive(char* rtDataBuff, int nDataBufSize, bool bHeader, int nTimeout, unsigned int *ipAddr)
 {
     int         nRecved = 0;
-    sockaddr_in source_addr;
-    int         fromlen = sizeof(source_addr);
+    QByteArray incomingData;
+    
+    nRecved = mhSocket->bytesAvailable();
+    incomingData = mhSocket->readAll();
+    rtDataBuff = incomingData.data();  
 
-    
-    
     return nRecved;
 } // RecvMessage
 

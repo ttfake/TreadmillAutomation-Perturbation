@@ -31,7 +31,7 @@
 #include "include/NetworkTabWidget.h"
 #include "include/PerturbationTabWidget.h"
 #include "include/SendSetpoints.h"
-#include "include/QualisysInterface.h"
+#include "include/RTClientSDK/Network.h"
 
 class TreadmillAutomation : public QMainWindow
 {
@@ -59,6 +59,7 @@ class TreadmillAutomation : public QMainWindow
         void setUseLibraryStatus();
         void setSocket();
         void showDaqDataBox();
+        void connectQualisys();
 
     private slots:
         void showTimer();
@@ -121,7 +122,7 @@ class TreadmillAutomation : public QMainWindow
         double rightSpeedRearValue;
 
         void uncheckDaqDataView();
-        QualisysInterface* newQualisysIface;
+        CNetwork* newQualisysNetConn;
         QAction* connectQualisysAction;
 
 };
