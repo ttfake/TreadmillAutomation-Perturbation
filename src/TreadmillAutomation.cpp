@@ -139,7 +139,7 @@ void TreadmillAutomation::errorString(QString s)
 
 void TreadmillAutomation::connectQualisys()
 {
-    newQualisysNetConn->Connect("localhost", 22222);
+    newQualisysNetConn->qualisysConnect("localhost", 22222);
 }
 
 static void showWarning(QWidget * mparent, const QString & mtitle, const QString & mtext)

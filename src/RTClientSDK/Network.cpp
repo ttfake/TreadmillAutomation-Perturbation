@@ -15,10 +15,11 @@ CNetwork::~CNetwork()
 {
 }
 
-bool CNetwork::Connect(char* pServerAddr, unsigned short nPort)
+bool CNetwork::qualisysConnect(char* pServerAddr, unsigned short nPort)
 {
     QString qualisysHost(pServerAddr);
     mhSocket->connectToHost(pServerAddr, nPort);
+    connect(mhSocket, SIGNAL(readyRead()), this, SLOT(readyRead()));
 
     return true;
 } // Connect
@@ -103,3 +104,13 @@ bool CNetwork::IsLocalAddress(unsigned int nAddr)
     
     return false;
 }
+
+void CNetwork::readyRead()
+{
+    qDebug("Data Detected...");
+    qDebug("Receiving...");
+    Receive(maDataBuff, sizeof(maDataBuff), true);
+    qDebug("Received: %s", maDataBuff);
+}
+
+#include "../../include/RTClientSDK/moc_Network.cpp"

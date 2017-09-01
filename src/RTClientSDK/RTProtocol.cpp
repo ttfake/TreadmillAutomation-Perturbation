@@ -99,7 +99,7 @@ bool CRTProtocol::Connect(char* pServerAddr, unsigned short nPort, unsigned shor
         return false;
     }
 
-    if (mpoNetwork->Connect(pServerAddr, nPort))
+    if (mpoNetwork->qualisysConnect(pServerAddr, nPort))
     {
         
 
