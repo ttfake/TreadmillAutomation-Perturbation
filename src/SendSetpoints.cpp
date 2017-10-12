@@ -142,7 +142,7 @@ void SendSetpoints::sendSetpointsDirectly(TreadmillProperty mproperty, SetpointT
             accelDataStream << (qint16)(accelAccel ^ 0xFFFF);
             accelDataStream << (qint16)(accelAngle ^ 0xFFFF);
             accelDataStream.writeRawData(accelFiller.data(), accelFiller.size());
-            qDebug("Sending Deceleration: %s", qPrintable(accelData.toHex()));
+//            qDebug("Sending Deceleration: %s", qPrintable(accelData.toHex()));
             memcpy(accelLdata, accelData.data(), 64);
             Q_ASSERT(accelData.size() == 64);
             pertSocket->write(accelData);
@@ -179,7 +179,7 @@ void SendSetpoints::sendSetpointsDirectly(TreadmillProperty mproperty, SetpointT
             accelDataStream << (qint16)(accelAccel ^ 0xFFFF);
             accelDataStream << (qint16)(accelAngle ^ 0xFFFF);
             accelDataStream.writeRawData(accelFiller.data(), accelFiller.size());
-            qDebug("Sending Acceleration: %s", qPrintable(accelData.toHex()));
+//            qDebug("Sending Acceleration: %s", qPrintable(accelData.toHex()));
             memcpy(accelLdata, accelData.data(), 64);
             Q_ASSERT(accelData.size() == 64);
             pertSocket->write(accelData);
@@ -214,7 +214,7 @@ void SendSetpoints::sendSetpointsDirectly(TreadmillProperty mproperty, SetpointT
             decelDataStream << (qint16)(decelAccel ^ 0xFFFF);
             decelDataStream << (qint16)(decelAngle ^ 0xFFFF);
             decelDataStream.writeRawData(decelFiller.data(), decelFiller.size());
-            qDebug("Sending Deceleration: %s", qPrintable(decelData.toHex()));
+//            qDebug("Sending Deceleration: %s", qPrintable(decelData.toHex()));
             memcpy(decelLdata, decelData.data(), 64);
             Q_ASSERT(decelData.size() == 64);
             pertSocket->write(decelData);

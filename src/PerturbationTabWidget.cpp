@@ -25,8 +25,6 @@ PerturbationTabWidget::PerturbationTabWidget(QWidget* parent, Qt::WindowFlags fl
     recordClicked = true;
     scanForDaqDevice();
 
-
-
 }
 
 PerturbationTabWidget::~PerturbationTabWidget()
@@ -316,8 +314,16 @@ void PerturbationTabWidget::addStartPertRunGroupBox()
     quadrantOnePerturbationLayout->addWidget(startPertRunGroupBox);
     startPertRunGroupBox->hide();
     recTreadmillStream = new RecordTreadmillStream;
-    connect(recTreadmillStream, SIGNAL(treadmillStarted(double)), 
-            this, SLOT(treadmillWait(double)));
+    mouseInterface = new MouseInterface;
+    mouseInterface->openPort();
+    // The following connect waits for a change in speed data from the treadmill 
+    // and when the treadmillStarted signal is received (a change in the treadmill 
+    // speed is detected), treadmillWait is activated. This connect will be changed
+    // to reflect the new mouse sensor system.
+//    connect(recTreadmillStream, SIGNAL(treadmillStarted(double)), 
+//            this, SLOT(treadmillWait(double)));
+   
+    connect(mouseInterface, SIGNAL(movement()), SLOT(treadmillWait()));
     connect(startPertRunBtn, SIGNAL(clicked()), SLOT(startTreadmill()));
 }
 
@@ -599,7 +605,10 @@ void PerturbationTabWidget::randomDelay()
 
 void PerturbationTabWidget::startTreadmill()
 {
-    recTreadmillStream->setRecord();
+    QFile accelerationSignalSentLog("accelerationSignalSentLog.log");
+    accelerationSignalSentLog.open(QIODevice::Append);
+
+//    recTreadmillStream->setRecord();
     setAccelerationValue(acceleration->value());
     setDecelerationValue(deceleration->value());
     setAccelerationTimeValue(timeAccelSpinBox->value());
@@ -607,41 +616,84 @@ void PerturbationTabWidget::startTreadmill()
     setLeftFrontSpeedValue(calculateSpeed());
     setRightFrontSpeedValue(calculateSpeed());
     sendSetpoints->sendSetpoints(SendSetpoints::TreadmillProperty::ACCEL, SendSetpoints::NormalSetpoint);
-    recTreadmillStream->setSharedSocket(pertSocket);
-    recTreadmillStream->startDataCollection();
+    QDateTime currentDateTime = QDateTime::currentDateTime();
+    uint unixtime = currentDateTime.toTime_t();
+    accelerationSignalSentLog.write(QString::number(unixtime).toUtf8() + "\n");
+    accelerationSignalSentLog.close();
+//    recTreadmillStream->setSharedSocket(pertSocket);
+//    recTreadmillStream->startDataCollection();
  }
 
-void PerturbationTabWidget::treadmillWait(double mvelocity)
+void PerturbationTabWidget::treadmillWait()
 {
+    QFile accelerationTimerStartedLog("accelerationTimerStartedLog.log");
+    accelerationTimerStartedLog.open(QIODevice::Append);
     double retAccelValue;
-    double timeSinceStart = fabs((mvelocity / fabs(getAccelerationValue())) * 1000.00);
-    retAccelValue = fabs( getAccelerationTimeValue() - timeSinceStart );
+    //double timeSinceStart = fabs((mvelocity / fabs(getAccelerationValue())) * 1000.00);
+   //retAccelValue = fabs(( getAccelerationTimeValue() * fabs(getAccelerationValue())) / 1000);
 
+    retAccelValue = getAccelerationTimeValue();
     qDebug("Deceleration Time Set To: %f", retAccelValue);
 
     pmccDaqInterface->setPerturbationTrigger(true);
 
+    mouseInterface->setMovementBool(true);
+    QDateTime currentDateTime = QDateTime::currentDateTime();
+    uint unixtime = currentDateTime.toTime_t();
+    accelerationTimerStartedLog.write(QString::number(unixtime).toUtf8() + "\n");
+    accelerationTimerStartedLog.close();
     QTimer::singleShot(retAccelValue, this, SLOT(startDecelTimer()));
 }
 
 
 void PerturbationTabWidget::startDecelTimer()
 {
+    QFile accelerationTimerEndedLog("accelerationTimerEndedLog.log");
+    QFile decelerationSignalSentLog("decelerationSignalSentLog.log");
+    QFile decelerationTimerStartedLog("decelerationTimerStartedLog.log");
+    accelerationTimerEndedLog.open(QIODevice::Append);
+    QDateTime currentDateTime = QDateTime::currentDateTime();
+    uint unixtime = currentDateTime.toTime_t();
+    accelerationTimerEndedLog.write(QString::number(unixtime).toUtf8() + "\n");
+    accelerationTimerEndedLog.close();
+    decelerationSignalSentLog.open(QIODevice::Append);
+    decelerationTimerStartedLog.open(QIODevice::Append);
+    mouseInterface->setMovementBool(false);
     double retDecelTimeValue = getDecelerationTimeValue();
     setRightFrontSpeedValue(0);
     setLeftFrontSpeedValue(0);
-    qDebug("Sending Setpoints...");
+//    qDebug("Sending Setpoints...");
     sendSetpoints->sendSetpoints(SendSetpoints::TreadmillProperty::DECEL, SendSetpoints::NormalSetpoint);
-    qDebug("Starting Timer...");
-    qDebug("Deceleration will commence for %f seconds", retDecelTimeValue/millisecondConversion);
+    currentDateTime = QDateTime::currentDateTime();
+    unixtime = currentDateTime.toTime_t();
+    decelerationSignalSentLog.write(QString::number(unixtime).toUtf8() + "\n");
+    decelerationSignalSentLog.close();
+//    qDebug("Starting Timer...");
+//    qDebug("Deceleration will commence for %f seconds", retDecelTimeValue/millisecondConversion);
+    currentDateTime = QDateTime::currentDateTime();
+    unixtime = currentDateTime.toTime_t();
+    decelerationTimerStartedLog.write(QString::number(unixtime).toUtf8() + "\n");
+    decelerationTimerStartedLog.close();
     QTimer::singleShot(retDecelTimeValue, this, SLOT(slotTimeout()));
-    recTreadmillStream->setRecord();
-    emit recTreadmillStream->setEmitComplete();
+//    recTreadmillStream->setRecord();
+//    emit recTreadmillStream->setEmitComplete();
 }
 
 void PerturbationTabWidget::slotTimeout()
 {
+    QFile decelerationTimerEndedLog("decelerationTimerEndedLog.log");
+    QFile zeroSignalSentLog("zeroSignalSentLog.log");
+    decelerationTimerEndedLog.open(QIODevice::Append);
+    zeroSignalSentLog.open(QIODevice::Append);
+    QDateTime currentDateTime = QDateTime::currentDateTime();
+    uint unixtime = currentDateTime.toTime_t();
+    decelerationTimerEndedLog.write(QString::number(unixtime).toUtf8() + "\n");
+    decelerationTimerEndedLog.close();
     sendSetpoints->sendSetpoints(SendSetpoints::ZERO, SendSetpoints::NormalSetpoint);
+    currentDateTime = QDateTime::currentDateTime();
+    unixtime = currentDateTime.toTime_t();
+    zeroSignalSentLog.write(QString::number(unixtime).toUtf8() + "\n");
+    zeroSignalSentLog.close();
     std::cout << "Trial Ended" << std::endl;
     //recTreadmillStream->stopRecord();
 }

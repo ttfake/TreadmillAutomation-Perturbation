@@ -53,7 +53,7 @@ void DataCollection::error()
 {
 //    qDebug("Network Error. %s", QString("Error %1").arg(mn));
 
-    qDebug("Error: %s", qPrintable(dataCollectionSocket->errorString()));
+//    qDebug("Error: %s", qPrintable(dataCollectionSocket->errorString()));
 }
 
 
@@ -71,10 +71,10 @@ void DataCollection::setPort(QString mport)
 
 void DataCollection::startDataCollection()
 {
-    qDebug("Data Collection Started");
+//    qDebug("Data Collection Started");
 //    while(dataCollectionSocket->canReadLine());
     while(sharedSocket->canReadLine());
-    qDebug("No Data to read");
+//    qDebug("No Data to read");
 }
 
 void DataCollection::readyRead()
@@ -104,7 +104,7 @@ void DataCollection::readyRead()
   
    double velocity = static_cast<double>(speed[0]) / 1000;
    velocity = fabs(velocity);
-   qDebug("Velocity: %f", velocity);
+//   qDebug("Velocity: %f", velocity);
    if((velocity > 0.00) && !emitComplete)
    {
        emit treadmillStarted(velocity);
@@ -123,7 +123,7 @@ void DataCollection::startRecording()
    // [21 x u8] padding
    // Size: 1 + (8+2) + 21 = 22 + 10 = 32 bytes
    
-    qDebug("Starting Data Recording");
+//    qDebug("Starting Data Recording");
     const int packetSize = 32;
     int fullPackets = sharedSocket->bytesAvailable() / packetSize;
     if (! fullPackets) return;
@@ -143,7 +143,7 @@ void DataCollection::startRecording()
 
     double velocity = static_cast<double>(speed[0]) / 1000;
     velocity = fabs(velocity);
-    qDebug("Velocity: %f", velocity);
+//    qDebug("Velocity: %f", velocity);
 
     if (!velocityDataFile->open(QIODevice::ReadWrite | QIODevice::Text | QIODevice::Append))
         return;

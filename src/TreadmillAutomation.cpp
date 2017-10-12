@@ -16,6 +16,8 @@ TreadmillAutomation::TreadmillAutomation(QWidget *parent, Qt::WindowFlags flags)
     centralTabWidget->addTab(networkTabWidget, "Network");
     connect(networkTabWidget->connectBtn, SIGNAL(clicked()), SLOT(setUseLibraryStatus()));
     connect(networkTabWidget->connectBtn, SIGNAL(clicked()), SLOT(setSocket()));
+
+
     
     centralTabWidget->addTab(perturbationTabWidget, "Perturbation");
 }
@@ -50,24 +52,28 @@ void TreadmillAutomation::createFileMenu()
     timerViewAct->setText("Show Timer");
     connect(timerViewAct, SIGNAL(changed()), SLOT(showTimer()));
 
-    newQualisysNetConn = new CNetwork;
-    menuQualisys = new QMenu(menuBar);
-    menuQualisys->setObjectName(QStringLiteral("menuQualisys"));
-    menuQualisys->setTitle(QApplication::translate("TreadmillAutomation", "Qualisys", Q_NULLPTR));
-    connectQualisysAction = new QAction;
-    connectQualisysAction->setText("Connect to Qualysis");
-    menuQualisys->addAction(connectQualisysAction);
-    connect(connectQualisysAction, SIGNAL(triggered()), SLOT(connectQualisys()));
-
 
     daqViewAct = new QAction();
     daqViewAct->setCheckable(true);
     menuView->addAction(daqViewAct);
     daqViewAct->setText("Show DAQ Data View");
     connect(daqViewAct, SIGNAL(changed()), SLOT(showDaqDataBox()));
-    
+
+    /*    menuMouseScan = new QMenu(menuBar);
+    menuMouseScan->setObjectName(QStringLiteral("menuMouseScan"));
+    menuMouseScan->setTitle(QApplication::translate("TreadmillAutomation", "Mouse Interface", Q_NULLPTR));
+    scanMouseAction = new QAction;
+    menuMouseScan->addAction(scanMouseAction);
+    scanMouseAction->setText("Scan");
+    connect(scanMouseAction, SIGNAL(triggered()), mouseInterface, SLOT(scanForDevices()));
+    getRawDataMouseAction = new QAction;
+    menuMouseScan->addAction(getRawDataMouseAction);
+    getRawDataMouseAction->setText("Get Mouse Data");
+    connect(getRawDataMouseAction, SIGNAL(triggered()), mouseInterface, SLOT(getRawInput()));
+ */
+   
     menuBar->addMenu(menuView);
-    menuBar->addMenu(menuQualisys);
+//    menuBar->addMenu(menuMouseScan);
     centralWidgetLayout->setMenuBar(menuBar);
 } 
 
@@ -137,10 +143,6 @@ void TreadmillAutomation::errorString(QString s)
     qDebug() << s;
 }
 
-void TreadmillAutomation::connectQualisys()
-{
-    newQualisysNetConn->qualisysConnect("localhost", 22222);
-}
 
 static void showWarning(QWidget * mparent, const QString & mtitle, const QString & mtext)
 {

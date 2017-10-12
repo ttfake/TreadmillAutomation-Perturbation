@@ -2,8 +2,6 @@ cmake_minimum_required(VERSION 3.0.0 FATAL_ERROR)
 
 project(TreadmillAutomation)
 
-add_subdirectory(src/RTClientSDK/)
-
 SET (CMAKE_AUTOMOC ON)
 
 SET (WINDOWS_QT
@@ -22,6 +20,7 @@ file(GLOB SOURCES "src/*.cpp")
 find_package(Qt5Core REQUIRED)
 find_package(Qt5Widgets REQUIRED)
 find_package(Qt5Network REQUIRED)
+find_package(Qt5SerialPort REQUIRED)
 
 #qt5_wrap_cpp(moc_TreadmillAutomation.cpp moc_MccDaqInterface.cpp 
 #    moc_NetworkTabWidget.cpp moc_PerturbationTabWidget.cpp TreadmillAutomation.cpp
@@ -32,5 +31,5 @@ find_package(Qt5Network REQUIRED)
 #add_executable(TreadmillAutomation WIN32 ${SOURCES})
 add_executable(TreadmillAutomation ${SOURCES})
 target_link_libraries(TreadmillAutomation Qt5::Widgets Qt5::Network
-    cbw64 libRTClientSDK.a ws2_32
+    Qt5::SerialPort cbw64 ws2_32 User32 
     )

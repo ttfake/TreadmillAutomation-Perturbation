@@ -29,12 +29,14 @@
 #include <cmath>
 #include <cstdlib>
 #include <ctime>
+#include <QDateTime>
 
 #include "SendSetpoints.h"
 #include "MccDaqConnectButtonWidget.h"
 #include "MccDaqRecordButtonWidget.h"
 #include "MccDaqInterface.h"
 #include "RecordTreadmillStream.h"
+#include "MouseInterface.h"
 
 class PerturbationTabWidget : public QWidget
 {
@@ -92,7 +94,7 @@ class PerturbationTabWidget : public QWidget
         void startDataCollectionThread();
         void setRowCount(int mRowCount);
         void setDaqLogFileName();
-        void treadmillWait(double);
+        void treadmillWait();
 
     private:
 
@@ -287,6 +289,8 @@ class PerturbationTabWidget : public QWidget
 
         QString host;
         QString port;
+
+        MouseInterface* mouseInterface;
         
 
         
