@@ -65,8 +65,8 @@ map <C-K> <C-W>k<C-W>_
 set foldmethod=syntax
 set foldcolumn=1
 
-highlight Cursor guifg=Green guibg=black
-highlight iCursor guifg=white guibg=steelblue
+"highlight Cursor guifg=Green guibg=black
+"highlight iCursor guifg=white guibg=steelblue
 set guicursor=n-v-c:block-Cursor
 set guicursor+=i:ver100-iCursor
 set guicursor+=n-v-c:blinkon0

@@ -25,8 +25,10 @@ class MouseInterface : public QObject
         ~MouseInterface();
         int openPort();
         void setMovementBool(bool);
+        void setPerturbationActiveBoolFalse();
     public slots:
         void getRawInput();
+        void setPerturbationActiveBoolTrue();
     signals:
         movement();
     private:
@@ -39,5 +41,6 @@ class MouseInterface : public QObject
         std::vector<QString>              availableComPorts;
         std::vector<QSerialPortInfo>      comPortInfo;
         bool                              movementBool;
+        bool                              perturbationActiveBool;
 };
 #endif

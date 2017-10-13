@@ -90,11 +90,10 @@ void MouseInterface::getRawInput()
             {
                 //qDebug() << "Data Received: " << xCoord[1].toInt();
                 qDebug() << "Movement Detected: " << xCoord[1].toInt();
-                if(!movementBool)
+                if(!movementBool && perturbationActiveBool)
                 {
-                    QDateTime currentDateTime = QDateTime::currentDateTime();
-                    uint unixtime = currentDateTime.toTime_t();
-                    movementDetectedLog.write(QString::number(unixtime).toUtf8() + "\n");
+                    qint64 currentMillisecondsSinceEpoch = QDateTime::currentMSecsSinceEpoch();
+                    movementDetectedLog.write(QString::number(currentMillisecondsSinceEpoch).toUtf8() + "\n");
                     movementDetectedLog.close();
                     emit movement();
                 }
@@ -116,4 +115,15 @@ void MouseInterface::setMovementBool(bool m_movementDetected)
 {
     movementBool = m_movementDetected;
 }
+
+void MouseInterface::setPerturbationActiveBoolTrue()
+{
+    perturbationActiveBool = true;
+}
+
+void MouseInterface::setPerturbationActiveBoolFalse()
+{
+    perturbationActiveBool = false;
+}
+
 #include "../include/moc_MouseInterface.cpp"
