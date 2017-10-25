@@ -15,6 +15,12 @@
 #include <QtMath>
 #include <QDate>
 #include <QDateTime>
+#include <QString>
+#include <chrono>
+#include <sstream>
+
+typedef void (WINAPI *PGNSI)(LPSYSTEM_INFO);
+#define _WIN32_WINNT_WIN7 0x0601
 
 class MouseInterface : public QObject
 { 
@@ -26,6 +32,7 @@ class MouseInterface : public QObject
         int openPort();
         void setMovementBool(bool);
         void setPerturbationActiveBoolFalse();
+        void setLogPath(QString m_logPath);
     public slots:
         void getRawInput();
         void setPerturbationActiveBoolTrue();
@@ -42,5 +49,6 @@ class MouseInterface : public QObject
         std::vector<QSerialPortInfo>      comPortInfo;
         bool                              movementBool;
         bool                              perturbationActiveBool;
+        QString                           logPath;
 };
 #endif

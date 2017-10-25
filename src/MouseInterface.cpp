@@ -49,7 +49,7 @@ int MouseInterface::openPort()
     QTextStream standardOutput(stdout);
 
     serialPort = new QSerialPort;
-    QString serialPortName = "com4"; //argumentList.at(1);
+    QString serialPortName = "com7"; //argumentList.at(1);
     qDebug() << serialPortName;
     serialPort->setPortName(serialPortName);
 
@@ -74,14 +74,45 @@ void MouseInterface::getRawInput()
 {
 
     QFile mouseLog("mouseLog.log");
-    double startingCoord(0.00);
-    QFile movementDetectedLog("movementDetectedLog.log");
+    QFile movementDetectedLog(logPath + "/" + "movementDetectedLog.log");
     movementDetectedLog.open(QIODevice::Append);
-    
-    dataRead.append(serialPort->readAll());
-    QList<QByteArray> list = dataRead.split('\t');
+    double startingCoord(0.00);
+    bool ok;
+    QByteArray data;
+    QString dataString;
+        
+    qDebug() << " Data Detected\n";
+   
+    while(serialPort->canReadLine())
+    {
+        data = serialPort->readLine();
+        dataString = QString::fromLocal8Bit(data);
 
-    for(const auto item : list)
+        qDebug() << "Reading Data";
+        //-----------------Current Unix Timestamp--------------------------------
+        qint64 currentMsecsSinceEpoch = QDateTime::currentMSecsSinceEpoch();
+        movementDetectedLog.write(QString::number(currentMsecsSinceEpoch).toUtf8());
+        //-----------------------------------------------------------------------
+        //qDebug() << startingCoord;
+        movementDetectedLog.write(",");
+        movementDetectedLog.write(data);
+        dataString.chop(2);
+        startingCoord = fabs(dataString.toDouble());
+        if(startingCoord > 0)
+        {
+            qDebug() << startingCoord;
+            emit movement();
+        }
+    }
+    
+    movementDetectedLog.write("\n");
+    
+    movementDetectedLog.close();
+
+
+    //    QList<QByteArray> list = dataRead.split('\t');
+
+/*    for(const auto item : list)
     {
         if(item.contains("x="))
         {
@@ -90,16 +121,35 @@ void MouseInterface::getRawInput()
             {
                 //qDebug() << "Data Received: " << xCoord[1].toInt();
                 qDebug() << "Movement Detected: " << xCoord[1].toInt();
-                if(!movementBool && perturbationActiveBool)
+                if( !movementBool && perturbationActiveBool)
                 {
-                    qint64 currentMillisecondsSinceEpoch = QDateTime::currentMSecsSinceEpoch();
-                    movementDetectedLog.write(QString::number(currentMillisecondsSinceEpoch).toUtf8() + "\n");
+                    QFile movementDetectedLog(logPath + "/" + "movementDetectedLog.log");
+                    movementDetectedLog.open(QIODevice::Append);
+                   //--------------------------------------------------------------------- 
+
+                     auto uptime = std::chrono::milliseconds(GetTickCount());
+
+                   //---------------------------------------------------------------------
+                    std::ostringstream out;
+                    out << std::chrono::milliseconds(uptime).count() << "ms";
+                    std::string uptimeStdString = out.str();
+                    QString uptimeString = QString::fromStdString(uptimeStdString);
+                    movementDetectedLog.write(uptimeString.toUtf8() + "\n");
+
+ 
+                    //-----------------Current Unix Timestamp--------------------------------
+                    qint64 currentMsecsSinceEpoch = QDateTime::currentMSecsSinceEpoch();
+                    movementDetectedLog.write("Unix System Timestamp:" + QString::number(currentMsecsSinceEpoch).toUtf8() + "\n");
+                    //-----------------------------------------------------------------------
+
+
                     movementDetectedLog.close();
                     emit movement();
                 }
             }
         }
     }
+*/
 
     mouseLog.open(QIODevice::Append);
     
@@ -109,7 +159,7 @@ void MouseInterface::getRawInput()
 
     dataRead.clear();
 
-}
+} 
 
 void MouseInterface::setMovementBool(bool m_movementDetected)
 {
@@ -124,6 +174,11 @@ void MouseInterface::setPerturbationActiveBoolTrue()
 void MouseInterface::setPerturbationActiveBoolFalse()
 {
     perturbationActiveBool = false;
+}
+
+void MouseInterface::setLogPath(QString m_logPath)
+{
+    logPath = m_logPath;
 }
 
 #include "../include/moc_MouseInterface.cpp"

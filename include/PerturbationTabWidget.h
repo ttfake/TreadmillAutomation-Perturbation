@@ -30,6 +30,8 @@
 #include <cstdlib>
 #include <ctime>
 #include <QDateTime>
+#include <QRegExp>
+#include<chrono>
 
 #include "SendSetpoints.h"
 #include "MccDaqConnectButtonWidget.h"
@@ -37,6 +39,7 @@
 #include "MccDaqInterface.h"
 #include "RecordTreadmillStream.h"
 #include "MouseInterface.h"
+#include "ReadTrialNameFile.h"
 
 class PerturbationTabWidget : public QWidget
 {
@@ -63,6 +66,7 @@ class PerturbationTabWidget : public QWidget
         void showDaqDataBox(bool checked);
         void setHost(QString mhost);
         void setPort(QString mport);
+        void addTrialRunName();
 
     public slots:
         void showTimer(bool state);
@@ -95,12 +99,13 @@ class PerturbationTabWidget : public QWidget
         void setRowCount(int mRowCount);
         void setDaqLogFileName();
         void treadmillWait();
+        void getTrialName();
 
     private:
 
         SendSetpoints* sendSetpoints;
         MccDaqInterface* pmccDaqInterface;
-        
+        ReadTrialNameFile* readTrialNameFile; 
         //createRemoteTab
         QWidget* perturbationTab;
         QGridLayout* perturbationTabLayout;
@@ -292,6 +297,9 @@ class PerturbationTabWidget : public QWidget
 
         MouseInterface* mouseInterface;
         
+        void setLoggingDirectory(QString dirName);
+        qint16 trialRun;
+        QString logPath;
 
         
         
