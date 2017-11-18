@@ -50,5 +50,10 @@ class MouseInterface : public QObject
         bool                              movementBool;
         bool                              perturbationActiveBool;
         QString                           logPath;
+        void SetupDigitalOutput();
+        void StopTask();
+        void WriteLine();
+
+
 };
 #endif

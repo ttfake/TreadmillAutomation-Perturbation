@@ -46,12 +46,17 @@ void TreadmillAutomation::createFileMenu()
     menuView = new QMenu(menuBar);
     menuView->setObjectName(QStringLiteral("menuView"));
     menuView->setTitle(QApplication::translate("TreadmillAutomation", "View", Q_NULLPTR));
+    
     timerViewAct = new QAction();
     timerViewAct->setCheckable(true);
     menuView->addAction(timerViewAct);
     timerViewAct->setText("Show Timer");
     connect(timerViewAct, SIGNAL(changed()), SLOT(showTimer()));
 
+    viewSubjectInterfaceAct = new QAction();
+    menuView->addAction(viewSubjectInterfaceAct);
+    viewSubjectInterfaceAct->setText("Subject Interface");
+    connect(viewSubjectInterfaceAct, SIGNAL(triggered()), this, SLOT(showSubjectView()));
 
     daqViewAct = new QAction();
     daqViewAct->setCheckable(true);
@@ -68,7 +73,7 @@ void TreadmillAutomation::createFileMenu()
     connect(scanMouseAction, SIGNAL(triggered()), mouseInterface, SLOT(scanForDevices()));
     getRawDataMouseAction = new QAction;
     menuMouseScan->addAction(getRawDataMouseAction);
-    getRawDataMouseAction->setText("Get Mouse Data");
+    gtRawDataMouseAction->setText("Get Mouse Data");
     connect(getRawDataMouseAction, SIGNAL(triggered()), mouseInterface, SLOT(getRawInput()));
  */
    
@@ -108,6 +113,11 @@ void TreadmillAutomation::showDaqDataBox()
     }
 }
 
+void TreadmillAutomation::showSubjectView()
+{
+    sInterface = new SubjectInterface;
+    sInterface->setAttribute(Qt::WA_DeleteOnClose);
+}
 
 void TreadmillAutomation::createTabWidget()
 {

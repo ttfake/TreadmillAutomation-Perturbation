@@ -650,7 +650,7 @@ void PerturbationTabWidget::startTreadmill()
     sendSetpoints->sendSetpoints(SendSetpoints::TreadmillProperty::ACCEL, SendSetpoints::NormalSetpoint);
     //    recTreadmillStream->setSharedSocket(pertSocket);
 //    recTreadmillStream->startDataCollection();
- }
+}
 
 void PerturbationTabWidget::treadmillWait()
 {
