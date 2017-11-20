@@ -755,6 +755,7 @@ void PerturbationTabWidget::startDecelTimer()
 
 void PerturbationTabWidget::slotTimeout()
 {
+    mouseInterface->setMovementDetectedBool(false);
 
     //-----------------------------------------------------------------------
     auto uptime = std::chrono::milliseconds(GetTickCount());

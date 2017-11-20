@@ -103,7 +103,11 @@ void MouseInterface::getRawInput()
         if(startingCoord > 0)
         {
             qDebug() << startingCoord;
-            emit movement();
+            if(movementDetectedBool == false)
+            {
+                emit movement();
+                movementDetectedBool = true;
+            }
         }
     }
     
@@ -160,12 +164,16 @@ void MouseInterface::getRawInput()
 
 
     dataRead.clear();
-
 } 
 
 void MouseInterface::setMovementBool(bool m_movementDetected)
 {
     movementBool = m_movementDetected;
+}
+
+void MouseInterface::setMovementDetectedBool(bool mMovementDetectedBool)
+{
+    movementDetectedBool = mMovementDetectedBool;
 }
 
 void MouseInterface::setPerturbationActiveBoolTrue()

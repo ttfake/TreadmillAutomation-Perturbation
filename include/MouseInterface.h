@@ -29,13 +29,15 @@ class MouseInterface : public QObject
     public:
         MouseInterface();
         ~MouseInterface();
-        int openPort();
-        void setMovementBool(bool);
-        void setPerturbationActiveBoolFalse();
-        void setLogPath(QString m_logPath);
+        int                               openPort();
+        void                              setMovementBool(bool);
+        void                              setPerturbationActiveBoolFalse();
+        void                              setLogPath(QString m_logPath);
+        void                              setMovementDetectedBool(bool mMovementDetectedBool);
+
     public slots:
-        void getRawInput();
-        void setPerturbationActiveBoolTrue();
+        void                              getRawInput();
+        void                              setPerturbationActiveBoolTrue();
     signals:
         movement();
     private:
@@ -50,9 +52,10 @@ class MouseInterface : public QObject
         bool                              movementBool;
         bool                              perturbationActiveBool;
         QString                           logPath;
-        void SetupDigitalOutput();
-        void StopTask();
-        void WriteLine();
+        void                              SetupDigitalOutput();
+        void                              StopTask();
+        void                              WriteLine();
+        bool                              movementDetectedBool;
 
 
 };
