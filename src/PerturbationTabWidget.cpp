@@ -794,7 +794,8 @@ void PerturbationTabWidget::setSocket(QAbstractSocket* socket)
 double PerturbationTabWidget::calculateSpeed()
 {
     double addToSpeed = 50;    //Added to compensate for flat top
-    return ((acceleration->value() * (getAccelerationTimeValue()/millisecondConversion + addToSpeed ))); 
+    return ((acceleration->value() * ((getAccelerationTimeValue()/millisecondConversion) + 
+                    (addToSpeed / 1000)))); 
 }
 
 void PerturbationTabWidget::addDaqDataGroupBox()
