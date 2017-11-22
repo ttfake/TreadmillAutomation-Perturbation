@@ -18,6 +18,7 @@
 #include <QString>
 #include <chrono>
 #include <sstream>
+#include "NIDAQmx.h"
 
 typedef void (WINAPI *PGNSI)(LPSYSTEM_INFO);
 #define _WIN32_WINNT_WIN7 0x0601
@@ -34,10 +35,12 @@ class MouseInterface : public QObject
         void                              setPerturbationActiveBoolFalse();
         void                              setLogPath(QString m_logPath);
         void                              setMovementDetectedBool(bool mMovementDetectedBool);
-
+        void                              SetupDigitalOutput();
+        void                              StopTask();
     public slots:
         void                              getRawInput();
         void                              setPerturbationActiveBoolTrue();
+        void                              WriteLine();
     signals:
         movement();
     private:
@@ -52,10 +55,9 @@ class MouseInterface : public QObject
         bool                              movementBool;
         bool                              perturbationActiveBool;
         QString                           logPath;
-        void                              SetupDigitalOutput();
-        void                              StopTask();
-        void                              WriteLine();
-        bool                              movementDetectedBool;
+                bool                              movementDetectedBool;
+
+        TaskHandle                        taskHandle = 0;
 
 
 };

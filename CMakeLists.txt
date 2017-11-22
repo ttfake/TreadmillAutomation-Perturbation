@@ -31,5 +31,5 @@ find_package(Qt5SerialPort REQUIRED)
 #add_executable(TreadmillAutomation WIN32 ${SOURCES})
 add_executable(TreadmillAutomation ${SOURCES})
 target_link_libraries(TreadmillAutomation Qt5::Widgets Qt5::Network
-    Qt5::SerialPort cbw64 ws2_32 User32 
+    Qt5::SerialPort cbw64 nidaqmx ws2_32 User32 
     )

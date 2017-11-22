@@ -193,26 +193,21 @@ void MouseInterface::setLogPath(QString m_logPath)
 
 void MouseInterface::SetupDigitalOutput()
 {
-    //DAQmxCreateTask("",&taskHandle);
-    //DAQmxCreateCOPulseChanTime(taskHandle,"Dev1/ctr0","",DAQmx_Val_Seconds,DAQmx_Val_High,0.0,0.01,0.001);
-    //DAQmxCreateDOChan(taskHandle,OutputLine.c_str(),"",DAQmx_Val_ChanPerLine);
-    //DAQmxCfgSampClkTiming(taskHandle,"",100.0,DAQmx_Val_Rising,DAQmx_Val_FiniteSamps,13);
-    //DAQmxStartTask(taskHandle);
-    //DAQmxRegisterDoneEvent(taskHandle,0,DoneCallback,NULL);
-
+    DAQmxCreateTask("",&taskHandle);
+    DAQmxCreateCOPulseChanTime(taskHandle,"Dev1/ctr0","",DAQmx_Val_Seconds,DAQmx_Val_High,0.0,0.01,0.001);
 }
 
 void MouseInterface::StopTask()
 {
-   // DAQmxStopTask(taskHandle);
-   // DAQmxClearTask(taskHandle);
+    DAQmxStopTask(taskHandle);
+    DAQmxClearTask(taskHandle);
 }
 
 void MouseInterface::WriteLine()
 {
-   // DAQmxStartTask(taskHandle);
-   // DAQmxWaitUntilTaskDone(taskHandle,0.05);
-   // DAQmxStopTask(taskHandle);
+    DAQmxStartTask(taskHandle);
+    DAQmxWaitUntilTaskDone(taskHandle,0.05);
+    DAQmxStopTask(taskHandle);
 }
 
 #include "../include/moc_MouseInterface.cpp"

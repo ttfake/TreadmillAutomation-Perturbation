@@ -30,7 +30,6 @@ PerturbationTabWidget::PerturbationTabWidget(QWidget* parent, Qt::WindowFlags fl
 
 PerturbationTabWidget::~PerturbationTabWidget()
 {
-
 }
 
 void PerturbationTabWidget::createTreadmillPerturbationTab()
@@ -346,6 +345,7 @@ void PerturbationTabWidget::addStartPertRunGroupBox()
     readTrialNameFile = new ReadTrialNameFile("config/TrialNames.txt");
     mouseInterface = new MouseInterface;
     mouseInterface->openPort();
+    mouseInterface->SetupDigitalOutput();
     // The following connect waits for a change in speed data from the treadmill 
     // and when the treadmillStarted signal is received (a change in the treadmill 
     // speed is detected), treadmillWait is activated. This connect will be changed
@@ -354,6 +354,7 @@ void PerturbationTabWidget::addStartPertRunGroupBox()
 //            this, SLOT(treadmillWait(double)));
     connect(startPertRunBtn, SIGNAL(clicked()), SLOT(getTrialName()));
     connect(startPertRunBtn, SIGNAL(clicked()), SLOT(startTreadmill()));
+    connect(startPertRunBtn, SIGNAL(clicked()), mouseInterface, SLOT(WriteLine()));
     connect(mouseInterface, SIGNAL(movement()), SLOT(treadmillWait()));
     connect(startPertRunBtn, SIGNAL(clicked()), mouseInterface, SLOT(setPerturbationActiveBoolTrue()));
 
@@ -811,6 +812,7 @@ void PerturbationTabWidget::slotTimeout()
     zeroSignalSentLog.close();
     std::cout << "Trial Ended" << std::endl;
     mouseInterface->setPerturbationActiveBoolFalse();
+    mouseInterface->StopTask();
     //recTreadmillStream->stopRecord();
 }
 
