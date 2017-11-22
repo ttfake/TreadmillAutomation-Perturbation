@@ -301,6 +301,16 @@ class PerturbationTabWidget : public QWidget
         qint16 trialRun;
         QString logPath;
 
+        //createFudgeFactorGroupBox
+        QGroupBox* fudgeFactorGroupBox;
+        QHBoxLayout* fudgeFactorGroupBoxHorizontalLayout; 
+        QLabel* fudgeFactorLabel;
+        QFont fudgeFactorLabelFont;
+        QDoubleSpinBox* fudgeFactorDoubleSpinBox;
+        void addFudgeFactorGroupBox();
+        double addToSpeed;
+        void setAddToSpeed(double mAddToSpeed);
+
         
         
 };

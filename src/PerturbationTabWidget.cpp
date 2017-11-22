@@ -55,6 +55,7 @@ void PerturbationTabWidget::addQuadrantOne()
     quadrantOnePerturbationLayout = new QVBoxLayout;
     quadrantOneGroupBox->setLayout(quadrantOnePerturbationLayout);
     perturbationTabLayout->addWidget(quadrantOneGroupBox, 0,0);
+    addFudgeFactorGroupBox();
     //addSpeedGroupBox();
     addAccelDecelGroupBox();
     addTimerGroupBox();
@@ -89,6 +90,29 @@ void PerturbationTabWidget::addQuadrantFour()
 
 }
 
+void PerturbationTabWidget::addFudgeFactorGroupBox()
+{
+    fudgeFactorGroupBox = new QGroupBox;
+    fudgeFactorGroupBoxHorizontalLayout = new QHBoxLayout;
+    fudgeFactorGroupBox->setSizePolicy(QSizePolicy::Minimum, QSizePolicy::Fixed);
+    fudgeFactorGroupBox->setLayout(fudgeFactorGroupBoxHorizontalLayout);
+    fudgeFactorLabel = new QLabel;
+    fudgeFactorLabel->setFixedSize(180,180);
+    fudgeFactorLabelFont.setFamily("Times");
+    fudgeFactorLabelFont.setWeight(75);
+    fudgeFactorLabelFont.setPointSize(12);
+    fudgeFactorLabel->setFont(fudgeFactorLabelFont);
+    fudgeFactorLabel->setText("Added Time: ");
+    fudgeFactorGroupBoxHorizontalLayout->addWidget(fudgeFactorLabel);
+    fudgeFactorDoubleSpinBox = new QDoubleSpinBox;
+    fudgeFactorDoubleSpinBox->setRange(0.00, 100000000.00);
+    fudgeFactorDoubleSpinBox->setFont(fudgeFactorLabelFont);
+    fudgeFactorDoubleSpinBox->setSuffix(" ms");
+    fudgeFactorDoubleSpinBox->setFixedSize(160, 40);
+    fudgeFactorGroupBoxHorizontalLayout->addWidget(fudgeFactorDoubleSpinBox);
+
+    quadrantOnePerturbationLayout->addWidget(fudgeFactorGroupBox);
+}
 
 void PerturbationTabWidget::addSpeedGroupBox()
 {
@@ -434,6 +458,11 @@ void PerturbationTabWidget::addRecordDataStreamVelocityBox()
 
 }
 
+void PerturbationTabWidget::setAddToSpeed(double mAddToSpeed)
+{
+    addToSpeed = mAddToSpeed;
+}
+
 void PerturbationTabWidget::setDaqConnectColor()
 {
     if(clicked)
@@ -627,6 +656,8 @@ void PerturbationTabWidget::startTreadmill()
     setDecelerationValue(deceleration->value());
     setAccelerationTimeValue(timeAccelSpinBox->value());
     setDecelerationTimeValue(timeDecelSpinBox->value());
+    setAddToSpeed(fudgeFactorDoubleSpinBox->value());
+    qDebug() << addToSpeed;
     setLeftFrontSpeedValue(calculateSpeed());
     setRightFrontSpeedValue(calculateSpeed());
     //timer.start(millisecondsToSeconds);
@@ -793,7 +824,7 @@ void PerturbationTabWidget::setSocket(QAbstractSocket* socket)
 
 double PerturbationTabWidget::calculateSpeed()
 {
-    double addToSpeed = 100;    //Added to compensate for flat top
+    //double addToSpeed = 100;    //Added to compensate for flat top
     return ((acceleration->value() * ((getAccelerationTimeValue()/millisecondConversion) + 
                     (addToSpeed / 1000)))); 
 }
