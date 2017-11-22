@@ -42,6 +42,7 @@ MouseInterface::MouseInterface()
  
 MouseInterface::~MouseInterface()
 {
+    StopTask();
 
 }
 

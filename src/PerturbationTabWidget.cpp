@@ -812,7 +812,7 @@ void PerturbationTabWidget::slotTimeout()
     zeroSignalSentLog.close();
     std::cout << "Trial Ended" << std::endl;
     mouseInterface->setPerturbationActiveBoolFalse();
-    mouseInterface->StopTask();
+//    mouseInterface->StopTask();
     //recTreadmillStream->stopRecord();
 }
 
