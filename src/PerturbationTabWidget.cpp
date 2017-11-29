@@ -353,7 +353,8 @@ void PerturbationTabWidget::addStartPertRunGroupBox()
 //    connect(recTreadmillStream, SIGNAL(treadmillStarted(double)), 
 //            this, SLOT(treadmillWait(double)));
     connect(startPertRunBtn, SIGNAL(clicked()), SLOT(getTrialName()));
-    connect(startPertRunBtn, SIGNAL(clicked()), SLOT(startTreadmill()));
+//    connect(startPertRunBtn, SIGNAL(clicked()), SLOT(startTreadmill()));
+    connect(startPertRunBtn, SIGNAL(clicked()), SLOT(randomDelay()));
     connect(startPertRunBtn, SIGNAL(clicked()), mouseInterface, SLOT(WriteLine()));
     connect(mouseInterface, SIGNAL(movement()), SLOT(treadmillWait()));
     connect(startPertRunBtn, SIGNAL(clicked()), mouseInterface, SLOT(setPerturbationActiveBoolTrue()));
@@ -638,7 +639,10 @@ void PerturbationTabWidget::randomDelay()
 {
     int randomTime = (rand() % (11 - 3) + 3) * 1000;
     qDebug("Random Time: %i", randomTime);
-    QTimer::singleShot(randomTime, this, SLOT(startAccelTimer()));
+    QFile randomDelayLog(logPath + "/" + "randomDelayLog.log");
+    randomDelayLog.open(QIODevice::Append);
+    randomDelayLog.write(QString::number(randomTime).toUtf8() + "\n");
+    QTimer::singleShot(randomTime, this, SLOT(startTreadmill()));
 }
 
 void PerturbationTabWidget::startTreadmill()

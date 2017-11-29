@@ -31,7 +31,7 @@
 #include <ctime>
 #include <QDateTime>
 #include <QRegExp>
-#include<chrono>
+#include <chrono>
 
 #include "SendSetpoints.h"
 #include "MccDaqConnectButtonWidget.h"
