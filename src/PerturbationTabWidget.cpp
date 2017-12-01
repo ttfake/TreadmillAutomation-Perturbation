@@ -637,7 +637,7 @@ void PerturbationTabWidget::setUseLibraryStatus(bool useLibCheckBox)
 
 void PerturbationTabWidget::randomDelay()
 {
-    int randomTime = (rand() % 3 + 2) * 1000;
+    int randomTime = rand() % 2000 + 2000;
     qDebug("Random Time: %i", randomTime);
     QFile randomDelayLog(logPath + "/" + "randomDelayLog.log");
     randomDelayLog.open(QIODevice::Append);

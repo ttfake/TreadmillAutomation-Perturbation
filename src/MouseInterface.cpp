@@ -109,6 +109,7 @@ void MouseInterface::getRawInput()
                 emit movement();
                 movementDetectedBool = true;
             }
+            WriteLine();
         }
     }
     
