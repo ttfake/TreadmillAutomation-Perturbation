@@ -643,6 +643,7 @@ void PerturbationTabWidget::randomDelay()
     randomDelayLog.open(QIODevice::Append);
     randomDelayLog.write(QString::number(randomTime).toUtf8() + "\n");
     randomDelayLog.close();
+    mouseInterface->WriteLine();
     QTimer::singleShot(randomTime, this, SLOT(startTreadmill()));
 }
 
@@ -684,6 +685,7 @@ void PerturbationTabWidget::startTreadmill()
     //-----------------------------------------------------------------------
     
     accelerationSignalSentLog.close();
+    mouseInterface->WriteLine();
     sendSetpoints->sendSetpoints(SendSetpoints::TreadmillProperty::ACCEL, SendSetpoints::NormalSetpoint);
     //    recTreadmillStream->setSharedSocket(pertSocket);
 //    recTreadmillStream->startDataCollection();
@@ -721,6 +723,7 @@ void PerturbationTabWidget::treadmillWait()
     //-----------------------------------------------------------------------
     
     accelerationTimerStartedLog.close();
+    mouseInterface->WriteLine();
  
     QTimer::singleShot(retAccelValue, this, SLOT(startDecelTimer()));
 }
@@ -741,6 +744,7 @@ void PerturbationTabWidget::startDecelTimer()
     QFile decelerationTimerStartedLog(logPath + "/" + "decelerationTimerStartedLog.log");
     accelerationTimerEndedLog.open(QIODevice::Append);
 //    qint64 currentMsecsSinceEpoch = QDateTime::currentMSecsSinceEpoch();
+    mouseInterface->WriteLine();
     accelerationTimerEndedLog.write(uptimeString.toUtf8() + "\n");
 
     //-----------------Current Unix Timestamp--------------------------------
@@ -785,6 +789,7 @@ void PerturbationTabWidget::startDecelTimer()
     //-----------------------------------------------------------------------
     
     decelerationTimerStartedLog.close();
+    mouseInterface->WriteLine();
     QTimer::singleShot(retDecelTimeValue, this, SLOT(slotTimeout()));
 //    recTreadmillStream->setRecord();
 //    emit recTreadmillStream->setEmitComplete();
@@ -809,6 +814,7 @@ void PerturbationTabWidget::slotTimeout()
 //    qint64 currentMsecsSinceEpoch = QDateTime::currentMSecsSinceEpoch();
     decelerationTimerEndedLog.write(uptimeString.toUtf8() + "\n");
 
+    mouseInterface->WriteLine();
     decelerationTimerEndedLog.close();
     sendSetpoints->sendSetpoints(SendSetpoints::ZERO, SendSetpoints::NormalSetpoint);
 //    currentMsecsSinceEpoch = QDateTime::currentMSecsSinceEpoch();
