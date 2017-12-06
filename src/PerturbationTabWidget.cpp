@@ -355,7 +355,7 @@ void PerturbationTabWidget::addStartPertRunGroupBox()
     connect(startPertRunBtn, SIGNAL(clicked()), SLOT(getTrialName()));
 //    connect(startPertRunBtn, SIGNAL(clicked()), SLOT(startTreadmill()));
     connect(startPertRunBtn, SIGNAL(clicked()), SLOT(randomDelay()));
-    connect(startPertRunBtn, SIGNAL(clicked()), mouseInterface, SLOT(WriteLine()));
+    connect(startPertRunBtn, SIGNAL(clicked()), mouseInterface, SLOT(WriteLine()));  // Trigger 1
     connect(mouseInterface, SIGNAL(movement()), SLOT(treadmillWait()));
     connect(startPertRunBtn, SIGNAL(clicked()), mouseInterface, SLOT(setPerturbationActiveBoolTrue()));
 
@@ -643,7 +643,7 @@ void PerturbationTabWidget::randomDelay()
     randomDelayLog.open(QIODevice::Append);
     randomDelayLog.write(QString::number(randomTime).toUtf8() + "\n");
     randomDelayLog.close();
-    mouseInterface->WriteLine();
+//    mouseInterface->WriteLine();
     QTimer::singleShot(randomTime, this, SLOT(startTreadmill()));
 }
 
@@ -685,7 +685,7 @@ void PerturbationTabWidget::startTreadmill()
     //-----------------------------------------------------------------------
     
     accelerationSignalSentLog.close();
-    mouseInterface->WriteLine();
+    mouseInterface->WriteLine(); // Trigger 2
     sendSetpoints->sendSetpoints(SendSetpoints::TreadmillProperty::ACCEL, SendSetpoints::NormalSetpoint);
     //    recTreadmillStream->setSharedSocket(pertSocket);
 //    recTreadmillStream->startDataCollection();
@@ -723,7 +723,7 @@ void PerturbationTabWidget::treadmillWait()
     //-----------------------------------------------------------------------
     
     accelerationTimerStartedLog.close();
-    mouseInterface->WriteLine();
+//    mouseInterface->WriteLine();
  
     QTimer::singleShot(retAccelValue, this, SLOT(startDecelTimer()));
 }
@@ -744,7 +744,6 @@ void PerturbationTabWidget::startDecelTimer()
     QFile decelerationTimerStartedLog(logPath + "/" + "decelerationTimerStartedLog.log");
     accelerationTimerEndedLog.open(QIODevice::Append);
 //    qint64 currentMsecsSinceEpoch = QDateTime::currentMSecsSinceEpoch();
-    mouseInterface->WriteLine();
     accelerationTimerEndedLog.write(uptimeString.toUtf8() + "\n");
 
     //-----------------Current Unix Timestamp--------------------------------
@@ -789,8 +788,8 @@ void PerturbationTabWidget::startDecelTimer()
     //-----------------------------------------------------------------------
     
     decelerationTimerStartedLog.close();
-    mouseInterface->WriteLine();
-    QTimer::singleShot(retDecelTimeValue, this, SLOT(slotTimeout()));
+    mouseInterface->WriteLine(); // Trigger 5 \
+//    QTimer::singleShot(retDecelTimeValue, this, SLOT(slotTimeout()));
 //    recTreadmillStream->setRecord();
 //    emit recTreadmillStream->setEmitComplete();
 }
