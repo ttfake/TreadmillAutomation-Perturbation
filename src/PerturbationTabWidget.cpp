@@ -723,7 +723,7 @@ void PerturbationTabWidget::treadmillWait()
     //-----------------------------------------------------------------------
     
     accelerationTimerStartedLog.close();
-//    mouseInterface->WriteLine();
+    mouseInterface->WriteLine(); // Trigger 3
  
     QTimer::singleShot(retAccelValue, this, SLOT(startDecelTimer()));
 }
