@@ -790,6 +790,7 @@ void PerturbationTabWidget::startDecelTimer()
     decelerationTimerStartedLog.close();
     mouseInterface->WriteLine(); // Trigger 5
     mouseInterface->setPerturbationActiveBoolFalse();
+    mouseInterface->setMovementDetectedBool(false);
 
 //    QTimer::singleShot(retDecelTimeValue, this, SLOT(slotTimeout()));
 //    recTreadmillStream->setRecord();
