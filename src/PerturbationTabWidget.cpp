@@ -723,7 +723,7 @@ void PerturbationTabWidget::treadmillWait()
     //-----------------------------------------------------------------------
     
     accelerationTimerStartedLog.close();
-    mouseInterface->WriteLine(); // Trigger 3
+    mouseInterface->WriteLine(); // Trigger 4
  
     QTimer::singleShot(retAccelValue, this, SLOT(startDecelTimer()));
 }
@@ -789,6 +789,8 @@ void PerturbationTabWidget::startDecelTimer()
     
     decelerationTimerStartedLog.close();
     mouseInterface->WriteLine(); // Trigger 5
+    mouseInterface->setPerturbationActiveBoolFalse();
+
 //    QTimer::singleShot(retDecelTimeValue, this, SLOT(slotTimeout()));
 //    recTreadmillStream->setRecord();
 //    emit recTreadmillStream->setEmitComplete();
