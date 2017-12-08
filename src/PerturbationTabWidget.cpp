@@ -357,6 +357,7 @@ void PerturbationTabWidget::addStartPertRunGroupBox()
     connect(startPertRunBtn, SIGNAL(clicked()), SLOT(randomDelay()));
     connect(startPertRunBtn, SIGNAL(clicked()), mouseInterface, SLOT(WriteLine()));  // Trigger 1
     connect(mouseInterface, SIGNAL(movement()), SLOT(treadmillWait()));
+    connect(mouseInterface, SIGNAL(movementStopped()), SLOT(slotTimeout());
     connect(startPertRunBtn, SIGNAL(clicked()), mouseInterface, SLOT(setPerturbationActiveBoolTrue()));
 
 }
@@ -792,7 +793,7 @@ void PerturbationTabWidget::startDecelTimer()
 //    mouseInterface->setPerturbationActiveBoolFalse();
 //    mouseInterface->setMovementDetectedBool(false);
 
-    QTimer::singleShot(retDecelTimeValue, this, SLOT(slotTimeout()));
+//    QTimer::singleShot(retDecelTimeValue, this, SLOT(slotTimeout()));
 //    recTreadmillStream->setRecord();
 //    emit recTreadmillStream->setEmitComplete();
 }

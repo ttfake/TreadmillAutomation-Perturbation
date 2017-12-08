@@ -43,6 +43,7 @@ class MouseInterface : public QObject
         void                              WriteLine();
     signals:
         movement();
+        movementStopped();
     private:
         QByteArray                        dataRead;
         QSerialPort*                      serial;

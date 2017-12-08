@@ -104,13 +104,17 @@ void MouseInterface::getRawInput()
         if(startingCoord > 0)
         {
             qDebug() << startingCoord;
-            if(movementDetectedBool == false)
+            if(!movementDetectedBool)
             {
                 WriteLine(); // Trigger 3
                 emit movement();
                 movementDetectedBool = true;
             }
 //            WriteLine();
+        }
+        if(startingCoord == 0 && movementDetectedBool)
+        {
+            emit movementStopped();
         }
     }
     
