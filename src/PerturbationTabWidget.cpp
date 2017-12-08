@@ -789,10 +789,10 @@ void PerturbationTabWidget::startDecelTimer()
     
     decelerationTimerStartedLog.close();
     mouseInterface->WriteLine(); // Trigger 5
-    mouseInterface->setPerturbationActiveBoolFalse();
-    mouseInterface->setMovementDetectedBool(false);
+//    mouseInterface->setPerturbationActiveBoolFalse();
+//    mouseInterface->setMovementDetectedBool(false);
 
-//    QTimer::singleShot(retDecelTimeValue, this, SLOT(slotTimeout()));
+    QTimer::singleShot(retDecelTimeValue, this, SLOT(slotTimeout()));
 //    recTreadmillStream->setRecord();
 //    emit recTreadmillStream->setEmitComplete();
 }
@@ -802,7 +802,7 @@ void PerturbationTabWidget::slotTimeout()
     mouseInterface->setMovementDetectedBool(false);
 
     //-----------------------------------------------------------------------
-    auto uptime = std::chrono::milliseconds(GetTickCount());
+/*    auto uptime = std::chrono::milliseconds(GetTickCount());
     std::ostringstream out;
     out << std::chrono::milliseconds(uptime).count() << "ms";
     std::string uptimeStdString = out.str();
@@ -827,6 +827,7 @@ void PerturbationTabWidget::slotTimeout()
     mouseInterface->setPerturbationActiveBoolFalse();
 //    mouseInterface->StopTask();
     //recTreadmillStream->stopRecord();
+*/
 }
 
 
