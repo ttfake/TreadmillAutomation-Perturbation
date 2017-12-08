@@ -357,7 +357,7 @@ void PerturbationTabWidget::addStartPertRunGroupBox()
     connect(startPertRunBtn, SIGNAL(clicked()), SLOT(randomDelay()));
     connect(startPertRunBtn, SIGNAL(clicked()), mouseInterface, SLOT(WriteLine()));  // Trigger 1
     connect(mouseInterface, SIGNAL(movement()), SLOT(treadmillWait()));
-    connect(mouseInterface, SIGNAL(movementStopped()), SLOT(slotTimeout());
+    connect(mouseInterface, SIGNAL(movementStopped()), SLOT(slotTimeout()));
     connect(startPertRunBtn, SIGNAL(clicked()), mouseInterface, SLOT(setPerturbationActiveBoolTrue()));
 
 }
