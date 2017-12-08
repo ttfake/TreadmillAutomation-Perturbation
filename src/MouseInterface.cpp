@@ -115,6 +115,7 @@ void MouseInterface::getRawInput()
         if(startingCoord == 0 && movementDetectedBool)
         {
             emit movementStopped();
+            qDebug() << "Stop detected";
         }
     }
     
