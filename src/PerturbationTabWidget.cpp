@@ -261,6 +261,7 @@ void PerturbationTabWidget::addTimerGroupBox()
     timeDecelSpinBox->setValue(600.00);
     timeDecelSpinBox->setEnabled(false);
     timeGroupBoxLayout->addWidget(timeDecelSpinBox);
+    
     quadrantOnePerturbationLayout->addWidget(timeGroupBox);
     timeGroupBox->hide();
 
