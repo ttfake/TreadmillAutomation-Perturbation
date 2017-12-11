@@ -258,8 +258,9 @@ void PerturbationTabWidget::addTimerGroupBox()
     timeDecelSpinBox->setSizePolicy(QSizePolicy::Minimum, QSizePolicy::Fixed);
     timeDecelSpinBox->setFixedSize(160,40);
     timeDecelSpinBox->setRange(0.00, 100000000.00);
+    timeDecelSpinBox->setValue(600.00);
+    timeDecelSpinBox->setEnabled(false);
     timeGroupBoxLayout->addWidget(timeDecelSpinBox);
-
     quadrantOnePerturbationLayout->addWidget(timeGroupBox);
     timeGroupBox->hide();
 
@@ -793,7 +794,7 @@ void PerturbationTabWidget::startDecelTimer()
 //    mouseInterface->setPerturbationActiveBoolFalse();
 //    mouseInterface->setMovementDetectedBool(false);
 
-//    QTimer::singleShot(retDecelTimeValue, this, SLOT(slotTimeout()));
+    QTimer::singleShot(retDecelTimeValue, this, SLOT(slotTimeout()));
 //    recTreadmillStream->setRecord();
 //    emit recTreadmillStream->setEmitComplete();
 }
