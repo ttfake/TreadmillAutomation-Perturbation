@@ -16,8 +16,6 @@ TreadmillAutomation::TreadmillAutomation(QWidget *parent, Qt::WindowFlags flags)
     centralTabWidget->addTab(networkTabWidget, "Network");
     connect(networkTabWidget->connectBtn, SIGNAL(clicked()), SLOT(setUseLibraryStatus()));
     connect(networkTabWidget->connectBtn, SIGNAL(clicked()), SLOT(setSocket()));
-
-
     
     centralTabWidget->addTab(perturbationTabWidget, "Perturbation");
 }
@@ -37,6 +35,10 @@ void TreadmillAutomation::createFileMenu()
     menuFile->addAction(saveVelocityDataAct);
     saveVelocityDataAct->setText("Save Velocity Data");
     connect(saveVelocityDataAct, SIGNAL(triggered()), perturbationTabWidget, SLOT(saveVelocityData()));
+    loadRunProfileAction = new QAction;
+    menuFile->addAction(loadRunProfileAction);
+    loadRunProfileAction->setText("Load Run Profile");
+    connect(loadRunProfileAction, SIGNAL(triggered()), perturbationTabWidget, SLOT(loadRunProfile()));
     exitAct = new QAction();
     menuFile->addAction(exitAct);
     exitAct->setText("Exit");
@@ -104,12 +106,12 @@ void TreadmillAutomation::showDaqDataBox()
     if(daqViewAct->isChecked())
     {
         checked = true;
-        perturbationTabWidget->showDaqDataBox(checked);
+//        perturbationTabWidget->showDaqDataBox(checked);
     }
     else
     {
         checked = false;
-        perturbationTabWidget->showDaqDataBox(checked);
+//        perturbationTabWidget->showDaqDataBox(checked);
     }
 }
 

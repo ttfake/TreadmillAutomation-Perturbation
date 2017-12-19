@@ -34,12 +34,10 @@
 #include <chrono>
 
 #include "SendSetpoints.h"
-#include "MccDaqConnectButtonWidget.h"
-#include "MccDaqRecordButtonWidget.h"
-#include "MccDaqInterface.h"
 #include "RecordTreadmillStream.h"
 #include "MouseInterface.h"
 #include "ReadTrialNameFile.h"
+#include "ParseRunProfile.h"
 
 class PerturbationTabWidget : public QWidget
 {
@@ -62,22 +60,16 @@ class PerturbationTabWidget : public QWidget
         void setSocket(QAbstractSocket* socket);
         void addDecelerationSpeedGroupBox();
         double calculateSpeed();
-        void addDaqDataGroupBox();
-        void showDaqDataBox(bool checked);
         void setHost(QString mhost);
         void setPort(QString mport);
         void addTrialRunName();
 
     public slots:
         void showTimer(bool state);
-        void updateDaqDataStreamTableWidget(double data);
-        void updateCol(int mColNo);
-        void getActiveState(int channel);
-        void getChannelType(int channel);
-        void getGainType(int channel);
-        void setChannel(int mchannel);
         void randomDelay();
         void saveVelocityData();
+        void loadRunProfile();
+
     private slots:
         void setLeftFrontSpeedValue(double mleftFrontSpeedValue);
         void setRightFrontSpeedValue(double mrightFrontSpeedValue);
@@ -88,23 +80,18 @@ class PerturbationTabWidget : public QWidget
         void startTreadmill();
         void startDecelTimer();
         void slotTimeout();
-        void setDaqConnectColor();
-        void setDaqRecordColor();
-        void setDaqRecordBool();
-        void addChannels();
-        void scanForDaqDevice();
-        void setDaqText(QString daqText);
-        void setupDataCollection();
-        void startDataCollectionThread();
-        void setRowCount(int mRowCount);
-        void setDaqLogFileName();
         void treadmillWait();
         void getTrialName();
+        void enableButton();
+        void disableButton();
+        void nextRun();
+        void prevRun();
+        void startStim();
+        
 
     private:
 
         SendSetpoints* sendSetpoints;
-        MccDaqInterface* pmccDaqInterface;
         ReadTrialNameFile* readTrialNameFile; 
         //createRemoteTab
         QWidget* perturbationTab;
@@ -238,53 +225,7 @@ class PerturbationTabWidget : public QWidget
         QFont daqDataPlainTextEditBoxFont;
         QStringList daqDataStreamHeaderStringList;
 
-        //addDaqControlGroupBox
-        void addDaqControlGroupBox();
-        QGroupBox* daqControlGroupBox;
-        QVBoxLayout* daqControlGroupBoxLayout; 
         
-        QScrollArea* daqControlGroupBoxScrollArea;
-        QGroupBox* daqControlScrollGroupBox;
-        QVBoxLayout* daqControlScrollGroupBoxVerticalLayout;
-        QGroupBox* numberOfChannelsGroupBox;
-        QFont numberOfChannelsGroupBoxFont;
-        QHBoxLayout* numberOfChannelsGroupBoxLayout;
-        QGroupBox* daqPushButtonBox;
-        QHBoxLayout* daqPushButtonBoxLayout;
-        QFont daqControlGroupBoxFont;
-
-        QPushButton* scanForDaqDev;
-        QMenu* daqDevMenu;
-        
-        MccDaqConnectButtonWidget* mccDaqConnectButtonWidget;
-        MccDaqRecordButtonWidget* mccDaqRecordButtonWidget;
-        QFont mccDaqConnectButtonFont;
-        QFont mccDaqRecordButtonFont;
-        QLabel* numberOfChannelsLabel;
-        QSpinBox* numberOfChannelsSpinBox;
-        QPushButton* setNumChannels;
-        int numChannels;
-        QTableWidget* channelTableWidget;
-        QStringList channelHeaderStringList;
-
-        
-        void addChannelGrid();
-        bool clicked;
-
-        //addChannelGrid
-        QGroupBox* channelGridGroupBox;
-        QHBoxLayout* channelGridGroupBoxLayout;
-        QGroupBox* channelsHeadingGroupBox;
-        QFont channelsHeadingGroupBoxFont;
-        QHBoxLayout* channelsHeadingGroupBoxLayout;
-        QFont daqControlScrollGroupBoxFont;
-
-
-        int rowCount;
-        int colNo;
-
-        int currentChannel;
-
         bool recordClicked;
 
         RecordTreadmillStream* recTreadmillStream;
@@ -310,8 +251,10 @@ class PerturbationTabWidget : public QWidget
         void addFudgeFactorGroupBox();
         double addToSpeed;
         void setAddToSpeed(double mAddToSpeed);
-
-        
-        
+        QPushButton* prevPertRunBtn;
+        QPushButton* nextPertRunBtn;
+        ParseRunProfile* prp;
+        void showFudgeFactorGroupBox(bool state);
+       
 };
 #endif

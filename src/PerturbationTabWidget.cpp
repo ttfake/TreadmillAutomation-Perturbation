@@ -3,29 +3,12 @@
 
 PerturbationTabWidget::PerturbationTabWidget(QWidget* parent, Qt::WindowFlags flags)
 {
-    pmccDaqInterface = new MccDaqInterface;
-
-    connect(pmccDaqInterface, SIGNAL(updateDaqDataBoxSignal(double)), \
-                this, SLOT(updateDaqDataStreamTableWidget(double)));
-
-    connect(pmccDaqInterface, SIGNAL(updateRowCount(int)), \
-                this, SLOT(setRowCount(int)));
-
-    connect(pmccDaqInterface, SIGNAL(updateCol(int)), \
-                this, SLOT(updateCol(int)));
-
-    connect(pmccDaqInterface, SIGNAL(getActiveState(int)), this, SLOT(getActiveState(int)));
-
-    connect(pmccDaqInterface, SIGNAL(setCurrentChannel(int)), this, SLOT(setChannel(int)));
-
     sendSetpoints = SendSetpoints::getInstance();
     createTreadmillPerturbationTab();
     populateTreadmillPerturbationTab();
-    clicked = true;
     recordClicked = true;
-    scanForDaqDevice();
     trialRun = 1;
-
+    prp = new ParseRunProfile;
 }
 
 PerturbationTabWidget::~PerturbationTabWidget()
@@ -67,7 +50,6 @@ void PerturbationTabWidget::addQuadrantTwo()
     quadrantTwoPerturbationLayout = new QVBoxLayout;
     quadrantTwoGroupBox->setLayout(quadrantTwoPerturbationLayout);
     perturbationTabLayout->addWidget(quadrantTwoGroupBox, 0,1);
-    addDaqControlGroupBox();
 }
 
 void PerturbationTabWidget::addQuadrantThree()
@@ -111,6 +93,7 @@ void PerturbationTabWidget::addFudgeFactorGroupBox()
     fudgeFactorGroupBoxHorizontalLayout->addWidget(fudgeFactorDoubleSpinBox);
 
     quadrantOnePerturbationLayout->addWidget(fudgeFactorGroupBox);
+    fudgeFactorGroupBox->hide();
 }
 
 void PerturbationTabWidget::addSpeedGroupBox()
@@ -322,25 +305,40 @@ void PerturbationTabWidget::addAccelDecelGroupBox()
     
     accelerationDecelerationHorizontalLayout->addWidget(deceleration);
 
+//    accelDecelGroupBox->hide();
+
     quadrantOnePerturbationLayout->addWidget(accelDecelGroupBox);
 }
 
 
 void PerturbationTabWidget::addStartPertRunGroupBox()
 {
+//    prp = new ParseRunProfile();
     startPertRunGroupBox = new QGroupBox;
     startPertRunGroupBox->setSizePolicy(QSizePolicy::Minimum, QSizePolicy::Fixed);
     startPertRunGroupBoxLayout = new QHBoxLayout;
     startPertRunGroupBox->setLayout(startPertRunGroupBoxLayout);
     startPertRunBtn = new QPushButton;
+    nextPertRunBtn = new QPushButton;
+    nextPertRunBtn->setSizePolicy(QSizePolicy::Minimum, QSizePolicy::Fixed);
+    nextPertRunBtn->setFixedSize(200,40);
+    nextPertRunBtn->setText("Next Trial");
+    prevPertRunBtn = new QPushButton;
+    prevPertRunBtn->setSizePolicy(QSizePolicy::Minimum, QSizePolicy::Fixed);
+    prevPertRunBtn->setFixedSize(200,40);
+    prevPertRunBtn->setText("Previous Trial");
     startPertRunBtn->setSizePolicy(QSizePolicy::Minimum, QSizePolicy::Fixed);
     startPertRunBtn->setFixedSize(200,40);
     startPertRunBtn->setText("Start Timer");    
     startPertRunGroupBoxLayout->addWidget(startPertRunBtn);
+    startPertRunGroupBoxLayout->addWidget(prevPertRunBtn);
+    startPertRunGroupBoxLayout->addWidget(nextPertRunBtn);
     startPertRunBtnFont.setFamily("Times");
     startPertRunBtnFont.setWeight(75);
     startPertRunBtnFont.setPointSize(12);
     startPertRunBtn->setFont(startPertRunBtnFont);
+    prevPertRunBtn->setFont(startPertRunBtnFont);
+    nextPertRunBtn->setFont(startPertRunBtnFont);
     quadrantOnePerturbationLayout->addWidget(startPertRunGroupBox);
     startPertRunGroupBox->hide();
     recTreadmillStream = new RecordTreadmillStream;
@@ -355,109 +353,22 @@ void PerturbationTabWidget::addStartPertRunGroupBox()
 //    connect(recTreadmillStream, SIGNAL(treadmillStarted(double)), 
 //            this, SLOT(treadmillWait(double)));
     connect(startPertRunBtn, SIGNAL(clicked()), SLOT(getTrialName()));
+    connect(startPertRunBtn, SIGNAL(clicked()), SLOT(disableButton()));
 //    connect(startPertRunBtn, SIGNAL(clicked()), SLOT(startTreadmill()));
     connect(startPertRunBtn, SIGNAL(clicked()), SLOT(randomDelay()));
     connect(startPertRunBtn, SIGNAL(clicked()), mouseInterface, SLOT(WriteLine()));  // Trigger 1
     connect(mouseInterface, SIGNAL(movement()), SLOT(treadmillWait()));
     connect(mouseInterface, SIGNAL(movementStopped()), SLOT(slotTimeout()));
     connect(startPertRunBtn, SIGNAL(clicked()), mouseInterface, SLOT(setPerturbationActiveBoolTrue()));
+    connect(nextPertRunBtn, SIGNAL(clicked()), SLOT(nextRun()));
+    connect(prevPertRunBtn, SIGNAL(clicked()), SLOT(prevRun()));
 
 }
 
-void PerturbationTabWidget::addDaqControlGroupBox()
-{
-    daqControlGroupBox = new QGroupBox;
-    daqControlGroupBoxFont.setFamily("Times");
-    daqControlGroupBoxFont.setWeight(80);
-    daqControlGroupBoxFont.setPointSize(12);
-    daqControlGroupBoxFont.setBold(true);
-    daqControlGroupBox->adjustSize();
-    daqControlGroupBox->setFont(daqControlGroupBoxFont);
-    daqControlGroupBoxLayout = new QVBoxLayout;
-    daqPushButtonBox = new QGroupBox;
-    daqControlGroupBoxLayout->addWidget(daqPushButtonBox);
-    daqPushButtonBoxLayout = new QHBoxLayout;
-    daqPushButtonBox->setLayout(daqPushButtonBoxLayout);
-    
-    scanForDaqDev = new QPushButton;
-    scanForDaqDev->setFixedSize(200,40);
-    scanForDaqDev->setText("Discover DAQ Devices");
-    daqDevMenu = new QMenu;
-    scanForDaqDev->setMenu(daqDevMenu);
-    daqPushButtonBoxLayout->addWidget(scanForDaqDev);
-    connect(pmccDaqInterface, SIGNAL(setDaqTitleText(QString)), this, SLOT(setDaqText(QString)));
-    
-    mccDaqConnectButtonWidget = new MccDaqConnectButtonWidget();
-    mccDaqConnectButtonWidget->setSizePolicy(QSizePolicy::Minimum, QSizePolicy::Fixed);
-    mccDaqConnectButtonWidget->setFixedSize(180,40);
-    mccDaqConnectButtonFont.setFamily("Times");
-    mccDaqConnectButtonFont.setWeight(80);
-    mccDaqConnectButtonFont.setPointSize(12);
-    mccDaqConnectButtonFont.setBold(true);
-    mccDaqConnectButtonWidget->setFont(mccDaqConnectButtonFont);
-    mccDaqConnectButtonWidget->setText("DAQ Connect");
-    daqPushButtonBoxLayout->addWidget(mccDaqConnectButtonWidget);
-    daqControlGroupBox->setLayout(daqControlGroupBoxLayout);
-    connect(mccDaqConnectButtonWidget, SIGNAL(clicked()), SLOT(setDaqLogFileName()));
-    connect(mccDaqConnectButtonWidget, SIGNAL(clicked()), \
-            SLOT(startDataCollectionThread()));
-    connect(mccDaqConnectButtonWidget, SIGNAL(clicked()), SLOT(setDaqConnectColor()));
-    daqControlGroupBoxLayout->addWidget(daqPushButtonBox);
-
-    mccDaqRecordButtonWidget = new MccDaqRecordButtonWidget;
-    mccDaqRecordButtonWidget->setSizePolicy(QSizePolicy::Minimum, QSizePolicy::Fixed);
-    mccDaqRecordButtonWidget->setFixedSize(180,40);
-    mccDaqRecordButtonFont.setFamily("Times");
-    mccDaqRecordButtonFont.setWeight(80);
-    mccDaqRecordButtonFont.setPointSize(12);
-    mccDaqRecordButtonFont.setBold(true);
-    mccDaqRecordButtonWidget->setFont(mccDaqRecordButtonFont);
-    mccDaqRecordButtonWidget->setText("DAQ Record");
-    daqPushButtonBoxLayout->addWidget(mccDaqRecordButtonWidget);
-    connect(mccDaqRecordButtonWidget, SIGNAL(clicked()), SLOT(setDaqRecordBool()));
-    connect(mccDaqRecordButtonWidget, SIGNAL(clicked()), SLOT(setDaqRecordColor()));
-    daqControlGroupBox->setLayout(daqControlGroupBoxLayout);
-
-    
-    numberOfChannelsGroupBox = new QGroupBox;
-    numberOfChannelsGroupBoxFont.setFamily("Times");
-    numberOfChannelsGroupBoxFont.setWeight(80);
-    numberOfChannelsGroupBoxFont.setPointSize(12);
-    numberOfChannelsGroupBoxFont.setBold(true);
-    numberOfChannelsGroupBox->setFont(numberOfChannelsGroupBoxFont);
-    numberOfChannelsGroupBoxLayout = new QHBoxLayout;
-    daqControlGroupBoxLayout->addWidget(numberOfChannelsGroupBox);
-    numberOfChannelsGroupBox->setLayout(numberOfChannelsGroupBoxLayout);
-    numberOfChannelsLabel = new QLabel;
-    numberOfChannelsLabel->setSizePolicy(QSizePolicy::Minimum, QSizePolicy::Fixed);
-    numberOfChannelsLabel->setFixedSize(150,40);
-    numberOfChannelsLabel->setText("No. of Channels: ");
-    numberOfChannelsGroupBoxLayout->addWidget(numberOfChannelsLabel);
-    numberOfChannelsSpinBox = new QSpinBox;
-    numberOfChannelsSpinBox->setSizePolicy(QSizePolicy::Minimum, QSizePolicy::Fixed);
-    numberOfChannelsSpinBox->setFixedSize(150,40);
-    numberOfChannelsSpinBox->setAlignment(Qt::AlignCenter);
-    numberOfChannelsSpinBox->setRange(0,64);
-    numberOfChannelsGroupBoxLayout->addWidget(numberOfChannelsSpinBox);
-    setNumChannels = new QPushButton;
-    setNumChannels->setText("Set No. of Channels");
-    setNumChannels->setSizePolicy(QSizePolicy::Minimum, QSizePolicy::Fixed);
-    setNumChannels->setFixedSize(180,40);
-    numberOfChannelsGroupBoxLayout->addWidget(setNumChannels);
-
-    connect(setNumChannels, SIGNAL(clicked()), SLOT(addChannels()));
-    
-    channelTableWidget = new QTableWidget;
-    channelTableWidget->setColumnCount(5);
-    daqControlGroupBoxLayout->addWidget(channelTableWidget);
-    channelHeaderStringList << "Channel" << "Label" << "Active" << "Type" << "Gain";
-    channelTableWidget->setHorizontalHeaderLabels(channelHeaderStringList);
-
-    quadrantTwoPerturbationLayout->addWidget(daqControlGroupBox);
-}
 
 void PerturbationTabWidget::addRecordDataStreamVelocityBox()
 {
+    recTreadmillStream->hide();
 
     quadrantThreePerturbationLayout->addWidget(recTreadmillStream);
 
@@ -468,74 +379,7 @@ void PerturbationTabWidget::setAddToSpeed(double mAddToSpeed)
     addToSpeed = mAddToSpeed;
 }
 
-void PerturbationTabWidget::setDaqConnectColor()
-{
-    if(clicked)
-    {
-        mccDaqConnectButtonWidget->changeDaqConnectLight(Qt::green);
-        clicked = false;
-    }
-    else
-    {
-        mccDaqConnectButtonWidget->changeDaqConnectLight(Qt::red);
-        clicked = true;
-    }
 
-}
-
-void PerturbationTabWidget::setDaqRecordColor()
-{
-    if(recordClicked)
-    {
-        mccDaqRecordButtonWidget->changeDaqRecordLight(Qt::green);
-        recordClicked = false;
-    }
-    else
-    {
-        mccDaqRecordButtonWidget->changeDaqRecordLight(Qt::red);
-        recordClicked = true;
-    }
-
-}
-
-
-void PerturbationTabWidget::addChannels()
-{
-    channelTableWidget->setRowCount(numberOfChannelsSpinBox->value());
-    pmccDaqInterface->setNumberOfChannels(numberOfChannelsSpinBox->value());
-    numChannels = numberOfChannelsSpinBox->value();
-    for(int i = 0; i < numChannels; i++)
-    {
-        QTableWidgetItem* channel = new QTableWidgetItem(tr("%1").arg(i));
-        channel->setTextAlignment(Qt::AlignCenter);
-        channelTableWidget->setItem(i, 0, channel);
-        QComboBox* gainCombo = new QComboBox;
-        QStringList gainList;
-        gainList << "BIP10VOLTS" << "BIP5VOLTS" << "BIP2PT5VOLTS" << "BIP1PT25VOLTS" << "UNI10VOLTS" \
-                    << "UNI5VOLTS" << "UNI2PT5VOLTS" << "UNI1PT25VOLTS";
-        gainCombo->addItems(gainList);
-        channelTableWidget->setCellWidget(i, 4, static_cast<QWidget*>(gainCombo));
-        QGroupBox* checkBoxGroupBox = new QGroupBox;
-        checkBoxGroupBox->isCheckable();
-        QHBoxLayout* checkBoxGroupBoxLayout = new QHBoxLayout;
-        checkBoxGroupBox->setLayout(checkBoxGroupBoxLayout);
-        checkBoxGroupBoxLayout->setAlignment(Qt::AlignCenter);
-        QCheckBox* activeCheck = new QCheckBox;
-        QString activeCheckBoxName = QString("activeCheck%1").arg(i);
-        activeCheck->setObjectName(activeCheckBoxName);
-        activeCheck->setSizePolicy(QSizePolicy::Minimum, QSizePolicy::Fixed);
-        activeCheck->setFixedSize(20,20);
-        checkBoxGroupBoxLayout->addWidget(activeCheck);
-        channelTableWidget->setCellWidget(i, 2, static_cast<QWidget*>(checkBoxGroupBox));
-        QComboBox* typeCombo = new QComboBox;
-        QStringList typeComboList;
-        typeComboList << "ANALOG" << "DIGITAL8" << "DIGITAL16";
-        typeCombo->addItems(typeComboList);
-        channelTableWidget->setCellWidget(i, 3, static_cast<QWidget*>(typeCombo));
-
-    }
-     addDaqDataGroupBox();
-}
 
 
 void PerturbationTabWidget::showTimer(bool state)
@@ -549,6 +393,18 @@ void PerturbationTabWidget::showTimer(bool state)
     {
         timeGroupBox->hide();
         startPertRunGroupBox->hide();
+    }
+}
+
+void PerturbationTabWidget::showFudgeFactorGroupBox(bool state)
+{
+    if(state)
+    {
+        fudgeFactorGroupBox->show();
+    }
+    else
+    {
+       fudgeFactorGroupBox->hide();
     }
 }
 
@@ -705,7 +561,6 @@ void PerturbationTabWidget::treadmillWait()
     retAccelValue = getAccelerationTimeValue();
     qDebug("Deceleration Time Set To: %f", retAccelValue);
 
-    pmccDaqInterface->setPerturbationTrigger(true);
    //-----------------------------------------------------------------------
     auto uptime = std::chrono::milliseconds(GetTickCount());
     std::ostringstream out;
@@ -848,171 +703,23 @@ double PerturbationTabWidget::calculateSpeed()
                     (addToSpeed / 1000)))); 
 }
 
-void PerturbationTabWidget::addDaqDataGroupBox()
+
+
+void PerturbationTabWidget::loadRunProfile()
 {
-    daqDataGroupBox = new QGroupBox;
-    daqDataGroupBoxFont.setFamily("Times");
-    daqDataGroupBoxFont.setWeight(75);
-    daqDataGroupBoxFont.setPointSize(12);
-    daqDataGroupBoxFont.setBold(true);
-    daqDataGroupBox->setFont(daqDataGroupBoxFont);
+    QString fileName = QFileDialog::getOpenFileName(this, tr("Open File"), \
+            "C:\\Users\\User\\Desktop\\HReflex_Binaries-master\\untitled.csv", \
+            tr("CSV (*.csv)"));
+    prp->setRunFile(fileName);
+    prp->getRuns();
+    prp->getRun(1);
+    setAccelerationValue(prp->getAccelLeft());
+    acceleration->setValue(prp->getAccelLeft());
+    setDecelerationValue(prp->getDecelLeft());
+    deceleration->setValue(prp->getDecelLeft());
+    timeAccelSpinBox->setValue(prp->getAccelTime());
+    setAccelerationTimeValue(prp->getAccelTime());
 
-    daqDataGroupBox->setSizePolicy(QSizePolicy::Minimum, QSizePolicy::Fixed);
-    daqDataGroupBoxVerticalLayout = new QVBoxLayout;
-    daqDataGroupBox->setLayout(daqDataGroupBoxVerticalLayout);
-    daqDataLabel = new QLabel;
-    daqDataLabel->setSizePolicy(QSizePolicy::Minimum, QSizePolicy::Fixed);
-    daqDataLabel->setFixedSize(220,100);
-    daqDataLabel->setText("Forceplate Data: ");
-    daqDataGroupBoxVerticalLayout->addWidget(daqDataLabel);
-    
-    daqDataStreamTableWidget = new QTableWidget;
-    daqDataStreamTableWidget->setColumnCount(numChannels);
-
-    for(int i = 0; i <= numChannels; i++)
-    {
-        QString channel = QString("Channel %1").arg(i);
-        daqDataStreamHeaderStringList << channel;
-    }
-
-    daqDataStreamTableWidget->setHorizontalHeaderLabels(daqDataStreamHeaderStringList);
-    daqDataGroupBoxVerticalLayout->addWidget(daqDataStreamTableWidget);
-    quadrantFourPerturbationLayout->addWidget(daqDataGroupBox);
-
-    daqDataGroupBox->hide();
-
-}
-
-void PerturbationTabWidget::showDaqDataBox(bool checked)
-{
-    if(checked && daqDataGroupBox != NULL)
-    {
-        daqDataGroupBox->show();
-    }
-    else if(daqDataGroupBox != NULL)
-    {
-        daqDataGroupBox->hide();
-    }
-    else
-    {
-        QMessageBox daqDataBoxAlert;
-        daqDataBoxAlert.setText("You must enter the number of Channels in the \n " \
-                                    "\"No. of Channels Box\" and click the \n" \
-                                    "\"Set No. of Channels\" button in the\n" \
-                                    "\"Perturbation\" tab before viewing the" \
-                                    " Daq Streaming Box.");
-        daqDataBoxAlert.exec();
-    }
-}
-
-void PerturbationTabWidget::scanForDaqDevice()
-{
-    pmccDaqInterface->startChannelScan(daqDevMenu);
-}
-
-void PerturbationTabWidget::startDataCollectionThread()
-{
-    if(mccDaqConnectButtonWidget->getDaqConnectLightColor() == Qt::red)
-    {
-        if(daqThread == NULL)
-        {
-            daqThread = new QThread;
-            pmccDaqInterface->moveToThread(daqThread);
-        }
-        connect(daqThread, SIGNAL(started()), pmccDaqInterface, SLOT(beginDataCollection()));
-        connect(pmccDaqInterface, SIGNAL(finished()), daqThread, SLOT(quit()));
-        daqThread->start();
-    }
-
-    else if(mccDaqConnectButtonWidget->getDaqConnectLightColor() == Qt::green)
-    {
-        qDebug("Terminating Thread.");
-        pmccDaqInterface->setRunningState(IDLE);
-        emit pmccDaqInterface->finished();
-    }
-}
-
-void PerturbationTabWidget::setDaqText(QString title)
-{
-    scanForDaqDev->setText(title);
-}
-
-void PerturbationTabWidget::setupDataCollection()
-{
-    pmccDaqInterface->dataCollectionSetup();
-}
-
-void PerturbationTabWidget::setRowCount(int mRowCount)
-{
-    rowCount = mRowCount;
-}
-
-void PerturbationTabWidget::updateCol(int mColNo)
-{
-    colNo = mColNo;
-}
-
-void PerturbationTabWidget::updateDaqDataStreamTableWidget(double force)
-{
-    QString dataString = QString::number(force, 'f', 4);
-    QTableWidgetItem* channel = new QTableWidgetItem(dataString);
-    daqDataStreamTableWidget->setRowCount(rowCount);
-    channel->setTextAlignment(Qt::AlignCenter);
-    daqDataStreamTableWidget->setItem(rowCount-1, colNo, channel);
-}
-
-void PerturbationTabWidget::getActiveState(int channel)
-{
-    QGroupBox* activeChannelGroupBox = static_cast<QGroupBox*>(channelTableWidget->cellWidget(channel, 2));
-    QString activeCheckSearchString = QString("activeCheck%1").arg(channel);
-    QCheckBox* activeCheckBoxFound = activeChannelGroupBox->findChild<QCheckBox*>(activeCheckSearchString);
-
-    if(activeCheckBoxFound->isChecked())
-    {
-        pmccDaqInterface->setCurrentChannelActiveState(true);
-    }
-}
-
-void PerturbationTabWidget::getChannelType(int channel)
-{
-
-}
-
-void PerturbationTabWidget::getGainType(int channel)
-{
-
-}
-
-void PerturbationTabWidget::setChannel(int mchannel)
-{
-    currentChannel = mchannel;
-}
-
-void PerturbationTabWidget::setDaqRecordBool()
-{
-    if(mccDaqRecordButtonWidget->getDaqRecordLightColor() == Qt::red)
-    {
-        pmccDaqInterface->setRecordBool(true);
-    }
-
-    else if(mccDaqRecordButtonWidget->getDaqRecordLightColor() == Qt::green)
-    {
-        pmccDaqInterface->setRecordBool(false);
-    }
-
-}
-
-void PerturbationTabWidget::setDaqLogFileName()
-{
-    if(mccDaqConnectButtonWidget->getDaqConnectLightColor() == Qt::red)
-    {
-        QString fileName = QFileDialog::getSaveFileName(this, tr("Save File"), \
-                "C:\\Users\\User\\Desktop\\HReflex_Binaries-master\\untitled.csv", \
-                tr("CSV (*.csv)"));
-
-        pmccDaqInterface->setDaqLogFileName(fileName);
-
-    }
 }
 
 void PerturbationTabWidget::saveVelocityData()
@@ -1033,7 +740,6 @@ void PerturbationTabWidget::setPort(QString mport)
     port = mport;
     recTreadmillStream->setPort(port);
     qDebug("From PerturbationTabWidget: The port is %s ", qPrintable(port));
-
 }
 
 void PerturbationTabWidget::getTrialName()
@@ -1066,6 +772,47 @@ void PerturbationTabWidget::setLoggingDirectory(QString dirName)
 
     logPath = dirName;
     mouseInterface->setLogPath(logPath);
+}
+
+void PerturbationTabWidget::disableButton()
+{
+    startPertRunBtn->setEnabled(false);
+}
+
+void PerturbationTabWidget::enableButton()
+{
+    startPertRunBtn->setEnabled(true);
+}
+
+void PerturbationTabWidget::nextRun()
+{
+    prp->getRun(1);
+    setAccelerationValue(prp->getAccelLeft());
+    acceleration->setValue(prp->getAccelLeft());
+    setDecelerationValue(prp->getDecelLeft());
+    deceleration->setValue(prp->getDecelLeft());
+    timeAccelSpinBox->setValue(prp->getAccelTime());
+    setAccelerationTimeValue(prp->getAccelTime());
+    startStim();
+
+}
+
+void PerturbationTabWidget::prevRun()
+{
+    prp->getRun(-2);
+    setAccelerationValue(prp->getAccelLeft());
+    acceleration->setValue(prp->getAccelLeft());
+    setDecelerationValue(prp->getDecelLeft());
+    deceleration->setValue(prp->getDecelLeft());
+    timeAccelSpinBox->setValue(prp->getAccelTime());
+    setAccelerationTimeValue(prp->getAccelTime());
+    connect(prp, SIGNAL(startStimulation()), SLOT(startStim()));
+}
+
+void PerturbationTabWidget::startStim()
+{
+    qDebug() << "Starting Stimulation...";
+    randomDelay();
 }
 
 #include "../include/moc_PerturbationTabWidget.cpp"

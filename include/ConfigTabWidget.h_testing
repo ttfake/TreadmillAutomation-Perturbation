@@ -1,0 +1,56 @@
+class ConfigTabWidget : public QWidget
+{
+    Q_OBJECT
+
+    public:
+        ConfigTabWidget(QWidget* parent = 0, Qt::WindowFlags flags = 0);
+        ~ConfigTabWidget();
+
+        //addDaqControlGroupBox
+        void addDaqControlGroupBox();
+        QGroupBox* daqControlGroupBox;
+        QVBoxLayout* daqControlGroupBoxLayout; 
+        
+        QScrollArea* daqControlGroupBoxScrollArea;
+        QGroupBox* daqControlScrollGroupBox;
+        QVBoxLayout* daqControlScrollGroupBoxVerticalLayout;
+        QGroupBox* numberOfChannelsGroupBox;
+        QFont numberOfChannelsGroupBoxFont;
+        QHBoxLayout* numberOfChannelsGroupBoxLayout;
+        QGroupBox* daqPushButtonBox;
+        QHBoxLayout* daqPushButtonBoxLayout;
+        QFont daqControlGroupBoxFont;
+
+        QPushButton* scanForDaqDev;
+        QMenu* daqDevMenu;
+        
+        MccDaqConnectButtonWidget* mccDaqConnectButtonWidget;
+        MccDaqRecordButtonWidget* mccDaqRecordButtonWidget;
+        QFont mccDaqConnectButtonFont;
+        QFont mccDaqRecordButtonFont;
+        QLabel* numberOfChannelsLabel;
+        QSpinBox* numberOfChannelsSpinBox;
+        QPushButton* setNumChannels;
+        int numChannels;
+        QTableWidget* channelTableWidget;
+        QStringList channelHeaderStringList;
+
+        
+        void addChannelGrid();
+        bool clicked;
+
+        //addChannelGrid
+        QGroupBox* channelGridGroupBox;
+        QHBoxLayout* channelGridGroupBoxLayout;
+        QGroupBox* channelsHeadingGroupBox;
+        QFont channelsHeadingGroupBoxFont;
+        QHBoxLayout* channelsHeadingGroupBoxLayout;
+        QFont daqControlScrollGroupBoxFont;
+
+
+        int rowCount;
+        int colNo;
+
+        int currentChannel;
+ 
+}

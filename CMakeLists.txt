@@ -21,6 +21,7 @@ find_package(Qt5Core REQUIRED)
 find_package(Qt5Widgets REQUIRED)
 find_package(Qt5Network REQUIRED)
 find_package(Qt5SerialPort REQUIRED)
+find_package(Qt5Sql REQUIRED)
 
 #qt5_wrap_cpp(moc_TreadmillAutomation.cpp moc_MccDaqInterface.cpp 
 #    moc_NetworkTabWidget.cpp moc_PerturbationTabWidget.cpp TreadmillAutomation.cpp
@@ -31,5 +32,5 @@ find_package(Qt5SerialPort REQUIRED)
 #add_executable(TreadmillAutomation WIN32 ${SOURCES})
 add_executable(TreadmillAutomation ${SOURCES})
 target_link_libraries(TreadmillAutomation Qt5::Widgets Qt5::Network
-    Qt5::SerialPort cbw64 nidaqmx ws2_32 User32 
+    Qt5::SerialPort Qt5::Sql cbw64 nidaqmx ws2_32 User32 
     )

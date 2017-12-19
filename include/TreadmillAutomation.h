@@ -50,7 +50,7 @@ class TreadmillAutomation : public QMainWindow
         void populateTreadmillPerturbationTab();
         void error(int);
         NetworkTabWidget* networkTabWidget;
-        MccDaqInterface* mccDaqInterface;
+//        MccDaqInterface* mccDaqInterface;
         PerturbationTabWidget* perturbationTabWidget;
         SendSetpoints* sendSetpointObject;
         bool useLibraryCheckBox;
@@ -85,6 +85,7 @@ class TreadmillAutomation : public QMainWindow
         QAction* timerViewAct;
         QAction* daqViewAct;
         QAction* viewSubjectInterfaceAct;
+        QAction* loadRunProfileAction;
         
         //createTabWidget
         QTabWidget* centralTabWidget;
