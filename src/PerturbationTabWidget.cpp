@@ -9,6 +9,7 @@ PerturbationTabWidget::PerturbationTabWidget(QWidget* parent, Qt::WindowFlags fl
     recordClicked = true;
     trialRun = 1;
     prp = new ParseRunProfile;
+    connect(prp, SIGNAL(startStimulation()), SLOT(startStim()));
 }
 
 PerturbationTabWidget::~PerturbationTabWidget()
@@ -806,7 +807,6 @@ void PerturbationTabWidget::prevRun()
     deceleration->setValue(prp->getDecelLeft());
     timeAccelSpinBox->setValue(prp->getAccelTime());
     setAccelerationTimeValue(prp->getAccelTime());
-    connect(prp, SIGNAL(startStimulation()), SLOT(startStim()));
 }
 
 void PerturbationTabWidget::startStim()
