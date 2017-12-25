@@ -32,6 +32,13 @@
 #include <QDateTime>
 #include <QRegExp>
 #include <chrono>
+#include <QHeaderView>
+#include <QtDataVisualization>
+#include <QtDataVisualization/qutils.h>
+#include <QtQml/QQmlContext>
+#include <QtQuick/QQuickView>
+#include <QtQml/QQmlEngine>
+//#include <python3.5m/Python.h>
 
 #include "SendSetpoints.h"
 #include "RecordTreadmillStream.h"
@@ -87,6 +94,7 @@ class PerturbationTabWidget : public QWidget
         void nextRun();
         void prevRun();
         void startStim();
+        void updateRun(int row, int col);
         
 
     private:
@@ -107,7 +115,12 @@ class PerturbationTabWidget : public QWidget
         void addQuadrantTwo();
         void addQuadrantThree();
         void addQuadrantFour();
-        void addRecordDataStreamVelocityBox(); 
+        void addRecordDataStreamVelocityBox();
+
+        void addRunGroupBox();
+        QGroupBox* runGroupBox;
+        QHBoxLayout* runGroupBoxLayout;
+        QTextEdit* runTextBox;
         
         //populateTreadmillPerturbationTab
         QCheckBox* lftRghtTie;
@@ -253,8 +266,16 @@ class PerturbationTabWidget : public QWidget
         void setAddToSpeed(double mAddToSpeed);
         QPushButton* prevPertRunBtn;
         QPushButton* nextPertRunBtn;
+        QPushButton* startStimRunBtn;
         ParseRunProfile* prp;
         void showFudgeFactorGroupBox(bool state);
-       
+        void populateRunsTextBox();
+        QTableWidget* runTableWidget;
+        QFont runTableHeaderFont;
+        bool tableFilled;
+        int currentRunRowIndex;
+        QFont tableRowsFont;
+        void addEmgDataVisualization()
+
 };
 #endif

@@ -38,6 +38,7 @@ class TreadmillAutomationDbIFace : public QWidget
         double getAccelTime();
         double getDecelLeft();
         double getDecelRight();
+        QVector<QString> getRunResults();
 
         int getDir();
         
@@ -46,26 +47,11 @@ class TreadmillAutomationDbIFace : public QWidget
         void retrieveRuns();
         void retrieveRun(int runAddIndex);
         QSqlQuery runsQuery;
-    
-    signals:
-        startStimulation();
-    
-    private:
-        QSqlDatabase db;
-        QVector<QString> runResults;
-        int runsVectorIndex_ = 0;
-        double accelerationLeft;
-        double accelerationRight;
-        double decelerationLeft;
-        double decelerationRight;
-        double accelerationTime;
-        double decelerationTime;
-        int direction;
-        
-        void setDir(int dir);
-        int getDirectionFromDb(QString type, QString level);
-        
-        void setAccelLeft(double accel);
+        QVector<QString> getRunProfileHead();
+        void updateRunTable(QString tableName, QString type, QString level, 
+                QString stimOrder, QString participantId, QString sessionNo, QString runNo, 
+                QString trialNo);
+        void clearRunResultsVector();
         double getAccelLeftFromDb(QString typeNum, QString levelNum);
         void setAccelRight(double accel);
         double getAccelRightFromDb(QString typeNum, QString levelNum);
@@ -82,6 +68,31 @@ class TreadmillAutomationDbIFace : public QWidget
         double getDecelTimeFromDb(QString typeNum);
 
         int getParticipantMotionFromDb(QString typeNum, QString levelNum);
+        int getDirectionFromDb(QString type, QString level);
+
+    signals:
+        startStimulation();
+    
+    private:
+        QSqlDatabase db;
+        QVector<QString> runResults;
+        QVector<QString> runProfileHead;
+        int runsVectorIndex_ = 0;
+        double accelerationLeft;
+        double accelerationRight;
+        double decelerationLeft;
+        double decelerationRight;
+        double accelerationTime;
+        double decelerationTime;
+        int direction;
+        
+        void setDir(int dir);
+        
+        void setAccelLeft(double accel);
+        
+        bool firstRun;
+
+
 
 };
 #endif

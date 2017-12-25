@@ -30,7 +30,7 @@ class DataCollection : public QObject
         void setRecord(bool);
         void setSocket(QAbstractSocket*);
 
-    public slots:
+    public Q_SLOTS:
 
         void startRecording();
 

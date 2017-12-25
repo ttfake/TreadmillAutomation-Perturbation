@@ -43,21 +43,11 @@ double ParseRunProfile::getAccelLeft()
     return accelerationLeft;
 }
 
-double ParseRunProfile::getAccelLeftDb(QString typeNo, QString levelNo)
-{
-    return treadmillDb->getAccelLeftFromDb(typeNo, levelNo);
-}
-
 double ParseRunProfile::getAccelRight()
 {
     double accelerationRight(treadmillDb->getAccelRight());
 
     return accelerationRight;
-}
-
-double ParseRunProfile::getAccelRightDb(QString typeNo, QString levelNo)
-{
-    return treadmillDb->getAccelRightFromDb(typeNo, levelNo);
 }
 
 double ParseRunProfile::getDecelRight()
@@ -67,10 +57,6 @@ double ParseRunProfile::getDecelRight()
     return decelerationRight;
 }
 
-double ParseRunProfile::getDecelRightDb(QString typeNo, QString levelNo)
-{
-    return treadmillDb->getDecelRightFromDb(typeNo, levelNo);
-}
 
 double ParseRunProfile::getDecelLeft()
 {
@@ -79,21 +65,11 @@ double ParseRunProfile::getDecelLeft()
     return decelerationLeft;
 }
 
-double ParseRunProfile::getDecelLeftDb(QString typeNo, QString levelNo)
-{
-    return treadmillDb->getDecelLeftFromDb(typeNo, levelNo);
-}
-
 double ParseRunProfile::getAccelTime()
 {
     double accelTime(treadmillDb->getAccelTime());
 
     return accelTime;
-}
-
-double ParseRunProfile::getAccelTimeDb(QString typeNo)
-{
-    return treadmillDb->getAccelTimeFromDb(typeNo);
 }
 
 
@@ -127,23 +103,9 @@ QVector<QString> ParseRunProfile::getRunProfileHead()
     return treadmillDb->getRunProfileHead();
 }
 
-void ParseRunProfile::updateRunTable(QString tableName, QString type, QString level, 
-        QString stimOrder, QString participantId, QString sessionNo, QString runNo, 
-        QString trialNo)
+void ParseRunProfile::updateRunTable(QString columnName, QString columnData)
 {
-    treadmillDb->updateRunTable(tableName, type, level, 
-         stimOrder, participantId, sessionNo, runNo, 
-         trialNo);
-}
-
-void ParseRunProfile::clearRunResultsVector()
-{
-    treadmillDb->clearRunResultsVector();
-}
-
-int ParseRunProfile::getDirectionFromDb(QString type, QString level)
-{
-    return treadmillDb->getDirectionFromDb(type, level);
+    treadmillDb->updateRunTable();
 }
 
 #include "../include/moc_ParseRunProfile.cpp"

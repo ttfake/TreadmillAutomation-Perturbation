@@ -13,7 +13,9 @@ link_directories(${LINK_DIRECTORIES} ${CMAKE_BINARY_DIR}/../lib
 SET (CMAKE_INCLUDE_CURRENT_DIR ON)
 SET (CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/../bin)
 SET(CMAKE_LIBRARY_OUTPUT_DIRECTORY ${CMAKE_SOURCE_DIR}/lib)
-SET(GCC_COVERAGE_COMPILE_FLAGS "-gstabs")
+SET(GCC_COVERAGE_COMPILE_FLAGS "-gstabs ")
+
+#add_definitions(-DQT_NO_KEYWORDS)
 
 file(GLOB SOURCES "src/*.cpp")
 
@@ -22,7 +24,8 @@ find_package(Qt5Widgets REQUIRED)
 find_package(Qt5Network REQUIRED)
 find_package(Qt5SerialPort REQUIRED)
 find_package(Qt5Sql REQUIRED)
-
+find_package(Qt5DataVisualization REQUIRED)
+            
 #qt5_wrap_cpp(moc_TreadmillAutomation.cpp moc_MccDaqInterface.cpp 
 #    moc_NetworkTabWidget.cpp moc_PerturbationTabWidget.cpp TreadmillAutomation.cpp
 #    TreadmillAutomation.h MccDaqInterface.cpp MccDaqInterface.h
@@ -32,5 +35,6 @@ find_package(Qt5Sql REQUIRED)
 #add_executable(TreadmillAutomation WIN32 ${SOURCES})
 add_executable(TreadmillAutomation ${SOURCES})
 target_link_libraries(TreadmillAutomation Qt5::Widgets Qt5::Network
-    Qt5::SerialPort Qt5::Sql cbw64 nidaqmx ws2_32 User32 
+    Qt5::SerialPort Qt5::Sql Qt5::DataVisualization
+    cbw64 nidaqmx ws2_32 User32 
     )

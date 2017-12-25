@@ -84,14 +84,14 @@ void MouseInterface::getRawInput()
     QByteArray data;
     QString dataString;
         
-    qDebug() << " Data Detected\n";
+//    qDebug() << " Data Detected\n";
    
     while(serialPort->canReadLine())
     {
         data = serialPort->readLine();
         dataString = QString::fromLocal8Bit(data);
 
-        qDebug() << "Reading Data";
+    //    qDebug() << "Reading Data";
         //-----------------Current Unix Timestamp--------------------------------
         qint64 currentMsecsSinceEpoch = QDateTime::currentMSecsSinceEpoch();
         movementDetectedLog.write(QString::number(currentMsecsSinceEpoch).toUtf8());
@@ -103,7 +103,7 @@ void MouseInterface::getRawInput()
         startingCoord = fabs(dataString.toDouble());
         if(startingCoord > 0)
         {
-            qDebug() << startingCoord;
+      //      qDebug() << startingCoord;
             if(!movementDetectedBool)
             {
                 WriteLine(); // Trigger 3

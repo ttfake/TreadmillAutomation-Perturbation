@@ -48,7 +48,11 @@ void TreadmillAutomationDbIFace::insertRunProfileRecord(QStringList recordList)
         }
     }
     values.chop(1);
-    //qDebug() << values;
+    
+    runProfileHead.append(values.split(',')[1]);
+    runProfileHead.append(values.split(',')[2]);
+    runProfileHead.append(values.split(',')[3]);
+
     insertRecord(table, columns, values);
     insertRecord(currentRunProfileTable, columns, values);
 }
@@ -57,11 +61,13 @@ void TreadmillAutomationDbIFace::truncateTable(QString table)
 {
     QSqlQuery query;
     QString queryString("DELETE FROM " + table);
+    qDebug() << queryString;
     query.prepare(queryString);
     if(!query.exec(queryString))
     {
         qWarning() << "ERROR: " << query.lastError().text();
     }
+    qDebug() << "Table Truncated";
 }
 
 void TreadmillAutomationDbIFace::insertRecord(QString table, QString columns, QString values)
@@ -252,14 +258,20 @@ double TreadmillAutomationDbIFace::getDecelTimeFromDb(QString typeNum)
 
 void TreadmillAutomationDbIFace::retrieveRuns()
 {
-    runsQuery = selectQueryDb("type,level,stimOrder", "currentRunProfile", false);
+    runsQuery = selectQueryDb("type,level,stimOrder,trial", "currentRunProfile", false);
 
     while(runsQuery.next())
     {
         qDebug() << "Query Found";
-        runResults.append(QString(runsQuery.value(0).toString() + "," + runsQuery.value(1).toString()));
+        runResults.append(QString(runsQuery.value(0).toString() + "," + runsQuery.value(1).toString()
+                    + "," + runsQuery.value(2).toString() + "," + runsQuery.value(3).toString()));
     }
     
+}
+
+void TreadmillAutomationDbIFace::clearRunResultsVector()
+{
+    runResults.clear();
 }
 
 void TreadmillAutomationDbIFace::retrieveRun(int runAddIndex)
@@ -274,7 +286,7 @@ void TreadmillAutomationDbIFace::retrieveRun(int runAddIndex)
         qDebug() << runsVectorIndex_;
         QString type;
         QString level;
-        QRegularExpression numbers("^.*([0-9]$)");
+        QRegularExpression numbers("^.*([0-9][0-9]$)");
         QString run = runResults[runsVectorIndex_];
         QRegularExpressionMatchIterator typeNumIter = numbers.globalMatch(run.split(',')[0]);
         QRegularExpressionMatchIterator levelNumIter = numbers.globalMatch(run.split(',')[1]);
@@ -282,14 +294,19 @@ void TreadmillAutomationDbIFace::retrieveRun(int runAddIndex)
         while (typeNumIter.hasNext()) 
         {
             QRegularExpressionMatch match = typeNumIter.next();
+            qDebug() << "TypeMatch: " << match;
             type = match.captured(1);
         }
+        qDebug() << "Type is: " << type;
 
         while (levelNumIter.hasNext()) 
         {
             QRegularExpressionMatch match = levelNumIter.next();
+            qDebug() << "LevelMatch: " << match;
             level = match.captured(1);
         }
+
+        qDebug() << "Level is: " << level;
 
         if(getDirectionFromDb(type,level) == 0)
         {
@@ -308,23 +325,31 @@ void TreadmillAutomationDbIFace::retrieveRun(int runAddIndex)
         }
 
         setAccelTime(getAccelTimeFromDb(type));
-        emit startStimulation();
+        if(firstRun)
+        {
+            emit startStimulation();
+        }
         runsVectorIndex_ += 1;
     }
 
-    else if (runsVectorIndex_ > runResults.size())
+    else if (runsVectorIndex_ >= runResults.size())
     {
         QMessageBox endRun;
+        runsVectorIndex_ = runResults.size() - 1;
         endRun.setText("The Run is Complete.");
+        firstRun = false;
         endRun.exec();
 
     }
     else if (runsVectorIndex_ < 0)
     {
         QMessageBox startRun;
+        runsVectorIndex_ = 0;
         startRun.setText("This is the first Trial.");
         startRun.exec();
     }
+
+    firstRun = true;
 }
 
 QSqlQuery TreadmillAutomationDbIFace::selectQueryDb(QString columns, QString table, bool whereBool, QString where)
@@ -404,6 +429,36 @@ int TreadmillAutomationDbIFace::getParticipantMotionFromDb(QString typeNum, QStr
    // qDebug() << direction.keyToValue("PA");
 
     return parNum.toInt();
+}
+
+QVector<QString> TreadmillAutomationDbIFace::getRunResults()
+{
+    return runResults;
+}
+
+QVector<QString> TreadmillAutomationDbIFace::getRunProfileHead()
+{
+    return runProfileHead;
+}
+
+void TreadmillAutomationDbIFace::updateRunTable(QString tableName, QString type, QString level, 
+        QString stimOrder, QString participantId, QString sessionNo, QString runNo, 
+        QString trialNo)
+{
+    QString queryString("UPDATE " + tableName + " SET type = \"" + type + "\", level = \"" + level + 
+            "\", stimOrder = \"" + stimOrder + "\" WHERE participantId = \"" + participantId + 
+            "\" AND session = \"" + sessionNo + "\" AND runNo = \"" + runNo + 
+            "\" AND trial = \"" + trialNo + "\"");
+    qDebug() << queryString;
+    QSqlQuery query;
+
+    query.prepare(queryString);
+
+    if(!query.exec(queryString))
+    {
+        qWarning() << "ERROR: " << query.lastError().text();
+    }
+
 }
 
 #include "../include/moc_TreadmillAutomationDbIFace.cpp"
