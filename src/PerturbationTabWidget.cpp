@@ -53,6 +53,8 @@ void PerturbationTabWidget::addQuadrantTwo()
     quadrantTwoPerturbationLayout = new QVBoxLayout;
     quadrantTwoGroupBox->setLayout(quadrantTwoPerturbationLayout);
     perturbationTabLayout->addWidget(quadrantTwoGroupBox, 0,1);
+    
+    addEmgDataVisualization();
 }
 
 void PerturbationTabWidget::addQuadrantThree()
@@ -394,6 +396,32 @@ void PerturbationTabWidget::addStartPertRunGroupBox()
 
 void PerturbationTabWidget::addEmgDataVisualization()
 {
+    QQuickView* viewer = new QQuickView;
+    QWidget *container = QWidget::createWindowContainer(viewer, this);
+    container->setMinimumSize(700, 400);
+    container->setMaximumSize(700, 400);
+    viewer->setFormat(QtDataVisualization::qDefaultSurfaceFormat());
+#ifdef Q_OS_WIN
+    QString extraImportPath(QStringLiteral("%1/../../../../%2"));
+#else
+    QString extraImportPath(QStringLiteral("%1/../../../%2"));
+#endif
+    viewer->engine()->addImportPath(extraImportPath.arg(QGuiApplication::applicationDirPath(),
+                QString::fromLatin1("qml")));
+    QObject::connect(viewer->engine(), &QQmlEngine::quit, viewer, &QWindow::close);
+
+    viewer->setTitle(QStringLiteral("Oscilloscope example"));
+
+    DataSource dataSource;
+    viewer->rootContext()->setContextProperty("dataSource", &dataSource);
+
+    viewer->setSource(QUrl("main.qml"));
+    viewer->setResizeMode(QQuickView::SizeRootObjectToView);
+    /*    qmlRegisterType<QmlInterface>("io.qt.examples.backend", 1, 0, "QmlInterface");
+          QQmlApplicationEngine engine;
+          engine.load(QUrl(QStringLiteral("QmlInterface.qml")));
+    */
+    quadrantTwoPerturbationLayout->addWidget(container);
 }
 
 void PerturbationTabWidget::addRecordDataStreamVelocityBox()

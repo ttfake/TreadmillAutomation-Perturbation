@@ -25,6 +25,8 @@ find_package(Qt5Network REQUIRED)
 find_package(Qt5SerialPort REQUIRED)
 find_package(Qt5Sql REQUIRED)
 find_package(Qt5DataVisualization REQUIRED)
+find_package(Qt5Qml REQUIRED)
+find_package(Qt5Quick REQUIRED)
             
 #qt5_wrap_cpp(moc_TreadmillAutomation.cpp moc_MccDaqInterface.cpp 
 #    moc_NetworkTabWidget.cpp moc_PerturbationTabWidget.cpp TreadmillAutomation.cpp
@@ -35,6 +37,6 @@ find_package(Qt5DataVisualization REQUIRED)
 #add_executable(TreadmillAutomation WIN32 ${SOURCES})
 add_executable(TreadmillAutomation ${SOURCES})
 target_link_libraries(TreadmillAutomation Qt5::Widgets Qt5::Network
-    Qt5::SerialPort Qt5::Sql Qt5::DataVisualization
+    Qt5::SerialPort Qt5::Sql Qt5::DataVisualization Qt5::Qml Qt5::Quick
     cbw64 nidaqmx ws2_32 User32 
     )

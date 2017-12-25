@@ -38,6 +38,7 @@
 #include <QtQml/QQmlContext>
 #include <QtQuick/QQuickView>
 #include <QtQml/QQmlEngine>
+#include <QQmlApplicationEngine>
 //#include <python3.5m/Python.h>
 
 #include "SendSetpoints.h"
@@ -45,6 +46,8 @@
 #include "MouseInterface.h"
 #include "ReadTrialNameFile.h"
 #include "ParseRunProfile.h"
+#include "QmlInterface.h"
+#include "DataSource.h"
 
 class PerturbationTabWidget : public QWidget
 {
@@ -275,7 +278,7 @@ class PerturbationTabWidget : public QWidget
         bool tableFilled;
         int currentRunRowIndex;
         QFont tableRowsFont;
-        void addEmgDataVisualization()
+        void addEmgDataVisualization();
 
 };
 #endif
