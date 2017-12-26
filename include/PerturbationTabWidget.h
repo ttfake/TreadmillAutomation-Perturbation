@@ -279,6 +279,6 @@ class PerturbationTabWidget : public QWidget
         int currentRunRowIndex;
         QFont tableRowsFont;
         void addEmgDataVisualization();
-
+        int columnIndex;
 };
 #endif

@@ -73,6 +73,7 @@ void PerturbationTabWidget::addQuadrantFour()
     quadrantFourPerturbationLayout = new QVBoxLayout;
     quadrantFourGroupBox->setLayout(quadrantFourPerturbationLayout);
     perturbationTabLayout->addWidget(quadrantFourGroupBox, 1,1);
+    quadrantFourGroupBox->hide();
 }
 
 void PerturbationTabWidget::addFudgeFactorGroupBox()
@@ -199,6 +200,8 @@ void PerturbationTabWidget::addRunGroupBox()
 {
     runGroupBox = new QGroupBox;
     runTableWidget = new QTableWidget;
+    runTableWidget->setFixedSize(1900,400);
+    runTableWidget->setHorizontalScrollBarPolicy(Qt::ScrollBarAsNeeded);
     connect(runTableWidget, SIGNAL(cellChanged(int, int)), SLOT(updateRun(int, int)));
     runGroupBoxLayout = new QHBoxLayout;
     runTableHeaderFont.setFamily("Times");
@@ -206,11 +209,12 @@ void PerturbationTabWidget::addRunGroupBox()
     runTableHeaderFont.setPointSize(12);
     runGroupBox->setLayout(runGroupBoxLayout);
     runGroupBoxLayout->addWidget(runTableWidget);
-    runGroupBox->setFixedSize(1500,400);
+    runGroupBox->setFixedSize(1900,400);
     QStringList runHeader;
     runTableWidget->horizontalHeader()->setFont(runTableHeaderFont);
     runTableWidget->setColumnCount(8);
     runTableWidget->horizontalHeader()->setSectionResizeMode(QHeaderView::Stretch);
+//    runTableWidget->resizeColumnsToContents();
     runHeader << "Subject Number" << "Session Number" << "Run Number" << "Type Number" << "Level Number"
         << "Stimulation Sequence" << "Trial Number" << "Status";
     runTableWidget->setHorizontalHeaderLabels(runHeader);
@@ -412,8 +416,8 @@ void PerturbationTabWidget::addEmgDataVisualization()
 
     viewer->setTitle(QStringLiteral("Oscilloscope example"));
 
-    DataSource dataSource;
-    viewer->rootContext()->setContextProperty("dataSource", &dataSource);
+    DataSource* dataSource = new DataSource;
+    viewer->rootContext()->setContextProperty("dataSource", dataSource);
 
     viewer->setSource(QUrl("main.qml"));
     viewer->setResizeMode(QQuickView::SizeRootObjectToView);
@@ -715,7 +719,7 @@ void PerturbationTabWidget::slotTimeout()
 {
     mouseInterface->setMovementDetectedBool(false);
     QString complete("Complete");
-    int columnIndex = 7;
+    columnIndex = 7;
     runTableWidget->setItem(currentRunRowIndex, columnIndex, 
             new QTableWidgetItem(tr("%1").arg(complete)));
     runTableWidget->item(currentRunRowIndex, columnIndex)->setFont(tableRowsFont);
@@ -865,6 +869,10 @@ void PerturbationTabWidget::prevRun()
 {
     currentRunRowIndex--;
     prp->getRun(-2);
+    QString empty("");
+    runTableWidget->setItem(currentRunRowIndex, columnIndex, 
+            new QTableWidgetItem(tr("%1").arg(empty)));
+    runTableWidget->item(currentRunRowIndex, columnIndex)->setFont(tableRowsFont);
     setAccelerationValue(prp->getAccelLeft());
     acceleration->setValue(prp->getAccelLeft());
     setDecelerationValue(prp->getDecelLeft());
