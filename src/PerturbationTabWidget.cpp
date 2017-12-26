@@ -63,6 +63,7 @@ void PerturbationTabWidget::addQuadrantThree()
     quadrantThreePerturbationLayout = new QVBoxLayout;
     quadrantThreeGroupBox->setLayout(quadrantThreePerturbationLayout);
     perturbationTabLayout->addWidget(quadrantThreeGroupBox, 1,0);
+    quadrantThreeGroupBox->setFixedSize(1900,400);
     addRecordDataStreamVelocityBox();
     addRunGroupBox();
 }
@@ -867,7 +868,14 @@ void PerturbationTabWidget::nextRun()
 
 void PerturbationTabWidget::prevRun()
 {
-    currentRunRowIndex--;
+    if(currentRunRowIndex > 0)
+    {
+        currentRunRowIndex--;
+    }
+    else 
+    {
+        currentRunRowIndex = 0;
+    }
     prp->getRun(-2);
     QString empty("");
     runTableWidget->setItem(currentRunRowIndex, columnIndex, 
@@ -1043,6 +1051,12 @@ void PerturbationTabWidget::updateRun(int row, int col)
         qDebug() << "New Runs: " << runs[0].split(',')[0];
 
     }
+}
+
+void PerturbationTabWidget::showSubjectView()
+{
+    sInterface = new SubjectInterface;
+    sInterface->setAttribute(Qt::WA_DeleteOnClose);
 }
 
 #include "../include/moc_PerturbationTabWidget.cpp"

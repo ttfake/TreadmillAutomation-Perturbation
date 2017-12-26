@@ -32,7 +32,6 @@
 #include "include/PerturbationTabWidget.h"
 #include "include/SendSetpoints.h"
 #include "include/MouseInterface.h"
-#include "include/SubjectInterface.h"
 
 class TreadmillAutomation : public QMainWindow
 {
@@ -64,7 +63,6 @@ class TreadmillAutomation : public QMainWindow
     private slots:
         void showTimer();
         void errorString(QString s);
-        void showSubjectView();
 
     private:
         QWidget* centralWidget;

@@ -48,6 +48,7 @@
 #include "ParseRunProfile.h"
 #include "QmlInterface.h"
 #include "DataSource.h"
+#include "SubjectInterface.h"
 
 class PerturbationTabWidget : public QWidget
 {
@@ -79,6 +80,7 @@ class PerturbationTabWidget : public QWidget
         void randomDelay();
         void saveVelocityData();
         void loadRunProfile();
+        void showSubjectView();
 
     private slots:
         void setLeftFrontSpeedValue(double mleftFrontSpeedValue);
@@ -280,5 +282,6 @@ class PerturbationTabWidget : public QWidget
         QFont tableRowsFont;
         void addEmgDataVisualization();
         int columnIndex;
+        SubjectInterface* sInterface; 
 };
 #endif

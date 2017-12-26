@@ -58,7 +58,7 @@ void TreadmillAutomation::createFileMenu()
     viewSubjectInterfaceAct = new QAction();
     menuView->addAction(viewSubjectInterfaceAct);
     viewSubjectInterfaceAct->setText("Subject Interface");
-    connect(viewSubjectInterfaceAct, SIGNAL(triggered()), this, SLOT(showSubjectView()));
+    connect(viewSubjectInterfaceAct, SIGNAL(triggered()), perturbationTabWidget, SLOT(showSubjectView()));
 
     daqViewAct = new QAction();
     daqViewAct->setCheckable(true);
@@ -115,11 +115,6 @@ void TreadmillAutomation::showDaqDataBox()
     }
 }
 
-void TreadmillAutomation::showSubjectView()
-{
-    sInterface = new SubjectInterface;
-    sInterface->setAttribute(Qt::WA_DeleteOnClose);
-}
 
 void TreadmillAutomation::createTabWidget()
 {
