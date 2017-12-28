@@ -138,7 +138,16 @@ class PerturbationTabWidget : public QWidget
         QVBoxLayout* quadrantTwoPerturbationLayout;
         QVBoxLayout* quadrantThreePerturbationLayout;
         QVBoxLayout* quadrantFourPerturbationLayout;
+        
         QGroupBox* accelDecelGroupBox;
+        QGroupBox* accelDecelTimerGroupBox;
+        QHBoxLayout* accelDecelTimerGroupBoxHorizontalLayout;
+        QVBoxLayout* accelDecelGroupBoxVerticalLayout;
+        QGroupBox* accelGroupBox; 
+        QVBoxLayout* accelGroupBoxVerticalLayout; 
+        QGroupBox* decelGroupBox;
+        QVBoxLayout* decelGroupBoxVerticalLayout;
+
         QHBoxLayout* accelerationDecelerationHorizontalLayout;
         
         QGroupBox* speedGroupBox;
@@ -194,8 +203,8 @@ class PerturbationTabWidget : public QWidget
         QGroupBox* quadrantTwoGroupBox;
         QGroupBox* recordGroupBox;
 
-        QGroupBox* timeGroupBox;
-        QHBoxLayout* timeGroupBoxLayout;
+        QGroupBox* timerGroupBox;
+        QVBoxLayout* timerGroupBoxVerticalLayout;
         QLabel* timeAccelLabel;
         QFont timeAccelLabelFont;
         QDoubleSpinBox* timeAccelSpinBox;
@@ -210,7 +219,7 @@ class PerturbationTabWidget : public QWidget
         QFont timeDecelSpinBoxFont;
 
         QGroupBox* startPertRunGroupBox;
-        QHBoxLayout* startPertRunGroupBoxLayout;
+        QVBoxLayout* startPertRunGroupBoxLayout;
         QPushButton* startPertRunBtn;
         QFont startPertRunBtnFont;
 
@@ -282,6 +291,7 @@ class PerturbationTabWidget : public QWidget
         QFont tableRowsFont;
         void addEmgDataVisualization();
         int columnIndex;
-        SubjectInterface* sInterface; 
+        SubjectInterface* sInterface;
+
 };
 #endif

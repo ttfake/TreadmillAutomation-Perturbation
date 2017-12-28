@@ -36,6 +36,7 @@ void PerturbationTabWidget::populateTreadmillPerturbationTab()
 void PerturbationTabWidget::addQuadrantOne()
 {
     quadrantOneGroupBox = new QGroupBox;
+    quadrantOneGroupBox->setFixedSize(675,400);
     quadrantOnePerturbationLayout = new QVBoxLayout;
     quadrantOneGroupBox->setLayout(quadrantOnePerturbationLayout);
     perturbationTabLayout->addWidget(quadrantOneGroupBox, 0,0);
@@ -50,6 +51,7 @@ void PerturbationTabWidget::addQuadrantOne()
 void PerturbationTabWidget::addQuadrantTwo()
 {
     quadrantTwoGroupBox = new QGroupBox;
+    quadrantTwoGroupBox->setFixedSize(850, 850);
     quadrantTwoPerturbationLayout = new QVBoxLayout;
     quadrantTwoGroupBox->setLayout(quadrantTwoPerturbationLayout);
     perturbationTabLayout->addWidget(quadrantTwoGroupBox, 0,1);
@@ -63,7 +65,7 @@ void PerturbationTabWidget::addQuadrantThree()
     quadrantThreePerturbationLayout = new QVBoxLayout;
     quadrantThreeGroupBox->setLayout(quadrantThreePerturbationLayout);
     perturbationTabLayout->addWidget(quadrantThreeGroupBox, 1,0);
-    quadrantThreeGroupBox->setFixedSize(1900,400);
+    quadrantThreeGroupBox->setFixedSize(950,250);
     addRecordDataStreamVelocityBox();
     addRunGroupBox();
 }
@@ -201,8 +203,9 @@ void PerturbationTabWidget::addRunGroupBox()
 {
     runGroupBox = new QGroupBox;
     runTableWidget = new QTableWidget;
-    runTableWidget->setFixedSize(1900,400);
-    runTableWidget->setHorizontalScrollBarPolicy(Qt::ScrollBarAsNeeded);
+    runTableWidget->setFixedSize(900,200);
+    runTableWidget->setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOn);
+    runTableWidget->setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOn);
     connect(runTableWidget, SIGNAL(cellChanged(int, int)), SLOT(updateRun(int, int)));
     runGroupBoxLayout = new QHBoxLayout;
     runTableHeaderFont.setFamily("Times");
@@ -210,7 +213,7 @@ void PerturbationTabWidget::addRunGroupBox()
     runTableHeaderFont.setPointSize(12);
     runGroupBox->setLayout(runGroupBoxLayout);
     runGroupBoxLayout->addWidget(runTableWidget);
-    runGroupBox->setFixedSize(1900,400);
+    runGroupBox->setFixedSize(950,250);
     QStringList runHeader;
     runTableWidget->horizontalHeader()->setFont(runTableHeaderFont);
     runTableWidget->setColumnCount(8);
@@ -219,17 +222,69 @@ void PerturbationTabWidget::addRunGroupBox()
     runHeader << "Subject Number" << "Session Number" << "Run Number" << "Type Number" << "Level Number"
         << "Stimulation Sequence" << "Trial Number" << "Status";
     runTableWidget->setHorizontalHeaderLabels(runHeader);
+    runTableWidget->setColumnHidden(0, true);
+    runTableWidget->setColumnHidden(1, true);
 
     quadrantThreePerturbationLayout->addWidget(runGroupBox);
 }
 
 void PerturbationTabWidget::addTimerGroupBox()
 {
-    timeGroupBox = new QGroupBox;
+    timerGroupBox = new QGroupBox;
+    timerGroupBoxVerticalLayout = new QVBoxLayout;
+    timerGroupBox->setLayout(timerGroupBoxVerticalLayout);
+    accelDecelTimerGroupBoxHorizontalLayout->addWidget(timerGroupBox);
+    
+    timeAccelLabel = new QLabel;
+    timeAccelLabelFont.setFamily("Times");
+    timeAccelLabelFont.setWeight(75);
+    timeAccelLabelFont.setPointSize(12);
+    timeAccelLabel->setText("Acceleration Time: ");
+    timeAccelLabel->setFont(timeAccelLabelFont);
+    timeAccelLabel->setSizePolicy(QSizePolicy::Minimum, QSizePolicy::Fixed);
+    timeAccelLabel->setFixedSize(190,180);
+    timerGroupBoxVerticalLayout->addWidget(timeAccelLabel);
+    timeAccelSpinBox = new QDoubleSpinBox;
+    timeAccelSpinBoxFont.setFamily("Times");
+    timeAccelSpinBoxFont.setWeight(75);
+    timeAccelSpinBoxFont.setPointSize(12);
+    timeAccelSpinBox->setFont(timeAccelSpinBoxFont);
+    timeAccelSpinBox->setFixedSize(160,40);
+    timeAccelSpinBox->setSuffix("  ms");
+    timeAccelSpinBox->setRange(0.00, 100000000.00);
+
+    timeAccelSpinBox->setSizePolicy(QSizePolicy::Minimum, QSizePolicy::Fixed); 
+    timerGroupBoxVerticalLayout->addWidget(timeAccelSpinBox);
+    
+    timeDecelLabel = new QLabel;
+    timeDecelLabelFont.setFamily("Times");
+    timeDecelLabelFont.setWeight(75);
+    timeDecelLabelFont.setPointSize(12);
+    timeDecelLabel->setFont(timeDecelLabelFont);
+    timeDecelLabel->setText("Deceleration Time: ");
+    timeDecelLabel->setSizePolicy(QSizePolicy::Minimum, QSizePolicy::Fixed);
+    timeDecelLabel->setFixedSize(190,180);
+    timerGroupBoxVerticalLayout->addWidget(timeDecelLabel);
+    timeDecelSpinBox = new QDoubleSpinBox;
+    timeDecelSpinBoxFont.setFamily("Times");
+    timeDecelSpinBoxFont.setWeight(75);
+    timeDecelSpinBoxFont.setPointSize(12);
+    timeDecelSpinBox->setFont(timeDecelSpinBoxFont);
+    timeDecelSpinBox->setSuffix("  ms");
+    timeDecelSpinBox->setSizePolicy(QSizePolicy::Minimum, QSizePolicy::Fixed);
+    timeDecelSpinBox->setFixedSize(160,40);
+    timeDecelSpinBox->setRange(0.00, 100000000.00);
+    timeDecelSpinBox->setValue(600.00);
+    timeDecelSpinBox->setEnabled(false);
+    timerGroupBoxVerticalLayout->addWidget(timeDecelSpinBox);
+
+
+/*    timeGroupBox = new QGroupBox;
     timeGroupBox->setSizePolicy(QSizePolicy::Minimum, QSizePolicy::Fixed);
     quadrantOnePerturbationLayout->addWidget(timeGroupBox);
     timeGroupBoxLayout = new QHBoxLayout;
     timeGroupBox->setLayout(timeGroupBoxLayout);
+    
     timeAccelLabel = new QLabel;
     timeAccelLabelFont.setFamily("Times");
     timeAccelLabelFont.setWeight(75);
@@ -275,7 +330,7 @@ void PerturbationTabWidget::addTimerGroupBox()
     
     quadrantOnePerturbationLayout->addWidget(timeGroupBox);
     timeGroupBox->hide();
-
+*/
 }
 
 void PerturbationTabWidget::addTrialRunName()
@@ -285,12 +340,21 @@ void PerturbationTabWidget::addTrialRunName()
 
 void PerturbationTabWidget::addAccelDecelGroupBox()
 {
+    accelDecelTimerGroupBox = new QGroupBox;
+    accelDecelTimerGroupBoxHorizontalLayout = new QHBoxLayout;
+    accelDecelTimerGroupBox->setLayout(accelDecelTimerGroupBoxHorizontalLayout);
     accelDecelGroupBox = new QGroupBox;
-    accelDecelGroupBox->setSizePolicy(QSizePolicy::Minimum, QSizePolicy::Fixed);
+    accelDecelGroupBoxVerticalLayout = new QVBoxLayout;
+    accelDecelGroupBox->setLayout(accelDecelGroupBoxVerticalLayout);
+    accelDecelTimerGroupBoxHorizontalLayout->addWidget(accelDecelGroupBox);
+    accelGroupBox = new QGroupBox;
+    accelDecelGroupBoxVerticalLayout->addWidget(accelGroupBox);
+    accelGroupBoxVerticalLayout = new QVBoxLayout;
+    accelGroupBox->setLayout(accelGroupBoxVerticalLayout);
+    decelGroupBox = new QGroupBox;
+    decelGroupBoxVerticalLayout = new QVBoxLayout;
+    decelGroupBox->setLayout(decelGroupBoxVerticalLayout);
 
-    accelerationDecelerationHorizontalLayout = new QHBoxLayout;
-    accelDecelGroupBox->setLayout(accelerationDecelerationHorizontalLayout);
-    
     accelerationLabel = new QLabel;
     accelerationLabelFont.setFamily("Times");
     accelerationLabelFont.setWeight(75);
@@ -299,7 +363,10 @@ void PerturbationTabWidget::addAccelDecelGroupBox()
     accelerationLabel->setText("Acceleration: ");
     accelerationLabel->setSizePolicy(QSizePolicy::Minimum, QSizePolicy::Fixed);
     accelerationLabel->setFixedSize(150,180);
-    accelerationDecelerationHorizontalLayout->addWidget(accelerationLabel);
+    accelGroupBoxVerticalLayout->addWidget(accelerationLabel);
+    accelDecelGroupBoxVerticalLayout->addWidget(accelGroupBox);
+    accelDecelTimerGroupBoxHorizontalLayout->addWidget(accelDecelGroupBox);
+    
     acceleration = new QDoubleSpinBox;
     accelerationSpinBoxFont.setFamily("Times");
     accelerationSpinBoxFont.setWeight(75);
@@ -309,7 +376,7 @@ void PerturbationTabWidget::addAccelDecelGroupBox()
     acceleration->setFont(accelerationSpinBoxFont);
     acceleration->setSizePolicy(QSizePolicy::Minimum, QSizePolicy::Fixed);
     acceleration->setFixedSize(160,40);
-    accelerationDecelerationHorizontalLayout->addWidget(acceleration);
+    accelGroupBoxVerticalLayout->addWidget(acceleration);
 
     decelerationLabel = new QLabel;
     decelerationLabelFont.setFamily("Times");
@@ -319,7 +386,7 @@ void PerturbationTabWidget::addAccelDecelGroupBox()
     decelerationLabel->setText("Deceleration: ");
     decelerationLabel->setSizePolicy(QSizePolicy::Minimum, QSizePolicy::Fixed);
     decelerationLabel->setFixedSize(150,180);
-    accelerationDecelerationHorizontalLayout->addWidget(decelerationLabel);
+    decelGroupBoxVerticalLayout->addWidget(decelerationLabel);
     deceleration = new QDoubleSpinBox;
     decelerationSpinBoxFont.setFamily("Times");
     decelerationSpinBoxFont.setWeight(75);
@@ -329,12 +396,12 @@ void PerturbationTabWidget::addAccelDecelGroupBox()
     deceleration->setFont(decelerationLabelFont);
     deceleration->setSizePolicy(QSizePolicy::Minimum, QSizePolicy::Fixed);
     deceleration->setFixedSize(160,40);
-    
-    accelerationDecelerationHorizontalLayout->addWidget(deceleration);
+    decelGroupBoxVerticalLayout->addWidget(deceleration);
 
-//    accelDecelGroupBox->hide();
+    accelDecelGroupBoxVerticalLayout->addWidget(decelGroupBox);
 
-    quadrantOnePerturbationLayout->addWidget(accelDecelGroupBox);
+    quadrantOnePerturbationLayout->addWidget(accelDecelTimerGroupBox);
+
 }
 
 
@@ -343,7 +410,7 @@ void PerturbationTabWidget::addStartPertRunGroupBox()
 //    prp = new ParseRunProfile();
     startPertRunGroupBox = new QGroupBox;
     startPertRunGroupBox->setSizePolicy(QSizePolicy::Minimum, QSizePolicy::Fixed);
-    startPertRunGroupBoxLayout = new QHBoxLayout;
+    startPertRunGroupBoxLayout = new QVBoxLayout;
     startPertRunGroupBox->setLayout(startPertRunGroupBoxLayout);
     startPertRunBtn = new QPushButton;
     nextPertRunBtn = new QPushButton;
@@ -374,8 +441,8 @@ void PerturbationTabWidget::addStartPertRunGroupBox()
     prevPertRunBtn->setFont(startPertRunBtnFont);
     nextPertRunBtn->setFont(startPertRunBtnFont);
     startStimRunBtn->setFont(startPertRunBtnFont);
-    quadrantOnePerturbationLayout->addWidget(startPertRunGroupBox);
-    startPertRunGroupBox->hide();
+    accelDecelTimerGroupBoxHorizontalLayout->addWidget(startPertRunGroupBox);
+    //startPertRunGroupBox->hide();
     recTreadmillStream = new RecordTreadmillStream;
     readTrialNameFile = new ReadTrialNameFile("config/TrialNames.txt");
     mouseInterface = new MouseInterface;
@@ -403,8 +470,8 @@ void PerturbationTabWidget::addEmgDataVisualization()
 {
     QQuickView* viewer = new QQuickView;
     QWidget *container = QWidget::createWindowContainer(viewer, this);
-    container->setMinimumSize(700, 400);
-    container->setMaximumSize(700, 400);
+    container->setMinimumSize(700, 800);
+    container->setMaximumSize(700, 800);
     viewer->setFormat(QtDataVisualization::qDefaultSurfaceFormat());
 #ifdef Q_OS_WIN
     QString extraImportPath(QStringLiteral("%1/../../../../%2"));
@@ -446,12 +513,12 @@ void PerturbationTabWidget::showTimer(bool state)
 {
     if(state)
     {
-        timeGroupBox->show();
+        timerGroupBox->show();
         startPertRunGroupBox->show();
     }
     else
     {
-        timeGroupBox->hide();
+        timerGroupBox->hide();
         startPertRunGroupBox->hide();
     }
 }
