@@ -28,6 +28,6 @@ Item {
     }
 
     function deleteSmileyFace() {
-        smileyLoader.source = "SmileyGone.qml"
+        smileyLoader.item.deleteSmileyFace()
     }
 } 

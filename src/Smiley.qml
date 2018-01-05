@@ -12,5 +12,9 @@ Item {
         anchors { horizontalCenter: parent.horizontalCenter}
         source: "images/smiley.jpg"
     }
+
+    function deleteSmileFace(){
+        smileyId.destroy()
+    }
 }
 
