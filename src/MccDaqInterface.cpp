@@ -67,7 +67,7 @@ void MccDaqInterface::beginDataCollection()
     rowCount = 0;
     chs = 0;
    
-    qDebug("beginning data collection");
+    qDebug() << "beginning data collection";
 
 
     forcePlateDataFile = new QFile(daqLogFileName);
@@ -119,13 +119,13 @@ void MccDaqInterface::beginDataCollection()
 
             forcePlateDataStream << channelHeaderString;
 
-//            double voltage = ((20.0 / pow(2.0,16)) * 38993.92) - 10.0;
-//            double force = channelCoefficientMap[channel] * (voltage / scale);
-//
-//            QString dataPoint1String(QString::number(force,'f',4));
-//
-//            qDebug("Force: %f", force);
-//
+/*            double voltage = ((20.0 / pow(2.0,16)) * 38993.92) - 10.0;
+            double force = channelCoefficientMap[channel] * (voltage / scale);
+
+            QString dataPoint1String(QString::number(force,'f',4));
+
+            qDebug("Force: %f", force);
+*/
             chs++;
 
             activeState = false;
@@ -135,8 +135,8 @@ void MccDaqInterface::beginDataCollection()
     forcePlateDataStream << "Perturbation\n";
     forcePlateDataFile->close();
 
-    setNumberOfChannels(chs);
-    chs = 0;
+    //setNumberOfChannels(chs);
+    //chs = 0;
     
     short ChanArray[ChanVector.size()];
     short ChanTypeArray[ChanTypeVector.size()];
@@ -224,6 +224,7 @@ void MccDaqInterface::beginDataCollection()
 
                 for(channel = 0; channel < NUMCHANS; channel++)
                 {
+                    qDebug() << "Channel: " << channel;
                     emit updateCol(channelVector[channel]);
                     emit setCurrentChannel(channel);
                     double voltage = ((20.0 / pow(2.0,16)) * static_cast<double>(ADData[DataIndex])) - 10.0;
@@ -255,6 +256,7 @@ void MccDaqInterface::beginDataCollection()
                 }
 
                 forcePlateDataFile->close(); 
+
                 rowCount++;
             }
         }
@@ -269,6 +271,7 @@ void MccDaqInterface::beginDataCollection()
     ULStat = cbStopBackground (BoardNum,DAQIFUNCTION);
 
     cbWinBufFree(ADData);
+    
 }
 
 void MccDaqInterface::setDaqButtonText(QString daqTitleText)

@@ -123,7 +123,7 @@ void SubjectInterfaceWidget::drawCross()
 void SubjectInterfaceWidget::writeText(QColor mColor, QPoint mTextLoc, QString text)
 {
     globalPainter->setPen(mColor);
-    globalPainter->setFont(QFont("Arial", 35));
+    globalPainter->setFont(QFont("Arial", 135));
     globalPainter->drawText(mTextLoc, text);
 }
 

@@ -32,6 +32,7 @@
 #include "include/PerturbationTabWidget.h"
 #include "include/SendSetpoints.h"
 #include "include/MouseInterface.h"
+#include "include/ConfigTabWidget.h"
 
 class TreadmillAutomation : public QMainWindow
 {
@@ -46,11 +47,14 @@ class TreadmillAutomation : public QMainWindow
         void createNetworkTab();
         void populateNetworkTab();
         void createTreadmillPerturbationTab();
+        void createTreadmillConfigTab();
         void populateTreadmillPerturbationTab();
+        void populateTreadmillConfigTab();
         void error(int);
         NetworkTabWidget* networkTabWidget;
 //        MccDaqInterface* mccDaqInterface;
         PerturbationTabWidget* perturbationTabWidget;
+        ConfigTabWidget* configTabWidget;
         SendSetpoints* sendSetpointObject;
         bool useLibraryCheckBox;
 

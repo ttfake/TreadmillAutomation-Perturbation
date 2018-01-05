@@ -64,7 +64,7 @@ ChartView {
         }
     }
 
-    function changeSeriesType(type) {
+/*    function changeSeriesType(type) {
         chartView.removeAllSeries();
 
         // Create two new series of the correct type. Axis x is the same for both of the series,
@@ -92,6 +92,7 @@ ChartView {
             series2.useOpenGL = chartView.openGL
         }
     }
+ */
 
     function createAxis(min, max) {
         // The following creates a ValueAxis object that can be then set as a x or y axis for a series

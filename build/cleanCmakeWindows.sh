@@ -6,4 +6,6 @@ make
 cp ../bin/TreadmillAutomation.exe /home/user/TreadmillAutomationBinaryTestbed/
 cp ../src/main.qml /home/user/TreadmillAutomationBinaryTestbed/
 cp ../src/NewButton.qml /home/user/TreadmillAutomationBinaryTestbed/
+cp ../src/SubjectInterface.qml /home/user/TreadmillAutomationBinaryTestbed/
+cp ../src/MainSubjectInterface.qml /home/user/TreadmillAutomationBinaryTestbed/
 cp ../bin/TreadmillAutomation.exe /home/user/HReflex_Windows/bin/

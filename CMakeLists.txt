@@ -39,5 +39,5 @@ find_package(Qt5Charts REQUIRED)
 add_executable(TreadmillAutomation ${SOURCES})
 target_link_libraries(TreadmillAutomation Qt5::Widgets Qt5::Network
     Qt5::SerialPort Qt5::Sql Qt5::DataVisualization Qt5::Qml Qt5::Quick
-    cbw64 nidaqmx ws2_32 User32 Qt5::Charts 
+    cbw64 nidaqmx ws2_32 User32 Qt5::Charts DS8library
     )

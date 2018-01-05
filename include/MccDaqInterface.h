@@ -15,6 +15,7 @@
 #include <QThread>
 #include <cmath>
 #include <map>
+#include <QDebug>
 #include "MccDaqDiscovery.h"
 
 

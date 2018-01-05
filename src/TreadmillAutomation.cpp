@@ -9,6 +9,7 @@ TreadmillAutomation::TreadmillAutomation(QWidget *parent, Qt::WindowFlags flags)
     centralWidget->setLayout(centralWidgetLayout);
 
     perturbationTabWidget = new PerturbationTabWidget;
+    configTabWidget = new ConfigTabWidget;
     sendSetpointObject = SendSetpoints::getInstance();
     createFileMenu();
     createTabWidget();
@@ -18,6 +19,7 @@ TreadmillAutomation::TreadmillAutomation(QWidget *parent, Qt::WindowFlags flags)
     connect(networkTabWidget->connectBtn, SIGNAL(clicked()), SLOT(setSocket()));
     
     centralTabWidget->addTab(perturbationTabWidget, "Perturbation");
+    centralTabWidget->addTab(configTabWidget, "Configuration");
 }
 
 TreadmillAutomation::~TreadmillAutomation()
@@ -31,10 +33,10 @@ void TreadmillAutomation::createFileMenu()
     menuFile = new QMenu(menuBar);
     menuFile->setObjectName(QStringLiteral("menuFile"));
     menuFile->setTitle(QApplication::translate("TreadmillAutomation", "File", Q_NULLPTR));
-    saveVelocityDataAct = new QAction;
-    menuFile->addAction(saveVelocityDataAct);
-    saveVelocityDataAct->setText("Save Velocity Data");
-    connect(saveVelocityDataAct, SIGNAL(triggered()), perturbationTabWidget, SLOT(saveVelocityData()));
+//    saveVelocityDataAct = new QAction;
+//    menuFile->addAction(saveVelocityDataAct);
+//    saveVelocityDataAct->setText("Save Velocity Data");
+//    connect(saveVelocityDataAct, SIGNAL(triggered()), perturbationTabWidget, SLOT(saveVelocityData()));
     loadRunProfileAction = new QAction;
     menuFile->addAction(loadRunProfileAction);
     loadRunProfileAction->setText("Load Run Profile");
@@ -132,9 +134,9 @@ void TreadmillAutomation::setSocket()
     QString port(netWidget->getPort());
     perturbationTabWidget->setSocket(socket);
 //    qDebug("From TreadmillAutomation: The host is %s ", qPrintable(host));
-    perturbationTabWidget->setHost(host);
+//    perturbationTabWidget->setHost(host);
 //    qDebug("From TreadmillAutomation: The port is %s ", qPrintable(port));
-    perturbationTabWidget->setPort(port);
+//    perturbationTabWidget->setPort(port);
 
 }
 

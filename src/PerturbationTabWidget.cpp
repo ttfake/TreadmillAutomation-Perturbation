@@ -7,9 +7,10 @@ PerturbationTabWidget::PerturbationTabWidget(QWidget* parent, Qt::WindowFlags fl
     sendSetpoints = SendSetpoints::getInstance();
     createTreadmillPerturbationTab();
     populateTreadmillPerturbationTab();
-    recordClicked = true;
     trialRun = 1;
     prp = new ParseRunProfile;
+    cellDoubleClicked = false;
+    InstrumentationPanel* instPanel = new InstrumentationPanel;
     connect(prp, SIGNAL(startStimulation()), SLOT(startStim()));
 }
 
@@ -66,7 +67,6 @@ void PerturbationTabWidget::addQuadrantThree()
     quadrantThreeGroupBox->setLayout(quadrantThreePerturbationLayout);
     perturbationTabLayout->addWidget(quadrantThreeGroupBox, 1,0);
     quadrantThreeGroupBox->setFixedSize(950,250);
-    addRecordDataStreamVelocityBox();
     addRunGroupBox();
 }
 
@@ -203,16 +203,25 @@ void PerturbationTabWidget::addRunGroupBox()
 {
     runGroupBox = new QGroupBox;
     runTableWidget = new QTableWidget;
+    runTableWidget->setStyleSheet("selection-background-color : green");
     runTableWidget->setFixedSize(900,200);
     runTableWidget->setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOn);
     runTableWidget->setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOn);
+    //updateRunTableBtn = new QPushButton;
+    //updateRunTableBtn->setSizePolicy(QSizePolicy::Minimum, QSizePolicy::Fixed);
+    //updateRunTableBtn->setText("Update Run Profile");
+//    updateRunTableBtn->setFont(startPertRunBtnFont);
+//    updateRunTableBtn->setFixedSize(200,40);
     connect(runTableWidget, SIGNAL(cellChanged(int, int)), SLOT(updateRun(int, int)));
-    runGroupBoxLayout = new QHBoxLayout;
+    connect(runTableWidget, SIGNAL(cellDoubleClicked(int, int)), SLOT(setCellChangedTrue(int, int)));
+    //connect(updateRunTableBtn, SIGNAL(clicked()), SLOT(updateRun()));
+    runGroupBoxLayout = new QVBoxLayout;
     runTableHeaderFont.setFamily("Times");
     runTableHeaderFont.setWeight(75);
     runTableHeaderFont.setPointSize(12);
     runGroupBox->setLayout(runGroupBoxLayout);
     runGroupBoxLayout->addWidget(runTableWidget);
+//    runGroupBoxLayout->addWidget(updateRunTableBtn);
     runGroupBox->setFixedSize(950,250);
     QStringList runHeader;
     runTableWidget->horizontalHeader()->setFont(runTableHeaderFont);
@@ -408,6 +417,8 @@ void PerturbationTabWidget::addAccelDecelGroupBox()
 void PerturbationTabWidget::addStartPertRunGroupBox()
 {
 //    prp = new ParseRunProfile();
+    sInterface = new SubjectInterface;
+    sInterface->setAttribute(Qt::WA_DeleteOnClose);
     startPertRunGroupBox = new QGroupBox;
     startPertRunGroupBox->setSizePolicy(QSizePolicy::Minimum, QSizePolicy::Fixed);
     startPertRunGroupBoxLayout = new QVBoxLayout;
@@ -443,7 +454,7 @@ void PerturbationTabWidget::addStartPertRunGroupBox()
     startStimRunBtn->setFont(startPertRunBtnFont);
     accelDecelTimerGroupBoxHorizontalLayout->addWidget(startPertRunGroupBox);
     //startPertRunGroupBox->hide();
-    recTreadmillStream = new RecordTreadmillStream;
+    //recTreadmillStream = new RecordTreadmillStream;
     readTrialNameFile = new ReadTrialNameFile("config/TrialNames.txt");
     mouseInterface = new MouseInterface;
     mouseInterface->openPort();
@@ -463,7 +474,7 @@ void PerturbationTabWidget::addStartPertRunGroupBox()
     connect(startPertRunBtn, SIGNAL(clicked()), mouseInterface, SLOT(setPerturbationActiveBoolTrue()));
     connect(nextPertRunBtn, SIGNAL(clicked()), SLOT(nextRun()));
     connect(prevPertRunBtn, SIGNAL(clicked()), SLOT(prevRun()));
-    connect(startStimRunBtn, SIGNAL(clicked()), SLOT(startDecelTimer()));
+    connect(startStimRunBtn, SIGNAL(clicked()), SLOT(slotTimeout()));
 }
 
 void PerturbationTabWidget::addEmgDataVisualization()
@@ -496,14 +507,14 @@ void PerturbationTabWidget::addEmgDataVisualization()
     quadrantTwoPerturbationLayout->addWidget(container);
 }
 
-void PerturbationTabWidget::addRecordDataStreamVelocityBox()
+/*void PerturbationTabWidget::addRecordDataStreamVelocityBox()
 {
     recTreadmillStream->hide();
 
     quadrantThreePerturbationLayout->addWidget(recTreadmillStream);
 
 }
-
+*/
 void PerturbationTabWidget::setAddToSpeed(double mAddToSpeed)
 {
     addToSpeed = mAddToSpeed;
@@ -623,6 +634,7 @@ void PerturbationTabWidget::setUseLibraryStatus(bool useLibCheckBox)
 
 void PerturbationTabWidget::randomDelay()
 {
+    sInterface->changeToCircle(true);
     int randomTime = rand() % 2000 + 2000;
     qDebug("Random Time: %i", randomTime);
     QFile randomDelayLog(logPath + "/" + "randomDelayLog.log");
@@ -791,6 +803,7 @@ void PerturbationTabWidget::slotTimeout()
     runTableWidget->setItem(currentRunRowIndex, columnIndex, 
             new QTableWidgetItem(tr("%1").arg(complete)));
     runTableWidget->item(currentRunRowIndex, columnIndex)->setFont(tableRowsFont);
+    sInterface->setTrialComplete(true);
 
     //-----------------------------------------------------------------------
 /*    auto uptime = std::chrono::milliseconds(GetTickCount());
@@ -856,9 +869,10 @@ void PerturbationTabWidget::loadRunProfile()
     setAccelerationTimeValue(prp->getAccelTime());
     populateRunsTextBox();
     runTableWidget->selectRow(currentRunRowIndex);
+    sInterface->startTrialRun(true);
 }
 
-void PerturbationTabWidget::saveVelocityData()
+/*void PerturbationTabWidget::saveVelocityData()
 {
     recTreadmillStream->setVelocityFileName();
 }
@@ -877,6 +891,7 @@ void PerturbationTabWidget::setPort(QString mport)
     recTreadmillStream->setPort(port);
     qDebug("From PerturbationTabWidget: The port is %s ", qPrintable(port));
 }
+*/
 
 void PerturbationTabWidget::getTrialName()
 {
@@ -922,6 +937,8 @@ void PerturbationTabWidget::enableButton()
 
 void PerturbationTabWidget::nextRun()
 {
+    sInterface->setRunOver(true);
+    sInterface->startTrialRun(true);
     currentRunRowIndex++;
     prp->getRun(1);
     setAccelerationValue(prp->getAccelLeft());
@@ -935,6 +952,7 @@ void PerturbationTabWidget::nextRun()
 
 void PerturbationTabWidget::prevRun()
 {
+    setCellChangedFalse();
     if(currentRunRowIndex > 0)
     {
         currentRunRowIndex--;
@@ -945,8 +963,7 @@ void PerturbationTabWidget::prevRun()
     }
     prp->getRun(-2);
     QString empty("");
-    runTableWidget->setItem(currentRunRowIndex, columnIndex, 
-            new QTableWidgetItem(tr("%1").arg(empty)));
+    runTableWidget->item(currentRunRowIndex, columnIndex)->setText(empty);
     runTableWidget->item(currentRunRowIndex, columnIndex)->setFont(tableRowsFont);
     setAccelerationValue(prp->getAccelLeft());
     acceleration->setValue(prp->getAccelLeft());
@@ -1025,9 +1042,9 @@ void PerturbationTabWidget::populateRunsTextBox()
 
 }
 
-void PerturbationTabWidget::updateRun(int row, int col)
+void PerturbationTabWidget::updateRun(int cellRow, int cellCol)
 {
-    if(tableFilled)
+    if(tableFilled && cellDoubleClicked)
     {
         int participantColCoord = 0;
         int sessionIdColCoord = 1;
@@ -1039,19 +1056,19 @@ void PerturbationTabWidget::updateRun(int row, int col)
         QString tableName("currentRunProfile");
         QRegularExpression numbers("^(.)([0-9]+)$|^(.)([A-Z])([0-9]+$)");
         //qDebug() << QString::number(row) << QString::number(col);
-        QTableWidgetItem* participantIdItem = runTableWidget->item(row, participantColCoord);
+        QTableWidgetItem* participantIdItem = runTableWidget->item(cellRow, participantColCoord);
         QString participantId(participantIdItem->text());
-        QTableWidgetItem* sessionIdItem = runTableWidget->item(row, sessionIdColCoord);
+        QTableWidgetItem* sessionIdItem = runTableWidget->item(cellRow, sessionIdColCoord);
         QString sessionNo(sessionIdItem->text());
-        QTableWidgetItem* runNumberItem = runTableWidget->item(row, runNumberColCoord);
+        QTableWidgetItem* runNumberItem = runTableWidget->item(cellRow, runNumberColCoord);
         QString runNo(runNumberItem->text());
-        QTableWidgetItem* typeNumberItem = runTableWidget->item(row, typeNumberColCoord);
+        QTableWidgetItem* typeNumberItem = runTableWidget->item(cellRow, typeNumberColCoord);
         QString type(typeNumberItem->text());
-        QTableWidgetItem* levelNumberItem = runTableWidget->item(row, levelNumberColCoord);
+        QTableWidgetItem* levelNumberItem = runTableWidget->item(cellRow, levelNumberColCoord);
         QString level(levelNumberItem->text());
-        QTableWidgetItem* stimSeqNumberItem = runTableWidget->item(row, stimSeqNumberColCoord);
+        QTableWidgetItem* stimSeqNumberItem = runTableWidget->item(cellRow, stimSeqNumberColCoord);
         QString stimOrder(stimSeqNumberItem->text());
-        QTableWidgetItem* trialNumberItem = runTableWidget->item(row, trialNumberColCoord);
+        QTableWidgetItem* trialNumberItem = runTableWidget->item(cellRow, trialNumberColCoord);
         QString trialNo(trialNumberItem->text());
         
         QRegularExpressionMatchIterator numIter = numbers.globalMatch(type);
@@ -1117,13 +1134,43 @@ void PerturbationTabWidget::updateRun(int row, int col)
         runs = prp->getRunsVector();
         qDebug() << "New Runs: " << runs[0].split(',')[0];
 
+        while(cellRow < runTableWidget->rowCount())
+        {
+            runTableWidget->item(cellRow, participantColCoord)->setText(tr("%1").arg
+                        (participantId));    
+            runTableWidget->item(cellRow, sessionIdColCoord)->setText(tr("%1").arg
+                        (sessionNo));    
+            runTableWidget->item(cellRow, runNumberColCoord)->setText(tr("%1").arg
+                        (runNo));    
+            runTableWidget->item(cellRow, typeNumberColCoord)->setText(tr("%1").arg
+                        (type));    
+            runTableWidget->item(cellRow, levelNumberColCoord)->setText(tr("%1").arg
+                        (level));    
+            runTableWidget->item(cellRow, stimSeqNumberColCoord)->setText(tr("%1").arg
+                        (stimOrder));    
+            
+            /*prp->updateRunTable(tableName, type, level, 
+                stimOrder, participantId, sessionNo, runNo, 
+                trialNo);
+            */
+
+            cellRow++;
+        }
     }
+}
+
+void PerturbationTabWidget::setCellChangedTrue(int mCellRow, int mCellCol)
+{
+    cellDoubleClicked = true;
+}
+
+void PerturbationTabWidget::setCellChangedFalse()
+{
+    cellDoubleClicked = false;
 }
 
 void PerturbationTabWidget::showSubjectView()
 {
-    sInterface = new SubjectInterface;
-    sInterface->setAttribute(Qt::WA_DeleteOnClose);
 }
 
 #include "../include/moc_PerturbationTabWidget.cpp"

@@ -42,9 +42,8 @@ let java_minlines=150
 
 let g:slime_target = "screen"
 
-let g:clang_library_path='/usr/lib64/libclang.so.3.9'
+let g:clang_library_path='/usr/lib64/llvm/4/lib64/libclang.so.4.0'
 
-let g:ycm_global_ycm_extra_conf = "~/.vim/bundle/YouCompleteMe/.ycm_extra_conf.py"
 
 let &t_SI = "\<Esc>]12;orange\x7"
   " use a red cursor otherwise

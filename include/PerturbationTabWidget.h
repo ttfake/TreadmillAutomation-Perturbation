@@ -49,6 +49,7 @@
 #include "QmlInterface.h"
 #include "DataSource.h"
 #include "SubjectInterface.h"
+#include "InstrumentationPanel.h"
 
 class PerturbationTabWidget : public QWidget
 {
@@ -71,14 +72,11 @@ class PerturbationTabWidget : public QWidget
         void setSocket(QAbstractSocket* socket);
         void addDecelerationSpeedGroupBox();
         double calculateSpeed();
-        void setHost(QString mhost);
-        void setPort(QString mport);
         void addTrialRunName();
 
     public slots:
         void showTimer(bool state);
         void randomDelay();
-        void saveVelocityData();
         void loadRunProfile();
         void showSubjectView();
 
@@ -99,11 +97,14 @@ class PerturbationTabWidget : public QWidget
         void nextRun();
         void prevRun();
         void startStim();
-        void updateRun(int row, int col);
+        void updateRun(int mCellRow, int mCellCol);
+        void setCellChangedTrue(int mCellRow, int mCellCol);
+
         
 
     private:
 
+        void setCellChangedFalse();
         SendSetpoints* sendSetpoints;
         ReadTrialNameFile* readTrialNameFile; 
         //createRemoteTab
@@ -120,11 +121,10 @@ class PerturbationTabWidget : public QWidget
         void addQuadrantTwo();
         void addQuadrantThree();
         void addQuadrantFour();
-        void addRecordDataStreamVelocityBox();
 
         void addRunGroupBox();
         QGroupBox* runGroupBox;
-        QHBoxLayout* runGroupBoxLayout;
+        QVBoxLayout* runGroupBoxLayout;
         QTextEdit* runTextBox;
         
         //populateTreadmillPerturbationTab
@@ -240,7 +240,7 @@ class PerturbationTabWidget : public QWidget
         double rightSpeedFrontValue;
         double rightSpeedRearValue;
 
-        QThread* daqThread;
+/*        QThread* daqThread;
         QGroupBox* daqDataGroupBox;
         QVBoxLayout* daqDataGroupBoxVerticalLayout;
 
@@ -256,7 +256,7 @@ class PerturbationTabWidget : public QWidget
         bool recordClicked;
 
         RecordTreadmillStream* recTreadmillStream;
-
+*/
         int currentRightSpeed;
         int currentLeftSpeed;
 
@@ -292,6 +292,8 @@ class PerturbationTabWidget : public QWidget
         void addEmgDataVisualization();
         int columnIndex;
         SubjectInterface* sInterface;
-
+        InstrumentationPanel* instPanel; 
+        bool cellDoubleClicked;
+       //QPushButton* updateRunTableBtn;
 };
 #endif

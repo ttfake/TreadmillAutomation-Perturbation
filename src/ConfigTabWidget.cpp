@@ -1,8 +1,15 @@
 #include "ConfigTabWidget.h"
 
-ConfigTabWidget::ConfigTabWidget()
+ConfigTabWidget::ConfigTabWidget(QWidget* parent, Qt::WindowFlags flags)
 {
     clicked = true;
+    pmccDaqInterface = new MccDaqInterface;
+    configGridLayout = new QGridLayout;
+    setLayout(configGridLayout);
+    addDaqControlGroupBox();
+    daqThread = new QThread;
+    connect(daqThread, SIGNAL(started()), pmccDaqInterface, SLOT(beginDataCollection()));
+    connect(pmccDaqInterface, SIGNAL(finished()), daqThread, SLOT(quit()));
 }
 
 ConfigTabWidget::~ConfigTabWidget()
@@ -97,8 +104,8 @@ void ConfigTabWidget::addDaqControlGroupBox()
     daqControlGroupBoxLayout->addWidget(channelTableWidget);
     channelHeaderStringList << "Channel" << "Label" << "Active" << "Type" << "Gain";
     channelTableWidget->setHorizontalHeaderLabels(channelHeaderStringList);
-
-    quadrantTwoPerturbationLayout->addWidget(daqControlGroupBox);
+    configGridLayout->addWidget(daqControlGroupBox);
+//    quadrantTwoPerturbationLayout->addWidget(daqControlGroupBox);
 }
 
 void ConfigTabWidget::setDaqConnectColor()
@@ -124,13 +131,7 @@ void ConfigTabWidget::startDataCollectionThread()
 {
     if(mccDaqConnectButtonWidget->getDaqConnectLightColor() == Qt::red)
     {
-        if(daqThread == NULL)
-        {
-            daqThread = new QThread;
-            pmccDaqInterface->moveToThread(daqThread);
-        }
-        connect(daqThread, SIGNAL(started()), pmccDaqInterface, SLOT(beginDataCollection()));
-        connect(pmccDaqInterface, SIGNAL(finished()), daqThread, SLOT(quit()));
+        pmccDaqInterface->moveToThread(daqThread);
         daqThread->start();
     }
 
@@ -139,7 +140,9 @@ void ConfigTabWidget::startDataCollectionThread()
         qDebug("Terminating Thread.");
         pmccDaqInterface->setRunningState(IDLE);
         emit pmccDaqInterface->finished();
+
     }
+
 }
 
 void ConfigTabWidget::setDaqText(QString title)
@@ -306,9 +309,9 @@ void ConfigTabWidget::addDaqDataGroupBox()
 
     daqDataStreamTableWidget->setHorizontalHeaderLabels(daqDataStreamHeaderStringList);
     daqDataGroupBoxVerticalLayout->addWidget(daqDataStreamTableWidget);
-    quadrantFourConfigLayout->addWidget(daqDataGroupBox);
+    //quadrantFourConfigLayout->addWidget(daqDataGroupBox);
 
-    daqDataGroupBox->hide();
+    //daqDataGroupBox->hide();
 
 }
 
@@ -333,4 +336,4 @@ void ConfigTabWidget::showDaqDataBox(bool checked)
         daqDataBoxAlert.exec();
     }
 }
-
+#include "../include/moc_ConfigTabWidget.cpp"
