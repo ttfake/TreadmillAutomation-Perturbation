@@ -53,6 +53,7 @@ void SubjectInterface::setTrialComplete(bool mTrialComplete)
 
 void SubjectInterface::setRunOver(bool mRunOver)
 {
+    QMetaObject::invokeMethod(subjectIfaceItem, "deleteSmileyFace");
 }
 
 #include "../include/moc_SubjectInterface.cpp"

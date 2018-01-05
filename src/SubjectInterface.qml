@@ -34,5 +34,4 @@ Rectangle {
     function destroyCircle() {
         circle.destroy()
     }
-
 }

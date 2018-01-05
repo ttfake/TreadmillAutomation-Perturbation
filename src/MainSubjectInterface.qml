@@ -26,4 +26,7 @@ Item {
         sIface.circleColor = "black"
         smileyLoader.source = "Smiley.qml"
     }
+
+    function deleteSmileyFace() {
+        smileyLoader.source = "SmileyGone.qml"
 } 
