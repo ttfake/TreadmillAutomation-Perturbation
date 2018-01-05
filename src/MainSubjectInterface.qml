@@ -29,4 +29,5 @@ Item {
 
     function deleteSmileyFace() {
         smileyLoader.source = "SmileyGone.qml"
+    }
 } 
