@@ -17,7 +17,7 @@ SubjectInterface::SubjectInterface(QWidget* parent, Qt::WindowFlags flags)
     subjectQuickView->setSource(QUrl("MainSubjectInterface.qml"));
     subjectQuickView->setResizeMode(QQuickView::SizeViewToRootObject);
     subjectQuickViewContainer->setSizePolicy(QSizePolicy::Minimum, QSizePolicy::Fixed);
-    subjectQuickViewContainer->setFixedSize(1950,1100);
+    subjectQuickViewContainer->setFixedSize(1920,1080);
 
     subjectIfaceItem = subjectQuickView->rootObject();
     
