@@ -24,7 +24,7 @@ Rectangle {
         width: parent.width<parent.height?parent.width:parent.height
         height: width
         anchors { horizontalCenter: parent.horizontalCenter}
-        source: "images/Icons8_flat_plus.svg"
+        source: "images/circlePlusBlkBgnd.png"
         visible: false
     }
 
