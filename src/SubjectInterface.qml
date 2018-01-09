@@ -1,5 +1,7 @@
 import QtQuick 2.3
 
+import QtQuick 2.3
+
 Rectangle {
     id: mainRect
     width: parent.width
@@ -7,31 +9,34 @@ Rectangle {
     color: "black"
     property string rectTxt
     rectTxt: "Please Stand Quietly"
-    property string circleColor
-    circleColor: "black"
     property string textColor
     textColor: "yellow"
 
-    Rectangle {
-        id: circle
-        anchors { horizontalCenter: parent.horizontalCenter; top: parent.top}
-        width: parent.width<parent.height?parent.width:parent.height
-        height: width
-        color: circleColor
-        border.color: "black"
-        border.width: 1
-        radius: width*0.5
-        Text {
-            anchors { horizontalCenter: parent.horizontalCenter}
-            y: 400
-            color: textColor
-            font.pointSize: 104 
-            font.bold: true
-            text: rectTxt
-        }
+    Text {
+        anchors { horizontalCenter: parent.horizontalCenter}
+        y: 400
+        color: textColor
+        font.pointSize: 104 
+        font.bold: true
+        text: rectTxt
     }
 
-    function destroyCircle() {
-        circle.destroy()
+    Image {
+        id: plsCircId
+        width: parent.width<parent.height?parent.width:parent.height
+        height: width
+        anchors { horizontalCenter: parent.horizontalCenter}
+        source: "images/Icons8_flat_plus.svg"
+        visible: false
+    }
+
+    function hideGreenCircle(){
+        console.debug("Hiding Circle")
+        plsCircId.visible = false
+    }
+
+    function showGreenCircle(){
+        plsCircId.visible = true
     }
 }
+

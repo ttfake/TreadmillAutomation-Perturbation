@@ -13,8 +13,12 @@ Item {
         source: "images/smiley.jpg"
     }
 
-    function deleteSmileFace(){
-        smileyId.destroy()
+    function hideSmileyFace(){
+        smileyId.visible = false
+    }
+
+    function showSmileyFace(){
+        smileId.visible = true
     }
 }
 

@@ -106,7 +106,7 @@ void MouseInterface::getRawInput()
       //      qDebug() << startingCoord;
             if(!movementDetectedBool)
             {
-                WriteLine(); // Trigger 3
+                WriteEvent(); // Trigger 3
                 emit movement();
                 movementDetectedBool = true;
             }
@@ -199,7 +199,7 @@ void MouseInterface::setLogPath(QString m_logPath)
     logPath = m_logPath;
 }
 
-void MouseInterface::SetupDigitalOutput()
+/*void MouseInterface::SetupDigitalOutput()
 {
     DAQmxCreateTask("",&taskHandle);
     DAQmxCreateCOPulseChanTime(taskHandle,"Dev1/ctr0","",DAQmx_Val_Seconds,DAQmx_Val_High,0.0,0.01,0.001);
@@ -216,6 +216,74 @@ void MouseInterface::WriteLine()
     DAQmxStartTask(taskHandle);
     DAQmxWaitUntilTaskDone(taskHandle,0.05);
     DAQmxStopTask(taskHandle);
+}*/
+
+//EVENT TRIGGER SETUP AND WRITE
+void MouseInterface::SetupEventTrigger()
+{
+    DAQmxCreateTask("",&EventHandle);
+    DAQmxCreateCOPulseChanTime(EventHandle,"Dev2/ctr0","",DAQmx_Val_Seconds,DAQmx_Val_High,0.0,0.01,0.001);
 }
 
+void MouseInterface::WriteEvent()
+{
+    DAQmxStartTask(EventHandle);
+    DAQmxWaitUntilTaskDone(EventHandle,0.05);
+    DAQmxStopTask(EventHandle);
+}
+
+
+//STIMULATION TRIGGER SETUP AND WRITE
+void MouseInterface::SetupStimTrigger()
+{
+    DAQmxCreateTask("",&StimTriggerHandle);
+    DAQmxCreateCOPulseChanTime(StimTriggerHandle,"Dev2/ctr1","",DAQmx_Val_Seconds,DAQmx_Val_Low,0.0,0.01,0.001);
+}
+
+void MouseInterface::WriteStim()
+{
+    DAQmxStartTask(StimTriggerHandle);
+    DAQmxWaitUntilTaskDone(StimTriggerHandle,0.05);
+    DAQmxStopTask(StimTriggerHandle);
+}
+
+//SETUP AND WRITE TO CHANNEL
+void MouseInterface::SetupChannelSelection()
+{
+    DAQmxCreateTask("",&ChannelSelectionHandle);
+	DAQmxCreateDOChan(ChannelSelectionHandle,"Dev2/port2/line0:3","",DAQmx_Val_ChanForAllLines);
+}
+
+void MouseInterface::WriteChannel(int channel)
+{
+	uInt8 data = 0;
+
+	if (channel < 0) {
+		data = 0;
+	}
+	else if (channel > 8) {
+		data = 8;
+	}
+	else {
+		data = channel; 
+	}
+	
+    DAQmxStartTask(ChannelSelectionHandle);
+    DAQmxWriteDigitalU8(ChannelSelectionHandle,1,1,10.0,DAQmx_Val_GroupByChannel,&data,NULL,NULL);
+}
+
+
+
+//STOP ALL TASKS
+void MouseInterface::StopTask()
+{
+    DAQmxStopTask(EventHandle);
+    DAQmxClearTask(EventHandle);
+
+	DAQmxStopTask(StimTriggerHandle);
+    DAQmxClearTask(StimTriggerHandle);
+
+	DAQmxStopTask(ChannelSelectionHandle);
+    DAQmxClearTask(ChannelSelectionHandle);
+}
 #include "../include/moc_MouseInterface.cpp"

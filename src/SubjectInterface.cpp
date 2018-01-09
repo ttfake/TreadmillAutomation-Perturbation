@@ -20,7 +20,7 @@ SubjectInterface::SubjectInterface(QWidget* parent, Qt::WindowFlags flags)
     subjectQuickViewContainer->setFixedSize(1950,1100);
 
     subjectIfaceItem = subjectQuickView->rootObject();
-
+    
     setWindowFlags(Qt::Window);
     show();
 }
@@ -31,13 +31,13 @@ SubjectInterface::~SubjectInterface()
 
 void SubjectInterface::startTrialRun(bool runStartedBool)
 {
-    QMetaObject::invokeMethod(subjectIfaceItem, "updateCircleColor", Q_ARG(QVariant, "black"));
+    QMetaObject::invokeMethod(subjectIfaceItem, "hideSmileyFace");
     QMetaObject::invokeMethod(subjectIfaceItem, "updateTextField", Q_ARG(QVariant, "Please Stand Quietly"));
 }
 
 void SubjectInterface::changeToCircle(bool circleBool)
 {
-    QMetaObject::invokeMethod(subjectIfaceItem, "updateCircleColor", Q_ARG(QVariant, "green"));
+    QMetaObject::invokeMethod(subjectIfaceItem, "showGreenCircle");
     QMetaObject::invokeMethod(subjectIfaceItem, "updateTextField", Q_ARG(QVariant, ""));
 }
 
@@ -48,12 +48,14 @@ void SubjectInterface::changeCircleColor(QColor circleColor)
 
 void SubjectInterface::setTrialComplete(bool mTrialComplete)
 {
-    QMetaObject::invokeMethod(subjectIfaceItem, "updateCircleToSmiley");
+    QMetaObject::invokeMethod(subjectIfaceItem, "hideGreenCircle");
+    QMetaObject::invokeMethod(subjectIfaceItem, "showSmileyFace");
 }
 
 void SubjectInterface::setRunOver(bool mRunOver)
 {
-    QMetaObject::invokeMethod(subjectIfaceItem, "deleteSmileyFace");
+    QMetaObject::invokeMethod(subjectIfaceItem, "hideGreenCircle");
+    QMetaObject::invokeMethod(subjectIfaceItem, "hideSmileyFace");
 }
 
 #include "../include/moc_SubjectInterface.cpp"

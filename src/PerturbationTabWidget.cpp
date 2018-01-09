@@ -458,7 +458,9 @@ void PerturbationTabWidget::addStartPertRunGroupBox()
     readTrialNameFile = new ReadTrialNameFile("config/TrialNames.txt");
     mouseInterface = new MouseInterface;
     mouseInterface->openPort();
-    mouseInterface->SetupDigitalOutput();
+//    mouseInterface->SetupDigitalOutput();
+    mouseInterface->SetupEventTrigger();
+    mouseInterface->SetupStimTrigger();
     // The following connect waits for a change in speed data from the treadmill 
     // and when the treadmillStarted signal is received (a change in the treadmill 
     // speed is detected), treadmillWait is activated. This connect will be changed
@@ -468,7 +470,7 @@ void PerturbationTabWidget::addStartPertRunGroupBox()
     connect(startPertRunBtn, SIGNAL(clicked()), SLOT(getTrialName()));
 //    connect(startPertRunBtn, SIGNAL(clicked()), SLOT(startTreadmill()));
     connect(startPertRunBtn, SIGNAL(clicked()), SLOT(randomDelay()));
-    connect(startPertRunBtn, SIGNAL(clicked()), mouseInterface, SLOT(WriteLine()));  // Trigger 1
+    connect(startPertRunBtn, SIGNAL(clicked()), mouseInterface, SLOT(WriteEvent()));  // Trigger 1
     connect(mouseInterface, SIGNAL(movement()), SLOT(treadmillWait()));
     connect(mouseInterface, SIGNAL(movementStopped()), SLOT(slotTimeout()));
     connect(startPertRunBtn, SIGNAL(clicked()), mouseInterface, SLOT(setPerturbationActiveBoolTrue()));
@@ -683,7 +685,7 @@ void PerturbationTabWidget::startTreadmill()
     //-----------------------------------------------------------------------
     
     accelerationSignalSentLog.close();
-    mouseInterface->WriteLine(); // Trigger 2
+    mouseInterface->WriteEvent(); // Trigger 2
     sendSetpoints->sendSetpoints(SendSetpoints::TreadmillProperty::ACCEL, SendSetpoints::NormalSetpoint);
     //    recTreadmillStream->setSharedSocket(pertSocket);
 //    recTreadmillStream->startDataCollection();
@@ -720,8 +722,7 @@ void PerturbationTabWidget::treadmillWait()
     //-----------------------------------------------------------------------
     
     accelerationTimerStartedLog.close();
-    mouseInterface->WriteLine(); // Trigger 4
- 
+    mouseInterface->WriteEvent(); // Trigger 4
     QTimer::singleShot(retAccelValue, this, SLOT(startDecelTimer()));
 }
 
@@ -785,7 +786,7 @@ void PerturbationTabWidget::startDecelTimer()
     //-----------------------------------------------------------------------
     
     decelerationTimerStartedLog.close();
-    mouseInterface->WriteLine(); // Trigger 5
+    mouseInterface->WriteEvent(); // Trigger 5
 //    mouseInterface->setPerturbationActiveBoolFalse();
 //    mouseInterface->setMovementDetectedBool(false);
    
@@ -952,6 +953,9 @@ void PerturbationTabWidget::nextRun()
 
 void PerturbationTabWidget::prevRun()
 {
+    sInterface->setRunOver(true);
+    sInterface->startTrialRun(true);
+
     setCellChangedFalse();
     if(currentRunRowIndex > 0)
     {

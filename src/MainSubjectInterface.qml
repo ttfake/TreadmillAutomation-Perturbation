@@ -8,26 +8,38 @@ Item {
 
     SubjectInterface {
         id: sIface
+        rectTxt: "Please Stand Quietly"
     }
 
-    Loader { id: smileyLoader }
+    Smiley {
+        id: smiley
+        visible: false
+    }
 
+    
     function updateTextField(text){
         console.debug("setTextField: " + text)
         sIface.rectTxt = text
     }
 
-    function updateCircleColor(color){
-        sIface.circleColor = color
+    function showGreenCircle(){
+        sIface.showGreenCircle()
+    }
+
+    function hideGreenCircle(){
+        sIface.hideGreenCircle()
     }
 
     function updateCircleToSmiley(){
-        console.debug("smiley")
         sIface.circleColor = "black"
-        smileyLoader.source = "Smiley.qml"
+        showSmileyFace()
+    }
+    
+    function hideSmileyFace() {
+        smiley.visible = false
     }
 
-    function deleteSmileyFace() {
-        smileyLoader.item.deleteSmileyFace()
+    function showSmileyFace() {
+        smiley.visible = true
     }
 } 
