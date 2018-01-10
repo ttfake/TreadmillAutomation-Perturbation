@@ -3,8 +3,8 @@ import QtQuick.Controls 1.4
 
 Item {
     id: mainsubjiface
-    width: 1950
-    height: 1460
+    width: 1920
+    height: 1080
 
     SubjectInterface {
         id: sIface
