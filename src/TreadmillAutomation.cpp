@@ -68,6 +68,9 @@ void TreadmillAutomation::createFileMenu()
     daqViewAct->setText("Show DAQ Data View");
     connect(daqViewAct, SIGNAL(changed()), SLOT(showDaqDataBox()));
 
+    showRunProfileCol = menuView->addMenu(tr("&Show Column"));
+
+
     /*    menuMouseScan = new QMenu(menuBar);
     menuMouseScan->setObjectName(QStringLiteral("menuMouseScan"));
     menuMouseScan->setTitle(QApplication::translate("TreadmillAutomation", "Mouse Interface", Q_NULLPTR));

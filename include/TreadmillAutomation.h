@@ -127,6 +127,8 @@ class TreadmillAutomation : public QMainWindow
         SubjectInterface* sInterface;
         
         void uncheckDaqDataView();
+
+        QMenu* showRunProfileCol; 
 };
 
 #endif

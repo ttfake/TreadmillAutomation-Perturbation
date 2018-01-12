@@ -41,7 +41,7 @@ void PerturbationTabWidget::addQuadrantOne()
     quadrantOnePerturbationLayout = new QVBoxLayout;
     quadrantOneGroupBox->setLayout(quadrantOnePerturbationLayout);
     perturbationTabLayout->addWidget(quadrantOneGroupBox, 0,0);
-
+    addPersonStimGroupBox();
     addRunGroupBox();
 }
 
@@ -201,6 +201,27 @@ void PerturbationTabWidget::addDecelerationSpeedGroupBox()
     quadrantThreePerturbationLayout->addWidget(decelSpeedGroupBox);
 }
 
+void PerturbationTabWidget::addPersonStimGroupBox()
+{
+    personStimGroupBox = new QGroupBox;
+    personStimGroupBoxHBoxLayout = new QHBoxLayout;
+    personStimGroupBox->setLayout(personStimGroupBoxHBoxLayout);
+    personSessionGroupBox = new QGroupBox;
+    personSessionVBoxLayout = new QVBoxLayout;
+    personSessionGroupBox->setLayout(personSessionVBoxLayout);
+    rightSoleusStimGroupBox = new QGroupBox;
+    rightSoleusStimVerticalGroupBoxLayout = new QVBoxLayout;
+    rightSoleusStimGroupBox->setLayout(rightSoleusStimVerticalGroupBoxLayout);
+    leftSoleusStimGroupBox = new QGroupBox;
+    leftSoleusStimVerticalGroupBoxLayout = new QVBoxLayout;
+    leftSoleusStimGroupBox->setLayout(leftSoleusStimVerticalGroupBoxLayout);
+
+    personDataLabel = new QLabel;
+    personData = new QLabel;
+    
+    quadrantOnePerturbationLayout->addWidget(personStimGroupBox);
+}
+
 void PerturbationTabWidget::addRunGroupBox()
 {
     runGroupBox = new QGroupBox;
@@ -229,16 +250,23 @@ void PerturbationTabWidget::addRunGroupBox()
     runTableWidget->horizontalHeader()->setFont(runTableHeaderFont);
     runTableWidget->setColumnCount(8);
     runTableWidget->horizontalHeader()->setSectionResizeMode(QHeaderView::Stretch);
-//    runTableWidget->resizeColumnsToContents();
+    runTableWidget->resizeColumnsToContents();
     runHeader << "Subject #" << "Session #" << "Run #" << "Type #" << "Level #"
         << "Stim Seq" << "Trial #" << "Status";
     runTableWidget->setHorizontalHeaderLabels(runHeader);
     runTableWidget->setColumnHidden(0, true);
     runTableWidget->setColumnHidden(1, true);
+    runTableWidget->setColumnHidden(3, true);
 
 //    quadrantThreePerturbationLayout->addWidget(runGroupBox);
     quadrantOnePerturbationLayout->addWidget(runGroupBox);
 }
+
+void PerturbationTabWidget::showRunTableCol(int colNumber, bool showBool)
+{
+    runTableWidget->setColumnHidden(colNumber, showBool);
+}
+
 
 void PerturbationTabWidget::addTimerGroupBox()
 {
@@ -1078,6 +1106,12 @@ void PerturbationTabWidget::updateRun(int cellRow, int cellCol)
         QTableWidgetItem* trialNumberItem = runTableWidget->item(cellRow, trialNumberColCoord);
         QString trialNo(trialNumberItem->text());
         
+        prp->updateRunTable(tableName, type, level, 
+                stimOrder, participantId, sessionNo, runNo, 
+                trialNo);
+        prp->clearRunResultsVector();
+        prp->getRuns();
+
         QRegularExpressionMatchIterator numIter = numbers.globalMatch(type);
         QString typeNum;
         QString levelNum;
@@ -1099,12 +1133,7 @@ void PerturbationTabWidget::updateRun(int cellRow, int cellCol)
         }
 
         
-        prp->updateRunTable(tableName, type, level, 
-                stimOrder, participantId, sessionNo, runNo, 
-                trialNo);
-        prp->clearRunResultsVector();
-        prp->getRuns();
-        
+                
         QMessageBox::StandardButton reply;
 /*        reply = QMessageBox::question(this, "Test", "Would you like to set this to ",
                 QMessageBox::Yes|QMessageBox::No);

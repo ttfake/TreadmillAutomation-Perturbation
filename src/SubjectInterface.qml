@@ -21,8 +21,9 @@ Rectangle {
 
     Image {
         id: plsCircId
-        width: parent.width<parent.height?parent.width:parent.height
-        height: width
+        y: 350
+        width: 400
+        height: 400
         anchors { horizontalCenter: parent.horizontalCenter}
         source: "images/GreenCircle_Pertv3.png"
         visible: false

@@ -294,6 +294,19 @@ class PerturbationTabWidget : public QWidget
         SubjectInterface* sInterface;
         InstrumentationPanel* instPanel; 
         bool cellDoubleClicked;
+        void showRunTableCol(int colNumber, bool showBool);
+        
+        void addPersonStimGroupBox();
+        QGroupBox* personStimGroupBox;
+        QHBoxLayout* personStimGroupBoxHBoxLayout;
+        QGroupBox* personSessionGroupBox;
+        QVBoxLayout* personSessionVBoxLayout;
+        QGroupBox* leftSoleusStimGroupBox;
+        QVBoxLayout* leftSoleusStimVerticalGroupBoxLayout;
+        QGroupBox* rightSoleusStimGroupBox;
+        QVBoxLayout* rightSoleusStimVerticalGroupBoxLayout;
+        QLabel* personDataLabel;
+        QLabel* personData;
        //QPushButton* updateRunTableBtn;
 };
 #endif
