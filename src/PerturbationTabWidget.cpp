@@ -1050,7 +1050,7 @@ void PerturbationTabWidget::startStim()
     }
     DS8Controller.ToggleOutput(TRUE);
     qDebug() << "Stim Current: " << stimCurrent.toInt();
-    stimCrnt = stimCurrent.toInt() * multFactor;
+    stimCrnt = stimCurrent.toInt();
     DS8Controller.SetVariables(NULL,NULL,stimCrnt,NULL,NULL,NULL,TRUE);
     DS8Controller.UpdateDS8();
     //randomDelay();

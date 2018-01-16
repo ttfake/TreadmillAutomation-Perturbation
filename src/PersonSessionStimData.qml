@@ -16,15 +16,14 @@ Item {
     currentStep: spinbox.value
     property string subjectId
     property string sessionId
-    property string currentPlaceholderText
 
     function incrementCurrent()
     {
-        currentValue += currentStep
+        currentValue += (currentStep * 10)
     }
     function decrementCurrent()
     {
-        currentValue -= currentStep
+        currentValue -= (currentStep * 10)
     }
     function setSubjectId(subject)
     {
@@ -82,6 +81,7 @@ Item {
             }
 
             TextField {
+                   property string currentPlaceholderText
                    id: currentTextField;
                    currentPlaceholderText: (currentValue/10).toLocaleString(Qt.locale("en_US"));
                    placeholderText: currentPlaceholderText;
@@ -168,7 +168,7 @@ Item {
                       stepSize: step;
                       value: currentStep;
                       style: SpinBoxStyle {
-                          textColor: "#797777"
+                          textColor: "#656363"
                           background: Rectangle {
                               implicitWidth: 150
                               implicitHeight: 50
