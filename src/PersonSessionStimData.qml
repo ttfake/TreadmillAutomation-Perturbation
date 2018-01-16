@@ -82,7 +82,7 @@ Item {
 
             TextField {
                    id: currentTextField;
-                   placeholderText: currentValue.toLocaleString(Qt.locale("en_US"));
+                   placeholderText: (currentValue/10).toLocaleString(Qt.locale("en_US"));
                    readOnly: true;
                    Layout.row: 2;
                    Layout.column: 1;
@@ -94,7 +94,7 @@ Item {
                               implicitWidth: 150
                               implicitHeight: 50
                               border.color: "gray"
-                              color: "gray"
+                              color: "dark gray"
                               radius: 2
                           }
                       }

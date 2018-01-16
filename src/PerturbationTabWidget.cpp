@@ -18,7 +18,7 @@ PerturbationTabWidget::PerturbationTabWidget(QWidget* parent, Qt::WindowFlags fl
 	{
 		//DS8Controller.SetVariables(NULL,NULL,10,NULL,NULL,NULL,TRUE); //Set to Defaults
 		DS8Controller.ToggleOutput(FALSE);
-		DS8Controller.SetVariables(NULL,NULL,0,NULL,NULL,NULL,TRUE); //Set to Defaults
+		DS8Controller.SetVariables(NULL,NULL,20,NULL,NULL,NULL,TRUE); //Set to Defaults
 		//sprintf_s(str,"%d",e);
 		//printf ("Error: %s\n",str);
 		printf("No Errors \n");
@@ -29,6 +29,7 @@ PerturbationTabWidget::PerturbationTabWidget(QWidget* parent, Qt::WindowFlags fl
 
 PerturbationTabWidget::~PerturbationTabWidget()
 {
+    DS8Controller.CloseDS8();
 }
 
 void PerturbationTabWidget::createTreadmillPerturbationTab()
@@ -1041,13 +1042,15 @@ void PerturbationTabWidget::prevRun()
 void PerturbationTabWidget::startStim()
 {
     QVariant stimCurrent;
+    int multFactor(10);
     if(!(QMetaObject::invokeMethod(personSessionStimQuickViewItem, "getCurrent", Q_RETURN_ARG(QVariant, stimCurrent))))
     {
         qDebug("Method failed to invoke");
     }
     DS8Controller.ToggleOutput(TRUE);
     qDebug() << "Stim Current: " << stimCurrent.toInt();
-    DS8Controller.SetVariables(NULL,NULL,stimCurrent.toInt(),NULL,NULL,NULL,TRUE);
+    DS8Controller.SetVariables(NULL,NULL,(stimCurrent.toInt()) * multFactor,NULL,NULL,NULL,TRUE);
+    DS8Controller.UpdateDS8();
     //randomDelay();
 }
 
