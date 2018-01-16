@@ -12,6 +12,19 @@ PerturbationTabWidget::PerturbationTabWidget(QWidget* parent, Qt::WindowFlags fl
     cellDoubleClicked = false;
     InstrumentationPanel* instPanel = new InstrumentationPanel;
     connect(prp, SIGNAL(startStimulation()), SLOT(startStim()));
+
+    
+	if (DS8Controller.ErrorCode != -1)
+	{
+		//DS8Controller.SetVariables(NULL,NULL,10,NULL,NULL,NULL,TRUE); //Set to Defaults
+		DS8Controller.ToggleOutput(FALSE);
+		DS8Controller.SetVariables(NULL,NULL,0,NULL,NULL,NULL,TRUE); //Set to Defaults
+		//sprintf_s(str,"%d",e);
+		//printf ("Error: %s\n",str);
+		printf("No Errors \n");
+		//DS8Controller.SetVariables(NULL,NULL,10,NULL,NULL,NULL,TRUE); //Set to Defaults
+	}
+
 }
 
 PerturbationTabWidget::~PerturbationTabWidget()
@@ -37,11 +50,11 @@ void PerturbationTabWidget::populateTreadmillPerturbationTab()
 void PerturbationTabWidget::addQuadrantOne()
 {
     quadrantOneGroupBox = new QGroupBox;
-    quadrantOneGroupBox->setFixedSize(975,500);
+    quadrantOneGroupBox->setFixedSize(975,450);
     quadrantOnePerturbationLayout = new QVBoxLayout;
     quadrantOneGroupBox->setLayout(quadrantOnePerturbationLayout);
     perturbationTabLayout->addWidget(quadrantOneGroupBox, 0,0);
-    addPersonStimGroupBox();
+
     addRunGroupBox();
 }
 
@@ -52,8 +65,8 @@ void PerturbationTabWidget::addQuadrantTwo()
     quadrantTwoPerturbationLayout = new QVBoxLayout;
     quadrantTwoGroupBox->setLayout(quadrantTwoPerturbationLayout);
     perturbationTabLayout->addWidget(quadrantTwoGroupBox, 0,1);
-    
-    addEmgDataVisualization();
+    addPersonStimGroupBox();
+    //addEmgDataVisualization();
 }
 
 void PerturbationTabWidget::addQuadrantThree()
@@ -215,11 +228,27 @@ void PerturbationTabWidget::addPersonStimGroupBox()
     leftSoleusStimGroupBox = new QGroupBox;
     leftSoleusStimVerticalGroupBoxLayout = new QVBoxLayout;
     leftSoleusStimGroupBox->setLayout(leftSoleusStimVerticalGroupBoxLayout);
-
-    personDataLabel = new QLabel;
-    personData = new QLabel;
     
-    quadrantOnePerturbationLayout->addWidget(personStimGroupBox);
+    personSessionStimQuickView = new QQuickView;
+    personSessionStimQuickViewContainer = QWidget::createWindowContainer(personSessionStimQuickView, this);
+#ifdef Q_OS_WIN
+    QString extraImportPath(QStringLiteral("%1/../../../../%2"));
+#else
+    QString extraImportPath(QStringLiteral("%1/../../../%2"));
+#endif
+    personSessionStimQuickView->engine()->addImportPath(extraImportPath.arg(QGuiApplication::applicationDirPath(),
+                QString::fromLatin1("qml")));
+    QObject::connect(personSessionStimQuickView->engine(), &QQmlEngine::quit, personSessionStimQuickView, &QWindow::close);
+
+    personSessionStimQuickView->setTitle(QStringLiteral("Person / Session / Stimulation Panel"));
+    personSessionStimQuickView->setSource(QUrl("PersonSessionStimData.qml"));
+    personSessionStimQuickView->setResizeMode(QQuickView::SizeViewToRootObject);
+    personSessionStimQuickViewContainer->setSizePolicy(QSizePolicy::Minimum, QSizePolicy::Fixed);
+    personSessionStimQuickViewContainer->setFixedSize(750,750);
+    
+    personSessionStimQuickViewItem = personSessionStimQuickView->rootObject();
+
+    quadrantTwoPerturbationLayout->addWidget(personSessionStimQuickViewContainer);
 }
 
 void PerturbationTabWidget::addRunGroupBox()
@@ -227,7 +256,7 @@ void PerturbationTabWidget::addRunGroupBox()
     runGroupBox = new QGroupBox;
     runTableWidget = new QTableWidget;
     runTableWidget->setStyleSheet("selection-background-color : green");
-    runTableWidget->setFixedSize(900,400);
+    runTableWidget->setFixedSize(900,300);
     runTableWidget->setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOn);
     runTableWidget->setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOn);
     //updateRunTableBtn = new QPushButton;
@@ -507,7 +536,7 @@ void PerturbationTabWidget::addStartPertRunGroupBox()
     connect(startPertRunBtn, SIGNAL(clicked()), mouseInterface, SLOT(setPerturbationActiveBoolTrue()));
     connect(nextPertRunBtn, SIGNAL(clicked()), SLOT(nextRun()));
     connect(prevPertRunBtn, SIGNAL(clicked()), SLOT(prevRun()));
-    connect(startStimRunBtn, SIGNAL(clicked()), SLOT(slotTimeout()));
+    connect(startStimRunBtn, SIGNAL(clicked()), SLOT(startStim()));
 }
 
 void PerturbationTabWidget::addEmgDataVisualization()
@@ -537,7 +566,7 @@ void PerturbationTabWidget::addEmgDataVisualization()
           QQmlApplicationEngine engine;
           engine.load(QUrl(QStringLiteral("QmlInterface.qml")));
     */
-    quadrantTwoPerturbationLayout->addWidget(container);
+//    quadrantTwoPerturbationLayout->addWidget(container);
 }
 
 /*void PerturbationTabWidget::addRecordDataStreamVelocityBox()
@@ -1011,7 +1040,14 @@ void PerturbationTabWidget::prevRun()
 
 void PerturbationTabWidget::startStim()
 {
-    //qDebug() << "Starting Stimulation...";
+    QVariant stimCurrent;
+    if(!(QMetaObject::invokeMethod(personSessionStimQuickViewItem, "getCurrent", Q_RETURN_ARG(QVariant, stimCurrent))))
+    {
+        qDebug("Method failed to invoke");
+    }
+    DS8Controller.ToggleOutput(TRUE);
+    qDebug() << "Stim Current: " << stimCurrent.toInt();
+    DS8Controller.SetVariables(NULL,NULL,stimCurrent.toInt(),NULL,NULL,NULL,TRUE);
     //randomDelay();
 }
 

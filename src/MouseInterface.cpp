@@ -11,7 +11,7 @@ MouseInterface::MouseInterface()
     QString description;
     QString manufacturer;
     QString serialNumber;
-
+    SetupStimTrigger();
     movementBool = false;
 
 /*    for (const QSerialPortInfo &serialPortInfo : serialPortInfos) {
@@ -52,7 +52,7 @@ int MouseInterface::openPort()
     QTextStream standardOutput(stdout);
 
     serialPort = new QSerialPort;
-    QString serialPortName = "com7"; //argumentList.at(1);
+    QString serialPortName = "com4"; //argumentList.at(1);
     qDebug() << serialPortName;
     serialPort->setPortName(serialPortName);
 
@@ -91,7 +91,7 @@ void MouseInterface::getRawInput()
         data = serialPort->readLine();
         dataString = QString::fromLocal8Bit(data);
 
-    //    qDebug() << "Reading Data";
+        qDebug() << "Reading Data";
         //-----------------Current Unix Timestamp--------------------------------
         qint64 currentMsecsSinceEpoch = QDateTime::currentMSecsSinceEpoch();
         movementDetectedLog.write(QString::number(currentMsecsSinceEpoch).toUtf8());

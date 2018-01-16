@@ -50,6 +50,7 @@
 #include "DataSource.h"
 #include "SubjectInterface.h"
 #include "InstrumentationPanel.h"
+#include "DS8library.h"
 
 class PerturbationTabWidget : public QWidget
 {
@@ -307,6 +308,11 @@ class PerturbationTabWidget : public QWidget
         QVBoxLayout* rightSoleusStimVerticalGroupBoxLayout;
         QLabel* personDataLabel;
         QLabel* personData;
-       //QPushButton* updateRunTableBtn;
+        QQuickView* personSessionStimQuickView;
+        QWidget* personSessionStimQuickViewContainer;
+        QObject* personSessionStimQuickViewItem;
+        DS8library::DS8Functions DS8Controller;
+
+        //QPushButton* updateRunTableBtn;
 };
 #endif
