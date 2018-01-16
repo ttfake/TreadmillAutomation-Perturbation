@@ -16,6 +16,7 @@ Item {
     currentStep: spinbox.value
     property string subjectId
     property string sessionId
+    property string currentPlaceholderText
 
     function incrementCurrent()
     {
@@ -82,7 +83,8 @@ Item {
 
             TextField {
                    id: currentTextField;
-                   placeholderText: (currentValue/10).toLocaleString(Qt.locale("en_US"));
+                   currentPlaceholderText: (currentValue/10).toLocaleString(Qt.locale("en_US"));
+                   placeholderText: currentPlaceholderText;
                    readOnly: true;
                    Layout.row: 2;
                    Layout.column: 1;
@@ -94,7 +96,7 @@ Item {
                               implicitWidth: 150
                               implicitHeight: 50
                               border.color: "gray"
-                              color: "dark gray"
+                              color: "gray"
                               radius: 2
                           }
                       }
@@ -166,7 +168,7 @@ Item {
                       stepSize: step;
                       value: currentStep;
                       style: SpinBoxStyle {
-                          textColor: "dark gray"
+                          textColor: "#797777"
                           background: Rectangle {
                               implicitWidth: 150
                               implicitHeight: 50

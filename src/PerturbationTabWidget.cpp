@@ -1043,13 +1043,15 @@ void PerturbationTabWidget::startStim()
 {
     QVariant stimCurrent;
     int multFactor(10);
+    int stimCrnt;
     if(!(QMetaObject::invokeMethod(personSessionStimQuickViewItem, "getCurrent", Q_RETURN_ARG(QVariant, stimCurrent))))
     {
         qDebug("Method failed to invoke");
     }
     DS8Controller.ToggleOutput(TRUE);
     qDebug() << "Stim Current: " << stimCurrent.toInt();
-    DS8Controller.SetVariables(NULL,NULL,(stimCurrent.toInt()) * multFactor,NULL,NULL,NULL,TRUE);
+    stimCrnt = stimCurrent.toInt() * multFactor;
+    DS8Controller.SetVariables(NULL,NULL,stimCrnt,NULL,NULL,NULL,TRUE);
     DS8Controller.UpdateDS8();
     //randomDelay();
 }
