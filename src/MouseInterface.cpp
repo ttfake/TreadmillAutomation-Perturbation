@@ -11,7 +11,9 @@ MouseInterface::MouseInterface()
     QString description;
     QString manufacturer;
     QString serialNumber;
+    SetupEventTrigger();
     SetupStimTrigger();
+    SetupChannelSelection();
     movementBool = false;
 
 /*    for (const QSerialPortInfo &serialPortInfo : serialPortInfos) {

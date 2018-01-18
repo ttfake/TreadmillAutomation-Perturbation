@@ -124,6 +124,30 @@ double TreadmillAutomationDbIFace::getAccelRightFromDb(QString typeNum, QString 
     return accel.toDouble();
 }
 
+QString TreadmillAutomationDbIFace::getStimSeqFromDb(int stimLvl)
+{
+    qDebug() << "printing stim level: " << stimLvl;
+    QString stimLevel;
+    QString columns("stimSeq");
+    QString table("runStimOrder ");
+    QString where(" WHERE stimLevel=" + QString::number(stimLvl));
+    QSqlQuery query = selectQueryDb(columns, table, true, where);
+
+    if(query.first())
+    {
+        stimLevel = query.value(0).toString();
+    }
+    else
+    {
+        stimLevel = "Acceleration Not Found";
+    }
+
+    qDebug() << "Stim Seq from DB: " << stimLevel;
+
+    return stimLevel;
+
+}
+
 
 void TreadmillAutomationDbIFace::setAccelLeft(double accel)
 {
@@ -286,11 +310,12 @@ void TreadmillAutomationDbIFace::retrieveRun(int runAddIndex)
         qDebug() << runsVectorIndex_;
         QString type;
         QString level;
+        QString stimLevel;
         QRegularExpression numbers("^.*([0-9][0-9]$)");
         QString run = runResults[runsVectorIndex_];
         QRegularExpressionMatchIterator typeNumIter = numbers.globalMatch(run.split(',')[0]);
         QRegularExpressionMatchIterator levelNumIter = numbers.globalMatch(run.split(',')[1]);
-
+        QRegularExpressionMatchIterator stimNumIter = numbers.globalMatch(run.split(',')[2]);
         while (typeNumIter.hasNext()) 
         {
             QRegularExpressionMatch match = typeNumIter.next();
@@ -324,6 +349,18 @@ void TreadmillAutomationDbIFace::retrieveRun(int runAddIndex)
             setDecelRight(getDecelRightFromDb(type,level));
         }
 
+        while (stimNumIter.hasNext()) 
+        {
+            QRegularExpressionMatch match = stimNumIter.next();
+            qDebug() << "StimLevelMatch: " << match;
+            stimLevel = match.captured(1);
+        }
+
+        qDebug() << "StimLevel: " << stimLevel.toInt();
+
+        setStimSeq(getStimSeqFromDb(stimLevel.toInt()));
+
+        
         setAccelTime(getAccelTimeFromDb(type));
         if(firstRun)
         {
@@ -375,6 +412,16 @@ QSqlQuery TreadmillAutomationDbIFace::selectQueryDb(QString columns, QString tab
     }
 
     return query;
+}
+
+void TreadmillAutomationDbIFace::setStimSeq(QString mStimSeq)
+{
+    stimSeq = mStimSeq;
+}
+
+QString TreadmillAutomationDbIFace::getStimSeq()
+{
+    return stimSeq;
 }
 
 int TreadmillAutomationDbIFace::getDirectionFromDb(QString typeNum, QString levelNum)

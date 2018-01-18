@@ -70,6 +70,12 @@ class TreadmillAutomationDbIFace : public QWidget
         int getParticipantMotionFromDb(QString typeNum, QString levelNum);
         int getDirectionFromDb(QString type, QString level);
 
+        void setStimSeq(QString stim);
+        QString getStimSeq();
+        QString getStimSeqFromDb(int stimLvl);
+
+        QString stimSeq;
+
     signals:
         startStimulation();
     

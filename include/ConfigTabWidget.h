@@ -16,6 +16,9 @@
 #include <QCheckBox>
 #include <QFileDialog>
 #include <QMessageBox>
+#include <QQuickView>
+#include <QGuiApplication>
+#include <QQmlEngine>
 
 #include "MccDaqConnectButtonWidget.h"
 #include "MccDaqRecordButtonWidget.h"
@@ -109,6 +112,9 @@ class ConfigTabWidget : public QWidget
         int colNo;
 
         int currentChannel;
- 
+
+        void addStimTimerQmlBox();
+        QQuickView* timerQuickView;
+        QWidget* timerQuickViewContainer;
 };
 #endif

@@ -6,6 +6,7 @@ ConfigTabWidget::ConfigTabWidget(QWidget* parent, Qt::WindowFlags flags)
     pmccDaqInterface = new MccDaqInterface;
     configGridLayout = new QGridLayout;
     setLayout(configGridLayout);
+    addStimTimerQmlBox();
     addDaqControlGroupBox();
     daqThread = new QThread;
     connect(daqThread, SIGNAL(started()), pmccDaqInterface, SLOT(beginDataCollection()));
@@ -15,6 +16,30 @@ ConfigTabWidget::ConfigTabWidget(QWidget* parent, Qt::WindowFlags flags)
 ConfigTabWidget::~ConfigTabWidget()
 {
 }
+
+void ConfigTabWidget::addStimTimerQmlBox()
+{
+    timerQuickView = new QQuickView;
+    timerQuickViewContainer = QWidget::createWindowContainer(timerQuickView, this);
+#ifdef Q_OS_WIN
+    QString extraImportPath(QStringLiteral("%1/../../../../%2"));
+#else
+    QString extraImportPath(QStringLiteral("%1/../../../%2"));
+#endif
+    timerQuickView->engine()->addImportPath(extraImportPath.arg(QGuiApplication::applicationDirPath(),
+                QString::fromLatin1("qml")));
+    QObject::connect(timerQuickView->engine(), &QQmlEngine::quit, timerQuickView, &QWindow::close);
+
+    timerQuickView->setTitle(QStringLiteral("Timer Panel"));
+    timerQuickView->setSource(QUrl("Timer.qml"));
+    timerQuickView->setResizeMode(QQuickView::SizeViewToRootObject);
+    timerQuickViewContainer->setSizePolicy(QSizePolicy::Minimum, QSizePolicy::Fixed);
+    timerQuickViewContainer->setFixedSize(750,750);
+    
+    configGridLayout->addWidget(timerQuickViewContainer, 0, 0);
+
+}
+
 
 void ConfigTabWidget::addDaqControlGroupBox()
 {
@@ -104,8 +129,7 @@ void ConfigTabWidget::addDaqControlGroupBox()
     daqControlGroupBoxLayout->addWidget(channelTableWidget);
     channelHeaderStringList << "Channel" << "Label" << "Active" << "Type" << "Gain";
     channelTableWidget->setHorizontalHeaderLabels(channelHeaderStringList);
-    configGridLayout->addWidget(daqControlGroupBox);
-//    quadrantTwoPerturbationLayout->addWidget(daqControlGroupBox);
+    configGridLayout->addWidget(daqControlGroupBox, 0, 1);
 }
 
 void ConfigTabWidget::setDaqConnectColor()

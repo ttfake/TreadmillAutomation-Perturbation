@@ -146,4 +146,9 @@ int ParseRunProfile::getDirectionFromDb(QString type, QString level)
     return treadmillDb->getDirectionFromDb(type, level);
 }
 
+QString ParseRunProfile::getStimSeq()
+{
+    return treadmillDb->getStimSeq();
+}
+
 #include "../include/moc_ParseRunProfile.cpp"

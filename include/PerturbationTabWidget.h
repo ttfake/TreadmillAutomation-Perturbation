@@ -100,7 +100,8 @@ class PerturbationTabWidget : public QWidget
         void startStim();
         void updateRun(int mCellRow, int mCellCol);
         void setCellChangedTrue(int mCellRow, int mCellCol);
-
+        void setLeftStimCurrent();
+        void setRightStimCurrent();
         
 
     private:
@@ -312,7 +313,10 @@ class PerturbationTabWidget : public QWidget
         QWidget* personSessionStimQuickViewContainer;
         QObject* personSessionStimQuickViewItem;
         DS8library::DS8Functions DS8Controller;
-
+        void setStimChannel();
+        int stimChannelA;
+        int stimChannelB;
+        
         //QPushButton* updateRunTableBtn;
 };
 #endif

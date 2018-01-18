@@ -8,22 +8,37 @@ Item {
     id: mainStimIface
     width: 950
     height: 750
-    property double currentValue
-    currentValue: 0.0
+    property double leftCurrentValue
+    leftCurrentValue: 0.0
+    property double rightCurrentValue
+    rightCurrentValue: 0.0
     property double step
     step: 0.25
     property double currentStep
     currentStep: spinbox.value
     property string subjectId
     property string sessionId
+    property string leftStimUpButtonColor
+    leftStimUpButtonColor: "grey"
 
-    function incrementCurrent()
+    signal changeCurrent()
+    
+    function incrementLeftCurrent()
     {
-        currentValue += (currentStep * 10)
+        leftCurrentValue += (currentStep * 10)
+        setLeftStimButtonColor()
     }
-    function decrementCurrent()
+    function decrementLeftCurrent()
     {
-        currentValue -= (currentStep * 10)
+        leftCurrentValue -= (currentStep * 10)
+    }
+    function incrementRightCurrent()
+    {
+        rightCurrentValue += (currentStep * 10)
+    }
+    function decrementRightCurrent()
+    {
+        rightCurrentValue -= (currentStep * 10)
     }
     function setSubjectId(subject)
     {
@@ -33,9 +48,17 @@ Item {
     {
         sessionId: session
     }
-    function getCurrent()
+    function getLeftCurrent()
     {
-        return currentValue
+        return leftCurrentValue
+    }
+    function getRightCurrent()
+    {
+        return rightCurrentValue
+    }
+    function setLeftStimButtonColor()
+    {
+        leftStimUpButtonColor: "blue"
     }
    
     Rectangle {
@@ -70,8 +93,8 @@ Item {
                    Layout.row: 1;
                    Layout.column: 0; 
                  }
-            Text { id: stimCurrentLevel;
-                   text: "Stimulation Current: "
+            Text { id: leftStimCurrentLevel;
+                   text: "Left Stimulation Current: "
                    font.bold: true;
                    color: "white";
                    font.pointSize: 25;
@@ -81,10 +104,12 @@ Item {
             }
 
             TextField {
-                   property string currentPlaceholderText
-                   id: currentTextField;
-                   currentPlaceholderText: (currentValue/10).toLocaleString(Qt.locale("en_US"));
-                   placeholderText: currentPlaceholderText;
+                   id: leftCurrentField;
+                   property string leftCurrentPlaceholderText
+                   property string units
+                   units: "mA"
+                   leftCurrentPlaceholderText: (leftCurrentValue/10).toLocaleString(Qt.locale("en_US")) + units;
+                   placeholderText: leftCurrentPlaceholderText;
                    readOnly: true;
                    Layout.row: 2;
                    Layout.column: 1;
@@ -101,14 +126,59 @@ Item {
                           }
                       }
             }
+            Text { id: rightStimCurrentLevel;
+                   text: "Right Stimulation Current: "
+                   font.bold: true;
+                   color: "white";
+                   font.pointSize: 25;
+                   Layout.row: 4;
+                   Layout.column: 0;
+                   Layout.rowSpan: 2;
+            }
+
+            TextField {
+                   id: rightCurrentTextField;
+                   property string rightCurrentPlaceholderText
+                   property string units
+                   units: "mA"
+                   rightCurrentPlaceholderText: (rightCurrentValue/10).toLocaleString(Qt.locale("en_US")) + units;
+                   placeholderText: rightCurrentPlaceholderText;
+                   readOnly: true;
+                   Layout.row: 4;
+                   Layout.column: 1;
+                   font.pointSize: 25;
+                   Layout.rowSpan: 2;
+                   horizontalAlignment: Text.AlignHCenter
+                   style: TextFieldStyle {
+                          background: Rectangle {
+                              implicitWidth: 150
+                              implicitHeight: 50
+                              border.color: "gray"
+                              color: "gray"
+                              radius: 2
+                          }
+                      }
+            }
+
 
             Button {
-                id: stimUpButton;
+                id: leftStimUpButton;
                 Layout.row: 2;
                 Layout.column: 2
                 height: 15 
-
                 style: ButtonStyle {
+                    background: Rectangle {
+                        implicitWidth: 100
+                        implicitHeight: 25
+                        border.width: control.activeFocus ? 2 : 1
+                        border.color: "#888"
+                        radius: 4
+                        gradient: Gradient {
+                            GradientStop { position: 0 ; color: control.pressed ? "#ccc" : "#eee" }
+                            GradientStop { position: 1 ; color: control.pressed ? "#aaa" : "#ccc" }
+                        }
+                    }
+
                     label: Component {
                         Text {
                             id: up
@@ -122,17 +192,30 @@ Item {
                             font.bold: true
                         }
                     }
+
                 }
-                onClicked: incrementCurrent()
+                onClicked: incrementLeftCurrent()
             }
 
             Button {
-                id: stimDownButton;
+                id: leftStimDownButton;
                 Layout.row: 3;
                 Layout.column: 2
                 height: 15
 
                 style: ButtonStyle {
+                    background: Rectangle {
+                        implicitWidth: 100
+                        implicitHeight: 25
+                        border.width: control.activeFocus ? 2 : 1
+                        border.color: "#888"
+                        radius: 4
+                        gradient: Gradient {
+                            GradientStop { position: 0 ; color: control.pressed ? "#ccc" : "#eee" }
+                            GradientStop { position: 1 ; color: control.pressed ? "#aaa" : "#ccc" }
+                        }
+                    }
+
                     label: Component {
                         Text {
                             id: down
@@ -147,28 +230,102 @@ Item {
                         }
                     }
                 }
-                onClicked: decrementCurrent()
+                onClicked: decrementLeftCurrent()
             }
+
+            Button {
+                id: rightStimUpButton;
+                Layout.row: 4;
+                Layout.column: 2
+                height: 15 
+
+                style: ButtonStyle {
+                    background: Rectangle {
+                        implicitWidth: 100
+                        implicitHeight: 25
+                        border.width: control.activeFocus ? 2 : 1
+                        border.color: "#888"
+                        radius: 4
+                        gradient: Gradient {
+                            GradientStop { position: 0 ; color: control.pressed ? "#ccc" : "#eee" }
+                            GradientStop { position: 1 ; color: control.pressed ? "#aaa" : "#ccc" }
+                        }
+                    }
+
+                    label: Component {
+                        Text {
+                            id: up
+                            text: "Up"
+                            clip: true
+                            wrapMode: Text.WordWrap
+                            verticalAlignment: Text.AlignVCenter
+                            horizontalAlignment: Text.AlignHCenter
+                            anchors.fill: parent
+                            font.pointSize: 10;
+                            font.bold: true
+                        }
+                    }
+                }
+                onClicked: incrementRightCurrent()
+            }
+
+            Button {
+                id: rightStimDownButton;
+                Layout.row: 5;
+                Layout.column: 2
+                height: 15
+
+                style: ButtonStyle {
+                    background: Rectangle {
+                        implicitWidth: 100
+                        implicitHeight: 25
+                        border.width: control.activeFocus ? 2 : 1
+                        border.color: "#888"
+                        radius: 4
+                        gradient: Gradient {
+                            GradientStop { position: 0 ; color: control.pressed ? "#ccc" : "#eee" }
+                            GradientStop { position: 1 ; color: control.pressed ? "#aaa" : "#ccc" }
+                        }
+                    }
+
+                    label: Component {
+                        Text {
+                            id: down
+                            text: "Down"
+                            clip: true
+                            wrapMode: Text.WordWrap
+                            verticalAlignment: Text.AlignVCenter
+                            horizontalAlignment: Text.AlignHCenter
+                            anchors.fill: parent
+                            font.pointSize: 10;
+                            font.bold: true
+                        }
+                    }
+                }
+                onClicked: decrementRightCurrent()
+            }
+
 
             Text { id: stimStepSize;
                    text: "Stimulation Step Size: ";
                    font.bold: true;
                    color: "white";
                    font.pointSize: 25;
-                   Layout.row: 4;
+                   Layout.row: 6;
                    Layout.column: 0;
             }
 
             SpinBox { id: spinbox
-                      Layout.row: 4;
+                      suffix: "mA"
+                      Layout.row: 6;
                       Layout.column: 1;
-                      font.pointSize: 25;
+                      font.pointSize: 22;
                       horizontalAlignment: Text.AlignHCenter;
                       decimals: 2;
                       stepSize: step;
                       value: currentStep;
                       style: SpinBoxStyle {
-                          textColor: "#656363"
+                          textColor: "#434343"
                           background: Rectangle {
                               implicitWidth: 150
                               implicitHeight: 50
@@ -178,13 +335,14 @@ Item {
                           }
                       }
             }
-            Glow {
-                anchors.fill: stimUpButton.up
+/*            Glow {
+                anchors.fill: leftStimUpButton.pressed ? leftStimUpButton : leftStimDownButton;
                 radius: 18
                 samples: 37
                 color: "#15bdff"
-                source: stimUpButton.up
+                source: leftStimUpButton
             }
+ */
             
 
         }

@@ -932,6 +932,24 @@ void PerturbationTabWidget::loadRunProfile()
     populateRunsTextBox();
     runTableWidget->selectRow(currentRunRowIndex);
     sInterface->startTrialRun(true);
+    setStimChannel();
+}
+
+void PerturbationTabWidget::setStimChannel()
+{
+    QString stimLevel(prp->getStimSeq());
+    qDebug() << "Stim Level from PerturbationTabWidget: " << stimLevel.split(",");
+    stimChannelA = stimLevel.split(",")[0].toInt();  //Left
+    stimChannelB = stimLevel.split(",")[1].toInt();  //Right
+
+    if(stimChannelA == 1)
+    {
+        setLeftStimCurrent();
+    }
+    else if(stimChannelA == 2)
+    {
+        setRightStimCurrent();
+    }
 }
 
 /*void PerturbationTabWidget::saveVelocityData()
@@ -1039,21 +1057,52 @@ void PerturbationTabWidget::prevRun()
     runTableWidget->selectRow(currentRunRowIndex);
 }
 
-void PerturbationTabWidget::startStim()
+void PerturbationTabWidget::setLeftStimCurrent()
 {
-    QVariant stimCurrent;
+    QVariant leftStimCurrent;
     int multFactor(10);
-    int stimCrnt;
-    if(!(QMetaObject::invokeMethod(personSessionStimQuickViewItem, "getCurrent", Q_RETURN_ARG(QVariant, stimCurrent))))
+    int leftStimCrnt;
+    if(!(QMetaObject::invokeMethod(personSessionStimQuickViewItem, "getLeftCurrent", Q_RETURN_ARG(QVariant, leftStimCurrent))))
     {
         qDebug("Method failed to invoke");
     }
     DS8Controller.ToggleOutput(TRUE);
-    qDebug() << "Stim Current: " << stimCurrent.toInt();
-    stimCrnt = stimCurrent.toInt();
-    DS8Controller.SetVariables(NULL,NULL,stimCrnt,NULL,NULL,NULL,TRUE);
+    qDebug() << "Stim Current: " << leftStimCurrent.toInt();
+    leftStimCrnt = leftStimCurrent.toInt();
+    DS8Controller.SetVariables(NULL,NULL,leftStimCrnt,NULL,NULL,NULL,TRUE);
     DS8Controller.UpdateDS8();
-    //randomDelay();
+}
+
+void PerturbationTabWidget::setRightStimCurrent()
+{
+    QVariant rightStimCurrent;
+    int multFactor(10);
+    int rightStimCrnt;
+    if(!(QMetaObject::invokeMethod(personSessionStimQuickViewItem, "getRightCurrent", Q_RETURN_ARG(QVariant, rightStimCurrent))))
+    {
+        qDebug("Method failed to invoke");
+    }
+    DS8Controller.ToggleOutput(TRUE);
+    qDebug() << "Stim Current: " << rightStimCurrent.toInt();
+    rightStimCrnt = rightStimCurrent.toInt();
+    DS8Controller.SetVariables(NULL,NULL,rightStimCrnt,NULL,NULL,NULL,TRUE);
+    DS8Controller.UpdateDS8();
+}
+
+void PerturbationTabWidget::startStim()
+{
+    mouseInterface->WriteChannel(stimChannelA);
+
+    if(stimChannelB == 1)
+    {
+        setLeftStimCurrent();
+    }
+    else if(stimChannelB == 2)
+    {
+        setRightStimCurrent();
+    }
+
+        //randomDelay();
 }
 
 void PerturbationTabWidget::populateRunsTextBox()
