@@ -29,6 +29,7 @@ TreadmillAutomationDbIFace::~TreadmillAutomationDbIFace()
 
 void TreadmillAutomationDbIFace::insertRunProfileRecord(QStringList recordList)
 {
+
     QRegularExpression numbers("^(.)([0-9]+)$|^(.)([A-Z])([0-9]+$)");//(".(\\d+)+");
     QString table("runProfile");
     QString currentRunProfileTable("currentRunProfile");
@@ -55,6 +56,11 @@ void TreadmillAutomationDbIFace::insertRunProfileRecord(QStringList recordList)
 
     insertRecord(table, columns, values);
     insertRecord(currentRunProfileTable, columns, values);
+}
+
+void TreadmillAutomationDbIFace::clearRunProfileHeadVector()
+{
+    runProfileHead.clear();
 }
 
 void TreadmillAutomationDbIFace::truncateTable(QString table)
@@ -186,6 +192,8 @@ double TreadmillAutomationDbIFace::getAccelTimeFromDb(QString typeNum)
         accelerationTime = "Acceleration Time Not Found";
     }
 
+    qDebug() << "Acceleration Time from DB: " << accelerationTime.toDouble();
+
     return accelerationTime.toDouble();
 }
 
@@ -296,10 +304,17 @@ void TreadmillAutomationDbIFace::retrieveRuns()
 void TreadmillAutomationDbIFace::clearRunResultsVector()
 {
     runResults.clear();
+
+}
+
+void TreadmillAutomationDbIFace::resetRunsVectorIndex()
+{
+    runsVectorIndex_ = 0;
 }
 
 void TreadmillAutomationDbIFace::retrieveRun(int runAddIndex)
 {
+    qDebug() << "Retrieving Run";
     if(runAddIndex < 0)
     {
         runsVectorIndex_ += runAddIndex;
@@ -307,12 +322,13 @@ void TreadmillAutomationDbIFace::retrieveRun(int runAddIndex)
     
     if(runsVectorIndex_ < runResults.size() and runsVectorIndex_ >= 0)
     {
-        qDebug() << runsVectorIndex_;
+        qDebug() << "runsVectorIndex_: " << runsVectorIndex_;
         QString type;
         QString level;
         QString stimLevel;
         QRegularExpression numbers("^.*([0-9][0-9]$)");
         QString run = runResults[runsVectorIndex_];
+        qDebug() << run;
         QRegularExpressionMatchIterator typeNumIter = numbers.globalMatch(run.split(',')[0]);
         QRegularExpressionMatchIterator levelNumIter = numbers.globalMatch(run.split(',')[1]);
         QRegularExpressionMatchIterator stimNumIter = numbers.globalMatch(run.split(',')[2]);
@@ -338,8 +354,11 @@ void TreadmillAutomationDbIFace::retrieveRun(int runAddIndex)
             setAccelLeft(-(getAccelLeftFromDb(type,level)));
             qDebug() << "Accel Left: " << getAccelLeft();
             setAccelRight(-(getAccelRightFromDb(type,level)));
+            qDebug() << "Accel Right: " << getAccelRight();
             setDecelLeft(-(getDecelLeftFromDb(type,level)));
+            qDebug() << "Decel Left: " << getDecelLeft();
             setDecelRight(-(getDecelRightFromDb(type,level)));
+            qDebug() << "Decel Right: " << getDecelRight();
         }
         else
         {
@@ -396,11 +415,11 @@ QSqlQuery TreadmillAutomationDbIFace::selectQueryDb(QString columns, QString tab
 
     if(whereBool)
     {
-        queryString = "SELECT " + columns + " FROM " + table + where;
+        queryString = "SELECT " + columns + " FROM " + table + where + ";";
     }
     else
     {
-        queryString = "SELECT " + columns + " FROM " + table;
+        queryString = "SELECT " + columns + " FROM " + table + ";";
     }
 
     qDebug() << queryString;

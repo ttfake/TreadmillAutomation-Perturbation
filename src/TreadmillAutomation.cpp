@@ -10,6 +10,8 @@ TreadmillAutomation::TreadmillAutomation(QWidget *parent, Qt::WindowFlags flags)
 
     perturbationTabWidget = new PerturbationTabWidget;
     configTabWidget = new ConfigTabWidget;
+    connect(configTabWidget, SIGNAL(timerUpdatedSignal()), SLOT(updateStimTimer()));
+    
     sendSetpointObject = SendSetpoints::getInstance();
     createFileMenu();
     createTabWidget();
@@ -155,6 +157,10 @@ void TreadmillAutomation::errorString(QString s)
     qDebug() << s;
 }
 
+void TreadmillAutomation::updateStimTimer()
+{
+    stimTimerValue = configTabWidget->getStimTimerValue();
+}
 
 static void showWarning(QWidget * mparent, const QString & mtitle, const QString & mtext)
 {
@@ -164,5 +170,6 @@ static void showWarning(QWidget * mparent, const QString & mtitle, const QString
 	box->setAttribute(Qt::WA_DeleteOnClose);
 	box->show();
 }
+
 
 #include "../include/moc_TreadmillAutomation.cpp"

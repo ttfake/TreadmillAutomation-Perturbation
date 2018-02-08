@@ -17,6 +17,7 @@
 #include <QFileDialog>
 #include <QMessageBox>
 #include <QQuickView>
+#include <QQuickItem>
 #include <QGuiApplication>
 #include <QQmlEngine>
 
@@ -36,6 +37,9 @@ class ConfigTabWidget : public QWidget
         void setDaqRecordBool();
         void setDaqRecordColor();
         void addChannels();
+        void timerUpdatedSlot();
+    signals:
+        void timerUpdatedSignal();
     public:
         ConfigTabWidget(QWidget* parent = 0, Qt::WindowFlags flags = 0);
         ~ConfigTabWidget();
@@ -99,9 +103,6 @@ class ConfigTabWidget : public QWidget
         void getGainType(int channel);
         void setChannel(int mchannel);
 
-
-
-
         void addDaqDataGroupBox();
         void showDaqDataBox(bool checked);
         QTableWidget* daqDataStreamTableWidget;
@@ -116,5 +117,11 @@ class ConfigTabWidget : public QWidget
         void addStimTimerQmlBox();
         QQuickView* timerQuickView;
         QWidget* timerQuickViewContainer;
+        QObject* timerQuickViewRootObject;
+        QObject* timerQuickViewItem;
+        double getStimTimerValue();
+
+        double stimTimer;
+        QVariant timerValue;
 };
 #endif

@@ -13,7 +13,8 @@ MouseInterface::MouseInterface()
     QString serialNumber;
     SetupEventTrigger();
     SetupStimTrigger();
-    SetupChannelSelection();
+    //SetupChannelSelection();
+    setPerturbationActiveBoolFalse();
     movementBool = false;
 
 /*    for (const QSerialPortInfo &serialPortInfo : serialPortInfos) {
@@ -103,7 +104,7 @@ void MouseInterface::getRawInput()
         movementDetectedLog.write(data);
         dataString.chop(2);
         startingCoord = fabs(dataString.toDouble());
-        if(startingCoord > 0)
+        if(startingCoord > 0 && perturbationActiveBool)
         {
       //      qDebug() << startingCoord;
             if(!movementDetectedBool)

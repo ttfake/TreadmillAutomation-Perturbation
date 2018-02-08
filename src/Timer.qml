@@ -14,14 +14,21 @@ Item {
     currentStep: timerStepSpinbox.value
     property double step
     step: 0.25
+    signal timerUpdated();
 
     function incrementTimer()
     {
         timerValue += currentStep
+        timerUpdated()
     }
     function decrementTimer()
     {
         timerValue -= currentStep
+        timerUpdated()
+    }
+    function getTimerValue()
+    {
+        return timerValue
     }
 
     Rectangle {
@@ -64,6 +71,8 @@ Item {
                        color: "gray"
                        radius: 2
                    }
+                   selectedTextColor: "blue"
+                   selectionColor: "blue" 
                }
             }
 

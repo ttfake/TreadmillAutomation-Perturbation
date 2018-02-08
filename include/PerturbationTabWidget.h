@@ -102,7 +102,7 @@ class PerturbationTabWidget : public QWidget
         void setCellChangedTrue(int mCellRow, int mCellCol);
         void setLeftStimCurrent();
         void setRightStimCurrent();
-        
+        void exportTable();
 
     private:
 
@@ -316,6 +316,13 @@ class PerturbationTabWidget : public QWidget
         void setStimChannel();
         int stimChannelA;
         int stimChannelB;
+        double stimTimer;
+        void setStimTimer(double time);
+        QGroupBox* importExportGroupBox;
+        QHBoxLayout* importExportGroupBoxVLayout;
+        QPushButton* importButton;
+        QPushButton* exportButton;
+        QFont importExportButtonFont;
         
         //QPushButton* updateRunTableBtn;
 };

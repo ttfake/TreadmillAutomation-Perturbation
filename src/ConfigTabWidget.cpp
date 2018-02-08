@@ -35,11 +35,29 @@ void ConfigTabWidget::addStimTimerQmlBox()
     timerQuickView->setResizeMode(QQuickView::SizeViewToRootObject);
     timerQuickViewContainer->setSizePolicy(QSizePolicy::Minimum, QSizePolicy::Fixed);
     timerQuickViewContainer->setFixedSize(750,750);
-    
+   
+    timerQuickViewItem = timerQuickView->rootObject();
+
+    QObject::connect(timerQuickViewItem, SIGNAL(timerUpdated()),
+            SLOT(timerUpdatedSlot()));
+
     configGridLayout->addWidget(timerQuickViewContainer, 0, 0);
 
 }
 
+void ConfigTabWidget::timerUpdatedSlot()
+{
+    qDebug() << "Timer was updated";
+    QMetaObject::invokeMethod(timerQuickViewItem, "getTimerValue", Q_RETURN_ARG(QVariant, timerValue));
+    qDebug() << "Timer was set to: " << timerValue.toDouble();
+    stimTimer = timerValue.toDouble();
+    emit timerUpdatedSignal();
+}
+
+double ConfigTabWidget::getStimTimerValue()
+{
+    return stimTimer;
+}
 
 void ConfigTabWidget::addDaqControlGroupBox()
 {

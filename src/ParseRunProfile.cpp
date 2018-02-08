@@ -19,6 +19,10 @@ void ParseRunProfile::setRunFile(QString mFileName)
 
 void ParseRunProfile::parseRunFile()
 {
+    treadmillDb->clearRunProfileHeadVector();
+    treadmillDb->resetRunsVectorIndex();
+    treadmillDb->clearRunResultsVector();
+    truncateTable("currentRunProfile");
     QString table("runProfile");
     if(runFile->open(QIODevice::ReadOnly | QIODevice::Text))
     {

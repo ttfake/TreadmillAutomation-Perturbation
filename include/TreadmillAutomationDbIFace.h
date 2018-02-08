@@ -76,6 +76,10 @@ class TreadmillAutomationDbIFace : public QWidget
 
         QString stimSeq;
 
+        void clearRunProfileHeadVector();
+
+        void resetRunsVectorIndex();
+    
     signals:
         startStimulation();
     
@@ -97,6 +101,8 @@ class TreadmillAutomationDbIFace : public QWidget
         void setAccelLeft(double accel);
         
         bool firstRun;
+
+
 
 
 

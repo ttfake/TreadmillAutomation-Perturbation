@@ -128,6 +128,9 @@ class TreadmillAutomation : public QMainWindow
         
         void uncheckDaqDataView();
 
+        void updateStimTimer();
+        double stimTimerValue;
+
         QMenu* showRunProfileCol; 
 };
 

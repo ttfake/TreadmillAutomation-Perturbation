@@ -11,10 +11,12 @@ PerturbationTabWidget::PerturbationTabWidget(QWidget* parent, Qt::WindowFlags fl
     prp = new ParseRunProfile;
     cellDoubleClicked = false;
     InstrumentationPanel* instPanel = new InstrumentationPanel;
-    connect(prp, SIGNAL(startStimulation()), SLOT(startStim()));
-
+    /* 
+     * Signal connect below must be uncommented form stimulation to work.
+     * connect(prp, SIGNAL(startStimulation()), SLOT(startStim()));
+     */
     
-	if (DS8Controller.ErrorCode != -1)
+/*	if (DS8Controller.ErrorCode != -1)
 	{
 		//DS8Controller.SetVariables(NULL,NULL,10,NULL,NULL,NULL,TRUE); //Set to Defaults
 		DS8Controller.ToggleOutput(FALSE);
@@ -24,12 +26,12 @@ PerturbationTabWidget::PerturbationTabWidget(QWidget* parent, Qt::WindowFlags fl
 		printf("No Errors \n");
 		//DS8Controller.SetVariables(NULL,NULL,10,NULL,NULL,NULL,TRUE); //Set to Defaults
 	}
-
+*/
 }
 
 PerturbationTabWidget::~PerturbationTabWidget()
 {
-    DS8Controller.CloseDS8();
+    //DS8Controller.CloseDS8();
 }
 
 void PerturbationTabWidget::createTreadmillPerturbationTab()
@@ -67,6 +69,7 @@ void PerturbationTabWidget::addQuadrantTwo()
     quadrantTwoGroupBox->setLayout(quadrantTwoPerturbationLayout);
     perturbationTabLayout->addWidget(quadrantTwoGroupBox, 0,1);
     addPersonStimGroupBox();
+//    quadrantTwoGroupBox->hide();
     //addEmgDataVisualization();
 }
 
@@ -250,12 +253,37 @@ void PerturbationTabWidget::addPersonStimGroupBox()
     personSessionStimQuickViewItem = personSessionStimQuickView->rootObject();
 
     quadrantTwoPerturbationLayout->addWidget(personSessionStimQuickViewContainer);
+    
 }
 
 void PerturbationTabWidget::addRunGroupBox()
 {
     runGroupBox = new QGroupBox;
     runTableWidget = new QTableWidget;
+    
+    importExportGroupBox = new QGroupBox;
+    importExportGroupBoxVLayout = new QHBoxLayout;
+    importExportGroupBox->setLayout(importExportGroupBoxVLayout);
+    importExportButtonFont.setFamily("Times");
+    importExportButtonFont.setWeight(75);
+    importExportButtonFont.setPointSize(12);
+    importButton = new QPushButton;
+    importButton->setSizePolicy(QSizePolicy::Minimum, QSizePolicy::Fixed);
+    importButton->setFont(importExportButtonFont);
+    importButton->setFixedSize(200,40);
+    importButton->setText("Load");
+    exportButton = new QPushButton;
+    exportButton->setSizePolicy(QSizePolicy::Minimum, QSizePolicy::Fixed);
+    exportButton->setFont(importExportButtonFont);
+    exportButton->setFixedSize(200,40);
+    exportButton->setText("Export");
+    importExportGroupBoxVLayout->addWidget(importButton);
+    importExportGroupBoxVLayout->addWidget(exportButton);
+
+    connect(importButton, SIGNAL(clicked()), SLOT(loadRunProfile()));
+    connect(exportButton, SIGNAL(clicked()), SLOT(exportTable()));
+
+
     runTableWidget->setStyleSheet("selection-background-color : green");
     runTableWidget->setFixedSize(900,300);
     runTableWidget->setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOn);
@@ -263,8 +291,8 @@ void PerturbationTabWidget::addRunGroupBox()
     //updateRunTableBtn = new QPushButton;
     //updateRunTableBtn->setSizePolicy(QSizePolicy::Minimum, QSizePolicy::Fixed);
     //updateRunTableBtn->setText("Update Run Profile");
-//    updateRunTableBtn->setFont(startPertRunBtnFont);
-//    updateRunTableBtn->setFixedSize(200,40);
+    //updateRunTableBtn->setFont(startPertRunBtnFont);
+    //updateRunTableBtn->setFixedSize(200,40);
     connect(runTableWidget, SIGNAL(cellChanged(int, int)), SLOT(updateRun(int, int)));
     connect(runTableWidget, SIGNAL(cellDoubleClicked(int, int)), SLOT(setCellChangedTrue(int, int)));
     //connect(updateRunTableBtn, SIGNAL(clicked()), SLOT(updateRun()));
@@ -274,6 +302,7 @@ void PerturbationTabWidget::addRunGroupBox()
     runTableHeaderFont.setPointSize(12);
     runGroupBox->setLayout(runGroupBoxLayout);
     runGroupBoxLayout->addWidget(runTableWidget);
+    runGroupBoxLayout->addWidget(importExportGroupBox);
 //    runGroupBoxLayout->addWidget(updateRunTableBtn);
 //    runGroupBox->setFixedSize(950,250);
     QStringList runHeader;
@@ -866,6 +895,8 @@ void PerturbationTabWidget::slotTimeout()
             new QTableWidgetItem(tr("%1").arg(complete)));
     runTableWidget->item(currentRunRowIndex, columnIndex)->setFont(tableRowsFont);
     sInterface->setTrialComplete(true);
+    mouseInterface->setPerturbationActiveBoolFalse();
+    mouseInterface->setMovementDetectedBool(false);
 
     //-----------------------------------------------------------------------
 /*    auto uptime = std::chrono::milliseconds(GetTickCount());
@@ -916,40 +947,43 @@ double PerturbationTabWidget::calculateSpeed()
 void PerturbationTabWidget::loadRunProfile()
 {
     currentRunRowIndex = 0;
+
     QString fileName = QFileDialog::getOpenFileName(this, tr("Open File"), \
-            "C:\\Users\\User\\Desktop\\HReflex_Binaries-master\\untitled.csv", \
+            "C:\\Users\\User\\Desktop\\HReflex_Binaries-master\\RunProfiles", \
             tr("CSV (*.csv)"));
-    prp->setRunFile(fileName);
-    tableFilled = false;
-    prp->getRuns();
-    prp->getRun(1);
-    setAccelerationValue(prp->getAccelLeft());
-    acceleration->setValue(prp->getAccelLeft());
-    setDecelerationValue(prp->getDecelLeft());
-    deceleration->setValue(prp->getDecelLeft());
-    timeAccelSpinBox->setValue(prp->getAccelTime());
-    setAccelerationTimeValue(prp->getAccelTime());
-    populateRunsTextBox();
-    runTableWidget->selectRow(currentRunRowIndex);
-    sInterface->startTrialRun(true);
-    setStimChannel();
+    if(fileName == "")
+    {
+        QMessageBox errLoadFile;
+        errLoadFile.setText("Error Loading File");
+        errLoadFile.exec();
+    }
+    else
+    {
+        runTableWidget->setRowCount(0);
+        prp->setRunFile(fileName);
+        tableFilled = false;
+        prp->getRuns();
+        prp->getRun(1);
+        mouseInterface->SetupChannelSelection();
+        setAccelerationValue(prp->getAccelLeft());
+        acceleration->setValue(prp->getAccelLeft());
+        setDecelerationValue(prp->getDecelLeft());
+        deceleration->setValue(prp->getDecelLeft());
+        timeAccelSpinBox->setValue(prp->getAccelTime());
+        setAccelerationTimeValue(prp->getAccelTime());
+        populateRunsTextBox();
+        runTableWidget->selectRow(currentRunRowIndex);
+        sInterface->startTrialRun(true);
+        setStimChannel();
+    }
 }
 
 void PerturbationTabWidget::setStimChannel()
 {
     QString stimLevel(prp->getStimSeq());
     qDebug() << "Stim Level from PerturbationTabWidget: " << stimLevel.split(",");
-    stimChannelA = stimLevel.split(",")[0].toInt();  //Left
-    stimChannelB = stimLevel.split(",")[1].toInt();  //Right
-
-    if(stimChannelA == 1)
-    {
-        setLeftStimCurrent();
-    }
-    else if(stimChannelA == 2)
-    {
-        setRightStimCurrent();
-    }
+    stimChannelA = stimLevel.split(",")[0].toInt();  
+    stimChannelB = stimLevel.split(",")[1].toInt(); 
 }
 
 /*void PerturbationTabWidget::saveVelocityData()
@@ -1019,6 +1053,7 @@ void PerturbationTabWidget::nextRun()
 {
     sInterface->setRunOver(true);
     sInterface->startTrialRun(true);
+    
     currentRunRowIndex++;
     prp->getRun(1);
     setAccelerationValue(prp->getAccelLeft());
@@ -1069,7 +1104,7 @@ void PerturbationTabWidget::setLeftStimCurrent()
     DS8Controller.ToggleOutput(TRUE);
     qDebug() << "Stim Current: " << leftStimCurrent.toInt();
     leftStimCrnt = leftStimCurrent.toInt();
-    DS8Controller.SetVariables(NULL,NULL,leftStimCrnt,NULL,NULL,NULL,TRUE);
+    DS8Controller.SetVariables(0,0,leftStimCrnt,0,0,0,TRUE);
     DS8Controller.UpdateDS8();
 }
 
@@ -1085,12 +1120,21 @@ void PerturbationTabWidget::setRightStimCurrent()
     DS8Controller.ToggleOutput(TRUE);
     qDebug() << "Stim Current: " << rightStimCurrent.toInt();
     rightStimCrnt = rightStimCurrent.toInt();
-    DS8Controller.SetVariables(NULL,NULL,rightStimCrnt,NULL,NULL,NULL,TRUE);
+    DS8Controller.SetVariables(0,0,rightStimCrnt,0,0,0,TRUE);
     DS8Controller.UpdateDS8();
 }
 
 void PerturbationTabWidget::startStim()
 {
+    if(stimChannelA == 1)
+    {
+        setLeftStimCurrent();
+    }
+    else if(stimChannelA == 2)
+    {
+        setRightStimCurrent();
+    }
+
     mouseInterface->WriteChannel(stimChannelA);
 
     if(stimChannelB == 1)
@@ -1107,10 +1151,10 @@ void PerturbationTabWidget::startStim()
 
 void PerturbationTabWidget::populateRunsTextBox()
 {
+    runTableWidget->setRowCount(0);
     QVector<QString> runs;
     QVector<QString> runHead;
     runs = prp->getRunsVector();
-    qDebug() << runs;
     runHead = prp->getRunProfileHead();
     runTableWidget->setRowCount(runs.size());
     int indexX = 0;
@@ -1179,6 +1223,7 @@ void PerturbationTabWidget::updateRun(int cellRow, int cellCol)
         int stimSeqNumberColCoord = 5;
         int trialNumberColCoord = 6;
         QString tableName("currentRunProfile");
+        QString runProfileTable("runProfile");
         QRegularExpression numbers("^(.)([0-9]+)$|^(.)([A-Z])([0-9]+$)");
         //qDebug() << QString::number(row) << QString::number(col);
         QTableWidgetItem* participantIdItem = runTableWidget->item(cellRow, participantColCoord);
@@ -1222,8 +1267,6 @@ void PerturbationTabWidget::updateRun(int cellRow, int cellCol)
            qDebug() << levelNum;
         }
 
-        
-                
         QMessageBox::StandardButton reply;
 /*        reply = QMessageBox::question(this, "Test", "Would you like to set this to ",
                 QMessageBox::Yes|QMessageBox::No);
@@ -1258,6 +1301,7 @@ void PerturbationTabWidget::updateRun(int cellRow, int cellCol)
         
         QVector<QString> runs;
         runs = prp->getRunsVector();
+        qDebug() << "updateRuns: " << runs;
         qDebug() << "New Runs: " << runs[0].split(',')[0];
 
         while(cellRow < runTableWidget->rowCount())
@@ -1275,12 +1319,29 @@ void PerturbationTabWidget::updateRun(int cellRow, int cellCol)
             runTableWidget->item(cellRow, stimSeqNumberColCoord)->setText(tr("%1").arg
                         (stimOrder));    
             
-            /*prp->updateRunTable(tableName, type, level, 
+            prp->updateRunTable(tableName, type, level, 
                 stimOrder, participantId, sessionNo, runNo, 
                 trialNo);
-            */
 
             cellRow++;
+        }
+    }
+}
+
+void PerturbationTabWidget::exportTable()
+{
+    qDebug() << "Hello from exportTable()";
+    for(int row = 0; row < runTableWidget->rowCount(); row++)
+    {
+        qDebug() << "Row: " << row;
+        for(int col = 0; col < runTableWidget->columnCount(); col++)
+        {
+            qDebug() << col;
+            QTableWidgetItem* item = runTableWidget->item(row,col);
+            if(!item || !(item->text().isEmpty()))
+            {
+                qDebug() << item->text();
+            }
         }
     }
 }
@@ -1297,6 +1358,11 @@ void PerturbationTabWidget::setCellChangedFalse()
 
 void PerturbationTabWidget::showSubjectView()
 {
+}
+
+void PerturbationTabWidget::setStimTimer(double time)
+{
+    stimTimer = time;
 }
 
 #include "../include/moc_PerturbationTabWidget.cpp"

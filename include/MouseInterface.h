@@ -35,8 +35,9 @@ class MouseInterface : public QObject
         void                              setPerturbationActiveBoolFalse();
         void                              setLogPath(QString m_logPath);
         void                              setMovementDetectedBool(bool mMovementDetectedBool);
-        //void                              SetupDigitalOutput();
-		void                              SetupEventTrigger();
+        void                              SetupDigitalOutput();
+
+        void                              SetupEventTrigger();
 		void							  SetupChannelSelection();
 		void                              SetupStimTrigger();
         void                              StopTask();
@@ -44,7 +45,8 @@ class MouseInterface : public QObject
         void                              getRawInput();
         void                              setPerturbationActiveBoolTrue();
         //void                              WriteLine();
-		void                              WriteEvent();
+		
+        void                              WriteEvent();
 		void                              WriteStim();
 		void                              WriteChannel(int channel);
     signals:
