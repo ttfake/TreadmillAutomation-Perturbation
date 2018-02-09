@@ -1165,6 +1165,7 @@ void PerturbationTabWidget::populateRunsTextBox()
     int stopIndexC = 3;
     int indexRow = 0;
     int indexCol = 6;
+    int statusCol = 7;
     QComboBox* levelComboBox;
     QStringList levelList;
     tableRowsFont.setFamily("Times");
@@ -1199,6 +1200,7 @@ void PerturbationTabWidget::populateRunsTextBox()
         runTableWidget->setItem(indexA, indexB, new QTableWidgetItem(tr("%1").arg(run.split(',')[3])));
         runTableWidget->item(indexA, indexB)->setFont(tableRowsFont);
         indexB++;
+        runTableWidget->setItem(indexA, statusCol, new QTableWidgetItem(tr("%1").arg("")));
 
         if(indexB > stopIndexC)
         {
@@ -1213,7 +1215,26 @@ void PerturbationTabWidget::populateRunsTextBox()
 
 void PerturbationTabWidget::updateRun(int cellRow, int cellCol)
 {
-    if(tableFilled && cellDoubleClicked)
+    int trialNoCol = 6;
+    
+    if(cellCol == trialNoCol && tableFilled && cellDoubleClicked)
+    {
+        QTableWidgetItem* trialNumberItem = runTableWidget->item(cellRow, trialNoCol);
+        QString trialNo(trialNumberItem->text());
+
+        cellRow += 1;
+
+        while(cellRow < runTableWidget->rowCount())
+        {
+            runTableWidget->item(cellRow, trialNoCol)->setText(tr("%1").arg(returnTrialNum(trialNo)));
+
+            trialNo = returnTrialNum(trialNo);
+            cellRow++;
+
+        }
+
+    }
+    else if(tableFilled && cellDoubleClicked)
     {
         int participantColCoord = 0;
         int sessionIdColCoord = 1;
@@ -1240,7 +1261,7 @@ void PerturbationTabWidget::updateRun(int cellRow, int cellCol)
         QString stimOrder(stimSeqNumberItem->text());
         QTableWidgetItem* trialNumberItem = runTableWidget->item(cellRow, trialNumberColCoord);
         QString trialNo(trialNumberItem->text());
-        
+
         prp->updateRunTable(tableName, type, level, 
                 stimOrder, participantId, sessionNo, runNo, 
                 trialNo);
@@ -1253,32 +1274,32 @@ void PerturbationTabWidget::updateRun(int cellRow, int cellCol)
 
         while(numIter.hasNext())
         {
-           QRegularExpressionMatch match = numIter.next();
-           typeNum = match.captured(2);
-           qDebug() << typeNum;
+            QRegularExpressionMatch match = numIter.next();
+            typeNum = match.captured(2);
+            qDebug() << typeNum;
         }
 
         numIter = numbers.globalMatch(level);
 
         while(numIter.hasNext())
         {
-           QRegularExpressionMatch match = numIter.next();
-           levelNum = match.captured(2);
-           qDebug() << levelNum;
+            QRegularExpressionMatch match = numIter.next();
+            levelNum = match.captured(2);
+            qDebug() << levelNum;
         }
 
         QMessageBox::StandardButton reply;
-/*        reply = QMessageBox::question(this, "Test", "Would you like to set this to ",
-                QMessageBox::Yes|QMessageBox::No);
-        if (reply == QMessageBox::Yes) 
-        {
-            qDebug() << "Yes was clicked";
-        } 
-        else 
-        {
-            qDebug() << "Yes was *not* clicked";
-        }
-*/
+        /*        reply = QMessageBox::question(this, "Test", "Would you like to set this to ",
+                  QMessageBox::Yes|QMessageBox::No);
+                  if (reply == QMessageBox::Yes) 
+                  {
+                  qDebug() << "Yes was clicked";
+                  } 
+                  else 
+                  {
+                  qDebug() << "Yes was *not* clicked";
+                  }
+                  */
         if(prp->getDirectionFromDb(typeNum,levelNum) == 0)
         {
             setAccelerationValue(-(prp->getAccelLeftDb("\"" + typeNum + "\"", "\"" + levelNum + "\"")));
@@ -1298,7 +1319,7 @@ void PerturbationTabWidget::updateRun(int cellRow, int cellCol)
             timeAccelSpinBox->setValue(prp->getAccelTimeDb("\"" + typeNum + "\""));
             setAccelerationTimeValue(prp->getAccelTimeDb("\"" + typeNum + "\""));
         }
-        
+
         QVector<QString> runs;
         runs = prp->getRunsVector();
         qDebug() << "updateRuns: " << runs;
@@ -1307,43 +1328,101 @@ void PerturbationTabWidget::updateRun(int cellRow, int cellCol)
         while(cellRow < runTableWidget->rowCount())
         {
             runTableWidget->item(cellRow, participantColCoord)->setText(tr("%1").arg
-                        (participantId));    
+                    (participantId));    
             runTableWidget->item(cellRow, sessionIdColCoord)->setText(tr("%1").arg
-                        (sessionNo));    
+                    (sessionNo));    
             runTableWidget->item(cellRow, runNumberColCoord)->setText(tr("%1").arg
-                        (runNo));    
+                    (runNo));    
             runTableWidget->item(cellRow, typeNumberColCoord)->setText(tr("%1").arg
-                        (type));    
+                    (type));    
             runTableWidget->item(cellRow, levelNumberColCoord)->setText(tr("%1").arg
-                        (level));    
+                    (level));    
             runTableWidget->item(cellRow, stimSeqNumberColCoord)->setText(tr("%1").arg
-                        (stimOrder));    
-            
+                    (stimOrder));    
+
             prp->updateRunTable(tableName, type, level, 
-                stimOrder, participantId, sessionNo, runNo, 
-                trialNo);
+                    stimOrder, participantId, sessionNo, runNo, 
+                    trialNo);
 
             cellRow++;
         }
     }
 }
 
+QString PerturbationTabWidget::returnTrialNum(QString trialString)
+{
+    QString newTrialNum;
+    QRegularExpression numbers("^(.)([A-Z])([0-9]+$)");
+    QRegularExpressionMatchIterator numIter = numbers.globalMatch(trialString);
+    QString trial;
+    QString tr = "TR";
+    int width = 4;
+    int trialNum;
+
+    qDebug() << "Trial String: " << trialString;
+
+    while(numIter.hasNext())
+    {
+        QRegularExpressionMatch match = numIter.next();
+        trial = match.captured(3);
+        trialNum = trial.toInt() + 1;
+    }
+
+    if(QString::number(trialNum).size() < width) 
+    {
+        newTrialNum = QString(width - QString::number(trialNum).size(), '0') + QString::number(trialNum);
+    }
+//    qDebug() << "Trial Number: " << tr + newTrialNum;
+
+    return tr + newTrialNum;
+}
+
 void PerturbationTabWidget::exportTable()
 {
     qDebug() << "Hello from exportTable()";
+    QVector<QString> rowVec;
+    QString rowString;
+    saveFile();
     for(int row = 0; row < runTableWidget->rowCount(); row++)
     {
-        qDebug() << "Row: " << row;
         for(int col = 0; col < runTableWidget->columnCount(); col++)
         {
-            qDebug() << col;
             QTableWidgetItem* item = runTableWidget->item(row,col);
             if(!item || !(item->text().isEmpty()))
             {
-                qDebug() << item->text();
+                rowVec.append(item->text());
             }
+            rowVec.append("_");
         }
+        for(auto& item : rowVec)
+        {
+            rowString += item;
+        }
+        int pos = rowString.lastIndexOf(QChar('_'));
+        qDebug() << rowString.left(pos-1);
+        saveProfile->open(QIODevice::ReadWrite);
+        *saveProfileStream << rowString.left(pos-1) << "\n";
+
+        rowString = "";
+        rowVec.clear();
     }
+
+    saveProfile->close();
+}
+
+void PerturbationTabWidget::saveFile()
+{
+    QString fileName = QFileDialog::getSaveFileName(this, tr("Save Profile"), \
+            "C:\\Users\\User\\Desktop\\HReflex_Binaries-master\\RunProfiles", \
+            tr("CSV (*.csv)"));
+    if(fileName == "")
+    {
+        QMessageBox errLoadFile;
+        errLoadFile.setText("Error Loading File");
+        errLoadFile.exec();
+    }
+    saveProfile = new QFile(fileName);
+    saveProfileStream = new QTextStream(saveProfile);
 }
 
 void PerturbationTabWidget::setCellChangedTrue(int mCellRow, int mCellCol)

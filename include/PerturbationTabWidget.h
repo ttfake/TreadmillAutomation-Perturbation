@@ -39,6 +39,7 @@
 #include <QtQuick/QQuickView>
 #include <QtQml/QQmlEngine>
 #include <QQmlApplicationEngine>
+#include <QTextStream>
 //#include <python3.5m/Python.h>
 
 #include "SendSetpoints.h"
@@ -323,7 +324,11 @@ class PerturbationTabWidget : public QWidget
         QPushButton* importButton;
         QPushButton* exportButton;
         QFont importExportButtonFont;
-        
+        QFile* saveProfile;
+        QTextStream* saveProfileStream;
+        void saveFile();
         //QPushButton* updateRunTableBtn;
+        QString returnTrialNum(QString trialString);
+
 };
 #endif

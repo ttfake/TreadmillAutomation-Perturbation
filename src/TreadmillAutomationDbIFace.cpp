@@ -515,7 +515,7 @@ void TreadmillAutomationDbIFace::updateRunTable(QString tableName, QString type,
             "\", stimOrder = \"" + stimOrder + "\" WHERE participantId = \"" + participantId + 
             "\" AND session = \"" + sessionNo + "\" AND runNo = \"" + runNo + 
             "\" AND trial = \"" + trialNo + "\"");
-    qDebug() << queryString;
+//    qDebug() << queryString;
     QSqlQuery query;
 
     query.prepare(queryString);
@@ -524,7 +524,6 @@ void TreadmillAutomationDbIFace::updateRunTable(QString tableName, QString type,
     {
         qWarning() << "ERROR: " << query.lastError().text();
     }
-
 }
 
 #include "../include/moc_TreadmillAutomationDbIFace.cpp"
