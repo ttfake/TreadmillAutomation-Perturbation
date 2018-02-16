@@ -23,6 +23,7 @@ Item {
 
     signal changeCurrent()
     
+    
     function incrementLeftCurrent()
     {
         leftCurrentValue += (currentStep * 10)
