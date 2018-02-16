@@ -29,6 +29,17 @@ Rectangle {
         visible: false
     }
 
+    Image {
+        id: redCircId
+        y: 350
+        width: 400
+        height: 400
+        anchors { horizontalCenter: parent.horizontalCenter}
+        source: "images/RedCircle_Pertv1.png"
+        visible: false
+    }
+
+
     function hideGreenCircle(){
         console.debug("Hiding Circle")
         plsCircId.visible = false
@@ -36,6 +47,14 @@ Rectangle {
 
     function showGreenCircle(){
         plsCircId.visible = true
+    }
+
+    function showRedCircle(){
+        redCircId.visible = true
+    }
+
+    function hideRedCircle(){
+        redCircId.visible = false
     }
 }
 

@@ -32,8 +32,10 @@ SubjectInterface::~SubjectInterface()
 void SubjectInterface::startTrialRun(bool runStartedBool)
 {
     QMetaObject::invokeMethod(subjectIfaceItem, "hideSmileyFace");
-    QMetaObject::invokeMethod(subjectIfaceItem, "updateTextField", Q_ARG(QVariant, "Please Stand Quietly"));
+    QMetaObject::invokeMethod(subjectIfaceItem, "updateTextField", Q_ARG(QVariant, "Reposition Feet"));
 }
+
+
 
 void SubjectInterface::changeToCircle(bool circleBool)
 {
@@ -49,7 +51,13 @@ void SubjectInterface::changeCircleColor(QColor circleColor)
 void SubjectInterface::setTrialComplete(bool mTrialComplete)
 {
     QMetaObject::invokeMethod(subjectIfaceItem, "hideGreenCircle");
-    QMetaObject::invokeMethod(subjectIfaceItem, "showSmileyFace");
+    //QMetaObject::invokeMethod(subjectIfaceItem, "showSmileyFace");
+    QMetaObject::invokeMethod(subjectIfaceItem, "showRedCircle");
+}
+
+void SubjectInterface::updateTextField(QString newText)
+{
+    QMetaObject::invokeMethod(subjectIfaceItem, "updateTextField", Q_ARG(QVariant, newText));
 }
 
 void SubjectInterface::setRunOver(bool mRunOver)

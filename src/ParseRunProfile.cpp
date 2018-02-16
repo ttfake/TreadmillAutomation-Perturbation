@@ -131,13 +131,15 @@ QVector<QString> ParseRunProfile::getRunProfileHead()
     return treadmillDb->getRunProfileHead();
 }
 
-void ParseRunProfile::updateRunTable(QString tableName, QString type, QString level, 
-        QString stimOrder, QString participantId, QString sessionNo, QString runNo, 
-        QString trialNo)
+void ParseRunProfile::updateRunTable(QString tableName, QString setString, QString whereString)
+    //QString type, QString level, 
+    //QString stimOrder, QString participantId, QString sessionNo, QString runNo, 
+    //QString trialNo)
 {
-    treadmillDb->updateRunTable(tableName, type, level, 
-         stimOrder, participantId, sessionNo, runNo, 
-         trialNo);
+    treadmillDb->updateRunTable(tableName, setString, whereString); 
+            //type, level, 
+         //stimOrder, participantId, sessionNo, runNo, 
+         //trialNo);
 }
 
 void ParseRunProfile::clearRunResultsVector()

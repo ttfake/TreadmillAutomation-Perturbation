@@ -507,16 +507,21 @@ QVector<QString> TreadmillAutomationDbIFace::getRunProfileHead()
     return runProfileHead;
 }
 
-void TreadmillAutomationDbIFace::updateRunTable(QString tableName, QString type, QString level, 
-        QString stimOrder, QString participantId, QString sessionNo, QString runNo, 
-        QString trialNo)
+void TreadmillAutomationDbIFace::updateRunTable(QString tableName, QString setString, QString whereString)
+        //QString type, QString level, 
+        //QString stimOrder, QString participantId, QString sessionNo, QString runNo, 
+        //QString trialNo)
 {
-    QString queryString("UPDATE " + tableName + " SET type = \"" + type + "\", level = \"" + level + 
-            "\", stimOrder = \"" + stimOrder + "\" WHERE participantId = \"" + participantId + 
-            "\" AND session = \"" + sessionNo + "\" AND runNo = \"" + runNo + 
-            "\" AND trial = \"" + trialNo + "\"");
+    QString queryString("UPDATE " + tableName +  " SET " + setString + " WHERE " + whereString);//+ " \" WHERE \" " + whereString + "\"");
+            //" SET type = \"" + type + "\", level = \"" + level + 
+           // "\", stimOrder = \"" + stimOrder + "\", runNo = \"" + runNo + "\" WHERE \"" + whereString + "\"")
+            //participantId = \"" + participantId + 
+            //"\" AND session = \"" + sessionNo + "\""); //+ "\" AND runNo = \"" + runNo + 
+//            "\" AND trial = \"" + trialNo + "\"");
 //    qDebug() << queryString;
     QSqlQuery query;
+
+    qDebug() << queryString;
 
     query.prepare(queryString);
 

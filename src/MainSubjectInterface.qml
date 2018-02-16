@@ -30,6 +30,14 @@ Item {
         sIface.hideGreenCircle()
     }
 
+    function showRedCircle(){
+        sIface.showRedCircle()
+    }
+
+    function hideRedCircle(){
+        sIface.hideRedCircle()
+    }
+
     function updateCircleToSmiley(){
         sIface.circleColor = "black"
         showSmileyFace()

@@ -27,9 +27,9 @@ class ParseRunProfile : public QWidget
         void setRunFile(QString mRunFile);
         QVector<QString> getRunsVector();
         QVector<QString> getRunProfileHead();
-        void updateRunTable(QString tableName, QString type, QString level, 
-        QString stimOrder, QString participantId, QString sessionNo, QString runNo, 
-        QString trialNo);
+        void updateRunTable(QString tableName, QString setString, QString whereString);//QString type, QString level, 
+//        QString stimOrder, QString participantId, QString sessionNo, QString runNo, 
+//        QString trialNo);
         void clearRunResultsVector();
         double getAccelLeftDb(QString typeNo, QString levelNo);
         double getAccelRightDb(QString typeNo, QString levelNo);

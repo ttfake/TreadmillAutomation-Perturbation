@@ -25,8 +25,8 @@ class SubjectInterface : public QDialog
         void setTrialComplete(bool mTrialComplete);
         void startTrialRun(bool runStartedBool);
         void setRunOver(bool mRunOver);
-
         QObject *subjectIfaceItem;
+        void updateTextField(QString newText);
 
     private:
         QVBoxLayout* SubjectInterfaceLayout;

@@ -48,9 +48,10 @@ class TreadmillAutomationDbIFace : public QWidget
         void retrieveRun(int runAddIndex);
         QSqlQuery runsQuery;
         QVector<QString> getRunProfileHead();
-        void updateRunTable(QString tableName, QString type, QString level, 
-                QString stimOrder, QString participantId, QString sessionNo, QString runNo, 
-                QString trialNo);
+        void updateRunTable(QString tableName, QString setString, QString whereString);
+                //QString type, QString level, 
+                //QString stimOrder, QString participantId, QString sessionNo, QString runNo, 
+                //QString trialNo);
         void clearRunResultsVector();
         double getAccelLeftFromDb(QString typeNum, QString levelNum);
         void setAccelRight(double accel);

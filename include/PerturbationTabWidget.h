@@ -75,7 +75,7 @@ class PerturbationTabWidget : public QWidget
         void addDecelerationSpeedGroupBox();
         double calculateSpeed();
         void addTrialRunName();
-
+        
     public slots:
         void showTimer(bool state);
         void randomDelay();
@@ -104,8 +104,20 @@ class PerturbationTabWidget : public QWidget
         void setLeftStimCurrent();
         void setRightStimCurrent();
         void exportTable();
+        void setPleaseStandQuietly();
 
     private:
+
+        enum COLUMN
+        {
+            PERSONID = 0,
+            SESSIONID = 1,
+            RUNNUM = 2,
+            TYPE = 3,
+            LEVEL = 4,
+            STIM = 5,
+            TRIAL = 6
+        };
 
         void setCellChangedFalse();
         SendSetpoints* sendSetpoints;
