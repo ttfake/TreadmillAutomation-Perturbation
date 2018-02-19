@@ -3,6 +3,7 @@ import QtQuick.Controls 1.4
 import QtGraphicalEffects 1.0
 import QtQuick.Layouts 1.3
 import QtQuick.Controls.Styles 1.4
+import QtQuick.Window 2.2
 
 Item {
     id: mainStimIface
@@ -72,21 +73,84 @@ Item {
             id: grid
             columns: 3
             
-            Text { id: personIdLabel; text: "Subject ID: "; 
+            Text { id: personIdLabel; 
+                   text: "Subject ID: "; 
                    font.bold: true; 
                    color: "white"; 
                    font.pointSize: 25; 
                    Layout.row: 0;
                    Layout.column: 0; 
                  }
-            Text { id: personIdValue;
-                   text: subjectId
-                   color: "white"
-                   font.pointSize: 25;
-                   Layout.row: 0;
-                   Layout.column: 1;
+            TextField { id: personIdValue;
+                        font.pointSize: 25;
+                        Layout.row: 0;
+                        Layout.column: 1;
+                        Layout.rowSpan: 1;
+                        horizontalAlignment: Text.AlignHCenter
+                        style: TextFieldStyle {
+                        background: Rectangle {
+                            implicitWidth: 150
+                            implicitHeight: 50
+                            border.color: "gray"
+                            color: "gray"
+                            radius: 2
+                          }
+                      }
+                        placeholderText: subjectId
             }
-            Text { id: sessionId; 
+            Button {
+                id: personIdChangeButton;
+                Layout.row: 0;
+                Layout.column: 2
+                height: 15 
+                style: ButtonStyle {
+                    background: Rectangle {
+                        implicitWidth: 100
+                        implicitHeight: 25
+                        border.width: control.activeFocus ? 2 : 1
+                        border.color: "#888"
+                        radius: 4
+                        gradient: Gradient {
+                            GradientStop { position: 0 ; color: control.pressed ? "#ccc" : "#eee" }
+                            GradientStop { position: 1 ; color: control.pressed ? "#aaa" : "#ccc" }
+                        }
+                    }
+
+                    label: Component {
+                        Text {
+                            id: personIdChange
+                            text: "Change"
+                            clip: true
+                            wrapMode: Text.WordWrap
+                            verticalAlignment: Text.AlignVCenter
+                            horizontalAlignment: Text.AlignHCenter
+                            anchors.fill: parent
+                            font.pointSize: 10;
+                            font.bold: true
+                        }
+                    }
+
+                }
+                onClicked: changesubjectpopup.open()
+            }
+            ApplicationWindow {
+                          id: window
+                          width: 400
+                          height: 400
+                          visible: true
+                          Popup {
+                              d: changesubjectpopup
+                              x: 100
+                              y: 100
+                              width: 200
+                              height: 300
+                              modal: true
+                              focus: true
+                              closePolicy: Popup.CloseOnEscape | Popup.CloseOnPressOutsideParent
+                          }
+            }
+
+            Text { id: sessionIdLabel; 
                    text: "Session ID: "; 
                    font.bold: true;
                    color: "white"; 
@@ -94,6 +158,24 @@ Item {
                    Layout.row: 1;
                    Layout.column: 0; 
                  }
+            TextField { id: sessionIdValue;
+                        font.pointSize: 25;
+                        Layout.row: 1;
+                        Layout.column: 1;
+                        Layout.rowSpan: 1;
+                        horizontalAlignment: Text.AlignHCenter
+                        style: TextFieldStyle {
+                        background: Rectangle {
+                            implicitWidth: 150
+                            implicitHeight: 50
+                            border.color: "gray"
+                            color: "gray"
+                            radius: 2
+                          }
+                      }
+                        placeholderText: sessionId
+            }
+ 
             Text { id: leftStimCurrentLevel;
                    text: "Left Stimulation Current: "
                    font.bold: true;

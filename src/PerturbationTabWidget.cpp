@@ -1057,7 +1057,7 @@ void PerturbationTabWidget::enableButton()
 
 void PerturbationTabWidget::nextRun()
 {
-    int pleaseStandQuietly = 10000;
+    int pleaseStandQuietly = 2000;
     //sInterface->setRunOver(true);
     sInterface->startTrialRun(true);
     QTimer::singleShot(pleaseStandQuietly, this, SLOT(setPleaseStandQuietly()));
