@@ -6,7 +6,7 @@ Rectangle {
     height: parent.height
     color: "black"
     property string rectTxt
-    rectTxt: "Please Stand Quietly"
+    rectTxt: ""
     property string textColor
     textColor: "yellow"
 

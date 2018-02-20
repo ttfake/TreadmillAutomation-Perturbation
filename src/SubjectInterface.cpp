@@ -32,7 +32,7 @@ SubjectInterface::~SubjectInterface()
 void SubjectInterface::startTrialRun(bool runStartedBool)
 {
     QMetaObject::invokeMethod(subjectIfaceItem, "hideSmileyFace");
-    QMetaObject::invokeMethod(subjectIfaceItem, "updateTextField", Q_ARG(QVariant, "Reposition Feet"));
+//    QMetaObject::invokeMethod(subjectIfaceItem, "updateTextField", Q_ARG(QVariant, "Reposition Feet"));
 }
 
 

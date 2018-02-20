@@ -558,12 +558,13 @@ void PerturbationTabWidget::addStartPertRunGroupBox()
 //    connect(recTreadmillStream, SIGNAL(treadmillStarted(double)), 
 //            this, SLOT(treadmillWait(double)));
     connect(startPertRunBtn, SIGNAL(clicked()), SLOT(getTrialName()));
-//    connect(startPertRunBtn, SIGNAL(clicked()), SLOT(startTreadmill()));
-    connect(startPertRunBtn, SIGNAL(clicked()), SLOT(randomDelay()));
+//    connect(startPertRunBtn, SIGNAL(clicked()), SLOT(randomDelay()));
+    connect(startPertRunBtn, SIGNAL(clicked()), SLOT(setPositionFeet()));
     connect(startPertRunBtn, SIGNAL(clicked()), mouseInterface, SLOT(WriteEvent()));  // Trigger 1
+    connect(startPertRunBtn, SIGNAL(clicked()), mouseInterface, SLOT(setPerturbationActiveBoolTrue()));
     connect(mouseInterface, SIGNAL(movement()), SLOT(treadmillWait()));
     connect(mouseInterface, SIGNAL(movementStopped()), SLOT(slotTimeout()));
-    connect(startPertRunBtn, SIGNAL(clicked()), mouseInterface, SLOT(setPerturbationActiveBoolTrue()));
+
     connect(nextPertRunBtn, SIGNAL(clicked()), SLOT(nextRun()));
     connect(prevPertRunBtn, SIGNAL(clicked()), SLOT(prevRun()));
     connect(startStimRunBtn, SIGNAL(clicked()), SLOT(startStim()));
@@ -979,7 +980,7 @@ void PerturbationTabWidget::loadRunProfile()
         populateRunsTextBox();
         runTableWidget->selectRow(currentRunRowIndex);
         sInterface->startTrialRun(true);
-        setPleaseStandQuietly();
+        //setPleaseStandQuietly();
         setStimChannel();
     }
 }
@@ -1057,10 +1058,10 @@ void PerturbationTabWidget::enableButton()
 
 void PerturbationTabWidget::nextRun()
 {
-    int pleaseStandQuietly = 2000;
+//    int pleaseStandQuietly = 2000;
     //sInterface->setRunOver(true);
-    sInterface->startTrialRun(true);
-    QTimer::singleShot(pleaseStandQuietly, this, SLOT(setPleaseStandQuietly()));
+    //sInterface->startTrialRun(true);
+//    QTimer::singleShot(pleaseStandQuietly, this, SLOT(setPleaseStandQuietly()));
     currentRunRowIndex++;
     prp->getRun(1);
     setAccelerationValue(prp->getAccelLeft());
@@ -1074,8 +1075,18 @@ void PerturbationTabWidget::nextRun()
 
 void PerturbationTabWidget::setPleaseStandQuietly()
 {
+    int plsStndQuietly = 2000;
     QString plsStandQuietly("Please Stand Quietly");
     sInterface->updateTextField(plsStandQuietly);
+    QTimer::singleShot(plsStndQuietly, this, SLOT(randomDelay()));
+}
+
+void PerturbationTabWidget::setPositionFeet()
+{
+    int posFeetTimeout = 2000;
+    QString posFeet("Position Feet");
+    sInterface->updateTextField(posFeet);
+    QTimer::singleShot(posFeetTimeout, this, SLOT(setPleaseStandQuietly()));
 }
 
 void PerturbationTabWidget::prevRun()

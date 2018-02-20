@@ -133,7 +133,7 @@ Item {
                 }
                 onClicked: changesubjectpopup.open()
             }
-            ApplicationWindow {
+/*            ApplicationWindow {
                           id: window
                           width: 400
                           height: 400
@@ -149,7 +149,7 @@ Item {
                               closePolicy: Popup.CloseOnEscape | Popup.CloseOnPressOutsideParent
                           }
             }
-
+*/
             Text { id: sessionIdLabel; 
                    text: "Session ID: "; 
                    font.bold: true;

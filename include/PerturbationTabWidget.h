@@ -105,6 +105,7 @@ class PerturbationTabWidget : public QWidget
         void setRightStimCurrent();
         void exportTable();
         void setPleaseStandQuietly();
+        void setPositionFeet();
 
     private:
 

@@ -8,7 +8,7 @@ Item {
 
     SubjectInterface {
         id: sIface
-        rectTxt: "Please Stand Quietly"
+        rectTxt: ""
     }
 
     Smiley {
