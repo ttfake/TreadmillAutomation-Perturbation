@@ -35,9 +35,7 @@ void SubjectInterface::startTrialRun(bool runStartedBool)
 //    QMetaObject::invokeMethod(subjectIfaceItem, "updateTextField", Q_ARG(QVariant, "Reposition Feet"));
 }
 
-
-
-void SubjectInterface::changeToCircle(bool circleBool)
+void SubjectInterface::changeToCircle()
 {
     QMetaObject::invokeMethod(subjectIfaceItem, "showGreenCircle");
     QMetaObject::invokeMethod(subjectIfaceItem, "updateTextField", Q_ARG(QVariant, ""));
@@ -53,6 +51,11 @@ void SubjectInterface::setTrialComplete(bool mTrialComplete)
     QMetaObject::invokeMethod(subjectIfaceItem, "hideGreenCircle");
     //QMetaObject::invokeMethod(subjectIfaceItem, "showSmileyFace");
     QMetaObject::invokeMethod(subjectIfaceItem, "showRedCircle");
+}
+
+void SubjectInterface::hideRedCircle()
+{
+    QMetaObject::invokeMethod(subjectIfaceItem, "hideRedCircle");
 }
 
 void SubjectInterface::updateTextField(QString newText)

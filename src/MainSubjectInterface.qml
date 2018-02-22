@@ -15,7 +15,6 @@ Item {
         id: smiley
         visible: false
     }
-
     
     function updateTextField(text){
         console.debug("setTextField: " + text)

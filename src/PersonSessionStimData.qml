@@ -18,11 +18,13 @@ Item {
     property double currentStep
     currentStep: spinbox.value
     property string subjectId
+    subjectId: "test"
     property string sessionId
     property string leftStimUpButtonColor
     leftStimUpButtonColor: "grey"
 
     signal changeCurrent()
+    signal changeSubjectId()
     
     
     function incrementLeftCurrent()
@@ -44,11 +46,12 @@ Item {
     }
     function setSubjectId(subject)
     {
-        subjectId: subject
+        console.debug(subject)
+        subjectId = subject
     }
     function setSessionId(session)
     {
-        sessionId: session
+        sessionId = session
     }
     function getLeftCurrent()
     {
@@ -96,7 +99,7 @@ Item {
                             radius: 2
                           }
                       }
-                        placeholderText: subjectId
+                      text: subjectId
             }
             Button {
                 id: personIdChangeButton;
@@ -131,25 +134,9 @@ Item {
                     }
 
                 }
-                onClicked: changesubjectpopup.open()
+                onClicked: changeSubjectId()
             }
-/*            ApplicationWindow {
-                          id: window
-                          width: 400
-                          height: 400
-                          visible: true
-                          Popup {
-                              d: changesubjectpopup
-                              x: 100
-                              y: 100
-                              width: 200
-                              height: 300
-                              modal: true
-                              focus: true
-                              closePolicy: Popup.CloseOnEscape | Popup.CloseOnPressOutsideParent
-                          }
-            }
-*/
+
             Text { id: sessionIdLabel; 
                    text: "Session ID: "; 
                    font.bold: true;

@@ -105,7 +105,9 @@ class PerturbationTabWidget : public QWidget
         void setRightStimCurrent();
         void exportTable();
         void setPleaseStandQuietly();
+        void setTryNotToStep();
         void setPositionFeet();
+
 
     private:
 
@@ -342,6 +344,6 @@ class PerturbationTabWidget : public QWidget
         void saveFile();
         //QPushButton* updateRunTableBtn;
         QString returnTrialNum(QString trialString);
-
+        QString defaultName;
 };
 #endif

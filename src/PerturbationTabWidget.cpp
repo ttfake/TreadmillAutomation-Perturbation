@@ -558,8 +558,9 @@ void PerturbationTabWidget::addStartPertRunGroupBox()
 //    connect(recTreadmillStream, SIGNAL(treadmillStarted(double)), 
 //            this, SLOT(treadmillWait(double)));
     connect(startPertRunBtn, SIGNAL(clicked()), SLOT(getTrialName()));
+    setPleaseStandQuietly();
 //    connect(startPertRunBtn, SIGNAL(clicked()), SLOT(randomDelay()));
-    connect(startPertRunBtn, SIGNAL(clicked()), SLOT(setPositionFeet()));
+    connect(startPertRunBtn, SIGNAL(clicked()), SLOT(setTryNotToStep()));
     connect(startPertRunBtn, SIGNAL(clicked()), mouseInterface, SLOT(WriteEvent()));  // Trigger 1
     connect(startPertRunBtn, SIGNAL(clicked()), mouseInterface, SLOT(setPerturbationActiveBoolTrue()));
     connect(mouseInterface, SIGNAL(movement()), SLOT(treadmillWait()));
@@ -727,7 +728,7 @@ void PerturbationTabWidget::setUseLibraryStatus(bool useLibCheckBox)
 
 void PerturbationTabWidget::randomDelay()
 {
-    sInterface->changeToCircle(true);
+    sInterface->changeToCircle();
     startPertRunBtn->setDisabled(true);
     nextPertRunBtn->setDisabled(true);
     prevPertRunBtn->setDisabled(true);
@@ -904,6 +905,11 @@ void PerturbationTabWidget::slotTimeout()
     startPertRunBtn->setDisabled(false);
     nextPertRunBtn->setDisabled(false);
     prevPertRunBtn->setDisabled(false);
+
+    int repoFeetTimeout = 2000;
+
+    QTimer::singleShot(repoFeetTimeout, this, SLOT(setPositionFeet()));
+
     //-----------------------------------------------------------------------
 /*    auto uptime = std::chrono::milliseconds(GetTickCount());
     std::ostringstream out;
@@ -953,6 +959,10 @@ double PerturbationTabWidget::calculateSpeed()
 void PerturbationTabWidget::loadRunProfile()
 {
     currentRunRowIndex = 0;
+    int subjectIdRow = 0;
+    int subjectIdCol = 0;
+    int sessionIdRow = 0;
+    int sessionIdCol = 1;
 
     QString fileName = QFileDialog::getOpenFileName(this, tr("Open File"), \
             "C:\\Users\\User\\Desktop\\HReflex_Binaries-master\\RunProfiles", \
@@ -980,6 +990,10 @@ void PerturbationTabWidget::loadRunProfile()
         populateRunsTextBox();
         runTableWidget->selectRow(currentRunRowIndex);
         sInterface->startTrialRun(true);
+        QMetaObject::invokeMethod(personSessionStimQuickViewItem, "setSubjectId", Q_ARG(QVariant, 
+                    runTableWidget->item(subjectIdRow, subjectIdCol)->text()));
+        QMetaObject::invokeMethod(personSessionStimQuickViewItem, "setSessionId", Q_ARG(QVariant, 
+                    runTableWidget->item(sessionIdRow, sessionIdCol)->text()));
         //setPleaseStandQuietly();
         setStimChannel();
     }
@@ -1062,6 +1076,7 @@ void PerturbationTabWidget::nextRun()
     //sInterface->setRunOver(true);
     //sInterface->startTrialRun(true);
 //    QTimer::singleShot(pleaseStandQuietly, this, SLOT(setPleaseStandQuietly()));
+    setPleaseStandQuietly();
     currentRunRowIndex++;
     prp->getRun(1);
     setAccelerationValue(prp->getAccelLeft());
@@ -1075,18 +1090,23 @@ void PerturbationTabWidget::nextRun()
 
 void PerturbationTabWidget::setPleaseStandQuietly()
 {
-    int plsStndQuietly = 2000;
-    QString plsStandQuietly("Please Stand Quietly");
+    QString plsStandQuietly("PLEASE STAND QUIETLY");
     sInterface->updateTextField(plsStandQuietly);
-    QTimer::singleShot(plsStndQuietly, this, SLOT(randomDelay()));
 }
 
 void PerturbationTabWidget::setPositionFeet()
 {
-    int posFeetTimeout = 2000;
-    QString posFeet("Position Feet");
+    sInterface->hideRedCircle();
+    QString posFeet("REPOSITION FEET");
     sInterface->updateTextField(posFeet);
-    QTimer::singleShot(posFeetTimeout, this, SLOT(setPleaseStandQuietly()));
+}
+
+void PerturbationTabWidget::setTryNotToStep()
+{
+    int tryNotToStepTimeout = 2000;
+    QString tryNotToStep("TRY NOT TO STEP");
+    sInterface->updateTextField(tryNotToStep);
+    QTimer::singleShot(tryNotToStepTimeout, this, SLOT(randomDelay()));
 }
 
 void PerturbationTabWidget::prevRun()
@@ -1494,7 +1514,17 @@ QString PerturbationTabWidget::returnTrialNum(QString trialString)
 
 void PerturbationTabWidget::exportTable()
 {
-    qDebug() << "Hello from exportTable()";
+    int firstRow = 0;
+    for(int col = 0; col < runTableWidget->columnCount(); col++)
+    {
+        QTableWidgetItem* item = runTableWidget->item(firstRow, col);
+        defaultName += item->text() + "_";
+    }
+    int pos = defaultName.lastIndexOf(QChar('_'));
+    defaultName = defaultName.left(pos-1) + ".csv";
+
+    qDebug() << defaultName;
+
     QVector<QString> rowVec;
     QString rowString;
     saveFile();
@@ -1513,7 +1543,7 @@ void PerturbationTabWidget::exportTable()
         {
             rowString += item;
         }
-        int pos = rowString.lastIndexOf(QChar('_'));
+        pos = rowString.lastIndexOf(QChar('_'));
         qDebug() << rowString.left(pos-1);
         saveProfile->open(QIODevice::ReadWrite);
         *saveProfileStream << rowString.left(pos-1) << "\n";
@@ -1527,9 +1557,12 @@ void PerturbationTabWidget::exportTable()
 
 void PerturbationTabWidget::saveFile()
 {
-    QString fileName = QFileDialog::getSaveFileName(this, tr("Save Profile"), \
-            "C:\\Users\\User\\Desktop\\HReflex_Binaries-master\\RunProfiles", \
-            tr("CSV (*.csv)"));
+    QString defaultNameAndPath("C:\\Users\\User\\Desktop\\HReflex_Binaries-master\\RunProfiles\\");
+    defaultNameAndPath += defaultName;
+    QFileDialog exportFileDialog(this);
+    exportFileDialog.selectFile(defaultName);
+    QString fileName = exportFileDialog.getSaveFileName(this, tr("Save Profile"), defaultNameAndPath \
+            ,tr("CSV (*.csv)"));
     if(fileName == "")
     {
         QMessageBox errLoadFile;
