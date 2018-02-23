@@ -26,6 +26,7 @@ class SubjectInterface : public QDialog
         void setRunOver(bool mRunOver);
         QObject *subjectIfaceItem;
         void updateTextField(QString newText);
+        void updateTextColor(QString color);
 
         public slots:
             void changeToCircle();

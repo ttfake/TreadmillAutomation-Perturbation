@@ -63,6 +63,11 @@ void SubjectInterface::updateTextField(QString newText)
     QMetaObject::invokeMethod(subjectIfaceItem, "updateTextField", Q_ARG(QVariant, newText));
 }
 
+void SubjectInterface::updateTextColor(QString color)
+{
+    QMetaObject::invokeMethod(subjectIfaceItem, "setTextColor", Q_ARG(QVariant, color));
+}
+
 void SubjectInterface::setRunOver(bool mRunOver)
 {
     QMetaObject::invokeMethod(subjectIfaceItem, "hideGreenCircle");

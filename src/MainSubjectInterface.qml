@@ -21,6 +21,11 @@ Item {
         sIface.rectTxt = text
     }
 
+    function setTextColor(color)
+    {
+        sIface.textColor = color
+    }
+
     function showGreenCircle(){
         sIface.showGreenCircle()
     }

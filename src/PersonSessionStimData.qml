@@ -46,8 +46,11 @@ Item {
     }
     function setSubjectId(subject)
     {
-        console.debug(subject)
         subjectId = subject
+    }
+    function getSubjectId()
+    {
+        return subjectId
     }
     function setSessionId(session)
     {

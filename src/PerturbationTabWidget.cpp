@@ -1092,6 +1092,7 @@ void PerturbationTabWidget::setPleaseStandQuietly()
 {
     QString plsStandQuietly("PLEASE STAND QUIETLY");
     sInterface->updateTextField(plsStandQuietly);
+    sInterface->updateTextColor("yellow");
 }
 
 void PerturbationTabWidget::setPositionFeet()
@@ -1099,6 +1100,7 @@ void PerturbationTabWidget::setPositionFeet()
     sInterface->hideRedCircle();
     QString posFeet("REPOSITION FEET");
     sInterface->updateTextField(posFeet);
+    sInterface->updateTextColor("yellow");
 }
 
 void PerturbationTabWidget::setTryNotToStep()
@@ -1106,6 +1108,7 @@ void PerturbationTabWidget::setTryNotToStep()
     int tryNotToStepTimeout = 2000;
     QString tryNotToStep("TRY NOT TO STEP");
     sInterface->updateTextField(tryNotToStep);
+    sInterface->updateTextColor("white");
     QTimer::singleShot(tryNotToStepTimeout, this, SLOT(randomDelay()));
 }
 

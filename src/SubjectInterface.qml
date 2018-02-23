@@ -56,5 +56,10 @@ Rectangle {
     function hideRedCircle(){
         redCircId.visible = false
     }
+    
+    function setTextColor(color)
+    {
+        textColor = color
+    }
 }
 
