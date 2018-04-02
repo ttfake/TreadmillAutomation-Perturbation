@@ -1013,6 +1013,7 @@ void PerturbationTabWidget::loadRunProfile()
         }
         double decelTime = timeoutBuffer + prp->getDecelTime();
         timeDecelSpinBox->setValue(decelTime);
+        
         firstLoadComplete = true;
     }
     else
