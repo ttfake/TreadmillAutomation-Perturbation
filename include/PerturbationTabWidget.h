@@ -75,12 +75,14 @@ class PerturbationTabWidget : public QWidget
         void addDecelerationSpeedGroupBox();
         double calculateSpeed();
         void addTrialRunName();
-        
+        void closeSubjectInterfaceWindow();
+        void closeInstrumentationPanel(); 
     public slots:
         void showTimer(bool state);
         void randomDelay();
         void loadRunProfile();
         void showSubjectView();
+        void checkFileExists();
 
     private slots:
         void setLeftFrontSpeedValue(double mleftFrontSpeedValue);
@@ -101,6 +103,7 @@ class PerturbationTabWidget : public QWidget
         void startStim();
         void updateRun(int mCellRow, int mCellCol);
         void setCellChangedTrue(int mCellRow, int mCellCol);
+        void setCellChangedTrue();
         void setLeftStimCurrent();
         void setRightStimCurrent();
         void exportTable();
@@ -308,7 +311,7 @@ class PerturbationTabWidget : public QWidget
         int currentRunRowIndex;
         QFont tableRowsFont;
         void addEmgDataVisualization();
-        int columnIndex;
+        int statusCol;
         SubjectInterface* sInterface;
         InstrumentationPanel* instPanel; 
         bool cellDoubleClicked;
@@ -344,6 +347,12 @@ class PerturbationTabWidget : public QWidget
         void saveFile();
         //QPushButton* updateRunTableBtn;
         QString returnTrialNum(QString trialString);
+        QString defaultPath;
+        QString defaultNameAndPath; 
         QString defaultName;
+        int updateCounter;
+        bool firstLoadComplete;
+        double timeoutBuffer;
+
 };
 #endif

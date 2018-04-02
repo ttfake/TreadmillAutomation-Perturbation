@@ -36,6 +36,7 @@ class TreadmillAutomationDbIFace : public QWidget
         double getAccelLeft();
         double getAccelRight();
         double getAccelTime();
+        double getDecelTime();
         double getDecelLeft();
         double getDecelRight();
         QVector<QString> getRunResults();
@@ -58,6 +59,7 @@ class TreadmillAutomationDbIFace : public QWidget
         double getAccelRightFromDb(QString typeNum, QString levelNum);
 
         void setAccelTime(double accelTime);
+        void setDecelTime(double mdecelTime);
         double getAccelTimeFromDb(QString typeNum);
        
         void setDecelLeft(double decel);

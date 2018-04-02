@@ -20,7 +20,6 @@ SubjectInterface::SubjectInterface(QWidget* parent, Qt::WindowFlags flags)
     subjectQuickViewContainer->setFixedSize(1920,1080);
 
     subjectIfaceItem = subjectQuickView->rootObject();
-    
     setWindowFlags(Qt::Window);
     show();
 }
@@ -56,6 +55,11 @@ void SubjectInterface::setTrialComplete(bool mTrialComplete)
 void SubjectInterface::hideRedCircle()
 {
     QMetaObject::invokeMethod(subjectIfaceItem, "hideRedCircle");
+}
+
+void SubjectInterface::hideGreenCircle()
+{
+    QMetaObject::invokeMethod(subjectIfaceItem, "hideGreenCircle");
 }
 
 void SubjectInterface::updateTextField(QString newText)

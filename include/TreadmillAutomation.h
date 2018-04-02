@@ -27,6 +27,7 @@
 #include <QMap>
 #include <QThread>
 #include <QSignalMapper>
+#include <QCloseEvent>
 
 #include "include/NetworkTabWidget.h"
 #include "include/PerturbationTabWidget.h"
@@ -67,6 +68,7 @@ class TreadmillAutomation : public QMainWindow
     private slots:
         void showTimer();
         void errorString(QString s);
+        void closeEvent(QCloseEvent *event);
 
     private:
         QWidget* centralWidget;

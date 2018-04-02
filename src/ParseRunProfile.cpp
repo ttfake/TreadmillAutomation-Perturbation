@@ -100,6 +100,16 @@ double ParseRunProfile::getAccelTimeDb(QString typeNo)
     return treadmillDb->getAccelTimeFromDb(typeNo);
 }
 
+double ParseRunProfile::getDecelTime()
+{
+    double decelTime(treadmillDb->getDecelTime());
+    return decelTime;
+}
+
+double ParseRunProfile::getDecelTimeDb(QString typeNo)
+{
+    return treadmillDb->getDecelTimeFromDb(typeNo);
+}
 
 void ParseRunProfile::getRuns()
 {

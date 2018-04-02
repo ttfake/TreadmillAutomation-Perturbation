@@ -31,6 +31,7 @@ class SubjectInterface : public QDialog
         public slots:
             void changeToCircle();
             void hideRedCircle();
+            void hideGreenCircle();
 
     private:
         QVBoxLayout* SubjectInterfaceLayout;

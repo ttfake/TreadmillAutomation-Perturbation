@@ -11,6 +11,7 @@ TreadmillAutomation::TreadmillAutomation(QWidget *parent, Qt::WindowFlags flags)
     perturbationTabWidget = new PerturbationTabWidget;
     configTabWidget = new ConfigTabWidget;
     connect(configTabWidget, SIGNAL(timerUpdatedSignal()), SLOT(updateStimTimer()));
+
     
     sendSetpointObject = SendSetpoints::getInstance();
     createFileMenu();
@@ -26,7 +27,23 @@ TreadmillAutomation::TreadmillAutomation(QWidget *parent, Qt::WindowFlags flags)
 
 TreadmillAutomation::~TreadmillAutomation()
 {
+}
 
+void TreadmillAutomation::closeEvent(QCloseEvent *event)
+{
+    QString APP_NAME("Treadmill Automation");
+    QMessageBox::StandardButton resBtn = QMessageBox::question( this, APP_NAME,
+            tr("Are you sure?\n"),
+            QMessageBox::Cancel | QMessageBox::No | QMessageBox::Yes,
+            QMessageBox::Yes);
+    if (resBtn != QMessageBox::Yes) {
+        event->ignore();
+    } else {
+        perturbationTabWidget->checkFileExists();
+        perturbationTabWidget->closeSubjectInterfaceWindow();
+        //delete perturbationTabWidget;
+        event->accept();
+    }
 }
 
 void TreadmillAutomation::createFileMenu()
@@ -48,7 +65,8 @@ void TreadmillAutomation::createFileMenu()
     exitAct->setText("Exit");
     menuBar->addMenu(menuFile);
     connect(exitAct, SIGNAL(triggered()), this, SLOT(close()));
-
+    //connect(exitAct, SIGNAL(triggered()), perturbationTabWidget, SLOT(checkFileExists()));
+    
     menuView = new QMenu(menuBar);
     menuView->setObjectName(QStringLiteral("menuView"));
     menuView->setTitle(QApplication::translate("TreadmillAutomation", "View", Q_NULLPTR));

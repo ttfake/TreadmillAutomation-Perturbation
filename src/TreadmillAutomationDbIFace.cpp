@@ -202,6 +202,11 @@ void TreadmillAutomationDbIFace::setAccelTime(double accelTime)
     accelerationTime = accelTime;
 }
 
+void TreadmillAutomationDbIFace::setDecelTime(double mdecelTime)
+{
+    decelerationTime = mdecelTime;
+}
+
 double TreadmillAutomationDbIFace::getAccelTime()
 {
     return accelerationTime;
@@ -225,6 +230,11 @@ double TreadmillAutomationDbIFace::getDecelLeftFromDb(QString typeNum, QString l
     }
 
     return decel.toDouble();
+}
+
+double TreadmillAutomationDbIFace::getDecelTime()
+{
+    return decelerationTime;
 }
 
 double TreadmillAutomationDbIFace::getDecelRightFromDb(QString typeNum, QString levelNum)
@@ -284,6 +294,8 @@ double TreadmillAutomationDbIFace::getDecelTimeFromDb(QString typeNum)
     {
         decelerationTime = "Deceleration Time Not Found";
     }
+
+    qDebug() << "Deceleration Time: " << decelerationTime.toDouble();
 
     return decelerationTime.toDouble();
 }
@@ -381,6 +393,7 @@ void TreadmillAutomationDbIFace::retrieveRun(int runAddIndex)
 
         
         setAccelTime(getAccelTimeFromDb(type));
+        setDecelTime(getDecelTimeFromDb(type));
         if(firstRun)
         {
             emit startStimulation();

@@ -36,6 +36,7 @@ class ParseRunProfile : public QWidget
         double getDecelLeftDb(QString typeNo, QString levelNo);
         double getDecelRightDb(QString typeNo, QString levelNo);
         double getAccelTimeDb(QString typeNo);
+        double getDecelTimeDb(QString typeNo);
         int getDirectionFromDb(QString type, QString level);
         QString getStimSeq();
 

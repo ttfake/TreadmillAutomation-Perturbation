@@ -11,13 +11,18 @@ PerturbationTabWidget::PerturbationTabWidget(QWidget* parent, Qt::WindowFlags fl
     prp = new ParseRunProfile;
     cellDoubleClicked = false;
     InstrumentationPanel* instPanel = new InstrumentationPanel;
+    updateCounter = 0;
+    defaultPath = "C:\\Users\\User\\Desktop\\HReflex_Binaries-master\\RunProfiles\\";
+    firstLoadComplete = false;
+    statusCol = 7;
+    timeoutBuffer = 400.00; //in milliseconds
     /* 
      * Signal connect below must be uncommented form stimulation to work.
      * connect(prp, SIGNAL(startStimulation()), SLOT(startStim()));
      */
     
 /*	if (DS8Controller.ErrorCode != -1)
-	{
+	/{
 		//DS8Controller.SetVariables(NULL,NULL,10,NULL,NULL,NULL,TRUE); //Set to Defaults
 		DS8Controller.ToggleOutput(FALSE);
 		DS8Controller.SetVariables(NULL,NULL,20,NULL,NULL,NULL,TRUE); //Set to Defaults
@@ -281,6 +286,7 @@ void PerturbationTabWidget::addRunGroupBox()
     importExportGroupBoxVLayout->addWidget(exportButton);
 
     connect(importButton, SIGNAL(clicked()), SLOT(loadRunProfile()));
+    connect(importButton, SIGNAL(clicked()), SLOT(setPleaseStandQuietly()));
     connect(exportButton, SIGNAL(clicked()), SLOT(exportTable()));
 
 
@@ -373,7 +379,7 @@ void PerturbationTabWidget::addTimerGroupBox()
     timeDecelSpinBox->setSizePolicy(QSizePolicy::Minimum, QSizePolicy::Fixed);
     timeDecelSpinBox->setFixedSize(160,40);
     timeDecelSpinBox->setRange(0.00, 100000000.00);
-    timeDecelSpinBox->setValue(600.00);
+
     timeDecelSpinBox->setEnabled(false);
     timerGroupBoxVerticalLayout->addWidget(timeDecelSpinBox);
 
@@ -508,7 +514,7 @@ void PerturbationTabWidget::addStartPertRunGroupBox()
 {
 //    prp = new ParseRunProfile();
     sInterface = new SubjectInterface;
-    sInterface->setAttribute(Qt::WA_DeleteOnClose);
+    sInterface->setAttribute(Qt::WA_QuitOnClose, true);
     startPertRunGroupBox = new QGroupBox;
     startPertRunGroupBox->setSizePolicy(QSizePolicy::Minimum, QSizePolicy::Fixed);
     startPertRunGroupBoxLayout = new QVBoxLayout;
@@ -895,10 +901,10 @@ void PerturbationTabWidget::slotTimeout()
 {
     mouseInterface->setMovementDetectedBool(false);
     QString complete("Complete");
-    columnIndex = 7;
-    runTableWidget->setItem(currentRunRowIndex, columnIndex, 
+    
+    runTableWidget->setItem(currentRunRowIndex, statusCol, 
             new QTableWidgetItem(tr("%1").arg(complete)));
-    runTableWidget->item(currentRunRowIndex, columnIndex)->setFont(tableRowsFont);
+    runTableWidget->item(currentRunRowIndex, statusCol)->setFont(tableRowsFont);
     sInterface->setTrialComplete(true);
     mouseInterface->setPerturbationActiveBoolFalse();
     mouseInterface->setMovementDetectedBool(false);
@@ -906,7 +912,7 @@ void PerturbationTabWidget::slotTimeout()
     nextPertRunBtn->setDisabled(false);
     prevPertRunBtn->setDisabled(false);
 
-    int repoFeetTimeout = 2000;
+    int repoFeetTimeout = 3000;
 
     QTimer::singleShot(repoFeetTimeout, this, SLOT(setPositionFeet()));
 
@@ -958,46 +964,63 @@ double PerturbationTabWidget::calculateSpeed()
 
 void PerturbationTabWidget::loadRunProfile()
 {
-    currentRunRowIndex = 0;
-    int subjectIdRow = 0;
-    int subjectIdCol = 0;
-    int sessionIdRow = 0;
-    int sessionIdCol = 1;
+    checkFileExists();
 
-    QString fileName = QFileDialog::getOpenFileName(this, tr("Open File"), \
+    QFileDialog loadRunFileDlg(this);
+   
+    QString fileName = loadRunFileDlg.getOpenFileName(this, tr("Open File"), \
             "C:\\Users\\User\\Desktop\\HReflex_Binaries-master\\RunProfiles", \
             tr("CSV (*.csv)"));
-    if(fileName == "")
+    
+    if(!fileName.isEmpty() && !fileName.isNull())
     {
-        QMessageBox errLoadFile;
-        errLoadFile.setText("Error Loading File");
-        errLoadFile.exec();
+
+        currentRunRowIndex = 0;
+        int subjectIdRow = 0;
+        int subjectIdCol = 0;
+        int sessionIdRow = 0;
+        int sessionIdCol = 1;
+
+        if(fileName == "")
+        {
+            QMessageBox errLoadFile;
+            errLoadFile.setText("Error Loading File");
+            errLoadFile.exec();
+        }
+        else
+        {
+            runTableWidget->setRowCount(0);
+            prp->setRunFile(fileName);
+            tableFilled = false;
+            prp->getRuns();
+            prp->getRun(1);
+            mouseInterface->SetupChannelSelection();
+            setAccelerationValue(prp->getAccelLeft());
+            acceleration->setValue(prp->getAccelLeft());
+            setDecelerationValue(prp->getDecelLeft());
+            deceleration->setValue(prp->getDecelLeft());
+            timeAccelSpinBox->setValue(prp->getAccelTime());
+            setAccelerationTimeValue(prp->getAccelTime());
+            populateRunsTextBox();
+            runTableWidget->selectRow(currentRunRowIndex);
+            sInterface->startTrialRun(true);
+            QMetaObject::invokeMethod(personSessionStimQuickViewItem, "setSubjectId", Q_ARG(QVariant, 
+                        runTableWidget->item(subjectIdRow, subjectIdCol)->text()));
+            QMetaObject::invokeMethod(personSessionStimQuickViewItem, "setSessionId", Q_ARG(QVariant, 
+                        runTableWidget->item(sessionIdRow, sessionIdCol)->text()));
+            //setPleaseStandQuietly();
+            setStimChannel();
+        }
+        double decelTime = timeoutBuffer + prp->getDecelTime();
+        timeDecelSpinBox->setValue(decelTime);
+        firstLoadComplete = true;
     }
     else
     {
-        runTableWidget->setRowCount(0);
-        prp->setRunFile(fileName);
-        tableFilled = false;
-        prp->getRuns();
-        prp->getRun(1);
-        mouseInterface->SetupChannelSelection();
-        setAccelerationValue(prp->getAccelLeft());
-        acceleration->setValue(prp->getAccelLeft());
-        setDecelerationValue(prp->getDecelLeft());
-        deceleration->setValue(prp->getDecelLeft());
-        timeAccelSpinBox->setValue(prp->getAccelTime());
-        setAccelerationTimeValue(prp->getAccelTime());
-        populateRunsTextBox();
-        runTableWidget->selectRow(currentRunRowIndex);
-        sInterface->startTrialRun(true);
-        QMetaObject::invokeMethod(personSessionStimQuickViewItem, "setSubjectId", Q_ARG(QVariant, 
-                    runTableWidget->item(subjectIdRow, subjectIdCol)->text()));
-        QMetaObject::invokeMethod(personSessionStimQuickViewItem, "setSessionId", Q_ARG(QVariant, 
-                    runTableWidget->item(sessionIdRow, sessionIdCol)->text()));
-        //setPleaseStandQuietly();
-        setStimChannel();
+        qDebug() << "Load run rejected";
     }
 }
+
 
 void PerturbationTabWidget::setStimChannel()
 {
@@ -1090,6 +1113,7 @@ void PerturbationTabWidget::nextRun()
 
 void PerturbationTabWidget::setPleaseStandQuietly()
 {
+    sInterface->hideGreenCircle();
     QString plsStandQuietly("PLEASE STAND QUIETLY");
     sInterface->updateTextField(plsStandQuietly);
     sInterface->updateTextColor("yellow");
@@ -1117,7 +1141,7 @@ void PerturbationTabWidget::prevRun()
     sInterface->setRunOver(true);
     sInterface->startTrialRun(true);
 
-    setCellChangedFalse();
+    //setCellChangedFalse();
     if(currentRunRowIndex > 0)
     {
         currentRunRowIndex--;
@@ -1128,8 +1152,10 @@ void PerturbationTabWidget::prevRun()
     }
     prp->getRun(-2);
     QString empty("");
-    runTableWidget->item(currentRunRowIndex, columnIndex)->setText(empty);
-    runTableWidget->item(currentRunRowIndex, columnIndex)->setFont(tableRowsFont);
+    qDebug() << "currentRunRowIndex: " << currentRunRowIndex;
+    qDebug() << "statusCol: " << statusCol;
+    runTableWidget->item(currentRunRowIndex, statusCol)->setText(empty);
+    runTableWidget->item(currentRunRowIndex, statusCol)->setFont(tableRowsFont);
     setAccelerationValue(prp->getAccelLeft());
     acceleration->setValue(prp->getAccelLeft());
     setDecelerationValue(prp->getDecelLeft());
@@ -1270,63 +1296,56 @@ void PerturbationTabWidget::updateRun(int cellRow, int cellCol)
     int stimCol = 5;
     int trialNoCol = 6;
     int statusCol = 7;
+    int cellRowIdx = cellRow;
     QString tableName("currentRunProfile");
     QString runProfileTable("runProfile");
 
 
-
-    if(cellCol == trialNoCol && tableFilled && cellDoubleClicked)
+    if(cellCol == runNoCol && tableFilled && cellDoubleClicked)
     {
-        QTableWidgetItem* trialNumberItem = runTableWidget->item(cellRow, trialNoCol);
-        QString trialNo(trialNumberItem->text());
 
-        cellRow += 1;
-
-        while(cellRow < runTableWidget->rowCount())
-        {
-            runTableWidget->item(cellRow, trialNoCol)->setText(tr("%1").arg(returnTrialNum(trialNo)));
-
-            trialNo = returnTrialNum(trialNo);
-
-            QTableWidgetItem* participantItem = runTableWidget->item(cellRow, participantIdCol);
-            QString participant(participantItem->text());
-            QTableWidgetItem* sessionItem = runTableWidget->item(cellRow, sessionIdCol);
-            QString session(sessionItem->text());
-            QTableWidgetItem* runNoItem = runTableWidget->item(cellRow, runNoCol);
-            QString runNo(runNoItem->text());
-            QTableWidgetItem* typeNoItem = runTableWidget->item(cellRow, typeCol);
-            QString typeNo(typeNoItem->text());
-            QTableWidgetItem* levelNoItem = runTableWidget->item(cellRow, levelCol);
-            QString levelNo(levelNoItem->text());
-            QTableWidgetItem* stimSeqNoItem = runTableWidget->item(cellRow, stimCol);
-            QString stimOrderNo(stimSeqNoItem->text());
-            
-            
-            cellRow++;
-        }
-
-        cellRow = 0;
+        setCellChangedFalse();
+        qDebug() << "Welcome to the Run Column";
+        int runNumberColCoord = 2;
+        QTableWidgetItem* runNumberItem = runTableWidget->item(cellRowIdx, runNumberColCoord);
+        QString runNo(runNumberItem->text());
         
-        while(cellRow < runTableWidget->rowCount())
+        while(cellRowIdx < runTableWidget->rowCount())
         {
-            qDebug() << "Cell Row: " << QString::number(cellRow);
-            trialNumberItem = runTableWidget->item(cellRow, trialNoCol);
-            trialNo = trialNumberItem->text();
-
-            QString setString("trial = " );
-            setString += "\"" + trialNo + "\"";
-            QString whereString("ROWID = ");
-            whereString += "\"" + QString::number(cellRow + 1);
-            whereString += "\""; 
-
-            prp->updateRunTable(tableName, setString, whereString);
-            cellRow++;
+            
+            runTableWidget->item(cellRowIdx, runNumberColCoord)->setText(tr("%1").arg
+                    (runNo));   
+            cellRowIdx++;
+            if(cellRowIdx == runTableWidget->rowCount())
+            {
+                setCellChangedTrue();
+            }
         }
 
-        prp->clearRunResultsVector();
-        prp->getRuns();
+        cellRowIdx = cellRow;
+        
+        if (updateCounter == 0)
+        {
+
+            while(cellRowIdx < runTableWidget->rowCount())
+            {
+                QString setString("runNo = " );
+                setString += "\"" + runNo + "\"";
+                QString whereString("ROWID = ");
+                whereString += "\"" + QString::number(cellRowIdx + 1);
+                whereString += "\""; 
+
+                qDebug() << "Updating run number in db";
+                qDebug() << "Cell Row: " << cellRowIdx; 
+                prp->updateRunTable(tableName, setString, whereString);
+                updateCounter++;
+                cellRowIdx++;
+            }
+            cellRowIdx = cellRow;
+        }
         
     }
+
     else if(cellCol == levelCol && tableFilled && cellDoubleClicked)
     {
         int participantColCoord = 0;
@@ -1336,37 +1355,42 @@ void PerturbationTabWidget::updateRun(int cellRow, int cellCol)
         int levelNumberColCoord = 4;
         int stimSeqNumberColCoord = 5;
         int trialNumberColCoord = 6;
+        cellRowIdx = cellRow;
         QRegularExpression numbers("^(.)([0-9]+)$|^(.)([A-Z])([0-9]+$)");
-        QTableWidgetItem* participantIdItem = runTableWidget->item(cellRow, participantColCoord);
+        QTableWidgetItem* participantIdItem = runTableWidget->item(cellRowIdx, participantColCoord);
         QString participantId(participantIdItem->text());
-        QTableWidgetItem* sessionIdItem = runTableWidget->item(cellRow, sessionIdColCoord);
+        QTableWidgetItem* sessionIdItem = runTableWidget->item(cellRowIdx, sessionIdColCoord);
         QString sessionNo(sessionIdItem->text());
-        QTableWidgetItem* runNumberItem = runTableWidget->item(cellRow, runNumberColCoord);
+        QTableWidgetItem* runNumberItem = runTableWidget->item(cellRowIdx, runNumberColCoord);
         QString runNo(runNumberItem->text());
-        QTableWidgetItem* typeNumberItem = runTableWidget->item(cellRow, typeNumberColCoord);
+        QTableWidgetItem* typeNumberItem = runTableWidget->item(cellRowIdx, typeNumberColCoord);
         QString type(typeNumberItem->text());
-        QTableWidgetItem* levelNumberItem = runTableWidget->item(cellRow, levelNumberColCoord);
+        QTableWidgetItem* levelNumberItem = runTableWidget->item(cellRowIdx, levelNumberColCoord);
         QString level(levelNumberItem->text());
-        QTableWidgetItem* stimSeqNumberItem = runTableWidget->item(cellRow, stimSeqNumberColCoord);
+        QTableWidgetItem* stimSeqNumberItem = runTableWidget->item(cellRowIdx, stimSeqNumberColCoord);
         QString stimOrder(stimSeqNumberItem->text());
-        QTableWidgetItem* trialNumberItem = runTableWidget->item(cellRow, trialNumberColCoord);
+        QTableWidgetItem* trialNumberItem = runTableWidget->item(cellRowIdx, trialNumberColCoord);
         QString trialNo(trialNumberItem->text());
         
-        int cellRowBckup = cellRow;
-
-        while(cellRow < runTableWidget->rowCount())
+        if (updateCounter == 0)
         {
-            QString setString("level = " );
-            setString += "\"" + level + "\"";
-            QString whereString("ROWID = ");
-            whereString += "\"" + QString::number(cellRow + 1);
-            whereString += "\""; 
 
-            prp->updateRunTable(tableName, setString, whereString);
-            cellRow++;
+            while(cellRowIdx < runTableWidget->rowCount())
+            {
+                QString setString("level = " );
+                setString += "\"" + level + "\"";
+                QString whereString("ROWID = ");
+                whereString += "\"" + QString::number(cellRowIdx + 1);
+                whereString += "\""; 
+
+                qDebug() << "Updating level in db";
+                prp->updateRunTable(tableName, setString, whereString);
+                cellRowIdx++;
+                updateCounter++;
+            }
         }
-
-        cellRow = cellRowBckup;
+        
+        cellRowIdx = cellRow;
         
         prp->clearRunResultsVector();
         prp->getRuns();
@@ -1393,6 +1417,51 @@ void PerturbationTabWidget::updateRun(int cellRow, int cellCol)
 
         QMessageBox::StandardButton reply;
         
+        
+        QVector<QString> runs;
+        runs = prp->getRunsVector();
+        qDebug() << "updateRuns: " << runs;
+        qDebug() << "New Runs: " << runs[0].split(',')[0];
+
+        while(cellRowIdx < runTableWidget->rowCount())
+        {
+            if(cellCol == participantIdCol)
+            {
+            runTableWidget->item(cellRowIdx, participantColCoord)->setText(tr("%1").arg
+                    (participantId));    
+            }
+            else if(cellCol == sessionIdCol)
+            {
+                runTableWidget->item(cellRowIdx, sessionIdColCoord)->setText(tr("%1").arg
+                    (sessionNo));    
+            }
+            else if(cellCol == runNoCol)
+            {
+                runTableWidget->item(cellRowIdx, runNumberColCoord)->setText(tr("%1").arg
+                    (runNo));    
+            }
+            else if(cellCol == typeCol)
+            {
+                runTableWidget->item(cellRowIdx, typeNumberColCoord)->setText(tr("%1").arg
+                    (type));    
+            }
+            else if(cellCol == levelCol)
+            {
+                runTableWidget->item(cellRowIdx, levelNumberColCoord)->setText(tr("%1").arg
+                    (level));    
+            }
+            else if(cellCol == stimCol)
+            {
+                runTableWidget->item(cellRowIdx, stimSeqNumberColCoord)->setText(tr("%1").arg
+                    (stimOrder));    
+            }
+            
+            cellRowIdx++;
+        }
+
+        cellRow = 0;
+
+                
         if(prp->getDirectionFromDb(typeNum,levelNum) == 0)
         {
             setAccelerationValue(-(prp->getAccelLeftDb("\"" + typeNum + "\"", "\"" + levelNum + "\"")));
@@ -1413,78 +1482,71 @@ void PerturbationTabWidget::updateRun(int cellRow, int cellCol)
             setAccelerationTimeValue(prp->getAccelTimeDb("\"" + typeNum + "\""));
         }
 
-        QVector<QString> runs;
-        runs = prp->getRunsVector();
-        qDebug() << "updateRuns: " << runs;
-        qDebug() << "New Runs: " << runs[0].split(',')[0];
-
-        while(cellRow < runTableWidget->rowCount())
-        {
-            if(cellCol == participantIdCol)
-            {
-            runTableWidget->item(cellRow, participantColCoord)->setText(tr("%1").arg
-                    (participantId));    
-            }
-            else if(cellCol == sessionIdCol)
-            {
-                runTableWidget->item(cellRow, sessionIdColCoord)->setText(tr("%1").arg
-                    (sessionNo));    
-            }
-            else if(cellCol == runNoCol)
-            {
-                runTableWidget->item(cellRow, runNumberColCoord)->setText(tr("%1").arg
-                    (runNo));    
-            }
-            else if(cellCol == typeCol)
-            {
-                runTableWidget->item(cellRow, typeNumberColCoord)->setText(tr("%1").arg
-                    (type));    
-            }
-            else if(cellCol == levelCol)
-            {
-                runTableWidget->item(cellRow, levelNumberColCoord)->setText(tr("%1").arg
-                    (level));    
-            }
-            else if(cellCol == stimCol)
-            {
-                runTableWidget->item(cellRow, stimSeqNumberColCoord)->setText(tr("%1").arg
-                    (stimOrder));    
-            }
-            
-            cellRow++;
-        }
     }
-    
-    else if(cellCol == runNoCol && tableFilled && cellDoubleClicked)
+
+    else if(cellCol == trialNoCol && tableFilled && cellDoubleClicked)
     {
-        qDebug() << "Welcome to the Run Column";
-        int runNumberColCoord = 2;
-        QTableWidgetItem* runNumberItem = runTableWidget->item(cellRow, runNumberColCoord);
-        QString runNo(runNumberItem->text());
-        
-        int cellRowBckup = cellRow;
+        setCellChangedFalse();
+        QTableWidgetItem* trialNumberItem = runTableWidget->item(cellRow, trialNoCol);
+        QString trialNo(trialNumberItem->text());
+
+        cellRow += 1;
 
         while(cellRow < runTableWidget->rowCount())
         {
-            QString setString("runNo = " );
-            setString += "\"" + runNo + "\"";
-            QString whereString("ROWID = ");
-            whereString += "\"" + QString::number(cellRow + 1);
-            whereString += "\""; 
+            runTableWidget->item(cellRow, trialNoCol)->setText(tr("%1").arg(returnTrialNum(trialNo)));
 
-            prp->updateRunTable(tableName, setString, whereString);
+            trialNo = returnTrialNum(trialNo);
+
+            QTableWidgetItem* participantItem = runTableWidget->item(cellRow, participantIdCol);
+            QString participant(participantItem->text());
+            QTableWidgetItem* sessionItem = runTableWidget->item(cellRow, sessionIdCol);
+            QString session(sessionItem->text());
+            QTableWidgetItem* runNoItem = runTableWidget->item(cellRow, runNoCol);
+            QString runNo(runNoItem->text());
+            QTableWidgetItem* typeNoItem = runTableWidget->item(cellRow, typeCol);
+            QString typeNo(typeNoItem->text());
+            QTableWidgetItem* levelNoItem = runTableWidget->item(cellRow, levelCol);
+            QString levelNo(levelNoItem->text());
+            QTableWidgetItem* stimSeqNoItem = runTableWidget->item(cellRow, stimCol);
+            QString stimOrderNo(stimSeqNoItem->text());
             cellRow++;
+            
+            if(cellRowIdx == runTableWidget->rowCount())
+            {
+                setCellChangedTrue();
+            }
         }
-        cellRow = cellRowBckup;
-        
-        while(cellRow < runTableWidget->rowCount())
+
+        cellRow = 0;
+        if (updateCounter == 0)
         {
-            runTableWidget->item(cellRow, runNumberColCoord)->setText(tr("%1").arg
-                    (runNo));   
-            cellRow++;
+
+            while(cellRow < runTableWidget->rowCount())
+            {
+                qDebug() << "Cell Row: " << QString::number(cellRow);
+                trialNumberItem = runTableWidget->item(cellRow, trialNoCol);
+                trialNo = trialNumberItem->text();
+
+                QString setString("trial = " );
+                setString += "\"" + trialNo + "\"";
+                QString whereString("ROWID = ");
+                whereString += "\"" + QString::number(cellRow + 1);
+                whereString += "\""; 
+
+                qDebug() << "Updating trial number in db";
+                prp->updateRunTable(tableName, setString, whereString);
+                updateCounter++;
+                cellRow++;
+            }
         }
 
+        prp->clearRunResultsVector();
+        prp->getRuns();
+        
     }
+
+    updateCounter = 0;
 }
 
 QString PerturbationTabWidget::returnTrialNum(QString trialString)
@@ -1518,6 +1580,7 @@ QString PerturbationTabWidget::returnTrialNum(QString trialString)
 void PerturbationTabWidget::exportTable()
 {
     int firstRow = 0;
+    defaultName = "";
     for(int col = 0; col < runTableWidget->columnCount(); col++)
     {
         QTableWidgetItem* item = runTableWidget->item(firstRow, col);
@@ -1538,7 +1601,14 @@ void PerturbationTabWidget::exportTable()
             QTableWidgetItem* item = runTableWidget->item(row,col);
             if(!item || !(item->text().isEmpty()))
             {
-                rowVec.append(item->text());
+                if(col == 0)
+                {
+                    rowVec.append((personSessionStimQuickViewItem->property("subjectId")).toString());
+                }
+                else
+                {
+                    rowVec.append(item->text());
+                }
             }
             rowVec.append("_");
         }
@@ -1556,12 +1626,55 @@ void PerturbationTabWidget::exportTable()
     }
 
     saveProfile->close();
+    defaultName = "";
+}
+
+void PerturbationTabWidget::checkFileExists()
+{
+    int firstRow = 0;
+    QString APP_NAME("Treadmill Automation");
+    defaultName = "";
+    qDebug() << "Checking for File Existence";
+
+    if (firstLoadComplete)
+    {
+        
+        for(int col = 0; col < runTableWidget->columnCount(); col++)
+        {
+            QTableWidgetItem* item = runTableWidget->item(firstRow, col);
+            defaultName += item->text() + "_";
+        }
+        
+        int pos = defaultName.lastIndexOf(QChar('_'));
+        defaultName = defaultName.left(pos-1) + ".csv";
+        defaultNameAndPath = defaultPath + defaultName;
+        
+        qDebug() << "File Name: " << defaultNameAndPath;
+        
+        if (!QFile::exists(defaultNameAndPath))
+        {
+            QMessageBox::StandardButton resBtn = QMessageBox::question( this, APP_NAME,
+                    tr("Run Profile Has Not Been Saved\n Would You Like To Save Now?"),
+                    QMessageBox::Cancel | QMessageBox::No | QMessageBox::Yes,
+                    QMessageBox::Yes);
+            if (resBtn != QMessageBox::Yes) 
+            {
+
+            } 
+            else 
+            {
+                exportTable();
+            }
+        }
+    }
+
+    defaultName = "";
+    defaultNameAndPath = "";
 }
 
 void PerturbationTabWidget::saveFile()
 {
-    QString defaultNameAndPath("C:\\Users\\User\\Desktop\\HReflex_Binaries-master\\RunProfiles\\");
-    defaultNameAndPath += defaultName;
+    defaultNameAndPath = defaultPath + defaultName;
     QFileDialog exportFileDialog(this);
     exportFileDialog.selectFile(defaultName);
     QString fileName = exportFileDialog.getSaveFileName(this, tr("Save Profile"), defaultNameAndPath \
@@ -1581,6 +1694,11 @@ void PerturbationTabWidget::setCellChangedTrue(int mCellRow, int mCellCol)
     cellDoubleClicked = true;
 }
 
+void PerturbationTabWidget::setCellChangedTrue()
+{
+    cellDoubleClicked = true;
+}
+
 void PerturbationTabWidget::setCellChangedFalse()
 {
     cellDoubleClicked = false;
@@ -1593,6 +1711,15 @@ void PerturbationTabWidget::showSubjectView()
 void PerturbationTabWidget::setStimTimer(double time)
 {
     stimTimer = time;
+}
+
+void PerturbationTabWidget::closeSubjectInterfaceWindow()
+{
+    sInterface->close();
+}
+
+void PerturbationTabWidget::closeInstrumentationPanel()
+{
 }
 
 #include "../include/moc_PerturbationTabWidget.cpp"

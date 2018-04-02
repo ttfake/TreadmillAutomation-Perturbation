@@ -17,7 +17,6 @@ Item {
     }
     
     function updateTextField(text){
-        console.debug("setTextField: " + text)
         sIface.rectTxt = text
     }
 
