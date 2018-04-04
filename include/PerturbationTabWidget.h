@@ -83,7 +83,8 @@ class PerturbationTabWidget : public QWidget
         void loadRunProfile();
         void showSubjectView();
         void checkFileExists();
-
+        void changeParticipantId(QString participantId);
+        void changeSessionId(QString session);
     private slots:
         void setLeftFrontSpeedValue(double mleftFrontSpeedValue);
         void setRightFrontSpeedValue(double mrightFrontSpeedValue);
@@ -110,7 +111,8 @@ class PerturbationTabWidget : public QWidget
         void setPleaseStandQuietly();
         void setTryNotToStep();
         void setPositionFeet();
-
+        void resetRunTable();
+        void showPressEnterWarning();
 
     private:
 
@@ -353,6 +355,9 @@ class PerturbationTabWidget : public QWidget
         int updateCounter;
         bool firstLoadComplete;
         double timeoutBuffer;
+        QString returnTypeNum(QString typeString);
+        QPushButton* resetButton;
+
 
 };
 #endif

@@ -39,6 +39,8 @@ class ParseRunProfile : public QWidget
         double getDecelTimeDb(QString typeNo);
         int getDirectionFromDb(QString type, QString level);
         QString getStimSeq();
+        bool compareDbWithRunTable(QString typeNo, QString levelNo);
+        void setAccelDecelFromAccelDecelSpinBox(double maccelValue, double mdecelValue);
 
     signals:
         startStimulation();
@@ -49,5 +51,7 @@ class ParseRunProfile : public QWidget
     private:
         QFile* runFile;
         TreadmillAutomationDbIFace* treadmillDb;
+        double accelValue;
+        double decelValue;
 };
 #endif

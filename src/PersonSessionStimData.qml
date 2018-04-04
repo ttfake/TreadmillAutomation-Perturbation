@@ -1,4 +1,5 @@
 import QtQuick 2.3
+import QtQuick.Controls 2.3
 import QtQuick.Controls 1.4
 import QtGraphicalEffects 1.0
 import QtQuick.Layouts 1.3
@@ -21,11 +22,15 @@ Item {
     subjectId: "test"
     property string sessionId
     property string leftStimUpButtonColor
+    property string warningEnterToolTip: "You Must Press Enter for Change in Participant ID to take Affect."
+    property string warningSessEnterToolTip: "You Must Press Enter for Change in Session ID to take Affect."
+
     leftStimUpButtonColor: "grey"
 
     signal changeCurrent()
-    signal changeSubjectId()
-    
+    signal changeSubjectId(string subjId)
+    signal changeSessionId(string sessId)
+    signal enterWarning()
     
     function incrementLeftCurrent()
     {
@@ -68,6 +73,13 @@ Item {
     {
         leftStimUpButtonColor: "blue"
     }
+    function showEnterWarning()
+    {
+        if(personIdValue.activeFocusOnPress)
+        {
+            enterWarning()
+        }
+    }
    
     Rectangle {
         id: stimControlPanel
@@ -92,6 +104,7 @@ Item {
                         Layout.row: 0;
                         Layout.column: 1;
                         Layout.rowSpan: 1;
+                        placeholderText: subjectId
                         horizontalAlignment: Text.AlignHCenter
                         style: TextFieldStyle {
                         background: Rectangle {
@@ -102,42 +115,24 @@ Item {
                             radius: 2
                           }
                       }
-                      text: subjectId
-            }
-            Button {
-                id: personIdChangeButton;
-                Layout.row: 0;
-                Layout.column: 2
-                height: 15 
-                style: ButtonStyle {
-                    background: Rectangle {
-                        implicitWidth: 100
-                        implicitHeight: 25
-                        border.width: control.activeFocus ? 2 : 1
-                        border.color: "#888"
-                        radius: 4
-                        gradient: Gradient {
-                            GradientStop { position: 0 ; color: control.pressed ? "#ccc" : "#eee" }
-                            GradientStop { position: 1 ; color: control.pressed ? "#aaa" : "#ccc" }
-                        }
-                    }
-
-                    label: Component {
-                        Text {
-                            id: personIdChange
-                            text: "Change"
-                            clip: true
-                            wrapMode: Text.WordWrap
-                            verticalAlignment: Text.AlignVCenter
-                            horizontalAlignment: Text.AlignHCenter
-                            anchors.fill: parent
-                            font.pointSize: 10;
-                            font.bold: true
-                        }
-                    }
-
-                }
-                onClicked: changeSubjectId()
+                      ToolTip{
+                          delay: 1000
+                          timeout: 10000
+                          visible: personIdValue.hovered
+                          width: warningEnterText.width + 4
+                          height: warningEnterText.height + 4
+                          Text {
+                              id: warningEnterText
+                              text: warningEnterToolTip
+                              font.bold: true
+                              color: "black"
+                              font.pointSize: 15
+                          }
+                      }
+                      MouseArea {
+                          cursorShape: Qt.IBeamCursor
+                      }
+                      onAccepted: changeSubjectId(text)
             }
 
             Text { id: sessionIdLabel; 
@@ -153,6 +148,7 @@ Item {
                         Layout.row: 1;
                         Layout.column: 1;
                         Layout.rowSpan: 1;
+                        placeholderText: sessionId
                         horizontalAlignment: Text.AlignHCenter
                         style: TextFieldStyle {
                         background: Rectangle {
@@ -163,7 +159,25 @@ Item {
                             radius: 2
                           }
                       }
-                        placeholderText: sessionId
+                      ToolTip{
+                          delay: 1000
+                          timeout: 10000
+                          visible: sessionIdValue.hovered
+                          width: warningSessEnterText.width + 4
+                          height: warningSessEnterText.height + 4
+                          Text {
+                              id: warningSessEnterText
+                              text: warningSessEnterToolTip
+                              font.bold: true
+                              color: "black"
+                              font.pointSize: 15
+                          }
+                      }
+                      MouseArea {
+                          cursorShape: Qt.IBeamCursor
+                      }
+
+                      onAccepted: changeSessionId(text)
             }
  
             Text { id: leftStimCurrentLevel;

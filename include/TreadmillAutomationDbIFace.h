@@ -55,6 +55,7 @@ class TreadmillAutomationDbIFace : public QWidget
                 //QString trialNo);
         void clearRunResultsVector();
         double getAccelLeftFromDb(QString typeNum, QString levelNum);
+        void setAccelLeft(double accel);
         void setAccelRight(double accel);
         double getAccelRightFromDb(QString typeNum, QString levelNum);
 
@@ -101,7 +102,7 @@ class TreadmillAutomationDbIFace : public QWidget
         
         void setDir(int dir);
         
-        void setAccelLeft(double accel);
+
         
         bool firstRun;
 

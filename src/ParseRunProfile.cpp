@@ -141,6 +141,45 @@ QVector<QString> ParseRunProfile::getRunProfileHead()
     return treadmillDb->getRunProfileHead();
 }
 
+bool ParseRunProfile::compareDbWithRunTable(QString typeNo, QString levelNo)
+{
+    bool checkPassed;
+
+    double leftAccel = getAccelLeftDb(typeNo, levelNo);
+    double rightAccel = getAccelRightDb(typeNo, levelNo);
+    double leftDecel = getDecelLeftDb(typeNo, levelNo);
+    double rightDecel = getDecelRightDb(typeNo, levelNo);
+    
+    if(treadmillDb->getDirectionFromDb(typeNo, levelNo) == 0)
+    {
+        leftAccel = -leftAccel;
+        rightAccel = -rightAccel;
+        leftDecel = -leftDecel;
+        rightDecel = -rightDecel;
+    }
+
+    qDebug() << "leftAccel: " << leftAccel;
+    qDebug() << "getAccelLeft: " << getAccelLeft();
+    qDebug() << "rightAccel: " << rightAccel;  
+
+    checkPassed = leftAccel == getAccelLeft() &&
+        accelValue == getAccelLeft() &&
+        rightAccel == getAccelRight() && 
+        accelValue == getAccelRight() &&
+        leftDecel == getDecelLeft() &&
+        decelValue == getDecelLeft() &&
+        rightDecel == getDecelRight() && 
+        decelValue == getDecelRight();
+
+    return checkPassed;
+}
+
+void ParseRunProfile::setAccelDecelFromAccelDecelSpinBox(double maccelValue, double mdecelValue)
+{
+    accelValue = maccelValue;
+    decelValue = mdecelValue;
+}
+
 void ParseRunProfile::updateRunTable(QString tableName, QString setString, QString whereString)
     //QString type, QString level, 
     //QString stimOrder, QString participantId, QString sessionNo, QString runNo, 
