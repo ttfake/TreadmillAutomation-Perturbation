@@ -5,7 +5,7 @@
 #include <QByteArray>
 #include <QDataStream>
 #include <QAbstractSocket>
-
+#include <QTcpSocket>
 
 class SendSetpoints
 {
@@ -37,7 +37,7 @@ class SendSetpoints
         void setMaxLeftSpeed(double mMaxLeftSpeed);
         double getMaxRightSpeed();
         double getMaxLeftSpeed();
-
+        bool checkSocketConnection();
     
     private:
     

@@ -324,12 +324,58 @@ void TreadmillAutomationDbIFace::resetRunsVectorIndex()
     runsVectorIndex_ = 0;
 }
 
+void TreadmillAutomationDbIFace::setAccelDecelFromDb()
+{
+    QRegularExpression numbers("^.*([0-9][0-9]$)");
+    QString level;
+    QString type;
+    QString run = runResults[runsVectorIndex_];
+    qDebug() << run;
+    QRegularExpressionMatchIterator typeNumIter = numbers.globalMatch(run.split(',')[0]);
+    QRegularExpressionMatchIterator levelNumIter = numbers.globalMatch(run.split(',')[1]);
+    QRegularExpressionMatchIterator stimNumIter = numbers.globalMatch(run.split(',')[2]);
+    while (typeNumIter.hasNext()) 
+    {
+        QRegularExpressionMatch match = typeNumIter.next();
+        qDebug() << "TypeMatch: " << match;
+        type = match.captured(1);
+    }
+    qDebug() << "Type is: " << type;
+
+    while (levelNumIter.hasNext()) 
+    {
+        QRegularExpressionMatch match = levelNumIter.next();
+        qDebug() << "LevelMatch: " << match;
+        level = match.captured(1);
+    }
+
+    if(getDirectionFromDb(type,level) == 0)
+        {
+            setAccelLeft(-(getAccelLeftFromDb(type,level)));
+            qDebug() << "Accel Left: " << getAccelLeft();
+            setAccelRight(-(getAccelRightFromDb(type,level)));
+            qDebug() << "Accel Right: " << getAccelRight();
+            setDecelLeft(-(getDecelLeftFromDb(type,level)));
+            qDebug() << "Decel Left: " << getDecelLeft();
+            setDecelRight(-(getDecelRightFromDb(type,level)));
+            qDebug() << "Decel Right: " << getDecelRight();
+        }
+        else
+        {
+            setAccelLeft(getAccelLeftFromDb(type,level));
+            setAccelRight(getAccelRightFromDb(type,level));
+            setDecelLeft(getDecelLeftFromDb(type,level));
+            setDecelRight(getDecelRightFromDb(type,level));
+        }
+}
+
+
 void TreadmillAutomationDbIFace::retrieveRun(int runAddIndex)
 {
     qDebug() << "Retrieving Run";
     if(runAddIndex < 0)
     {
-        runsVectorIndex_ += runAddIndex;
+        runsVectorIndex_ = 0;
     }
     
     if(runsVectorIndex_ < runResults.size() and runsVectorIndex_ >= 0)
@@ -398,13 +444,17 @@ void TreadmillAutomationDbIFace::retrieveRun(int runAddIndex)
         {
             emit startStimulation();
         }
-        runsVectorIndex_ += 1;
+        //if(runsVectorIndex_ != 0)
+        //{
+        runsVectorIndex_++;
+        //}
     }
 
     else if (runsVectorIndex_ >= runResults.size())
     {
         QMessageBox endRun;
         runsVectorIndex_ = runResults.size() - 1;
+        qDebug() << "runsVectorIndex_ " << runsVectorIndex_;
         endRun.setText("The Run is Complete.");
         firstRun = false;
         endRun.exec();

@@ -17,6 +17,21 @@ SendSetpoints* SendSetpoints::getInstance()
     return _sendSetpoints;
 }
 
+bool SendSetpoints::checkSocketConnection()
+{
+    bool connected = true;
+
+    if(pertSocket != NULL)
+    {
+        connected = (pertSocket->state() == QTcpSocket::ConnectedState);
+    }
+    else
+    {
+        connected = false;
+    }
+    return connected;
+}
+
 void SendSetpoints::setSocket(QAbstractSocket* mSocket)
 {
     pertSocket = mSocket;

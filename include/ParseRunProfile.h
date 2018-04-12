@@ -41,6 +41,8 @@ class ParseRunProfile : public QWidget
         QString getStimSeq();
         bool compareDbWithRunTable(QString typeNo, QString levelNo);
         void setAccelDecelFromAccelDecelSpinBox(double maccelValue, double mdecelValue);
+        void resetRunsVectorIndex();
+        void setAccelDecelFromDb();
 
     signals:
         startStimulation();

@@ -17,6 +17,16 @@ void ParseRunProfile::setRunFile(QString mFileName)
     parseRunFile();
 }
 
+void ParseRunProfile::resetRunsVectorIndex()
+{
+    treadmillDb->resetRunsVectorIndex();
+}
+
+void ParseRunProfile::setAccelDecelFromDb()
+{
+    treadmillDb->setAccelDecelFromDb();
+}
+
 void ParseRunProfile::parseRunFile()
 {
     treadmillDb->clearRunProfileHeadVector();

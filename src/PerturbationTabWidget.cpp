@@ -13,30 +13,20 @@ PerturbationTabWidget::PerturbationTabWidget(QWidget* parent, Qt::WindowFlags fl
     InstrumentationPanel* instPanel = new InstrumentationPanel;
     updateCounter = 0;
     defaultPath = "C:\\Users\\User\\Desktop\\HReflex_Binaries-master\\RunProfiles\\";
+    defaultTmpPath = "C:\\Users\\User\\Desktop\\HReflex_Binaries-master\\RunProfiles\\tmp\\";
     firstLoadComplete = false;
     statusCol = 7;
     timeoutBuffer = 400.00; //in milliseconds
-    /* 
-     * Signal connect below must be uncommented form stimulation to work.
-     * connect(prp, SIGNAL(startStimulation()), SLOT(startStim()));
-     */
-    
-/*	if (DS8Controller.ErrorCode != -1)
-	/{
-		//DS8Controller.SetVariables(NULL,NULL,10,NULL,NULL,NULL,TRUE); //Set to Defaults
-		DS8Controller.ToggleOutput(FALSE);
-		DS8Controller.SetVariables(NULL,NULL,20,NULL,NULL,NULL,TRUE); //Set to Defaults
-		//sprintf_s(str,"%d",e);
-		//printf ("Error: %s\n",str);
-		printf("No Errors \n");
-		//DS8Controller.SetVariables(NULL,NULL,10,NULL,NULL,NULL,TRUE); //Set to Defaults
-	}
-*/
+    APP_NAME = "Treadmill Automation";
 }
 
 PerturbationTabWidget::~PerturbationTabWidget()
 {
-    //DS8Controller.CloseDS8();
+}
+
+bool PerturbationTabWidget::checkSocketConnection()
+{
+    return sendSetpoints->checkSocketConnection();
 }
 
 void PerturbationTabWidget::createTreadmillPerturbationTab()
@@ -267,7 +257,6 @@ void PerturbationTabWidget::addPersonStimGroupBox()
 
 void PerturbationTabWidget::showPressEnterWarning()
 {
-    QString APP_NAME("Treadmill Automation");
     QMessageBox::StandardButton criticalErr = QMessageBox::warning( this, APP_NAME,
                 tr("You Must Press Enter for Change in Participant ID to take Affect.")
                 );
@@ -324,19 +313,14 @@ void PerturbationTabWidget::addRunGroupBox()
     connect(importButton, SIGNAL(clicked()), SLOT(setPleaseStandQuietly()));
     connect(exportButton, SIGNAL(clicked()), SLOT(exportTable()));
     connect(resetButton, SIGNAL(clicked()), SLOT(resetRunTable()));
+    connect(resetButton, SIGNAL(clicked()), SLOT(setPleaseStandQuietly()));
 
     runTableWidget->setStyleSheet("selection-background-color : green");
     runTableWidget->setFixedSize(900,300);
     runTableWidget->setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOn);
     runTableWidget->setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOn);
-    //updateRunTableBtn = new QPushButton;
-    //updateRunTableBtn->setSizePolicy(QSizePolicy::Minimum, QSizePolicy::Fixed);
-    //updateRunTableBtn->setText("Update Run Profile");
-    //updateRunTableBtn->setFont(startPertRunBtnFont);
-    //updateRunTableBtn->setFixedSize(200,40);
     connect(runTableWidget, SIGNAL(cellChanged(int, int)), SLOT(updateRun(int, int)));
     connect(runTableWidget, SIGNAL(cellDoubleClicked(int, int)), SLOT(setCellChangedTrue(int, int)));
-    //connect(updateRunTableBtn, SIGNAL(clicked()), SLOT(updateRun()));
     runGroupBoxLayout = new QVBoxLayout;
     runTableHeaderFont.setFamily("Times");
     runTableHeaderFont.setWeight(75);
@@ -344,8 +328,6 @@ void PerturbationTabWidget::addRunGroupBox()
     runGroupBox->setLayout(runGroupBoxLayout);
     runGroupBoxLayout->addWidget(runTableWidget);
     runGroupBoxLayout->addWidget(importExportGroupBox);
-    //    runGroupBoxLayout->addWidget(updateRunTableBtn);
-    //    runGroupBox->setFixedSize(950,250);
     QStringList runHeader;
     runTableWidget->horizontalHeader()->setFont(runTableHeaderFont);
     runTableWidget->setColumnCount(8);
@@ -358,7 +340,6 @@ void PerturbationTabWidget::addRunGroupBox()
     runTableWidget->setColumnHidden(1, true);
     runTableWidget->setColumnHidden(3, true);
 
-    //    quadrantThreePerturbationLayout->addWidget(runGroupBox);
     quadrantOnePerturbationLayout->addWidget(runGroupBox);
 }
 
@@ -547,7 +528,6 @@ void PerturbationTabWidget::addAccelDecelGroupBox()
 
 void PerturbationTabWidget::addStartPertRunGroupBox()
 {
-    //    prp = new ParseRunProfile();
     sInterface = new SubjectInterface;
     sInterface->setAttribute(Qt::WA_QuitOnClose, true);
     startPertRunGroupBox = new QGroupBox;
@@ -602,7 +582,7 @@ void PerturbationTabWidget::addStartPertRunGroupBox()
     setPleaseStandQuietly();
     //    connect(startPertRunBtn, SIGNAL(clicked()), SLOT(randomDelay()));
     connect(startPertRunBtn, SIGNAL(clicked()), SLOT(setTryNotToStep()));
-    connect(startPertRunBtn, SIGNAL(clicked()), mouseInterface, SLOT(WriteEvent()));  // Trigger 1
+    //connect(startPertRunBtn, SIGNAL(clicked()), mouseInterface, SLOT(WriteEvent()));  // Trigger 1
     connect(startPertRunBtn, SIGNAL(clicked()), mouseInterface, SLOT(setPerturbationActiveBoolTrue()));
     connect(mouseInterface, SIGNAL(movement()), SLOT(treadmillWait()));
     connect(mouseInterface, SIGNAL(movementStopped()), SLOT(slotTimeout()));
@@ -785,171 +765,192 @@ void PerturbationTabWidget::randomDelay()
 
 void PerturbationTabWidget::startTreadmill()
 {
-    QFile accelerationSignalSentLog(logPath + "/" + "accelerationSignalSentLog.log");
-    accelerationSignalSentLog.open(QIODevice::Append);
-    /*    int low = 0;
-          int hi  = 6;
-          int millisecondsConversionFactor = 1000;
-          int randomMilliseconds = qrand() % ((hi + 1) - low) + low;
-          int millisecondsToSeconds = randomMilliseconds * millisecondsConversionFactor;
-          QTimer timer;
-          timer.setSingleShot(true);*/
-    //    recTreadmillStream->setRecord();
-    setAccelerationValue(acceleration->value());
-    setDecelerationValue(deceleration->value());
-    setAccelerationTimeValue(timeAccelSpinBox->value());
-    setDecelerationTimeValue(timeDecelSpinBox->value());
-    setAddToSpeed(fudgeFactorDoubleSpinBox->value());
-    qDebug() << addToSpeed;
-    setLeftFrontSpeedValue(calculateSpeed());
-    setRightFrontSpeedValue(calculateSpeed());
-    //timer.start(millisecondsToSeconds);
+    try {
+        QFile accelerationSignalSentLog(logPath + "/" + "accelerationSignalSentLog.log");
+        accelerationSignalSentLog.open(QIODevice::Append);
+        //    recTreadmillStream->setRecord();
+        setAccelerationValue(acceleration->value());
+        setDecelerationValue(deceleration->value());
+        setAccelerationTimeValue(timeAccelSpinBox->value());
+        setDecelerationTimeValue(timeDecelSpinBox->value());
+        setAddToSpeed(fudgeFactorDoubleSpinBox->value());
+        qDebug() << addToSpeed;
+        setLeftFrontSpeedValue(calculateSpeed());
+        setRightFrontSpeedValue(calculateSpeed());
 
-    //-----------------------------------------------------------------------
-    auto uptime = std::chrono::milliseconds(GetTickCount());
-    std::setprecision(5);
-    std::ostringstream out;
-    out << std::chrono::milliseconds(uptime).count() << "ms";
-    std::string uptimeStdString = out.str();
-    QString uptimeString = QString::fromStdString(uptimeStdString);
-    accelerationSignalSentLog.write(uptimeString.toUtf8() + "\n");
-    //-----------------------------------------------------------------------
+        //-----------------------------------------------------------------------
+        auto uptime = std::chrono::milliseconds(GetTickCount());
+        std::setprecision(5);
+        std::ostringstream out;
+        out << std::chrono::milliseconds(uptime).count() << "ms";
+        std::string uptimeStdString = out.str();
+        QString uptimeString = QString::fromStdString(uptimeStdString);
+        accelerationSignalSentLog.write(uptimeString.toUtf8() + "\n");
+        //-----------------------------------------------------------------------
 
-    //-----------------Current Unix Timestamp--------------------------------
-    qint64 currentMsecsSinceEpoch = QDateTime::currentMSecsSinceEpoch();
-    accelerationSignalSentLog.write("Unix System Timestamp:" + QString::number(currentMsecsSinceEpoch).toUtf8() + "\n");
-    //-----------------------------------------------------------------------
+        //-----------------Current Unix Timestamp--------------------------------
+        qint64 currentMsecsSinceEpoch = QDateTime::currentMSecsSinceEpoch();
+        accelerationSignalSentLog.write("Unix System Timestamp:" + QString::number(currentMsecsSinceEpoch).toUtf8() + "\n");
+        //-----------------------------------------------------------------------
 
-    accelerationSignalSentLog.close();
-    mouseInterface->WriteEvent(); // Trigger 2
-    sendSetpoints->sendSetpoints(SendSetpoints::TreadmillProperty::ACCEL, SendSetpoints::NormalSetpoint);
+        accelerationSignalSentLog.close();
+        mouseInterface->WriteEvent(); // Trigger 2
+        sendSetpoints->sendSetpoints(SendSetpoints::TreadmillProperty::ACCEL, SendSetpoints::NormalSetpoint);
+        treadmillWait();
+    } catch (...) 
+    {
+        QMessageBox::StandardButton criticalErr = QMessageBox::critical( this, APP_NAME,
+                tr("There was an error in PerturbationTabWidget::startTreadmill().")
+                );
+    }
     //    recTreadmillStream->setSharedSocket(pertSocket);
     //    recTreadmillStream->startDataCollection();
 }
 
 void PerturbationTabWidget::treadmillWait()
 {
-    QFile accelerationTimerStartedLog(logPath + "/" + "accelerationTimerStartedLog.log");
-    accelerationTimerStartedLog.open(QIODevice::Append);
-    double retAccelValue;
-    //double timeSinceStart = fabs((mvelocity / fabs(getAccelerationValue())) * 1000.00);
-    //    retAccelValue = fabs(( getAccelerationTimeValue() * fabs(getAccelerationValue())) / 1000);
+    try {
+        QFile accelerationTimerStartedLog(logPath + "/" + "accelerationTimerStartedLog.log");
+        accelerationTimerStartedLog.open(QIODevice::Append);
+        double retAccelValue;
+        //double timeSinceStart = fabs((mvelocity / fabs(getAccelerationValue())) * 1000.00);
+        //    retAccelValue = fabs(( getAccelerationTimeValue() * fabs(getAccelerationValue())) / 1000);
 
-    retAccelValue = getAccelerationTimeValue();
-    qDebug("Deceleration Time Set To: %f", retAccelValue);
+        retAccelValue = getAccelerationTimeValue();
+        qDebug("Deceleration Time Set To: %f", retAccelValue);
 
-    //-----------------------------------------------------------------------
-    auto uptime = std::chrono::milliseconds(GetTickCount());
-    std::ostringstream out;
-    out << std::chrono::milliseconds(uptime).count() << "ms";
-    std::string uptimeStdString = out.str();
-    QString uptimeString = QString::fromStdString(uptimeStdString);
-    //-----------------------------------------------------------------------
+        //-----------------------------------------------------------------------
+        auto uptime = std::chrono::milliseconds(GetTickCount());
+        std::ostringstream out;
+        out << std::chrono::milliseconds(uptime).count() << "ms";
+        std::string uptimeStdString = out.str();
+        QString uptimeString = QString::fromStdString(uptimeStdString);
+        //-----------------------------------------------------------------------
 
 
-    mouseInterface->setMovementBool(true);
-    //    qint64 currentMsecsSinceEpoch = QDateTime::currentMSecsSinceEpoch();
-    //    accelerationTimerStartedLog.write(QString::number(currentMsecsSinceEpoch).toUtf8() + "\n");
-    accelerationTimerStartedLog.write(uptimeString.toUtf8() + "\n");
+        mouseInterface->setMovementBool(true);
+        //    qint64 currentMsecsSinceEpoch = QDateTime::currentMSecsSinceEpoch();
+        //    accelerationTimerStartedLog.write(QString::number(currentMsecsSinceEpoch).toUtf8() + "\n");
+        accelerationTimerStartedLog.write(uptimeString.toUtf8() + "\n");
 
-    //-----------------Current Unix Timestamp--------------------------------
-    qint64 currentMsecsSinceEpoch = QDateTime::currentMSecsSinceEpoch();
-    accelerationTimerStartedLog.write("Unix System Timestamp:" + QString::number(currentMsecsSinceEpoch).toUtf8() + "\n");
-    //-----------------------------------------------------------------------
+        //-----------------Current Unix Timestamp--------------------------------
+        qint64 currentMsecsSinceEpoch = QDateTime::currentMSecsSinceEpoch();
+        accelerationTimerStartedLog.write("Unix System Timestamp:" + QString::number(currentMsecsSinceEpoch).toUtf8() + "\n");
+        //-----------------------------------------------------------------------
 
-    accelerationTimerStartedLog.close();
-    mouseInterface->WriteEvent(); // Trigger 4
-    QTimer::singleShot(retAccelValue, this, SLOT(startDecelTimer()));
+        accelerationTimerStartedLog.close();
+        mouseInterface->WriteEvent(); // Trigger 4
+        QTimer::singleShot(retAccelValue, this, SLOT(startDecelTimer()));
+    } catch(...)
+    {
+        QMessageBox::StandardButton criticalErr = QMessageBox::critical( this, APP_NAME,
+                tr("There was an error in PerturbationTabWidget::treadmillWait().")
+                );
+    }
 }
 
 void PerturbationTabWidget::startDecelTimer()
 {
+    try {
+        //-----------------------------------------------------------------------
+        auto uptime = std::chrono::milliseconds(GetTickCount());
+        std::ostringstream out;
+        out << std::chrono::milliseconds(uptime).count() << "ms";
+        std::string uptimeStdString = out.str();
+        QString uptimeString = QString::fromStdString(uptimeStdString);
+        //-----------------------------------------------------------------------
 
-    //-----------------------------------------------------------------------
-    auto uptime = std::chrono::milliseconds(GetTickCount());
-    std::ostringstream out;
-    out << std::chrono::milliseconds(uptime).count() << "ms";
-    std::string uptimeStdString = out.str();
-    QString uptimeString = QString::fromStdString(uptimeStdString);
-    //-----------------------------------------------------------------------
+        QFile accelerationTimerEndedLog(logPath + "/" + "accelerationTimerEndedLog.log");
+        QFile decelerationSignalSentLog(logPath + "/" + "decelerationSignalSentLog.log");
+        QFile decelerationTimerStartedLog(logPath + "/" + "decelerationTimerStartedLog.log");
+        accelerationTimerEndedLog.open(QIODevice::Append);
+        //    qint64 currentMsecsSinceEpoch = QDateTime::currentMSecsSinceEpoch();
+        accelerationTimerEndedLog.write(uptimeString.toUtf8() + "\n");
 
-    QFile accelerationTimerEndedLog(logPath + "/" + "accelerationTimerEndedLog.log");
-    QFile decelerationSignalSentLog(logPath + "/" + "decelerationSignalSentLog.log");
-    QFile decelerationTimerStartedLog(logPath + "/" + "decelerationTimerStartedLog.log");
-    accelerationTimerEndedLog.open(QIODevice::Append);
-    //    qint64 currentMsecsSinceEpoch = QDateTime::currentMSecsSinceEpoch();
-    accelerationTimerEndedLog.write(uptimeString.toUtf8() + "\n");
+        //-----------------Current Unix Timestamp--------------------------------
+        qint64 currentMsecsSinceEpoch = QDateTime::currentMSecsSinceEpoch();
+        accelerationTimerEndedLog.write("Unix System Timestamp:" + QString::number(currentMsecsSinceEpoch).toUtf8() + "\n");
+        //-----------------------------------------------------------------------
 
-    //-----------------Current Unix Timestamp--------------------------------
-    qint64 currentMsecsSinceEpoch = QDateTime::currentMSecsSinceEpoch();
-    accelerationTimerEndedLog.write("Unix System Timestamp:" + QString::number(currentMsecsSinceEpoch).toUtf8() + "\n");
-    //-----------------------------------------------------------------------
+        accelerationTimerEndedLog.close();
+        decelerationSignalSentLog.open(QIODevice::Append);
+        decelerationTimerStartedLog.open(QIODevice::Append);
+        mouseInterface->setMovementBool(false);
+        double retDecelTimeValue = getDecelerationTimeValue();
+        setRightFrontSpeedValue(0);
+        setLeftFrontSpeedValue(0);
+        //    qDebug("Sending Setpoints...");
 
-    accelerationTimerEndedLog.close();
-    decelerationSignalSentLog.open(QIODevice::Append);
-    decelerationTimerStartedLog.open(QIODevice::Append);
-    mouseInterface->setMovementBool(false);
-    double retDecelTimeValue = getDecelerationTimeValue();
-    setRightFrontSpeedValue(0);
-    setLeftFrontSpeedValue(0);
-    //    qDebug("Sending Setpoints...");
+        //-----------------------------------------------------------------------
+        uptime = std::chrono::milliseconds(GetTickCount());
+        out << std::chrono::milliseconds(uptime).count() << "ms";
+        uptimeStdString = out.str();
+        uptimeString = QString::fromStdString(uptimeStdString);
+        decelerationSignalSentLog.write(uptimeString.toUtf8() + "\n");
+        //-----------------------------------------------------------------------
 
-    //-----------------------------------------------------------------------
-    uptime = std::chrono::milliseconds(GetTickCount());
-    out << std::chrono::milliseconds(uptime).count() << "ms";
-    uptimeStdString = out.str();
-    uptimeString = QString::fromStdString(uptimeStdString);
-    decelerationSignalSentLog.write(uptimeString.toUtf8() + "\n");
-    //-----------------------------------------------------------------------
+        sendSetpoints->sendSetpoints(SendSetpoints::TreadmillProperty::DECEL, SendSetpoints::NormalSetpoint);
+        //    currentMsecsSinceEpoch = QDateTime::currentMSecsSinceEpoch();
+        //    decelerationSignalSentLog.write(QString::number(currentMsecsSinceEpoch).toUtf8() + "\n");
+        decelerationSignalSentLog.close();
+        //    qDebug("Starting Timer...");
+        //    qDebug("Deceleration will commence for %f seconds", retDecelTimeValue/millisecondConversion);
+        //    currentMsecsSinceEpoch = QDateTime::currentMSecsSinceEpoch();
+        uptime = std::chrono::milliseconds(GetTickCount());
 
-    sendSetpoints->sendSetpoints(SendSetpoints::TreadmillProperty::DECEL, SendSetpoints::NormalSetpoint);
-    //    currentMsecsSinceEpoch = QDateTime::currentMSecsSinceEpoch();
-    //    decelerationSignalSentLog.write(QString::number(currentMsecsSinceEpoch).toUtf8() + "\n");
-    decelerationSignalSentLog.close();
-    //    qDebug("Starting Timer...");
-    //    qDebug("Deceleration will commence for %f seconds", retDecelTimeValue/millisecondConversion);
-    //    currentMsecsSinceEpoch = QDateTime::currentMSecsSinceEpoch();
-    uptime = std::chrono::milliseconds(GetTickCount());
+        out << std::chrono::milliseconds(uptime).count() << "ms";
+        uptimeStdString = out.str();
+        uptimeString = QString::fromStdString(uptimeStdString);
+        decelerationTimerStartedLog.write(uptimeString.toUtf8() + "\n");
 
-    out << std::chrono::milliseconds(uptime).count() << "ms";
-    uptimeStdString = out.str();
-    uptimeString = QString::fromStdString(uptimeStdString);
-    decelerationTimerStartedLog.write(uptimeString.toUtf8() + "\n");
+        //-----------------Current Unix Timestamp--------------------------------
+        currentMsecsSinceEpoch = QDateTime::currentMSecsSinceEpoch();
+        decelerationTimerStartedLog.write("Unix System Timestamp:" + QString::number(currentMsecsSinceEpoch).toUtf8() + "\n");
+        //-----------------------------------------------------------------------
 
-    //-----------------Current Unix Timestamp--------------------------------
-    currentMsecsSinceEpoch = QDateTime::currentMSecsSinceEpoch();
-    decelerationTimerStartedLog.write("Unix System Timestamp:" + QString::number(currentMsecsSinceEpoch).toUtf8() + "\n");
-    //-----------------------------------------------------------------------
-
-    decelerationTimerStartedLog.close();
-    mouseInterface->WriteEvent(); // Trigger 5
-    //    mouseInterface->setPerturbationActiveBoolFalse();
-    //    mouseInterface->setMovementDetectedBool(false);
+        decelerationTimerStartedLog.close();
+        mouseInterface->WriteEvent(); // Trigger 5
+        //    mouseInterface->setPerturbationActiveBoolFalse();
+        //    mouseInterface->setMovementDetectedBool(false);
 
 
-    QTimer::singleShot(retDecelTimeValue, this, SLOT(slotTimeout()));
-    //    recTreadmillStream->setRecord();
-    //    emit recTreadmillStream->setEmitComplete();
+        QTimer::singleShot(retDecelTimeValue, this, SLOT(slotTimeout()));
+        //    recTreadmillStream->setRecord();
+        //    emit recTreadmillStream->setEmitComplete();
+    } catch (...)
+    {
+        QMessageBox::StandardButton criticalErr = QMessageBox::critical( this, APP_NAME,
+                tr("There was an error in PerturbationTabWidget::startDecelTimer().")
+                );
+    }
 }
 
 void PerturbationTabWidget::slotTimeout()
 {
-    mouseInterface->setMovementDetectedBool(false);
-    QString complete("Complete");
+    try {
+        mouseInterface->setMovementDetectedBool(false);
+        QString complete("Complete");
 
-    runTableWidget->setItem(currentRunRowIndex, statusCol, 
-            new QTableWidgetItem(tr("%1").arg(complete)));
-    runTableWidget->item(currentRunRowIndex, statusCol)->setFont(tableRowsFont);
-    sInterface->setTrialComplete(true);
-    mouseInterface->setPerturbationActiveBoolFalse();
-    mouseInterface->setMovementDetectedBool(false);
-    startPertRunBtn->setDisabled(false);
-    nextPertRunBtn->setDisabled(false);
-    prevPertRunBtn->setDisabled(false);
+        runTableWidget->setItem(currentRunRowIndex, statusCol, 
+                new QTableWidgetItem(tr("%1").arg(complete)));
+        runTableWidget->item(currentRunRowIndex, statusCol)->setFont(tableRowsFont);
+        sInterface->setTrialComplete(true);
+        mouseInterface->setPerturbationActiveBoolFalse();
+        mouseInterface->setMovementDetectedBool(false);
+        startPertRunBtn->setDisabled(false);
+        nextPertRunBtn->setDisabled(false);
+        prevPertRunBtn->setDisabled(false);
 
-    int repoFeetTimeout = 3000;
+        int repoFeetTimeout = 3000;
+        saveRunTmp();
 
-    QTimer::singleShot(repoFeetTimeout, this, SLOT(setPositionFeet()));
+        QTimer::singleShot(repoFeetTimeout, this, SLOT(setPositionFeet()));
+    } catch (...)
+    {
+        QMessageBox::StandardButton criticalErr = QMessageBox::critical( this, APP_NAME,
+                tr("There was an error in PerturbationTabWidget::slotTimeout().")
+                );
+    }
 
     //-----------------------------------------------------------------------
     /*    auto uptime = std::chrono::milliseconds(GetTickCount());
@@ -999,75 +1000,116 @@ double PerturbationTabWidget::calculateSpeed()
 
 void PerturbationTabWidget::loadRunProfile()
 {
-    checkFileExists();
+    try {
+        checkFileExists();
 
-    QFileDialog loadRunFileDlg(this);
+        QFileDialog loadRunFileDlg(this);
 
-    QString fileName = loadRunFileDlg.getOpenFileName(this, tr("Open File"), \
-            "C:\\Users\\User\\Desktop\\HReflex_Binaries-master\\RunProfiles", \
-            tr("CSV (*.csv)"));
+        QString fileName = loadRunFileDlg.getOpenFileName(this, tr("Open File"), \
+                "C:\\Users\\User\\Desktop\\HReflex_Binaries-master\\RunProfiles", \
+                tr("CSV (*.csv)"));
 
-    if(!fileName.isEmpty() && !fileName.isNull())
-    {
-
-        currentRunRowIndex = 0;
-        int subjectIdRow = 0;
-        int subjectIdCol = 0;
-        int sessionIdRow = 0;
-        int sessionIdCol = 1;
-
-        if(fileName == "")
+        if(!fileName.isEmpty() && !fileName.isNull())
         {
-            QMessageBox errLoadFile;
-            errLoadFile.setText("Error Loading File");
-            errLoadFile.exec();
+
+            currentRunRowIndex = 0;
+            int subjectIdRow = 0;
+            int subjectIdCol = 0;
+            int sessionIdRow = 0;
+            int sessionIdCol = 1;
+
+            if(fileName == "")
+            {
+                QMessageBox errLoadFile;
+                errLoadFile.setText("Error Loading File");
+                errLoadFile.exec();
+            }
+            else
+            {
+                runTableWidget->setRowCount(0);
+                prp->setRunFile(fileName);
+                tableFilled = false;
+                prp->getRuns();
+                prp->getRun(1);
+                mouseInterface->SetupChannelSelection();
+                setAccelerationValue(prp->getAccelLeft());
+                acceleration->setValue(prp->getAccelLeft());
+                setDecelerationValue(prp->getDecelLeft());
+                deceleration->setValue(prp->getDecelLeft());
+                timeAccelSpinBox->setValue(prp->getAccelTime());
+                setAccelerationTimeValue(prp->getAccelTime());
+                populateRunsTextBox();
+                runTableWidget->selectRow(currentRunRowIndex);
+                sInterface->startTrialRun(true);
+                QMetaObject::invokeMethod(personSessionStimQuickViewItem, "setSubjectId", Q_ARG(QVariant, 
+                            runTableWidget->item(subjectIdRow, subjectIdCol)->text()));
+                QMetaObject::invokeMethod(personSessionStimQuickViewItem, "setSessionId", Q_ARG(QVariant, 
+                            runTableWidget->item(sessionIdRow, sessionIdCol)->text()));
+                //setPleaseStandQuietly();
+                setStimChannel();
+            }
+            double decelTime = timeoutBuffer + prp->getDecelTime();
+            timeDecelSpinBox->setValue(decelTime);
+
+            firstLoadComplete = true;
         }
         else
         {
-            runTableWidget->setRowCount(0);
-            prp->setRunFile(fileName);
-            tableFilled = false;
-            prp->getRuns();
-            prp->getRun(1);
-            mouseInterface->SetupChannelSelection();
-            setAccelerationValue(prp->getAccelLeft());
-            acceleration->setValue(prp->getAccelLeft());
-            setDecelerationValue(prp->getDecelLeft());
-            deceleration->setValue(prp->getDecelLeft());
-            timeAccelSpinBox->setValue(prp->getAccelTime());
-            setAccelerationTimeValue(prp->getAccelTime());
-            populateRunsTextBox();
-            runTableWidget->selectRow(currentRunRowIndex);
-            sInterface->startTrialRun(true);
-            QMetaObject::invokeMethod(personSessionStimQuickViewItem, "setSubjectId", Q_ARG(QVariant, 
-                        runTableWidget->item(subjectIdRow, subjectIdCol)->text()));
-            QMetaObject::invokeMethod(personSessionStimQuickViewItem, "setSessionId", Q_ARG(QVariant, 
-                        runTableWidget->item(sessionIdRow, sessionIdCol)->text()));
-            //setPleaseStandQuietly();
-            setStimChannel();
+            qDebug() << "Load run rejected";
         }
-        double decelTime = timeoutBuffer + prp->getDecelTime();
-        timeDecelSpinBox->setValue(decelTime);
-
-        firstLoadComplete = true;
-    }
-    else
+    } catch (...)
     {
-        qDebug() << "Load run rejected";
+        QMessageBox::StandardButton criticalErr = QMessageBox::critical( this, APP_NAME,
+                tr("There was an error in PerturbationTabWidget::loadRunProfile().")
+                );
+
     }
 }
 
 void PerturbationTabWidget::resetRunTable()
 {
+    int typeCol = 3; 
+    int levelCol = 4;
     checkFileExists();
+    prp->resetRunsVectorIndex();
+    prp->getRuns();
+    prp->getRun(1);
+    prp->setAccelDecelFromDb();
     currentRunRowIndex = 0;
     runTableWidget->selectRow(currentRunRowIndex);
     QString empty("");
+    QString typeNum = runTableWidget->item(currentRunRowIndex, typeCol)->text();
+    QString levelNum = runTableWidget->item(currentRunRowIndex, levelCol)->text();
+
+    typeNum = returnTypeNum(typeNum);
+    levelNum = returnTypeNum(levelNum);
+
     for(int row = 0; row < runTableWidget->rowCount(); row++)
     {
         runTableWidget->item(row, statusCol)->setText(empty);
         runTableWidget->item(row, statusCol)->setFont(tableRowsFont);
     }
+    
+    if(prp->getDirectionFromDb(typeNum,levelNum) == 0)
+    {
+        setAccelerationValue(-(prp->getAccelLeftDb("\"" + typeNum + "\"", "\"" + levelNum + "\"")));
+        acceleration->setValue(-(prp->getAccelLeftDb("\"" + typeNum + "\"", "\"" + levelNum + "\"")));
+        setDecelerationValue(-(prp->getDecelLeftDb("\"" + typeNum + "\"", "\"" + levelNum + "\"")));
+        deceleration->setValue(-(prp->getDecelLeftDb("\"" + typeNum + "\"", "\"" + levelNum + "\"")));
+        timeAccelSpinBox->setValue(prp->getAccelTimeDb("\"" + typeNum + "\""));
+        setAccelerationTimeValue(prp->getAccelTimeDb("\"" + typeNum + "\""));
+    }
+
+    else
+    {
+        setAccelerationValue(prp->getAccelLeftDb("\"" + typeNum + "\"", "\"" + levelNum + "\""));
+        acceleration->setValue(prp->getAccelLeftDb("\"" + typeNum + "\"", "\"" + levelNum + "\""));
+        setDecelerationValue(prp->getDecelLeftDb("\"" + typeNum + "\"", "\"" + levelNum + "\""));
+        deceleration->setValue(prp->getDecelLeftDb("\"" + typeNum + "\"", "\"" + levelNum + "\""));
+        timeAccelSpinBox->setValue(prp->getAccelTimeDb("\"" + typeNum + "\""));
+        setAccelerationTimeValue(prp->getAccelTimeDb("\"" + typeNum + "\""));
+    }
+
 }
 
 void PerturbationTabWidget::setStimChannel()
@@ -1179,24 +1221,32 @@ void PerturbationTabWidget::setTryNotToStep()
 {
     int typeCol = 3; 
     int levelCol = 4;
-    QString APP_NAME("TreadmillAutomation");
     prp->setAccelDecelFromAccelDecelSpinBox(acceleration->value(), deceleration->value());
 
-
-    if(prp->compareDbWithRunTable(returnTypeNum(runTableWidget->item(currentRunRowIndex, typeCol)->text()), 
-                returnTypeNum(runTableWidget->item(currentRunRowIndex, levelCol)->text())))
+    if(checkSocketConnection())
     {
-        int tryNotToStepTimeout = 2000;
-        QString tryNotToStep("TRY NOT TO STEP");
-        sInterface->updateTextField(tryNotToStep);
-        sInterface->updateTextColor("white");
-        QTimer::singleShot(tryNotToStepTimeout, this, SLOT(randomDelay()));
+
+        if(prp->compareDbWithRunTable(returnTypeNum(runTableWidget->item(currentRunRowIndex, typeCol)->text()), 
+                    returnTypeNum(runTableWidget->item(currentRunRowIndex, levelCol)->text())))
+        {
+            mouseInterface->WriteEvent();
+            int tryNotToStepTimeout = 2000;
+            QString tryNotToStep("TRY NOT TO STEP");
+            sInterface->updateTextField(tryNotToStep);
+            sInterface->updateTextColor("white");
+            QTimer::singleShot(tryNotToStepTimeout, this, SLOT(randomDelay()));
+        }
+        else
+        {
+            QMessageBox::StandardButton criticalErr = QMessageBox::critical( this, APP_NAME,
+                    tr("The Acceleration Time in the Run Table is out of Sync with the Database.\nPerturbation has been Terminated.")
+                    );
+        }
     }
     else
     {
-        QMessageBox::StandardButton criticalErr = QMessageBox::critical( this, APP_NAME,
-                tr("The Acceleration Time in the Run Table is out of Sync with the Database.\nPerturbation has been Terminated.")
-                );
+        QMessageBox::StandardButton criticalErr = QMessageBox::critical(this, APP_NAME,
+                tr("Network connection between treadmill application and this software has either been lost or has never been established. Go to network tab and click connect. Verify that connection has been established by looking for the words \"Remotely Controlled\" on the bottom of the treadmill application."));
     }
 }
 
@@ -1468,9 +1518,6 @@ void PerturbationTabWidget::updateRun(int cellRow, int cellCol)
 
         cellRowIdx = cellRow;
 
-        prp->clearRunResultsVector();
-        prp->getRuns();
-
         QRegularExpressionMatchIterator numIter = numbers.globalMatch(type);
         QString typeNum;
         QString levelNum;
@@ -1492,6 +1539,11 @@ void PerturbationTabWidget::updateRun(int cellRow, int cellCol)
         }
 
         QMessageBox::StandardButton reply;
+        
+        prp->clearRunResultsVector();
+        prp->getRuns();
+        //prp->getRun(1);
+        prp->setAccelDecelFromDb();
 
 
         QVector<QString> runs;
@@ -1536,8 +1588,8 @@ void PerturbationTabWidget::updateRun(int cellRow, int cellCol)
         }
 
         cellRow = 0;
-
-
+        
+        
         if(prp->getDirectionFromDb(typeNum,levelNum) == 0)
         {
             setAccelerationValue(-(prp->getAccelLeftDb("\"" + typeNum + "\"", "\"" + levelNum + "\"")));
@@ -1618,8 +1670,9 @@ void PerturbationTabWidget::updateRun(int cellRow, int cellCol)
         }
 
         prp->clearRunResultsVector();
-        prp->getRuns();
 
+        prp->getRuns();
+        prp->getRun(1);
     }
 
     updateCounter = 0;
@@ -1660,20 +1713,20 @@ QString PerturbationTabWidget::returnTypeNum(QString typeString)
     QString typeCap;
     int typeNum;
 
-    qDebug() << "returnTypeNum: " << typeString;
+//    qDebug() << "returnTypeNum: " << typeString;
 
     while(numIter.hasNext())
     {
         QRegularExpressionMatch match = numIter.next();
         typeCap = match.captured(2);
-        qDebug() << "typeCap: " << typeCap;
+//        qDebug() << "typeCap: " << typeCap;
         typeNum = typeCap.toInt();
     }
     return QString::number(typeNum);
 }
 
 
-void PerturbationTabWidget::exportTable()
+void PerturbationTabWidget::exportTable(QString mdefaultName)
 {
     int firstRow = 0;
     defaultName = "";
@@ -1683,13 +1736,28 @@ void PerturbationTabWidget::exportTable()
         defaultName += item->text() + "_";
     }
     int pos = defaultName.lastIndexOf(QChar('_'));
-    defaultName = defaultName.left(pos-1) + ".csv";
+    if(mdefaultName == "")
+    {
+        defaultName = defaultName.left(pos-1) + ".csv";
+    }
+    else
+    {
+        qDebug() << "mdefaultName: " << mdefaultName;
+        defaultName = defaultName.left(pos-1) + "_" + mdefaultName + ".csv";
+    }
 
     qDebug() << defaultName;
 
     QVector<QString> rowVec;
     QString rowString;
-    saveFile();
+    if(mdefaultName != "")
+    {
+        saveFile(false);
+    }
+    else
+    {
+        saveFile(true);
+    }
     for(int row = 0; row < runTableWidget->rowCount(); row++)
     {
         for(int col = 0; col < runTableWidget->columnCount(); col++)
@@ -1725,10 +1793,16 @@ void PerturbationTabWidget::exportTable()
     defaultName = "";
 }
 
+void PerturbationTabWidget::saveRunTmp()
+{
+    qDebug() << "saveRunTmp";
+    QString currentTimeStamp(QDateTime::currentDateTime().toString());
+    exportTable(currentTimeStamp.replace(" ","").replace(":",""));
+}
+
 void PerturbationTabWidget::checkFileExists()
 {
     int firstRow = 0;
-    QString APP_NAME("Treadmill Automation");
     defaultName = "";
     qDebug() << "Checking for File Existence";
 
@@ -1768,24 +1842,34 @@ void PerturbationTabWidget::checkFileExists()
     defaultNameAndPath = "";
 }
 
-void PerturbationTabWidget::saveFile()
+void PerturbationTabWidget::saveFile(bool showDialog)
 {
-    defaultNameAndPath = defaultPath + defaultName;
-    QFileDialog exportFileDialog(this);
-    exportFileDialog.selectFile(defaultName);
-    QString fileName = exportFileDialog.getSaveFileName(this, tr("Save Profile"), defaultNameAndPath \
-            ,tr("CSV (*.csv)"));
-    if(fileName == "")
+    QString fileName("");
+    if(showDialog)
     {
-        QMessageBox errLoadFile;
-        errLoadFile.setText("Error Saving File");
-        errLoadFile.exec();
+        defaultNameAndPath = defaultPath + defaultName;
+        QFileDialog exportFileDialog(this);
+        exportFileDialog.selectFile(defaultName);
+        fileName = exportFileDialog.getSaveFileName(this, tr("Save Profile"), defaultNameAndPath \
+                ,tr("CSV (*.csv)"));
+        if(fileName == "")
+        {
+            QMessageBox errLoadFile;
+            errLoadFile.setText("Error Saving File");
+            errLoadFile.exec();
+        }
+        else
+        {
+            QMessageBox saveSuccess;
+            saveSuccess.setText("Run Profile Saved");
+            saveSuccess.exec();
+        }
     }
     else
     {
-        QMessageBox saveSuccess;
-        saveSuccess.setText("Run Profile Saved");
-        saveSuccess.exec();
+        defaultNameAndPath = defaultTmpPath + defaultName;
+        fileName = defaultNameAndPath;
+        qDebug() << "fileName: " << fileName;
     }
     saveProfile = new QFile(fileName);
     saveProfileStream = new QTextStream(saveProfile);

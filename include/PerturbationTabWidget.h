@@ -107,7 +107,7 @@ class PerturbationTabWidget : public QWidget
         void setCellChangedTrue();
         void setLeftStimCurrent();
         void setRightStimCurrent();
-        void exportTable();
+        void exportTable(QString mdefaultName = "");
         void setPleaseStandQuietly();
         void setTryNotToStep();
         void setPositionFeet();
@@ -346,7 +346,7 @@ class PerturbationTabWidget : public QWidget
         QFont importExportButtonFont;
         QFile* saveProfile;
         QTextStream* saveProfileStream;
-        void saveFile();
+        void saveFile(bool showDialog);
         //QPushButton* updateRunTableBtn;
         QString returnTrialNum(QString trialString);
         QString defaultPath;
@@ -357,6 +357,10 @@ class PerturbationTabWidget : public QWidget
         double timeoutBuffer;
         QString returnTypeNum(QString typeString);
         QPushButton* resetButton;
+        void saveRunTmp();
+        QString defaultTmpPath;
+        bool checkSocketConnection();
+        QString APP_NAME;
 
 
 };

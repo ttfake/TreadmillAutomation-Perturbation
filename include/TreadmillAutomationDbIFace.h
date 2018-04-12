@@ -83,6 +83,8 @@ class TreadmillAutomationDbIFace : public QWidget
         void clearRunProfileHeadVector();
 
         void resetRunsVectorIndex();
+        void setAccelDecelFromDb();
+
     
     signals:
         startStimulation();
