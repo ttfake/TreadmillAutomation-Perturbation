@@ -1,0 +1,9 @@
+<map id="MouseInterface::WriteEvent" name="MouseInterface::WriteEvent">
+<area shape="rect" id="node2" href="$class_mouse_interface.html#ac1ad8eb6785b8a18c368faa8610494a7" title="MouseInterface::getRawInput" alt="" coords="239,13,433,39"/>
+<area shape="rect" id="node5" href="$class_perturbation_tab_widget.html#a09c65ab9737d61975cebc94fe843482d" title="PerturbationTabWidget\l::randomDelay" alt="" coords="259,64,413,105"/>
+<area shape="rect" id="node6" href="$class_perturbation_tab_widget.html#aeecb373be32ddc6ea3c165d685b2a386" title="PerturbationTabWidget\l::loadRunProfile" alt="" coords="490,96,645,137"/>
+<area shape="rect" id="node3" href="$class_mouse_interface.html#afffa2b2ea4250fc392451c51497cf99a" title="MouseInterface::openPort" alt="" coords="481,13,653,39"/>
+<area shape="rect" id="node4" href="$class_perturbation_tab_widget.html#a237937a4a9bd3724fe615d0b5a7b5638" title="PerturbationTabWidget\l::addTrialRunName" alt="" coords="701,5,856,47"/>
+<area shape="rect" id="node7" href="$class_perturbation_tab_widget.html#a9d551ffcaf3d0ebe54015f5536d261ab" title="PerturbationTabWidget\l::changeSessionId" alt="" coords="701,96,856,137"/>
+<area shape="rect" id="node8" href="$class_perturbation_tab_widget.html#ad9a685f191ca94bdc47f148273fdf1f4" title="PerturbationTabWidget\l::addDecelerationSpeedGroupBox" alt="" coords="904,96,1123,137"/>
+</map>

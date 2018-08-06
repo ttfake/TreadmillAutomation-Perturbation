@@ -1,0 +1,332 @@
+\hypertarget{class_color_axis}{}\section{Color\+Axis Class Reference}
+\label{class_color_axis}\index{Color\+Axis@{Color\+Axis}}
+
+
+{\ttfamily \#include $<$chartdir.\+h$>$}
+
+
+
+Inheritance diagram for Color\+Axis\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=264pt]{class_color_axis__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Color\+Axis\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=264pt]{class_color_axis__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_color_axis_ab0eedd68ce592921fec66c44be262a94}{Color\+Axis} (Color\+Axis\+Internal $\ast$\+\_\+ptr)
+\item 
+\hyperlink{class_color_axis_a532bc8d05b8a461eaba37f505d79b5ac}{$\sim$\+Color\+Axis} ()
+\item 
+void \hyperlink{class_color_axis_ad714f882d231d7ab080f6f8cf100e9a9}{set\+Color\+Gradient} (bool is\+Continuous=true, \hyperlink{class_int_array}{Int\+Array} colors=\hyperlink{class_int_array}{Int\+Array}(), int underflow\+Color=-\/1, int overflow\+Color=-\/1)
+\item 
+virtual void \hyperlink{class_color_axis_a6b69eab76fa6cecf721ef1bcec32a817}{set\+Color\+Scale} (\hyperlink{class_double_array}{Double\+Array} color\+Stops, int underflow\+Color=-\/1, int overflow\+Color=-\/1)
+\item 
+void \hyperlink{class_color_axis_aa1864826f904e5cdf34ecaaba55647a0}{set\+Axis\+Pos} (int x, int y, int alignment)
+\item 
+void \hyperlink{class_color_axis_af9791e5ea41aa81191e6b88876f35348}{set\+Levels} (int max\+Levels)
+\item 
+void \hyperlink{class_color_axis_a5a1797dffe8ef43447a920cd50e6c7d4}{set\+Compact\+Axis} (bool b=true)
+\item 
+void \hyperlink{class_color_axis_a0b1903f8220e8ba4523e887d79cc0f74}{set\+Axis\+Border} (int edge\+Color, int raised\+Effect=0)
+\item 
+void \hyperlink{class_color_axis_aa84a71cabd3bb3b6415fe6e94b7ba5eb}{set\+Bounding\+Box} (int fill\+Color, int edge\+Color=\hyperlink{namespace_chart_abee0d882fdc9ad0b001245ad9fc64011afc6811800a9e2582dac0157b6279f836}{Chart\+::\+Transparent}, int raised\+Effect=0)
+\item 
+void \hyperlink{class_color_axis_ad60effdecee5281b5f6ddbfdd234afa8}{set\+Box\+Margin} (int m)
+\item 
+void \hyperlink{class_color_axis_a803f0b7b216c5095767afd61dcb62141}{set\+Box\+Margin} (int left\+Margin, int right\+Margin, int top\+Margin, int bottom\+Margin)
+\item 
+void \hyperlink{class_color_axis_a0bcbd3e8e36d3997f393261bf5432fcb}{set\+Rounded\+Corners} (int r1=10, int r2=-\/1, int r3=-\/1, int r4=-\/1)
+\item 
+int \hyperlink{class_color_axis_a72496a3139183a40c1eb75d77b63a437}{get\+Box\+Width} () const
+\item 
+int \hyperlink{class_color_axis_a247cf31201720a7ef116f86a087ffa93}{get\+Box\+Height} () const
+\item 
+int \hyperlink{class_color_axis_a8531ba9a751d70e4228ba06f6449433f}{get\+Color} (double z) const
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 1572 of file chartdir.\+h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_color_axis_ab0eedd68ce592921fec66c44be262a94}\label{class_color_axis_ab0eedd68ce592921fec66c44be262a94}} 
+\index{Color\+Axis@{Color\+Axis}!Color\+Axis@{Color\+Axis}}
+\index{Color\+Axis@{Color\+Axis}!Color\+Axis@{Color\+Axis}}
+\subsubsection{\texorpdfstring{Color\+Axis()}{ColorAxis()}}
+{\footnotesize\ttfamily Color\+Axis\+::\+Color\+Axis (\begin{DoxyParamCaption}\item[{Color\+Axis\+Internal $\ast$}]{\+\_\+ptr }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 1582 of file chartdir.\+h.
+
+\mbox{\Hypertarget{class_color_axis_a532bc8d05b8a461eaba37f505d79b5ac}\label{class_color_axis_a532bc8d05b8a461eaba37f505d79b5ac}} 
+\index{Color\+Axis@{Color\+Axis}!````~Color\+Axis@{$\sim$\+Color\+Axis}}
+\index{````~Color\+Axis@{$\sim$\+Color\+Axis}!Color\+Axis@{Color\+Axis}}
+\subsubsection{\texorpdfstring{$\sim$\+Color\+Axis()}{~ColorAxis()}}
+{\footnotesize\ttfamily Color\+Axis\+::$\sim$\+Color\+Axis (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 1583 of file chartdir.\+h.
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_color_axis_a247cf31201720a7ef116f86a087ffa93}\label{class_color_axis_a247cf31201720a7ef116f86a087ffa93}} 
+\index{Color\+Axis@{Color\+Axis}!get\+Box\+Height@{get\+Box\+Height}}
+\index{get\+Box\+Height@{get\+Box\+Height}!Color\+Axis@{Color\+Axis}}
+\subsubsection{\texorpdfstring{get\+Box\+Height()}{getBoxHeight()}}
+{\footnotesize\ttfamily int Color\+Axis\+::get\+Box\+Height (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 1602 of file chartdir.\+h.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_color_axis_a247cf31201720a7ef116f86a087ffa93_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_color_axis_a72496a3139183a40c1eb75d77b63a437}\label{class_color_axis_a72496a3139183a40c1eb75d77b63a437}} 
+\index{Color\+Axis@{Color\+Axis}!get\+Box\+Width@{get\+Box\+Width}}
+\index{get\+Box\+Width@{get\+Box\+Width}!Color\+Axis@{Color\+Axis}}
+\subsubsection{\texorpdfstring{get\+Box\+Width()}{getBoxWidth()}}
+{\footnotesize\ttfamily int Color\+Axis\+::get\+Box\+Width (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 1601 of file chartdir.\+h.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_color_axis_a72496a3139183a40c1eb75d77b63a437_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_color_axis_a8531ba9a751d70e4228ba06f6449433f}\label{class_color_axis_a8531ba9a751d70e4228ba06f6449433f}} 
+\index{Color\+Axis@{Color\+Axis}!get\+Color@{get\+Color}}
+\index{get\+Color@{get\+Color}!Color\+Axis@{Color\+Axis}}
+\subsubsection{\texorpdfstring{get\+Color()}{getColor()}}
+{\footnotesize\ttfamily int Color\+Axis\+::get\+Color (\begin{DoxyParamCaption}\item[{double}]{z }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 1603 of file chartdir.\+h.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=327pt]{class_color_axis_a8531ba9a751d70e4228ba06f6449433f_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_color_axis_a0b1903f8220e8ba4523e887d79cc0f74}\label{class_color_axis_a0b1903f8220e8ba4523e887d79cc0f74}} 
+\index{Color\+Axis@{Color\+Axis}!set\+Axis\+Border@{set\+Axis\+Border}}
+\index{set\+Axis\+Border@{set\+Axis\+Border}!Color\+Axis@{Color\+Axis}}
+\subsubsection{\texorpdfstring{set\+Axis\+Border()}{setAxisBorder()}}
+{\footnotesize\ttfamily void Color\+Axis\+::set\+Axis\+Border (\begin{DoxyParamCaption}\item[{int}]{edge\+Color,  }\item[{int}]{raised\+Effect = {\ttfamily 0} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 1593 of file chartdir.\+h.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_color_axis_a0b1903f8220e8ba4523e887d79cc0f74_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_color_axis_aa1864826f904e5cdf34ecaaba55647a0}\label{class_color_axis_aa1864826f904e5cdf34ecaaba55647a0}} 
+\index{Color\+Axis@{Color\+Axis}!set\+Axis\+Pos@{set\+Axis\+Pos}}
+\index{set\+Axis\+Pos@{set\+Axis\+Pos}!Color\+Axis@{Color\+Axis}}
+\subsubsection{\texorpdfstring{set\+Axis\+Pos()}{setAxisPos()}}
+{\footnotesize\ttfamily void Color\+Axis\+::set\+Axis\+Pos (\begin{DoxyParamCaption}\item[{int}]{x,  }\item[{int}]{y,  }\item[{int}]{alignment }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 1590 of file chartdir.\+h.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_color_axis_aa1864826f904e5cdf34ecaaba55647a0_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_color_axis_aa84a71cabd3bb3b6415fe6e94b7ba5eb}\label{class_color_axis_aa84a71cabd3bb3b6415fe6e94b7ba5eb}} 
+\index{Color\+Axis@{Color\+Axis}!set\+Bounding\+Box@{set\+Bounding\+Box}}
+\index{set\+Bounding\+Box@{set\+Bounding\+Box}!Color\+Axis@{Color\+Axis}}
+\subsubsection{\texorpdfstring{set\+Bounding\+Box()}{setBoundingBox()}}
+{\footnotesize\ttfamily void Color\+Axis\+::set\+Bounding\+Box (\begin{DoxyParamCaption}\item[{int}]{fill\+Color,  }\item[{int}]{edge\+Color = {\ttfamily \hyperlink{namespace_chart_abee0d882fdc9ad0b001245ad9fc64011afc6811800a9e2582dac0157b6279f836}{Chart\+::\+Transparent}},  }\item[{int}]{raised\+Effect = {\ttfamily 0} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 1594 of file chartdir.\+h.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_color_axis_aa84a71cabd3bb3b6415fe6e94b7ba5eb_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_color_axis_ad60effdecee5281b5f6ddbfdd234afa8}\label{class_color_axis_ad60effdecee5281b5f6ddbfdd234afa8}} 
+\index{Color\+Axis@{Color\+Axis}!set\+Box\+Margin@{set\+Box\+Margin}}
+\index{set\+Box\+Margin@{set\+Box\+Margin}!Color\+Axis@{Color\+Axis}}
+\subsubsection{\texorpdfstring{set\+Box\+Margin()}{setBoxMargin()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Color\+Axis\+::set\+Box\+Margin (\begin{DoxyParamCaption}\item[{int}]{m }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 1596 of file chartdir.\+h.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_color_axis_ad60effdecee5281b5f6ddbfdd234afa8_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_color_axis_a803f0b7b216c5095767afd61dcb62141}\label{class_color_axis_a803f0b7b216c5095767afd61dcb62141}} 
+\index{Color\+Axis@{Color\+Axis}!set\+Box\+Margin@{set\+Box\+Margin}}
+\index{set\+Box\+Margin@{set\+Box\+Margin}!Color\+Axis@{Color\+Axis}}
+\subsubsection{\texorpdfstring{set\+Box\+Margin()}{setBoxMargin()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Color\+Axis\+::set\+Box\+Margin (\begin{DoxyParamCaption}\item[{int}]{left\+Margin,  }\item[{int}]{right\+Margin,  }\item[{int}]{top\+Margin,  }\item[{int}]{bottom\+Margin }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 1597 of file chartdir.\+h.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_color_axis_a803f0b7b216c5095767afd61dcb62141_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_color_axis_ad714f882d231d7ab080f6f8cf100e9a9}\label{class_color_axis_ad714f882d231d7ab080f6f8cf100e9a9}} 
+\index{Color\+Axis@{Color\+Axis}!set\+Color\+Gradient@{set\+Color\+Gradient}}
+\index{set\+Color\+Gradient@{set\+Color\+Gradient}!Color\+Axis@{Color\+Axis}}
+\subsubsection{\texorpdfstring{set\+Color\+Gradient()}{setColorGradient()}}
+{\footnotesize\ttfamily void Color\+Axis\+::set\+Color\+Gradient (\begin{DoxyParamCaption}\item[{bool}]{is\+Continuous = {\ttfamily true},  }\item[{\hyperlink{class_int_array}{Int\+Array}}]{colors = {\ttfamily \hyperlink{class_int_array}{Int\+Array}()},  }\item[{int}]{underflow\+Color = {\ttfamily -\/1},  }\item[{int}]{overflow\+Color = {\ttfamily -\/1} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 1585 of file chartdir.\+h.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_color_axis_ad714f882d231d7ab080f6f8cf100e9a9_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_color_axis_a6b69eab76fa6cecf721ef1bcec32a817}\label{class_color_axis_a6b69eab76fa6cecf721ef1bcec32a817}} 
+\index{Color\+Axis@{Color\+Axis}!set\+Color\+Scale@{set\+Color\+Scale}}
+\index{set\+Color\+Scale@{set\+Color\+Scale}!Color\+Axis@{Color\+Axis}}
+\subsubsection{\texorpdfstring{set\+Color\+Scale()}{setColorScale()}}
+{\footnotesize\ttfamily virtual void Color\+Axis\+::set\+Color\+Scale (\begin{DoxyParamCaption}\item[{\hyperlink{class_double_array}{Double\+Array}}]{color\+Stops,  }\item[{int}]{underflow\+Color = {\ttfamily -\/1},  }\item[{int}]{overflow\+Color = {\ttfamily -\/1} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Definition at line 1587 of file chartdir.\+h.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_color_axis_a6b69eab76fa6cecf721ef1bcec32a817_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_color_axis_a5a1797dffe8ef43447a920cd50e6c7d4}\label{class_color_axis_a5a1797dffe8ef43447a920cd50e6c7d4}} 
+\index{Color\+Axis@{Color\+Axis}!set\+Compact\+Axis@{set\+Compact\+Axis}}
+\index{set\+Compact\+Axis@{set\+Compact\+Axis}!Color\+Axis@{Color\+Axis}}
+\subsubsection{\texorpdfstring{set\+Compact\+Axis()}{setCompactAxis()}}
+{\footnotesize\ttfamily void Color\+Axis\+::set\+Compact\+Axis (\begin{DoxyParamCaption}\item[{bool}]{b = {\ttfamily true} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 1592 of file chartdir.\+h.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_color_axis_a5a1797dffe8ef43447a920cd50e6c7d4_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_color_axis_af9791e5ea41aa81191e6b88876f35348}\label{class_color_axis_af9791e5ea41aa81191e6b88876f35348}} 
+\index{Color\+Axis@{Color\+Axis}!set\+Levels@{set\+Levels}}
+\index{set\+Levels@{set\+Levels}!Color\+Axis@{Color\+Axis}}
+\subsubsection{\texorpdfstring{set\+Levels()}{setLevels()}}
+{\footnotesize\ttfamily void Color\+Axis\+::set\+Levels (\begin{DoxyParamCaption}\item[{int}]{max\+Levels }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 1591 of file chartdir.\+h.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=337pt]{class_color_axis_af9791e5ea41aa81191e6b88876f35348_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_color_axis_a0bcbd3e8e36d3997f393261bf5432fcb}\label{class_color_axis_a0bcbd3e8e36d3997f393261bf5432fcb}} 
+\index{Color\+Axis@{Color\+Axis}!set\+Rounded\+Corners@{set\+Rounded\+Corners}}
+\index{set\+Rounded\+Corners@{set\+Rounded\+Corners}!Color\+Axis@{Color\+Axis}}
+\subsubsection{\texorpdfstring{set\+Rounded\+Corners()}{setRoundedCorners()}}
+{\footnotesize\ttfamily void Color\+Axis\+::set\+Rounded\+Corners (\begin{DoxyParamCaption}\item[{int}]{r1 = {\ttfamily 10},  }\item[{int}]{r2 = {\ttfamily -\/1},  }\item[{int}]{r3 = {\ttfamily -\/1},  }\item[{int}]{r4 = {\ttfamily -\/1} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 1599 of file chartdir.\+h.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_color_axis_a0bcbd3e8e36d3997f393261bf5432fcb_cgraph}
+\end{center}
+\end{figure}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+include/\hyperlink{chartdir_8h}{chartdir.\+h}\end{DoxyCompactItemize}

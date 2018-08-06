@@ -1,0 +1,41 @@
+<map id="BaseChart::setSize" name="BaseChart::setSize">
+<area shape="rect" id="node2" href="$class_finance_chart.html#a2e27a54f9787005383604fe1ebac4c58" title="Add a blank indicator chart to the finance chart. Used internally to add other indicators. Override to change the default formatting (eg. axis fonts, etc.) of the various indicators. " alt="" coords="189,1232,368,1259"/>
+<area shape="rect" id="node3" href="$class_finance_chart.html#a69ac5aca5d2d232184398b43fee6eb13" title="Add the main chart &#45; the chart that shows the HLOC data. " alt="" coords="423,649,612,676"/>
+<area shape="rect" id="node4" href="$class_finance_chart.html#a799daf3775d8e100cd771eba230252ff" title="Add a generic line indicator chart. " alt="" coords="416,700,619,727"/>
+<area shape="rect" id="node20" href="$class_finance_chart.html#a86b3b47168753b4876b38464ecc5ab33" title="Add a Performance indicator chart. " alt="" coords="683,1232,885,1259"/>
+<area shape="rect" id="node29" href="$class_finance_chart.html#accbcf43fbdc88401416addefeaf06124" title="Add a generic bar indicator chart. " alt="" coords="418,1055,617,1081"/>
+<area shape="rect" id="node31" href="$class_finance_chart.html#a69096a6af74055fee5f1ae5fc0588a3b" title="Add an Aroon Up/Down indicators chart. " alt="" coords="436,1105,599,1132"/>
+<area shape="rect" id="node32" href="$class_finance_chart.html#ad160627b8abe9c8c14175c93e4e54113" title="Add an Average Directional Index indicators chart. " alt="" coords="439,1156,596,1183"/>
+<area shape="rect" id="node33" href="$class_finance_chart.html#a1841d99b6f71cafd6207f18a57d5b5d7" title="Add a Community Channel Index indicator chart. " alt="" coords="441,1207,594,1233"/>
+<area shape="rect" id="node34" href="$class_finance_chart.html#a3f46f24c67ed7a2c4a5ffa77fbe7ba73" title="Add a MACD indicator chart. " alt="" coords="433,1257,602,1284"/>
+<area shape="rect" id="node35" href="$class_finance_chart.html#ab6f774100ffc593f93eed25c98facf6f" title="Add a Money Flow Index indicator chart. " alt="" coords="441,1308,593,1335"/>
+<area shape="rect" id="node36" href="$class_finance_chart.html#aba175ac4bc80577bad0767bcd75109c7" title="Add a Relative Strength Index indicator chart. " alt="" coords="441,1359,593,1385"/>
+<area shape="rect" id="node37" href="$class_finance_chart.html#a8c44b07a3a6dcf2e3feb09960dfa9770" title="Add a Stochastic RSI indicator chart. " alt="" coords="424,1409,611,1436"/>
+<area shape="rect" id="node38" href="$class_finance_chart.html#aa7a2bc1fab9c1ec538ff293c107d6cc4" title="Add an Ultimate Oscillator indicator chart. " alt="" coords="428,1461,607,1502"/>
+<area shape="rect" id="node39" href="$class_finance_chart.html#a51ceb77140f73f49707d526dafe643fe" title="Add a Volume indicator chart. " alt="" coords="418,1527,617,1553"/>
+<area shape="rect" id="node40" href="$class_finance_chart.html#aa0f6a518a8fb451cc645f10e3e947ff0" title="Add a William R indicator chart. " alt="" coords="426,1577,609,1604"/>
+<area shape="rect" id="node5" href="$class_finance_chart.html#ae5545f015ca900f2b1300c675f249186" title="Add an Accumulation/Distribution indicator chart. " alt="" coords="696,5,872,32"/>
+<area shape="rect" id="node6" href="$class_finance_chart.html#a259aa83c1222608df3f6d95410a97ea4" title="Add an Aroon Oscillator indicator chart. " alt="" coords="691,56,877,83"/>
+<area shape="rect" id="node7" href="$class_finance_chart.html#a0eaad6d3d543f42315791022bde7bbb3" title="Add an Average True Range indicators chart. " alt="" coords="706,107,862,133"/>
+<area shape="rect" id="node8" href="$class_finance_chart.html#abb8be388a034086215ef7c53409469b0" title="Add a Bollinger Band Width indicator chart. " alt="" coords="695,158,873,199"/>
+<area shape="rect" id="node9" href="$class_finance_chart.html#a413f41ac0d18c63ab6f3d4c4ba4baa6c" title="Add a Chaikin Oscillator indicator chart. " alt="" coords="697,223,871,265"/>
+<area shape="rect" id="node10" href="$class_finance_chart.html#a45b334a8ddef874d6e152e347a9e725e" title="Add a Chaikin Volatility indicator chart. " alt="" coords="697,289,871,330"/>
+<area shape="rect" id="node11" href="$class_finance_chart.html#a1541d5239c097f1f35b426830d569bc8" title="Add a Close Location Value indicator chart. " alt="" coords="707,355,861,381"/>
+<area shape="rect" id="node12" href="$class_finance_chart.html#ad1f0a674349a991edc1cfe4197b75860" title="Add a Detrended Price Oscillator indicator chart. " alt="" coords="705,405,863,432"/>
+<area shape="rect" id="node13" href="$class_finance_chart.html#a0cb226ad13bc836d8b5731d280e2201c" title="Add a Donchian Channel Width indicator chart. " alt="" coords="692,457,876,498"/>
+<area shape="rect" id="node14" href="$class_finance_chart.html#af821cff5482c9414a74be29646564d71" title="Add a Ease of Movement indicator chart. " alt="" coords="667,523,901,549"/>
+<area shape="rect" id="node15" href="$class_finance_chart.html#aaf35dc123849c0ad4a959f2e1667360c" title="Add a Fast Stochastic indicator chart. " alt="" coords="675,573,893,600"/>
+<area shape="rect" id="node16" href="$class_finance_chart.html#a452f5d65f747033467a62eb280babfdc" title="Add a Mass Index indicator chart. " alt="" coords="687,624,881,651"/>
+<area shape="rect" id="node17" href="$class_finance_chart.html#afbdc6d4410549928b041060bfb03b126" title="Add a Momentum indicator chart. " alt="" coords="687,675,881,701"/>
+<area shape="rect" id="node18" href="$class_finance_chart.html#a388881982244585b53d8a318ad4e6254" title="Add a Negative Volume Index indicator chart. " alt="" coords="708,725,860,752"/>
+<area shape="rect" id="node19" href="$class_finance_chart.html#a68954d093f52671623132c5fb35c261b" title="Add an On Balance Volume indicator chart. " alt="" coords="705,776,863,803"/>
+<area shape="rect" id="node21" href="$class_finance_chart.html#afece1b137b4d8b68e0be8255a2a914b9" title="Add a Percentage Price Oscillator indicator chart. " alt="" coords="705,827,863,853"/>
+<area shape="rect" id="node22" href="$class_finance_chart.html#a69528f7f5ec33d01dacee72fd0fe2357" title="Add a Positive Volume Index indicator chart. " alt="" coords="709,877,859,904"/>
+<area shape="rect" id="node23" href="$class_finance_chart.html#ace44d0253016161a1bd17d9725fde444" title="Add a Percentage Volume Oscillator indicator chart. " alt="" coords="705,928,863,955"/>
+<area shape="rect" id="node24" href="$class_finance_chart.html#a3434485481a3f184521145874a62224a" title="Add a Price Volumne Trend indicator chart. " alt="" coords="707,979,861,1005"/>
+<area shape="rect" id="node25" href="$class_finance_chart.html#ac8ca50e0764d729d0591d1baace193de" title="Add a Rate of Change indicator chart. " alt="" coords="705,1029,863,1056"/>
+<area shape="rect" id="node26" href="$class_finance_chart.html#a2f1d675f9a5e8f280b4f16d3a36eb204" title="Add a Slow Stochastic indicator chart. " alt="" coords="674,1080,894,1107"/>
+<area shape="rect" id="node27" href="$class_finance_chart.html#abee75e01f567badfa4da74c92a60d00c" title="Add a Moving Standard Deviation indicator chart. " alt="" coords="697,1131,871,1157"/>
+<area shape="rect" id="node28" href="$class_finance_chart.html#a54ec3c32375abf620ca16208f24717ce" title="Add a TRIX indicator chart. " alt="" coords="704,1181,864,1208"/>
+<area shape="rect" id="node30" href="$class_finance_chart.html#a1f09c095f7013a3e8d9e6d97009e1d26" title="Add a Chaikin Money Flow indicator chart. " alt="" coords="697,1283,871,1325"/>
+</map>

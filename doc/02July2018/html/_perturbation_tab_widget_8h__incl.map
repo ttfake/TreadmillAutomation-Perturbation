@@ -1,0 +1,10 @@
+<map id="include/PerturbationTabWidget.h" name="include/PerturbationTabWidget.h">
+<area shape="rect" id="node39" href="$_send_setpoints_8h.html" title="SendSetpoints.h" alt="" coords="361,80,480,107"/>
+<area shape="rect" id="node43" href="$_record_treadmill_stream_8h.html" title="RecordTreadmillStream.h" alt="" coords="1117,80,1287,107"/>
+<area shape="rect" id="node45" href="$_mouse_interface_8h.html" title="MouseInterface.h" alt="" coords="1767,80,1890,107"/>
+<area shape="rect" id="node46" href="$_read_trial_name_file_8h.html" title="ReadTrialNameFile.h" alt="" coords="4625,80,4771,107"/>
+<area shape="rect" id="node47" href="$_parse_run_profile_8h.html" title="ParseRunProfile.h" alt="" coords="1362,80,1490,107"/>
+<area shape="rect" id="node48" href="$_qml_interface_8h.html" title="QmlInterface.h" alt="" coords="4795,80,4903,107"/>
+<area shape="rect" id="node49" href="$_subject_interface_8h.html" title="SubjectInterface.h" alt="" coords="4927,80,5055,107"/>
+<area shape="rect" id="node50" href="$_d_s8library_8h.html" title="DS8library.h" alt="" coords="61,80,156,107"/>
+</map>

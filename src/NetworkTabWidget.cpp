@@ -38,7 +38,7 @@ NetworkTabWidget* NetworkTabWidget::getInstance()
 {
     if(_networkTabWidget == NULL)
     {
-        _networkTabWidget = new NetworkTabWidget();
+        _networkTabWidget = new NetworkTabWidget;
     }
 
     return _networkTabWidget;

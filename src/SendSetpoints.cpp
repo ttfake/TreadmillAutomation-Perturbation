@@ -125,6 +125,9 @@ void SendSetpoints::sendSetpointsDirectly(TreadmillProperty mproperty, SetpointT
     char decelLdata[64];
     const qint16 scaleFactor = 1000;
 
+    QFile TreadmillDataSentAccel(logPath + "/" + "TreadmillDataSentAccel.log");
+    QString accelDataString;
+
         switch(mproperty){
         case TreadmillProperty::ZERO:
             std::cout << "ZERO selected" << std::endl;
@@ -165,6 +168,11 @@ void SendSetpoints::sendSetpointsDirectly(TreadmillProperty mproperty, SetpointT
         case TreadmillProperty::ACCEL:
                         
             std::cout << "ACCELERATION selected" << std::endl;
+           
+            logPath = "C:\\Users\\User\\Desktop\\HReflex_Binaries-master\\bin\\data\\";
+
+            TreadmillDataSentAccel.open(QIODevice::Append);
+
 
             accelSpeed[0] = getRightFrontSpeedValue() * scaleFactor;
             accelSpeed[1] = getLeftFrontSpeedValue() * scaleFactor;
@@ -174,6 +182,9 @@ void SendSetpoints::sendSetpointsDirectly(TreadmillProperty mproperty, SetpointT
             accelAngle = 0;
             accelDataStream << (quint8)0; // format
 					         // straight
+            qDebug() << "SendSetPoints Right Front Speed: " << accelSpeed[0];
+            qDebug() << "SendSetPoints Left Front Speed: "  << accelSpeed[1];
+            qDebug() << "SendSetPoints Acceleration: " << accelAccel;
             accelDataStream << accelSpeed[0];
             accelDataStream << accelSpeed[1];
             accelDataStream << accelSpeed[2];
@@ -197,6 +208,9 @@ void SendSetpoints::sendSetpointsDirectly(TreadmillProperty mproperty, SetpointT
 //            qDebug("Sending Acceleration: %s", qPrintable(accelData.toHex()));
             memcpy(accelLdata, accelData.data(), 64);
             Q_ASSERT(accelData.size() == 64);
+            accelDataString = QString::fromStdString(accelData.toStdString());
+            TreadmillDataSentAccel.write(accelDataString.toUtf8() + "\n");
+            TreadmillDataSentAccel.close();
             pertSocket->write(accelData);
             break;
         case TreadmillProperty::DECEL:

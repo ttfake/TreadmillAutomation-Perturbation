@@ -1,0 +1,252 @@
+\hypertarget{class_linear_meter}{}\section{Linear\+Meter Class Reference}
+\label{class_linear_meter}\index{Linear\+Meter@{Linear\+Meter}}
+
+
+{\ttfamily \#include $<$chartdir.\+h$>$}
+
+
+
+Inheritance diagram for Linear\+Meter\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=175pt]{class_linear_meter__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Linear\+Meter\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=175pt]{class_linear_meter__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_linear_meter_a7a87e1ea118e2b8dfddb06b9622a7d80}{Linear\+Meter} (int width, int height, int bg\+Color=\hyperlink{namespace_chart_abee0d882fdc9ad0b001245ad9fc64011a134193bde693b9d152d0c6dc59fa7d7f}{Chart\+::\+Background\+Color}, int edge\+Color=\hyperlink{namespace_chart_abee0d882fdc9ad0b001245ad9fc64011afc6811800a9e2582dac0157b6279f836}{Chart\+::\+Transparent}, int raised\+Effect=0)
+\item 
+void \hyperlink{class_linear_meter_a5c371b61604befc3d3459175740704af}{set\+Meter} (int leftX, int topY, int width, int height, int axis\+Pos=\hyperlink{namespace_chart_ae222e51ce11a254450b6ddfbc862680aae213f3cd1461b109f9aa955d28ed4418}{Chart\+::\+Left}, bool is\+Reversed=false)
+\item 
+void \hyperlink{class_linear_meter_a3ea47754984830027c4f543f23226748}{set\+Rail} (int rail\+Color, int rail\+Width=2, int rail\+Offset=6)
+\item 
+int \hyperlink{class_linear_meter_ab75f2dce6013211e5a241a13205263ef}{get\+Meter\+LeftX} ()
+\item 
+int \hyperlink{class_linear_meter_a9122149ef99dd2abc325af75f8f4e284}{get\+Meter\+TopY} ()
+\item 
+int \hyperlink{class_linear_meter_a52152c56dc40d25788a0538102677f4a}{get\+Meter\+Width} ()
+\item 
+int \hyperlink{class_linear_meter_a0512eb92ecebcc8fa768ae61b9f2bd89}{get\+Meter\+Height} ()
+\item 
+int \hyperlink{class_linear_meter_a78ffbad85d01ed2fde40342f49901288}{get\+Meter\+RightX} ()
+\item 
+int \hyperlink{class_linear_meter_a75d8fef2615264355a45101a42c23298}{get\+Meter\+BottomY} ()
+\item 
+\hyperlink{class_text_box}{Text\+Box} $\ast$ \hyperlink{class_linear_meter_adf04c08cb83e4f3d71ed056fcafff552}{add\+Zone} (double start\+Value, double end\+Value, int color, const char $\ast$label=0)
+\item 
+\hyperlink{class_text_box}{Text\+Box} $\ast$ \hyperlink{class_linear_meter_ae2cab5aaf926542c2856a4b8995bd051}{add\+Bar} (double start\+Value, double end\+Value, int color, int effect=0, int rounded\+Corners=0)
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 3007 of file chartdir.\+h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_linear_meter_a7a87e1ea118e2b8dfddb06b9622a7d80}\label{class_linear_meter_a7a87e1ea118e2b8dfddb06b9622a7d80}} 
+\index{Linear\+Meter@{Linear\+Meter}!Linear\+Meter@{Linear\+Meter}}
+\index{Linear\+Meter@{Linear\+Meter}!Linear\+Meter@{Linear\+Meter}}
+\subsubsection{\texorpdfstring{Linear\+Meter()}{LinearMeter()}}
+{\footnotesize\ttfamily Linear\+Meter\+::\+Linear\+Meter (\begin{DoxyParamCaption}\item[{int}]{width,  }\item[{int}]{height,  }\item[{int}]{bg\+Color = {\ttfamily \hyperlink{namespace_chart_abee0d882fdc9ad0b001245ad9fc64011a134193bde693b9d152d0c6dc59fa7d7f}{Chart\+::\+Background\+Color}},  }\item[{int}]{edge\+Color = {\ttfamily \hyperlink{namespace_chart_abee0d882fdc9ad0b001245ad9fc64011afc6811800a9e2582dac0157b6279f836}{Chart\+::\+Transparent}},  }\item[{int}]{raised\+Effect = {\ttfamily 0} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 3017 of file chartdir.\+h.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_linear_meter_a7a87e1ea118e2b8dfddb06b9622a7d80_cgraph}
+\end{center}
+\end{figure}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_linear_meter_ae2cab5aaf926542c2856a4b8995bd051}\label{class_linear_meter_ae2cab5aaf926542c2856a4b8995bd051}} 
+\index{Linear\+Meter@{Linear\+Meter}!add\+Bar@{add\+Bar}}
+\index{add\+Bar@{add\+Bar}!Linear\+Meter@{Linear\+Meter}}
+\subsubsection{\texorpdfstring{add\+Bar()}{addBar()}}
+{\footnotesize\ttfamily \hyperlink{class_text_box}{Text\+Box}$\ast$ Linear\+Meter\+::add\+Bar (\begin{DoxyParamCaption}\item[{double}]{start\+Value,  }\item[{double}]{end\+Value,  }\item[{int}]{color,  }\item[{int}]{effect = {\ttfamily 0},  }\item[{int}]{rounded\+Corners = {\ttfamily 0} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 3036 of file chartdir.\+h.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=331pt]{class_linear_meter_ae2cab5aaf926542c2856a4b8995bd051_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_linear_meter_adf04c08cb83e4f3d71ed056fcafff552}\label{class_linear_meter_adf04c08cb83e4f3d71ed056fcafff552}} 
+\index{Linear\+Meter@{Linear\+Meter}!add\+Zone@{add\+Zone}}
+\index{add\+Zone@{add\+Zone}!Linear\+Meter@{Linear\+Meter}}
+\subsubsection{\texorpdfstring{add\+Zone()}{addZone()}}
+{\footnotesize\ttfamily \hyperlink{class_text_box}{Text\+Box}$\ast$ Linear\+Meter\+::add\+Zone (\begin{DoxyParamCaption}\item[{double}]{start\+Value,  }\item[{double}]{end\+Value,  }\item[{int}]{color,  }\item[{const char $\ast$}]{label = {\ttfamily 0} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 3034 of file chartdir.\+h.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=345pt]{class_linear_meter_adf04c08cb83e4f3d71ed056fcafff552_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_linear_meter_a75d8fef2615264355a45101a42c23298}\label{class_linear_meter_a75d8fef2615264355a45101a42c23298}} 
+\index{Linear\+Meter@{Linear\+Meter}!get\+Meter\+BottomY@{get\+Meter\+BottomY}}
+\index{get\+Meter\+BottomY@{get\+Meter\+BottomY}!Linear\+Meter@{Linear\+Meter}}
+\subsubsection{\texorpdfstring{get\+Meter\+Bottom\+Y()}{getMeterBottomY()}}
+{\footnotesize\ttfamily int Linear\+Meter\+::get\+Meter\+BottomY (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 3032 of file chartdir.\+h.
+
+\mbox{\Hypertarget{class_linear_meter_a0512eb92ecebcc8fa768ae61b9f2bd89}\label{class_linear_meter_a0512eb92ecebcc8fa768ae61b9f2bd89}} 
+\index{Linear\+Meter@{Linear\+Meter}!get\+Meter\+Height@{get\+Meter\+Height}}
+\index{get\+Meter\+Height@{get\+Meter\+Height}!Linear\+Meter@{Linear\+Meter}}
+\subsubsection{\texorpdfstring{get\+Meter\+Height()}{getMeterHeight()}}
+{\footnotesize\ttfamily int Linear\+Meter\+::get\+Meter\+Height (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 3030 of file chartdir.\+h.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_linear_meter_a0512eb92ecebcc8fa768ae61b9f2bd89_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_linear_meter_ab75f2dce6013211e5a241a13205263ef}\label{class_linear_meter_ab75f2dce6013211e5a241a13205263ef}} 
+\index{Linear\+Meter@{Linear\+Meter}!get\+Meter\+LeftX@{get\+Meter\+LeftX}}
+\index{get\+Meter\+LeftX@{get\+Meter\+LeftX}!Linear\+Meter@{Linear\+Meter}}
+\subsubsection{\texorpdfstring{get\+Meter\+Left\+X()}{getMeterLeftX()}}
+{\footnotesize\ttfamily int Linear\+Meter\+::get\+Meter\+LeftX (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 3027 of file chartdir.\+h.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_linear_meter_ab75f2dce6013211e5a241a13205263ef_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_linear_meter_a78ffbad85d01ed2fde40342f49901288}\label{class_linear_meter_a78ffbad85d01ed2fde40342f49901288}} 
+\index{Linear\+Meter@{Linear\+Meter}!get\+Meter\+RightX@{get\+Meter\+RightX}}
+\index{get\+Meter\+RightX@{get\+Meter\+RightX}!Linear\+Meter@{Linear\+Meter}}
+\subsubsection{\texorpdfstring{get\+Meter\+Right\+X()}{getMeterRightX()}}
+{\footnotesize\ttfamily int Linear\+Meter\+::get\+Meter\+RightX (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 3031 of file chartdir.\+h.
+
+\mbox{\Hypertarget{class_linear_meter_a9122149ef99dd2abc325af75f8f4e284}\label{class_linear_meter_a9122149ef99dd2abc325af75f8f4e284}} 
+\index{Linear\+Meter@{Linear\+Meter}!get\+Meter\+TopY@{get\+Meter\+TopY}}
+\index{get\+Meter\+TopY@{get\+Meter\+TopY}!Linear\+Meter@{Linear\+Meter}}
+\subsubsection{\texorpdfstring{get\+Meter\+Top\+Y()}{getMeterTopY()}}
+{\footnotesize\ttfamily int Linear\+Meter\+::get\+Meter\+TopY (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 3028 of file chartdir.\+h.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_linear_meter_a9122149ef99dd2abc325af75f8f4e284_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_linear_meter_a52152c56dc40d25788a0538102677f4a}\label{class_linear_meter_a52152c56dc40d25788a0538102677f4a}} 
+\index{Linear\+Meter@{Linear\+Meter}!get\+Meter\+Width@{get\+Meter\+Width}}
+\index{get\+Meter\+Width@{get\+Meter\+Width}!Linear\+Meter@{Linear\+Meter}}
+\subsubsection{\texorpdfstring{get\+Meter\+Width()}{getMeterWidth()}}
+{\footnotesize\ttfamily int Linear\+Meter\+::get\+Meter\+Width (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 3029 of file chartdir.\+h.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_linear_meter_a52152c56dc40d25788a0538102677f4a_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_linear_meter_a5c371b61604befc3d3459175740704af}\label{class_linear_meter_a5c371b61604befc3d3459175740704af}} 
+\index{Linear\+Meter@{Linear\+Meter}!set\+Meter@{set\+Meter}}
+\index{set\+Meter@{set\+Meter}!Linear\+Meter@{Linear\+Meter}}
+\subsubsection{\texorpdfstring{set\+Meter()}{setMeter()}}
+{\footnotesize\ttfamily void Linear\+Meter\+::set\+Meter (\begin{DoxyParamCaption}\item[{int}]{leftX,  }\item[{int}]{topY,  }\item[{int}]{width,  }\item[{int}]{height,  }\item[{int}]{axis\+Pos = {\ttfamily \hyperlink{namespace_chart_ae222e51ce11a254450b6ddfbc862680aae213f3cd1461b109f9aa955d28ed4418}{Chart\+::\+Left}},  }\item[{bool}]{is\+Reversed = {\ttfamily false} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 3022 of file chartdir.\+h.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=347pt]{class_linear_meter_a5c371b61604befc3d3459175740704af_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_linear_meter_a3ea47754984830027c4f543f23226748}\label{class_linear_meter_a3ea47754984830027c4f543f23226748}} 
+\index{Linear\+Meter@{Linear\+Meter}!set\+Rail@{set\+Rail}}
+\index{set\+Rail@{set\+Rail}!Linear\+Meter@{Linear\+Meter}}
+\subsubsection{\texorpdfstring{set\+Rail()}{setRail()}}
+{\footnotesize\ttfamily void Linear\+Meter\+::set\+Rail (\begin{DoxyParamCaption}\item[{int}]{rail\+Color,  }\item[{int}]{rail\+Width = {\ttfamily 2},  }\item[{int}]{rail\+Offset = {\ttfamily 6} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 3024 of file chartdir.\+h.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=331pt]{class_linear_meter_a3ea47754984830027c4f543f23226748_cgraph}
+\end{center}
+\end{figure}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+include/\hyperlink{chartdir_8h}{chartdir.\+h}\end{DoxyCompactItemize}

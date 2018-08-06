@@ -1,0 +1,13 @@
+<map id="include/SendSetpoints.h" name="include/SendSetpoints.h">
+<area shape="rect" id="node2" href="$_network_tab_widget_8h.html" title="include/NetworkTabWidget.h" alt="" coords="291,80,482,107"/>
+<area shape="rect" id="node4" href="$_treadmill_automation_8h.html" title="include/TreadmillAutomation.h" alt="" coords="461,169,659,196"/>
+<area shape="rect" id="node9" href="$_perturbation_tab_widget_8h.html" title="include/PerturbationTabWidget.h" alt="" coords="597,80,808,107"/>
+<area shape="rect" id="node12" href="$_send_setpoints_8cpp.html" title="src/SendSetpoints.cpp" alt="" coords="832,80,987,107"/>
+<area shape="rect" id="node3" href="$moc___network_tab_widget_8cpp.html" title="build/TreadmillAutomation\l_autogen/include/moc_NetworkTab\lWidget.cpp" alt="" coords="5,155,232,211"/>
+<area shape="rect" id="node8" href="$_network_tab_widget_8cpp.html" title="src/NetworkTabWidget.cpp" alt="" coords="256,169,437,196"/>
+<area shape="rect" id="node5" href="$moc___treadmill_automation_8cpp.html" title="build/TreadmillAutomation\l_autogen/include/moc_Treadmill\lAutomation.cpp" alt="" coords="278,259,487,315"/>
+<area shape="rect" id="node6" href="$main_8cpp.html" title="src/main.cpp" alt="" coords="511,273,609,300"/>
+<area shape="rect" id="node7" href="$_treadmill_automation_8cpp.html" title="src/TreadmillAutomation.cpp" alt="" coords="633,273,821,300"/>
+<area shape="rect" id="node10" href="$moc___perturbation_tab_widget_8cpp.html" title="build/TreadmillAutomation\l_autogen/include/moc_Perturbation\lTabWidget.cpp" alt="" coords="683,155,909,211"/>
+<area shape="rect" id="node11" href="$_perturbation_tab_widget_8cpp.html" title="src/PerturbationTabWidget.cpp" alt="" coords="933,169,1136,196"/>
+</map>

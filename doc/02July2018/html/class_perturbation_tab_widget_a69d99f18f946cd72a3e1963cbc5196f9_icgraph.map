@@ -1,0 +1,7 @@
+<map id="PerturbationTabWidget::getAccelerationTimeValue" name="PerturbationTabWidget::getAccelerationTimeValue">
+<area shape="rect" id="node2" href="$class_perturbation_tab_widget.html#a09c65ab9737d61975cebc94fe843482d" title="PerturbationTabWidget\l::randomDelay" alt="" coords="439,5,593,47"/>
+<area shape="rect" id="node6" href="$class_perturbation_tab_widget.html#aa79aeeb2da8075a4cd6ac6c08e0fb135" title="PerturbationTabWidget\l::calculateSpeed" alt="" coords="236,35,391,76"/>
+<area shape="rect" id="node3" href="$class_perturbation_tab_widget.html#aeecb373be32ddc6ea3c165d685b2a386" title="PerturbationTabWidget\l::loadRunProfile" alt="" coords="641,5,796,47"/>
+<area shape="rect" id="node4" href="$class_perturbation_tab_widget.html#a9d551ffcaf3d0ebe54015f5536d261ab" title="PerturbationTabWidget\l::changeSessionId" alt="" coords="844,5,999,47"/>
+<area shape="rect" id="node5" href="$class_perturbation_tab_widget.html#ad9a685f191ca94bdc47f148273fdf1f4" title="PerturbationTabWidget\l::addDecelerationSpeedGroupBox" alt="" coords="1047,5,1265,47"/>
+</map>

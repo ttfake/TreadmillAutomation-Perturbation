@@ -1,0 +1,7 @@
+<map id="Layer::addDataSet" name="Layer::addDataSet">
+<area shape="rect" id="node2" href="$class_finance_chart.html#a821e548e8833d123ba447479959fbe7a" title="Add a generic band to the main finance chart. This method is used internally by other methods to add ..." alt="" coords="192,64,351,91"/>
+<area shape="rect" id="node6" href="$class_finance_chart.html#aa1405175c2d8761adcf41c5529ef4613" title="Add a volume bar chart layer on the main chart. " alt="" coords="184,115,359,141"/>
+<area shape="rect" id="node3" href="$class_finance_chart.html#aa1698c472254b430e501324024725cfb" title="Add a Bollinger band on the main chart. " alt="" coords="407,5,616,32"/>
+<area shape="rect" id="node4" href="$class_finance_chart.html#af42c518b1f7caa9d73169153fced5bd9" title="Add a Donchian channel on the main chart. " alt="" coords="419,57,603,98"/>
+<area shape="rect" id="node5" href="$class_finance_chart.html#a92bd5e67f5eaeb0fd801614c4ede9c43" title="Add a price envelop on the main chart. The price envelop is a defined as a ratio around a moving aver..." alt="" coords="423,123,599,149"/>
+</map>

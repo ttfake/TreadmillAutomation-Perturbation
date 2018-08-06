@@ -1,0 +1,6 @@
+<map id="DAQmxCreateDOChan" name="DAQmxCreateDOChan">
+<area shape="rect" id="node2" href="$class_mouse_interface.html#a698ae8e0768d1c1cbfc80c0c53ba9dd3" title="MouseInterface::SetupChannel\lSelection" alt="" coords="212,5,415,47"/>
+<area shape="rect" id="node3" href="$class_perturbation_tab_widget.html#aeecb373be32ddc6ea3c165d685b2a386" title="PerturbationTabWidget\l::loadRunProfile" alt="" coords="463,5,617,47"/>
+<area shape="rect" id="node4" href="$class_perturbation_tab_widget.html#a9d551ffcaf3d0ebe54015f5536d261ab" title="PerturbationTabWidget\l::changeSessionId" alt="" coords="665,5,820,47"/>
+<area shape="rect" id="node5" href="$class_perturbation_tab_widget.html#ad9a685f191ca94bdc47f148273fdf1f4" title="PerturbationTabWidget\l::addDecelerationSpeedGroupBox" alt="" coords="868,5,1087,47"/>
+</map>

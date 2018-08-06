@@ -1,0 +1,13 @@
+<map id="Axis::getInternalPtr" name="Axis::getInternalPtr">
+<area shape="rect" id="node2" href="$class_data_set.html#a513df1915a715e378637ac4171c53a58" title="DataSet::setUseYAxis" alt="" coords="209,5,363,32"/>
+<area shape="rect" id="node3" href="$class_data_set.html#aa57e5e6fe299e68f398ef304944bbf47" title="DataSet::getUseYAxis" alt="" coords="209,56,363,83"/>
+<area shape="rect" id="node4" href="$class_layer.html#a5085490db860509f067b0fe68a55fe0a" title="Layer::setUseYAxis" alt="" coords="217,107,355,133"/>
+<area shape="rect" id="node6" href="$class_layer.html#aee258204d7c1ac071d71664025e48bc0" title="Layer::getYCoor" alt="" coords="227,157,345,184"/>
+<area shape="rect" id="node7" href="$class_layer.html#a3a39f0a1174c2ec7c37f477be5c69be8" title="Layer::yZoneColor" alt="" coords="221,208,351,235"/>
+<area shape="rect" id="node8" href="$class_plot_area.html#a4331047ed4ae116093d50c0a69e6bd91" title="PlotArea::setGridAxis" alt="" coords="212,259,360,285"/>
+<area shape="rect" id="node10" href="$class_view_port_manager.html#a0c127c218b1dabc082644d5cc95f256d" title="ViewPortManager::syncLinear\lAxisWithViewPort" alt="" coords="188,310,384,351"/>
+<area shape="rect" id="node11" href="$class_view_port_manager.html#a8b2c7545c83751250c1239ec1f4e566d" title="ViewPortManager::syncLog\lAxisWithViewPort" alt="" coords="195,375,377,417"/>
+<area shape="rect" id="node12" href="$class_view_port_manager.html#a7fe758aa316bfaee4bcbc9f28de8c3f0" title="ViewPortManager::syncDate\lAxisWithViewPort" alt="" coords="191,441,381,482"/>
+<area shape="rect" id="node5" href="$class_finance_chart.html#a70070d425a15afa754f1d76e1d5f9dfc" title="Add a comparison line to the main price chart. " alt="" coords="442,107,641,133"/>
+<area shape="rect" id="node9" href="$class_finance_chart.html#aae20ef522feef3ab61e8b8639c15275e" title="Display percentage axis scale " alt="" coords="432,259,651,285"/>
+</map>

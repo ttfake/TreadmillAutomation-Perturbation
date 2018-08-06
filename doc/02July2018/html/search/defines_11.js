@@ -1,0 +1,25 @@
+var searchData=
+[
+  ['range_5flimit',['RANGE_LIMIT',['../cbw_8h.html#a31b7e33ba45b07c841ef2988515626c2',1,'cbw.h']]],
+  ['range_5flimit_5foff',['RANGE_LIMIT_OFF',['../cbw_8h.html#a72628078fda65e6a0127d2b9ebd0ac77',1,'cbw.h']]],
+  ['range_5flimit_5fon',['RANGE_LIMIT_ON',['../cbw_8h.html#a569d83c2402e9a69b20e1642d260c0a2',1,'cbw.h']]],
+  ['rangemismatch',['RANGEMISMATCH',['../cbw_8h.html#a45e198f840c0cb2a955f88c8610357f8',1,'cbw.h']]],
+  ['rategenerator',['RATEGENERATOR',['../cbw_8h.html#a66b22d7c41f85d279b030ec42a82b6e5',1,'cbw.h']]],
+  ['ratewarning',['RATEWARNING',['../cbw_8h.html#ac8c643285b432e73555cd30987b72302',1,'cbw.h']]],
+  ['rdbk_5freg_5ffail',['RDBK_REG_FAIL',['../cbw_8h.html#a1b4c058000b63123dc056ca2538e444c',1,'cbw.h']]],
+  ['recycle',['RECYCLE',['../cbw_8h.html#a2d21897980a496ecfa193168215dfc79',1,'cbw.h']]],
+  ['reset_5fctr',['RESET_CTR',['../cbw_8h.html#a90975593d377a265747bd363a74c03fa',1,'cbw.h']]],
+  ['retrigmode',['RETRIGMODE',['../cbw_8h.html#a55e408cb91449743b8404dd9df4cf76a',1,'cbw.h']]],
+  ['rising_5fedge',['RISING_EDGE',['../cbw_8h.html#af13ff90bb3a97b9d46ae59f02c515b67',1,'cbw.h']]],
+  ['rollover',['ROLLOVER',['../cbw_8h.html#a4881586e41272acf6c2a607ee8ecdf0b',1,'cbw.h']]],
+  ['rse',['RSE',['../cbw_8h.html#a16be25f67ae731a8cf2ac66a49bb90e0',1,'cbw.h']]],
+  ['rtd_5fcustom',['RTD_CUSTOM',['../cbw_8h.html#a5ad2811732944fa5da6cde02096f1f2f',1,'cbw.h']]],
+  ['rtd_5fpt_5f3750',['RTD_PT_3750',['../cbw_8h.html#ab13efed6d1e2ffb31700ab6590b0ccab',1,'cbw.h']]],
+  ['rtd_5fpt_5f3850',['RTD_PT_3850',['../cbw_8h.html#aeb3df2da68c0bb30e655d5598b5d4ada',1,'cbw.h']]],
+  ['rtd_5fpt_5f3851',['RTD_PT_3851',['../cbw_8h.html#abf10cd4743d4c16b243957e8b9e2c7b6',1,'cbw.h']]],
+  ['rtd_5fpt_5f3911',['RTD_PT_3911',['../cbw_8h.html#aa48bd4325f8952e7c6b78865fb6f9e33',1,'cbw.h']]],
+  ['rtd_5fpt_5f3916',['RTD_PT_3916',['../cbw_8h.html#ac74f68cd41767a1cd30a9667b291d443',1,'cbw.h']]],
+  ['rtd_5fpt_5f3920',['RTD_PT_3920',['../cbw_8h.html#aae0ce8ea2c363717126e0d1f5d05ada7',1,'cbw.h']]],
+  ['rtd_5fpt_5f3928',['RTD_PT_3928',['../cbw_8h.html#a6b3b7c899db703986bd1622405fff2a0',1,'cbw.h']]],
+  ['running',['RUNNING',['../cbw_8h.html#a6fb7181d994ee98e735494be55809708',1,'cbw.h']]]
+];

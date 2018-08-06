@@ -1,0 +1,11 @@
+<map id="DAQmxCreateTask" name="DAQmxCreateTask">
+<area shape="rect" id="node2" href="$class_mouse_interface.html#a6f60ced71ed9ac307b019cb300e44a32" title="MouseInterface::SetupEvent\lTrigger" alt="" coords="198,78,386,119"/>
+<area shape="rect" id="node6" href="$class_mouse_interface.html#a913cdae50fddc45ee67131d762735dbc" title="MouseInterface::SetupStim\lTrigger" alt="" coords="201,13,383,54"/>
+<area shape="rect" id="node7" href="$class_mouse_interface.html#a698ae8e0768d1c1cbfc80c0c53ba9dd3" title="MouseInterface::SetupChannel\lSelection" alt="" coords="191,158,393,199"/>
+<area shape="rect" id="node3" href="$class_mouse_interface.html#a36669205adb92c00543ba26d73661c01" title="MouseInterface::MouseInterface" alt="" coords="441,5,652,32"/>
+<area shape="rect" id="node4" href="$class_perturbation_tab_widget.html#a237937a4a9bd3724fe615d0b5a7b5638" title="PerturbationTabWidget\l::addTrialRunName" alt="" coords="469,57,624,98"/>
+<area shape="rect" id="node5" href="$class_perturbation_tab_widget.html#a91a2b49c6b8672cd15cce43be89083c2" title="PerturbationTabWidget\l::daqReconnect" alt="" coords="469,122,624,163"/>
+<area shape="rect" id="node8" href="$class_perturbation_tab_widget.html#aeecb373be32ddc6ea3c165d685b2a386" title="PerturbationTabWidget\l::loadRunProfile" alt="" coords="469,187,624,229"/>
+<area shape="rect" id="node9" href="$class_perturbation_tab_widget.html#a9d551ffcaf3d0ebe54015f5536d261ab" title="PerturbationTabWidget\l::changeSessionId" alt="" coords="700,187,855,229"/>
+<area shape="rect" id="node10" href="$class_perturbation_tab_widget.html#ad9a685f191ca94bdc47f148273fdf1f4" title="PerturbationTabWidget\l::addDecelerationSpeedGroupBox" alt="" coords="903,187,1121,229"/>
+</map>

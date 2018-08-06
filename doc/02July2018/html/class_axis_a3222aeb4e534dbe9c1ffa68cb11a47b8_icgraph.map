@@ -1,0 +1,4 @@
+<map id="Axis::setLogScale" name="Axis::setLogScale">
+<area shape="rect" id="node2" href="$class_finance_chart.html#a8a0f9c954f14c12dbf8e56eb2ce472de" title="Determines if log scale should be used for the main chart. The default is linear scale. " alt="" coords="186,5,366,32"/>
+<area shape="rect" id="node3" href="$class_finance_chart.html#a69ac5aca5d2d232184398b43fee6eb13" title="Add the main chart &#45; the chart that shows the HLOC data. " alt="" coords="181,56,371,83"/>
+</map>

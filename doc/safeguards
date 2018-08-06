@@ -1,0 +1,9 @@
+checks for network connection between itself and treadmill software before running perturbation
+checks for connection with DAQ before running perturbation
+checks for mouse connection before running perturbation
+if treadmill movement signal is not received from mouse, after 1.5 seconds, a deceleration signal is sent to the treadmill and a warning window is displayed
+Check is performed to make sure that the data in the perturbation table, database, and acceleration/deceleration boxes are in synchrony
+All safety critical functions are wrapped in a try/catch block to alert the user of problems
+After deceleration is complete, another deceleration signal is sent to make sure that the treadmill has stopped
+During perturbations, buttons are greyed out to prevent users from sending additional acceleration signals while a perturbation is being run
+Several flags are used to prevent multiple acceleration signals from being sent.

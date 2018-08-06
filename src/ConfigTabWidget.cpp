@@ -1,5 +1,6 @@
 #include "ConfigTabWidget.h"
 
+
 ConfigTabWidget::ConfigTabWidget(QWidget* parent, Qt::WindowFlags flags)
 {
     clicked = true;
@@ -11,6 +12,9 @@ ConfigTabWidget::ConfigTabWidget(QWidget* parent, Qt::WindowFlags flags)
     daqThread = new QThread;
     connect(daqThread, SIGNAL(started()), pmccDaqInterface, SLOT(beginDataCollection()));
     connect(pmccDaqInterface, SIGNAL(finished()), daqThread, SLOT(quit()));
+    connect(pmccDaqInterface, SIGNAL(updateEmg()), this, 
+            SLOT(setEmgData()));
+    connect(pmccDaqInterface, SIGNAL(getActiveState(int)), this, SLOT(getActiveState(int)));
 }
 
 ConfigTabWidget::~ConfigTabWidget()
@@ -58,6 +62,7 @@ double ConfigTabWidget::getStimTimerValue()
 {
     return stimTimer;
 }
+
 
 void ConfigTabWidget::addDaqControlGroupBox()
 {
@@ -378,4 +383,30 @@ void ConfigTabWidget::showDaqDataBox(bool checked)
         daqDataBoxAlert.exec();
     }
 }
+
+void ConfigTabWidget::addDaqSampleConfig()
+{
+    daqSampleConfigGroupBox = new QGroupBox;
+    daqSampleConfigGroupBoxLayout = new QVBoxLayout;
+    daqSampleConfigGroupBox->setLayout(daqSampleConfigGroupBoxLayout);
+    sampleRateLabel = new QLabel;
+    sampleRateLabel->setFont(daqDataGroupBoxFont);
+    sampleRateLabel->setText("Sample Rate");
+    
+}
+
+void ConfigTabWidget::setEmgData()
+{
+    //qDebug() << "ConfigTabWidget::setEmgData triggered.";
+    //voltageMap = pmccDaqInterface->getVoltageMap();
+    voltageMap = pmccDaqInterface->getVoltageMap();
+    pmccDaqInterface->clearTmpVoltageMap();
+    emit emgUpdated();
+}
+
+QMap<int,QVector<double>> ConfigTabWidget::getEmgData()
+{
+    return voltageMap;
+}
+
 #include "../include/moc_ConfigTabWidget.cpp"

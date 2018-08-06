@@ -1,0 +1,10 @@
+<map id="FinanceChart::addParabolicSAR" name="FinanceChart::addParabolicSAR">
+<area shape="rect" id="node2" href="$class_finance_chart.html#af7000f18368de197ff56bf5dba1f711c" title="Add a line to an existing indicator chart. " alt="" coords="264,5,475,32"/>
+<area shape="rect" id="node4" href="$class_layer.html#aab577b53410b150fc84dbb5dd502ff5f" title="Layer::setLineWidth" alt="" coords="300,56,439,83"/>
+<area shape="rect" id="node6" href="$class_layer.html#a129db307a7eca2caec1337b22e013d54" title="Layer::getDataSet" alt="" coords="305,107,433,133"/>
+<area shape="rect" id="node8" href="$class_data_set.html#aa9edb7443935eb5f07f7d70b7f65656d" title="DataSet::setDataSymbol" alt="" coords="285,157,453,184"/>
+<area shape="rect" id="node3" href="$class_x_y_chart.html#aea36113ca810376bd55e2d836b0fe7e5" title="XYChart::addLineLayer" alt="" coords="533,5,690,32"/>
+<area shape="rect" id="node5" href="$bchartdir_8h.html#ad5c111fee760b3477fd5c852f538fda7" title="CLayer_setLineWidth" alt="" coords="538,56,685,83"/>
+<area shape="rect" id="node7" href="$bchartdir_8h.html#a25ac721d2167b6260176c8f44debca1e" title="CLayer_getDataSet" alt="" coords="543,107,680,133"/>
+<area shape="rect" id="node9" href="$bchartdir_8h.html#a5d1e28b7f6d2b7a2d4419595600ad690" title="CDataSet_setDataSymbol" alt="" coords="523,157,700,184"/>
+</map>

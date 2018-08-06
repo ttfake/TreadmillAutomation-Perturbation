@@ -22,7 +22,7 @@ class ParseRunProfile : public QWidget
         double getDecelRight();
         double getDecelTime();
         void getRuns();
-        void getRun(int runIndex);
+        void getRun(int currentRunRowIndex, int runIndex);
         void truncateTable(QString table);
         void setRunFile(QString mRunFile);
         QVector<QString> getRunsVector();

@@ -1,0 +1,5 @@
+<map id="SendSetpoints::setSocket" name="SendSetpoints::setSocket">
+<area shape="rect" id="node2" href="$class_perturbation_tab_widget.html#a61e4292beb7e59e386bf73a724b2b308" title="PerturbationTabWidget\l::setSocket" alt="" coords="228,5,383,47"/>
+<area shape="rect" id="node3" href="$class_treadmill_automation.html#ab3509d1863460a2f8a419e067c3608a1" title="TreadmillAutomation\l::setSocket" alt="" coords="431,5,572,47"/>
+<area shape="rect" id="node4" href="$class_treadmill_automation.html#a6328b65397f5d0553590f363d29ec9b7" title="TreadmillAutomation\l::TreadmillAutomation" alt="" coords="620,5,769,47"/>
+</map>

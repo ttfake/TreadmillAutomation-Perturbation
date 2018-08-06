@@ -1,0 +1,1184 @@
+\hypertarget{chartdir_8h}{}\section{include/chartdir.h File Reference}
+\label{chartdir_8h}\index{include/chartdir.\+h@{include/chartdir.\+h}}
+{\ttfamily \#include $<$string.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}bchartdir.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}memblock.\+h\char`\"{}}\newline
+Include dependency graph for chartdir.\+h\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=298pt]{chartdir_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=197pt]{chartdir_8h__dep__incl}
+\end{center}
+\end{figure}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{class_auto_destroy}{Auto\+Destroy}
+\item 
+class \hyperlink{class_garbage_ptr}{Garbage\+Ptr}
+\item 
+class \hyperlink{class_garbage_container}{Garbage\+Container}
+\item 
+class \hyperlink{class_w_c_h_a_rto_u_t_f8}{W\+C\+H\+A\+Rto\+U\+T\+F8}
+\item 
+class \hyperlink{class_u_t_f8to_w_c_h_a_r}{U\+T\+F8to\+W\+C\+H\+AR}
+\item 
+class \hyperlink{class_t_t_f_text}{T\+T\+F\+Text}
+\item 
+class \hyperlink{class_draw_area}{Draw\+Area}
+\item 
+class \hyperlink{class_draw_obj}{Draw\+Obj}
+\item 
+class \hyperlink{class_box}{Box}
+\item 
+class \hyperlink{class_text_box}{Text\+Box}
+\item 
+class \hyperlink{class_line}{Line}
+\item 
+class \hyperlink{class_c_d_m_l_table}{C\+D\+M\+L\+Table}
+\item 
+class \hyperlink{class_legend_box}{Legend\+Box}
+\item 
+class \hyperlink{class_base_chart}{Base\+Chart}
+\item 
+class \hyperlink{class_multi_chart}{Multi\+Chart}
+\item 
+class \hyperlink{class_sector}{Sector}
+\item 
+class \hyperlink{class_pie_chart}{Pie\+Chart}
+\item 
+class \hyperlink{class_mark}{Mark}
+\item 
+class \hyperlink{class_axis}{Axis}
+\item 
+class \hyperlink{class_angular_axis}{Angular\+Axis}
+\item 
+class \hyperlink{class_color_axis}{Color\+Axis}
+\item 
+class \hyperlink{class_data_set}{Data\+Set}
+\item 
+class \hyperlink{class_layer}{Layer}
+\item 
+class \hyperlink{class_bar_layer}{Bar\+Layer}
+\item 
+class \hyperlink{class_inter_line_layer}{Inter\+Line\+Layer}
+\item 
+class \hyperlink{class_line_layer}{Line\+Layer}
+\item 
+class \hyperlink{class_spline_layer}{Spline\+Layer}
+\item 
+class \hyperlink{class_step_line_layer}{Step\+Line\+Layer}
+\item 
+class \hyperlink{class_area_layer}{Area\+Layer}
+\item 
+class \hyperlink{class_base_box_layer}{Base\+Box\+Layer}
+\item 
+class \hyperlink{class_h_l_o_c_layer}{H\+L\+O\+C\+Layer}
+\item 
+class \hyperlink{class_candle_stick_layer}{Candle\+Stick\+Layer}
+\item 
+class \hyperlink{class_box_whisker_layer}{Box\+Whisker\+Layer}
+\item 
+class \hyperlink{class_trend_layer}{Trend\+Layer}
+\item 
+class \hyperlink{class_vector_layer}{Vector\+Layer}
+\item 
+class \hyperlink{class_contour_layer}{Contour\+Layer}
+\item 
+class \hyperlink{class_plot_area}{Plot\+Area}
+\item 
+class \hyperlink{class_x_y_chart}{X\+Y\+Chart}
+\item 
+class \hyperlink{class_three_d_chart}{Three\+D\+Chart}
+\item 
+class \hyperlink{class_surface_chart}{Surface\+Chart}
+\item 
+class \hyperlink{class_three_d_scatter_group}{Three\+D\+Scatter\+Group}
+\item 
+class \hyperlink{class_three_d_scatter_chart}{Three\+D\+Scatter\+Chart}
+\item 
+class \hyperlink{class_polar_layer}{Polar\+Layer}
+\item 
+class \hyperlink{class_polar_area_layer}{Polar\+Area\+Layer}
+\item 
+class \hyperlink{class_polar_line_layer}{Polar\+Line\+Layer}
+\item 
+class \hyperlink{class_polar_spline_line_layer}{Polar\+Spline\+Line\+Layer}
+\item 
+class \hyperlink{class_polar_spline_area_layer}{Polar\+Spline\+Area\+Layer}
+\item 
+class \hyperlink{class_polar_vector_layer}{Polar\+Vector\+Layer}
+\item 
+class \hyperlink{class_polar_chart}{Polar\+Chart}
+\item 
+class \hyperlink{class_pyramid_layer}{Pyramid\+Layer}
+\item 
+class \hyperlink{class_pyramid_chart}{Pyramid\+Chart}
+\item 
+class \hyperlink{class_tree_map_node}{Tree\+Map\+Node}
+\item 
+class \hyperlink{class_tree_map_chart}{Tree\+Map\+Chart}
+\item 
+class \hyperlink{class_meter_pointer}{Meter\+Pointer}
+\item 
+class \hyperlink{class_base_meter}{Base\+Meter}
+\item 
+class \hyperlink{class_angular_meter}{Angular\+Meter}
+\item 
+class \hyperlink{class_linear_meter}{Linear\+Meter}
+\item 
+class \hyperlink{class_array_math}{Array\+Math}
+\item 
+class \hyperlink{class_ran_table}{Ran\+Table}
+\item 
+class \hyperlink{class_ran_series}{Ran\+Series}
+\item 
+class \hyperlink{class_finance_simulator}{Finance\+Simulator}
+\item 
+class \hyperlink{class_image_map_handler}{Image\+Map\+Handler}
+\item 
+class \hyperlink{class_view_port_manager}{View\+Port\+Manager}
+\item 
+class \hyperlink{class_view_port_control_base}{View\+Port\+Control\+Base}
+\end{DoxyCompactItemize}
+\subsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+ \hyperlink{namespace_chart}{Chart}
+\end{DoxyCompactItemize}
+\subsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef \hyperlink{class_text_box}{Text\+Box} \hyperlink{chartdir_8h_a87a44ab47fb9ddb7dbe5c522f493921c}{Text\+Style}
+\item 
+typedef \hyperlink{class_axis}{Axis} \hyperlink{chartdir_8h_a9a4a692393de40e23eb631c2aa503d50}{Base\+Axis}
+\item 
+typedef \hyperlink{chartdir_8h_a9a4a692393de40e23eb631c2aa503d50}{Base\+Axis} \hyperlink{chartdir_8h_acce03601e0f9cf600c6ed45f5b1752f9}{X\+Axis}
+\item 
+typedef \hyperlink{chartdir_8h_a9a4a692393de40e23eb631c2aa503d50}{Base\+Axis} \hyperlink{chartdir_8h_a815b4a09e43ad7f3436be339248f6a50}{Y\+Axis}
+\item 
+typedef \hyperlink{class_axis}{Axis} \hyperlink{chartdir_8h_a4e17084867bb8e096e6e13b956e538ce}{Radial\+Axis}
+\item 
+typedef \hyperlink{class_line_layer}{Line\+Layer} \hyperlink{chartdir_8h_a012c369aef1d4ea8815a24da953964f2}{Scatter\+Layer}
+\end{DoxyCompactItemize}
+\subsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \{ \hyperlink{namespace_chart_ae18eaef27769722572aa24f7750ee41eaf2820acb0bbdc63f3401414adb98a058}{Chart\+::\+Auto\+Grid} = -\/2
+ \}
+\item 
+enum \hyperlink{namespace_chart_ae222e51ce11a254450b6ddfbc862680a}{Chart\+::\+Alignment} \{ \newline
+\hyperlink{namespace_chart_ae222e51ce11a254450b6ddfbc862680aa0bf92d1d2d6713aa62e92b86b9a8532f}{Chart\+::\+Top\+Left} = 7, 
+\hyperlink{namespace_chart_ae222e51ce11a254450b6ddfbc862680aa2d7225fb69cc698a93b10c138d27c0df}{Chart\+::\+Top\+Center} = 8, 
+\hyperlink{namespace_chart_ae222e51ce11a254450b6ddfbc862680aac9287bfb9c402181fea4697a599c49e5}{Chart\+::\+Top\+Right} = 9, 
+\hyperlink{namespace_chart_ae222e51ce11a254450b6ddfbc862680aae213f3cd1461b109f9aa955d28ed4418}{Chart\+::\+Left} = 4, 
+\newline
+\hyperlink{namespace_chart_ae222e51ce11a254450b6ddfbc862680aab21c196681da027efd151236305b985d}{Chart\+::\+Center} = 5, 
+\hyperlink{namespace_chart_ae222e51ce11a254450b6ddfbc862680aa6c2cd6a047fe24d84e993bf0080cb462}{Chart\+::\+Right} = 6, 
+\hyperlink{namespace_chart_ae222e51ce11a254450b6ddfbc862680aa9891b061269ee193b77e12ba1cdbdde0}{Chart\+::\+Bottom\+Left} = 1, 
+\hyperlink{namespace_chart_ae222e51ce11a254450b6ddfbc862680aabfd28bad962df5d0c920f4e2d559669e}{Chart\+::\+Bottom\+Center} = 2, 
+\newline
+\hyperlink{namespace_chart_ae222e51ce11a254450b6ddfbc862680aa703be5592999e95917cc26653e0a9b36}{Chart\+::\+Bottom\+Right} = 3, 
+\hyperlink{namespace_chart_ae222e51ce11a254450b6ddfbc862680aa1241079123dca60cd3e026d6be8ba614}{Chart\+::\+Top} = Top\+Center, 
+\hyperlink{namespace_chart_ae222e51ce11a254450b6ddfbc862680aaf753c0b9606a53b9a1f1fff711e14da3}{Chart\+::\+Bottom} = Bottom\+Center, 
+\hyperlink{namespace_chart_ae222e51ce11a254450b6ddfbc862680aaa2118b6c6ea55b39df0922c2bdcc1c0a}{Chart\+::\+Top\+Left2} = 10, 
+\newline
+\hyperlink{namespace_chart_ae222e51ce11a254450b6ddfbc862680aaeb6b49524757124e27f96b9d5bc34606}{Chart\+::\+Top\+Right2} = 11, 
+\hyperlink{namespace_chart_ae222e51ce11a254450b6ddfbc862680aa88fdb761d01e73d7368312a33172e430}{Chart\+::\+Bottom\+Left2} = 12, 
+\hyperlink{namespace_chart_ae222e51ce11a254450b6ddfbc862680aad1d28cd4e199a2a7f7bcac86cb83d263}{Chart\+::\+Bottom\+Right2} = 13, 
+\hyperlink{namespace_chart_ae222e51ce11a254450b6ddfbc862680aa0bf92d1d2d6713aa62e92b86b9a8532f}{Chart\+::\+Top\+Left} = 7, 
+\newline
+\hyperlink{namespace_chart_ae222e51ce11a254450b6ddfbc862680aa2d7225fb69cc698a93b10c138d27c0df}{Chart\+::\+Top\+Center} = 8, 
+\hyperlink{namespace_chart_ae222e51ce11a254450b6ddfbc862680aac9287bfb9c402181fea4697a599c49e5}{Chart\+::\+Top\+Right} = 9, 
+\hyperlink{namespace_chart_ae222e51ce11a254450b6ddfbc862680aae213f3cd1461b109f9aa955d28ed4418}{Chart\+::\+Left} = 4, 
+\hyperlink{namespace_chart_ae222e51ce11a254450b6ddfbc862680aab21c196681da027efd151236305b985d}{Chart\+::\+Center} = 5, 
+\newline
+\hyperlink{namespace_chart_ae222e51ce11a254450b6ddfbc862680aa6c2cd6a047fe24d84e993bf0080cb462}{Chart\+::\+Right} = 6, 
+\hyperlink{namespace_chart_ae222e51ce11a254450b6ddfbc862680aa9891b061269ee193b77e12ba1cdbdde0}{Chart\+::\+Bottom\+Left} = 1, 
+\hyperlink{namespace_chart_ae222e51ce11a254450b6ddfbc862680aabfd28bad962df5d0c920f4e2d559669e}{Chart\+::\+Bottom\+Center} = 2, 
+\hyperlink{namespace_chart_ae222e51ce11a254450b6ddfbc862680aa703be5592999e95917cc26653e0a9b36}{Chart\+::\+Bottom\+Right} = 3, 
+\newline
+\hyperlink{namespace_chart_ae222e51ce11a254450b6ddfbc862680aa1241079123dca60cd3e026d6be8ba614}{Chart\+::\+Top} = Top\+Center, 
+\hyperlink{namespace_chart_ae222e51ce11a254450b6ddfbc862680aaf753c0b9606a53b9a1f1fff711e14da3}{Chart\+::\+Bottom} = Bottom\+Center
+ \}
+\item 
+enum \{ \hyperlink{namespace_chart_a5ae3d159f02ffed01fcc4e63793dea7da11e22a06cf50415c9f8c799ce6ecd671}{Chart\+::\+Dash\+Line} = 0x0505, 
+\hyperlink{namespace_chart_a5ae3d159f02ffed01fcc4e63793dea7da038a9d8c28920a2f67a66d4187ac0f3a}{Chart\+::\+Dot\+Line} = 0x0202, 
+\hyperlink{namespace_chart_a5ae3d159f02ffed01fcc4e63793dea7da053c142f532847c48bb7a74183b877b8}{Chart\+::\+Dot\+Dash\+Line} = 0x05050205, 
+\hyperlink{namespace_chart_a5ae3d159f02ffed01fcc4e63793dea7da3ae13b3cfbd638423d4a7bf40cdaade8}{Chart\+::\+Alt\+Dash\+Line} = 0x0\+A050505
+ \}
+\item 
+enum \hyperlink{namespace_chart_a07883b6d552537a99c7dab3bdc641d2b}{Chart\+::\+Anti\+Alias\+Mode} \{ \newline
+\hyperlink{namespace_chart_a07883b6d552537a99c7dab3bdc641d2baab5e38c1fc204a94538178c6c77a2302}{Chart\+::\+No\+Anti\+Alias}, 
+\hyperlink{namespace_chart_a07883b6d552537a99c7dab3bdc641d2bac8a15b320105213032b94fc3d31e4db2}{Chart\+::\+Anti\+Alias}, 
+\hyperlink{namespace_chart_a07883b6d552537a99c7dab3bdc641d2ba793ff02fc6d46a7d5ebcbac29e111a3f}{Chart\+::\+Auto\+Anti\+Alias}, 
+\hyperlink{namespace_chart_a07883b6d552537a99c7dab3bdc641d2ba72e14d66fd00338da0fbd3acf61cf5a8}{Chart\+::\+Clear\+Type}, 
+\newline
+\hyperlink{namespace_chart_a07883b6d552537a99c7dab3bdc641d2ba2f822b5d0f324b5e5e2e648af4f26199}{Chart\+::\+Compat\+Anti\+Alias} = 6, 
+\hyperlink{namespace_chart_a07883b6d552537a99c7dab3bdc641d2baab5e38c1fc204a94538178c6c77a2302}{Chart\+::\+No\+Anti\+Alias}, 
+\hyperlink{namespace_chart_a07883b6d552537a99c7dab3bdc641d2bac8a15b320105213032b94fc3d31e4db2}{Chart\+::\+Anti\+Alias}, 
+\hyperlink{namespace_chart_a07883b6d552537a99c7dab3bdc641d2ba793ff02fc6d46a7d5ebcbac29e111a3f}{Chart\+::\+Auto\+Anti\+Alias}
+ \}
+\item 
+enum \hyperlink{namespace_chart_a6eaa47503691555980fe89cc4856f694}{Chart\+::\+Palette\+Mode} \{ \newline
+\hyperlink{namespace_chart_a6eaa47503691555980fe89cc4856f694ace74319db0e745755528e32bc2f1e56d}{Chart\+::\+Try\+Palette}, 
+\hyperlink{namespace_chart_a6eaa47503691555980fe89cc4856f694a2ac557171b681afd52f2f707d0108e9e}{Chart\+::\+Force\+Palette}, 
+\hyperlink{namespace_chart_a6eaa47503691555980fe89cc4856f694a587d55452eb09cffe6178a738058f5e8}{Chart\+::\+No\+Palette}, 
+\hyperlink{namespace_chart_a6eaa47503691555980fe89cc4856f694ace74319db0e745755528e32bc2f1e56d}{Chart\+::\+Try\+Palette}, 
+\newline
+\hyperlink{namespace_chart_a6eaa47503691555980fe89cc4856f694a2ac557171b681afd52f2f707d0108e9e}{Chart\+::\+Force\+Palette}, 
+\hyperlink{namespace_chart_a6eaa47503691555980fe89cc4856f694a587d55452eb09cffe6178a738058f5e8}{Chart\+::\+No\+Palette}
+ \}
+\item 
+enum \hyperlink{namespace_chart_acec2b0cc9a229114496ab9c8cab80258}{Chart\+::\+Dither\+Method} \{ \newline
+\hyperlink{namespace_chart_acec2b0cc9a229114496ab9c8cab80258a0ca9c62f55d91ae87890f0f91c43c62e}{Chart\+::\+Quantize}, 
+\hyperlink{namespace_chart_acec2b0cc9a229114496ab9c8cab80258add3a872c843ca35cc2479c581eb2606e}{Chart\+::\+Ordered\+Dither}, 
+\hyperlink{namespace_chart_acec2b0cc9a229114496ab9c8cab80258af71d3060f379a715150ca44d566e102e}{Chart\+::\+Error\+Diffusion}, 
+\hyperlink{namespace_chart_acec2b0cc9a229114496ab9c8cab80258a0ca9c62f55d91ae87890f0f91c43c62e}{Chart\+::\+Quantize}, 
+\newline
+\hyperlink{namespace_chart_acec2b0cc9a229114496ab9c8cab80258add3a872c843ca35cc2479c581eb2606e}{Chart\+::\+Ordered\+Dither}, 
+\hyperlink{namespace_chart_acec2b0cc9a229114496ab9c8cab80258af71d3060f379a715150ca44d566e102e}{Chart\+::\+Error\+Diffusion}
+ \}
+\item 
+enum \hyperlink{namespace_chart_ab75b9aa1781d0e0159ef1d441b577764}{Chart\+::\+C\+D\+Filter\+Type} \{ \newline
+\hyperlink{namespace_chart_ab75b9aa1781d0e0159ef1d441b577764a4fdb0feb0e05cf007452e53e0de36b3a}{Chart\+::\+Box\+Filter}, 
+\hyperlink{namespace_chart_ab75b9aa1781d0e0159ef1d441b577764a8cd729b7a982bac2dce8b021511e3ac6}{Chart\+::\+Linear\+Filter}, 
+\hyperlink{namespace_chart_ab75b9aa1781d0e0159ef1d441b577764a4749fa6f0ce316a8efb8eb323cd46a8d}{Chart\+::\+Quadratic\+Filter}, 
+\hyperlink{namespace_chart_ab75b9aa1781d0e0159ef1d441b577764a6778aaaa9893588b8b880c144f02140d}{Chart\+::\+B\+Spline\+Filter}, 
+\newline
+\hyperlink{namespace_chart_ab75b9aa1781d0e0159ef1d441b577764a67d0dae8a497bd49fff41beef9614fe4}{Chart\+::\+Hermite\+Filter}, 
+\hyperlink{namespace_chart_ab75b9aa1781d0e0159ef1d441b577764a5fb7ff92fed2afa781bb316fe8d8e3f0}{Chart\+::\+Catrom\+Filter}, 
+\hyperlink{namespace_chart_ab75b9aa1781d0e0159ef1d441b577764ac42822b760cc166908310f056f5cffbb}{Chart\+::\+Mitchell\+Filter}, 
+\hyperlink{namespace_chart_ab75b9aa1781d0e0159ef1d441b577764a07a969e6ca33a430efbb717b684f7f2e}{Chart\+::\+Sinc\+Filter}, 
+\newline
+\hyperlink{namespace_chart_ab75b9aa1781d0e0159ef1d441b577764a5bdc38462f2dca2778b73e2824a5fdbb}{Chart\+::\+Lanczos\+Filter}, 
+\hyperlink{namespace_chart_ab75b9aa1781d0e0159ef1d441b577764a55459032ef870e5870a41e7fe8e1aafe}{Chart\+::\+Gaussian\+Filter}, 
+\hyperlink{namespace_chart_ab75b9aa1781d0e0159ef1d441b577764a55b7dc1305d0df6121af8b3cb7587003}{Chart\+::\+Hanning\+Filter}, 
+\hyperlink{namespace_chart_ab75b9aa1781d0e0159ef1d441b577764a756125da93c3b9b226413d5f403414cb}{Chart\+::\+Hamming\+Filter}, 
+\newline
+\hyperlink{namespace_chart_ab75b9aa1781d0e0159ef1d441b577764a3a0214f7244a9ffe48fe2328771e2558}{Chart\+::\+Blackman\+Filter}, 
+\hyperlink{namespace_chart_ab75b9aa1781d0e0159ef1d441b577764ad181f5ccb86d659e5a46ef7b86addd4e}{Chart\+::\+Bessel\+Filter}, 
+\hyperlink{namespace_chart_ab75b9aa1781d0e0159ef1d441b577764a4fdb0feb0e05cf007452e53e0de36b3a}{Chart\+::\+Box\+Filter}, 
+\hyperlink{namespace_chart_ab75b9aa1781d0e0159ef1d441b577764a8cd729b7a982bac2dce8b021511e3ac6}{Chart\+::\+Linear\+Filter}, 
+\newline
+\hyperlink{namespace_chart_ab75b9aa1781d0e0159ef1d441b577764a4749fa6f0ce316a8efb8eb323cd46a8d}{Chart\+::\+Quadratic\+Filter}, 
+\hyperlink{namespace_chart_ab75b9aa1781d0e0159ef1d441b577764a6778aaaa9893588b8b880c144f02140d}{Chart\+::\+B\+Spline\+Filter}, 
+\hyperlink{namespace_chart_ab75b9aa1781d0e0159ef1d441b577764a67d0dae8a497bd49fff41beef9614fe4}{Chart\+::\+Hermite\+Filter}, 
+\hyperlink{namespace_chart_ab75b9aa1781d0e0159ef1d441b577764a5fb7ff92fed2afa781bb316fe8d8e3f0}{Chart\+::\+Catrom\+Filter}, 
+\newline
+\hyperlink{namespace_chart_ab75b9aa1781d0e0159ef1d441b577764ac42822b760cc166908310f056f5cffbb}{Chart\+::\+Mitchell\+Filter}, 
+\hyperlink{namespace_chart_ab75b9aa1781d0e0159ef1d441b577764a07a969e6ca33a430efbb717b684f7f2e}{Chart\+::\+Sinc\+Filter}, 
+\hyperlink{namespace_chart_ab75b9aa1781d0e0159ef1d441b577764a5bdc38462f2dca2778b73e2824a5fdbb}{Chart\+::\+Lanczos\+Filter}, 
+\hyperlink{namespace_chart_ab75b9aa1781d0e0159ef1d441b577764a55459032ef870e5870a41e7fe8e1aafe}{Chart\+::\+Gaussian\+Filter}, 
+\newline
+\hyperlink{namespace_chart_ab75b9aa1781d0e0159ef1d441b577764a55b7dc1305d0df6121af8b3cb7587003}{Chart\+::\+Hanning\+Filter}, 
+\hyperlink{namespace_chart_ab75b9aa1781d0e0159ef1d441b577764a756125da93c3b9b226413d5f403414cb}{Chart\+::\+Hamming\+Filter}, 
+\hyperlink{namespace_chart_ab75b9aa1781d0e0159ef1d441b577764a3a0214f7244a9ffe48fe2328771e2558}{Chart\+::\+Blackman\+Filter}, 
+\hyperlink{namespace_chart_ab75b9aa1781d0e0159ef1d441b577764ad181f5ccb86d659e5a46ef7b86addd4e}{Chart\+::\+Bessel\+Filter}
+ \}
+\item 
+enum \{ \newline
+\hyperlink{namespace_chart_abee0d882fdc9ad0b001245ad9fc64011afc6811800a9e2582dac0157b6279f836}{Chart\+::\+Transparent} = (int)0xff000000, 
+\hyperlink{namespace_chart_abee0d882fdc9ad0b001245ad9fc64011a9ceca5f4f5aa6d0999df69bdd661c795}{Chart\+::\+Palette} = (int)0xffff0000, 
+\hyperlink{namespace_chart_abee0d882fdc9ad0b001245ad9fc64011a134193bde693b9d152d0c6dc59fa7d7f}{Chart\+::\+Background\+Color} = (int)0xffff0000, 
+\hyperlink{namespace_chart_abee0d882fdc9ad0b001245ad9fc64011a04817a359476e87a5c572a7a69cdaaec}{Chart\+::\+Line\+Color} = (int)0xffff0001, 
+\newline
+\hyperlink{namespace_chart_abee0d882fdc9ad0b001245ad9fc64011a879e14f2f5024caccc047374342321ef}{Chart\+::\+Text\+Color} = (int)0xffff0002, 
+\hyperlink{namespace_chart_abee0d882fdc9ad0b001245ad9fc64011a4549f0f938eca72661d84b0a6b32ced2}{Chart\+::\+Data\+Color} = (int)0xffff0008, 
+\hyperlink{namespace_chart_abee0d882fdc9ad0b001245ad9fc64011aaa3a9ebf96e71c9481579b74b5020ad2}{Chart\+::\+Same\+As\+Main\+Color} = (int)0xffff0007
+ \}
+\item 
+enum \hyperlink{namespace_chart_a4f0c3f99d28b8b3c40eaca934584f967}{Chart\+::\+Img\+Format} \{ \newline
+\hyperlink{namespace_chart_a4f0c3f99d28b8b3c40eaca934584f967ae77cc34b5dd8909f967d766ddd339f28}{Chart\+::\+P\+NG}, 
+\hyperlink{namespace_chart_a4f0c3f99d28b8b3c40eaca934584f967a486f962942db67605aef118df8fba1eb}{Chart\+::\+G\+IF}, 
+\hyperlink{namespace_chart_a4f0c3f99d28b8b3c40eaca934584f967ac05135eacb3a65ae1680a80dbfdd0b2d}{Chart\+::\+J\+PG}, 
+\hyperlink{namespace_chart_a4f0c3f99d28b8b3c40eaca934584f967a2d34647c184cde881f4109d6e942c275}{Chart\+::\+W\+MP}, 
+\newline
+\hyperlink{namespace_chart_a4f0c3f99d28b8b3c40eaca934584f967a7c2c400f6b6a3179183819ae69fa59b9}{Chart\+::\+B\+MP}, 
+\hyperlink{namespace_chart_a4f0c3f99d28b8b3c40eaca934584f967a66507926e8a68ebe8c0a296b5c2ef957}{Chart\+::\+S\+VG}, 
+\hyperlink{namespace_chart_a4f0c3f99d28b8b3c40eaca934584f967a8568ed926e85c0a73e9d96373115c664}{Chart\+::\+S\+V\+GZ}, 
+\hyperlink{namespace_chart_a4f0c3f99d28b8b3c40eaca934584f967acc7f5304a08d216f7ae0eafa2d9e80f5}{Chart\+::\+P\+DF}, 
+\newline
+\hyperlink{namespace_chart_a4f0c3f99d28b8b3c40eaca934584f967a8d0c6c7edb3cc908a054fab97a18cd98}{Chart\+::\+A\+GF}, 
+\hyperlink{namespace_chart_a4f0c3f99d28b8b3c40eaca934584f967a02a3b8d08397b4bcd8ca37573165dd60}{Chart\+::\+Q\+T\+I\+MG}, 
+\hyperlink{namespace_chart_a4f0c3f99d28b8b3c40eaca934584f967ae77cc34b5dd8909f967d766ddd339f28}{Chart\+::\+P\+NG}, 
+\hyperlink{namespace_chart_a4f0c3f99d28b8b3c40eaca934584f967a486f962942db67605aef118df8fba1eb}{Chart\+::\+G\+IF}, 
+\newline
+\hyperlink{namespace_chart_a4f0c3f99d28b8b3c40eaca934584f967ac05135eacb3a65ae1680a80dbfdd0b2d}{Chart\+::\+J\+PG}, 
+\hyperlink{namespace_chart_a4f0c3f99d28b8b3c40eaca934584f967a2d34647c184cde881f4109d6e942c275}{Chart\+::\+W\+MP}, 
+\hyperlink{namespace_chart_a4f0c3f99d28b8b3c40eaca934584f967a7c2c400f6b6a3179183819ae69fa59b9}{Chart\+::\+B\+MP}
+ \}
+\item 
+enum \{ \hyperlink{namespace_chart_aa357b1b5e740352f0c772478161f6560a0ef03e0951e37d87acd948c5b77d447c}{Chart\+::\+Side\+Layout}, 
+\hyperlink{namespace_chart_aa357b1b5e740352f0c772478161f6560ad24858c4980696fed7d4e76e6cbdb34f}{Chart\+::\+Circle\+Layout}
+ \}
+\item 
+enum \{ \newline
+\hyperlink{namespace_chart_a26583756db814387c0f5f6029ef5c43eafaf77a24638dc8acbbc7fcc737cb5f0f}{Chart\+::\+Default\+Shading} = 0, 
+\hyperlink{namespace_chart_a26583756db814387c0f5f6029ef5c43ea1221dc72811cd429327f9b51ae0108f8}{Chart\+::\+Flat\+Shading} = 1, 
+\hyperlink{namespace_chart_a26583756db814387c0f5f6029ef5c43ea3f02e0f90b21bf1534e88e1a79e69a54}{Chart\+::\+Local\+Gradient\+Shading} = 2, 
+\hyperlink{namespace_chart_a26583756db814387c0f5f6029ef5c43ea9b10ec9b676141864d0fe4c09713a98b}{Chart\+::\+Global\+Gradient\+Shading} = 3, 
+\newline
+\hyperlink{namespace_chart_a26583756db814387c0f5f6029ef5c43ea6940e3d711159aabb0d9d7cce3dd5a1b}{Chart\+::\+Concave\+Shading} = 4, 
+\hyperlink{namespace_chart_a26583756db814387c0f5f6029ef5c43eaac5f7011460e6213da6beef5e688aa1a}{Chart\+::\+Rounded\+Edge\+No\+Glare\+Shading} = 5, 
+\hyperlink{namespace_chart_a26583756db814387c0f5f6029ef5c43ea49f372a7d65659ffd89363ed58912cb3}{Chart\+::\+Rounded\+Edge\+Shading} = 6, 
+\hyperlink{namespace_chart_a26583756db814387c0f5f6029ef5c43ea48f05e32a8fe5cc263ebe6a302af51e2}{Chart\+::\+Radial\+Shading} = 7, 
+\newline
+\hyperlink{namespace_chart_a26583756db814387c0f5f6029ef5c43eab8f432d5286bfb1a77f61a12503d8ad9}{Chart\+::\+Ring\+Shading} = 8
+ \}
+\item 
+enum \hyperlink{namespace_chart_a5392f7ff9dd37b8e092b2fe17dfb7d05}{Chart\+::\+Symbol\+Type} \{ \newline
+\hyperlink{namespace_chart_a5392f7ff9dd37b8e092b2fe17dfb7d05a4ca63336d808e2b330f2e2902385c033}{Chart\+::\+No\+Symbol} = 0, 
+\hyperlink{namespace_chart_a5392f7ff9dd37b8e092b2fe17dfb7d05acdc3a84456f3b4b382e714302650ecaa}{Chart\+::\+Square\+Symbol} = 1, 
+\hyperlink{namespace_chart_a5392f7ff9dd37b8e092b2fe17dfb7d05a72653124ba789320011d398de88f048a}{Chart\+::\+Diamond\+Symbol} = 2, 
+\hyperlink{namespace_chart_a5392f7ff9dd37b8e092b2fe17dfb7d05aefd96e095087ed55e01e066d80b88acc}{Chart\+::\+Triangle\+Symbol} = 3, 
+\newline
+\hyperlink{namespace_chart_a5392f7ff9dd37b8e092b2fe17dfb7d05a7ebd58c0c7d2d0625acf14b07b1f1f65}{Chart\+::\+Right\+Triangle\+Symbol} = 4, 
+\hyperlink{namespace_chart_a5392f7ff9dd37b8e092b2fe17dfb7d05a18a3a1d812a754a9974d1b527b18f69b}{Chart\+::\+Left\+Triangle\+Symbol} = 5, 
+\hyperlink{namespace_chart_a5392f7ff9dd37b8e092b2fe17dfb7d05ac8f3abc4934cd91a2f7d9c0f459fbd91}{Chart\+::\+Inverted\+Triangle\+Symbol} = 6, 
+\hyperlink{namespace_chart_a5392f7ff9dd37b8e092b2fe17dfb7d05af88026815a91b6dc7ca265a5b540cf74}{Chart\+::\+Circle\+Symbol} = 7, 
+\newline
+\hyperlink{namespace_chart_a5392f7ff9dd37b8e092b2fe17dfb7d05a3f0cdb6276afc9e3934de35fe6b62b50}{Chart\+::\+Cross\+Symbol} = 8, 
+\hyperlink{namespace_chart_a5392f7ff9dd37b8e092b2fe17dfb7d05abe8c20a00accfe016b95a134773035f6}{Chart\+::\+Cross2\+Symbol} = 9, 
+\hyperlink{namespace_chart_a5392f7ff9dd37b8e092b2fe17dfb7d05a82bd2788bb2a2ecaf81b2e710d3bd23f}{Chart\+::\+Chart\+Dir\+\_\+\+Polygon\+Symbol} = 11, 
+\hyperlink{namespace_chart_a5392f7ff9dd37b8e092b2fe17dfb7d05a24924f1d985acb773c0d6f5c95c29173}{Chart\+::\+Chart\+Dir\+\_\+\+Polygon2\+Symbol} = 12, 
+\newline
+\hyperlink{namespace_chart_a5392f7ff9dd37b8e092b2fe17dfb7d05ae0ca6530b8f63e3b917f79bd2668da92}{Chart\+::\+Chart\+Dir\+\_\+\+Star\+Symbol} = 13, 
+\hyperlink{namespace_chart_a5392f7ff9dd37b8e092b2fe17dfb7d05a5d879994aec245899d169f7961f4697f}{Chart\+::\+Chart\+Dir\+\_\+\+Custom\+Symbol} = 14, 
+\hyperlink{namespace_chart_a5392f7ff9dd37b8e092b2fe17dfb7d05a607e560455aed50701fa67e4128aeb7a}{Chart\+::\+Chart\+Dir\+\_\+\+Arrow\+Symbol} = 18, 
+\hyperlink{namespace_chart_a5392f7ff9dd37b8e092b2fe17dfb7d05a4ca63336d808e2b330f2e2902385c033}{Chart\+::\+No\+Symbol} = 0, 
+\newline
+\hyperlink{namespace_chart_a5392f7ff9dd37b8e092b2fe17dfb7d05acdc3a84456f3b4b382e714302650ecaa}{Chart\+::\+Square\+Symbol} = 1, 
+\hyperlink{namespace_chart_a5392f7ff9dd37b8e092b2fe17dfb7d05a72653124ba789320011d398de88f048a}{Chart\+::\+Diamond\+Symbol} = 2, 
+\hyperlink{namespace_chart_a5392f7ff9dd37b8e092b2fe17dfb7d05aefd96e095087ed55e01e066d80b88acc}{Chart\+::\+Triangle\+Symbol} = 3, 
+\hyperlink{namespace_chart_a5392f7ff9dd37b8e092b2fe17dfb7d05a7ebd58c0c7d2d0625acf14b07b1f1f65}{Chart\+::\+Right\+Triangle\+Symbol} = 4, 
+\newline
+\hyperlink{namespace_chart_a5392f7ff9dd37b8e092b2fe17dfb7d05a18a3a1d812a754a9974d1b527b18f69b}{Chart\+::\+Left\+Triangle\+Symbol} = 5, 
+\hyperlink{namespace_chart_a5392f7ff9dd37b8e092b2fe17dfb7d05ac8f3abc4934cd91a2f7d9c0f459fbd91}{Chart\+::\+Inverted\+Triangle\+Symbol} = 6, 
+\hyperlink{namespace_chart_a5392f7ff9dd37b8e092b2fe17dfb7d05af88026815a91b6dc7ca265a5b540cf74}{Chart\+::\+Circle\+Symbol} = 7, 
+\hyperlink{namespace_chart_a5392f7ff9dd37b8e092b2fe17dfb7d05a3f0cdb6276afc9e3934de35fe6b62b50}{Chart\+::\+Cross\+Symbol} = 8, 
+\newline
+\hyperlink{namespace_chart_a5392f7ff9dd37b8e092b2fe17dfb7d05abe8c20a00accfe016b95a134773035f6}{Chart\+::\+Cross2\+Symbol} = 9
+ \}
+\item 
+enum \{ \newline
+\hyperlink{namespace_chart_aed8e329ecd77f7071581f4ce1435f939aaad32ce45cf087f0d1a2c30aa57e46b6}{Chart\+::\+No\+Shape} = 0, 
+\hyperlink{namespace_chart_aed8e329ecd77f7071581f4ce1435f939ab0e95b82adc0f2ce62df7f68f3125df8}{Chart\+::\+Square\+Shape} = 1, 
+\hyperlink{namespace_chart_aed8e329ecd77f7071581f4ce1435f939a38c9bed1db5a0db82f0f87b518fe5598}{Chart\+::\+Diamond\+Shape} = 2, 
+\hyperlink{namespace_chart_aed8e329ecd77f7071581f4ce1435f939aae9ee91d94613d9f0791a62e9e3d842a}{Chart\+::\+Triangle\+Shape} = 3, 
+\newline
+\hyperlink{namespace_chart_aed8e329ecd77f7071581f4ce1435f939a43983c295df3c30ba9809c02ac0f3c60}{Chart\+::\+Right\+Triangle\+Shape} = 4, 
+\hyperlink{namespace_chart_aed8e329ecd77f7071581f4ce1435f939aaf8918363d82391d4447451259095a2f}{Chart\+::\+Left\+Triangle\+Shape} = 5, 
+\hyperlink{namespace_chart_aed8e329ecd77f7071581f4ce1435f939a13786d653d00dc5718dd665720e5e8b6}{Chart\+::\+Inverted\+Triangle\+Shape} = 6, 
+\hyperlink{namespace_chart_aed8e329ecd77f7071581f4ce1435f939aac448033c7d37c5956b2a06f10738993}{Chart\+::\+Circle\+Shape} = 7, 
+\newline
+\hyperlink{namespace_chart_aed8e329ecd77f7071581f4ce1435f939a9c929937988e344a5e3e4a9a182b6e6c}{Chart\+::\+Circle\+Shape\+No\+Shading} = 10, 
+\hyperlink{namespace_chart_aed8e329ecd77f7071581f4ce1435f939af97802247e9c3174f95f006693089d32}{Chart\+::\+Glass\+Sphere\+Shape} = 15, 
+\hyperlink{namespace_chart_aed8e329ecd77f7071581f4ce1435f939a415b4bd9b447c6e78c87e7f302854178}{Chart\+::\+Glass\+Sphere2\+Shape} = 16, 
+\hyperlink{namespace_chart_aed8e329ecd77f7071581f4ce1435f939aba352d5d54294a68811951e8d9abd287}{Chart\+::\+Solid\+Sphere\+Shape} = 17
+ \}
+\item 
+enum \hyperlink{namespace_chart_af7052bb2fea3a81e43d3812503b3b779}{Chart\+::\+Data\+Combine\+Method} \{ \newline
+\hyperlink{namespace_chart_af7052bb2fea3a81e43d3812503b3b779a5586cefdf5069b2df79d2f82fd8666e2}{Chart\+::\+Overlay}, 
+\hyperlink{namespace_chart_af7052bb2fea3a81e43d3812503b3b779aaf9482d7a5b2b98ba5660492356d153a}{Chart\+::\+Stack}, 
+\hyperlink{namespace_chart_af7052bb2fea3a81e43d3812503b3b779aeeb95c3532110c24927ecc1251dbddd1}{Chart\+::\+Depth}, 
+\hyperlink{namespace_chart_af7052bb2fea3a81e43d3812503b3b779a0ede7e5edc987730ca5957389c4e1bbc}{Chart\+::\+Side}, 
+\newline
+\hyperlink{namespace_chart_af7052bb2fea3a81e43d3812503b3b779aac5509ada22f76b29a1fef0ceb64e9c3}{Chart\+::\+Percentage}, 
+\hyperlink{namespace_chart_af7052bb2fea3a81e43d3812503b3b779a5586cefdf5069b2df79d2f82fd8666e2}{Chart\+::\+Overlay}, 
+\hyperlink{namespace_chart_af7052bb2fea3a81e43d3812503b3b779aaf9482d7a5b2b98ba5660492356d153a}{Chart\+::\+Stack}, 
+\hyperlink{namespace_chart_af7052bb2fea3a81e43d3812503b3b779aeeb95c3532110c24927ecc1251dbddd1}{Chart\+::\+Depth}, 
+\newline
+\hyperlink{namespace_chart_af7052bb2fea3a81e43d3812503b3b779a0ede7e5edc987730ca5957389c4e1bbc}{Chart\+::\+Side}, 
+\hyperlink{namespace_chart_af7052bb2fea3a81e43d3812503b3b779aac5509ada22f76b29a1fef0ceb64e9c3}{Chart\+::\+Percentage}
+ \}
+\item 
+enum \hyperlink{namespace_chart_ae3622dc9c15db1d2c2269a494c3cd6fd}{Chart\+::\+Legend\+Mode} \{ \newline
+\hyperlink{namespace_chart_ae3622dc9c15db1d2c2269a494c3cd6fda00377a41366ce78de23338b0cd103998}{Chart\+::\+Normal\+Legend}, 
+\hyperlink{namespace_chart_ae3622dc9c15db1d2c2269a494c3cd6fda73f47365b8762e183d29126bf88b0c19}{Chart\+::\+Reverse\+Legend}, 
+\hyperlink{namespace_chart_ae3622dc9c15db1d2c2269a494c3cd6fda4aadff5925954beb7b5bf4ad5ba8b11b}{Chart\+::\+No\+Legend}, 
+\hyperlink{namespace_chart_ae3622dc9c15db1d2c2269a494c3cd6fda00377a41366ce78de23338b0cd103998}{Chart\+::\+Normal\+Legend}, 
+\newline
+\hyperlink{namespace_chart_ae3622dc9c15db1d2c2269a494c3cd6fda73f47365b8762e183d29126bf88b0c19}{Chart\+::\+Reverse\+Legend}, 
+\hyperlink{namespace_chart_ae3622dc9c15db1d2c2269a494c3cd6fda4aadff5925954beb7b5bf4ad5ba8b11b}{Chart\+::\+No\+Legend}
+ \}
+\item 
+enum \hyperlink{namespace_chart_af8005281e1fb57d737e9f89b13605808}{Chart\+::\+Scale\+Type} \{ \newline
+\hyperlink{namespace_chart_af8005281e1fb57d737e9f89b13605808afebebf69a28e58958dc5f9da3ece2147}{Chart\+::\+Pixel\+Scale}, 
+\hyperlink{namespace_chart_af8005281e1fb57d737e9f89b13605808a5977509c574338bac55628ac34413723}{Chart\+::\+X\+Axis\+Scale}, 
+\hyperlink{namespace_chart_af8005281e1fb57d737e9f89b13605808a5361e3eacab13fa01191d7ca79934f39}{Chart\+::\+Y\+Axis\+Scale}, 
+\hyperlink{namespace_chart_af8005281e1fb57d737e9f89b13605808a0b38a5f304f8a2ce1463517ea02bea5c}{Chart\+::\+End\+Points}, 
+\newline
+\hyperlink{namespace_chart_af8005281e1fb57d737e9f89b13605808a0905cf9839fe2dab249584123a62bb95}{Chart\+::\+Angular\+Axis\+Scale} = X\+Axis\+Scale, 
+\hyperlink{namespace_chart_af8005281e1fb57d737e9f89b13605808a4e9cfd84bf4b9ed94a3de6288d0f7eff}{Chart\+::\+Radial\+Axis\+Scale} = Y\+Axis\+Scale, 
+\hyperlink{namespace_chart_af8005281e1fb57d737e9f89b13605808afebebf69a28e58958dc5f9da3ece2147}{Chart\+::\+Pixel\+Scale}, 
+\hyperlink{namespace_chart_af8005281e1fb57d737e9f89b13605808a5977509c574338bac55628ac34413723}{Chart\+::\+X\+Axis\+Scale}, 
+\newline
+\hyperlink{namespace_chart_af8005281e1fb57d737e9f89b13605808a5361e3eacab13fa01191d7ca79934f39}{Chart\+::\+Y\+Axis\+Scale}, 
+\hyperlink{namespace_chart_af8005281e1fb57d737e9f89b13605808a0905cf9839fe2dab249584123a62bb95}{Chart\+::\+Angular\+Axis\+Scale} = X\+Axis\+Scale, 
+\hyperlink{namespace_chart_af8005281e1fb57d737e9f89b13605808a4e9cfd84bf4b9ed94a3de6288d0f7eff}{Chart\+::\+Radial\+Axis\+Scale} = Y\+Axis\+Scale
+ \}
+\item 
+enum \{ \newline
+\hyperlink{namespace_chart_a396ec23b3599a17c0526e68b6bb92dc8adee841f883fcc374fd97c52b2f359bd1}{Chart\+::\+Monotonic\+None} = 0, 
+\hyperlink{namespace_chart_a396ec23b3599a17c0526e68b6bb92dc8a2c033af58356e0cc3d061513d0afe536}{Chart\+::\+MonotonicX} = 1, 
+\hyperlink{namespace_chart_a396ec23b3599a17c0526e68b6bb92dc8a5e6bf2a1b32739dc579bdc72a0631fa5}{Chart\+::\+MonotonicY} = 2, 
+\hyperlink{namespace_chart_a396ec23b3599a17c0526e68b6bb92dc8accd5aa2ebf8059c8c6e19eebd3f46703}{Chart\+::\+Monotonic\+XY} = 3, 
+\newline
+\hyperlink{namespace_chart_a396ec23b3599a17c0526e68b6bb92dc8af314188099720bd1adc7e90b7f18b2a8}{Chart\+::\+Monotonic\+Auto} = 4
+ \}
+\item 
+enum \{ \hyperlink{namespace_chart_af8836e6a6deb09b53aaa8f888ad57503a9e9a7bde0b4129f40f3c6e5292f06e59}{Chart\+::\+Constrained\+Linear\+Regression} = 0, 
+\hyperlink{namespace_chart_af8836e6a6deb09b53aaa8f888ad57503af258c378e4b5260b86fdc909d63aed0c}{Chart\+::\+Linear\+Regression} = 1, 
+\hyperlink{namespace_chart_af8836e6a6deb09b53aaa8f888ad57503a7a5c9f099cf743a00688067199371dbf}{Chart\+::\+Exponential\+Regression} = -\/1, 
+\hyperlink{namespace_chart_af8836e6a6deb09b53aaa8f888ad57503ab692f67fb75b76c9db3f064d7fa0a681}{Chart\+::\+Logarithmic\+Regression} = -\/2
+ \}
+\item 
+enum \{ \hyperlink{namespace_chart_acd42c2264cb166845e04d8a2eacab51fa284b98516e6d86bd42d2fce855f22d09}{Chart\+::\+H\+L\+O\+C\+Default}, 
+\hyperlink{namespace_chart_acd42c2264cb166845e04d8a2eacab51fa6a03a9de7c314c15ecdfa331270424f3}{Chart\+::\+H\+L\+O\+C\+Open\+Close}, 
+\hyperlink{namespace_chart_acd42c2264cb166845e04d8a2eacab51fa8ca6b49d16fe79e27fdad236fee25760}{Chart\+::\+H\+L\+O\+C\+Up\+Down}
+ \}
+\item 
+enum \{ \newline
+\hyperlink{namespace_chart_a15cfe53d27f5b7a07e25af504b5d10f4a5eba06e919c0c8a366a641edba0167cf}{Chart\+::\+Diamond\+Pointer}, 
+\hyperlink{namespace_chart_a15cfe53d27f5b7a07e25af504b5d10f4a5579af52f1be2bcba6498c4974ab852e}{Chart\+::\+Triangular\+Pointer}, 
+\hyperlink{namespace_chart_a15cfe53d27f5b7a07e25af504b5d10f4a5c68a06198c9797b5767d53e262034fd}{Chart\+::\+Arrow\+Pointer}, 
+\hyperlink{namespace_chart_a15cfe53d27f5b7a07e25af504b5d10f4a8b30e6e5c09acdad4d69e49c75f11a22}{Chart\+::\+Arrow\+Pointer2}, 
+\newline
+\hyperlink{namespace_chart_a15cfe53d27f5b7a07e25af504b5d10f4acb57f422cc179272e424b759ff75a663}{Chart\+::\+Line\+Pointer}, 
+\hyperlink{namespace_chart_a15cfe53d27f5b7a07e25af504b5d10f4a969fac317522a25c9ab2580e07f970ad}{Chart\+::\+Pencil\+Pointer}, 
+\hyperlink{namespace_chart_a15cfe53d27f5b7a07e25af504b5d10f4afd0736ae83f260af5c7f8093d24448f1}{Chart\+::\+Triangular\+Pointer2}, 
+\hyperlink{namespace_chart_a15cfe53d27f5b7a07e25af504b5d10f4aa315673675409440f99d58807894e4b0}{Chart\+::\+Line\+Pointer2}
+ \}
+\item 
+enum \{ \newline
+\hyperlink{namespace_chart_ae8b6860c0dc29a4c93533e70d9cd5696a298e772b2365eb411e47f6aebb824f42}{Chart\+::\+Smooth\+Shading} = 0, 
+\hyperlink{namespace_chart_ae8b6860c0dc29a4c93533e70d9cd5696a731acb1ec33078bfb890a483411cc320}{Chart\+::\+Triangular\+Shading} = 1, 
+\hyperlink{namespace_chart_ae8b6860c0dc29a4c93533e70d9cd5696a5a6bff8430bd7fc9b67ad4a2e878d9c0}{Chart\+::\+Rectangular\+Shading} = 2, 
+\hyperlink{namespace_chart_ae8b6860c0dc29a4c93533e70d9cd5696a8e47a2a390f6a876fae0ad2e7df11135}{Chart\+::\+Triangular\+Frame} = 3, 
+\newline
+\hyperlink{namespace_chart_ae8b6860c0dc29a4c93533e70d9cd5696a7a39abded306cf72a7fb66f717188cb8}{Chart\+::\+Rectangular\+Frame} = 4
+ \}
+\item 
+enum \{ \hyperlink{namespace_chart_aab3f080233fb833af879db08aa927e44a0008d3bacfadcbddc5d41ebc6cb6d85e}{Chart\+::\+Chart\+BackZ} = 0x100, 
+\hyperlink{namespace_chart_aab3f080233fb833af879db08aa927e44a7864a7eec7dab38e0fffdead6aae047a}{Chart\+::\+Chart\+FrontZ} = 0xffff, 
+\hyperlink{namespace_chart_aab3f080233fb833af879db08aa927e44a78c006d25e9b399527d64cf806e0c5e2}{Chart\+::\+Plot\+AreaZ} = 0x1000, 
+\hyperlink{namespace_chart_aab3f080233fb833af879db08aa927e44ac4057ab3ed619d1c1f0637f67a77247d}{Chart\+::\+Grid\+LinesZ} = 0x2000
+ \}
+\item 
+enum \{ \newline
+\hyperlink{namespace_chart_af84442f222652aad830eb7e3600e03e5a5fb9821c22c5cbc922622140e546844a}{Chart\+::\+X\+Axis\+Symmetric} = 1, 
+\hyperlink{namespace_chart_af84442f222652aad830eb7e3600e03e5a923ae56808fcaa27b949e442db4a89b2}{Chart\+::\+X\+Axis\+Symmetric\+If\+Needed} = 2, 
+\hyperlink{namespace_chart_af84442f222652aad830eb7e3600e03e5a534fec475a913e9681c0b16a1472f39e}{Chart\+::\+Y\+Axis\+Symmetric} = 4, 
+\hyperlink{namespace_chart_af84442f222652aad830eb7e3600e03e5a9b59aa5aff75585c0f4c997a63e97666}{Chart\+::\+Y\+Axis\+Symmetric\+If\+Needed} = 8, 
+\newline
+\hyperlink{namespace_chart_af84442f222652aad830eb7e3600e03e5a1757ea6627bd0123165c35c224e914f8}{Chart\+::\+X\+Y\+Axis\+Symmetric} = 16, 
+\hyperlink{namespace_chart_af84442f222652aad830eb7e3600e03e5a6fa099ced776c739d566793888b410f6}{Chart\+::\+X\+Y\+Axis\+Symmetric\+If\+Needed} = 32
+ \}
+\item 
+enum \{ \hyperlink{namespace_chart_a4c12835958ae0919e9c54011055fa7b4ae7353f3b4d0e76120d2876df399a857f}{Chart\+::\+X\+Axis\+At\+Origin} = 1, 
+\hyperlink{namespace_chart_a4c12835958ae0919e9c54011055fa7b4a53a53734eb35db0628fa47ef963f5b44}{Chart\+::\+Y\+Axis\+At\+Origin} = 2, 
+\hyperlink{namespace_chart_a4c12835958ae0919e9c54011055fa7b4a39ca2a3eabb9c560fdc20cbb2559bdc8}{Chart\+::\+X\+Y\+Axis\+At\+Origin} = 3
+ \}
+\item 
+enum \{ \newline
+\hyperlink{namespace_chart_aff72768f497d5d61b2bd91c437a63709a4e7febcaa067e252db7a3abd413c6625}{Chart\+::\+Chart\+Dir\+\_\+\+Start\+Of\+Hour\+Filter\+Tag} = 1, 
+\hyperlink{namespace_chart_aff72768f497d5d61b2bd91c437a63709a108a8b1f657f258d3413a8952d990663}{Chart\+::\+Chart\+Dir\+\_\+\+Start\+Of\+Day\+Filter\+Tag} = 2, 
+\hyperlink{namespace_chart_aff72768f497d5d61b2bd91c437a63709a050ab014daa28d59e0cc0dcf95fb4334}{Chart\+::\+Chart\+Dir\+\_\+\+Start\+Of\+Week\+Filter\+Tag} = 3, 
+\hyperlink{namespace_chart_aff72768f497d5d61b2bd91c437a63709a660176b8718af259294809e90b911f83}{Chart\+::\+Chart\+Dir\+\_\+\+Start\+Of\+Month\+Filter\+Tag} = 4, 
+\newline
+\hyperlink{namespace_chart_aff72768f497d5d61b2bd91c437a63709aea16b5d5c1a048a9c850dc49d0c143a2}{Chart\+::\+Chart\+Dir\+\_\+\+Start\+Of\+Year\+Filter\+Tag} = 5, 
+\hyperlink{namespace_chart_aff72768f497d5d61b2bd91c437a63709a1d0d797cdd89520b6f63fb38c6dc2539}{Chart\+::\+Chart\+Dir\+\_\+\+Regular\+Spacing\+Filter\+Tag} = 6, 
+\hyperlink{namespace_chart_aff72768f497d5d61b2bd91c437a63709aa4043a6cddf73cca29569737d7118448}{Chart\+::\+Chart\+Dir\+\_\+\+All\+Pass\+Filter\+Tag} = 7, 
+\hyperlink{namespace_chart_aff72768f497d5d61b2bd91c437a63709a5df68db6d889f8d92082a83f4abae0ba}{Chart\+::\+Chart\+Dir\+\_\+\+None\+Pass\+Filter\+Tag} = 8, 
+\newline
+\hyperlink{namespace_chart_aff72768f497d5d61b2bd91c437a63709aea6b1bf1220c85bd2c09d4d89b3009e5}{Chart\+::\+Chart\+Dir\+\_\+\+Select\+Item\+Filter\+Tag} = 9, 
+\hyperlink{namespace_chart_aff72768f497d5d61b2bd91c437a63709ab7bfa73dc15ef5b5d45d27fca4b495fa}{Chart\+::\+Chart\+Dir\+\_\+\+Start\+Of\+Minute\+Filter\+Tag} = 10, 
+\hyperlink{namespace_chart_aff72768f497d5d61b2bd91c437a63709a1a9825a0e703895d3bd03c4fac6d35b0}{Chart\+::\+Chart\+Dir\+\_\+\+Start\+Of\+Second\+Filter\+Tag} = 11
+ \}
+\item 
+enum \{ \hyperlink{namespace_chart_ac8b065d29a6da6e438fa54c877c4eba8acf19aa7bbcc4a8ceb957984c82888415}{Chart\+::\+Normal\+Glare} = 3, 
+\hyperlink{namespace_chart_ac8b065d29a6da6e438fa54c877c4eba8a776bbe2d65a573c32d38300bd7783642}{Chart\+::\+Reduced\+Glare} = 2, 
+\hyperlink{namespace_chart_ac8b065d29a6da6e438fa54c877c4eba8ac8dc8489426609fdc10340a231bc4ddf}{Chart\+::\+No\+Glare} = 1
+ \}
+\item 
+enum \{ \newline
+\hyperlink{namespace_chart_a61f6cf07e0c79f91306454eb9a7ffed8aecceda6dcb9070082a042b31c7a05526}{Chart\+::\+Aggregate\+Sum} = 0, 
+\hyperlink{namespace_chart_a61f6cf07e0c79f91306454eb9a7ffed8ab232f05f31dc3c09986bd417dbc65fae}{Chart\+::\+Aggregate\+Avg} = 1, 
+\hyperlink{namespace_chart_a61f6cf07e0c79f91306454eb9a7ffed8afe0e61aa308229f54f46269b3093c011}{Chart\+::\+Aggregate\+Std\+Dev} = 2, 
+\hyperlink{namespace_chart_a61f6cf07e0c79f91306454eb9a7ffed8a607d868dd321f1cb860da9549908f6b2}{Chart\+::\+Aggregate\+Min} = 3, 
+\newline
+\hyperlink{namespace_chart_a61f6cf07e0c79f91306454eb9a7ffed8a65ab7d8717146e7858b8f07644db47b6}{Chart\+::\+Aggregate\+Med} = 4, 
+\hyperlink{namespace_chart_a61f6cf07e0c79f91306454eb9a7ffed8a7143671ae5bf6320305ad687c7120e41}{Chart\+::\+Aggregate\+Max} = 5, 
+\hyperlink{namespace_chart_a61f6cf07e0c79f91306454eb9a7ffed8a995cf91cb22d13296f12f956b9c3031e}{Chart\+::\+Aggregate\+Percentile} = 6, 
+\hyperlink{namespace_chart_a61f6cf07e0c79f91306454eb9a7ffed8a70f605b87143d546581edd65a2b23991}{Chart\+::\+Aggregate\+First} = 7, 
+\newline
+\hyperlink{namespace_chart_a61f6cf07e0c79f91306454eb9a7ffed8a9850fb4359e616e59f6a3fbaf728b4f3}{Chart\+::\+Aggregate\+Last} = 8, 
+\hyperlink{namespace_chart_a61f6cf07e0c79f91306454eb9a7ffed8afb8673f97fca4651f8c2150f9b54fb0f}{Chart\+::\+Aggregate\+Count} = 9
+ \}
+\item 
+enum \{ \hyperlink{namespace_chart_a6a1286821a3939845bfcdfde00655630a48305470afcf29ee0f52abe83072b743}{Chart\+::\+Direction\+Horizontal} = 0, 
+\hyperlink{namespace_chart_a6a1286821a3939845bfcdfde00655630aee05a00a05f38c09622528eb68938198}{Chart\+::\+Direction\+Vertical} = 1, 
+\hyperlink{namespace_chart_a6a1286821a3939845bfcdfde00655630a965bf294f97d886ccdbf6617bf3df90b}{Chart\+::\+Direction\+Horizontal\+Vertical} = 2
+ \}
+\item 
+enum \{ \newline
+\hyperlink{namespace_chart_ab1242f03d435704e2f5e626b8fb27670a933b7bea2dbc0073268d9a4135419f16}{Chart\+::\+Tree\+Map\+Slice\+And\+Dice} = 1, 
+\hyperlink{namespace_chart_ab1242f03d435704e2f5e626b8fb27670a78fd88ed053c8587e9017f1b6d888872}{Chart\+::\+Tree\+Map\+Squarify} = 2, 
+\hyperlink{namespace_chart_ab1242f03d435704e2f5e626b8fb27670a43162b11a72f79453e69f15fddfe4532}{Chart\+::\+Tree\+Map\+Strip} = 3, 
+\hyperlink{namespace_chart_ab1242f03d435704e2f5e626b8fb27670a0e1d2232625353fa83a775d660e63a91}{Chart\+::\+Tree\+Map\+Binary\+By\+Size} = 4, 
+\newline
+\hyperlink{namespace_chart_ab1242f03d435704e2f5e626b8fb27670a51bf803a9946833ac955a91c1b6e0a7b}{Chart\+::\+Tree\+Map\+Binary\+By\+Mid} = 5, 
+\hyperlink{namespace_chart_ab1242f03d435704e2f5e626b8fb27670a1d437a3c3cadf9ed70e7bf37238dc8cb}{Chart\+::\+Tree\+Map\+No\+Layout} = 6
+ \}
+\item 
+enum \{ \hyperlink{namespace_chart_a021fe9674561a730fc5ec4cbc540839aa7b48f3c93a4714d6e9ba9b772581ac11}{Chart\+::\+View\+Port\+No\+Update} = 0, 
+\hyperlink{namespace_chart_a021fe9674561a730fc5ec4cbc540839aa2bc42dc30d1c11a32d3928422512b25c}{Chart\+::\+Keep\+Visible\+Range} = 1, 
+\hyperlink{namespace_chart_a021fe9674561a730fc5ec4cbc540839aa1d1549f9d98174a2daf03510d18ada96}{Chart\+::\+Scroll\+With\+Max} = 2, 
+\hyperlink{namespace_chart_a021fe9674561a730fc5ec4cbc540839aa050dc5857b0533fb616f42aa400548be}{Chart\+::\+Scroll\+With\+Min} = 3
+ \}
+\item 
+enum \hyperlink{chartdir_8h_acdfaca60ec19c0265bac2692d7982726}{Alignment} \{ \newline
+\hyperlink{chartdir_8h_acdfaca60ec19c0265bac2692d7982726a61f66ddc6702462a94d3e231f02b9017}{Top\+Left} = 7, 
+\hyperlink{chartdir_8h_acdfaca60ec19c0265bac2692d7982726a2d14352c6744d2f724c5e82f7657259f}{Top\+Center} = 8, 
+\hyperlink{chartdir_8h_acdfaca60ec19c0265bac2692d7982726a7e42a96f07eab63a8c9fa8a0526f34f4}{Top\+Right} = 9, 
+\hyperlink{chartdir_8h_acdfaca60ec19c0265bac2692d7982726a9d4d8b0b72fc2659da772d761a3c5ecb}{Left} = 4, 
+\newline
+\hyperlink{chartdir_8h_acdfaca60ec19c0265bac2692d7982726aaa79b7c40b072fdcab65bfa11d732389}{Center} = 5, 
+\hyperlink{chartdir_8h_acdfaca60ec19c0265bac2692d7982726ad48f7af8c070184f3774c8e85854eb66}{Right} = 6, 
+\hyperlink{chartdir_8h_acdfaca60ec19c0265bac2692d7982726ae61b9b6ea2fa75ca500d5bb1eaf6f6fc}{Bottom\+Left} = 1, 
+\hyperlink{chartdir_8h_acdfaca60ec19c0265bac2692d7982726a74bb4e63036551780b66cf8beac32a44}{Bottom\+Center} = 2, 
+\newline
+\hyperlink{chartdir_8h_acdfaca60ec19c0265bac2692d7982726a1640f649d644701a2f4633e6bd88b20c}{Bottom\+Right} = 3, 
+\hyperlink{chartdir_8h_acdfaca60ec19c0265bac2692d7982726a47321105d20c4efd6c573a6d829e1ad9}{Top} = Top\+Center, 
+\hyperlink{chartdir_8h_acdfaca60ec19c0265bac2692d7982726a05cdd4fa6b505ee008f4e865acfecccb}{Bottom} = Bottom\+Center
+ \}
+\item 
+enum \{ \hyperlink{chartdir_8h_a06fc87d81c62e9abb8790b6e5713c55ba39a370f5e06732e1509246018be8e3e4}{Dash\+Line} = 0x0505, 
+\hyperlink{chartdir_8h_a06fc87d81c62e9abb8790b6e5713c55bad5b5e859d9135e800177949994a2b876}{Dot\+Line} = 0x0202, 
+\hyperlink{chartdir_8h_a06fc87d81c62e9abb8790b6e5713c55ba8cac02babcc3e6fe4a031b79520aa832}{Dot\+Dash\+Line} = 0x05050205, 
+\hyperlink{chartdir_8h_a06fc87d81c62e9abb8790b6e5713c55ba3301d2317194818d9399edaefc3667b6}{Alt\+Dash\+Line} = 0x0\+A050505
+ \}
+\item 
+enum \hyperlink{chartdir_8h_aea12eea20145f22793f15221213531af}{Anti\+Alias\+Mode} \{ \hyperlink{chartdir_8h_aea12eea20145f22793f15221213531afa69a69bb497efdc20e3d35fef277984e3}{No\+Anti\+Alias}, 
+\hyperlink{chartdir_8h_aea12eea20145f22793f15221213531afa7fcc6f233330f738e5566d45268e5bd7}{Anti\+Alias}, 
+\hyperlink{chartdir_8h_aea12eea20145f22793f15221213531afa716e9b88560ba3aaea622d8c19e0530a}{Auto\+Anti\+Alias}
+ \}
+\item 
+enum \hyperlink{chartdir_8h_a63ffe0a2b64997f4e51754fef70e10a8}{Palette\+Mode} \{ \hyperlink{chartdir_8h_a63ffe0a2b64997f4e51754fef70e10a8a0873927f404f27847e43afb42fec5510}{Try\+Palette}, 
+\hyperlink{chartdir_8h_a63ffe0a2b64997f4e51754fef70e10a8ae0f501b898b22b440b05adaa78b722fd}{Force\+Palette}, 
+\hyperlink{chartdir_8h_a63ffe0a2b64997f4e51754fef70e10a8ac9f39fe1e3fc8e96edcee3f94417edf1}{No\+Palette}
+ \}
+\item 
+enum \hyperlink{chartdir_8h_a33336dc6d31932538eb95bc5053257d0}{Dither\+Method} \{ \hyperlink{chartdir_8h_a33336dc6d31932538eb95bc5053257d0a5bdb676e7e34467b12d104fabf7a807c}{Quantize}, 
+\hyperlink{chartdir_8h_a33336dc6d31932538eb95bc5053257d0ad59f1fa12347cd77d65ba352b008556b}{Ordered\+Dither}, 
+\hyperlink{chartdir_8h_a33336dc6d31932538eb95bc5053257d0af3afc8d80418dff9b183cf2d39c9ac0e}{Error\+Diffusion}
+ \}
+\item 
+enum \hyperlink{chartdir_8h_a4b3321663394cb84fbf74723ed35d5f7}{C\+D\+Filter\+Type} \{ \newline
+\hyperlink{chartdir_8h_a4b3321663394cb84fbf74723ed35d5f7ac90cbe20ad258bb93140e1f20ba5acbb}{Box\+Filter}, 
+\hyperlink{chartdir_8h_a4b3321663394cb84fbf74723ed35d5f7ac5dc63a74abfb6cc79199d348b1701a5}{Linear\+Filter}, 
+\hyperlink{chartdir_8h_a4b3321663394cb84fbf74723ed35d5f7a2dfbf5fb0a40b801e9bdbc2836e2af09}{Quadratic\+Filter}, 
+\hyperlink{chartdir_8h_a4b3321663394cb84fbf74723ed35d5f7ae2f8d03f670514c100d01acf65080294}{B\+Spline\+Filter}, 
+\newline
+\hyperlink{chartdir_8h_a4b3321663394cb84fbf74723ed35d5f7a4db63e17c9099778077860fdc1cfd790}{Hermite\+Filter}, 
+\hyperlink{chartdir_8h_a4b3321663394cb84fbf74723ed35d5f7a2e0374505dae9fc881281f90dae898ff}{Catrom\+Filter}, 
+\hyperlink{chartdir_8h_a4b3321663394cb84fbf74723ed35d5f7a6c6bae06d74266e1106752c5f695db57}{Mitchell\+Filter}, 
+\hyperlink{chartdir_8h_a4b3321663394cb84fbf74723ed35d5f7a52f8a3f1552efb210f8891e509365039}{Sinc\+Filter}, 
+\newline
+\hyperlink{chartdir_8h_a4b3321663394cb84fbf74723ed35d5f7ac8fc2c98c29d0c4dc03a52ce41a34b15}{Lanczos\+Filter}, 
+\hyperlink{chartdir_8h_a4b3321663394cb84fbf74723ed35d5f7aa8dbfc713c7ee24a774443e114b4295f}{Gaussian\+Filter}, 
+\hyperlink{chartdir_8h_a4b3321663394cb84fbf74723ed35d5f7a411930624ff2fc73e182e0dde7f612c9}{Hanning\+Filter}, 
+\hyperlink{chartdir_8h_a4b3321663394cb84fbf74723ed35d5f7a4ebb8d776431855a4e9262156bf5b5f9}{Hamming\+Filter}, 
+\newline
+\hyperlink{chartdir_8h_a4b3321663394cb84fbf74723ed35d5f7a7c1c299b48e742a5229a0b01151b850a}{Blackman\+Filter}, 
+\hyperlink{chartdir_8h_a4b3321663394cb84fbf74723ed35d5f7a0f8574ca7ace65906f0f724837543b85}{Bessel\+Filter}
+ \}
+\item 
+enum \{ \newline
+\hyperlink{chartdir_8h_adf764cbdea00d65edcd07bb9953ad2b7ac719d3f34968bcf992d4c0c48841cf63}{Transparent} = 0xff000000, 
+\hyperlink{chartdir_8h_adf764cbdea00d65edcd07bb9953ad2b7a356b5fe4fedbb057bdb18ec4d2d344c8}{Palette} = 0xffff0000, 
+\hyperlink{chartdir_8h_adf764cbdea00d65edcd07bb9953ad2b7ae77350b90c6686030251b29c2b9ea88b}{Background\+Color} = 0xffff0000, 
+\hyperlink{chartdir_8h_adf764cbdea00d65edcd07bb9953ad2b7a472bc7e221f74403214336983fb1fd38}{Line\+Color} = 0xffff0001, 
+\newline
+\hyperlink{chartdir_8h_adf764cbdea00d65edcd07bb9953ad2b7a55f101aaf2ef1fe1fa588fe4cc79014c}{Text\+Color} = 0xffff0002, 
+\hyperlink{chartdir_8h_adf764cbdea00d65edcd07bb9953ad2b7a831fdc762bca6a9409ffb50ed21e974e}{Data\+Color} = 0xffff0008, 
+\hyperlink{chartdir_8h_adf764cbdea00d65edcd07bb9953ad2b7a95f11e1446d4ccad7a52c17e7d458e8f}{Same\+As\+Main\+Color} = 0xffff0007
+ \}
+\item 
+enum \hyperlink{chartdir_8h_a6539a56741c8c62d0179c545e81fdf12}{Img\+Format} \{ \newline
+\hyperlink{chartdir_8h_a6539a56741c8c62d0179c545e81fdf12a842c5fc4bbe3f780e57c76d1a3cafe9f}{P\+NG}, 
+\hyperlink{chartdir_8h_a6539a56741c8c62d0179c545e81fdf12a8551767fb508ed14b8eff110d81bb437}{G\+IF}, 
+\hyperlink{chartdir_8h_a6539a56741c8c62d0179c545e81fdf12a193eff471c99a2d5cad5433221091f7f}{J\+PG}, 
+\hyperlink{chartdir_8h_a6539a56741c8c62d0179c545e81fdf12a4a71db051af14c6761dd0768d1870d77}{W\+MP}, 
+\newline
+\hyperlink{chartdir_8h_a6539a56741c8c62d0179c545e81fdf12a472992a8061f64e53dced30fb026b3b7}{B\+MP}
+ \}
+\item 
+enum \{ \hyperlink{chartdir_8h_a99fb83031ce9923c84392b4e92f956b5a233d8df412df19bb2a9ff03e5cabb29b}{Side\+Layout}, 
+\hyperlink{chartdir_8h_a99fb83031ce9923c84392b4e92f956b5a8b5e55006892f8ea56e9c77f6a5674f5}{Circle\+Layout}
+ \}
+\item 
+enum \hyperlink{chartdir_8h_add8909e1085c0c32f8380ff493a243b3}{Symbol\+Type} \{ \newline
+\hyperlink{chartdir_8h_add8909e1085c0c32f8380ff493a243b3a3e5b624053ed30070e29c5e4367ddeac}{No\+Symbol} = 0, 
+\hyperlink{chartdir_8h_add8909e1085c0c32f8380ff493a243b3a97d0c43a54134943fdbece9457116f90}{Square\+Symbol} = 1, 
+\hyperlink{chartdir_8h_add8909e1085c0c32f8380ff493a243b3a38554bdeb0d8fe17f497e9379e840981}{Diamond\+Symbol} = 2, 
+\hyperlink{chartdir_8h_add8909e1085c0c32f8380ff493a243b3aadac164939eb2477e64fa078fd96887d}{Triangle\+Symbol} = 3, 
+\newline
+\hyperlink{chartdir_8h_add8909e1085c0c32f8380ff493a243b3a33eb2339f9e4b6909fa650829efe6e23}{Right\+Triangle\+Symbol} = 4, 
+\hyperlink{chartdir_8h_add8909e1085c0c32f8380ff493a243b3a1d7f7dfaffacf7061fb6d8b8a002b487}{Left\+Triangle\+Symbol} = 5, 
+\hyperlink{chartdir_8h_add8909e1085c0c32f8380ff493a243b3ad6e06367eb3797948afe95a150adba6b}{Inverted\+Triangle\+Symbol} = 6, 
+\hyperlink{chartdir_8h_add8909e1085c0c32f8380ff493a243b3ac00ef31d3aeb868caff73187472e15d5}{Circle\+Symbol} = 7, 
+\newline
+\hyperlink{chartdir_8h_add8909e1085c0c32f8380ff493a243b3a84ee154272e4a6bad0ef545b61e25713}{Cross\+Symbol} = 8, 
+\hyperlink{chartdir_8h_add8909e1085c0c32f8380ff493a243b3a3dab5cc213ecd8d8f8a641f288b3ae1b}{Cross2\+Symbol} = 9
+ \}
+\item 
+enum \hyperlink{chartdir_8h_adf7b2de05fb50a03eadeb9676014fa8c}{Data\+Combine\+Method} \{ \newline
+\hyperlink{chartdir_8h_adf7b2de05fb50a03eadeb9676014fa8ca8b895d92539a718e6898ed6b053ce2ff}{Overlay}, 
+\hyperlink{chartdir_8h_adf7b2de05fb50a03eadeb9676014fa8cad323e21f975d98abeddb6f8ff46f8ff5}{Stack}, 
+\hyperlink{chartdir_8h_adf7b2de05fb50a03eadeb9676014fa8caf5c0a1b2ee6f0c691d602752b185463c}{Depth}, 
+\hyperlink{chartdir_8h_adf7b2de05fb50a03eadeb9676014fa8cac9ed8cfe89073eb2178d23dd4f8e15e1}{Side}, 
+\newline
+\hyperlink{chartdir_8h_adf7b2de05fb50a03eadeb9676014fa8cae85ce37a522a78d62b65530105de49e1}{Percentage}
+ \}
+\item 
+enum \hyperlink{chartdir_8h_a760fe13cc9359bb7c654879b48bb0b23}{Legend\+Mode} \{ \hyperlink{chartdir_8h_a760fe13cc9359bb7c654879b48bb0b23a984494b8b8788e1c34ecfae2a1d8e473}{Normal\+Legend}, 
+\hyperlink{chartdir_8h_a760fe13cc9359bb7c654879b48bb0b23a28ecd7d1ce52006280684c20390dec95}{Reverse\+Legend}, 
+\hyperlink{chartdir_8h_a760fe13cc9359bb7c654879b48bb0b23a54e14c89ec97f73acc6596634e8ad6e7}{No\+Legend}
+ \}
+\item 
+enum \hyperlink{chartdir_8h_aa4056483f16ca76a5fc35a129a3a16da}{Scale\+Type} \{ \newline
+\hyperlink{chartdir_8h_aa4056483f16ca76a5fc35a129a3a16daa02430fafb7146549579335320d38e8b6}{Pixel\+Scale}, 
+\hyperlink{chartdir_8h_aa4056483f16ca76a5fc35a129a3a16daa6891541dd63b1784e0fe2954cff4d204}{X\+Axis\+Scale}, 
+\hyperlink{chartdir_8h_aa4056483f16ca76a5fc35a129a3a16daa2e0ad8d7411c9c8c28c45ebeb2c39580}{Y\+Axis\+Scale}, 
+\hyperlink{chartdir_8h_aa4056483f16ca76a5fc35a129a3a16daab7113a2eb1eee1eeed16ccd1157b270e}{Angular\+Axis\+Scale} = X\+Axis\+Scale, 
+\newline
+\hyperlink{chartdir_8h_aa4056483f16ca76a5fc35a129a3a16daa4d238605eb9d5af53410e5953e3a88fa}{Radial\+Axis\+Scale} = Y\+Axis\+Scale
+ \}
+\end{DoxyCompactItemize}
+
+
+\subsection{Typedef Documentation}
+\mbox{\Hypertarget{chartdir_8h_a9a4a692393de40e23eb631c2aa503d50}\label{chartdir_8h_a9a4a692393de40e23eb631c2aa503d50}} 
+\index{chartdir.\+h@{chartdir.\+h}!Base\+Axis@{Base\+Axis}}
+\index{Base\+Axis@{Base\+Axis}!chartdir.\+h@{chartdir.\+h}}
+\subsubsection{\texorpdfstring{Base\+Axis}{BaseAxis}}
+{\footnotesize\ttfamily typedef \hyperlink{class_axis}{Axis} \hyperlink{chartdir_8h_a9a4a692393de40e23eb631c2aa503d50}{Base\+Axis}}
+
+
+
+Definition at line 1515 of file chartdir.\+h.
+
+\mbox{\Hypertarget{chartdir_8h_a4e17084867bb8e096e6e13b956e538ce}\label{chartdir_8h_a4e17084867bb8e096e6e13b956e538ce}} 
+\index{chartdir.\+h@{chartdir.\+h}!Radial\+Axis@{Radial\+Axis}}
+\index{Radial\+Axis@{Radial\+Axis}!chartdir.\+h@{chartdir.\+h}}
+\subsubsection{\texorpdfstring{Radial\+Axis}{RadialAxis}}
+{\footnotesize\ttfamily typedef \hyperlink{class_axis}{Axis} \hyperlink{chartdir_8h_a4e17084867bb8e096e6e13b956e538ce}{Radial\+Axis}}
+
+
+
+Definition at line 1522 of file chartdir.\+h.
+
+\mbox{\Hypertarget{chartdir_8h_a012c369aef1d4ea8815a24da953964f2}\label{chartdir_8h_a012c369aef1d4ea8815a24da953964f2}} 
+\index{chartdir.\+h@{chartdir.\+h}!Scatter\+Layer@{Scatter\+Layer}}
+\index{Scatter\+Layer@{Scatter\+Layer}!chartdir.\+h@{chartdir.\+h}}
+\subsubsection{\texorpdfstring{Scatter\+Layer}{ScatterLayer}}
+{\footnotesize\ttfamily typedef \hyperlink{class_line_layer}{Line\+Layer} \hyperlink{chartdir_8h_a012c369aef1d4ea8815a24da953964f2}{Scatter\+Layer}}
+
+
+
+Definition at line 1888 of file chartdir.\+h.
+
+\mbox{\Hypertarget{chartdir_8h_a87a44ab47fb9ddb7dbe5c522f493921c}\label{chartdir_8h_a87a44ab47fb9ddb7dbe5c522f493921c}} 
+\index{chartdir.\+h@{chartdir.\+h}!Text\+Style@{Text\+Style}}
+\index{Text\+Style@{Text\+Style}!chartdir.\+h@{chartdir.\+h}}
+\subsubsection{\texorpdfstring{Text\+Style}{TextStyle}}
+{\footnotesize\ttfamily typedef \hyperlink{class_text_box}{Text\+Box} \hyperlink{chartdir_8h_a87a44ab47fb9ddb7dbe5c522f493921c}{Text\+Style}}
+
+
+
+Definition at line 899 of file chartdir.\+h.
+
+\mbox{\Hypertarget{chartdir_8h_acce03601e0f9cf600c6ed45f5b1752f9}\label{chartdir_8h_acce03601e0f9cf600c6ed45f5b1752f9}} 
+\index{chartdir.\+h@{chartdir.\+h}!X\+Axis@{X\+Axis}}
+\index{X\+Axis@{X\+Axis}!chartdir.\+h@{chartdir.\+h}}
+\subsubsection{\texorpdfstring{X\+Axis}{XAxis}}
+{\footnotesize\ttfamily typedef \hyperlink{chartdir_8h_a9a4a692393de40e23eb631c2aa503d50}{Base\+Axis} \hyperlink{chartdir_8h_acce03601e0f9cf600c6ed45f5b1752f9}{X\+Axis}}
+
+
+
+Definition at line 1516 of file chartdir.\+h.
+
+\mbox{\Hypertarget{chartdir_8h_a815b4a09e43ad7f3436be339248f6a50}\label{chartdir_8h_a815b4a09e43ad7f3436be339248f6a50}} 
+\index{chartdir.\+h@{chartdir.\+h}!Y\+Axis@{Y\+Axis}}
+\index{Y\+Axis@{Y\+Axis}!chartdir.\+h@{chartdir.\+h}}
+\subsubsection{\texorpdfstring{Y\+Axis}{YAxis}}
+{\footnotesize\ttfamily typedef \hyperlink{chartdir_8h_a9a4a692393de40e23eb631c2aa503d50}{Base\+Axis} \hyperlink{chartdir_8h_a815b4a09e43ad7f3436be339248f6a50}{Y\+Axis}}
+
+
+
+Definition at line 1517 of file chartdir.\+h.
+
+
+
+\subsection{Enumeration Type Documentation}
+\mbox{\Hypertarget{chartdir_8h_a06fc87d81c62e9abb8790b6e5713c55b}\label{chartdir_8h_a06fc87d81c62e9abb8790b6e5713c55b}} 
+\subsubsection{\texorpdfstring{anonymous enum}{anonymous enum}}
+{\footnotesize\ttfamily anonymous enum}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Dash\+Line@{Dash\+Line}!chartdir.\+h@{chartdir.\+h}}\index{chartdir.\+h@{chartdir.\+h}!Dash\+Line@{Dash\+Line}}}\mbox{\Hypertarget{chartdir_8h_a06fc87d81c62e9abb8790b6e5713c55ba39a370f5e06732e1509246018be8e3e4}\label{chartdir_8h_a06fc87d81c62e9abb8790b6e5713c55ba39a370f5e06732e1509246018be8e3e4}} 
+Dash\+Line&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Dot\+Line@{Dot\+Line}!chartdir.\+h@{chartdir.\+h}}\index{chartdir.\+h@{chartdir.\+h}!Dot\+Line@{Dot\+Line}}}\mbox{\Hypertarget{chartdir_8h_a06fc87d81c62e9abb8790b6e5713c55bad5b5e859d9135e800177949994a2b876}\label{chartdir_8h_a06fc87d81c62e9abb8790b6e5713c55bad5b5e859d9135e800177949994a2b876}} 
+Dot\+Line&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Dot\+Dash\+Line@{Dot\+Dash\+Line}!chartdir.\+h@{chartdir.\+h}}\index{chartdir.\+h@{chartdir.\+h}!Dot\+Dash\+Line@{Dot\+Dash\+Line}}}\mbox{\Hypertarget{chartdir_8h_a06fc87d81c62e9abb8790b6e5713c55ba8cac02babcc3e6fe4a031b79520aa832}\label{chartdir_8h_a06fc87d81c62e9abb8790b6e5713c55ba8cac02babcc3e6fe4a031b79520aa832}} 
+Dot\+Dash\+Line&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Alt\+Dash\+Line@{Alt\+Dash\+Line}!chartdir.\+h@{chartdir.\+h}}\index{chartdir.\+h@{chartdir.\+h}!Alt\+Dash\+Line@{Alt\+Dash\+Line}}}\mbox{\Hypertarget{chartdir_8h_a06fc87d81c62e9abb8790b6e5713c55ba3301d2317194818d9399edaefc3667b6}\label{chartdir_8h_a06fc87d81c62e9abb8790b6e5713c55ba3301d2317194818d9399edaefc3667b6}} 
+Alt\+Dash\+Line&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+Definition at line 3451 of file chartdir.\+h.
+
+\mbox{\Hypertarget{chartdir_8h_adf764cbdea00d65edcd07bb9953ad2b7}\label{chartdir_8h_adf764cbdea00d65edcd07bb9953ad2b7}} 
+\subsubsection{\texorpdfstring{anonymous enum}{anonymous enum}}
+{\footnotesize\ttfamily anonymous enum}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Transparent@{Transparent}!chartdir.\+h@{chartdir.\+h}}\index{chartdir.\+h@{chartdir.\+h}!Transparent@{Transparent}}}\mbox{\Hypertarget{chartdir_8h_adf764cbdea00d65edcd07bb9953ad2b7ac719d3f34968bcf992d4c0c48841cf63}\label{chartdir_8h_adf764cbdea00d65edcd07bb9953ad2b7ac719d3f34968bcf992d4c0c48841cf63}} 
+Transparent&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Palette@{Palette}!chartdir.\+h@{chartdir.\+h}}\index{chartdir.\+h@{chartdir.\+h}!Palette@{Palette}}}\mbox{\Hypertarget{chartdir_8h_adf764cbdea00d65edcd07bb9953ad2b7a356b5fe4fedbb057bdb18ec4d2d344c8}\label{chartdir_8h_adf764cbdea00d65edcd07bb9953ad2b7a356b5fe4fedbb057bdb18ec4d2d344c8}} 
+Palette&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Background\+Color@{Background\+Color}!chartdir.\+h@{chartdir.\+h}}\index{chartdir.\+h@{chartdir.\+h}!Background\+Color@{Background\+Color}}}\mbox{\Hypertarget{chartdir_8h_adf764cbdea00d65edcd07bb9953ad2b7ae77350b90c6686030251b29c2b9ea88b}\label{chartdir_8h_adf764cbdea00d65edcd07bb9953ad2b7ae77350b90c6686030251b29c2b9ea88b}} 
+Background\+Color&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Line\+Color@{Line\+Color}!chartdir.\+h@{chartdir.\+h}}\index{chartdir.\+h@{chartdir.\+h}!Line\+Color@{Line\+Color}}}\mbox{\Hypertarget{chartdir_8h_adf764cbdea00d65edcd07bb9953ad2b7a472bc7e221f74403214336983fb1fd38}\label{chartdir_8h_adf764cbdea00d65edcd07bb9953ad2b7a472bc7e221f74403214336983fb1fd38}} 
+Line\+Color&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Text\+Color@{Text\+Color}!chartdir.\+h@{chartdir.\+h}}\index{chartdir.\+h@{chartdir.\+h}!Text\+Color@{Text\+Color}}}\mbox{\Hypertarget{chartdir_8h_adf764cbdea00d65edcd07bb9953ad2b7a55f101aaf2ef1fe1fa588fe4cc79014c}\label{chartdir_8h_adf764cbdea00d65edcd07bb9953ad2b7a55f101aaf2ef1fe1fa588fe4cc79014c}} 
+Text\+Color&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Data\+Color@{Data\+Color}!chartdir.\+h@{chartdir.\+h}}\index{chartdir.\+h@{chartdir.\+h}!Data\+Color@{Data\+Color}}}\mbox{\Hypertarget{chartdir_8h_adf764cbdea00d65edcd07bb9953ad2b7a831fdc762bca6a9409ffb50ed21e974e}\label{chartdir_8h_adf764cbdea00d65edcd07bb9953ad2b7a831fdc762bca6a9409ffb50ed21e974e}} 
+Data\+Color&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Same\+As\+Main\+Color@{Same\+As\+Main\+Color}!chartdir.\+h@{chartdir.\+h}}\index{chartdir.\+h@{chartdir.\+h}!Same\+As\+Main\+Color@{Same\+As\+Main\+Color}}}\mbox{\Hypertarget{chartdir_8h_adf764cbdea00d65edcd07bb9953ad2b7a95f11e1446d4ccad7a52c17e7d458e8f}\label{chartdir_8h_adf764cbdea00d65edcd07bb9953ad2b7a95f11e1446d4ccad7a52c17e7d458e8f}} 
+Same\+As\+Main\+Color&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+Definition at line 3473 of file chartdir.\+h.
+
+\mbox{\Hypertarget{chartdir_8h_a99fb83031ce9923c84392b4e92f956b5}\label{chartdir_8h_a99fb83031ce9923c84392b4e92f956b5}} 
+\subsubsection{\texorpdfstring{anonymous enum}{anonymous enum}}
+{\footnotesize\ttfamily anonymous enum}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Side\+Layout@{Side\+Layout}!chartdir.\+h@{chartdir.\+h}}\index{chartdir.\+h@{chartdir.\+h}!Side\+Layout@{Side\+Layout}}}\mbox{\Hypertarget{chartdir_8h_a99fb83031ce9923c84392b4e92f956b5a233d8df412df19bb2a9ff03e5cabb29b}\label{chartdir_8h_a99fb83031ce9923c84392b4e92f956b5a233d8df412df19bb2a9ff03e5cabb29b}} 
+Side\+Layout&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Circle\+Layout@{Circle\+Layout}!chartdir.\+h@{chartdir.\+h}}\index{chartdir.\+h@{chartdir.\+h}!Circle\+Layout@{Circle\+Layout}}}\mbox{\Hypertarget{chartdir_8h_a99fb83031ce9923c84392b4e92f956b5a8b5e55006892f8ea56e9c77f6a5674f5}\label{chartdir_8h_a99fb83031ce9923c84392b4e92f956b5a8b5e55006892f8ea56e9c77f6a5674f5}} 
+Circle\+Layout&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+Definition at line 3491 of file chartdir.\+h.
+
+\mbox{\Hypertarget{chartdir_8h_acdfaca60ec19c0265bac2692d7982726}\label{chartdir_8h_acdfaca60ec19c0265bac2692d7982726}} 
+\index{chartdir.\+h@{chartdir.\+h}!Alignment@{Alignment}}
+\index{Alignment@{Alignment}!chartdir.\+h@{chartdir.\+h}}
+\subsubsection{\texorpdfstring{Alignment}{Alignment}}
+{\footnotesize\ttfamily enum \hyperlink{chartdir_8h_acdfaca60ec19c0265bac2692d7982726}{Alignment}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Top\+Left@{Top\+Left}!chartdir.\+h@{chartdir.\+h}}\index{chartdir.\+h@{chartdir.\+h}!Top\+Left@{Top\+Left}}}\mbox{\Hypertarget{chartdir_8h_acdfaca60ec19c0265bac2692d7982726a61f66ddc6702462a94d3e231f02b9017}\label{chartdir_8h_acdfaca60ec19c0265bac2692d7982726a61f66ddc6702462a94d3e231f02b9017}} 
+Top\+Left&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Top\+Center@{Top\+Center}!chartdir.\+h@{chartdir.\+h}}\index{chartdir.\+h@{chartdir.\+h}!Top\+Center@{Top\+Center}}}\mbox{\Hypertarget{chartdir_8h_acdfaca60ec19c0265bac2692d7982726a2d14352c6744d2f724c5e82f7657259f}\label{chartdir_8h_acdfaca60ec19c0265bac2692d7982726a2d14352c6744d2f724c5e82f7657259f}} 
+Top\+Center&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Top\+Right@{Top\+Right}!chartdir.\+h@{chartdir.\+h}}\index{chartdir.\+h@{chartdir.\+h}!Top\+Right@{Top\+Right}}}\mbox{\Hypertarget{chartdir_8h_acdfaca60ec19c0265bac2692d7982726a7e42a96f07eab63a8c9fa8a0526f34f4}\label{chartdir_8h_acdfaca60ec19c0265bac2692d7982726a7e42a96f07eab63a8c9fa8a0526f34f4}} 
+Top\+Right&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Left@{Left}!chartdir.\+h@{chartdir.\+h}}\index{chartdir.\+h@{chartdir.\+h}!Left@{Left}}}\mbox{\Hypertarget{chartdir_8h_acdfaca60ec19c0265bac2692d7982726a9d4d8b0b72fc2659da772d761a3c5ecb}\label{chartdir_8h_acdfaca60ec19c0265bac2692d7982726a9d4d8b0b72fc2659da772d761a3c5ecb}} 
+Left&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Center@{Center}!chartdir.\+h@{chartdir.\+h}}\index{chartdir.\+h@{chartdir.\+h}!Center@{Center}}}\mbox{\Hypertarget{chartdir_8h_acdfaca60ec19c0265bac2692d7982726aaa79b7c40b072fdcab65bfa11d732389}\label{chartdir_8h_acdfaca60ec19c0265bac2692d7982726aaa79b7c40b072fdcab65bfa11d732389}} 
+Center&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Right@{Right}!chartdir.\+h@{chartdir.\+h}}\index{chartdir.\+h@{chartdir.\+h}!Right@{Right}}}\mbox{\Hypertarget{chartdir_8h_acdfaca60ec19c0265bac2692d7982726ad48f7af8c070184f3774c8e85854eb66}\label{chartdir_8h_acdfaca60ec19c0265bac2692d7982726ad48f7af8c070184f3774c8e85854eb66}} 
+Right&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Bottom\+Left@{Bottom\+Left}!chartdir.\+h@{chartdir.\+h}}\index{chartdir.\+h@{chartdir.\+h}!Bottom\+Left@{Bottom\+Left}}}\mbox{\Hypertarget{chartdir_8h_acdfaca60ec19c0265bac2692d7982726ae61b9b6ea2fa75ca500d5bb1eaf6f6fc}\label{chartdir_8h_acdfaca60ec19c0265bac2692d7982726ae61b9b6ea2fa75ca500d5bb1eaf6f6fc}} 
+Bottom\+Left&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Bottom\+Center@{Bottom\+Center}!chartdir.\+h@{chartdir.\+h}}\index{chartdir.\+h@{chartdir.\+h}!Bottom\+Center@{Bottom\+Center}}}\mbox{\Hypertarget{chartdir_8h_acdfaca60ec19c0265bac2692d7982726a74bb4e63036551780b66cf8beac32a44}\label{chartdir_8h_acdfaca60ec19c0265bac2692d7982726a74bb4e63036551780b66cf8beac32a44}} 
+Bottom\+Center&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Bottom\+Right@{Bottom\+Right}!chartdir.\+h@{chartdir.\+h}}\index{chartdir.\+h@{chartdir.\+h}!Bottom\+Right@{Bottom\+Right}}}\mbox{\Hypertarget{chartdir_8h_acdfaca60ec19c0265bac2692d7982726a1640f649d644701a2f4633e6bd88b20c}\label{chartdir_8h_acdfaca60ec19c0265bac2692d7982726a1640f649d644701a2f4633e6bd88b20c}} 
+Bottom\+Right&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Top@{Top}!chartdir.\+h@{chartdir.\+h}}\index{chartdir.\+h@{chartdir.\+h}!Top@{Top}}}\mbox{\Hypertarget{chartdir_8h_acdfaca60ec19c0265bac2692d7982726a47321105d20c4efd6c573a6d829e1ad9}\label{chartdir_8h_acdfaca60ec19c0265bac2692d7982726a47321105d20c4efd6c573a6d829e1ad9}} 
+Top&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Bottom@{Bottom}!chartdir.\+h@{chartdir.\+h}}\index{chartdir.\+h@{chartdir.\+h}!Bottom@{Bottom}}}\mbox{\Hypertarget{chartdir_8h_acdfaca60ec19c0265bac2692d7982726a05cdd4fa6b505ee008f4e865acfecccb}\label{chartdir_8h_acdfaca60ec19c0265bac2692d7982726a05cdd4fa6b505ee008f4e865acfecccb}} 
+Bottom&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+Definition at line 3442 of file chartdir.\+h.
+
+\mbox{\Hypertarget{chartdir_8h_aea12eea20145f22793f15221213531af}\label{chartdir_8h_aea12eea20145f22793f15221213531af}} 
+\index{chartdir.\+h@{chartdir.\+h}!Anti\+Alias\+Mode@{Anti\+Alias\+Mode}}
+\index{Anti\+Alias\+Mode@{Anti\+Alias\+Mode}!chartdir.\+h@{chartdir.\+h}}
+\subsubsection{\texorpdfstring{Anti\+Alias\+Mode}{AntiAliasMode}}
+{\footnotesize\ttfamily enum \hyperlink{chartdir_8h_aea12eea20145f22793f15221213531af}{Anti\+Alias\+Mode}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{No\+Anti\+Alias@{No\+Anti\+Alias}!chartdir.\+h@{chartdir.\+h}}\index{chartdir.\+h@{chartdir.\+h}!No\+Anti\+Alias@{No\+Anti\+Alias}}}\mbox{\Hypertarget{chartdir_8h_aea12eea20145f22793f15221213531afa69a69bb497efdc20e3d35fef277984e3}\label{chartdir_8h_aea12eea20145f22793f15221213531afa69a69bb497efdc20e3d35fef277984e3}} 
+No\+Anti\+Alias&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Anti\+Alias@{Anti\+Alias}!chartdir.\+h@{chartdir.\+h}}\index{chartdir.\+h@{chartdir.\+h}!Anti\+Alias@{Anti\+Alias}}}\mbox{\Hypertarget{chartdir_8h_aea12eea20145f22793f15221213531afa7fcc6f233330f738e5566d45268e5bd7}\label{chartdir_8h_aea12eea20145f22793f15221213531afa7fcc6f233330f738e5566d45268e5bd7}} 
+Anti\+Alias&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Auto\+Anti\+Alias@{Auto\+Anti\+Alias}!chartdir.\+h@{chartdir.\+h}}\index{chartdir.\+h@{chartdir.\+h}!Auto\+Anti\+Alias@{Auto\+Anti\+Alias}}}\mbox{\Hypertarget{chartdir_8h_aea12eea20145f22793f15221213531afa716e9b88560ba3aaea622d8c19e0530a}\label{chartdir_8h_aea12eea20145f22793f15221213531afa716e9b88560ba3aaea622d8c19e0530a}} 
+Auto\+Anti\+Alias&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+Definition at line 3465 of file chartdir.\+h.
+
+\mbox{\Hypertarget{chartdir_8h_a4b3321663394cb84fbf74723ed35d5f7}\label{chartdir_8h_a4b3321663394cb84fbf74723ed35d5f7}} 
+\index{chartdir.\+h@{chartdir.\+h}!C\+D\+Filter\+Type@{C\+D\+Filter\+Type}}
+\index{C\+D\+Filter\+Type@{C\+D\+Filter\+Type}!chartdir.\+h@{chartdir.\+h}}
+\subsubsection{\texorpdfstring{C\+D\+Filter\+Type}{CDFilterType}}
+{\footnotesize\ttfamily enum \hyperlink{chartdir_8h_a4b3321663394cb84fbf74723ed35d5f7}{C\+D\+Filter\+Type}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Box\+Filter@{Box\+Filter}!chartdir.\+h@{chartdir.\+h}}\index{chartdir.\+h@{chartdir.\+h}!Box\+Filter@{Box\+Filter}}}\mbox{\Hypertarget{chartdir_8h_a4b3321663394cb84fbf74723ed35d5f7ac90cbe20ad258bb93140e1f20ba5acbb}\label{chartdir_8h_a4b3321663394cb84fbf74723ed35d5f7ac90cbe20ad258bb93140e1f20ba5acbb}} 
+Box\+Filter&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Linear\+Filter@{Linear\+Filter}!chartdir.\+h@{chartdir.\+h}}\index{chartdir.\+h@{chartdir.\+h}!Linear\+Filter@{Linear\+Filter}}}\mbox{\Hypertarget{chartdir_8h_a4b3321663394cb84fbf74723ed35d5f7ac5dc63a74abfb6cc79199d348b1701a5}\label{chartdir_8h_a4b3321663394cb84fbf74723ed35d5f7ac5dc63a74abfb6cc79199d348b1701a5}} 
+Linear\+Filter&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Quadratic\+Filter@{Quadratic\+Filter}!chartdir.\+h@{chartdir.\+h}}\index{chartdir.\+h@{chartdir.\+h}!Quadratic\+Filter@{Quadratic\+Filter}}}\mbox{\Hypertarget{chartdir_8h_a4b3321663394cb84fbf74723ed35d5f7a2dfbf5fb0a40b801e9bdbc2836e2af09}\label{chartdir_8h_a4b3321663394cb84fbf74723ed35d5f7a2dfbf5fb0a40b801e9bdbc2836e2af09}} 
+Quadratic\+Filter&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{B\+Spline\+Filter@{B\+Spline\+Filter}!chartdir.\+h@{chartdir.\+h}}\index{chartdir.\+h@{chartdir.\+h}!B\+Spline\+Filter@{B\+Spline\+Filter}}}\mbox{\Hypertarget{chartdir_8h_a4b3321663394cb84fbf74723ed35d5f7ae2f8d03f670514c100d01acf65080294}\label{chartdir_8h_a4b3321663394cb84fbf74723ed35d5f7ae2f8d03f670514c100d01acf65080294}} 
+B\+Spline\+Filter&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Hermite\+Filter@{Hermite\+Filter}!chartdir.\+h@{chartdir.\+h}}\index{chartdir.\+h@{chartdir.\+h}!Hermite\+Filter@{Hermite\+Filter}}}\mbox{\Hypertarget{chartdir_8h_a4b3321663394cb84fbf74723ed35d5f7a4db63e17c9099778077860fdc1cfd790}\label{chartdir_8h_a4b3321663394cb84fbf74723ed35d5f7a4db63e17c9099778077860fdc1cfd790}} 
+Hermite\+Filter&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Catrom\+Filter@{Catrom\+Filter}!chartdir.\+h@{chartdir.\+h}}\index{chartdir.\+h@{chartdir.\+h}!Catrom\+Filter@{Catrom\+Filter}}}\mbox{\Hypertarget{chartdir_8h_a4b3321663394cb84fbf74723ed35d5f7a2e0374505dae9fc881281f90dae898ff}\label{chartdir_8h_a4b3321663394cb84fbf74723ed35d5f7a2e0374505dae9fc881281f90dae898ff}} 
+Catrom\+Filter&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Mitchell\+Filter@{Mitchell\+Filter}!chartdir.\+h@{chartdir.\+h}}\index{chartdir.\+h@{chartdir.\+h}!Mitchell\+Filter@{Mitchell\+Filter}}}\mbox{\Hypertarget{chartdir_8h_a4b3321663394cb84fbf74723ed35d5f7a6c6bae06d74266e1106752c5f695db57}\label{chartdir_8h_a4b3321663394cb84fbf74723ed35d5f7a6c6bae06d74266e1106752c5f695db57}} 
+Mitchell\+Filter&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Sinc\+Filter@{Sinc\+Filter}!chartdir.\+h@{chartdir.\+h}}\index{chartdir.\+h@{chartdir.\+h}!Sinc\+Filter@{Sinc\+Filter}}}\mbox{\Hypertarget{chartdir_8h_a4b3321663394cb84fbf74723ed35d5f7a52f8a3f1552efb210f8891e509365039}\label{chartdir_8h_a4b3321663394cb84fbf74723ed35d5f7a52f8a3f1552efb210f8891e509365039}} 
+Sinc\+Filter&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Lanczos\+Filter@{Lanczos\+Filter}!chartdir.\+h@{chartdir.\+h}}\index{chartdir.\+h@{chartdir.\+h}!Lanczos\+Filter@{Lanczos\+Filter}}}\mbox{\Hypertarget{chartdir_8h_a4b3321663394cb84fbf74723ed35d5f7ac8fc2c98c29d0c4dc03a52ce41a34b15}\label{chartdir_8h_a4b3321663394cb84fbf74723ed35d5f7ac8fc2c98c29d0c4dc03a52ce41a34b15}} 
+Lanczos\+Filter&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Gaussian\+Filter@{Gaussian\+Filter}!chartdir.\+h@{chartdir.\+h}}\index{chartdir.\+h@{chartdir.\+h}!Gaussian\+Filter@{Gaussian\+Filter}}}\mbox{\Hypertarget{chartdir_8h_a4b3321663394cb84fbf74723ed35d5f7aa8dbfc713c7ee24a774443e114b4295f}\label{chartdir_8h_a4b3321663394cb84fbf74723ed35d5f7aa8dbfc713c7ee24a774443e114b4295f}} 
+Gaussian\+Filter&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Hanning\+Filter@{Hanning\+Filter}!chartdir.\+h@{chartdir.\+h}}\index{chartdir.\+h@{chartdir.\+h}!Hanning\+Filter@{Hanning\+Filter}}}\mbox{\Hypertarget{chartdir_8h_a4b3321663394cb84fbf74723ed35d5f7a411930624ff2fc73e182e0dde7f612c9}\label{chartdir_8h_a4b3321663394cb84fbf74723ed35d5f7a411930624ff2fc73e182e0dde7f612c9}} 
+Hanning\+Filter&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Hamming\+Filter@{Hamming\+Filter}!chartdir.\+h@{chartdir.\+h}}\index{chartdir.\+h@{chartdir.\+h}!Hamming\+Filter@{Hamming\+Filter}}}\mbox{\Hypertarget{chartdir_8h_a4b3321663394cb84fbf74723ed35d5f7a4ebb8d776431855a4e9262156bf5b5f9}\label{chartdir_8h_a4b3321663394cb84fbf74723ed35d5f7a4ebb8d776431855a4e9262156bf5b5f9}} 
+Hamming\+Filter&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Blackman\+Filter@{Blackman\+Filter}!chartdir.\+h@{chartdir.\+h}}\index{chartdir.\+h@{chartdir.\+h}!Blackman\+Filter@{Blackman\+Filter}}}\mbox{\Hypertarget{chartdir_8h_a4b3321663394cb84fbf74723ed35d5f7a7c1c299b48e742a5229a0b01151b850a}\label{chartdir_8h_a4b3321663394cb84fbf74723ed35d5f7a7c1c299b48e742a5229a0b01151b850a}} 
+Blackman\+Filter&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Bessel\+Filter@{Bessel\+Filter}!chartdir.\+h@{chartdir.\+h}}\index{chartdir.\+h@{chartdir.\+h}!Bessel\+Filter@{Bessel\+Filter}}}\mbox{\Hypertarget{chartdir_8h_a4b3321663394cb84fbf74723ed35d5f7a0f8574ca7ace65906f0f724837543b85}\label{chartdir_8h_a4b3321663394cb84fbf74723ed35d5f7a0f8574ca7ace65906f0f724837543b85}} 
+Bessel\+Filter&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+Definition at line 3469 of file chartdir.\+h.
+
+\mbox{\Hypertarget{chartdir_8h_adf7b2de05fb50a03eadeb9676014fa8c}\label{chartdir_8h_adf7b2de05fb50a03eadeb9676014fa8c}} 
+\index{chartdir.\+h@{chartdir.\+h}!Data\+Combine\+Method@{Data\+Combine\+Method}}
+\index{Data\+Combine\+Method@{Data\+Combine\+Method}!chartdir.\+h@{chartdir.\+h}}
+\subsubsection{\texorpdfstring{Data\+Combine\+Method}{DataCombineMethod}}
+{\footnotesize\ttfamily enum \hyperlink{chartdir_8h_adf7b2de05fb50a03eadeb9676014fa8c}{Data\+Combine\+Method}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Overlay@{Overlay}!chartdir.\+h@{chartdir.\+h}}\index{chartdir.\+h@{chartdir.\+h}!Overlay@{Overlay}}}\mbox{\Hypertarget{chartdir_8h_adf7b2de05fb50a03eadeb9676014fa8ca8b895d92539a718e6898ed6b053ce2ff}\label{chartdir_8h_adf7b2de05fb50a03eadeb9676014fa8ca8b895d92539a718e6898ed6b053ce2ff}} 
+Overlay&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Stack@{Stack}!chartdir.\+h@{chartdir.\+h}}\index{chartdir.\+h@{chartdir.\+h}!Stack@{Stack}}}\mbox{\Hypertarget{chartdir_8h_adf7b2de05fb50a03eadeb9676014fa8cad323e21f975d98abeddb6f8ff46f8ff5}\label{chartdir_8h_adf7b2de05fb50a03eadeb9676014fa8cad323e21f975d98abeddb6f8ff46f8ff5}} 
+Stack&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Depth@{Depth}!chartdir.\+h@{chartdir.\+h}}\index{chartdir.\+h@{chartdir.\+h}!Depth@{Depth}}}\mbox{\Hypertarget{chartdir_8h_adf7b2de05fb50a03eadeb9676014fa8caf5c0a1b2ee6f0c691d602752b185463c}\label{chartdir_8h_adf7b2de05fb50a03eadeb9676014fa8caf5c0a1b2ee6f0c691d602752b185463c}} 
+Depth&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Side@{Side}!chartdir.\+h@{chartdir.\+h}}\index{chartdir.\+h@{chartdir.\+h}!Side@{Side}}}\mbox{\Hypertarget{chartdir_8h_adf7b2de05fb50a03eadeb9676014fa8cac9ed8cfe89073eb2178d23dd4f8e15e1}\label{chartdir_8h_adf7b2de05fb50a03eadeb9676014fa8cac9ed8cfe89073eb2178d23dd4f8e15e1}} 
+Side&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Percentage@{Percentage}!chartdir.\+h@{chartdir.\+h}}\index{chartdir.\+h@{chartdir.\+h}!Percentage@{Percentage}}}\mbox{\Hypertarget{chartdir_8h_adf7b2de05fb50a03eadeb9676014fa8cae85ce37a522a78d62b65530105de49e1}\label{chartdir_8h_adf7b2de05fb50a03eadeb9676014fa8cae85ce37a522a78d62b65530105de49e1}} 
+Percentage&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+Definition at line 3507 of file chartdir.\+h.
+
+\mbox{\Hypertarget{chartdir_8h_a33336dc6d31932538eb95bc5053257d0}\label{chartdir_8h_a33336dc6d31932538eb95bc5053257d0}} 
+\index{chartdir.\+h@{chartdir.\+h}!Dither\+Method@{Dither\+Method}}
+\index{Dither\+Method@{Dither\+Method}!chartdir.\+h@{chartdir.\+h}}
+\subsubsection{\texorpdfstring{Dither\+Method}{DitherMethod}}
+{\footnotesize\ttfamily enum \hyperlink{chartdir_8h_a33336dc6d31932538eb95bc5053257d0}{Dither\+Method}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Quantize@{Quantize}!chartdir.\+h@{chartdir.\+h}}\index{chartdir.\+h@{chartdir.\+h}!Quantize@{Quantize}}}\mbox{\Hypertarget{chartdir_8h_a33336dc6d31932538eb95bc5053257d0a5bdb676e7e34467b12d104fabf7a807c}\label{chartdir_8h_a33336dc6d31932538eb95bc5053257d0a5bdb676e7e34467b12d104fabf7a807c}} 
+Quantize&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Ordered\+Dither@{Ordered\+Dither}!chartdir.\+h@{chartdir.\+h}}\index{chartdir.\+h@{chartdir.\+h}!Ordered\+Dither@{Ordered\+Dither}}}\mbox{\Hypertarget{chartdir_8h_a33336dc6d31932538eb95bc5053257d0ad59f1fa12347cd77d65ba352b008556b}\label{chartdir_8h_a33336dc6d31932538eb95bc5053257d0ad59f1fa12347cd77d65ba352b008556b}} 
+Ordered\+Dither&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Error\+Diffusion@{Error\+Diffusion}!chartdir.\+h@{chartdir.\+h}}\index{chartdir.\+h@{chartdir.\+h}!Error\+Diffusion@{Error\+Diffusion}}}\mbox{\Hypertarget{chartdir_8h_a33336dc6d31932538eb95bc5053257d0af3afc8d80418dff9b183cf2d39c9ac0e}\label{chartdir_8h_a33336dc6d31932538eb95bc5053257d0af3afc8d80418dff9b183cf2d39c9ac0e}} 
+Error\+Diffusion&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+Definition at line 3467 of file chartdir.\+h.
+
+\mbox{\Hypertarget{chartdir_8h_a6539a56741c8c62d0179c545e81fdf12}\label{chartdir_8h_a6539a56741c8c62d0179c545e81fdf12}} 
+\index{chartdir.\+h@{chartdir.\+h}!Img\+Format@{Img\+Format}}
+\index{Img\+Format@{Img\+Format}!chartdir.\+h@{chartdir.\+h}}
+\subsubsection{\texorpdfstring{Img\+Format}{ImgFormat}}
+{\footnotesize\ttfamily enum \hyperlink{chartdir_8h_a6539a56741c8c62d0179c545e81fdf12}{Img\+Format}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{P\+NG@{P\+NG}!chartdir.\+h@{chartdir.\+h}}\index{chartdir.\+h@{chartdir.\+h}!P\+NG@{P\+NG}}}\mbox{\Hypertarget{chartdir_8h_a6539a56741c8c62d0179c545e81fdf12a842c5fc4bbe3f780e57c76d1a3cafe9f}\label{chartdir_8h_a6539a56741c8c62d0179c545e81fdf12a842c5fc4bbe3f780e57c76d1a3cafe9f}} 
+P\+NG&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{G\+IF@{G\+IF}!chartdir.\+h@{chartdir.\+h}}\index{chartdir.\+h@{chartdir.\+h}!G\+IF@{G\+IF}}}\mbox{\Hypertarget{chartdir_8h_a6539a56741c8c62d0179c545e81fdf12a8551767fb508ed14b8eff110d81bb437}\label{chartdir_8h_a6539a56741c8c62d0179c545e81fdf12a8551767fb508ed14b8eff110d81bb437}} 
+G\+IF&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{J\+PG@{J\+PG}!chartdir.\+h@{chartdir.\+h}}\index{chartdir.\+h@{chartdir.\+h}!J\+PG@{J\+PG}}}\mbox{\Hypertarget{chartdir_8h_a6539a56741c8c62d0179c545e81fdf12a193eff471c99a2d5cad5433221091f7f}\label{chartdir_8h_a6539a56741c8c62d0179c545e81fdf12a193eff471c99a2d5cad5433221091f7f}} 
+J\+PG&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{W\+MP@{W\+MP}!chartdir.\+h@{chartdir.\+h}}\index{chartdir.\+h@{chartdir.\+h}!W\+MP@{W\+MP}}}\mbox{\Hypertarget{chartdir_8h_a6539a56741c8c62d0179c545e81fdf12a4a71db051af14c6761dd0768d1870d77}\label{chartdir_8h_a6539a56741c8c62d0179c545e81fdf12a4a71db051af14c6761dd0768d1870d77}} 
+W\+MP&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{B\+MP@{B\+MP}!chartdir.\+h@{chartdir.\+h}}\index{chartdir.\+h@{chartdir.\+h}!B\+MP@{B\+MP}}}\mbox{\Hypertarget{chartdir_8h_a6539a56741c8c62d0179c545e81fdf12a472992a8061f64e53dced30fb026b3b7}\label{chartdir_8h_a6539a56741c8c62d0179c545e81fdf12a472992a8061f64e53dced30fb026b3b7}} 
+B\+MP&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+Definition at line 3484 of file chartdir.\+h.
+
+\mbox{\Hypertarget{chartdir_8h_a760fe13cc9359bb7c654879b48bb0b23}\label{chartdir_8h_a760fe13cc9359bb7c654879b48bb0b23}} 
+\index{chartdir.\+h@{chartdir.\+h}!Legend\+Mode@{Legend\+Mode}}
+\index{Legend\+Mode@{Legend\+Mode}!chartdir.\+h@{chartdir.\+h}}
+\subsubsection{\texorpdfstring{Legend\+Mode}{LegendMode}}
+{\footnotesize\ttfamily enum \hyperlink{chartdir_8h_a760fe13cc9359bb7c654879b48bb0b23}{Legend\+Mode}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Normal\+Legend@{Normal\+Legend}!chartdir.\+h@{chartdir.\+h}}\index{chartdir.\+h@{chartdir.\+h}!Normal\+Legend@{Normal\+Legend}}}\mbox{\Hypertarget{chartdir_8h_a760fe13cc9359bb7c654879b48bb0b23a984494b8b8788e1c34ecfae2a1d8e473}\label{chartdir_8h_a760fe13cc9359bb7c654879b48bb0b23a984494b8b8788e1c34ecfae2a1d8e473}} 
+Normal\+Legend&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Reverse\+Legend@{Reverse\+Legend}!chartdir.\+h@{chartdir.\+h}}\index{chartdir.\+h@{chartdir.\+h}!Reverse\+Legend@{Reverse\+Legend}}}\mbox{\Hypertarget{chartdir_8h_a760fe13cc9359bb7c654879b48bb0b23a28ecd7d1ce52006280684c20390dec95}\label{chartdir_8h_a760fe13cc9359bb7c654879b48bb0b23a28ecd7d1ce52006280684c20390dec95}} 
+Reverse\+Legend&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{No\+Legend@{No\+Legend}!chartdir.\+h@{chartdir.\+h}}\index{chartdir.\+h@{chartdir.\+h}!No\+Legend@{No\+Legend}}}\mbox{\Hypertarget{chartdir_8h_a760fe13cc9359bb7c654879b48bb0b23a54e14c89ec97f73acc6596634e8ad6e7}\label{chartdir_8h_a760fe13cc9359bb7c654879b48bb0b23a54e14c89ec97f73acc6596634e8ad6e7}} 
+No\+Legend&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+Definition at line 3509 of file chartdir.\+h.
+
+\mbox{\Hypertarget{chartdir_8h_a63ffe0a2b64997f4e51754fef70e10a8}\label{chartdir_8h_a63ffe0a2b64997f4e51754fef70e10a8}} 
+\index{chartdir.\+h@{chartdir.\+h}!Palette\+Mode@{Palette\+Mode}}
+\index{Palette\+Mode@{Palette\+Mode}!chartdir.\+h@{chartdir.\+h}}
+\subsubsection{\texorpdfstring{Palette\+Mode}{PaletteMode}}
+{\footnotesize\ttfamily enum \hyperlink{chartdir_8h_a63ffe0a2b64997f4e51754fef70e10a8}{Palette\+Mode}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Try\+Palette@{Try\+Palette}!chartdir.\+h@{chartdir.\+h}}\index{chartdir.\+h@{chartdir.\+h}!Try\+Palette@{Try\+Palette}}}\mbox{\Hypertarget{chartdir_8h_a63ffe0a2b64997f4e51754fef70e10a8a0873927f404f27847e43afb42fec5510}\label{chartdir_8h_a63ffe0a2b64997f4e51754fef70e10a8a0873927f404f27847e43afb42fec5510}} 
+Try\+Palette&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Force\+Palette@{Force\+Palette}!chartdir.\+h@{chartdir.\+h}}\index{chartdir.\+h@{chartdir.\+h}!Force\+Palette@{Force\+Palette}}}\mbox{\Hypertarget{chartdir_8h_a63ffe0a2b64997f4e51754fef70e10a8ae0f501b898b22b440b05adaa78b722fd}\label{chartdir_8h_a63ffe0a2b64997f4e51754fef70e10a8ae0f501b898b22b440b05adaa78b722fd}} 
+Force\+Palette&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{No\+Palette@{No\+Palette}!chartdir.\+h@{chartdir.\+h}}\index{chartdir.\+h@{chartdir.\+h}!No\+Palette@{No\+Palette}}}\mbox{\Hypertarget{chartdir_8h_a63ffe0a2b64997f4e51754fef70e10a8ac9f39fe1e3fc8e96edcee3f94417edf1}\label{chartdir_8h_a63ffe0a2b64997f4e51754fef70e10a8ac9f39fe1e3fc8e96edcee3f94417edf1}} 
+No\+Palette&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+Definition at line 3466 of file chartdir.\+h.
+
+\mbox{\Hypertarget{chartdir_8h_aa4056483f16ca76a5fc35a129a3a16da}\label{chartdir_8h_aa4056483f16ca76a5fc35a129a3a16da}} 
+\index{chartdir.\+h@{chartdir.\+h}!Scale\+Type@{Scale\+Type}}
+\index{Scale\+Type@{Scale\+Type}!chartdir.\+h@{chartdir.\+h}}
+\subsubsection{\texorpdfstring{Scale\+Type}{ScaleType}}
+{\footnotesize\ttfamily enum \hyperlink{chartdir_8h_aa4056483f16ca76a5fc35a129a3a16da}{Scale\+Type}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Pixel\+Scale@{Pixel\+Scale}!chartdir.\+h@{chartdir.\+h}}\index{chartdir.\+h@{chartdir.\+h}!Pixel\+Scale@{Pixel\+Scale}}}\mbox{\Hypertarget{chartdir_8h_aa4056483f16ca76a5fc35a129a3a16daa02430fafb7146549579335320d38e8b6}\label{chartdir_8h_aa4056483f16ca76a5fc35a129a3a16daa02430fafb7146549579335320d38e8b6}} 
+Pixel\+Scale&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{X\+Axis\+Scale@{X\+Axis\+Scale}!chartdir.\+h@{chartdir.\+h}}\index{chartdir.\+h@{chartdir.\+h}!X\+Axis\+Scale@{X\+Axis\+Scale}}}\mbox{\Hypertarget{chartdir_8h_aa4056483f16ca76a5fc35a129a3a16daa6891541dd63b1784e0fe2954cff4d204}\label{chartdir_8h_aa4056483f16ca76a5fc35a129a3a16daa6891541dd63b1784e0fe2954cff4d204}} 
+X\+Axis\+Scale&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Y\+Axis\+Scale@{Y\+Axis\+Scale}!chartdir.\+h@{chartdir.\+h}}\index{chartdir.\+h@{chartdir.\+h}!Y\+Axis\+Scale@{Y\+Axis\+Scale}}}\mbox{\Hypertarget{chartdir_8h_aa4056483f16ca76a5fc35a129a3a16daa2e0ad8d7411c9c8c28c45ebeb2c39580}\label{chartdir_8h_aa4056483f16ca76a5fc35a129a3a16daa2e0ad8d7411c9c8c28c45ebeb2c39580}} 
+Y\+Axis\+Scale&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Angular\+Axis\+Scale@{Angular\+Axis\+Scale}!chartdir.\+h@{chartdir.\+h}}\index{chartdir.\+h@{chartdir.\+h}!Angular\+Axis\+Scale@{Angular\+Axis\+Scale}}}\mbox{\Hypertarget{chartdir_8h_aa4056483f16ca76a5fc35a129a3a16daab7113a2eb1eee1eeed16ccd1157b270e}\label{chartdir_8h_aa4056483f16ca76a5fc35a129a3a16daab7113a2eb1eee1eeed16ccd1157b270e}} 
+Angular\+Axis\+Scale&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Radial\+Axis\+Scale@{Radial\+Axis\+Scale}!chartdir.\+h@{chartdir.\+h}}\index{chartdir.\+h@{chartdir.\+h}!Radial\+Axis\+Scale@{Radial\+Axis\+Scale}}}\mbox{\Hypertarget{chartdir_8h_aa4056483f16ca76a5fc35a129a3a16daa4d238605eb9d5af53410e5953e3a88fa}\label{chartdir_8h_aa4056483f16ca76a5fc35a129a3a16daa4d238605eb9d5af53410e5953e3a88fa}} 
+Radial\+Axis\+Scale&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+Definition at line 3511 of file chartdir.\+h.
+
+\mbox{\Hypertarget{chartdir_8h_add8909e1085c0c32f8380ff493a243b3}\label{chartdir_8h_add8909e1085c0c32f8380ff493a243b3}} 
+\index{chartdir.\+h@{chartdir.\+h}!Symbol\+Type@{Symbol\+Type}}
+\index{Symbol\+Type@{Symbol\+Type}!chartdir.\+h@{chartdir.\+h}}
+\subsubsection{\texorpdfstring{Symbol\+Type}{SymbolType}}
+{\footnotesize\ttfamily enum \hyperlink{chartdir_8h_add8909e1085c0c32f8380ff493a243b3}{Symbol\+Type}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{No\+Symbol@{No\+Symbol}!chartdir.\+h@{chartdir.\+h}}\index{chartdir.\+h@{chartdir.\+h}!No\+Symbol@{No\+Symbol}}}\mbox{\Hypertarget{chartdir_8h_add8909e1085c0c32f8380ff493a243b3a3e5b624053ed30070e29c5e4367ddeac}\label{chartdir_8h_add8909e1085c0c32f8380ff493a243b3a3e5b624053ed30070e29c5e4367ddeac}} 
+No\+Symbol&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Square\+Symbol@{Square\+Symbol}!chartdir.\+h@{chartdir.\+h}}\index{chartdir.\+h@{chartdir.\+h}!Square\+Symbol@{Square\+Symbol}}}\mbox{\Hypertarget{chartdir_8h_add8909e1085c0c32f8380ff493a243b3a97d0c43a54134943fdbece9457116f90}\label{chartdir_8h_add8909e1085c0c32f8380ff493a243b3a97d0c43a54134943fdbece9457116f90}} 
+Square\+Symbol&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Diamond\+Symbol@{Diamond\+Symbol}!chartdir.\+h@{chartdir.\+h}}\index{chartdir.\+h@{chartdir.\+h}!Diamond\+Symbol@{Diamond\+Symbol}}}\mbox{\Hypertarget{chartdir_8h_add8909e1085c0c32f8380ff493a243b3a38554bdeb0d8fe17f497e9379e840981}\label{chartdir_8h_add8909e1085c0c32f8380ff493a243b3a38554bdeb0d8fe17f497e9379e840981}} 
+Diamond\+Symbol&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Triangle\+Symbol@{Triangle\+Symbol}!chartdir.\+h@{chartdir.\+h}}\index{chartdir.\+h@{chartdir.\+h}!Triangle\+Symbol@{Triangle\+Symbol}}}\mbox{\Hypertarget{chartdir_8h_add8909e1085c0c32f8380ff493a243b3aadac164939eb2477e64fa078fd96887d}\label{chartdir_8h_add8909e1085c0c32f8380ff493a243b3aadac164939eb2477e64fa078fd96887d}} 
+Triangle\+Symbol&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Right\+Triangle\+Symbol@{Right\+Triangle\+Symbol}!chartdir.\+h@{chartdir.\+h}}\index{chartdir.\+h@{chartdir.\+h}!Right\+Triangle\+Symbol@{Right\+Triangle\+Symbol}}}\mbox{\Hypertarget{chartdir_8h_add8909e1085c0c32f8380ff493a243b3a33eb2339f9e4b6909fa650829efe6e23}\label{chartdir_8h_add8909e1085c0c32f8380ff493a243b3a33eb2339f9e4b6909fa650829efe6e23}} 
+Right\+Triangle\+Symbol&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Left\+Triangle\+Symbol@{Left\+Triangle\+Symbol}!chartdir.\+h@{chartdir.\+h}}\index{chartdir.\+h@{chartdir.\+h}!Left\+Triangle\+Symbol@{Left\+Triangle\+Symbol}}}\mbox{\Hypertarget{chartdir_8h_add8909e1085c0c32f8380ff493a243b3a1d7f7dfaffacf7061fb6d8b8a002b487}\label{chartdir_8h_add8909e1085c0c32f8380ff493a243b3a1d7f7dfaffacf7061fb6d8b8a002b487}} 
+Left\+Triangle\+Symbol&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Inverted\+Triangle\+Symbol@{Inverted\+Triangle\+Symbol}!chartdir.\+h@{chartdir.\+h}}\index{chartdir.\+h@{chartdir.\+h}!Inverted\+Triangle\+Symbol@{Inverted\+Triangle\+Symbol}}}\mbox{\Hypertarget{chartdir_8h_add8909e1085c0c32f8380ff493a243b3ad6e06367eb3797948afe95a150adba6b}\label{chartdir_8h_add8909e1085c0c32f8380ff493a243b3ad6e06367eb3797948afe95a150adba6b}} 
+Inverted\+Triangle\+Symbol&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Circle\+Symbol@{Circle\+Symbol}!chartdir.\+h@{chartdir.\+h}}\index{chartdir.\+h@{chartdir.\+h}!Circle\+Symbol@{Circle\+Symbol}}}\mbox{\Hypertarget{chartdir_8h_add8909e1085c0c32f8380ff493a243b3ac00ef31d3aeb868caff73187472e15d5}\label{chartdir_8h_add8909e1085c0c32f8380ff493a243b3ac00ef31d3aeb868caff73187472e15d5}} 
+Circle\+Symbol&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Cross\+Symbol@{Cross\+Symbol}!chartdir.\+h@{chartdir.\+h}}\index{chartdir.\+h@{chartdir.\+h}!Cross\+Symbol@{Cross\+Symbol}}}\mbox{\Hypertarget{chartdir_8h_add8909e1085c0c32f8380ff493a243b3a84ee154272e4a6bad0ef545b61e25713}\label{chartdir_8h_add8909e1085c0c32f8380ff493a243b3a84ee154272e4a6bad0ef545b61e25713}} 
+Cross\+Symbol&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Cross2\+Symbol@{Cross2\+Symbol}!chartdir.\+h@{chartdir.\+h}}\index{chartdir.\+h@{chartdir.\+h}!Cross2\+Symbol@{Cross2\+Symbol}}}\mbox{\Hypertarget{chartdir_8h_add8909e1085c0c32f8380ff493a243b3a3dab5cc213ecd8d8f8a641f288b3ae1b}\label{chartdir_8h_add8909e1085c0c32f8380ff493a243b3a3dab5cc213ecd8d8f8a641f288b3ae1b}} 
+Cross2\+Symbol&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+Definition at line 3493 of file chartdir.\+h.
+

@@ -1,0 +1,5 @@
+<map id="LinearMeter" name="LinearMeter">
+<area shape="rect" id="node2" href="$class_base_meter.html" title="BaseMeter" alt="" coords="26,155,111,181"/>
+<area shape="rect" id="node3" href="$class_base_chart.html" title="BaseChart" alt="" coords="27,80,111,107"/>
+<area shape="rect" id="node4" href="$class_garbage_container.html" title="GarbageContainer" alt="" coords="5,5,132,32"/>
+</map>

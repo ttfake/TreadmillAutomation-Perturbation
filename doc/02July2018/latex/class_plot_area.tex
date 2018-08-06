@@ -1,0 +1,379 @@
+\hypertarget{class_plot_area}{}\section{Plot\+Area Class Reference}
+\label{class_plot_area}\index{Plot\+Area@{Plot\+Area}}
+
+
+{\ttfamily \#include $<$chartdir.\+h$>$}
+
+
+
+Inheritance diagram for Plot\+Area\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=151pt]{class_plot_area__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Plot\+Area\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=151pt]{class_plot_area__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_plot_area_a4b38b54794b596846e0659be8f729392}{Plot\+Area} (Plot\+Area\+Internal $\ast$\+\_\+ptr)
+\item 
+\hyperlink{class_plot_area_ae91f833061c93637f8c90b1f2a380400}{$\sim$\+Plot\+Area} ()
+\item 
+Plot\+Area\+Internal $\ast$ \hyperlink{class_plot_area_affa85a783dca97e6e63717697f395f96}{get\+Internal\+Ptr} ()
+\item 
+void \hyperlink{class_plot_area_a04f56242f125bf96a1c6e8dc0ce74342}{set\+Background} (int color, int alt\+Bg\+Color=-\/1, int edge\+Color=-\/1)
+\item 
+void \hyperlink{class_plot_area_abcd924d1be7c5a3f4267f2cbbf14deaa}{set\+Background} (const char $\ast$img, int align=\hyperlink{namespace_chart_ae222e51ce11a254450b6ddfbc862680aab21c196681da027efd151236305b985d}{Chart\+::\+Center})
+\item 
+void \hyperlink{class_plot_area_a63d453fecea4dd5f9cfdabf43602d3f8}{set4\+Q\+Bg\+Color} (int Q1\+Color, int Q2\+Color, int Q3\+Color, int Q4\+Color, int edge\+Color=-\/1)
+\item 
+void \hyperlink{class_plot_area_ad38abf9c2e982fbf8a19f32204d19b67}{set\+Alt\+Bg\+Color} (bool horizontal, int color1, int color2, int edge\+Color=-\/1)
+\item 
+void \hyperlink{class_plot_area_a5f02a40eeaf5fbde3332d5c6188f4556}{set\+Grid\+Color} (int h\+Grid\+Color, int v\+Grid\+Color=\hyperlink{namespace_chart_abee0d882fdc9ad0b001245ad9fc64011afc6811800a9e2582dac0157b6279f836}{Chart\+::\+Transparent}, int minor\+H\+Grid\+Color=-\/1, int minor\+V\+Grid\+Color=-\/1)
+\item 
+void \hyperlink{class_plot_area_a12308305634a1a5026d0e80811af7645}{set\+Grid\+Width} (int h\+Grid\+Width, int v\+Grid\+Width=-\/1, int minor\+H\+Grid\+Width=-\/1, int minor\+V\+Grid\+Width=-\/1)
+\item 
+void \hyperlink{class_plot_area_a4331047ed4ae116093d50c0a69e6bd91}{set\+Grid\+Axis} (const \hyperlink{class_axis}{Axis} $\ast$x\+Grid\+Axis, const \hyperlink{class_axis}{Axis} $\ast$y\+Grid\+Axis)
+\item 
+void \hyperlink{class_plot_area_ac00dbf72a76b6c88f3edbe1f74c21550}{move\+Grid\+Before} (\hyperlink{class_layer}{Layer} $\ast$layer=0)
+\item 
+int \hyperlink{class_plot_area_a315c48a42edd9b50b9d9cb83f1adaaf4}{get\+LeftX} () const
+\item 
+int \hyperlink{class_plot_area_aef78dfa0ea0f6ca79ae233de69d4478b}{get\+TopY} () const
+\item 
+int \hyperlink{class_plot_area_a9d7e77031904a16adc9eafa7576a613f}{get\+Width} () const
+\item 
+int \hyperlink{class_plot_area_a2325837475a874fe9b8eff161422f973}{get\+Height} () const
+\item 
+int \hyperlink{class_plot_area_a4295aadd8964a04a6d14509542f5201f}{get\+RightX} () const
+\item 
+int \hyperlink{class_plot_area_ac11438738fc19e074cc74c65bece8583}{get\+BottomY} () const
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 2117 of file chartdir.\+h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_plot_area_a4b38b54794b596846e0659be8f729392}\label{class_plot_area_a4b38b54794b596846e0659be8f729392}} 
+\index{Plot\+Area@{Plot\+Area}!Plot\+Area@{Plot\+Area}}
+\index{Plot\+Area@{Plot\+Area}!Plot\+Area@{Plot\+Area}}
+\subsubsection{\texorpdfstring{Plot\+Area()}{PlotArea()}}
+{\footnotesize\ttfamily Plot\+Area\+::\+Plot\+Area (\begin{DoxyParamCaption}\item[{Plot\+Area\+Internal $\ast$}]{\+\_\+ptr }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 2127 of file chartdir.\+h.
+
+\mbox{\Hypertarget{class_plot_area_ae91f833061c93637f8c90b1f2a380400}\label{class_plot_area_ae91f833061c93637f8c90b1f2a380400}} 
+\index{Plot\+Area@{Plot\+Area}!````~Plot\+Area@{$\sim$\+Plot\+Area}}
+\index{````~Plot\+Area@{$\sim$\+Plot\+Area}!Plot\+Area@{Plot\+Area}}
+\subsubsection{\texorpdfstring{$\sim$\+Plot\+Area()}{~PlotArea()}}
+{\footnotesize\ttfamily Plot\+Area\+::$\sim$\+Plot\+Area (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 2128 of file chartdir.\+h.
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_plot_area_ac11438738fc19e074cc74c65bece8583}\label{class_plot_area_ac11438738fc19e074cc74c65bece8583}} 
+\index{Plot\+Area@{Plot\+Area}!get\+BottomY@{get\+BottomY}}
+\index{get\+BottomY@{get\+BottomY}!Plot\+Area@{Plot\+Area}}
+\subsubsection{\texorpdfstring{get\+Bottom\+Y()}{getBottomY()}}
+{\footnotesize\ttfamily int Plot\+Area\+::get\+BottomY (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 2154 of file chartdir.\+h.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=347pt]{class_plot_area_ac11438738fc19e074cc74c65bece8583_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_plot_area_a2325837475a874fe9b8eff161422f973}\label{class_plot_area_a2325837475a874fe9b8eff161422f973}} 
+\index{Plot\+Area@{Plot\+Area}!get\+Height@{get\+Height}}
+\index{get\+Height@{get\+Height}!Plot\+Area@{Plot\+Area}}
+\subsubsection{\texorpdfstring{get\+Height()}{getHeight()}}
+{\footnotesize\ttfamily int Plot\+Area\+::get\+Height (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 2152 of file chartdir.\+h.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=327pt]{class_plot_area_a2325837475a874fe9b8eff161422f973_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_plot_area_affa85a783dca97e6e63717697f395f96}\label{class_plot_area_affa85a783dca97e6e63717697f395f96}} 
+\index{Plot\+Area@{Plot\+Area}!get\+Internal\+Ptr@{get\+Internal\+Ptr}}
+\index{get\+Internal\+Ptr@{get\+Internal\+Ptr}!Plot\+Area@{Plot\+Area}}
+\subsubsection{\texorpdfstring{get\+Internal\+Ptr()}{getInternalPtr()}}
+{\footnotesize\ttfamily Plot\+Area\+Internal$\ast$ Plot\+Area\+::get\+Internal\+Ptr (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 2129 of file chartdir.\+h.
+
+\mbox{\Hypertarget{class_plot_area_a315c48a42edd9b50b9d9cb83f1adaaf4}\label{class_plot_area_a315c48a42edd9b50b9d9cb83f1adaaf4}} 
+\index{Plot\+Area@{Plot\+Area}!get\+LeftX@{get\+LeftX}}
+\index{get\+LeftX@{get\+LeftX}!Plot\+Area@{Plot\+Area}}
+\subsubsection{\texorpdfstring{get\+Left\+X()}{getLeftX()}}
+{\footnotesize\ttfamily int Plot\+Area\+::get\+LeftX (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 2149 of file chartdir.\+h.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=317pt]{class_plot_area_a315c48a42edd9b50b9d9cb83f1adaaf4_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_plot_area_a4295aadd8964a04a6d14509542f5201f}\label{class_plot_area_a4295aadd8964a04a6d14509542f5201f}} 
+\index{Plot\+Area@{Plot\+Area}!get\+RightX@{get\+RightX}}
+\index{get\+RightX@{get\+RightX}!Plot\+Area@{Plot\+Area}}
+\subsubsection{\texorpdfstring{get\+Right\+X()}{getRightX()}}
+{\footnotesize\ttfamily int Plot\+Area\+::get\+RightX (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 2153 of file chartdir.\+h.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=330pt]{class_plot_area_a4295aadd8964a04a6d14509542f5201f_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_plot_area_aef78dfa0ea0f6ca79ae233de69d4478b}\label{class_plot_area_aef78dfa0ea0f6ca79ae233de69d4478b}} 
+\index{Plot\+Area@{Plot\+Area}!get\+TopY@{get\+TopY}}
+\index{get\+TopY@{get\+TopY}!Plot\+Area@{Plot\+Area}}
+\subsubsection{\texorpdfstring{get\+Top\+Y()}{getTopY()}}
+{\footnotesize\ttfamily int Plot\+Area\+::get\+TopY (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 2150 of file chartdir.\+h.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=317pt]{class_plot_area_aef78dfa0ea0f6ca79ae233de69d4478b_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_plot_area_a9d7e77031904a16adc9eafa7576a613f}\label{class_plot_area_a9d7e77031904a16adc9eafa7576a613f}} 
+\index{Plot\+Area@{Plot\+Area}!get\+Width@{get\+Width}}
+\index{get\+Width@{get\+Width}!Plot\+Area@{Plot\+Area}}
+\subsubsection{\texorpdfstring{get\+Width()}{getWidth()}}
+{\footnotesize\ttfamily int Plot\+Area\+::get\+Width (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 2151 of file chartdir.\+h.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=321pt]{class_plot_area_a9d7e77031904a16adc9eafa7576a613f_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_plot_area_ac00dbf72a76b6c88f3edbe1f74c21550}\label{class_plot_area_ac00dbf72a76b6c88f3edbe1f74c21550}} 
+\index{Plot\+Area@{Plot\+Area}!move\+Grid\+Before@{move\+Grid\+Before}}
+\index{move\+Grid\+Before@{move\+Grid\+Before}!Plot\+Area@{Plot\+Area}}
+\subsubsection{\texorpdfstring{move\+Grid\+Before()}{moveGridBefore()}}
+{\footnotesize\ttfamily void Plot\+Area\+::move\+Grid\+Before (\begin{DoxyParamCaption}\item[{\hyperlink{class_layer}{Layer} $\ast$}]{layer = {\ttfamily 0} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 2147 of file chartdir.\+h.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_plot_area_ac00dbf72a76b6c88f3edbe1f74c21550_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_plot_area_a63d453fecea4dd5f9cfdabf43602d3f8}\label{class_plot_area_a63d453fecea4dd5f9cfdabf43602d3f8}} 
+\index{Plot\+Area@{Plot\+Area}!set4\+Q\+Bg\+Color@{set4\+Q\+Bg\+Color}}
+\index{set4\+Q\+Bg\+Color@{set4\+Q\+Bg\+Color}!Plot\+Area@{Plot\+Area}}
+\subsubsection{\texorpdfstring{set4\+Q\+Bg\+Color()}{set4QBgColor()}}
+{\footnotesize\ttfamily void Plot\+Area\+::set4\+Q\+Bg\+Color (\begin{DoxyParamCaption}\item[{int}]{Q1\+Color,  }\item[{int}]{Q2\+Color,  }\item[{int}]{Q3\+Color,  }\item[{int}]{Q4\+Color,  }\item[{int}]{edge\+Color = {\ttfamily -\/1} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 2135 of file chartdir.\+h.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_plot_area_a63d453fecea4dd5f9cfdabf43602d3f8_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_plot_area_ad38abf9c2e982fbf8a19f32204d19b67}\label{class_plot_area_ad38abf9c2e982fbf8a19f32204d19b67}} 
+\index{Plot\+Area@{Plot\+Area}!set\+Alt\+Bg\+Color@{set\+Alt\+Bg\+Color}}
+\index{set\+Alt\+Bg\+Color@{set\+Alt\+Bg\+Color}!Plot\+Area@{Plot\+Area}}
+\subsubsection{\texorpdfstring{set\+Alt\+Bg\+Color()}{setAltBgColor()}}
+{\footnotesize\ttfamily void Plot\+Area\+::set\+Alt\+Bg\+Color (\begin{DoxyParamCaption}\item[{bool}]{horizontal,  }\item[{int}]{color1,  }\item[{int}]{color2,  }\item[{int}]{edge\+Color = {\ttfamily -\/1} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 2137 of file chartdir.\+h.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_plot_area_ad38abf9c2e982fbf8a19f32204d19b67_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_plot_area_a04f56242f125bf96a1c6e8dc0ce74342}\label{class_plot_area_a04f56242f125bf96a1c6e8dc0ce74342}} 
+\index{Plot\+Area@{Plot\+Area}!set\+Background@{set\+Background}}
+\index{set\+Background@{set\+Background}!Plot\+Area@{Plot\+Area}}
+\subsubsection{\texorpdfstring{set\+Background()}{setBackground()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Plot\+Area\+::set\+Background (\begin{DoxyParamCaption}\item[{int}]{color,  }\item[{int}]{alt\+Bg\+Color = {\ttfamily -\/1},  }\item[{int}]{edge\+Color = {\ttfamily -\/1} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 2131 of file chartdir.\+h.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_plot_area_a04f56242f125bf96a1c6e8dc0ce74342_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_plot_area_abcd924d1be7c5a3f4267f2cbbf14deaa}\label{class_plot_area_abcd924d1be7c5a3f4267f2cbbf14deaa}} 
+\index{Plot\+Area@{Plot\+Area}!set\+Background@{set\+Background}}
+\index{set\+Background@{set\+Background}!Plot\+Area@{Plot\+Area}}
+\subsubsection{\texorpdfstring{set\+Background()}{setBackground()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Plot\+Area\+::set\+Background (\begin{DoxyParamCaption}\item[{const char $\ast$}]{img,  }\item[{int}]{align = {\ttfamily \hyperlink{namespace_chart_ae222e51ce11a254450b6ddfbc862680aab21c196681da027efd151236305b985d}{Chart\+::\+Center}} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 2133 of file chartdir.\+h.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_plot_area_abcd924d1be7c5a3f4267f2cbbf14deaa_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_plot_area_a4331047ed4ae116093d50c0a69e6bd91}\label{class_plot_area_a4331047ed4ae116093d50c0a69e6bd91}} 
+\index{Plot\+Area@{Plot\+Area}!set\+Grid\+Axis@{set\+Grid\+Axis}}
+\index{set\+Grid\+Axis@{set\+Grid\+Axis}!Plot\+Area@{Plot\+Area}}
+\subsubsection{\texorpdfstring{set\+Grid\+Axis()}{setGridAxis()}}
+{\footnotesize\ttfamily void Plot\+Area\+::set\+Grid\+Axis (\begin{DoxyParamCaption}\item[{const \hyperlink{class_axis}{Axis} $\ast$}]{x\+Grid\+Axis,  }\item[{const \hyperlink{class_axis}{Axis} $\ast$}]{y\+Grid\+Axis }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 2145 of file chartdir.\+h.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=345pt]{class_plot_area_a4331047ed4ae116093d50c0a69e6bd91_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_plot_area_a4331047ed4ae116093d50c0a69e6bd91_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_plot_area_a5f02a40eeaf5fbde3332d5c6188f4556}\label{class_plot_area_a5f02a40eeaf5fbde3332d5c6188f4556}} 
+\index{Plot\+Area@{Plot\+Area}!set\+Grid\+Color@{set\+Grid\+Color}}
+\index{set\+Grid\+Color@{set\+Grid\+Color}!Plot\+Area@{Plot\+Area}}
+\subsubsection{\texorpdfstring{set\+Grid\+Color()}{setGridColor()}}
+{\footnotesize\ttfamily void Plot\+Area\+::set\+Grid\+Color (\begin{DoxyParamCaption}\item[{int}]{h\+Grid\+Color,  }\item[{int}]{v\+Grid\+Color = {\ttfamily \hyperlink{namespace_chart_abee0d882fdc9ad0b001245ad9fc64011afc6811800a9e2582dac0157b6279f836}{Chart\+::\+Transparent}},  }\item[{int}]{minor\+H\+Grid\+Color = {\ttfamily -\/1},  }\item[{int}]{minor\+V\+Grid\+Color = {\ttfamily -\/1} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 2139 of file chartdir.\+h.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_plot_area_a5f02a40eeaf5fbde3332d5c6188f4556_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{class_plot_area_a5f02a40eeaf5fbde3332d5c6188f4556_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_plot_area_a12308305634a1a5026d0e80811af7645}\label{class_plot_area_a12308305634a1a5026d0e80811af7645}} 
+\index{Plot\+Area@{Plot\+Area}!set\+Grid\+Width@{set\+Grid\+Width}}
+\index{set\+Grid\+Width@{set\+Grid\+Width}!Plot\+Area@{Plot\+Area}}
+\subsubsection{\texorpdfstring{set\+Grid\+Width()}{setGridWidth()}}
+{\footnotesize\ttfamily void Plot\+Area\+::set\+Grid\+Width (\begin{DoxyParamCaption}\item[{int}]{h\+Grid\+Width,  }\item[{int}]{v\+Grid\+Width = {\ttfamily -\/1},  }\item[{int}]{minor\+H\+Grid\+Width = {\ttfamily -\/1},  }\item[{int}]{minor\+V\+Grid\+Width = {\ttfamily -\/1} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 2142 of file chartdir.\+h.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_plot_area_a12308305634a1a5026d0e80811af7645_cgraph}
+\end{center}
+\end{figure}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+include/\hyperlink{chartdir_8h}{chartdir.\+h}\end{DoxyCompactItemize}

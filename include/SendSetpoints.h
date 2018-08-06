@@ -6,6 +6,7 @@
 #include <QDataStream>
 #include <QAbstractSocket>
 #include <QTcpSocket>
+#include <QFile>
 
 class SendSetpoints
 {
@@ -55,6 +56,7 @@ class SendSetpoints
         double rightSpeedFrontValue;
         double maxRightSpeed;
         double maxLeftSpeed;
+        QString logPath;
 
 
         QAbstractSocket* pertSocket;

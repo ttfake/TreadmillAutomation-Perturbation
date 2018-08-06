@@ -25,6 +25,7 @@
 #include "MccDaqRecordButtonWidget.h"
 #include "MccDaqInterface.h"
 #include "QScrollArea.h"
+
 class ConfigTabWidget : public QWidget
 {
     Q_OBJECT
@@ -38,11 +39,22 @@ class ConfigTabWidget : public QWidget
         void setDaqRecordColor();
         void addChannels();
         void timerUpdatedSlot();
+        void setEmgData();
+        void getActiveState(int channel);
+        void getChannelType(int channel);
+        void getGainType(int channel);
+    
     signals:
         void timerUpdatedSignal();
+        void emgUpdated();
     public:
         ConfigTabWidget(QWidget* parent = 0, Qt::WindowFlags flags = 0);
         ~ConfigTabWidget();
+
+        double getStimTimerValue();
+        QMap<int,QVector<double>> getEmgData();
+        
+    private:
         QGridLayout* configGridLayout;
         MccDaqInterface* pmccDaqInterface;
         //addDaqControlGroupBox
@@ -98,9 +110,6 @@ class ConfigTabWidget : public QWidget
         void setupDataCollection();
         void updateCol(int mColNo);
         void updateDaqDataStreamTableWidget(double force);
-        void getActiveState(int channel);
-        void getChannelType(int channel);
-        void getGainType(int channel);
         void setChannel(int mchannel);
 
         void addDaqDataGroupBox();
@@ -119,9 +128,23 @@ class ConfigTabWidget : public QWidget
         QWidget* timerQuickViewContainer;
         QObject* timerQuickViewRootObject;
         QObject* timerQuickViewItem;
-        double getStimTimerValue();
+
 
         double stimTimer;
         QVariant timerValue;
+
+        void addDaqSampleConfig();
+        QGroupBox* daqSampleConfigGroupBox;
+        QVBoxLayout* daqSampleConfigGroupBoxLayout;
+        QLabel* sampleRateLabel;
+        QSpinBox* sampleRateSpinBox;
+        QLabel* windowLabel;
+        QSpinBox* windowSpinBox;
+
+        
+        QMap<int,QVector<double>> voltageMap;
+
+       
+
 };
 #endif

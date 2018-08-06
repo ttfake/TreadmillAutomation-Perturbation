@@ -1,0 +1,6 @@
+<map id="ArrayMath::movMax" name="ArrayMath::movMax">
+<area shape="rect" id="node2" href="$class_finance_chart.html#aaf35dc123849c0ad4a959f2e1667360c" title="Add a Fast Stochastic indicator chart. " alt="" coords="195,5,412,32"/>
+<area shape="rect" id="node3" href="$class_finance_chart.html#a2f1d675f9a5e8f280b4f16d3a36eb204" title="Add a Slow Stochastic indicator chart. " alt="" coords="193,56,413,83"/>
+<area shape="rect" id="node4" href="$class_finance_chart.html#a8c44b07a3a6dcf2e3feb09960dfa9770" title="Add a Stochastic RSI indicator chart. " alt="" coords="210,107,397,133"/>
+<area shape="rect" id="node5" href="$class_finance_chart.html#aa0f6a518a8fb451cc645f10e3e947ff0" title="Add a William R indicator chart. " alt="" coords="212,157,395,184"/>
+</map>

@@ -1,0 +1,4 @@
+<map id="MeterPointer" name="MeterPointer">
+<area shape="rect" id="node2" href="$class_draw_obj.html" title="DrawObj" alt="" coords="17,80,90,107"/>
+<area shape="rect" id="node3" href="$class_auto_destroy.html" title="AutoDestroy" alt="" coords="6,5,101,32"/>
+</map>

@@ -1,0 +1,206 @@
+\hypertarget{class_ran_table}{}\section{Ran\+Table Class Reference}
+\label{class_ran_table}\index{Ran\+Table@{Ran\+Table}}
+
+
+{\ttfamily \#include $<$chartdir.\+h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_ran_table_aecefc03f8c280f15116227515aaf3d78}{Ran\+Table} (int seed, int no\+Of\+Cols, int no\+Of\+Rows)
+\item 
+\hyperlink{class_ran_table_ab3c6f7f8bee3d017cd857cdf731dec24}{$\sim$\+Ran\+Table} ()
+\item 
+void \hyperlink{class_ran_table_a221cd11c0733ba1cd5130b6dc7367cb0}{destroy} ()
+\item 
+void \hyperlink{class_ran_table_a5f1d2400ce4a5c3c2d221cf04e27982c}{set\+Col} (int col\+No, double min\+Value, double max\+Value)
+\item 
+void \hyperlink{class_ran_table_a7d3124584c2fec6e029e1fc23771570f}{set\+Col} (int col\+No, double start\+Value, double min\+Delta, double max\+Delta, double lower\+Limit=-\/1\+E+308, double upper\+Limit=1\+E+308)
+\item 
+void \hyperlink{class_ran_table_a43a91048df7d3dcdeebe4342a6c6b514}{set\+Date\+Col} (int i, double start\+Time, double tick\+Inc, bool week\+Day\+Only=false)
+\item 
+void \hyperlink{class_ran_table_a7df8569529d0bda58899803aa8972f38}{set\+H\+L\+O\+C\+Cols} (int i, double start\+Value, double min\+Delta, double max\+Delta, double lower\+Limit=0, double upper\+Limit=1\+E+308)
+\item 
+int \hyperlink{class_ran_table_aa489b68e8f30adb5ee5a38ffef4209b0}{select\+Date} (int col\+No, double min\+Date, double max\+Date)
+\item 
+\hyperlink{class_double_array}{Double\+Array} \hyperlink{class_ran_table_a98c2e1df04ab232b51c6f089a411f99f}{get\+Col} (int i)
+\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \hyperlink{class_ran_table}{Ran\+Table} $\ast$ \hyperlink{class_ran_table_a19c9e0d90c39fa3e4b88e21d74622186}{create} (int seed, int no\+Of\+Cols, int no\+Of\+Rows)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 3154 of file chartdir.\+h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_ran_table_aecefc03f8c280f15116227515aaf3d78}\label{class_ran_table_aecefc03f8c280f15116227515aaf3d78}} 
+\index{Ran\+Table@{Ran\+Table}!Ran\+Table@{Ran\+Table}}
+\index{Ran\+Table@{Ran\+Table}!Ran\+Table@{Ran\+Table}}
+\subsubsection{\texorpdfstring{Ran\+Table()}{RanTable()}}
+{\footnotesize\ttfamily Ran\+Table\+::\+Ran\+Table (\begin{DoxyParamCaption}\item[{int}]{seed,  }\item[{int}]{no\+Of\+Cols,  }\item[{int}]{no\+Of\+Rows }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 3164 of file chartdir.\+h.
+
+\mbox{\Hypertarget{class_ran_table_ab3c6f7f8bee3d017cd857cdf731dec24}\label{class_ran_table_ab3c6f7f8bee3d017cd857cdf731dec24}} 
+\index{Ran\+Table@{Ran\+Table}!````~Ran\+Table@{$\sim$\+Ran\+Table}}
+\index{````~Ran\+Table@{$\sim$\+Ran\+Table}!Ran\+Table@{Ran\+Table}}
+\subsubsection{\texorpdfstring{$\sim$\+Ran\+Table()}{~RanTable()}}
+{\footnotesize\ttfamily Ran\+Table\+::$\sim$\+Ran\+Table (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 3165 of file chartdir.\+h.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=333pt]{class_ran_table_ab3c6f7f8bee3d017cd857cdf731dec24_cgraph}
+\end{center}
+\end{figure}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_ran_table_a19c9e0d90c39fa3e4b88e21d74622186}\label{class_ran_table_a19c9e0d90c39fa3e4b88e21d74622186}} 
+\index{Ran\+Table@{Ran\+Table}!create@{create}}
+\index{create@{create}!Ran\+Table@{Ran\+Table}}
+\subsubsection{\texorpdfstring{create()}{create()}}
+{\footnotesize\ttfamily static \hyperlink{class_ran_table}{Ran\+Table}$\ast$ Ran\+Table\+::create (\begin{DoxyParamCaption}\item[{int}]{seed,  }\item[{int}]{no\+Of\+Cols,  }\item[{int}]{no\+Of\+Rows }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Definition at line 3166 of file chartdir.\+h.
+
+\mbox{\Hypertarget{class_ran_table_a221cd11c0733ba1cd5130b6dc7367cb0}\label{class_ran_table_a221cd11c0733ba1cd5130b6dc7367cb0}} 
+\index{Ran\+Table@{Ran\+Table}!destroy@{destroy}}
+\index{destroy@{destroy}!Ran\+Table@{Ran\+Table}}
+\subsubsection{\texorpdfstring{destroy()}{destroy()}}
+{\footnotesize\ttfamily void Ran\+Table\+::destroy (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 3167 of file chartdir.\+h.
+
+\mbox{\Hypertarget{class_ran_table_a98c2e1df04ab232b51c6f089a411f99f}\label{class_ran_table_a98c2e1df04ab232b51c6f089a411f99f}} 
+\index{Ran\+Table@{Ran\+Table}!get\+Col@{get\+Col}}
+\index{get\+Col@{get\+Col}!Ran\+Table@{Ran\+Table}}
+\subsubsection{\texorpdfstring{get\+Col()}{getCol()}}
+{\footnotesize\ttfamily \hyperlink{class_double_array}{Double\+Array} Ran\+Table\+::get\+Col (\begin{DoxyParamCaption}\item[{int}]{i }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 3181 of file chartdir.\+h.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=309pt]{class_ran_table_a98c2e1df04ab232b51c6f089a411f99f_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_ran_table_aa489b68e8f30adb5ee5a38ffef4209b0}\label{class_ran_table_aa489b68e8f30adb5ee5a38ffef4209b0}} 
+\index{Ran\+Table@{Ran\+Table}!select\+Date@{select\+Date}}
+\index{select\+Date@{select\+Date}!Ran\+Table@{Ran\+Table}}
+\subsubsection{\texorpdfstring{select\+Date()}{selectDate()}}
+{\footnotesize\ttfamily int Ran\+Table\+::select\+Date (\begin{DoxyParamCaption}\item[{int}]{col\+No,  }\item[{double}]{min\+Date,  }\item[{double}]{max\+Date }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 3179 of file chartdir.\+h.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=347pt]{class_ran_table_aa489b68e8f30adb5ee5a38ffef4209b0_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_ran_table_a5f1d2400ce4a5c3c2d221cf04e27982c}\label{class_ran_table_a5f1d2400ce4a5c3c2d221cf04e27982c}} 
+\index{Ran\+Table@{Ran\+Table}!set\+Col@{set\+Col}}
+\index{set\+Col@{set\+Col}!Ran\+Table@{Ran\+Table}}
+\subsubsection{\texorpdfstring{set\+Col()}{setCol()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Ran\+Table\+::set\+Col (\begin{DoxyParamCaption}\item[{int}]{col\+No,  }\item[{double}]{min\+Value,  }\item[{double}]{max\+Value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 3169 of file chartdir.\+h.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=309pt]{class_ran_table_a5f1d2400ce4a5c3c2d221cf04e27982c_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_ran_table_a7d3124584c2fec6e029e1fc23771570f}\label{class_ran_table_a7d3124584c2fec6e029e1fc23771570f}} 
+\index{Ran\+Table@{Ran\+Table}!set\+Col@{set\+Col}}
+\index{set\+Col@{set\+Col}!Ran\+Table@{Ran\+Table}}
+\subsubsection{\texorpdfstring{set\+Col()}{setCol()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Ran\+Table\+::set\+Col (\begin{DoxyParamCaption}\item[{int}]{col\+No,  }\item[{double}]{start\+Value,  }\item[{double}]{min\+Delta,  }\item[{double}]{max\+Delta,  }\item[{double}]{lower\+Limit = {\ttfamily -\/1E+308},  }\item[{double}]{upper\+Limit = {\ttfamily 1E+308} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 3171 of file chartdir.\+h.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=314pt]{class_ran_table_a7d3124584c2fec6e029e1fc23771570f_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_ran_table_a43a91048df7d3dcdeebe4342a6c6b514}\label{class_ran_table_a43a91048df7d3dcdeebe4342a6c6b514}} 
+\index{Ran\+Table@{Ran\+Table}!set\+Date\+Col@{set\+Date\+Col}}
+\index{set\+Date\+Col@{set\+Date\+Col}!Ran\+Table@{Ran\+Table}}
+\subsubsection{\texorpdfstring{set\+Date\+Col()}{setDateCol()}}
+{\footnotesize\ttfamily void Ran\+Table\+::set\+Date\+Col (\begin{DoxyParamCaption}\item[{int}]{i,  }\item[{double}]{start\+Time,  }\item[{double}]{tick\+Inc,  }\item[{bool}]{week\+Day\+Only = {\ttfamily false} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 3174 of file chartdir.\+h.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_ran_table_a43a91048df7d3dcdeebe4342a6c6b514_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_ran_table_a7df8569529d0bda58899803aa8972f38}\label{class_ran_table_a7df8569529d0bda58899803aa8972f38}} 
+\index{Ran\+Table@{Ran\+Table}!set\+H\+L\+O\+C\+Cols@{set\+H\+L\+O\+C\+Cols}}
+\index{set\+H\+L\+O\+C\+Cols@{set\+H\+L\+O\+C\+Cols}!Ran\+Table@{Ran\+Table}}
+\subsubsection{\texorpdfstring{set\+H\+L\+O\+C\+Cols()}{setHLOCCols()}}
+{\footnotesize\ttfamily void Ran\+Table\+::set\+H\+L\+O\+C\+Cols (\begin{DoxyParamCaption}\item[{int}]{i,  }\item[{double}]{start\+Value,  }\item[{double}]{min\+Delta,  }\item[{double}]{max\+Delta,  }\item[{double}]{lower\+Limit = {\ttfamily 0},  }\item[{double}]{upper\+Limit = {\ttfamily 1E+308} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 3176 of file chartdir.\+h.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_ran_table_a7df8569529d0bda58899803aa8972f38_cgraph}
+\end{center}
+\end{figure}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+include/\hyperlink{chartdir_8h}{chartdir.\+h}\end{DoxyCompactItemize}

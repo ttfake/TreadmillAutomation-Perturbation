@@ -1,0 +1,5 @@
+<map id="FinanceChart::FinanceChart" name="FinanceChart::FinanceChart">
+<area shape="rect" id="node2" href="$class_multi_chart.html#a3769e8277675d5a1efb2ac44d45c9116" title="MultiChart::setMainChart" alt="" coords="240,31,408,57"/>
+<area shape="rect" id="node3" href="$bchartdir_8h.html#a09fff43c8eb9d20022ed5db69fb3822a" title="CMultiChart_setMainChart" alt="" coords="456,5,633,32"/>
+<area shape="rect" id="node4" href="$class_base_chart.html#a5d69ddcea93f12d2a63fbc7d5b640911" title="BaseChart::getInternalPtr" alt="" coords="459,56,630,83"/>
+</map>

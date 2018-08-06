@@ -1,0 +1,23 @@
+<map id="TreadmillAutomation::setUseLibraryStatus" name="TreadmillAutomation::setUseLibraryStatus">
+<area shape="rect" id="node2" href="$class_network_tab_widget.html#a350dbedf09f3c1fb5bbcba75cc282eb8" title="NetworkTabWidget::getInstance" alt="" coords="203,202,413,229"/>
+<area shape="rect" id="node3" href="$class_network_tab_widget.html#a556f499076cd56a2090c007eb5f1e6be" title="NetworkTabWidget::getUse\lLibraryIsCheckedStatus" alt="" coords="216,253,400,295"/>
+<area shape="rect" id="node4" href="$class_perturbation_tab_widget.html#af54ddc95a7f3738b9083ff9ca5934d22" title="PerturbationTabWidget\l::setUseLibraryStatus" alt="" coords="231,319,385,360"/>
+<area shape="rect" id="node5" href="$class_config_tab_widget.html#a783fb40a272c4a2fb3053da07955db0d" title="ConfigTabWidget::getStim\lTimerValue" alt="" coords="220,384,396,425"/>
+<area shape="rect" id="node21" href="$class_config_tab_widget.html#aca7e549d4ae9cc7de010fc6ffd7e9265" title="ConfigTabWidget::getEmgData" alt="" coords="206,450,410,477"/>
+<area shape="rect" id="node22" href="$class_instrumentation_panel.html#a509148700ac0a6cba91d15905a54bde2" title="InstrumentationPanel\l::setChannelDataPoints" alt="" coords="227,501,389,543"/>
+<area shape="rect" id="node6" href="$class_mcc_daq_connect_button_widget.html#a13cf53dd69d563035e8ce30fec54a003" title="MccDaqConnectButtonWidget\l::changeDaqConnectLight" alt="" coords="479,5,678,47"/>
+<area shape="rect" id="node7" href="$class_mcc_daq_interface.html#a3036cbabc3a63737a96d0ff1fa9ce449" title="MccDaqInterface::startChannelScan" alt="" coords="461,71,696,98"/>
+<area shape="rect" id="node10" href="$class_mcc_daq_connect_button_widget.html#a4d63807d04d7c3d09e6316394bc55833" title="MccDaqConnectButtonWidget\l::getDaqConnectLightColor" alt="" coords="479,123,678,164"/>
+<area shape="rect" id="node11" href="$class_mcc_daq_interface.html#a05186e503fb77fcecaf0748960d0d659" title="MccDaqInterface::setRunning\lState" alt="" coords="481,188,677,229"/>
+<area shape="rect" id="node12" href="$class_mcc_daq_interface.html#af4fee75cc1637188c98bd7c1ddc745a2" title="MccDaqInterface::dataCollection\lSetup" alt="" coords="472,253,685,295"/>
+<area shape="rect" id="node13" href="$class_mcc_daq_interface.html#a3024b53b897a0e7778fd5c2df7932999" title="MccDaqInterface::setCurrent\lChannelActiveState" alt="" coords="483,319,674,360"/>
+<area shape="rect" id="node14" href="$class_mcc_daq_record_button_widget.html#a9d3a8523e25ad34223a0ba94adbf61fb" title="MccDaqRecordButtonWidget\l::getDaqRecordLightColor" alt="" coords="483,384,675,425"/>
+<area shape="rect" id="node15" href="$class_mcc_daq_interface.html#ae489ccc434b8f12e01cce99f3acb97bc" title="MccDaqInterface::setRecordBool" alt="" coords="471,450,687,477"/>
+<area shape="rect" id="node16" href="$class_mcc_daq_interface.html#aac1bb00fead8900d77ea1fc732f8b7b7" title="MccDaqInterface::setDaqLog\lFileName" alt="" coords="482,501,675,543"/>
+<area shape="rect" id="node17" href="$class_mcc_daq_record_button_widget.html#af756c9d1918c871e907a032f3059e65d" title="MccDaqRecordButtonWidget\l::changeDaqRecordLight" alt="" coords="483,567,675,608"/>
+<area shape="rect" id="node18" href="$class_mcc_daq_interface.html#a82ca01bbe3fcf58de7e4fdfc3d1aa379" title="MccDaqInterface::setNumber\lOfChannels" alt="" coords="481,632,676,673"/>
+<area shape="rect" id="node19" href="$class_mcc_daq_interface.html#a2386ad8fa783fdb1dd53e8678ce0e7bb" title="MccDaqInterface::getVoltageMap" alt="" coords="470,698,687,725"/>
+<area shape="rect" id="node20" href="$class_mcc_daq_interface.html#adbcc5a67d3e2aaef7742883bc58e19a7" title="MccDaqInterface::clearTmp\lVoltageMap" alt="" coords="487,749,671,791"/>
+<area shape="rect" id="node8" href="$class_mcc_daq_discovery.html#a9b2541fefb5156e2412f4e3eb34eed72" title="MccDaqDiscovery::discover\lDaqDevices" alt="" coords="744,64,931,105"/>
+<area shape="rect" id="node9" href="$class_mcc_daq_discovery.html#a658426719d9987f48626708d42397a9e" title="MccDaqDiscovery::selectDevice" alt="" coords="979,71,1193,98"/>
+</map>

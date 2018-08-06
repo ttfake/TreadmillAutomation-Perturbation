@@ -1,0 +1,6 @@
+<map id="TreadmillAutomation" name="TreadmillAutomation">
+<area shape="rect" id="node3" href="$class_network_tab_widget.html" title="NetworkTabWidget" alt="" coords="137,81,271,108"/>
+<area shape="rect" id="node5" href="$class_config_tab_widget.html" title="ConfigTabWidget" alt="" coords="296,81,419,108"/>
+<area shape="rect" id="node6" href="$class_perturbation_tab_widget.html" title="PerturbationTabWidget" alt="" coords="443,81,597,108"/>
+<area shape="rect" id="node7" href="$class_send_setpoints.html" title="SendSetpoints" alt="" coords="621,81,728,108"/>
+</map>

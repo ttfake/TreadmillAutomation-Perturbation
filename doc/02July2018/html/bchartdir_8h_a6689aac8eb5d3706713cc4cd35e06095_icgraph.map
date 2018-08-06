@@ -1,0 +1,14 @@
+<map id="CAxis_setLinearScale3" name="CAxis_setLinearScale3">
+<area shape="rect" id="node2" href="$class_axis.html#a69fe2919bd8bcf21a5139dc1e0a511c4" title="Axis::setLinearScale" alt="" coords="212,259,355,285"/>
+<area shape="rect" id="node3" href="$class_finance_chart.html#a8a0f9c954f14c12dbf8e56eb2ce472de" title="Determines if log scale should be used for the main chart. The default is linear scale. " alt="" coords="423,5,603,32"/>
+<area shape="rect" id="node4" href="$class_finance_chart.html#a69ac5aca5d2d232184398b43fee6eb13" title="Add the main chart &#45; the chart that shows the HLOC data. " alt="" coords="418,56,607,83"/>
+<area shape="rect" id="node5" href="$class_finance_chart.html#a69096a6af74055fee5f1ae5fc0588a3b" title="Add an Aroon Up/Down indicators chart. " alt="" coords="431,107,594,133"/>
+<area shape="rect" id="node6" href="$class_finance_chart.html#a259aa83c1222608df3f6d95410a97ea4" title="Add an Aroon Oscillator indicator chart. " alt="" coords="419,157,606,184"/>
+<area shape="rect" id="node7" href="$class_finance_chart.html#aaf35dc123849c0ad4a959f2e1667360c" title="Add a Fast Stochastic indicator chart. " alt="" coords="404,208,621,235"/>
+<area shape="rect" id="node8" href="$class_finance_chart.html#ab6f774100ffc593f93eed25c98facf6f" title="Add a Money Flow Index indicator chart. " alt="" coords="437,259,589,285"/>
+<area shape="rect" id="node9" href="$class_finance_chart.html#aba175ac4bc80577bad0767bcd75109c7" title="Add a Relative Strength Index indicator chart. " alt="" coords="437,309,589,336"/>
+<area shape="rect" id="node10" href="$class_finance_chart.html#a2f1d675f9a5e8f280b4f16d3a36eb204" title="Add a Slow Stochastic indicator chart. " alt="" coords="403,360,623,387"/>
+<area shape="rect" id="node11" href="$class_finance_chart.html#a8c44b07a3a6dcf2e3feb09960dfa9770" title="Add a Stochastic RSI indicator chart. " alt="" coords="419,411,606,437"/>
+<area shape="rect" id="node12" href="$class_finance_chart.html#aa7a2bc1fab9c1ec538ff293c107d6cc4" title="Add an Ultimate Oscillator indicator chart. " alt="" coords="423,462,602,503"/>
+<area shape="rect" id="node13" href="$class_finance_chart.html#aa0f6a518a8fb451cc645f10e3e947ff0" title="Add a William R indicator chart. " alt="" coords="421,528,604,555"/>
+</map>

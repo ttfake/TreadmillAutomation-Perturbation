@@ -1,0 +1,10 @@
+<map id="FinanceChart::addCandleStick" name="FinanceChart::addCandleStick">
+<area shape="rect" id="node2" href="$class_x_y_chart.html#ae6ebf6d55fae7f770f8d54ba52c5265c" title="XYChart::addCandleStickLayer" alt="" coords="253,5,457,32"/>
+<area shape="rect" id="node4" href="$class_layer.html#a236aba467e0154dcfff6541731dc9ec5" title="Layer::setHTMLImageMap" alt="" coords="267,56,444,83"/>
+<area shape="rect" id="node6" href="$class_base_box_layer.html#a1d7193833d5c13dda5fa30ca431c72f5" title="BaseBoxLayer::setDataGap" alt="" coords="263,107,448,133"/>
+<area shape="rect" id="node8" href="$class_base_box_layer.html#a49c2e59633573b52f02e399bec37b46e" title="BaseBoxLayer::setDataWidth" alt="" coords="258,157,453,184"/>
+<area shape="rect" id="node3" href="$bchartdir_8h.html#aad058d37dc39e12057cfa4b19ec7c253" title="CXYChart_addCandleStickLayer" alt="" coords="505,5,719,32"/>
+<area shape="rect" id="node5" href="$bchartdir_8h.html#a442d269371af407d4022b38ed5abeb84" title="CLayer_setHTMLImageMap" alt="" coords="519,56,705,83"/>
+<area shape="rect" id="node7" href="$bchartdir_8h.html#ae6f948fed8889f5488b7c4a712137c01" title="CBaseBoxLayer_setDataGap" alt="" coords="515,107,709,133"/>
+<area shape="rect" id="node9" href="$bchartdir_8h.html#a1ecc2f7f20aafc0a7058a7cc31631b96" title="CBaseBoxLayer_setDataWidth" alt="" coords="510,157,714,184"/>
+</map>

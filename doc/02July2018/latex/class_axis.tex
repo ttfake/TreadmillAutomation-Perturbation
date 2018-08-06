@@ -1,0 +1,1436 @@
+\hypertarget{class_axis}{}\section{Axis Class Reference}
+\label{class_axis}\index{Axis@{Axis}}
+
+
+{\ttfamily \#include $<$chartdir.\+h$>$}
+
+
+
+Inheritance diagram for Axis\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=264pt]{class_axis__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Axis\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=264pt]{class_axis__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_axis_abc375bb09916fa2c60579810e1a3c53f}{Axis} (Axis\+Internal $\ast$\+\_\+ptr)
+\item 
+\hyperlink{class_axis_a675ffe75a5e61a9e4f60bb79749d5e0c}{$\sim$\+Axis} ()
+\item 
+Axis\+Internal $\ast$ \hyperlink{class_axis_af5704ff02fb2e04aa16f4a4ecefc072b}{get\+Internal\+Ptr} ()
+\item 
+const Axis\+Internal $\ast$ \hyperlink{class_axis_a376d55c978b25b17319af851a2f53f06}{get\+Internal\+Ptr} () const
+\item 
+\hyperlink{class_text_box}{Text\+Box} $\ast$ \hyperlink{class_axis_ab524e166c981420e6de22979fd695bb6}{set\+Label\+Style} (const char $\ast$font=0, double font\+Size=8, int font\+Color=\hyperlink{namespace_chart_abee0d882fdc9ad0b001245ad9fc64011a879e14f2f5024caccc047374342321ef}{Chart\+::\+Text\+Color}, double font\+Angle=0)
+\item 
+void \hyperlink{class_axis_a99c109ddb7e61206f7a8f1883d3e7a85}{set\+Label\+Format} (const char $\ast$format\+String)
+\item 
+void \hyperlink{class_axis_ae4b909cc52ff784757e92917a18ad917}{set\+Label\+Gap} (int d)
+\item 
+void \hyperlink{class_axis_a3a6ee98f7c5716c8cb94f325aa8a05d6}{set\+Multi\+Format} (int filter1, const char $\ast$format1, int filter2, const char $\ast$format2, int label\+Span=1, bool promote\+First=true)
+\item 
+void \hyperlink{class_axis_aa4b46e028226064bcc5f720ba04a9e08}{set\+Multi\+Format} (int filter\+Id, const char $\ast$format\+String, int label\+Span=1, bool promote\+First=true)
+\item 
+void \hyperlink{class_axis_aa73c26b4400fa61689f924fcea85c97e}{set\+Format\+Condition} (const char $\ast$condition, double operand=0)
+\item 
+\hyperlink{class_text_box}{Text\+Box} $\ast$ \hyperlink{class_axis_ac18e569a6c1b55500ed72c31dd516db7}{set\+Title} (const char $\ast$text, const char $\ast$font=0, double font\+Size=8, int font\+Color=\hyperlink{namespace_chart_abee0d882fdc9ad0b001245ad9fc64011a879e14f2f5024caccc047374342321ef}{Chart\+::\+Text\+Color})
+\item 
+void \hyperlink{class_axis_a77d098820ddd2387bab8db649a6d3fc3}{set\+Title\+Pos} (int alignment, int title\+Gap=3)
+\item 
+void \hyperlink{class_axis_a54d88ba3d4791b92a3efb757b3ea5c48}{set\+Colors} (int axis\+Color, int label\+Color=\hyperlink{namespace_chart_abee0d882fdc9ad0b001245ad9fc64011a879e14f2f5024caccc047374342321ef}{Chart\+::\+Text\+Color}, int title\+Color=-\/1, int tick\+Color=-\/1)
+\item 
+void \hyperlink{class_axis_aa74e4bc19a6a83b0f8dc6d3f815dd64e}{set\+Tick\+Length} (int major\+Tick\+Len)
+\item 
+void \hyperlink{class_axis_a80b7689e4f8ce5961937b9da00d9a5d7}{set\+Tick\+Length} (int major\+Tick\+Len, int minor\+Tick\+Len)
+\item 
+void \hyperlink{class_axis_a62799546985d8e3839515dacc54ffcdc}{set\+Tick\+Width} (int major\+Tick\+Width, int minor\+Tick\+Width=-\/1)
+\item 
+void \hyperlink{class_axis_acc8fbe608da1e15e4a434ef4d1814d18}{set\+Tick\+Color} (int major\+Tick\+Color, int minor\+Tick\+Color=-\/1)
+\item 
+void \hyperlink{class_axis_ab25fcf30198a480edcd5f2013d2376f1}{set\+Width} (int width)
+\item 
+void \hyperlink{class_axis_a975e48ae1b4d4d80e86f267f7272fd87}{set\+Length} (int length)
+\item 
+void \hyperlink{class_axis_a041e7ea566969e09175978fa4ae42406}{set\+Offset} (int x, int y)
+\item 
+void \hyperlink{class_axis_af2eb8f9d53b80736a336292d5a8ba0e9}{set\+Angle} (double start\+Angle)
+\item 
+void \hyperlink{class_axis_a05d760c8d314d23ba72ca69bf1382186}{set\+Top\+Margin} (int top\+Margin)
+\item 
+void \hyperlink{class_axis_a03b7110aeda343e1c17567741dc47a1d}{set\+Margin} (int top\+Margin, int bottom\+Margin=0)
+\item 
+void \hyperlink{class_axis_a906b0e90dca1e327107739ed120bec67}{set\+Indent} (bool indent)
+\item 
+void \hyperlink{class_axis_a5fa46a2ec10970e274f1d07e3f2754d7}{set\+Tick\+Offset} (double offset)
+\item 
+void \hyperlink{class_axis_ac032ffeb1b95640f0b15d8e87b4ba02a}{set\+Label\+Offset} (double offset)
+\item 
+void \hyperlink{class_axis_af739ec5f1ef674cec9d425505451096e}{set\+Label\+Alignment} (int alignment, int min\+Label\+Space=3)
+\item 
+void \hyperlink{class_axis_a1be77ee03032a57d8a032fa118821b74}{set\+Auto\+Scale} (double top\+Extension=0.\+1, double bottom\+Extension=0.\+1, double zero\+Affinity=0.\+8)
+\item 
+void \hyperlink{class_axis_a7e296867580eabe94b1b80abb5318762}{set\+Rounding} (bool round\+Min, bool round\+Max)
+\item 
+void \hyperlink{class_axis_abdb7eae83d8e09c6eb9583a9cabf00d2}{set\+Tick\+Density} (int major\+Tick\+Spacing, int minor\+Tick\+Spacing=-\/1)
+\item 
+void \hyperlink{class_axis_ab18969dbb7b9f59e170b7b5e72c4208e}{set\+Reverse} (bool b=true)
+\item 
+void \hyperlink{class_axis_aa3fc0eaec64e538742f6ca74c1540c88}{set\+Min\+Tick\+Inc} (double inc)
+\item 
+\hyperlink{class_text_box}{Text\+Box} $\ast$ \hyperlink{class_axis_a95b7b98d0085dcbe709ec0c0f7df76c1}{set\+Labels} (int no\+Of\+Labels, const char $\ast$const $\ast$text)
+\item 
+\hyperlink{class_text_box}{Text\+Box} $\ast$ \hyperlink{class_axis_a6259ea2b433580896ac821ff442e8efe}{set\+Labels} (\hyperlink{class_string_array}{String\+Array} labels)
+\item 
+\hyperlink{class_text_box}{Text\+Box} $\ast$ \hyperlink{class_axis_a4e7ea5b86e98eabc102851790543d119}{set\+Labels} (\hyperlink{class_double_array}{Double\+Array} labels, const char $\ast$format\+String=0)
+\item 
+\hyperlink{class_c_d_m_l_table}{C\+D\+M\+L\+Table} $\ast$ \hyperlink{class_axis_afeb924f4756aa7cb704fadf041cd548c}{make\+Label\+Table} ()
+\item 
+\hyperlink{class_c_d_m_l_table}{C\+D\+M\+L\+Table} $\ast$ \hyperlink{class_axis_a5c187793e791bd6e5ce8ee1f63a114e8}{get\+Label\+Table} ()
+\item 
+void \hyperlink{class_axis_a111155ffdce1d11e8896e5f185a7b753}{set\+Label\+Step} (int major\+Tick\+Step, int minor\+Tick\+Step=0, int major\+Tick\+Offset=0, int minor\+Tick\+Offset=-\/0x7fffffff)
+\item 
+void \hyperlink{class_axis_a69fe2919bd8bcf21a5139dc1e0a511c4}{set\+Linear\+Scale} (const char $\ast$format\+String=0)
+\item 
+void \hyperlink{class_axis_af149d48d3168531e48ef42f99695b8b7}{set\+Linear\+Scale} (double lower\+Limit, double upper\+Limit, \hyperlink{class_string_array}{String\+Array} labels)
+\item 
+void \hyperlink{class_axis_a1c02cb45cc6f4d01d0b420298ebe668c}{set\+Linear\+Scale} (double lower\+Limit, double upper\+Limit, double major\+Tick\+Inc=0, double minor\+Tick\+Inc=0)
+\item 
+void \hyperlink{class_axis_a3222aeb4e534dbe9c1ffa68cb11a47b8}{set\+Log\+Scale} (bool log\+Scale)
+\item 
+void \hyperlink{class_axis_a344d2266d15c80d455e5cc9cd9e8b601}{set\+Log\+Scale} (const char $\ast$format\+String=0)
+\item 
+void \hyperlink{class_axis_a38921521a2868738d43f444f6061400c}{set\+Log\+Scale} (double lower\+Limit, double upper\+Limit, \hyperlink{class_string_array}{String\+Array} labels)
+\item 
+void \hyperlink{class_axis_a9f627fa0efdecec10a6cf63189553921}{set\+Log\+Scale} (double lower\+Limit, double upper\+Limit, double major\+Tick\+Inc=0, double minor\+Tick\+Inc=0)
+\item 
+void \hyperlink{class_axis_aac131ccbb91b9c5587334e2703923b70}{set\+Date\+Scale} (const char $\ast$format\+String=0)
+\item 
+void \hyperlink{class_axis_a8b68b9e92ed809ecadf3aa3e46c77983}{set\+Date\+Scale} (double lower\+Limit, double upper\+Limit, \hyperlink{class_string_array}{String\+Array} labels)
+\item 
+void \hyperlink{class_axis_a38cc17d35a91fee2075c2aa7e57e9da8}{set\+Date\+Scale} (double lower\+Limit, double upper\+Limit, double major\+Tick\+Inc=0, double minor\+Tick\+Inc=0)
+\item 
+void \hyperlink{class_axis_a27bf2d4b4c44ecf49e1ba7aad25bb897}{sync\+Axis} (const \hyperlink{class_axis}{Axis} $\ast$axis, double slope=1, double intercept=0)
+\item 
+void \hyperlink{class_axis_a66990afb53a3c4b709178d1cb019092c}{copy\+Axis} (const \hyperlink{class_axis}{Axis} $\ast$axis)
+\item 
+void \hyperlink{class_axis_ade3e74820cc853fdb4f577662ce78ae3}{add\+Label} (double pos, const char $\ast$label)
+\item 
+\hyperlink{class_mark}{Mark} $\ast$ \hyperlink{class_axis_afd32537a0ccccbef0efea8c28a285530}{add\+Mark} (double value, int line\+Color, const char $\ast$text=0, const char $\ast$font=0, double font\+Size=8)
+\item 
+void \hyperlink{class_axis_a999b49b9678d07a36a4175fd0a81fabd}{add\+Zone} (double start\+Value, double end\+Value, int color)
+\item 
+int \hyperlink{class_axis_a7a2277860d5f5d635a6d7156aeb1be33}{get\+Coor} (double v) const
+\item 
+int \hyperlink{class_axis_a5c742dfcee277adf63daf6bb35e69ffa}{getX} ()
+\item 
+int \hyperlink{class_axis_acad054ebcda8850d3d588ac6ed0c270d}{getY} ()
+\item 
+int \hyperlink{class_axis_a7e8e4de986cb83b59d23f0d9ed66deaf}{get\+Alignment} ()
+\item 
+double \hyperlink{class_axis_a2a1c7c42965a0689314845e17ac8606d}{get\+Min\+Value} () const
+\item 
+double \hyperlink{class_axis_a0712caf5b1b2dc5349c4ad4e95ba63cc}{get\+Max\+Value} () const
+\item 
+int \hyperlink{class_axis_a11de5c65bb39d2ad0f00def9adc9fec1}{get\+Thickness} () const
+\item 
+\hyperlink{class_double_array}{Double\+Array} \hyperlink{class_axis_a32d922936b68fc6b201dbe6faa08c905}{get\+Ticks} () const
+\item 
+const char $\ast$ \hyperlink{class_axis_aaf144ea75fa846472c72382e097b50a4}{get\+Label} (double i) const
+\item 
+const char $\ast$ \hyperlink{class_axis_a6a1b1952bcb2281243fe16470d814f9c}{get\+Formatted\+Label} (double v, const char $\ast$format\+String=0)
+\item 
+const char $\ast$ \hyperlink{class_axis_a27273baa6bef81839474b96f3560e003}{get\+Axis\+Image\+Map} (int no\+Of\+Segments, int map\+Width, const char $\ast$url, const char $\ast$query\+Format=0, const char $\ast$extra\+Attr=0, int offsetX=0, int offsetY=0) const
+\item 
+const char $\ast$ \hyperlink{class_axis_a278e6559be3e7201f1e6e986f4562042}{get\+H\+T\+M\+L\+Image\+Map} (const char $\ast$url, const char $\ast$query\+Format=0, const char $\ast$extra\+Attr=0, int offsetX=0, int offsetY=0) const
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 1363 of file chartdir.\+h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_axis_abc375bb09916fa2c60579810e1a3c53f}\label{class_axis_abc375bb09916fa2c60579810e1a3c53f}} 
+\index{Axis@{Axis}!Axis@{Axis}}
+\index{Axis@{Axis}!Axis@{Axis}}
+\subsubsection{\texorpdfstring{Axis()}{Axis()}}
+{\footnotesize\ttfamily Axis\+::\+Axis (\begin{DoxyParamCaption}\item[{Axis\+Internal $\ast$}]{\+\_\+ptr }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 1373 of file chartdir.\+h.
+
+\mbox{\Hypertarget{class_axis_a675ffe75a5e61a9e4f60bb79749d5e0c}\label{class_axis_a675ffe75a5e61a9e4f60bb79749d5e0c}} 
+\index{Axis@{Axis}!````~Axis@{$\sim$\+Axis}}
+\index{````~Axis@{$\sim$\+Axis}!Axis@{Axis}}
+\subsubsection{\texorpdfstring{$\sim$\+Axis()}{~Axis()}}
+{\footnotesize\ttfamily Axis\+::$\sim$\+Axis (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 1374 of file chartdir.\+h.
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_axis_ade3e74820cc853fdb4f577662ce78ae3}\label{class_axis_ade3e74820cc853fdb4f577662ce78ae3}} 
+\index{Axis@{Axis}!add\+Label@{add\+Label}}
+\index{add\+Label@{add\+Label}!Axis@{Axis}}
+\subsubsection{\texorpdfstring{add\+Label()}{addLabel()}}
+{\footnotesize\ttfamily void Axis\+::add\+Label (\begin{DoxyParamCaption}\item[{double}]{pos,  }\item[{const char $\ast$}]{label }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 1481 of file chartdir.\+h.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=285pt]{class_axis_ade3e74820cc853fdb4f577662ce78ae3_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_axis_afd32537a0ccccbef0efea8c28a285530}\label{class_axis_afd32537a0ccccbef0efea8c28a285530}} 
+\index{Axis@{Axis}!add\+Mark@{add\+Mark}}
+\index{add\+Mark@{add\+Mark}!Axis@{Axis}}
+\subsubsection{\texorpdfstring{add\+Mark()}{addMark()}}
+{\footnotesize\ttfamily \hyperlink{class_mark}{Mark}$\ast$ Axis\+::add\+Mark (\begin{DoxyParamCaption}\item[{double}]{value,  }\item[{int}]{line\+Color,  }\item[{const char $\ast$}]{text = {\ttfamily 0},  }\item[{const char $\ast$}]{font = {\ttfamily 0},  }\item[{double}]{font\+Size = {\ttfamily 8} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 1484 of file chartdir.\+h.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=282pt]{class_axis_afd32537a0ccccbef0efea8c28a285530_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_axis_afd32537a0ccccbef0efea8c28a285530_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_axis_a999b49b9678d07a36a4175fd0a81fabd}\label{class_axis_a999b49b9678d07a36a4175fd0a81fabd}} 
+\index{Axis@{Axis}!add\+Zone@{add\+Zone}}
+\index{add\+Zone@{add\+Zone}!Axis@{Axis}}
+\subsubsection{\texorpdfstring{add\+Zone()}{addZone()}}
+{\footnotesize\ttfamily void Axis\+::add\+Zone (\begin{DoxyParamCaption}\item[{double}]{start\+Value,  }\item[{double}]{end\+Value,  }\item[{int}]{color }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 1487 of file chartdir.\+h.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=282pt]{class_axis_a999b49b9678d07a36a4175fd0a81fabd_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_axis_a66990afb53a3c4b709178d1cb019092c}\label{class_axis_a66990afb53a3c4b709178d1cb019092c}} 
+\index{Axis@{Axis}!copy\+Axis@{copy\+Axis}}
+\index{copy\+Axis@{copy\+Axis}!Axis@{Axis}}
+\subsubsection{\texorpdfstring{copy\+Axis()}{copyAxis()}}
+{\footnotesize\ttfamily void Axis\+::copy\+Axis (\begin{DoxyParamCaption}\item[{const \hyperlink{class_axis}{Axis} $\ast$}]{axis }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 1478 of file chartdir.\+h.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=288pt]{class_axis_a66990afb53a3c4b709178d1cb019092c_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{class_axis_a66990afb53a3c4b709178d1cb019092c_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_axis_a7e8e4de986cb83b59d23f0d9ed66deaf}\label{class_axis_a7e8e4de986cb83b59d23f0d9ed66deaf}} 
+\index{Axis@{Axis}!get\+Alignment@{get\+Alignment}}
+\index{get\+Alignment@{get\+Alignment}!Axis@{Axis}}
+\subsubsection{\texorpdfstring{get\+Alignment()}{getAlignment()}}
+{\footnotesize\ttfamily int Axis\+::get\+Alignment (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 1493 of file chartdir.\+h.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=321pt]{class_axis_a7e8e4de986cb83b59d23f0d9ed66deaf_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_axis_a27273baa6bef81839474b96f3560e003}\label{class_axis_a27273baa6bef81839474b96f3560e003}} 
+\index{Axis@{Axis}!get\+Axis\+Image\+Map@{get\+Axis\+Image\+Map}}
+\index{get\+Axis\+Image\+Map@{get\+Axis\+Image\+Map}!Axis@{Axis}}
+\subsubsection{\texorpdfstring{get\+Axis\+Image\+Map()}{getAxisImageMap()}}
+{\footnotesize\ttfamily const char$\ast$ Axis\+::get\+Axis\+Image\+Map (\begin{DoxyParamCaption}\item[{int}]{no\+Of\+Segments,  }\item[{int}]{map\+Width,  }\item[{const char $\ast$}]{url,  }\item[{const char $\ast$}]{query\+Format = {\ttfamily 0},  }\item[{const char $\ast$}]{extra\+Attr = {\ttfamily 0},  }\item[{int}]{offsetX = {\ttfamily 0},  }\item[{int}]{offsetY = {\ttfamily 0} }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 1504 of file chartdir.\+h.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_axis_a27273baa6bef81839474b96f3560e003_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_axis_a7a2277860d5f5d635a6d7156aeb1be33}\label{class_axis_a7a2277860d5f5d635a6d7156aeb1be33}} 
+\index{Axis@{Axis}!get\+Coor@{get\+Coor}}
+\index{get\+Coor@{get\+Coor}!Axis@{Axis}}
+\subsubsection{\texorpdfstring{get\+Coor()}{getCoor()}}
+{\footnotesize\ttfamily int Axis\+::get\+Coor (\begin{DoxyParamCaption}\item[{double}]{v }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 1490 of file chartdir.\+h.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=276pt]{class_axis_a7a2277860d5f5d635a6d7156aeb1be33_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_axis_a6a1b1952bcb2281243fe16470d814f9c}\label{class_axis_a6a1b1952bcb2281243fe16470d814f9c}} 
+\index{Axis@{Axis}!get\+Formatted\+Label@{get\+Formatted\+Label}}
+\index{get\+Formatted\+Label@{get\+Formatted\+Label}!Axis@{Axis}}
+\subsubsection{\texorpdfstring{get\+Formatted\+Label()}{getFormattedLabel()}}
+{\footnotesize\ttfamily const char$\ast$ Axis\+::get\+Formatted\+Label (\begin{DoxyParamCaption}\item[{double}]{v,  }\item[{const char $\ast$}]{format\+String = {\ttfamily 0} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 1501 of file chartdir.\+h.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_axis_a6a1b1952bcb2281243fe16470d814f9c_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_axis_a278e6559be3e7201f1e6e986f4562042}\label{class_axis_a278e6559be3e7201f1e6e986f4562042}} 
+\index{Axis@{Axis}!get\+H\+T\+M\+L\+Image\+Map@{get\+H\+T\+M\+L\+Image\+Map}}
+\index{get\+H\+T\+M\+L\+Image\+Map@{get\+H\+T\+M\+L\+Image\+Map}!Axis@{Axis}}
+\subsubsection{\texorpdfstring{get\+H\+T\+M\+L\+Image\+Map()}{getHTMLImageMap()}}
+{\footnotesize\ttfamily const char$\ast$ Axis\+::get\+H\+T\+M\+L\+Image\+Map (\begin{DoxyParamCaption}\item[{const char $\ast$}]{url,  }\item[{const char $\ast$}]{query\+Format = {\ttfamily 0},  }\item[{const char $\ast$}]{extra\+Attr = {\ttfamily 0},  }\item[{int}]{offsetX = {\ttfamily 0},  }\item[{int}]{offsetY = {\ttfamily 0} }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 1507 of file chartdir.\+h.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_axis_a278e6559be3e7201f1e6e986f4562042_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_axis_af5704ff02fb2e04aa16f4a4ecefc072b}\label{class_axis_af5704ff02fb2e04aa16f4a4ecefc072b}} 
+\index{Axis@{Axis}!get\+Internal\+Ptr@{get\+Internal\+Ptr}}
+\index{get\+Internal\+Ptr@{get\+Internal\+Ptr}!Axis@{Axis}}
+\subsubsection{\texorpdfstring{get\+Internal\+Ptr()}{getInternalPtr()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Axis\+Internal$\ast$ Axis\+::get\+Internal\+Ptr (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 1375 of file chartdir.\+h.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_axis_af5704ff02fb2e04aa16f4a4ecefc072b_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_axis_a376d55c978b25b17319af851a2f53f06}\label{class_axis_a376d55c978b25b17319af851a2f53f06}} 
+\index{Axis@{Axis}!get\+Internal\+Ptr@{get\+Internal\+Ptr}}
+\index{get\+Internal\+Ptr@{get\+Internal\+Ptr}!Axis@{Axis}}
+\subsubsection{\texorpdfstring{get\+Internal\+Ptr()}{getInternalPtr()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily const Axis\+Internal$\ast$ Axis\+::get\+Internal\+Ptr (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 1376 of file chartdir.\+h.
+
+\mbox{\Hypertarget{class_axis_aaf144ea75fa846472c72382e097b50a4}\label{class_axis_aaf144ea75fa846472c72382e097b50a4}} 
+\index{Axis@{Axis}!get\+Label@{get\+Label}}
+\index{get\+Label@{get\+Label}!Axis@{Axis}}
+\subsubsection{\texorpdfstring{get\+Label()}{getLabel()}}
+{\footnotesize\ttfamily const char$\ast$ Axis\+::get\+Label (\begin{DoxyParamCaption}\item[{double}]{i }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 1500 of file chartdir.\+h.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=281pt]{class_axis_aaf144ea75fa846472c72382e097b50a4_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_axis_a5c187793e791bd6e5ce8ee1f63a114e8}\label{class_axis_a5c187793e791bd6e5ce8ee1f63a114e8}} 
+\index{Axis@{Axis}!get\+Label\+Table@{get\+Label\+Table}}
+\index{get\+Label\+Table@{get\+Label\+Table}!Axis@{Axis}}
+\subsubsection{\texorpdfstring{get\+Label\+Table()}{getLabelTable()}}
+{\footnotesize\ttfamily \hyperlink{class_c_d_m_l_table}{C\+D\+M\+L\+Table}$\ast$ Axis\+::get\+Label\+Table (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 1445 of file chartdir.\+h.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=329pt]{class_axis_a5c187793e791bd6e5ce8ee1f63a114e8_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_axis_a0712caf5b1b2dc5349c4ad4e95ba63cc}\label{class_axis_a0712caf5b1b2dc5349c4ad4e95ba63cc}} 
+\index{Axis@{Axis}!get\+Max\+Value@{get\+Max\+Value}}
+\index{get\+Max\+Value@{get\+Max\+Value}!Axis@{Axis}}
+\subsubsection{\texorpdfstring{get\+Max\+Value()}{getMaxValue()}}
+{\footnotesize\ttfamily double Axis\+::get\+Max\+Value (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 1495 of file chartdir.\+h.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=321pt]{class_axis_a0712caf5b1b2dc5349c4ad4e95ba63cc_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_axis_a2a1c7c42965a0689314845e17ac8606d}\label{class_axis_a2a1c7c42965a0689314845e17ac8606d}} 
+\index{Axis@{Axis}!get\+Min\+Value@{get\+Min\+Value}}
+\index{get\+Min\+Value@{get\+Min\+Value}!Axis@{Axis}}
+\subsubsection{\texorpdfstring{get\+Min\+Value()}{getMinValue()}}
+{\footnotesize\ttfamily double Axis\+::get\+Min\+Value (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 1494 of file chartdir.\+h.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=315pt]{class_axis_a2a1c7c42965a0689314845e17ac8606d_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_axis_a11de5c65bb39d2ad0f00def9adc9fec1}\label{class_axis_a11de5c65bb39d2ad0f00def9adc9fec1}} 
+\index{Axis@{Axis}!get\+Thickness@{get\+Thickness}}
+\index{get\+Thickness@{get\+Thickness}!Axis@{Axis}}
+\subsubsection{\texorpdfstring{get\+Thickness()}{getThickness()}}
+{\footnotesize\ttfamily int Axis\+::get\+Thickness (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 1496 of file chartdir.\+h.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=324pt]{class_axis_a11de5c65bb39d2ad0f00def9adc9fec1_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_axis_a32d922936b68fc6b201dbe6faa08c905}\label{class_axis_a32d922936b68fc6b201dbe6faa08c905}} 
+\index{Axis@{Axis}!get\+Ticks@{get\+Ticks}}
+\index{get\+Ticks@{get\+Ticks}!Axis@{Axis}}
+\subsubsection{\texorpdfstring{get\+Ticks()}{getTicks()}}
+{\footnotesize\ttfamily \hyperlink{class_double_array}{Double\+Array} Axis\+::get\+Ticks (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 1498 of file chartdir.\+h.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=282pt]{class_axis_a32d922936b68fc6b201dbe6faa08c905_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_axis_a5c742dfcee277adf63daf6bb35e69ffa}\label{class_axis_a5c742dfcee277adf63daf6bb35e69ffa}} 
+\index{Axis@{Axis}!getX@{getX}}
+\index{getX@{getX}!Axis@{Axis}}
+\subsubsection{\texorpdfstring{get\+X()}{getX()}}
+{\footnotesize\ttfamily int Axis\+::getX (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 1491 of file chartdir.\+h.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=247pt]{class_axis_a5c742dfcee277adf63daf6bb35e69ffa_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_axis_acad054ebcda8850d3d588ac6ed0c270d}\label{class_axis_acad054ebcda8850d3d588ac6ed0c270d}} 
+\index{Axis@{Axis}!getY@{getY}}
+\index{getY@{getY}!Axis@{Axis}}
+\subsubsection{\texorpdfstring{get\+Y()}{getY()}}
+{\footnotesize\ttfamily int Axis\+::getY (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 1492 of file chartdir.\+h.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=247pt]{class_axis_acad054ebcda8850d3d588ac6ed0c270d_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_axis_afeb924f4756aa7cb704fadf041cd548c}\label{class_axis_afeb924f4756aa7cb704fadf041cd548c}} 
+\index{Axis@{Axis}!make\+Label\+Table@{make\+Label\+Table}}
+\index{make\+Label\+Table@{make\+Label\+Table}!Axis@{Axis}}
+\subsubsection{\texorpdfstring{make\+Label\+Table()}{makeLabelTable()}}
+{\footnotesize\ttfamily \hyperlink{class_c_d_m_l_table}{C\+D\+M\+L\+Table}$\ast$ Axis\+::make\+Label\+Table (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 1443 of file chartdir.\+h.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=349pt]{class_axis_afeb924f4756aa7cb704fadf041cd548c_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_axis_af2eb8f9d53b80736a336292d5a8ba0e9}\label{class_axis_af2eb8f9d53b80736a336292d5a8ba0e9}} 
+\index{Axis@{Axis}!set\+Angle@{set\+Angle}}
+\index{set\+Angle@{set\+Angle}!Axis@{Axis}}
+\subsubsection{\texorpdfstring{set\+Angle()}{setAngle()}}
+{\footnotesize\ttfamily void Axis\+::set\+Angle (\begin{DoxyParamCaption}\item[{double}]{start\+Angle }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 1416 of file chartdir.\+h.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=283pt]{class_axis_af2eb8f9d53b80736a336292d5a8ba0e9_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_axis_a1be77ee03032a57d8a032fa118821b74}\label{class_axis_a1be77ee03032a57d8a032fa118821b74}} 
+\index{Axis@{Axis}!set\+Auto\+Scale@{set\+Auto\+Scale}}
+\index{set\+Auto\+Scale@{set\+Auto\+Scale}!Axis@{Axis}}
+\subsubsection{\texorpdfstring{set\+Auto\+Scale()}{setAutoScale()}}
+{\footnotesize\ttfamily void Axis\+::set\+Auto\+Scale (\begin{DoxyParamCaption}\item[{double}]{top\+Extension = {\ttfamily 0.1},  }\item[{double}]{bottom\+Extension = {\ttfamily 0.1},  }\item[{double}]{zero\+Affinity = {\ttfamily 0.8} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 1427 of file chartdir.\+h.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=324pt]{class_axis_a1be77ee03032a57d8a032fa118821b74_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{class_axis_a1be77ee03032a57d8a032fa118821b74_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_axis_a54d88ba3d4791b92a3efb757b3ea5c48}\label{class_axis_a54d88ba3d4791b92a3efb757b3ea5c48}} 
+\index{Axis@{Axis}!set\+Colors@{set\+Colors}}
+\index{set\+Colors@{set\+Colors}!Axis@{Axis}}
+\subsubsection{\texorpdfstring{set\+Colors()}{setColors()}}
+{\footnotesize\ttfamily void Axis\+::set\+Colors (\begin{DoxyParamCaption}\item[{int}]{axis\+Color,  }\item[{int}]{label\+Color = {\ttfamily \hyperlink{namespace_chart_abee0d882fdc9ad0b001245ad9fc64011a879e14f2f5024caccc047374342321ef}{Chart\+::\+Text\+Color}},  }\item[{int}]{title\+Color = {\ttfamily -\/1},  }\item[{int}]{tick\+Color = {\ttfamily -\/1} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 1399 of file chartdir.\+h.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=291pt]{class_axis_a54d88ba3d4791b92a3efb757b3ea5c48_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{class_axis_a54d88ba3d4791b92a3efb757b3ea5c48_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_axis_aac131ccbb91b9c5587334e2703923b70}\label{class_axis_aac131ccbb91b9c5587334e2703923b70}} 
+\index{Axis@{Axis}!set\+Date\+Scale@{set\+Date\+Scale}}
+\index{set\+Date\+Scale@{set\+Date\+Scale}!Axis@{Axis}}
+\subsubsection{\texorpdfstring{set\+Date\+Scale()}{setDateScale()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily void Axis\+::set\+Date\+Scale (\begin{DoxyParamCaption}\item[{const char $\ast$}]{format\+String = {\ttfamily 0} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 1469 of file chartdir.\+h.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=330pt]{class_axis_aac131ccbb91b9c5587334e2703923b70_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_axis_a8b68b9e92ed809ecadf3aa3e46c77983}\label{class_axis_a8b68b9e92ed809ecadf3aa3e46c77983}} 
+\index{Axis@{Axis}!set\+Date\+Scale@{set\+Date\+Scale}}
+\index{set\+Date\+Scale@{set\+Date\+Scale}!Axis@{Axis}}
+\subsubsection{\texorpdfstring{set\+Date\+Scale()}{setDateScale()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily void Axis\+::set\+Date\+Scale (\begin{DoxyParamCaption}\item[{double}]{lower\+Limit,  }\item[{double}]{upper\+Limit,  }\item[{\hyperlink{class_string_array}{String\+Array}}]{labels }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 1471 of file chartdir.\+h.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=330pt]{class_axis_a8b68b9e92ed809ecadf3aa3e46c77983_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_axis_a38cc17d35a91fee2075c2aa7e57e9da8}\label{class_axis_a38cc17d35a91fee2075c2aa7e57e9da8}} 
+\index{Axis@{Axis}!set\+Date\+Scale@{set\+Date\+Scale}}
+\index{set\+Date\+Scale@{set\+Date\+Scale}!Axis@{Axis}}
+\subsubsection{\texorpdfstring{set\+Date\+Scale()}{setDateScale()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily void Axis\+::set\+Date\+Scale (\begin{DoxyParamCaption}\item[{double}]{lower\+Limit,  }\item[{double}]{upper\+Limit,  }\item[{double}]{major\+Tick\+Inc = {\ttfamily 0},  }\item[{double}]{minor\+Tick\+Inc = {\ttfamily 0} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 1473 of file chartdir.\+h.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=325pt]{class_axis_a38cc17d35a91fee2075c2aa7e57e9da8_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_axis_aa73c26b4400fa61689f924fcea85c97e}\label{class_axis_aa73c26b4400fa61689f924fcea85c97e}} 
+\index{Axis@{Axis}!set\+Format\+Condition@{set\+Format\+Condition}}
+\index{set\+Format\+Condition@{set\+Format\+Condition}!Axis@{Axis}}
+\subsubsection{\texorpdfstring{set\+Format\+Condition()}{setFormatCondition()}}
+{\footnotesize\ttfamily void Axis\+::set\+Format\+Condition (\begin{DoxyParamCaption}\item[{const char $\ast$}]{condition,  }\item[{double}]{operand = {\ttfamily 0} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 1390 of file chartdir.\+h.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_axis_aa73c26b4400fa61689f924fcea85c97e_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_axis_a906b0e90dca1e327107739ed120bec67}\label{class_axis_a906b0e90dca1e327107739ed120bec67}} 
+\index{Axis@{Axis}!set\+Indent@{set\+Indent}}
+\index{set\+Indent@{set\+Indent}!Axis@{Axis}}
+\subsubsection{\texorpdfstring{set\+Indent()}{setIndent()}}
+{\footnotesize\ttfamily void Axis\+::set\+Indent (\begin{DoxyParamCaption}\item[{bool}]{indent }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 1421 of file chartdir.\+h.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=288pt]{class_axis_a906b0e90dca1e327107739ed120bec67_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{class_axis_a906b0e90dca1e327107739ed120bec67_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_axis_af739ec5f1ef674cec9d425505451096e}\label{class_axis_af739ec5f1ef674cec9d425505451096e}} 
+\index{Axis@{Axis}!set\+Label\+Alignment@{set\+Label\+Alignment}}
+\index{set\+Label\+Alignment@{set\+Label\+Alignment}!Axis@{Axis}}
+\subsubsection{\texorpdfstring{set\+Label\+Alignment()}{setLabelAlignment()}}
+{\footnotesize\ttfamily void Axis\+::set\+Label\+Alignment (\begin{DoxyParamCaption}\item[{int}]{alignment,  }\item[{int}]{min\+Label\+Space = {\ttfamily 3} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 1424 of file chartdir.\+h.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_axis_af739ec5f1ef674cec9d425505451096e_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_axis_a99c109ddb7e61206f7a8f1883d3e7a85}\label{class_axis_a99c109ddb7e61206f7a8f1883d3e7a85}} 
+\index{Axis@{Axis}!set\+Label\+Format@{set\+Label\+Format}}
+\index{set\+Label\+Format@{set\+Label\+Format}!Axis@{Axis}}
+\subsubsection{\texorpdfstring{set\+Label\+Format()}{setLabelFormat()}}
+{\footnotesize\ttfamily void Axis\+::set\+Label\+Format (\begin{DoxyParamCaption}\item[{const char $\ast$}]{format\+String }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 1381 of file chartdir.\+h.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=342pt]{class_axis_a99c109ddb7e61206f7a8f1883d3e7a85_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_axis_a99c109ddb7e61206f7a8f1883d3e7a85_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_axis_ae4b909cc52ff784757e92917a18ad917}\label{class_axis_ae4b909cc52ff784757e92917a18ad917}} 
+\index{Axis@{Axis}!set\+Label\+Gap@{set\+Label\+Gap}}
+\index{set\+Label\+Gap@{set\+Label\+Gap}!Axis@{Axis}}
+\subsubsection{\texorpdfstring{set\+Label\+Gap()}{setLabelGap()}}
+{\footnotesize\ttfamily void Axis\+::set\+Label\+Gap (\begin{DoxyParamCaption}\item[{int}]{d }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 1383 of file chartdir.\+h.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=317pt]{class_axis_ae4b909cc52ff784757e92917a18ad917_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_axis_ac032ffeb1b95640f0b15d8e87b4ba02a}\label{class_axis_ac032ffeb1b95640f0b15d8e87b4ba02a}} 
+\index{Axis@{Axis}!set\+Label\+Offset@{set\+Label\+Offset}}
+\index{set\+Label\+Offset@{set\+Label\+Offset}!Axis@{Axis}}
+\subsubsection{\texorpdfstring{set\+Label\+Offset()}{setLabelOffset()}}
+{\footnotesize\ttfamily void Axis\+::set\+Label\+Offset (\begin{DoxyParamCaption}\item[{double}]{offset }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 1423 of file chartdir.\+h.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=335pt]{class_axis_ac032ffeb1b95640f0b15d8e87b4ba02a_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_axis_a95b7b98d0085dcbe709ec0c0f7df76c1}\label{class_axis_a95b7b98d0085dcbe709ec0c0f7df76c1}} 
+\index{Axis@{Axis}!set\+Labels@{set\+Labels}}
+\index{set\+Labels@{set\+Labels}!Axis@{Axis}}
+\subsubsection{\texorpdfstring{set\+Labels()}{setLabels()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily \hyperlink{class_text_box}{Text\+Box}$\ast$ Axis\+::set\+Labels (\begin{DoxyParamCaption}\item[{int}]{no\+Of\+Labels,  }\item[{const char $\ast$const $\ast$}]{text }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 1437 of file chartdir.\+h.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=316pt]{class_axis_a95b7b98d0085dcbe709ec0c0f7df76c1_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_axis_a6259ea2b433580896ac821ff442e8efe}\label{class_axis_a6259ea2b433580896ac821ff442e8efe}} 
+\index{Axis@{Axis}!set\+Labels@{set\+Labels}}
+\index{set\+Labels@{set\+Labels}!Axis@{Axis}}
+\subsubsection{\texorpdfstring{set\+Labels()}{setLabels()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily \hyperlink{class_text_box}{Text\+Box}$\ast$ Axis\+::set\+Labels (\begin{DoxyParamCaption}\item[{\hyperlink{class_string_array}{String\+Array}}]{labels }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 1439 of file chartdir.\+h.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=291pt]{class_axis_a6259ea2b433580896ac821ff442e8efe_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_axis_a4e7ea5b86e98eabc102851790543d119}\label{class_axis_a4e7ea5b86e98eabc102851790543d119}} 
+\index{Axis@{Axis}!set\+Labels@{set\+Labels}}
+\index{set\+Labels@{set\+Labels}!Axis@{Axis}}
+\subsubsection{\texorpdfstring{set\+Labels()}{setLabels()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily \hyperlink{class_text_box}{Text\+Box}$\ast$ Axis\+::set\+Labels (\begin{DoxyParamCaption}\item[{\hyperlink{class_double_array}{Double\+Array}}]{labels,  }\item[{const char $\ast$}]{format\+String = {\ttfamily 0} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 1441 of file chartdir.\+h.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=296pt]{class_axis_a4e7ea5b86e98eabc102851790543d119_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_axis_a111155ffdce1d11e8896e5f185a7b753}\label{class_axis_a111155ffdce1d11e8896e5f185a7b753}} 
+\index{Axis@{Axis}!set\+Label\+Step@{set\+Label\+Step}}
+\index{set\+Label\+Step@{set\+Label\+Step}!Axis@{Axis}}
+\subsubsection{\texorpdfstring{set\+Label\+Step()}{setLabelStep()}}
+{\footnotesize\ttfamily void Axis\+::set\+Label\+Step (\begin{DoxyParamCaption}\item[{int}]{major\+Tick\+Step,  }\item[{int}]{minor\+Tick\+Step = {\ttfamily 0},  }\item[{int}]{major\+Tick\+Offset = {\ttfamily 0},  }\item[{int}]{minor\+Tick\+Offset = {\ttfamily -\/0x7fffffff} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 1449 of file chartdir.\+h.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=321pt]{class_axis_a111155ffdce1d11e8896e5f185a7b753_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_axis_ab524e166c981420e6de22979fd695bb6}\label{class_axis_ab524e166c981420e6de22979fd695bb6}} 
+\index{Axis@{Axis}!set\+Label\+Style@{set\+Label\+Style}}
+\index{set\+Label\+Style@{set\+Label\+Style}!Axis@{Axis}}
+\subsubsection{\texorpdfstring{set\+Label\+Style()}{setLabelStyle()}}
+{\footnotesize\ttfamily \hyperlink{class_text_box}{Text\+Box}$\ast$ Axis\+::set\+Label\+Style (\begin{DoxyParamCaption}\item[{const char $\ast$}]{font = {\ttfamily 0},  }\item[{double}]{font\+Size = {\ttfamily 8},  }\item[{int}]{font\+Color = {\ttfamily \hyperlink{namespace_chart_abee0d882fdc9ad0b001245ad9fc64011a879e14f2f5024caccc047374342321ef}{Chart\+::\+Text\+Color}},  }\item[{double}]{font\+Angle = {\ttfamily 0} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 1378 of file chartdir.\+h.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=325pt]{class_axis_ab524e166c981420e6de22979fd695bb6_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{class_axis_ab524e166c981420e6de22979fd695bb6_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_axis_a975e48ae1b4d4d80e86f267f7272fd87}\label{class_axis_a975e48ae1b4d4d80e86f267f7272fd87}} 
+\index{Axis@{Axis}!set\+Length@{set\+Length}}
+\index{set\+Length@{set\+Length}!Axis@{Axis}}
+\subsubsection{\texorpdfstring{set\+Length()}{setLength()}}
+{\footnotesize\ttfamily void Axis\+::set\+Length (\begin{DoxyParamCaption}\item[{int}]{length }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 1413 of file chartdir.\+h.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=293pt]{class_axis_a975e48ae1b4d4d80e86f267f7272fd87_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_axis_a69fe2919bd8bcf21a5139dc1e0a511c4}\label{class_axis_a69fe2919bd8bcf21a5139dc1e0a511c4}} 
+\index{Axis@{Axis}!set\+Linear\+Scale@{set\+Linear\+Scale}}
+\index{set\+Linear\+Scale@{set\+Linear\+Scale}!Axis@{Axis}}
+\subsubsection{\texorpdfstring{set\+Linear\+Scale()}{setLinearScale()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily void Axis\+::set\+Linear\+Scale (\begin{DoxyParamCaption}\item[{const char $\ast$}]{format\+String = {\ttfamily 0} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 1452 of file chartdir.\+h.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=342pt]{class_axis_a69fe2919bd8bcf21a5139dc1e0a511c4_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_axis_a69fe2919bd8bcf21a5139dc1e0a511c4_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_axis_af149d48d3168531e48ef42f99695b8b7}\label{class_axis_af149d48d3168531e48ef42f99695b8b7}} 
+\index{Axis@{Axis}!set\+Linear\+Scale@{set\+Linear\+Scale}}
+\index{set\+Linear\+Scale@{set\+Linear\+Scale}!Axis@{Axis}}
+\subsubsection{\texorpdfstring{set\+Linear\+Scale()}{setLinearScale()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily void Axis\+::set\+Linear\+Scale (\begin{DoxyParamCaption}\item[{double}]{lower\+Limit,  }\item[{double}]{upper\+Limit,  }\item[{\hyperlink{class_string_array}{String\+Array}}]{labels }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 1454 of file chartdir.\+h.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=342pt]{class_axis_af149d48d3168531e48ef42f99695b8b7_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_axis_a1c02cb45cc6f4d01d0b420298ebe668c}\label{class_axis_a1c02cb45cc6f4d01d0b420298ebe668c}} 
+\index{Axis@{Axis}!set\+Linear\+Scale@{set\+Linear\+Scale}}
+\index{set\+Linear\+Scale@{set\+Linear\+Scale}!Axis@{Axis}}
+\subsubsection{\texorpdfstring{set\+Linear\+Scale()}{setLinearScale()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily void Axis\+::set\+Linear\+Scale (\begin{DoxyParamCaption}\item[{double}]{lower\+Limit,  }\item[{double}]{upper\+Limit,  }\item[{double}]{major\+Tick\+Inc = {\ttfamily 0},  }\item[{double}]{minor\+Tick\+Inc = {\ttfamily 0} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 1456 of file chartdir.\+h.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=336pt]{class_axis_a1c02cb45cc6f4d01d0b420298ebe668c_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_axis_a3222aeb4e534dbe9c1ffa68cb11a47b8}\label{class_axis_a3222aeb4e534dbe9c1ffa68cb11a47b8}} 
+\index{Axis@{Axis}!set\+Log\+Scale@{set\+Log\+Scale}}
+\index{set\+Log\+Scale@{set\+Log\+Scale}!Axis@{Axis}}
+\subsubsection{\texorpdfstring{set\+Log\+Scale()}{setLogScale()}\hspace{0.1cm}{\footnotesize\ttfamily [1/4]}}
+{\footnotesize\ttfamily void Axis\+::set\+Log\+Scale (\begin{DoxyParamCaption}\item[{bool}]{log\+Scale }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 1459 of file chartdir.\+h.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_axis_a3222aeb4e534dbe9c1ffa68cb11a47b8_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_axis_a344d2266d15c80d455e5cc9cd9e8b601}\label{class_axis_a344d2266d15c80d455e5cc9cd9e8b601}} 
+\index{Axis@{Axis}!set\+Log\+Scale@{set\+Log\+Scale}}
+\index{set\+Log\+Scale@{set\+Log\+Scale}!Axis@{Axis}}
+\subsubsection{\texorpdfstring{set\+Log\+Scale()}{setLogScale()}\hspace{0.1cm}{\footnotesize\ttfamily [2/4]}}
+{\footnotesize\ttfamily void Axis\+::set\+Log\+Scale (\begin{DoxyParamCaption}\item[{const char $\ast$}]{format\+String = {\ttfamily 0} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 1462 of file chartdir.\+h.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=320pt]{class_axis_a344d2266d15c80d455e5cc9cd9e8b601_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_axis_a38921521a2868738d43f444f6061400c}\label{class_axis_a38921521a2868738d43f444f6061400c}} 
+\index{Axis@{Axis}!set\+Log\+Scale@{set\+Log\+Scale}}
+\index{set\+Log\+Scale@{set\+Log\+Scale}!Axis@{Axis}}
+\subsubsection{\texorpdfstring{set\+Log\+Scale()}{setLogScale()}\hspace{0.1cm}{\footnotesize\ttfamily [3/4]}}
+{\footnotesize\ttfamily void Axis\+::set\+Log\+Scale (\begin{DoxyParamCaption}\item[{double}]{lower\+Limit,  }\item[{double}]{upper\+Limit,  }\item[{\hyperlink{class_string_array}{String\+Array}}]{labels }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 1464 of file chartdir.\+h.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=320pt]{class_axis_a38921521a2868738d43f444f6061400c_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_axis_a9f627fa0efdecec10a6cf63189553921}\label{class_axis_a9f627fa0efdecec10a6cf63189553921}} 
+\index{Axis@{Axis}!set\+Log\+Scale@{set\+Log\+Scale}}
+\index{set\+Log\+Scale@{set\+Log\+Scale}!Axis@{Axis}}
+\subsubsection{\texorpdfstring{set\+Log\+Scale()}{setLogScale()}\hspace{0.1cm}{\footnotesize\ttfamily [4/4]}}
+{\footnotesize\ttfamily void Axis\+::set\+Log\+Scale (\begin{DoxyParamCaption}\item[{double}]{lower\+Limit,  }\item[{double}]{upper\+Limit,  }\item[{double}]{major\+Tick\+Inc = {\ttfamily 0},  }\item[{double}]{minor\+Tick\+Inc = {\ttfamily 0} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 1466 of file chartdir.\+h.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=315pt]{class_axis_a9f627fa0efdecec10a6cf63189553921_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_axis_a03b7110aeda343e1c17567741dc47a1d}\label{class_axis_a03b7110aeda343e1c17567741dc47a1d}} 
+\index{Axis@{Axis}!set\+Margin@{set\+Margin}}
+\index{set\+Margin@{set\+Margin}!Axis@{Axis}}
+\subsubsection{\texorpdfstring{set\+Margin()}{setMargin()}}
+{\footnotesize\ttfamily void Axis\+::set\+Margin (\begin{DoxyParamCaption}\item[{int}]{top\+Margin,  }\item[{int}]{bottom\+Margin = {\ttfamily 0} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 1419 of file chartdir.\+h.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=293pt]{class_axis_a03b7110aeda343e1c17567741dc47a1d_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_axis_a03b7110aeda343e1c17567741dc47a1d_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_axis_aa3fc0eaec64e538742f6ca74c1540c88}\label{class_axis_aa3fc0eaec64e538742f6ca74c1540c88}} 
+\index{Axis@{Axis}!set\+Min\+Tick\+Inc@{set\+Min\+Tick\+Inc}}
+\index{set\+Min\+Tick\+Inc@{set\+Min\+Tick\+Inc}!Axis@{Axis}}
+\subsubsection{\texorpdfstring{set\+Min\+Tick\+Inc()}{setMinTickInc()}}
+{\footnotesize\ttfamily void Axis\+::set\+Min\+Tick\+Inc (\begin{DoxyParamCaption}\item[{double}]{inc }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 1435 of file chartdir.\+h.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=330pt]{class_axis_aa3fc0eaec64e538742f6ca74c1540c88_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_axis_a3a6ee98f7c5716c8cb94f325aa8a05d6}\label{class_axis_a3a6ee98f7c5716c8cb94f325aa8a05d6}} 
+\index{Axis@{Axis}!set\+Multi\+Format@{set\+Multi\+Format}}
+\index{set\+Multi\+Format@{set\+Multi\+Format}!Axis@{Axis}}
+\subsubsection{\texorpdfstring{set\+Multi\+Format()}{setMultiFormat()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Axis\+::set\+Multi\+Format (\begin{DoxyParamCaption}\item[{int}]{filter1,  }\item[{const char $\ast$}]{format1,  }\item[{int}]{filter2,  }\item[{const char $\ast$}]{format2,  }\item[{int}]{label\+Span = {\ttfamily 1},  }\item[{bool}]{promote\+First = {\ttfamily true} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 1386 of file chartdir.\+h.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=337pt]{class_axis_a3a6ee98f7c5716c8cb94f325aa8a05d6_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=339pt]{class_axis_a3a6ee98f7c5716c8cb94f325aa8a05d6_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_axis_aa4b46e028226064bcc5f720ba04a9e08}\label{class_axis_aa4b46e028226064bcc5f720ba04a9e08}} 
+\index{Axis@{Axis}!set\+Multi\+Format@{set\+Multi\+Format}}
+\index{set\+Multi\+Format@{set\+Multi\+Format}!Axis@{Axis}}
+\subsubsection{\texorpdfstring{set\+Multi\+Format()}{setMultiFormat()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Axis\+::set\+Multi\+Format (\begin{DoxyParamCaption}\item[{int}]{filter\+Id,  }\item[{const char $\ast$}]{format\+String,  }\item[{int}]{label\+Span = {\ttfamily 1},  }\item[{bool}]{promote\+First = {\ttfamily true} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 1388 of file chartdir.\+h.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=342pt]{class_axis_aa4b46e028226064bcc5f720ba04a9e08_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_axis_a041e7ea566969e09175978fa4ae42406}\label{class_axis_a041e7ea566969e09175978fa4ae42406}} 
+\index{Axis@{Axis}!set\+Offset@{set\+Offset}}
+\index{set\+Offset@{set\+Offset}!Axis@{Axis}}
+\subsubsection{\texorpdfstring{set\+Offset()}{setOffset()}}
+{\footnotesize\ttfamily void Axis\+::set\+Offset (\begin{DoxyParamCaption}\item[{int}]{x,  }\item[{int}]{y }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 1414 of file chartdir.\+h.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=288pt]{class_axis_a041e7ea566969e09175978fa4ae42406_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_axis_ab18969dbb7b9f59e170b7b5e72c4208e}\label{class_axis_ab18969dbb7b9f59e170b7b5e72c4208e}} 
+\index{Axis@{Axis}!set\+Reverse@{set\+Reverse}}
+\index{set\+Reverse@{set\+Reverse}!Axis@{Axis}}
+\subsubsection{\texorpdfstring{set\+Reverse()}{setReverse()}}
+{\footnotesize\ttfamily void Axis\+::set\+Reverse (\begin{DoxyParamCaption}\item[{bool}]{b = {\ttfamily true} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 1433 of file chartdir.\+h.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=307pt]{class_axis_ab18969dbb7b9f59e170b7b5e72c4208e_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_axis_a7e296867580eabe94b1b80abb5318762}\label{class_axis_a7e296867580eabe94b1b80abb5318762}} 
+\index{Axis@{Axis}!set\+Rounding@{set\+Rounding}}
+\index{set\+Rounding@{set\+Rounding}!Axis@{Axis}}
+\subsubsection{\texorpdfstring{set\+Rounding()}{setRounding()}}
+{\footnotesize\ttfamily void Axis\+::set\+Rounding (\begin{DoxyParamCaption}\item[{bool}]{round\+Min,  }\item[{bool}]{round\+Max }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 1429 of file chartdir.\+h.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=317pt]{class_axis_a7e296867580eabe94b1b80abb5318762_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_axis_a7e296867580eabe94b1b80abb5318762_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_axis_acc8fbe608da1e15e4a434ef4d1814d18}\label{class_axis_acc8fbe608da1e15e4a434ef4d1814d18}} 
+\index{Axis@{Axis}!set\+Tick\+Color@{set\+Tick\+Color}}
+\index{set\+Tick\+Color@{set\+Tick\+Color}!Axis@{Axis}}
+\subsubsection{\texorpdfstring{set\+Tick\+Color()}{setTickColor()}}
+{\footnotesize\ttfamily void Axis\+::set\+Tick\+Color (\begin{DoxyParamCaption}\item[{int}]{major\+Tick\+Color,  }\item[{int}]{minor\+Tick\+Color = {\ttfamily -\/1} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 1409 of file chartdir.\+h.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=318pt]{class_axis_acc8fbe608da1e15e4a434ef4d1814d18_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_axis_abdb7eae83d8e09c6eb9583a9cabf00d2}\label{class_axis_abdb7eae83d8e09c6eb9583a9cabf00d2}} 
+\index{Axis@{Axis}!set\+Tick\+Density@{set\+Tick\+Density}}
+\index{set\+Tick\+Density@{set\+Tick\+Density}!Axis@{Axis}}
+\subsubsection{\texorpdfstring{set\+Tick\+Density()}{setTickDensity()}}
+{\footnotesize\ttfamily void Axis\+::set\+Tick\+Density (\begin{DoxyParamCaption}\item[{int}]{major\+Tick\+Spacing,  }\item[{int}]{minor\+Tick\+Spacing = {\ttfamily -\/1} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 1431 of file chartdir.\+h.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=339pt]{class_axis_abdb7eae83d8e09c6eb9583a9cabf00d2_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{class_axis_abdb7eae83d8e09c6eb9583a9cabf00d2_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_axis_aa74e4bc19a6a83b0f8dc6d3f815dd64e}\label{class_axis_aa74e4bc19a6a83b0f8dc6d3f815dd64e}} 
+\index{Axis@{Axis}!set\+Tick\+Length@{set\+Tick\+Length}}
+\index{set\+Tick\+Length@{set\+Tick\+Length}!Axis@{Axis}}
+\subsubsection{\texorpdfstring{set\+Tick\+Length()}{setTickLength()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Axis\+::set\+Tick\+Length (\begin{DoxyParamCaption}\item[{int}]{major\+Tick\+Len }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 1403 of file chartdir.\+h.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=330pt]{class_axis_aa74e4bc19a6a83b0f8dc6d3f815dd64e_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{class_axis_aa74e4bc19a6a83b0f8dc6d3f815dd64e_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_axis_a80b7689e4f8ce5961937b9da00d9a5d7}\label{class_axis_a80b7689e4f8ce5961937b9da00d9a5d7}} 
+\index{Axis@{Axis}!set\+Tick\+Length@{set\+Tick\+Length}}
+\index{set\+Tick\+Length@{set\+Tick\+Length}!Axis@{Axis}}
+\subsubsection{\texorpdfstring{set\+Tick\+Length()}{setTickLength()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Axis\+::set\+Tick\+Length (\begin{DoxyParamCaption}\item[{int}]{major\+Tick\+Len,  }\item[{int}]{minor\+Tick\+Len }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 1405 of file chartdir.\+h.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=336pt]{class_axis_a80b7689e4f8ce5961937b9da00d9a5d7_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_axis_a5fa46a2ec10970e274f1d07e3f2754d7}\label{class_axis_a5fa46a2ec10970e274f1d07e3f2754d7}} 
+\index{Axis@{Axis}!set\+Tick\+Offset@{set\+Tick\+Offset}}
+\index{set\+Tick\+Offset@{set\+Tick\+Offset}!Axis@{Axis}}
+\subsubsection{\texorpdfstring{set\+Tick\+Offset()}{setTickOffset()}}
+{\footnotesize\ttfamily void Axis\+::set\+Tick\+Offset (\begin{DoxyParamCaption}\item[{double}]{offset }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 1422 of file chartdir.\+h.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=325pt]{class_axis_a5fa46a2ec10970e274f1d07e3f2754d7_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_axis_a62799546985d8e3839515dacc54ffcdc}\label{class_axis_a62799546985d8e3839515dacc54ffcdc}} 
+\index{Axis@{Axis}!set\+Tick\+Width@{set\+Tick\+Width}}
+\index{set\+Tick\+Width@{set\+Tick\+Width}!Axis@{Axis}}
+\subsubsection{\texorpdfstring{set\+Tick\+Width()}{setTickWidth()}}
+{\footnotesize\ttfamily void Axis\+::set\+Tick\+Width (\begin{DoxyParamCaption}\item[{int}]{major\+Tick\+Width,  }\item[{int}]{minor\+Tick\+Width = {\ttfamily -\/1} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 1407 of file chartdir.\+h.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=323pt]{class_axis_a62799546985d8e3839515dacc54ffcdc_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_axis_ac18e569a6c1b55500ed72c31dd516db7}\label{class_axis_ac18e569a6c1b55500ed72c31dd516db7}} 
+\index{Axis@{Axis}!set\+Title@{set\+Title}}
+\index{set\+Title@{set\+Title}!Axis@{Axis}}
+\subsubsection{\texorpdfstring{set\+Title()}{setTitle()}}
+{\footnotesize\ttfamily \hyperlink{class_text_box}{Text\+Box}$\ast$ Axis\+::set\+Title (\begin{DoxyParamCaption}\item[{const char $\ast$}]{text,  }\item[{const char $\ast$}]{font = {\ttfamily 0},  }\item[{double}]{font\+Size = {\ttfamily 8},  }\item[{int}]{font\+Color = {\ttfamily \hyperlink{namespace_chart_abee0d882fdc9ad0b001245ad9fc64011a879e14f2f5024caccc047374342321ef}{Chart\+::\+Text\+Color}} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 1393 of file chartdir.\+h.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=271pt]{class_axis_ac18e569a6c1b55500ed72c31dd516db7_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_axis_a77d098820ddd2387bab8db649a6d3fc3}\label{class_axis_a77d098820ddd2387bab8db649a6d3fc3}} 
+\index{Axis@{Axis}!set\+Title\+Pos@{set\+Title\+Pos}}
+\index{set\+Title\+Pos@{set\+Title\+Pos}!Axis@{Axis}}
+\subsubsection{\texorpdfstring{set\+Title\+Pos()}{setTitlePos()}}
+{\footnotesize\ttfamily void Axis\+::set\+Title\+Pos (\begin{DoxyParamCaption}\item[{int}]{alignment,  }\item[{int}]{title\+Gap = {\ttfamily 3} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 1396 of file chartdir.\+h.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=306pt]{class_axis_a77d098820ddd2387bab8db649a6d3fc3_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_axis_a05d760c8d314d23ba72ca69bf1382186}\label{class_axis_a05d760c8d314d23ba72ca69bf1382186}} 
+\index{Axis@{Axis}!set\+Top\+Margin@{set\+Top\+Margin}}
+\index{set\+Top\+Margin@{set\+Top\+Margin}!Axis@{Axis}}
+\subsubsection{\texorpdfstring{set\+Top\+Margin()}{setTopMargin()}}
+{\footnotesize\ttfamily void Axis\+::set\+Top\+Margin (\begin{DoxyParamCaption}\item[{int}]{top\+Margin }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 1417 of file chartdir.\+h.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=348pt]{class_axis_a05d760c8d314d23ba72ca69bf1382186_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_axis_ab25fcf30198a480edcd5f2013d2376f1}\label{class_axis_ab25fcf30198a480edcd5f2013d2376f1}} 
+\index{Axis@{Axis}!set\+Width@{set\+Width}}
+\index{set\+Width@{set\+Width}!Axis@{Axis}}
+\subsubsection{\texorpdfstring{set\+Width()}{setWidth()}}
+{\footnotesize\ttfamily void Axis\+::set\+Width (\begin{DoxyParamCaption}\item[{int}]{width }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 1412 of file chartdir.\+h.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=285pt]{class_axis_ab25fcf30198a480edcd5f2013d2376f1_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_axis_a27bf2d4b4c44ecf49e1ba7aad25bb897}\label{class_axis_a27bf2d4b4c44ecf49e1ba7aad25bb897}} 
+\index{Axis@{Axis}!sync\+Axis@{sync\+Axis}}
+\index{sync\+Axis@{sync\+Axis}!Axis@{Axis}}
+\subsubsection{\texorpdfstring{sync\+Axis()}{syncAxis()}}
+{\footnotesize\ttfamily void Axis\+::sync\+Axis (\begin{DoxyParamCaption}\item[{const \hyperlink{class_axis}{Axis} $\ast$}]{axis,  }\item[{double}]{slope = {\ttfamily 1},  }\item[{double}]{intercept = {\ttfamily 0} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 1476 of file chartdir.\+h.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=288pt]{class_axis_a27bf2d4b4c44ecf49e1ba7aad25bb897_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_axis_a27bf2d4b4c44ecf49e1ba7aad25bb897_icgraph}
+\end{center}
+\end{figure}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+include/\hyperlink{chartdir_8h}{chartdir.\+h}\end{DoxyCompactItemize}

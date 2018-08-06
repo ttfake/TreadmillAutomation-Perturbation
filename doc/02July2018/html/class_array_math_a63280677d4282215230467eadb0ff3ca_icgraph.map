@@ -1,0 +1,8 @@
+<map id="ArrayMath::delta" name="ArrayMath::delta">
+<area shape="rect" id="node2" href="$class_finance_chart.html#ab54186072d9b48c643dfeeb824968d31" title="Add a HLOC layer to the main chart. " alt="" coords="206,5,373,32"/>
+<area shape="rect" id="node3" href="$class_finance_chart.html#aa1405175c2d8761adcf41c5529ef4613" title="Add a volume bar chart layer on the main chart. " alt="" coords="202,56,377,83"/>
+<area shape="rect" id="node4" href="$class_finance_chart.html#ad160627b8abe9c8c14175c93e4e54113" title="Add an Average Directional Index indicators chart. " alt="" coords="211,107,368,133"/>
+<area shape="rect" id="node5" href="$class_finance_chart.html#af821cff5482c9414a74be29646564d71" title="Add a Ease of Movement indicator chart. " alt="" coords="172,157,407,184"/>
+<area shape="rect" id="node6" href="$class_finance_chart.html#ab6f774100ffc593f93eed25c98facf6f" title="Add a Money Flow Index indicator chart. " alt="" coords="213,208,365,235"/>
+<area shape="rect" id="node7" href="$class_finance_chart.html#a68954d093f52671623132c5fb35c261b" title="Add an On Balance Volume indicator chart. " alt="" coords="211,259,368,285"/>
+</map>

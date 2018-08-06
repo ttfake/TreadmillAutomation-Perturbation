@@ -1,0 +1,308 @@
+\hypertarget{class_angular_meter}{}\section{Angular\+Meter Class Reference}
+\label{class_angular_meter}\index{Angular\+Meter@{Angular\+Meter}}
+
+
+{\ttfamily \#include $<$chartdir.\+h$>$}
+
+
+
+Inheritance diagram for Angular\+Meter\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=175pt]{class_angular_meter__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Angular\+Meter\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=175pt]{class_angular_meter__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_angular_meter_a5d71988b332dcbe883e7ad8d5abc0696}{Angular\+Meter} (int width, int height, int bg\+Color=\hyperlink{namespace_chart_abee0d882fdc9ad0b001245ad9fc64011a134193bde693b9d152d0c6dc59fa7d7f}{Chart\+::\+Background\+Color}, int edge\+Color=\hyperlink{namespace_chart_abee0d882fdc9ad0b001245ad9fc64011afc6811800a9e2582dac0157b6279f836}{Chart\+::\+Transparent}, int raised\+Effect=0)
+\item 
+void \hyperlink{class_angular_meter_a67b26ec28b68cac7b13922d61d2a36c9}{add\+Ring} (int start\+Radius, int end\+Radius, int fill\+Color, int edge\+Color=-\/1)
+\item 
+void \hyperlink{class_angular_meter_af7d1c8c5d188a2cf63a08296228fd6c3}{add\+Ring\+Sector} (int start\+Radius, int end\+Radius, double a1, double a2, int fill\+Color, int edge\+Color=-\/1)
+\item 
+void \hyperlink{class_angular_meter_a569e2ac4b396f2c1cafb5943f390c454}{set\+Meter} (int cx, int cy, int radius, double start\+Angle, double end\+Angle)
+\item 
+void \hyperlink{class_angular_meter_a1de741912b6b62a24f7d197b4717e4b6}{add\+Scale\+Background} (int bg\+Radius, int fill\+Color, int edge\+Width=0, int edge\+Color=-\/1, int scale\+Radius=-\/0x7fffffff, double start\+Angle=\+Chart\+::\+No\+Value, double end\+Angle=\+Chart\+::\+No\+Value)
+\item 
+void \hyperlink{class_angular_meter_ade95bcd716c78e650ab625c3b6c0fa0c}{add\+Glare} (double radius=Chart\+::\+No\+Value, double span=135, double rotate=0, double glare\+Radius=Chart\+::\+No\+Value, double intensity=0.\+13)
+\item 
+void \hyperlink{class_angular_meter_a0e20598329d17a1ac23b73fea207a6b7}{set\+Cap} (int radius, int fill\+Color, int edge\+Color=\hyperlink{namespace_chart_abee0d882fdc9ad0b001245ad9fc64011a04817a359476e87a5c572a7a69cdaaec}{Chart\+::\+Line\+Color})
+\item 
+void \hyperlink{class_angular_meter_a80b2f6a0dea2b4968ef7cca433e85a1d}{set\+Cap2} (int back\+Color=0x888888, int front\+Color=0x000000, int front\+Edge\+Color=0x888888, double lighting\+Ratio=\+Chart\+::\+No\+Value, double back\+Radius\+Ratio=\+Chart\+::\+No\+Value, double front\+Radius\+Ratio=\+Chart\+::\+No\+Value, double front\+Edge\+Width\+Ratio=\+Chart\+::\+No\+Value)
+\item 
+\hyperlink{class_meter_pointer}{Meter\+Pointer} $\ast$ \hyperlink{class_angular_meter_a50942d4bfc5e84f9532784e6d41c9ec1}{add\+Pointer2} (double value, int fill\+Color, int edge\+Color=-\/1, int pointer\+Type=\hyperlink{namespace_chart_a15cfe53d27f5b7a07e25af504b5d10f4afd0736ae83f260af5c7f8093d24448f1}{Chart\+::\+Triangular\+Pointer2}, double start\+Offset=Chart\+::\+No\+Value, double end\+Offset=Chart\+::\+No\+Value, double width\+Ratio=Chart\+::\+No\+Value)
+\item 
+void \hyperlink{class_angular_meter_ae1f9bf540c796aeb6df17698c0019224}{add\+Zone} (double start\+Value, double end\+Value, int start\+Radius, int end\+Radius, int fill\+Color, int edge\+Color=-\/1)
+\item 
+void \hyperlink{class_angular_meter_aab2b69fb54f0761d9a2b5c76088570f6}{add\+Zone} (double start\+Value, double end\+Value, int fill\+Color, int edge\+Color=-\/1)
+\item 
+int \hyperlink{class_angular_meter_a3f2a73796ea3c4aba359042a810b0339}{relative\+Radial\+Gradient} (\hyperlink{class_double_array}{Double\+Array} gradient, double radius=-\/1)
+\item 
+int \hyperlink{class_angular_meter_a454bd094af77f76a8e1b55ce180a686c}{relative\+Linear\+Gradient} (\hyperlink{class_double_array}{Double\+Array} gradient, double angle=0, double radius=-\/1)
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 2956 of file chartdir.\+h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_angular_meter_a5d71988b332dcbe883e7ad8d5abc0696}\label{class_angular_meter_a5d71988b332dcbe883e7ad8d5abc0696}} 
+\index{Angular\+Meter@{Angular\+Meter}!Angular\+Meter@{Angular\+Meter}}
+\index{Angular\+Meter@{Angular\+Meter}!Angular\+Meter@{Angular\+Meter}}
+\subsubsection{\texorpdfstring{Angular\+Meter()}{AngularMeter()}}
+{\footnotesize\ttfamily Angular\+Meter\+::\+Angular\+Meter (\begin{DoxyParamCaption}\item[{int}]{width,  }\item[{int}]{height,  }\item[{int}]{bg\+Color = {\ttfamily \hyperlink{namespace_chart_abee0d882fdc9ad0b001245ad9fc64011a134193bde693b9d152d0c6dc59fa7d7f}{Chart\+::\+Background\+Color}},  }\item[{int}]{edge\+Color = {\ttfamily \hyperlink{namespace_chart_abee0d882fdc9ad0b001245ad9fc64011afc6811800a9e2582dac0157b6279f836}{Chart\+::\+Transparent}},  }\item[{int}]{raised\+Effect = {\ttfamily 0} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 2966 of file chartdir.\+h.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_angular_meter_a5d71988b332dcbe883e7ad8d5abc0696_cgraph}
+\end{center}
+\end{figure}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_angular_meter_ade95bcd716c78e650ab625c3b6c0fa0c}\label{class_angular_meter_ade95bcd716c78e650ab625c3b6c0fa0c}} 
+\index{Angular\+Meter@{Angular\+Meter}!add\+Glare@{add\+Glare}}
+\index{add\+Glare@{add\+Glare}!Angular\+Meter@{Angular\+Meter}}
+\subsubsection{\texorpdfstring{add\+Glare()}{addGlare()}}
+{\footnotesize\ttfamily void Angular\+Meter\+::add\+Glare (\begin{DoxyParamCaption}\item[{double}]{radius = {\ttfamily Chart\+:\+:NoValue},  }\item[{double}]{span = {\ttfamily 135},  }\item[{double}]{rotate = {\ttfamily 0},  }\item[{double}]{glare\+Radius = {\ttfamily Chart\+:\+:NoValue},  }\item[{double}]{intensity = {\ttfamily 0.13} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 2981 of file chartdir.\+h.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_angular_meter_ade95bcd716c78e650ab625c3b6c0fa0c_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_angular_meter_a50942d4bfc5e84f9532784e6d41c9ec1}\label{class_angular_meter_a50942d4bfc5e84f9532784e6d41c9ec1}} 
+\index{Angular\+Meter@{Angular\+Meter}!add\+Pointer2@{add\+Pointer2}}
+\index{add\+Pointer2@{add\+Pointer2}!Angular\+Meter@{Angular\+Meter}}
+\subsubsection{\texorpdfstring{add\+Pointer2()}{addPointer2()}}
+{\footnotesize\ttfamily \hyperlink{class_meter_pointer}{Meter\+Pointer}$\ast$ Angular\+Meter\+::add\+Pointer2 (\begin{DoxyParamCaption}\item[{double}]{value,  }\item[{int}]{fill\+Color,  }\item[{int}]{edge\+Color = {\ttfamily -\/1},  }\item[{int}]{pointer\+Type = {\ttfamily \hyperlink{namespace_chart_a15cfe53d27f5b7a07e25af504b5d10f4afd0736ae83f260af5c7f8093d24448f1}{Chart\+::\+Triangular\+Pointer2}},  }\item[{double}]{start\+Offset = {\ttfamily Chart\+:\+:NoValue},  }\item[{double}]{end\+Offset = {\ttfamily Chart\+:\+:NoValue},  }\item[{double}]{width\+Ratio = {\ttfamily Chart\+:\+:NoValue} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 2990 of file chartdir.\+h.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_angular_meter_a50942d4bfc5e84f9532784e6d41c9ec1_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_angular_meter_a67b26ec28b68cac7b13922d61d2a36c9}\label{class_angular_meter_a67b26ec28b68cac7b13922d61d2a36c9}} 
+\index{Angular\+Meter@{Angular\+Meter}!add\+Ring@{add\+Ring}}
+\index{add\+Ring@{add\+Ring}!Angular\+Meter@{Angular\+Meter}}
+\subsubsection{\texorpdfstring{add\+Ring()}{addRing()}}
+{\footnotesize\ttfamily void Angular\+Meter\+::add\+Ring (\begin{DoxyParamCaption}\item[{int}]{start\+Radius,  }\item[{int}]{end\+Radius,  }\item[{int}]{fill\+Color,  }\item[{int}]{edge\+Color = {\ttfamily -\/1} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 2971 of file chartdir.\+h.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_angular_meter_a67b26ec28b68cac7b13922d61d2a36c9_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_angular_meter_af7d1c8c5d188a2cf63a08296228fd6c3}\label{class_angular_meter_af7d1c8c5d188a2cf63a08296228fd6c3}} 
+\index{Angular\+Meter@{Angular\+Meter}!add\+Ring\+Sector@{add\+Ring\+Sector}}
+\index{add\+Ring\+Sector@{add\+Ring\+Sector}!Angular\+Meter@{Angular\+Meter}}
+\subsubsection{\texorpdfstring{add\+Ring\+Sector()}{addRingSector()}}
+{\footnotesize\ttfamily void Angular\+Meter\+::add\+Ring\+Sector (\begin{DoxyParamCaption}\item[{int}]{start\+Radius,  }\item[{int}]{end\+Radius,  }\item[{double}]{a1,  }\item[{double}]{a2,  }\item[{int}]{fill\+Color,  }\item[{int}]{edge\+Color = {\ttfamily -\/1} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 2973 of file chartdir.\+h.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_angular_meter_af7d1c8c5d188a2cf63a08296228fd6c3_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_angular_meter_a1de741912b6b62a24f7d197b4717e4b6}\label{class_angular_meter_a1de741912b6b62a24f7d197b4717e4b6}} 
+\index{Angular\+Meter@{Angular\+Meter}!add\+Scale\+Background@{add\+Scale\+Background}}
+\index{add\+Scale\+Background@{add\+Scale\+Background}!Angular\+Meter@{Angular\+Meter}}
+\subsubsection{\texorpdfstring{add\+Scale\+Background()}{addScaleBackground()}}
+{\footnotesize\ttfamily void Angular\+Meter\+::add\+Scale\+Background (\begin{DoxyParamCaption}\item[{int}]{bg\+Radius,  }\item[{int}]{fill\+Color,  }\item[{int}]{edge\+Width = {\ttfamily 0},  }\item[{int}]{edge\+Color = {\ttfamily -\/1},  }\item[{int}]{scale\+Radius = {\ttfamily -\/0x7fffffff},  }\item[{double}]{start\+Angle = {\ttfamily Chart\+:\+:NoValue},  }\item[{double}]{end\+Angle = {\ttfamily Chart\+:\+:NoValue} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 2978 of file chartdir.\+h.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_angular_meter_a1de741912b6b62a24f7d197b4717e4b6_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_angular_meter_ae1f9bf540c796aeb6df17698c0019224}\label{class_angular_meter_ae1f9bf540c796aeb6df17698c0019224}} 
+\index{Angular\+Meter@{Angular\+Meter}!add\+Zone@{add\+Zone}}
+\index{add\+Zone@{add\+Zone}!Angular\+Meter@{Angular\+Meter}}
+\subsubsection{\texorpdfstring{add\+Zone()}{addZone()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Angular\+Meter\+::add\+Zone (\begin{DoxyParamCaption}\item[{double}]{start\+Value,  }\item[{double}]{end\+Value,  }\item[{int}]{start\+Radius,  }\item[{int}]{end\+Radius,  }\item[{int}]{fill\+Color,  }\item[{int}]{edge\+Color = {\ttfamily -\/1} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 2995 of file chartdir.\+h.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_angular_meter_ae1f9bf540c796aeb6df17698c0019224_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_angular_meter_aab2b69fb54f0761d9a2b5c76088570f6}\label{class_angular_meter_aab2b69fb54f0761d9a2b5c76088570f6}} 
+\index{Angular\+Meter@{Angular\+Meter}!add\+Zone@{add\+Zone}}
+\index{add\+Zone@{add\+Zone}!Angular\+Meter@{Angular\+Meter}}
+\subsubsection{\texorpdfstring{add\+Zone()}{addZone()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Angular\+Meter\+::add\+Zone (\begin{DoxyParamCaption}\item[{double}]{start\+Value,  }\item[{double}]{end\+Value,  }\item[{int}]{fill\+Color,  }\item[{int}]{edge\+Color = {\ttfamily -\/1} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 2997 of file chartdir.\+h.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_angular_meter_aab2b69fb54f0761d9a2b5c76088570f6_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_angular_meter_a454bd094af77f76a8e1b55ce180a686c}\label{class_angular_meter_a454bd094af77f76a8e1b55ce180a686c}} 
+\index{Angular\+Meter@{Angular\+Meter}!relative\+Linear\+Gradient@{relative\+Linear\+Gradient}}
+\index{relative\+Linear\+Gradient@{relative\+Linear\+Gradient}!Angular\+Meter@{Angular\+Meter}}
+\subsubsection{\texorpdfstring{relative\+Linear\+Gradient()}{relativeLinearGradient()}}
+{\footnotesize\ttfamily int Angular\+Meter\+::relative\+Linear\+Gradient (\begin{DoxyParamCaption}\item[{\hyperlink{class_double_array}{Double\+Array}}]{gradient,  }\item[{double}]{angle = {\ttfamily 0},  }\item[{double}]{radius = {\ttfamily -\/1} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 3002 of file chartdir.\+h.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_angular_meter_a454bd094af77f76a8e1b55ce180a686c_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_angular_meter_a3f2a73796ea3c4aba359042a810b0339}\label{class_angular_meter_a3f2a73796ea3c4aba359042a810b0339}} 
+\index{Angular\+Meter@{Angular\+Meter}!relative\+Radial\+Gradient@{relative\+Radial\+Gradient}}
+\index{relative\+Radial\+Gradient@{relative\+Radial\+Gradient}!Angular\+Meter@{Angular\+Meter}}
+\subsubsection{\texorpdfstring{relative\+Radial\+Gradient()}{relativeRadialGradient()}}
+{\footnotesize\ttfamily int Angular\+Meter\+::relative\+Radial\+Gradient (\begin{DoxyParamCaption}\item[{\hyperlink{class_double_array}{Double\+Array}}]{gradient,  }\item[{double}]{radius = {\ttfamily -\/1} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 3000 of file chartdir.\+h.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_angular_meter_a3f2a73796ea3c4aba359042a810b0339_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_angular_meter_a0e20598329d17a1ac23b73fea207a6b7}\label{class_angular_meter_a0e20598329d17a1ac23b73fea207a6b7}} 
+\index{Angular\+Meter@{Angular\+Meter}!set\+Cap@{set\+Cap}}
+\index{set\+Cap@{set\+Cap}!Angular\+Meter@{Angular\+Meter}}
+\subsubsection{\texorpdfstring{set\+Cap()}{setCap()}}
+{\footnotesize\ttfamily void Angular\+Meter\+::set\+Cap (\begin{DoxyParamCaption}\item[{int}]{radius,  }\item[{int}]{fill\+Color,  }\item[{int}]{edge\+Color = {\ttfamily \hyperlink{namespace_chart_abee0d882fdc9ad0b001245ad9fc64011a04817a359476e87a5c572a7a69cdaaec}{Chart\+::\+Line\+Color}} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 2985 of file chartdir.\+h.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=347pt]{class_angular_meter_a0e20598329d17a1ac23b73fea207a6b7_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_angular_meter_a80b2f6a0dea2b4968ef7cca433e85a1d}\label{class_angular_meter_a80b2f6a0dea2b4968ef7cca433e85a1d}} 
+\index{Angular\+Meter@{Angular\+Meter}!set\+Cap2@{set\+Cap2}}
+\index{set\+Cap2@{set\+Cap2}!Angular\+Meter@{Angular\+Meter}}
+\subsubsection{\texorpdfstring{set\+Cap2()}{setCap2()}}
+{\footnotesize\ttfamily void Angular\+Meter\+::set\+Cap2 (\begin{DoxyParamCaption}\item[{int}]{back\+Color = {\ttfamily 0x888888},  }\item[{int}]{front\+Color = {\ttfamily 0x000000},  }\item[{int}]{front\+Edge\+Color = {\ttfamily 0x888888},  }\item[{double}]{lighting\+Ratio = {\ttfamily Chart\+:\+:NoValue},  }\item[{double}]{back\+Radius\+Ratio = {\ttfamily Chart\+:\+:NoValue},  }\item[{double}]{front\+Radius\+Ratio = {\ttfamily Chart\+:\+:NoValue},  }\item[{double}]{front\+Edge\+Width\+Ratio = {\ttfamily Chart\+:\+:NoValue} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 2987 of file chartdir.\+h.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_angular_meter_a80b2f6a0dea2b4968ef7cca433e85a1d_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_angular_meter_a569e2ac4b396f2c1cafb5943f390c454}\label{class_angular_meter_a569e2ac4b396f2c1cafb5943f390c454}} 
+\index{Angular\+Meter@{Angular\+Meter}!set\+Meter@{set\+Meter}}
+\index{set\+Meter@{set\+Meter}!Angular\+Meter@{Angular\+Meter}}
+\subsubsection{\texorpdfstring{set\+Meter()}{setMeter()}}
+{\footnotesize\ttfamily void Angular\+Meter\+::set\+Meter (\begin{DoxyParamCaption}\item[{int}]{cx,  }\item[{int}]{cy,  }\item[{int}]{radius,  }\item[{double}]{start\+Angle,  }\item[{double}]{end\+Angle }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 2976 of file chartdir.\+h.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_angular_meter_a569e2ac4b396f2c1cafb5943f390c454_cgraph}
+\end{center}
+\end{figure}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+include/\hyperlink{chartdir_8h}{chartdir.\+h}\end{DoxyCompactItemize}

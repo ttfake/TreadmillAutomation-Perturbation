@@ -1,0 +1,228 @@
+\hypertarget{treadmill-remote_8h}{}\section{include/treadmill-\/remote.h File Reference}
+\label{treadmill-remote_8h}\index{include/treadmill-\/remote.\+h@{include/treadmill-\/remote.\+h}}
+This graph shows which files directly or indirectly include this file\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{treadmill-remote_8h__dep__incl}
+\end{center}
+\end{figure}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{treadmill-remote_8h_a9aa60e1ead64be77ad551e745cbfd4d3}{W\+I\+N\+A\+PI}
+\item 
+\#define \hyperlink{treadmill-remote_8h_a227455497d4d32bfe49f1f795b27c6cc}{T\+R\+E\+A\+D\+M\+I\+L\+L\+R\+E\+M\+O\+T\+E\+D\+L\+L\+\_\+\+A\+PI}
+\end{DoxyCompactItemize}
+\subsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef int(\hyperlink{treadmill-remote_8h_a9aa60e1ead64be77ad551e745cbfd4d3}{W\+I\+N\+A\+PI} $\ast$ \hyperlink{treadmill-remote_8h_adceddd065a9a32e0b6b200883317ea01}{t\+\_\+\+T\+R\+E\+A\+D\+M\+I\+L\+L\+\_\+initialize}) (char $\ast$, char $\ast$)
+\item 
+typedef int(\hyperlink{treadmill-remote_8h_a9aa60e1ead64be77ad551e745cbfd4d3}{W\+I\+N\+A\+PI} $\ast$ \hyperlink{treadmill-remote_8h_aa57ca1424e45e36a7d49b5965f045d65}{t\+\_\+\+T\+R\+E\+A\+D\+M\+I\+L\+L\+\_\+set\+Speed}) (double, double, double)
+\item 
+typedef int(\hyperlink{treadmill-remote_8h_a9aa60e1ead64be77ad551e745cbfd4d3}{W\+I\+N\+A\+PI} $\ast$ \hyperlink{treadmill-remote_8h_ab6f42b69947e7d9bc7b968152eeadcd6}{t\+\_\+\+T\+R\+E\+A\+D\+M\+I\+L\+L\+\_\+set\+Speed4}) (double, double, double, double, double)
+\item 
+typedef int(\hyperlink{treadmill-remote_8h_a9aa60e1ead64be77ad551e745cbfd4d3}{W\+I\+N\+A\+PI} $\ast$ \hyperlink{treadmill-remote_8h_a43fd64b472e18efee7fddae738cf3b3c}{t\+\_\+\+T\+R\+E\+A\+D\+M\+I\+L\+L\+\_\+close}) (void)
+\item 
+typedef int(\hyperlink{treadmill-remote_8h_a9aa60e1ead64be77ad551e745cbfd4d3}{W\+I\+N\+A\+PI} $\ast$ \hyperlink{treadmill-remote_8h_afe196739d6358daf42af0f94c181ba55}{t\+\_\+\+T\+R\+E\+A\+D\+M\+I\+L\+L\+\_\+initialize\+U\+DP}) (char $\ast$, char $\ast$)
+\end{DoxyCompactItemize}
+\subsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \{ \newline
+\hyperlink{treadmill-remote_8h_a4790f45dcc812c1b00184a2edccdddf5a54d87b01884977b718dbe589e8d1c82c}{T\+R\+E\+A\+D\+M\+I\+L\+L\+\_\+\+OK} = 0, 
+\hyperlink{treadmill-remote_8h_a4790f45dcc812c1b00184a2edccdddf5a9fc5bc5f7de3a6f79daa9805dfb4cb27}{T\+R\+E\+A\+D\+M\+I\+L\+L\+\_\+\+W\+S\+A\+\_\+\+S\+T\+A\+R\+T\+UP} = 10, 
+\hyperlink{treadmill-remote_8h_a4790f45dcc812c1b00184a2edccdddf5af631cc0bdc4fdc3435c347031363f3fa}{T\+R\+E\+A\+D\+M\+I\+L\+L\+\_\+\+A\+D\+D\+R\+E\+SS} = 11, 
+\hyperlink{treadmill-remote_8h_a4790f45dcc812c1b00184a2edccdddf5a250f6961899f604e612f27f3d8289a86}{T\+R\+E\+A\+D\+M\+I\+L\+L\+\_\+\+S\+O\+C\+K\+ET} = 12, 
+\newline
+\hyperlink{treadmill-remote_8h_a4790f45dcc812c1b00184a2edccdddf5ac04b0bd641ef947f130b7d5e16f09149}{T\+R\+E\+A\+D\+M\+I\+L\+L\+\_\+\+C\+O\+N\+N\+E\+CT} = 13, 
+\hyperlink{treadmill-remote_8h_a4790f45dcc812c1b00184a2edccdddf5ac50e9332a6b30346914d5dc45cd3f8af}{T\+R\+E\+A\+D\+M\+I\+L\+L\+\_\+\+S\+E\+T\+S\+O\+C\+K\+O\+PT} = 14, 
+\hyperlink{treadmill-remote_8h_a4790f45dcc812c1b00184a2edccdddf5a5bc1eb24eeee5a40391184d67e041bed}{T\+R\+E\+A\+D\+M\+I\+L\+L\+\_\+\+N\+O\+T\+\_\+\+C\+O\+N\+N\+E\+C\+T\+ED} = 20, 
+\hyperlink{treadmill-remote_8h_a4790f45dcc812c1b00184a2edccdddf5a92b22a2ad47e602161fc7709a7e70eba}{T\+R\+E\+A\+D\+M\+I\+L\+L\+\_\+\+S\+E\+ND} = 21
+ \}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{treadmill-remote_8h_a227455497d4d32bfe49f1f795b27c6cc}{T\+R\+E\+A\+D\+M\+I\+L\+L\+R\+E\+M\+O\+T\+E\+D\+L\+L\+\_\+\+A\+PI} int \hyperlink{treadmill-remote_8h_a9aa60e1ead64be77ad551e745cbfd4d3}{W\+I\+N\+A\+PI} \hyperlink{treadmill-remote_8h_a9359937c6d3e08d705bc274f0f479032}{T\+R\+E\+A\+D\+M\+I\+L\+L\+\_\+initialize} (char $\ast$ip, char $\ast$port)
+\item 
+\hyperlink{treadmill-remote_8h_a227455497d4d32bfe49f1f795b27c6cc}{T\+R\+E\+A\+D\+M\+I\+L\+L\+R\+E\+M\+O\+T\+E\+D\+L\+L\+\_\+\+A\+PI} int \hyperlink{treadmill-remote_8h_a9aa60e1ead64be77ad551e745cbfd4d3}{W\+I\+N\+A\+PI} \hyperlink{treadmill-remote_8h_a2bd100ba2ff484a153eb10936b9385b5}{T\+R\+E\+A\+D\+M\+I\+L\+L\+\_\+set\+Speed} (double left, double right, double acceleration)
+\item 
+\hyperlink{treadmill-remote_8h_a227455497d4d32bfe49f1f795b27c6cc}{T\+R\+E\+A\+D\+M\+I\+L\+L\+R\+E\+M\+O\+T\+E\+D\+L\+L\+\_\+\+A\+PI} int \hyperlink{treadmill-remote_8h_a9aa60e1ead64be77ad551e745cbfd4d3}{W\+I\+N\+A\+PI} \hyperlink{treadmill-remote_8h_a677a8f38324cc71d8f5684f925719681}{T\+R\+E\+A\+D\+M\+I\+L\+L\+\_\+set\+Speed4} (double front\+Left, double front\+Right, double rear\+Left, double rear\+Right, double acceleration)
+\item 
+\hyperlink{treadmill-remote_8h_a227455497d4d32bfe49f1f795b27c6cc}{T\+R\+E\+A\+D\+M\+I\+L\+L\+R\+E\+M\+O\+T\+E\+D\+L\+L\+\_\+\+A\+PI} void \hyperlink{treadmill-remote_8h_a9aa60e1ead64be77ad551e745cbfd4d3}{W\+I\+N\+A\+PI} \hyperlink{treadmill-remote_8h_a884dca17af0cb6c068caeadc3ebe9a5e}{T\+R\+E\+A\+D\+M\+I\+L\+L\+\_\+close} (void)
+\item 
+\hyperlink{treadmill-remote_8h_a227455497d4d32bfe49f1f795b27c6cc}{T\+R\+E\+A\+D\+M\+I\+L\+L\+R\+E\+M\+O\+T\+E\+D\+L\+L\+\_\+\+A\+PI} int \hyperlink{treadmill-remote_8h_a9aa60e1ead64be77ad551e745cbfd4d3}{W\+I\+N\+A\+PI} \hyperlink{treadmill-remote_8h_a01211c9d8d73f3013e38c822be71871b}{T\+R\+E\+A\+D\+M\+I\+L\+L\+\_\+initialize\+U\+DP} (char $\ast$ip, char $\ast$port)
+\end{DoxyCompactItemize}
+
+
+\subsection{Macro Definition Documentation}
+\mbox{\Hypertarget{treadmill-remote_8h_a227455497d4d32bfe49f1f795b27c6cc}\label{treadmill-remote_8h_a227455497d4d32bfe49f1f795b27c6cc}} 
+\index{treadmill-\/remote.\+h@{treadmill-\/remote.\+h}!T\+R\+E\+A\+D\+M\+I\+L\+L\+R\+E\+M\+O\+T\+E\+D\+L\+L\+\_\+\+A\+PI@{T\+R\+E\+A\+D\+M\+I\+L\+L\+R\+E\+M\+O\+T\+E\+D\+L\+L\+\_\+\+A\+PI}}
+\index{T\+R\+E\+A\+D\+M\+I\+L\+L\+R\+E\+M\+O\+T\+E\+D\+L\+L\+\_\+\+A\+PI@{T\+R\+E\+A\+D\+M\+I\+L\+L\+R\+E\+M\+O\+T\+E\+D\+L\+L\+\_\+\+A\+PI}!treadmill-\/remote.\+h@{treadmill-\/remote.\+h}}
+\subsubsection{\texorpdfstring{T\+R\+E\+A\+D\+M\+I\+L\+L\+R\+E\+M\+O\+T\+E\+D\+L\+L\+\_\+\+A\+PI}{TREADMILLREMOTEDLL\_API}}
+{\footnotesize\ttfamily \#define T\+R\+E\+A\+D\+M\+I\+L\+L\+R\+E\+M\+O\+T\+E\+D\+L\+L\+\_\+\+A\+PI}
+
+
+
+Definition at line 46 of file treadmill-\/remote.\+h.
+
+\mbox{\Hypertarget{treadmill-remote_8h_a9aa60e1ead64be77ad551e745cbfd4d3}\label{treadmill-remote_8h_a9aa60e1ead64be77ad551e745cbfd4d3}} 
+\index{treadmill-\/remote.\+h@{treadmill-\/remote.\+h}!W\+I\+N\+A\+PI@{W\+I\+N\+A\+PI}}
+\index{W\+I\+N\+A\+PI@{W\+I\+N\+A\+PI}!treadmill-\/remote.\+h@{treadmill-\/remote.\+h}}
+\subsubsection{\texorpdfstring{W\+I\+N\+A\+PI}{WINAPI}}
+{\footnotesize\ttfamily \#define W\+I\+N\+A\+PI}
+
+
+
+Definition at line 45 of file treadmill-\/remote.\+h.
+
+
+
+\subsection{Typedef Documentation}
+\mbox{\Hypertarget{treadmill-remote_8h_a43fd64b472e18efee7fddae738cf3b3c}\label{treadmill-remote_8h_a43fd64b472e18efee7fddae738cf3b3c}} 
+\index{treadmill-\/remote.\+h@{treadmill-\/remote.\+h}!t\+\_\+\+T\+R\+E\+A\+D\+M\+I\+L\+L\+\_\+close@{t\+\_\+\+T\+R\+E\+A\+D\+M\+I\+L\+L\+\_\+close}}
+\index{t\+\_\+\+T\+R\+E\+A\+D\+M\+I\+L\+L\+\_\+close@{t\+\_\+\+T\+R\+E\+A\+D\+M\+I\+L\+L\+\_\+close}!treadmill-\/remote.\+h@{treadmill-\/remote.\+h}}
+\subsubsection{\texorpdfstring{t\+\_\+\+T\+R\+E\+A\+D\+M\+I\+L\+L\+\_\+close}{t\_TREADMILL\_close}}
+{\footnotesize\ttfamily typedef int(\hyperlink{treadmill-remote_8h_a9aa60e1ead64be77ad551e745cbfd4d3}{W\+I\+N\+A\+PI} $\ast$ t\+\_\+\+T\+R\+E\+A\+D\+M\+I\+L\+L\+\_\+close) (void)}
+
+
+
+Definition at line 71 of file treadmill-\/remote.\+h.
+
+\mbox{\Hypertarget{treadmill-remote_8h_adceddd065a9a32e0b6b200883317ea01}\label{treadmill-remote_8h_adceddd065a9a32e0b6b200883317ea01}} 
+\index{treadmill-\/remote.\+h@{treadmill-\/remote.\+h}!t\+\_\+\+T\+R\+E\+A\+D\+M\+I\+L\+L\+\_\+initialize@{t\+\_\+\+T\+R\+E\+A\+D\+M\+I\+L\+L\+\_\+initialize}}
+\index{t\+\_\+\+T\+R\+E\+A\+D\+M\+I\+L\+L\+\_\+initialize@{t\+\_\+\+T\+R\+E\+A\+D\+M\+I\+L\+L\+\_\+initialize}!treadmill-\/remote.\+h@{treadmill-\/remote.\+h}}
+\subsubsection{\texorpdfstring{t\+\_\+\+T\+R\+E\+A\+D\+M\+I\+L\+L\+\_\+initialize}{t\_TREADMILL\_initialize}}
+{\footnotesize\ttfamily typedef int(\hyperlink{treadmill-remote_8h_a9aa60e1ead64be77ad551e745cbfd4d3}{W\+I\+N\+A\+PI} $\ast$ t\+\_\+\+T\+R\+E\+A\+D\+M\+I\+L\+L\+\_\+initialize) (char $\ast$, char $\ast$)}
+
+
+
+Definition at line 68 of file treadmill-\/remote.\+h.
+
+\mbox{\Hypertarget{treadmill-remote_8h_afe196739d6358daf42af0f94c181ba55}\label{treadmill-remote_8h_afe196739d6358daf42af0f94c181ba55}} 
+\index{treadmill-\/remote.\+h@{treadmill-\/remote.\+h}!t\+\_\+\+T\+R\+E\+A\+D\+M\+I\+L\+L\+\_\+initialize\+U\+DP@{t\+\_\+\+T\+R\+E\+A\+D\+M\+I\+L\+L\+\_\+initialize\+U\+DP}}
+\index{t\+\_\+\+T\+R\+E\+A\+D\+M\+I\+L\+L\+\_\+initialize\+U\+DP@{t\+\_\+\+T\+R\+E\+A\+D\+M\+I\+L\+L\+\_\+initialize\+U\+DP}!treadmill-\/remote.\+h@{treadmill-\/remote.\+h}}
+\subsubsection{\texorpdfstring{t\+\_\+\+T\+R\+E\+A\+D\+M\+I\+L\+L\+\_\+initialize\+U\+DP}{t\_TREADMILL\_initializeUDP}}
+{\footnotesize\ttfamily typedef int(\hyperlink{treadmill-remote_8h_a9aa60e1ead64be77ad551e745cbfd4d3}{W\+I\+N\+A\+PI} $\ast$ t\+\_\+\+T\+R\+E\+A\+D\+M\+I\+L\+L\+\_\+initialize\+U\+DP) (char $\ast$, char $\ast$)}
+
+
+
+Definition at line 72 of file treadmill-\/remote.\+h.
+
+\mbox{\Hypertarget{treadmill-remote_8h_aa57ca1424e45e36a7d49b5965f045d65}\label{treadmill-remote_8h_aa57ca1424e45e36a7d49b5965f045d65}} 
+\index{treadmill-\/remote.\+h@{treadmill-\/remote.\+h}!t\+\_\+\+T\+R\+E\+A\+D\+M\+I\+L\+L\+\_\+set\+Speed@{t\+\_\+\+T\+R\+E\+A\+D\+M\+I\+L\+L\+\_\+set\+Speed}}
+\index{t\+\_\+\+T\+R\+E\+A\+D\+M\+I\+L\+L\+\_\+set\+Speed@{t\+\_\+\+T\+R\+E\+A\+D\+M\+I\+L\+L\+\_\+set\+Speed}!treadmill-\/remote.\+h@{treadmill-\/remote.\+h}}
+\subsubsection{\texorpdfstring{t\+\_\+\+T\+R\+E\+A\+D\+M\+I\+L\+L\+\_\+set\+Speed}{t\_TREADMILL\_setSpeed}}
+{\footnotesize\ttfamily typedef int(\hyperlink{treadmill-remote_8h_a9aa60e1ead64be77ad551e745cbfd4d3}{W\+I\+N\+A\+PI} $\ast$ t\+\_\+\+T\+R\+E\+A\+D\+M\+I\+L\+L\+\_\+set\+Speed) (double, double, double)}
+
+
+
+Definition at line 69 of file treadmill-\/remote.\+h.
+
+\mbox{\Hypertarget{treadmill-remote_8h_ab6f42b69947e7d9bc7b968152eeadcd6}\label{treadmill-remote_8h_ab6f42b69947e7d9bc7b968152eeadcd6}} 
+\index{treadmill-\/remote.\+h@{treadmill-\/remote.\+h}!t\+\_\+\+T\+R\+E\+A\+D\+M\+I\+L\+L\+\_\+set\+Speed4@{t\+\_\+\+T\+R\+E\+A\+D\+M\+I\+L\+L\+\_\+set\+Speed4}}
+\index{t\+\_\+\+T\+R\+E\+A\+D\+M\+I\+L\+L\+\_\+set\+Speed4@{t\+\_\+\+T\+R\+E\+A\+D\+M\+I\+L\+L\+\_\+set\+Speed4}!treadmill-\/remote.\+h@{treadmill-\/remote.\+h}}
+\subsubsection{\texorpdfstring{t\+\_\+\+T\+R\+E\+A\+D\+M\+I\+L\+L\+\_\+set\+Speed4}{t\_TREADMILL\_setSpeed4}}
+{\footnotesize\ttfamily typedef int(\hyperlink{treadmill-remote_8h_a9aa60e1ead64be77ad551e745cbfd4d3}{W\+I\+N\+A\+PI} $\ast$ t\+\_\+\+T\+R\+E\+A\+D\+M\+I\+L\+L\+\_\+set\+Speed4) (double, double, double, double, double)}
+
+
+
+Definition at line 70 of file treadmill-\/remote.\+h.
+
+
+
+\subsection{Enumeration Type Documentation}
+\mbox{\Hypertarget{treadmill-remote_8h_a4790f45dcc812c1b00184a2edccdddf5}\label{treadmill-remote_8h_a4790f45dcc812c1b00184a2edccdddf5}} 
+\subsubsection{\texorpdfstring{anonymous enum}{anonymous enum}}
+{\footnotesize\ttfamily anonymous enum}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{T\+R\+E\+A\+D\+M\+I\+L\+L\+\_\+\+OK@{T\+R\+E\+A\+D\+M\+I\+L\+L\+\_\+\+OK}!treadmill-\/remote.\+h@{treadmill-\/remote.\+h}}\index{treadmill-\/remote.\+h@{treadmill-\/remote.\+h}!T\+R\+E\+A\+D\+M\+I\+L\+L\+\_\+\+OK@{T\+R\+E\+A\+D\+M\+I\+L\+L\+\_\+\+OK}}}\mbox{\Hypertarget{treadmill-remote_8h_a4790f45dcc812c1b00184a2edccdddf5a54d87b01884977b718dbe589e8d1c82c}\label{treadmill-remote_8h_a4790f45dcc812c1b00184a2edccdddf5a54d87b01884977b718dbe589e8d1c82c}} 
+T\+R\+E\+A\+D\+M\+I\+L\+L\+\_\+\+OK&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{T\+R\+E\+A\+D\+M\+I\+L\+L\+\_\+\+W\+S\+A\+\_\+\+S\+T\+A\+R\+T\+UP@{T\+R\+E\+A\+D\+M\+I\+L\+L\+\_\+\+W\+S\+A\+\_\+\+S\+T\+A\+R\+T\+UP}!treadmill-\/remote.\+h@{treadmill-\/remote.\+h}}\index{treadmill-\/remote.\+h@{treadmill-\/remote.\+h}!T\+R\+E\+A\+D\+M\+I\+L\+L\+\_\+\+W\+S\+A\+\_\+\+S\+T\+A\+R\+T\+UP@{T\+R\+E\+A\+D\+M\+I\+L\+L\+\_\+\+W\+S\+A\+\_\+\+S\+T\+A\+R\+T\+UP}}}\mbox{\Hypertarget{treadmill-remote_8h_a4790f45dcc812c1b00184a2edccdddf5a9fc5bc5f7de3a6f79daa9805dfb4cb27}\label{treadmill-remote_8h_a4790f45dcc812c1b00184a2edccdddf5a9fc5bc5f7de3a6f79daa9805dfb4cb27}} 
+T\+R\+E\+A\+D\+M\+I\+L\+L\+\_\+\+W\+S\+A\+\_\+\+S\+T\+A\+R\+T\+UP&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{T\+R\+E\+A\+D\+M\+I\+L\+L\+\_\+\+A\+D\+D\+R\+E\+SS@{T\+R\+E\+A\+D\+M\+I\+L\+L\+\_\+\+A\+D\+D\+R\+E\+SS}!treadmill-\/remote.\+h@{treadmill-\/remote.\+h}}\index{treadmill-\/remote.\+h@{treadmill-\/remote.\+h}!T\+R\+E\+A\+D\+M\+I\+L\+L\+\_\+\+A\+D\+D\+R\+E\+SS@{T\+R\+E\+A\+D\+M\+I\+L\+L\+\_\+\+A\+D\+D\+R\+E\+SS}}}\mbox{\Hypertarget{treadmill-remote_8h_a4790f45dcc812c1b00184a2edccdddf5af631cc0bdc4fdc3435c347031363f3fa}\label{treadmill-remote_8h_a4790f45dcc812c1b00184a2edccdddf5af631cc0bdc4fdc3435c347031363f3fa}} 
+T\+R\+E\+A\+D\+M\+I\+L\+L\+\_\+\+A\+D\+D\+R\+E\+SS&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{T\+R\+E\+A\+D\+M\+I\+L\+L\+\_\+\+S\+O\+C\+K\+ET@{T\+R\+E\+A\+D\+M\+I\+L\+L\+\_\+\+S\+O\+C\+K\+ET}!treadmill-\/remote.\+h@{treadmill-\/remote.\+h}}\index{treadmill-\/remote.\+h@{treadmill-\/remote.\+h}!T\+R\+E\+A\+D\+M\+I\+L\+L\+\_\+\+S\+O\+C\+K\+ET@{T\+R\+E\+A\+D\+M\+I\+L\+L\+\_\+\+S\+O\+C\+K\+ET}}}\mbox{\Hypertarget{treadmill-remote_8h_a4790f45dcc812c1b00184a2edccdddf5a250f6961899f604e612f27f3d8289a86}\label{treadmill-remote_8h_a4790f45dcc812c1b00184a2edccdddf5a250f6961899f604e612f27f3d8289a86}} 
+T\+R\+E\+A\+D\+M\+I\+L\+L\+\_\+\+S\+O\+C\+K\+ET&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{T\+R\+E\+A\+D\+M\+I\+L\+L\+\_\+\+C\+O\+N\+N\+E\+CT@{T\+R\+E\+A\+D\+M\+I\+L\+L\+\_\+\+C\+O\+N\+N\+E\+CT}!treadmill-\/remote.\+h@{treadmill-\/remote.\+h}}\index{treadmill-\/remote.\+h@{treadmill-\/remote.\+h}!T\+R\+E\+A\+D\+M\+I\+L\+L\+\_\+\+C\+O\+N\+N\+E\+CT@{T\+R\+E\+A\+D\+M\+I\+L\+L\+\_\+\+C\+O\+N\+N\+E\+CT}}}\mbox{\Hypertarget{treadmill-remote_8h_a4790f45dcc812c1b00184a2edccdddf5ac04b0bd641ef947f130b7d5e16f09149}\label{treadmill-remote_8h_a4790f45dcc812c1b00184a2edccdddf5ac04b0bd641ef947f130b7d5e16f09149}} 
+T\+R\+E\+A\+D\+M\+I\+L\+L\+\_\+\+C\+O\+N\+N\+E\+CT&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{T\+R\+E\+A\+D\+M\+I\+L\+L\+\_\+\+S\+E\+T\+S\+O\+C\+K\+O\+PT@{T\+R\+E\+A\+D\+M\+I\+L\+L\+\_\+\+S\+E\+T\+S\+O\+C\+K\+O\+PT}!treadmill-\/remote.\+h@{treadmill-\/remote.\+h}}\index{treadmill-\/remote.\+h@{treadmill-\/remote.\+h}!T\+R\+E\+A\+D\+M\+I\+L\+L\+\_\+\+S\+E\+T\+S\+O\+C\+K\+O\+PT@{T\+R\+E\+A\+D\+M\+I\+L\+L\+\_\+\+S\+E\+T\+S\+O\+C\+K\+O\+PT}}}\mbox{\Hypertarget{treadmill-remote_8h_a4790f45dcc812c1b00184a2edccdddf5ac50e9332a6b30346914d5dc45cd3f8af}\label{treadmill-remote_8h_a4790f45dcc812c1b00184a2edccdddf5ac50e9332a6b30346914d5dc45cd3f8af}} 
+T\+R\+E\+A\+D\+M\+I\+L\+L\+\_\+\+S\+E\+T\+S\+O\+C\+K\+O\+PT&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{T\+R\+E\+A\+D\+M\+I\+L\+L\+\_\+\+N\+O\+T\+\_\+\+C\+O\+N\+N\+E\+C\+T\+ED@{T\+R\+E\+A\+D\+M\+I\+L\+L\+\_\+\+N\+O\+T\+\_\+\+C\+O\+N\+N\+E\+C\+T\+ED}!treadmill-\/remote.\+h@{treadmill-\/remote.\+h}}\index{treadmill-\/remote.\+h@{treadmill-\/remote.\+h}!T\+R\+E\+A\+D\+M\+I\+L\+L\+\_\+\+N\+O\+T\+\_\+\+C\+O\+N\+N\+E\+C\+T\+ED@{T\+R\+E\+A\+D\+M\+I\+L\+L\+\_\+\+N\+O\+T\+\_\+\+C\+O\+N\+N\+E\+C\+T\+ED}}}\mbox{\Hypertarget{treadmill-remote_8h_a4790f45dcc812c1b00184a2edccdddf5a5bc1eb24eeee5a40391184d67e041bed}\label{treadmill-remote_8h_a4790f45dcc812c1b00184a2edccdddf5a5bc1eb24eeee5a40391184d67e041bed}} 
+T\+R\+E\+A\+D\+M\+I\+L\+L\+\_\+\+N\+O\+T\+\_\+\+C\+O\+N\+N\+E\+C\+T\+ED&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{T\+R\+E\+A\+D\+M\+I\+L\+L\+\_\+\+S\+E\+ND@{T\+R\+E\+A\+D\+M\+I\+L\+L\+\_\+\+S\+E\+ND}!treadmill-\/remote.\+h@{treadmill-\/remote.\+h}}\index{treadmill-\/remote.\+h@{treadmill-\/remote.\+h}!T\+R\+E\+A\+D\+M\+I\+L\+L\+\_\+\+S\+E\+ND@{T\+R\+E\+A\+D\+M\+I\+L\+L\+\_\+\+S\+E\+ND}}}\mbox{\Hypertarget{treadmill-remote_8h_a4790f45dcc812c1b00184a2edccdddf5a92b22a2ad47e602161fc7709a7e70eba}\label{treadmill-remote_8h_a4790f45dcc812c1b00184a2edccdddf5a92b22a2ad47e602161fc7709a7e70eba}} 
+T\+R\+E\+A\+D\+M\+I\+L\+L\+\_\+\+S\+E\+ND&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+Definition at line 51 of file treadmill-\/remote.\+h.
+
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{treadmill-remote_8h_a884dca17af0cb6c068caeadc3ebe9a5e}\label{treadmill-remote_8h_a884dca17af0cb6c068caeadc3ebe9a5e}} 
+\index{treadmill-\/remote.\+h@{treadmill-\/remote.\+h}!T\+R\+E\+A\+D\+M\+I\+L\+L\+\_\+close@{T\+R\+E\+A\+D\+M\+I\+L\+L\+\_\+close}}
+\index{T\+R\+E\+A\+D\+M\+I\+L\+L\+\_\+close@{T\+R\+E\+A\+D\+M\+I\+L\+L\+\_\+close}!treadmill-\/remote.\+h@{treadmill-\/remote.\+h}}
+\subsubsection{\texorpdfstring{T\+R\+E\+A\+D\+M\+I\+L\+L\+\_\+close()}{TREADMILL\_close()}}
+{\footnotesize\ttfamily \hyperlink{treadmill-remote_8h_a227455497d4d32bfe49f1f795b27c6cc}{T\+R\+E\+A\+D\+M\+I\+L\+L\+R\+E\+M\+O\+T\+E\+D\+L\+L\+\_\+\+A\+PI} void \hyperlink{treadmill-remote_8h_a9aa60e1ead64be77ad551e745cbfd4d3}{W\+I\+N\+A\+PI} T\+R\+E\+A\+D\+M\+I\+L\+L\+\_\+close (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{treadmill-remote_8h_a9359937c6d3e08d705bc274f0f479032}\label{treadmill-remote_8h_a9359937c6d3e08d705bc274f0f479032}} 
+\index{treadmill-\/remote.\+h@{treadmill-\/remote.\+h}!T\+R\+E\+A\+D\+M\+I\+L\+L\+\_\+initialize@{T\+R\+E\+A\+D\+M\+I\+L\+L\+\_\+initialize}}
+\index{T\+R\+E\+A\+D\+M\+I\+L\+L\+\_\+initialize@{T\+R\+E\+A\+D\+M\+I\+L\+L\+\_\+initialize}!treadmill-\/remote.\+h@{treadmill-\/remote.\+h}}
+\subsubsection{\texorpdfstring{T\+R\+E\+A\+D\+M\+I\+L\+L\+\_\+initialize()}{TREADMILL\_initialize()}}
+{\footnotesize\ttfamily \hyperlink{treadmill-remote_8h_a227455497d4d32bfe49f1f795b27c6cc}{T\+R\+E\+A\+D\+M\+I\+L\+L\+R\+E\+M\+O\+T\+E\+D\+L\+L\+\_\+\+A\+PI} int \hyperlink{treadmill-remote_8h_a9aa60e1ead64be77ad551e745cbfd4d3}{W\+I\+N\+A\+PI} T\+R\+E\+A\+D\+M\+I\+L\+L\+\_\+initialize (\begin{DoxyParamCaption}\item[{char $\ast$}]{ip,  }\item[{char $\ast$}]{port }\end{DoxyParamCaption})}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{treadmill-remote_8h_a9359937c6d3e08d705bc274f0f479032_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{treadmill-remote_8h_a01211c9d8d73f3013e38c822be71871b}\label{treadmill-remote_8h_a01211c9d8d73f3013e38c822be71871b}} 
+\index{treadmill-\/remote.\+h@{treadmill-\/remote.\+h}!T\+R\+E\+A\+D\+M\+I\+L\+L\+\_\+initialize\+U\+DP@{T\+R\+E\+A\+D\+M\+I\+L\+L\+\_\+initialize\+U\+DP}}
+\index{T\+R\+E\+A\+D\+M\+I\+L\+L\+\_\+initialize\+U\+DP@{T\+R\+E\+A\+D\+M\+I\+L\+L\+\_\+initialize\+U\+DP}!treadmill-\/remote.\+h@{treadmill-\/remote.\+h}}
+\subsubsection{\texorpdfstring{T\+R\+E\+A\+D\+M\+I\+L\+L\+\_\+initialize\+U\+D\+P()}{TREADMILL\_initializeUDP()}}
+{\footnotesize\ttfamily \hyperlink{treadmill-remote_8h_a227455497d4d32bfe49f1f795b27c6cc}{T\+R\+E\+A\+D\+M\+I\+L\+L\+R\+E\+M\+O\+T\+E\+D\+L\+L\+\_\+\+A\+PI} int \hyperlink{treadmill-remote_8h_a9aa60e1ead64be77ad551e745cbfd4d3}{W\+I\+N\+A\+PI} T\+R\+E\+A\+D\+M\+I\+L\+L\+\_\+initialize\+U\+DP (\begin{DoxyParamCaption}\item[{char $\ast$}]{ip,  }\item[{char $\ast$}]{port }\end{DoxyParamCaption})}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{treadmill-remote_8h_a01211c9d8d73f3013e38c822be71871b_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{treadmill-remote_8h_a2bd100ba2ff484a153eb10936b9385b5}\label{treadmill-remote_8h_a2bd100ba2ff484a153eb10936b9385b5}} 
+\index{treadmill-\/remote.\+h@{treadmill-\/remote.\+h}!T\+R\+E\+A\+D\+M\+I\+L\+L\+\_\+set\+Speed@{T\+R\+E\+A\+D\+M\+I\+L\+L\+\_\+set\+Speed}}
+\index{T\+R\+E\+A\+D\+M\+I\+L\+L\+\_\+set\+Speed@{T\+R\+E\+A\+D\+M\+I\+L\+L\+\_\+set\+Speed}!treadmill-\/remote.\+h@{treadmill-\/remote.\+h}}
+\subsubsection{\texorpdfstring{T\+R\+E\+A\+D\+M\+I\+L\+L\+\_\+set\+Speed()}{TREADMILL\_setSpeed()}}
+{\footnotesize\ttfamily \hyperlink{treadmill-remote_8h_a227455497d4d32bfe49f1f795b27c6cc}{T\+R\+E\+A\+D\+M\+I\+L\+L\+R\+E\+M\+O\+T\+E\+D\+L\+L\+\_\+\+A\+PI} int \hyperlink{treadmill-remote_8h_a9aa60e1ead64be77ad551e745cbfd4d3}{W\+I\+N\+A\+PI} T\+R\+E\+A\+D\+M\+I\+L\+L\+\_\+set\+Speed (\begin{DoxyParamCaption}\item[{double}]{left,  }\item[{double}]{right,  }\item[{double}]{acceleration }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{treadmill-remote_8h_a677a8f38324cc71d8f5684f925719681}\label{treadmill-remote_8h_a677a8f38324cc71d8f5684f925719681}} 
+\index{treadmill-\/remote.\+h@{treadmill-\/remote.\+h}!T\+R\+E\+A\+D\+M\+I\+L\+L\+\_\+set\+Speed4@{T\+R\+E\+A\+D\+M\+I\+L\+L\+\_\+set\+Speed4}}
+\index{T\+R\+E\+A\+D\+M\+I\+L\+L\+\_\+set\+Speed4@{T\+R\+E\+A\+D\+M\+I\+L\+L\+\_\+set\+Speed4}!treadmill-\/remote.\+h@{treadmill-\/remote.\+h}}
+\subsubsection{\texorpdfstring{T\+R\+E\+A\+D\+M\+I\+L\+L\+\_\+set\+Speed4()}{TREADMILL\_setSpeed4()}}
+{\footnotesize\ttfamily \hyperlink{treadmill-remote_8h_a227455497d4d32bfe49f1f795b27c6cc}{T\+R\+E\+A\+D\+M\+I\+L\+L\+R\+E\+M\+O\+T\+E\+D\+L\+L\+\_\+\+A\+PI} int \hyperlink{treadmill-remote_8h_a9aa60e1ead64be77ad551e745cbfd4d3}{W\+I\+N\+A\+PI} T\+R\+E\+A\+D\+M\+I\+L\+L\+\_\+set\+Speed4 (\begin{DoxyParamCaption}\item[{double}]{front\+Left,  }\item[{double}]{front\+Right,  }\item[{double}]{rear\+Left,  }\item[{double}]{rear\+Right,  }\item[{double}]{acceleration }\end{DoxyParamCaption})}
+

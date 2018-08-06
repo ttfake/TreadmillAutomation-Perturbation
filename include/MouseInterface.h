@@ -36,11 +36,13 @@ class MouseInterface : public QObject
         void                              setLogPath(QString m_logPath);
         void                              setMovementDetectedBool(bool mMovementDetectedBool);
         void                              SetupDigitalOutput();
+        int                               GetDevices();
 
         void                              SetupEventTrigger();
 		void							  SetupChannelSelection();
 		void                              SetupStimTrigger();
         void                              StopTask();
+        bool                              movementDetectedBool;
     public slots:
         void                              getRawInput();
         void                              setPerturbationActiveBoolTrue();
@@ -64,11 +66,14 @@ class MouseInterface : public QObject
         bool                              movementBool;
         bool                              perturbationActiveBool;
         QString                           logPath;
-        bool                              movementDetectedBool;
+
 
         TaskHandle                        EventHandle=0;
 		TaskHandle                        StimTriggerHandle=1;
 		TaskHandle                        ChannelSelectionHandle=2;
+
+        QFile* pertTriggerLog;
+        QString defaultPath;
 
 
 };

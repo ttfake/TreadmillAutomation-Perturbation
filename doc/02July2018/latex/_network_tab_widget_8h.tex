@@ -1,0 +1,111 @@
+\hypertarget{_network_tab_widget_8h}{}\section{include/\+Network\+Tab\+Widget.h File Reference}
+\label{_network_tab_widget_8h}\index{include/\+Network\+Tab\+Widget.\+h@{include/\+Network\+Tab\+Widget.\+h}}
+{\ttfamily \#include $<$Q\+Widget$>$}\newline
+{\ttfamily \#include $<$Q\+V\+Box\+Layout$>$}\newline
+{\ttfamily \#include $<$Q\+Push\+Button$>$}\newline
+{\ttfamily \#include $<$Q\+Label$>$}\newline
+{\ttfamily \#include $<$Q\+Plain\+Text\+Edit$>$}\newline
+{\ttfamily \#include $<$Q\+Group\+Box$>$}\newline
+{\ttfamily \#include $<$Q\+Check\+Box$>$}\newline
+{\ttfamily \#include $<$Q\+Radio\+Button$>$}\newline
+{\ttfamily \#include $<$Q\+Abstract\+Socket$>$}\newline
+{\ttfamily \#include $<$Q\+Message\+Box$>$}\newline
+{\ttfamily \#include $<$Q\+Painter$>$}\newline
+{\ttfamily \#include $<$Q\+Tcp\+Socket$>$}\newline
+{\ttfamily \#include $<$Q\+Udp\+Socket$>$}\newline
+{\ttfamily \#include $<$Q\+Library$>$}\newline
+{\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include \char`\"{}Send\+Setpoints.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}treadmill-\/remote.\+h\char`\"{}}\newline
+Include dependency graph for Network\+Tab\+Widget.\+h\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_network_tab_widget_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_network_tab_widget_8h__dep__incl}
+\end{center}
+\end{figure}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{class_network_tab_widget}{Network\+Tab\+Widget}
+\end{DoxyCompactItemize}
+\subsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \hyperlink{_network_tab_widget_8h_ae9bae6e8ff717cf1cc3264099728fe7b}{Treadmill\+Property} \{ \newline
+\hyperlink{_network_tab_widget_8h_ae9bae6e8ff717cf1cc3264099728fe7ba88ec7d5086d2469ba843c7fcceade8a6}{D\+E\+F\+A\+U\+LT}, 
+\hyperlink{_network_tab_widget_8h_ae9bae6e8ff717cf1cc3264099728fe7bacc313c985549b695d777b0cd3d772555}{A\+C\+C\+E\+L\+E\+R\+A\+T\+I\+ON}, 
+\hyperlink{_network_tab_widget_8h_ae9bae6e8ff717cf1cc3264099728fe7ba9cb29a842aedd4694675119389bd5724}{D\+E\+C\+E\+L\+E\+R\+A\+T\+I\+ON}, 
+\hyperlink{_network_tab_widget_8h_ae9bae6e8ff717cf1cc3264099728fe7ba1fb3554200c1173d24e97e9d32283ead}{S\+P\+E\+ED}, 
+\newline
+\hyperlink{_network_tab_widget_8h_ae9bae6e8ff717cf1cc3264099728fe7baf7c46a5d3e619eeb668f10bf50616aa7}{I\+N\+C\+L\+I\+N\+A\+T\+I\+ON}
+ \}
+\item 
+enum \hyperlink{_network_tab_widget_8h_aab600c5a827c4d7d2b63c4344488eda5}{Setpoint\+Type} \{ \hyperlink{_network_tab_widget_8h_aab600c5a827c4d7d2b63c4344488eda5a767b5a0a2b7f60486a02d0b53df380d1}{Normal\+Setpoint}, 
+\hyperlink{_network_tab_widget_8h_aab600c5a827c4d7d2b63c4344488eda5ac07c4ba546a8f8005a054e47f813196f}{Feedback\+Registration\+Setpoint}
+ \}
+\end{DoxyCompactItemize}
+
+
+\subsection{Enumeration Type Documentation}
+\mbox{\Hypertarget{_network_tab_widget_8h_aab600c5a827c4d7d2b63c4344488eda5}\label{_network_tab_widget_8h_aab600c5a827c4d7d2b63c4344488eda5}} 
+\index{Network\+Tab\+Widget.\+h@{Network\+Tab\+Widget.\+h}!Setpoint\+Type@{Setpoint\+Type}}
+\index{Setpoint\+Type@{Setpoint\+Type}!Network\+Tab\+Widget.\+h@{Network\+Tab\+Widget.\+h}}
+\subsubsection{\texorpdfstring{Setpoint\+Type}{SetpointType}}
+{\footnotesize\ttfamily enum \hyperlink{_network_tab_widget_8h_aab600c5a827c4d7d2b63c4344488eda5}{Setpoint\+Type}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Normal\+Setpoint@{Normal\+Setpoint}!Network\+Tab\+Widget.\+h@{Network\+Tab\+Widget.\+h}}\index{Network\+Tab\+Widget.\+h@{Network\+Tab\+Widget.\+h}!Normal\+Setpoint@{Normal\+Setpoint}}}\mbox{\Hypertarget{_network_tab_widget_8h_aab600c5a827c4d7d2b63c4344488eda5a767b5a0a2b7f60486a02d0b53df380d1}\label{_network_tab_widget_8h_aab600c5a827c4d7d2b63c4344488eda5a767b5a0a2b7f60486a02d0b53df380d1}} 
+Normal\+Setpoint&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Feedback\+Registration\+Setpoint@{Feedback\+Registration\+Setpoint}!Network\+Tab\+Widget.\+h@{Network\+Tab\+Widget.\+h}}\index{Network\+Tab\+Widget.\+h@{Network\+Tab\+Widget.\+h}!Feedback\+Registration\+Setpoint@{Feedback\+Registration\+Setpoint}}}\mbox{\Hypertarget{_network_tab_widget_8h_aab600c5a827c4d7d2b63c4344488eda5ac07c4ba546a8f8005a054e47f813196f}\label{_network_tab_widget_8h_aab600c5a827c4d7d2b63c4344488eda5ac07c4ba546a8f8005a054e47f813196f}} 
+Feedback\+Registration\+Setpoint&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+Definition at line 34 of file Network\+Tab\+Widget.\+h.
+
+\mbox{\Hypertarget{_network_tab_widget_8h_ae9bae6e8ff717cf1cc3264099728fe7b}\label{_network_tab_widget_8h_ae9bae6e8ff717cf1cc3264099728fe7b}} 
+\index{Network\+Tab\+Widget.\+h@{Network\+Tab\+Widget.\+h}!Treadmill\+Property@{Treadmill\+Property}}
+\index{Treadmill\+Property@{Treadmill\+Property}!Network\+Tab\+Widget.\+h@{Network\+Tab\+Widget.\+h}}
+\subsubsection{\texorpdfstring{Treadmill\+Property}{TreadmillProperty}}
+{\footnotesize\ttfamily enum \hyperlink{_network_tab_widget_8h_ae9bae6e8ff717cf1cc3264099728fe7b}{Treadmill\+Property}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{D\+E\+F\+A\+U\+LT@{D\+E\+F\+A\+U\+LT}!Network\+Tab\+Widget.\+h@{Network\+Tab\+Widget.\+h}}\index{Network\+Tab\+Widget.\+h@{Network\+Tab\+Widget.\+h}!D\+E\+F\+A\+U\+LT@{D\+E\+F\+A\+U\+LT}}}\mbox{\Hypertarget{_network_tab_widget_8h_ae9bae6e8ff717cf1cc3264099728fe7ba88ec7d5086d2469ba843c7fcceade8a6}\label{_network_tab_widget_8h_ae9bae6e8ff717cf1cc3264099728fe7ba88ec7d5086d2469ba843c7fcceade8a6}} 
+D\+E\+F\+A\+U\+LT&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{A\+C\+C\+E\+L\+E\+R\+A\+T\+I\+ON@{A\+C\+C\+E\+L\+E\+R\+A\+T\+I\+ON}!Network\+Tab\+Widget.\+h@{Network\+Tab\+Widget.\+h}}\index{Network\+Tab\+Widget.\+h@{Network\+Tab\+Widget.\+h}!A\+C\+C\+E\+L\+E\+R\+A\+T\+I\+ON@{A\+C\+C\+E\+L\+E\+R\+A\+T\+I\+ON}}}\mbox{\Hypertarget{_network_tab_widget_8h_ae9bae6e8ff717cf1cc3264099728fe7bacc313c985549b695d777b0cd3d772555}\label{_network_tab_widget_8h_ae9bae6e8ff717cf1cc3264099728fe7bacc313c985549b695d777b0cd3d772555}} 
+A\+C\+C\+E\+L\+E\+R\+A\+T\+I\+ON&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{D\+E\+C\+E\+L\+E\+R\+A\+T\+I\+ON@{D\+E\+C\+E\+L\+E\+R\+A\+T\+I\+ON}!Network\+Tab\+Widget.\+h@{Network\+Tab\+Widget.\+h}}\index{Network\+Tab\+Widget.\+h@{Network\+Tab\+Widget.\+h}!D\+E\+C\+E\+L\+E\+R\+A\+T\+I\+ON@{D\+E\+C\+E\+L\+E\+R\+A\+T\+I\+ON}}}\mbox{\Hypertarget{_network_tab_widget_8h_ae9bae6e8ff717cf1cc3264099728fe7ba9cb29a842aedd4694675119389bd5724}\label{_network_tab_widget_8h_ae9bae6e8ff717cf1cc3264099728fe7ba9cb29a842aedd4694675119389bd5724}} 
+D\+E\+C\+E\+L\+E\+R\+A\+T\+I\+ON&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{S\+P\+E\+ED@{S\+P\+E\+ED}!Network\+Tab\+Widget.\+h@{Network\+Tab\+Widget.\+h}}\index{Network\+Tab\+Widget.\+h@{Network\+Tab\+Widget.\+h}!S\+P\+E\+ED@{S\+P\+E\+ED}}}\mbox{\Hypertarget{_network_tab_widget_8h_ae9bae6e8ff717cf1cc3264099728fe7ba1fb3554200c1173d24e97e9d32283ead}\label{_network_tab_widget_8h_ae9bae6e8ff717cf1cc3264099728fe7ba1fb3554200c1173d24e97e9d32283ead}} 
+S\+P\+E\+ED&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{I\+N\+C\+L\+I\+N\+A\+T\+I\+ON@{I\+N\+C\+L\+I\+N\+A\+T\+I\+ON}!Network\+Tab\+Widget.\+h@{Network\+Tab\+Widget.\+h}}\index{Network\+Tab\+Widget.\+h@{Network\+Tab\+Widget.\+h}!I\+N\+C\+L\+I\+N\+A\+T\+I\+ON@{I\+N\+C\+L\+I\+N\+A\+T\+I\+ON}}}\mbox{\Hypertarget{_network_tab_widget_8h_ae9bae6e8ff717cf1cc3264099728fe7baf7c46a5d3e619eeb668f10bf50616aa7}\label{_network_tab_widget_8h_ae9bae6e8ff717cf1cc3264099728fe7baf7c46a5d3e619eeb668f10bf50616aa7}} 
+I\+N\+C\+L\+I\+N\+A\+T\+I\+ON&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+Definition at line 24 of file Network\+Tab\+Widget.\+h.
+

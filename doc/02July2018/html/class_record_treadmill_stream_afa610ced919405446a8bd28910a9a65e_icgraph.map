@@ -1,0 +1,5 @@
+<map id="RecordTreadmillStream::treadmillStarted" name="RecordTreadmillStream::treadmillStarted">
+<area shape="rect" id="node2" href="$class_record_treadmill_stream.html#a058913f2f5796ef722ee0270382cf5a4" title="RecordTreadmillStream\l::startDataCollection" alt="" coords="419,5,577,47"/>
+<area shape="rect" id="node3" href="$class_record_treadmill_stream.html#ae16198d0acd13cb4fa401ae1d00e2282" title="RecordTreadmillStream\l::setPort" alt="" coords="419,84,577,125"/>
+<area shape="rect" id="node4" href="$class_record_treadmill_stream.html#ac35d01f4cc74269eaecd732d60284e89" title="RecordTreadmillStream\l::treadmillStartedSlot" alt="" coords="212,51,371,92"/>
+</map>

@@ -1,0 +1,7 @@
+<map id="TreadmillAutomation::createFileMenu" name="TreadmillAutomation::createFileMenu">
+<area shape="rect" id="node2" href="$class_treadmill_automation.html#a2c95c71e2ab52800e415565c9f59838c" title="TreadmillAutomation\l::showDaqDataBox" alt="" coords="201,5,343,47"/>
+<area shape="rect" id="node3" href="$class_perturbation_tab_widget.html#a2b0878675fa56a11049173a0a8230cfe" title="PerturbationTabWidget\l::showTimer" alt="" coords="195,71,349,112"/>
+<area shape="rect" id="node4" href="$class_send_setpoints.html#a35658d55d1dd98b53515c07eebc107a1" title="SendSetpoints::setAcceleration\lValue" alt="" coords="398,5,603,47"/>
+<area shape="rect" id="node5" href="$class_send_setpoints.html#a5993c64b755726a1b618fba58537aee6" title="SendSetpoints::setDeceleration\lValue" alt="" coords="397,71,604,112"/>
+<area shape="rect" id="node6" href="$class_send_setpoints.html#af592798b90015754fd11c7ae6493bed7" title="SendSetpoints::setLeftFront\lSpeedValue" alt="" coords="408,136,593,177"/>
+</map>

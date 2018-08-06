@@ -1,0 +1,6 @@
+<map id="FinanceChart::~FinanceChart" name="FinanceChart::~FinanceChart">
+<area shape="rect" id="node2" href="$class_finance_chart.html#a044a1d55c37501ea29ed2b5916faf0e1" title="Create a FinanceChart with a given width. The height will be automatically determined as the chart is..." alt="" coords="248,31,435,57"/>
+<area shape="rect" id="node3" href="$class_multi_chart.html#a3769e8277675d5a1efb2ac44d45c9116" title="MultiChart::setMainChart" alt="" coords="483,31,651,57"/>
+<area shape="rect" id="node4" href="$bchartdir_8h.html#a09fff43c8eb9d20022ed5db69fb3822a" title="CMultiChart_setMainChart" alt="" coords="699,5,876,32"/>
+<area shape="rect" id="node5" href="$class_base_chart.html#a5d69ddcea93f12d2a63fbc7d5b640911" title="BaseChart::getInternalPtr" alt="" coords="702,56,873,83"/>
+</map>

@@ -1,0 +1,8 @@
+<map id="FinanceChart::setNumberLabelFormat" name="FinanceChart::setNumberLabelFormat">
+<area shape="rect" id="node2" href="$class_array_math.html#abaaac1009dda4a6124ecd2182354dc39" title="ArrayMath::movAvg" alt="" coords="256,5,395,32"/>
+<area shape="rect" id="node4" href="$class_array_math.html#a0523eb1e6ea490c1a298a8b9bca05833" title="ArrayMath::add" alt="" coords="270,56,381,83"/>
+<area shape="rect" id="node6" href="$class_array_math.html#a1f2298b0a0338ea48fc3163f6387d11c" title="ArrayMath::div" alt="" coords="272,107,379,133"/>
+<area shape="rect" id="node3" href="$bchartdir_8h.html#a4f3c7d88aaff0390bb6e15bb26c5d26d" title="CArrayMath_movAvg" alt="" coords="443,5,589,32"/>
+<area shape="rect" id="node5" href="$bchartdir_8h.html#a09dcf9ac1adfaae34a6fa3aa82f291f6" title="CArrayMath_add" alt="" coords="456,56,576,83"/>
+<area shape="rect" id="node7" href="$bchartdir_8h.html#a4b5afb99b2f1115fe7dbd253e72c190d" title="CArrayMath_div" alt="" coords="458,107,574,133"/>
+</map>

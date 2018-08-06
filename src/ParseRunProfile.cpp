@@ -126,9 +126,9 @@ void ParseRunProfile::getRuns()
     treadmillDb->retrieveRuns();
 }
 
-void ParseRunProfile::getRun(int runIndex)
+void ParseRunProfile::getRun(int currentRunsRowIndex, int runIndex)
 {
-    treadmillDb->retrieveRun(runIndex);
+    treadmillDb->retrieveRun(currentRunsRowIndex, runIndex);
 }
 
 void ParseRunProfile::startStim()

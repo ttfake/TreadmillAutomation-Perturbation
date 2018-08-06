@@ -1,0 +1,1390 @@
+\hypertarget{class_array_math}{}\section{Array\+Math Class Reference}
+\label{class_array_math}\index{Array\+Math@{Array\+Math}}
+
+
+{\ttfamily \#include $<$chartdir.\+h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_array_math_a3a8b5e89c10d1c1b2c098bf9dd4366d7}{Array\+Math} (\hyperlink{class_double_array}{Double\+Array} a)
+\item 
+\hyperlink{class_array_math_a65d4e3680182f61c866a61f375639245}{$\sim$\+Array\+Math} ()
+\item 
+void \hyperlink{class_array_math_a5c0ea92917740188c95e4e410eef2661}{destroy} ()
+\item 
+\hyperlink{class_array_math_a04ce35d72b715dc2f5889ff040872c1e}{Array\+Math} (const \hyperlink{class_array_math}{Array\+Math} \&rhs)
+\item 
+\hyperlink{class_array_math}{Array\+Math} \& \hyperlink{class_array_math_aefa81728a4b712db88e3e4453bf384ad}{operator=} (const \hyperlink{class_array_math}{Array\+Math} \&rhs)
+\item 
+\hyperlink{class_array_math_a1b309d87396b6971a40a71ea333b628d}{operator Double\+Array} () const
+\item 
+\hyperlink{class_array_math}{Array\+Math} \& \hyperlink{class_array_math_a0523eb1e6ea490c1a298a8b9bca05833}{add} (\hyperlink{class_double_array}{Double\+Array} b)
+\item 
+\hyperlink{class_array_math}{Array\+Math} \& \hyperlink{class_array_math_a3ebc72308c94fd2ea7dbf1407e8c9eeb}{add} (double b)
+\item 
+\hyperlink{class_array_math}{Array\+Math} \& \hyperlink{class_array_math_a67bc79157b230866a8ed1eb5e6179de0}{sub} (\hyperlink{class_double_array}{Double\+Array} b)
+\item 
+\hyperlink{class_array_math}{Array\+Math} \& \hyperlink{class_array_math_a4c05dccafd9c44167c2e158427ce3099}{sub} (double b)
+\item 
+\hyperlink{class_array_math}{Array\+Math} \& \hyperlink{class_array_math_a4fb34b6f319e7f3b2a5440d426832889}{mul} (\hyperlink{class_double_array}{Double\+Array} b)
+\item 
+\hyperlink{class_array_math}{Array\+Math} \& \hyperlink{class_array_math_ad44c0c320ef2f9401be5e54d51dc6c73}{mul} (double b)
+\item 
+\hyperlink{class_array_math}{Array\+Math} \& \hyperlink{class_array_math_a1f2298b0a0338ea48fc3163f6387d11c}{div} (\hyperlink{class_double_array}{Double\+Array} b)
+\item 
+\hyperlink{class_array_math}{Array\+Math} \& \hyperlink{class_array_math_a8ba4c3f4ec4a35cc310d97e2a647ad4c}{div} (double b)
+\item 
+\hyperlink{class_array_math}{Array\+Math} \& \hyperlink{class_array_math_a854177572cefc64f20462ad56e74038e}{finance\+Div} (\hyperlink{class_double_array}{Double\+Array} b, double zero\+By\+Zero\+Value)
+\item 
+\hyperlink{class_array_math}{Array\+Math} \& \hyperlink{class_array_math_a3448f6c81db45f84e63351a00f6d32b3}{shift} (int offset=1, double fill\+Value=Chart\+::\+No\+Value)
+\item 
+\hyperlink{class_array_math}{Array\+Math} \& \hyperlink{class_array_math_a63280677d4282215230467eadb0ff3ca}{delta} (int offset=1)
+\item 
+\hyperlink{class_array_math}{Array\+Math} \& \hyperlink{class_array_math_a72a5a6a662b011b093a0aed0aac5df76}{rate} (int offset=1)
+\item 
+\hyperlink{class_array_math}{Array\+Math} \& \hyperlink{class_array_math_a95ff8e9bce7b34d36cde3186e3f8d886}{abs} ()
+\item 
+\hyperlink{class_array_math}{Array\+Math} \& \hyperlink{class_array_math_aa4a6b85dd0e0cbbd6055e5381b9f8308}{acc} ()
+\item 
+\hyperlink{class_array_math}{Array\+Math} \& \hyperlink{class_array_math_aadfd40e8527d58dc41cceec240d1f9b8}{select\+G\+TZ} (\hyperlink{class_double_array}{Double\+Array} decision\+Array=\hyperlink{class_double_array}{Double\+Array}(), double fill\+Value=0)
+\item 
+\hyperlink{class_array_math}{Array\+Math} \& \hyperlink{class_array_math_adeaae3c00b4d38c471d5956d65861a48}{select\+G\+EZ} (\hyperlink{class_double_array}{Double\+Array} decision\+Array=\hyperlink{class_double_array}{Double\+Array}(), double fill\+Value=0)
+\item 
+\hyperlink{class_array_math}{Array\+Math} \& \hyperlink{class_array_math_ae10389934cacf3913e69b71c79fe5ae9}{select\+L\+TZ} (\hyperlink{class_double_array}{Double\+Array} decision\+Array=\hyperlink{class_double_array}{Double\+Array}(), double fill\+Value=0)
+\item 
+\hyperlink{class_array_math}{Array\+Math} \& \hyperlink{class_array_math_a63ec8c97034104b0ede0227683583eac}{select\+L\+EZ} (\hyperlink{class_double_array}{Double\+Array} decision\+Array=\hyperlink{class_double_array}{Double\+Array}(), double fill\+Value=0)
+\item 
+\hyperlink{class_array_math}{Array\+Math} \& \hyperlink{class_array_math_a7c219ae5049b2a515025f24ae5428a83}{select\+E\+QZ} (\hyperlink{class_double_array}{Double\+Array} decision\+Array=\hyperlink{class_double_array}{Double\+Array}(), double fill\+Value=0)
+\item 
+\hyperlink{class_array_math}{Array\+Math} \& \hyperlink{class_array_math_a0ec9ff9be8d0f829ba79bd1a53a791a5}{select\+N\+EZ} (\hyperlink{class_double_array}{Double\+Array} decision\+Array=\hyperlink{class_double_array}{Double\+Array}(), double fill\+Value=0)
+\item 
+\hyperlink{class_array_math}{Array\+Math} \& \hyperlink{class_array_math_ab0253df48686370fccc34f3e286521d9}{select\+Start\+Of\+Second} (int major\+Tick\+Step=1, double initial\+Margin=0.\+1)
+\item 
+\hyperlink{class_array_math}{Array\+Math} \& \hyperlink{class_array_math_a56f6e1b492180694a2117d030858a41a}{select\+Start\+Of\+Minute} (int major\+Tick\+Step=1, double initial\+Margin=5)
+\item 
+\hyperlink{class_array_math}{Array\+Math} \& \hyperlink{class_array_math_a39fc6c03bb738f82e4f98daebb672dda}{select\+Start\+Of\+Hour} (int major\+Tick\+Step=1, double initial\+Margin=300)
+\item 
+\hyperlink{class_array_math}{Array\+Math} \& \hyperlink{class_array_math_a5e6c8318cbc69a3bb9da3c1c0ca86c26}{select\+Start\+Of\+Day} (int major\+Tick\+Step=1, double initial\+Margin=3 $\ast$3600)
+\item 
+\hyperlink{class_array_math}{Array\+Math} \& \hyperlink{class_array_math_a97c624b2c158da5bcea887bec88d8fd0}{select\+Start\+Of\+Week} (int major\+Tick\+Step=1, double initial\+Margin=2 $\ast$86400)
+\item 
+\hyperlink{class_array_math}{Array\+Math} \& \hyperlink{class_array_math_a65c725e8229a4cba8072af77b23e2286}{select\+Start\+Of\+Month} (int major\+Tick\+Step=1, double initial\+Margin=5 $\ast$86400)
+\item 
+\hyperlink{class_array_math}{Array\+Math} \& \hyperlink{class_array_math_a49a76a80a68b10357db7f0189e3bfb2f}{select\+Start\+Of\+Year} (int major\+Tick\+Step=1, double initial\+Margin=60 $\ast$86400)
+\item 
+\hyperlink{class_array_math}{Array\+Math} \& \hyperlink{class_array_math_a7fa60f8da0b8448ec591ce7f4b95f251}{select\+Regular\+Spacing} (int major\+Tick\+Step, int minor\+Tick\+Step=0, int initial\+Margin=0)
+\item 
+\hyperlink{class_array_math}{Array\+Math} \& \hyperlink{class_array_math_a07cdedd06b274fbd5a5be338cd507861}{trim} (int start\+Index=0, int len=-\/1)
+\item 
+\hyperlink{class_array_math}{Array\+Math} \& \hyperlink{class_array_math_a36c129c503f3fe99e8a92ba265eae19e}{insert} (\hyperlink{class_double_array}{Double\+Array} a, int insert\+Point=-\/1)
+\item 
+\hyperlink{class_array_math}{Array\+Math} \& \hyperlink{class_array_math_a2cebd29ee37fb8f24de84cbd14cd4b46}{insert} (double c, int len, int insert\+Point=-\/1)
+\item 
+\hyperlink{class_array_math}{Array\+Math} \& \hyperlink{class_array_math_a3e735bfc88ee0149c7056cac1defbf6c}{replace} (double a, double b)
+\item 
+\hyperlink{class_array_math}{Array\+Math} \& \hyperlink{class_array_math_abaaac1009dda4a6124ecd2182354dc39}{mov\+Avg} (int interval)
+\item 
+\hyperlink{class_array_math}{Array\+Math} \& \hyperlink{class_array_math_a2f9029cfd45e1094dd6aeb549bbcd107}{exp\+Avg} (double smoothing\+Factor)
+\item 
+\hyperlink{class_array_math}{Array\+Math} \& \hyperlink{class_array_math_a7f994291fd85c2859e7bf34c27b8013e}{mov\+Med} (int interval)
+\item 
+\hyperlink{class_array_math}{Array\+Math} \& \hyperlink{class_array_math_adc007aad3ce9cac15f02159190c2c84a}{mov\+Percentile} (int interval, double \+\_\+percentile)
+\item 
+\hyperlink{class_array_math}{Array\+Math} \& \hyperlink{class_array_math_a5134853d9b14c3d980036a02a4d4b043}{mov\+Max} (int interval)
+\item 
+\hyperlink{class_array_math}{Array\+Math} \& \hyperlink{class_array_math_a42df280f64eaaad8150985d962516276}{mov\+Min} (int interval)
+\item 
+\hyperlink{class_array_math}{Array\+Math} \& \hyperlink{class_array_math_a0352f506e872e964ef2590fa7e8ce581}{mov\+Std\+Dev} (int interval)
+\item 
+\hyperlink{class_array_math}{Array\+Math} \& \hyperlink{class_array_math_a61cdecb4beb7c276a122306906cdebd8}{mov\+Corr} (int interval, \hyperlink{class_double_array}{Double\+Array} b=\hyperlink{class_double_array}{Double\+Array}())
+\item 
+\hyperlink{class_array_math}{Array\+Math} \& \hyperlink{class_array_math_afc9d22a0cf7267842d76430fd0dce639}{lowess} (double smoothness=0.\+25, int iteration=0)
+\item 
+\hyperlink{class_array_math}{Array\+Math} \& \hyperlink{class_array_math_a7852fe7a310511ac1ba8fa585a614146}{lowess} (\hyperlink{class_double_array}{Double\+Array} b, double smoothness=0.\+25, int iteration=0)
+\item 
+\hyperlink{class_double_array}{Double\+Array} \hyperlink{class_array_math_a2c81268f37eb5e4ab9c1c8e18bb22fa3}{result} () const
+\item 
+double \hyperlink{class_array_math_ae80c440e5ad866929649746c029cf0bf}{max} () const
+\item 
+double \hyperlink{class_array_math_ab2f502a58518cfe68bcdaa31729d4a96}{max\+Value} () const
+\item 
+double \hyperlink{class_array_math_a4ef0f497cafb78d37d4af0a6bd51d411}{min} () const
+\item 
+double \hyperlink{class_array_math_aff26b5d31ec9ec6f7e113a6425ca4e13}{min\+Value} () const
+\item 
+double \hyperlink{class_array_math_a1ecf90f00ed56f8b977f1ed5a3a6d7fa}{avg} () const
+\item 
+double \hyperlink{class_array_math_a864604ac04b95fa04fcd511d1845ebbd}{sum} () const
+\item 
+double \hyperlink{class_array_math_a71fbcf5d93c40e840b4aa7fbea38e98e}{std\+Dev} () const
+\item 
+double \hyperlink{class_array_math_aa60ced676c9387a970df6468379d1f56}{med} () const
+\item 
+double \hyperlink{class_array_math_ae0342b531a9f73cabc2b13f81e2cef88}{percentile} (double p) const
+\item 
+int \hyperlink{class_array_math_af75557e958d76b32d93a6a90fa6d064c}{max\+Index} () const
+\item 
+int \hyperlink{class_array_math_a0cf1a69edacfb547184b06e6c71693e6}{min\+Index} () const
+\item 
+\hyperlink{class_double_array}{Double\+Array} \hyperlink{class_array_math_aa4b11f4895afbf51a60e099baf16f5a3}{aggregate} (\hyperlink{class_double_array}{Double\+Array} src\+Array, int aggregate\+Method, double param=50) const
+\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \hyperlink{class_array_math}{Array\+Math} $\ast$ \hyperlink{class_array_math_af663455894b413a30e30c4c396e6ccaa}{create} (\hyperlink{class_double_array}{Double\+Array} a)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 3041 of file chartdir.\+h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_array_math_a3a8b5e89c10d1c1b2c098bf9dd4366d7}\label{class_array_math_a3a8b5e89c10d1c1b2c098bf9dd4366d7}} 
+\index{Array\+Math@{Array\+Math}!Array\+Math@{Array\+Math}}
+\index{Array\+Math@{Array\+Math}!Array\+Math@{Array\+Math}}
+\subsubsection{\texorpdfstring{Array\+Math()}{ArrayMath()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Array\+Math\+::\+Array\+Math (\begin{DoxyParamCaption}\item[{\hyperlink{class_double_array}{Double\+Array}}]{a }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 3047 of file chartdir.\+h.
+
+\mbox{\Hypertarget{class_array_math_a65d4e3680182f61c866a61f375639245}\label{class_array_math_a65d4e3680182f61c866a61f375639245}} 
+\index{Array\+Math@{Array\+Math}!````~Array\+Math@{$\sim$\+Array\+Math}}
+\index{````~Array\+Math@{$\sim$\+Array\+Math}!Array\+Math@{Array\+Math}}
+\subsubsection{\texorpdfstring{$\sim$\+Array\+Math()}{~ArrayMath()}}
+{\footnotesize\ttfamily Array\+Math\+::$\sim$\+Array\+Math (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 3048 of file chartdir.\+h.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=342pt]{class_array_math_a65d4e3680182f61c866a61f375639245_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_array_math_a04ce35d72b715dc2f5889ff040872c1e}\label{class_array_math_a04ce35d72b715dc2f5889ff040872c1e}} 
+\index{Array\+Math@{Array\+Math}!Array\+Math@{Array\+Math}}
+\index{Array\+Math@{Array\+Math}!Array\+Math@{Array\+Math}}
+\subsubsection{\texorpdfstring{Array\+Math()}{ArrayMath()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Array\+Math\+::\+Array\+Math (\begin{DoxyParamCaption}\item[{const \hyperlink{class_array_math}{Array\+Math} \&}]{rhs }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 3052 of file chartdir.\+h.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=330pt]{class_array_math_a04ce35d72b715dc2f5889ff040872c1e_cgraph}
+\end{center}
+\end{figure}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_array_math_a95ff8e9bce7b34d36cde3186e3f8d886}\label{class_array_math_a95ff8e9bce7b34d36cde3186e3f8d886}} 
+\index{Array\+Math@{Array\+Math}!abs@{abs}}
+\index{abs@{abs}!Array\+Math@{Array\+Math}}
+\subsubsection{\texorpdfstring{abs()}{abs()}}
+{\footnotesize\ttfamily \hyperlink{class_array_math}{Array\+Math}\& Array\+Math\+::abs (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 3068 of file chartdir.\+h.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=289pt]{class_array_math_a95ff8e9bce7b34d36cde3186e3f8d886_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=317pt]{class_array_math_a95ff8e9bce7b34d36cde3186e3f8d886_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_array_math_aa4a6b85dd0e0cbbd6055e5381b9f8308}\label{class_array_math_aa4a6b85dd0e0cbbd6055e5381b9f8308}} 
+\index{Array\+Math@{Array\+Math}!acc@{acc}}
+\index{acc@{acc}!Array\+Math@{Array\+Math}}
+\subsubsection{\texorpdfstring{acc()}{acc()}}
+{\footnotesize\ttfamily \hyperlink{class_array_math}{Array\+Math}\& Array\+Math\+::acc (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 3069 of file chartdir.\+h.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=289pt]{class_array_math_aa4a6b85dd0e0cbbd6055e5381b9f8308_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=329pt]{class_array_math_aa4a6b85dd0e0cbbd6055e5381b9f8308_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_array_math_a0523eb1e6ea490c1a298a8b9bca05833}\label{class_array_math_a0523eb1e6ea490c1a298a8b9bca05833}} 
+\index{Array\+Math@{Array\+Math}!add@{add}}
+\index{add@{add}!Array\+Math@{Array\+Math}}
+\subsubsection{\texorpdfstring{add()}{add()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \hyperlink{class_array_math}{Array\+Math}\& Array\+Math\+::add (\begin{DoxyParamCaption}\item[{\hyperlink{class_double_array}{Double\+Array}}]{b }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 3056 of file chartdir.\+h.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=289pt]{class_array_math_a0523eb1e6ea490c1a298a8b9bca05833_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_array_math_a0523eb1e6ea490c1a298a8b9bca05833_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_array_math_a3ebc72308c94fd2ea7dbf1407e8c9eeb}\label{class_array_math_a3ebc72308c94fd2ea7dbf1407e8c9eeb}} 
+\index{Array\+Math@{Array\+Math}!add@{add}}
+\index{add@{add}!Array\+Math@{Array\+Math}}
+\subsubsection{\texorpdfstring{add()}{add()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \hyperlink{class_array_math}{Array\+Math}\& Array\+Math\+::add (\begin{DoxyParamCaption}\item[{double}]{b }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 3057 of file chartdir.\+h.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=294pt]{class_array_math_a3ebc72308c94fd2ea7dbf1407e8c9eeb_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_array_math_aa4b11f4895afbf51a60e099baf16f5a3}\label{class_array_math_aa4b11f4895afbf51a60e099baf16f5a3}} 
+\index{Array\+Math@{Array\+Math}!aggregate@{aggregate}}
+\index{aggregate@{aggregate}!Array\+Math@{Array\+Math}}
+\subsubsection{\texorpdfstring{aggregate()}{aggregate()}}
+{\footnotesize\ttfamily \hyperlink{class_double_array}{Double\+Array} Array\+Math\+::aggregate (\begin{DoxyParamCaption}\item[{\hyperlink{class_double_array}{Double\+Array}}]{src\+Array,  }\item[{int}]{aggregate\+Method,  }\item[{double}]{param = {\ttfamily 50} }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 3148 of file chartdir.\+h.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=343pt]{class_array_math_aa4b11f4895afbf51a60e099baf16f5a3_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_array_math_a1ecf90f00ed56f8b977f1ed5a3a6d7fa}\label{class_array_math_a1ecf90f00ed56f8b977f1ed5a3a6d7fa}} 
+\index{Array\+Math@{Array\+Math}!avg@{avg}}
+\index{avg@{avg}!Array\+Math@{Array\+Math}}
+\subsubsection{\texorpdfstring{avg()}{avg()}}
+{\footnotesize\ttfamily double Array\+Math\+::avg (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 3140 of file chartdir.\+h.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=289pt]{class_array_math_a1ecf90f00ed56f8b977f1ed5a3a6d7fa_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_array_math_af663455894b413a30e30c4c396e6ccaa}\label{class_array_math_af663455894b413a30e30c4c396e6ccaa}} 
+\index{Array\+Math@{Array\+Math}!create@{create}}
+\index{create@{create}!Array\+Math@{Array\+Math}}
+\subsubsection{\texorpdfstring{create()}{create()}}
+{\footnotesize\ttfamily static \hyperlink{class_array_math}{Array\+Math}$\ast$ Array\+Math\+::create (\begin{DoxyParamCaption}\item[{\hyperlink{class_double_array}{Double\+Array}}]{a }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Definition at line 3049 of file chartdir.\+h.
+
+\mbox{\Hypertarget{class_array_math_a63280677d4282215230467eadb0ff3ca}\label{class_array_math_a63280677d4282215230467eadb0ff3ca}} 
+\index{Array\+Math@{Array\+Math}!delta@{delta}}
+\index{delta@{delta}!Array\+Math@{Array\+Math}}
+\subsubsection{\texorpdfstring{delta()}{delta()}}
+{\footnotesize\ttfamily \hyperlink{class_array_math}{Array\+Math}\& Array\+Math\+::delta (\begin{DoxyParamCaption}\item[{int}]{offset = {\ttfamily 1} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 3066 of file chartdir.\+h.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=300pt]{class_array_math_a63280677d4282215230467eadb0ff3ca_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_array_math_a63280677d4282215230467eadb0ff3ca_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_array_math_a5c0ea92917740188c95e4e410eef2661}\label{class_array_math_a5c0ea92917740188c95e4e410eef2661}} 
+\index{Array\+Math@{Array\+Math}!destroy@{destroy}}
+\index{destroy@{destroy}!Array\+Math@{Array\+Math}}
+\subsubsection{\texorpdfstring{destroy()}{destroy()}}
+{\footnotesize\ttfamily void Array\+Math\+::destroy (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 3050 of file chartdir.\+h.
+
+\mbox{\Hypertarget{class_array_math_a1f2298b0a0338ea48fc3163f6387d11c}\label{class_array_math_a1f2298b0a0338ea48fc3163f6387d11c}} 
+\index{Array\+Math@{Array\+Math}!div@{div}}
+\index{div@{div}!Array\+Math@{Array\+Math}}
+\subsubsection{\texorpdfstring{div()}{div()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \hyperlink{class_array_math}{Array\+Math}\& Array\+Math\+::div (\begin{DoxyParamCaption}\item[{\hyperlink{class_double_array}{Double\+Array}}]{b }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 3062 of file chartdir.\+h.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=283pt]{class_array_math_a1f2298b0a0338ea48fc3163f6387d11c_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_array_math_a1f2298b0a0338ea48fc3163f6387d11c_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_array_math_a8ba4c3f4ec4a35cc310d97e2a647ad4c}\label{class_array_math_a8ba4c3f4ec4a35cc310d97e2a647ad4c}} 
+\index{Array\+Math@{Array\+Math}!div@{div}}
+\index{div@{div}!Array\+Math@{Array\+Math}}
+\subsubsection{\texorpdfstring{div()}{div()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \hyperlink{class_array_math}{Array\+Math}\& Array\+Math\+::div (\begin{DoxyParamCaption}\item[{double}]{b }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 3063 of file chartdir.\+h.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=288pt]{class_array_math_a8ba4c3f4ec4a35cc310d97e2a647ad4c_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_array_math_a2f9029cfd45e1094dd6aeb549bbcd107}\label{class_array_math_a2f9029cfd45e1094dd6aeb549bbcd107}} 
+\index{Array\+Math@{Array\+Math}!exp\+Avg@{exp\+Avg}}
+\index{exp\+Avg@{exp\+Avg}!Array\+Math@{Array\+Math}}
+\subsubsection{\texorpdfstring{exp\+Avg()}{expAvg()}}
+{\footnotesize\ttfamily \hyperlink{class_array_math}{Array\+Math}\& Array\+Math\+::exp\+Avg (\begin{DoxyParamCaption}\item[{double}]{smoothing\+Factor }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 3112 of file chartdir.\+h.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=324pt]{class_array_math_a2f9029cfd45e1094dd6aeb549bbcd107_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_array_math_a2f9029cfd45e1094dd6aeb549bbcd107_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_array_math_a854177572cefc64f20462ad56e74038e}\label{class_array_math_a854177572cefc64f20462ad56e74038e}} 
+\index{Array\+Math@{Array\+Math}!finance\+Div@{finance\+Div}}
+\index{finance\+Div@{finance\+Div}!Array\+Math@{Array\+Math}}
+\subsubsection{\texorpdfstring{finance\+Div()}{financeDiv()}}
+{\footnotesize\ttfamily \hyperlink{class_array_math}{Array\+Math}\& Array\+Math\+::finance\+Div (\begin{DoxyParamCaption}\item[{\hyperlink{class_double_array}{Double\+Array}}]{b,  }\item[{double}]{zero\+By\+Zero\+Value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 3064 of file chartdir.\+h.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_array_math_a854177572cefc64f20462ad56e74038e_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_array_math_a854177572cefc64f20462ad56e74038e_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_array_math_a36c129c503f3fe99e8a92ba265eae19e}\label{class_array_math_a36c129c503f3fe99e8a92ba265eae19e}} 
+\index{Array\+Math@{Array\+Math}!insert@{insert}}
+\index{insert@{insert}!Array\+Math@{Array\+Math}}
+\subsubsection{\texorpdfstring{insert()}{insert()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \hyperlink{class_array_math}{Array\+Math}\& Array\+Math\+::insert (\begin{DoxyParamCaption}\item[{\hyperlink{class_double_array}{Double\+Array}}]{a,  }\item[{int}]{insert\+Point = {\ttfamily -\/1} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 3103 of file chartdir.\+h.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=306pt]{class_array_math_a36c129c503f3fe99e8a92ba265eae19e_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_array_math_a2cebd29ee37fb8f24de84cbd14cd4b46}\label{class_array_math_a2cebd29ee37fb8f24de84cbd14cd4b46}} 
+\index{Array\+Math@{Array\+Math}!insert@{insert}}
+\index{insert@{insert}!Array\+Math@{Array\+Math}}
+\subsubsection{\texorpdfstring{insert()}{insert()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \hyperlink{class_array_math}{Array\+Math}\& Array\+Math\+::insert (\begin{DoxyParamCaption}\item[{double}]{c,  }\item[{int}]{len,  }\item[{int}]{insert\+Point = {\ttfamily -\/1} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 3105 of file chartdir.\+h.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=312pt]{class_array_math_a2cebd29ee37fb8f24de84cbd14cd4b46_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_array_math_afc9d22a0cf7267842d76430fd0dce639}\label{class_array_math_afc9d22a0cf7267842d76430fd0dce639}} 
+\index{Array\+Math@{Array\+Math}!lowess@{lowess}}
+\index{lowess@{lowess}!Array\+Math@{Array\+Math}}
+\subsubsection{\texorpdfstring{lowess()}{lowess()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \hyperlink{class_array_math}{Array\+Math}\& Array\+Math\+::lowess (\begin{DoxyParamCaption}\item[{double}]{smoothness = {\ttfamily 0.25},  }\item[{int}]{iteration = {\ttfamily 0} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 3126 of file chartdir.\+h.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=319pt]{class_array_math_afc9d22a0cf7267842d76430fd0dce639_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_array_math_a7852fe7a310511ac1ba8fa585a614146}\label{class_array_math_a7852fe7a310511ac1ba8fa585a614146}} 
+\index{Array\+Math@{Array\+Math}!lowess@{lowess}}
+\index{lowess@{lowess}!Array\+Math@{Array\+Math}}
+\subsubsection{\texorpdfstring{lowess()}{lowess()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \hyperlink{class_array_math}{Array\+Math}\& Array\+Math\+::lowess (\begin{DoxyParamCaption}\item[{\hyperlink{class_double_array}{Double\+Array}}]{b,  }\item[{double}]{smoothness = {\ttfamily 0.25},  }\item[{int}]{iteration = {\ttfamily 0} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 3128 of file chartdir.\+h.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=324pt]{class_array_math_a7852fe7a310511ac1ba8fa585a614146_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_array_math_ae80c440e5ad866929649746c029cf0bf}\label{class_array_math_ae80c440e5ad866929649746c029cf0bf}} 
+\index{Array\+Math@{Array\+Math}!max@{max}}
+\index{max@{max}!Array\+Math@{Array\+Math}}
+\subsubsection{\texorpdfstring{max()}{max()}}
+{\footnotesize\ttfamily double Array\+Math\+::max (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 3133 of file chartdir.\+h.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=295pt]{class_array_math_ae80c440e5ad866929649746c029cf0bf_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_array_math_af75557e958d76b32d93a6a90fa6d064c}\label{class_array_math_af75557e958d76b32d93a6a90fa6d064c}} 
+\index{Array\+Math@{Array\+Math}!max\+Index@{max\+Index}}
+\index{max\+Index@{max\+Index}!Array\+Math@{Array\+Math}}
+\subsubsection{\texorpdfstring{max\+Index()}{maxIndex()}}
+{\footnotesize\ttfamily int Array\+Math\+::max\+Index (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 3145 of file chartdir.\+h.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=343pt]{class_array_math_af75557e958d76b32d93a6a90fa6d064c_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_array_math_ab2f502a58518cfe68bcdaa31729d4a96}\label{class_array_math_ab2f502a58518cfe68bcdaa31729d4a96}} 
+\index{Array\+Math@{Array\+Math}!max\+Value@{max\+Value}}
+\index{max\+Value@{max\+Value}!Array\+Math@{Array\+Math}}
+\subsubsection{\texorpdfstring{max\+Value()}{maxValue()}}
+{\footnotesize\ttfamily double Array\+Math\+::max\+Value (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 3135 of file chartdir.\+h.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=320pt]{class_array_math_ab2f502a58518cfe68bcdaa31729d4a96_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=343pt]{class_array_math_ab2f502a58518cfe68bcdaa31729d4a96_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_array_math_aa60ced676c9387a970df6468379d1f56}\label{class_array_math_aa60ced676c9387a970df6468379d1f56}} 
+\index{Array\+Math@{Array\+Math}!med@{med}}
+\index{med@{med}!Array\+Math@{Array\+Math}}
+\subsubsection{\texorpdfstring{med()}{med()}}
+{\footnotesize\ttfamily double Array\+Math\+::med (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 3143 of file chartdir.\+h.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=295pt]{class_array_math_aa60ced676c9387a970df6468379d1f56_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_array_math_a4ef0f497cafb78d37d4af0a6bd51d411}\label{class_array_math_a4ef0f497cafb78d37d4af0a6bd51d411}} 
+\index{Array\+Math@{Array\+Math}!min@{min}}
+\index{min@{min}!Array\+Math@{Array\+Math}}
+\subsubsection{\texorpdfstring{min()}{min()}}
+{\footnotesize\ttfamily double Array\+Math\+::min (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 3137 of file chartdir.\+h.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=289pt]{class_array_math_a4ef0f497cafb78d37d4af0a6bd51d411_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_array_math_a0cf1a69edacfb547184b06e6c71693e6}\label{class_array_math_a0cf1a69edacfb547184b06e6c71693e6}} 
+\index{Array\+Math@{Array\+Math}!min\+Index@{min\+Index}}
+\index{min\+Index@{min\+Index}!Array\+Math@{Array\+Math}}
+\subsubsection{\texorpdfstring{min\+Index()}{minIndex()}}
+{\footnotesize\ttfamily int Array\+Math\+::min\+Index (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 3146 of file chartdir.\+h.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=337pt]{class_array_math_a0cf1a69edacfb547184b06e6c71693e6_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_array_math_aff26b5d31ec9ec6f7e113a6425ca4e13}\label{class_array_math_aff26b5d31ec9ec6f7e113a6425ca4e13}} 
+\index{Array\+Math@{Array\+Math}!min\+Value@{min\+Value}}
+\index{min\+Value@{min\+Value}!Array\+Math@{Array\+Math}}
+\subsubsection{\texorpdfstring{min\+Value()}{minValue()}}
+{\footnotesize\ttfamily double Array\+Math\+::min\+Value (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 3139 of file chartdir.\+h.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=314pt]{class_array_math_aff26b5d31ec9ec6f7e113a6425ca4e13_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_array_math_abaaac1009dda4a6124ecd2182354dc39}\label{class_array_math_abaaac1009dda4a6124ecd2182354dc39}} 
+\index{Array\+Math@{Array\+Math}!mov\+Avg@{mov\+Avg}}
+\index{mov\+Avg@{mov\+Avg}!Array\+Math@{Array\+Math}}
+\subsubsection{\texorpdfstring{mov\+Avg()}{movAvg()}}
+{\footnotesize\ttfamily \hyperlink{class_array_math}{Array\+Math}\& Array\+Math\+::mov\+Avg (\begin{DoxyParamCaption}\item[{int}]{interval }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 3110 of file chartdir.\+h.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=330pt]{class_array_math_abaaac1009dda4a6124ecd2182354dc39_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_array_math_abaaac1009dda4a6124ecd2182354dc39_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_array_math_a61cdecb4beb7c276a122306906cdebd8}\label{class_array_math_a61cdecb4beb7c276a122306906cdebd8}} 
+\index{Array\+Math@{Array\+Math}!mov\+Corr@{mov\+Corr}}
+\index{mov\+Corr@{mov\+Corr}!Array\+Math@{Array\+Math}}
+\subsubsection{\texorpdfstring{mov\+Corr()}{movCorr()}}
+{\footnotesize\ttfamily \hyperlink{class_array_math}{Array\+Math}\& Array\+Math\+::mov\+Corr (\begin{DoxyParamCaption}\item[{int}]{interval,  }\item[{\hyperlink{class_double_array}{Double\+Array}}]{b = {\ttfamily \hyperlink{class_double_array}{Double\+Array}()} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 3124 of file chartdir.\+h.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=333pt]{class_array_math_a61cdecb4beb7c276a122306906cdebd8_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_array_math_a5134853d9b14c3d980036a02a4d4b043}\label{class_array_math_a5134853d9b14c3d980036a02a4d4b043}} 
+\index{Array\+Math@{Array\+Math}!mov\+Max@{mov\+Max}}
+\index{mov\+Max@{mov\+Max}!Array\+Math@{Array\+Math}}
+\subsubsection{\texorpdfstring{mov\+Max()}{movMax()}}
+{\footnotesize\ttfamily \hyperlink{class_array_math}{Array\+Math}\& Array\+Math\+::mov\+Max (\begin{DoxyParamCaption}\item[{int}]{interval }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 3118 of file chartdir.\+h.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=333pt]{class_array_math_a5134853d9b14c3d980036a02a4d4b043_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_array_math_a5134853d9b14c3d980036a02a4d4b043_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_array_math_a7f994291fd85c2859e7bf34c27b8013e}\label{class_array_math_a7f994291fd85c2859e7bf34c27b8013e}} 
+\index{Array\+Math@{Array\+Math}!mov\+Med@{mov\+Med}}
+\index{mov\+Med@{mov\+Med}!Array\+Math@{Array\+Math}}
+\subsubsection{\texorpdfstring{mov\+Med()}{movMed()}}
+{\footnotesize\ttfamily \hyperlink{class_array_math}{Array\+Math}\& Array\+Math\+::mov\+Med (\begin{DoxyParamCaption}\item[{int}]{interval }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 3114 of file chartdir.\+h.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=333pt]{class_array_math_a7f994291fd85c2859e7bf34c27b8013e_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_array_math_a42df280f64eaaad8150985d962516276}\label{class_array_math_a42df280f64eaaad8150985d962516276}} 
+\index{Array\+Math@{Array\+Math}!mov\+Min@{mov\+Min}}
+\index{mov\+Min@{mov\+Min}!Array\+Math@{Array\+Math}}
+\subsubsection{\texorpdfstring{mov\+Min()}{movMin()}}
+{\footnotesize\ttfamily \hyperlink{class_array_math}{Array\+Math}\& Array\+Math\+::mov\+Min (\begin{DoxyParamCaption}\item[{int}]{interval }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 3120 of file chartdir.\+h.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=327pt]{class_array_math_a42df280f64eaaad8150985d962516276_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_array_math_a42df280f64eaaad8150985d962516276_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_array_math_adc007aad3ce9cac15f02159190c2c84a}\label{class_array_math_adc007aad3ce9cac15f02159190c2c84a}} 
+\index{Array\+Math@{Array\+Math}!mov\+Percentile@{mov\+Percentile}}
+\index{mov\+Percentile@{mov\+Percentile}!Array\+Math@{Array\+Math}}
+\subsubsection{\texorpdfstring{mov\+Percentile()}{movPercentile()}}
+{\footnotesize\ttfamily \hyperlink{class_array_math}{Array\+Math}\& Array\+Math\+::mov\+Percentile (\begin{DoxyParamCaption}\item[{int}]{interval,  }\item[{double}]{\+\_\+percentile }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 3116 of file chartdir.\+h.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_array_math_adc007aad3ce9cac15f02159190c2c84a_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_array_math_a0352f506e872e964ef2590fa7e8ce581}\label{class_array_math_a0352f506e872e964ef2590fa7e8ce581}} 
+\index{Array\+Math@{Array\+Math}!mov\+Std\+Dev@{mov\+Std\+Dev}}
+\index{mov\+Std\+Dev@{mov\+Std\+Dev}!Array\+Math@{Array\+Math}}
+\subsubsection{\texorpdfstring{mov\+Std\+Dev()}{movStdDev()}}
+{\footnotesize\ttfamily \hyperlink{class_array_math}{Array\+Math}\& Array\+Math\+::mov\+Std\+Dev (\begin{DoxyParamCaption}\item[{int}]{interval }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 3122 of file chartdir.\+h.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_array_math_a0352f506e872e964ef2590fa7e8ce581_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_array_math_a0352f506e872e964ef2590fa7e8ce581_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_array_math_a4fb34b6f319e7f3b2a5440d426832889}\label{class_array_math_a4fb34b6f319e7f3b2a5440d426832889}} 
+\index{Array\+Math@{Array\+Math}!mul@{mul}}
+\index{mul@{mul}!Array\+Math@{Array\+Math}}
+\subsubsection{\texorpdfstring{mul()}{mul()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \hyperlink{class_array_math}{Array\+Math}\& Array\+Math\+::mul (\begin{DoxyParamCaption}\item[{\hyperlink{class_double_array}{Double\+Array}}]{b }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 3060 of file chartdir.\+h.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=289pt]{class_array_math_a4fb34b6f319e7f3b2a5440d426832889_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_array_math_a4fb34b6f319e7f3b2a5440d426832889_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_array_math_ad44c0c320ef2f9401be5e54d51dc6c73}\label{class_array_math_ad44c0c320ef2f9401be5e54d51dc6c73}} 
+\index{Array\+Math@{Array\+Math}!mul@{mul}}
+\index{mul@{mul}!Array\+Math@{Array\+Math}}
+\subsubsection{\texorpdfstring{mul()}{mul()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \hyperlink{class_array_math}{Array\+Math}\& Array\+Math\+::mul (\begin{DoxyParamCaption}\item[{double}]{b }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 3061 of file chartdir.\+h.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=294pt]{class_array_math_ad44c0c320ef2f9401be5e54d51dc6c73_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_array_math_a1b309d87396b6971a40a71ea333b628d}\label{class_array_math_a1b309d87396b6971a40a71ea333b628d}} 
+\index{Array\+Math@{Array\+Math}!operator Double\+Array@{operator Double\+Array}}
+\index{operator Double\+Array@{operator Double\+Array}!Array\+Math@{Array\+Math}}
+\subsubsection{\texorpdfstring{operator Double\+Array()}{operator DoubleArray()}}
+{\footnotesize\ttfamily Array\+Math\+::operator \hyperlink{class_double_array}{Double\+Array} (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 3054 of file chartdir.\+h.
+
+\mbox{\Hypertarget{class_array_math_aefa81728a4b712db88e3e4453bf384ad}\label{class_array_math_aefa81728a4b712db88e3e4453bf384ad}} 
+\index{Array\+Math@{Array\+Math}!operator=@{operator=}}
+\index{operator=@{operator=}!Array\+Math@{Array\+Math}}
+\subsubsection{\texorpdfstring{operator=()}{operator=()}}
+{\footnotesize\ttfamily \hyperlink{class_array_math}{Array\+Math}\& Array\+Math\+::operator= (\begin{DoxyParamCaption}\item[{const \hyperlink{class_array_math}{Array\+Math} \&}]{rhs }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 3053 of file chartdir.\+h.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=332pt]{class_array_math_aefa81728a4b712db88e3e4453bf384ad_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_array_math_ae0342b531a9f73cabc2b13f81e2cef88}\label{class_array_math_ae0342b531a9f73cabc2b13f81e2cef88}} 
+\index{Array\+Math@{Array\+Math}!percentile@{percentile}}
+\index{percentile@{percentile}!Array\+Math@{Array\+Math}}
+\subsubsection{\texorpdfstring{percentile()}{percentile()}}
+{\footnotesize\ttfamily double Array\+Math\+::percentile (\begin{DoxyParamCaption}\item[{double}]{p }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 3144 of file chartdir.\+h.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=342pt]{class_array_math_ae0342b531a9f73cabc2b13f81e2cef88_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_array_math_a72a5a6a662b011b093a0aed0aac5df76}\label{class_array_math_a72a5a6a662b011b093a0aed0aac5df76}} 
+\index{Array\+Math@{Array\+Math}!rate@{rate}}
+\index{rate@{rate}!Array\+Math@{Array\+Math}}
+\subsubsection{\texorpdfstring{rate()}{rate()}}
+{\footnotesize\ttfamily \hyperlink{class_array_math}{Array\+Math}\& Array\+Math\+::rate (\begin{DoxyParamCaption}\item[{int}]{offset = {\ttfamily 1} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 3067 of file chartdir.\+h.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=291pt]{class_array_math_a72a5a6a662b011b093a0aed0aac5df76_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_array_math_a3e735bfc88ee0149c7056cac1defbf6c}\label{class_array_math_a3e735bfc88ee0149c7056cac1defbf6c}} 
+\index{Array\+Math@{Array\+Math}!replace@{replace}}
+\index{replace@{replace}!Array\+Math@{Array\+Math}}
+\subsubsection{\texorpdfstring{replace()}{replace()}}
+{\footnotesize\ttfamily \hyperlink{class_array_math}{Array\+Math}\& Array\+Math\+::replace (\begin{DoxyParamCaption}\item[{double}]{a,  }\item[{double}]{b }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 3107 of file chartdir.\+h.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=321pt]{class_array_math_a3e735bfc88ee0149c7056cac1defbf6c_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=346pt]{class_array_math_a3e735bfc88ee0149c7056cac1defbf6c_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_array_math_a2c81268f37eb5e4ab9c1c8e18bb22fa3}\label{class_array_math_a2c81268f37eb5e4ab9c1c8e18bb22fa3}} 
+\index{Array\+Math@{Array\+Math}!result@{result}}
+\index{result@{result}!Array\+Math@{Array\+Math}}
+\subsubsection{\texorpdfstring{result()}{result()}}
+{\footnotesize\ttfamily \hyperlink{class_double_array}{Double\+Array} Array\+Math\+::result (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 3131 of file chartdir.\+h.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=306pt]{class_array_math_a2c81268f37eb5e4ab9c1c8e18bb22fa3_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=348pt]{class_array_math_a2c81268f37eb5e4ab9c1c8e18bb22fa3_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_array_math_a7c219ae5049b2a515025f24ae5428a83}\label{class_array_math_a7c219ae5049b2a515025f24ae5428a83}} 
+\index{Array\+Math@{Array\+Math}!select\+E\+QZ@{select\+E\+QZ}}
+\index{select\+E\+QZ@{select\+E\+QZ}!Array\+Math@{Array\+Math}}
+\subsubsection{\texorpdfstring{select\+E\+Q\+Z()}{selectEQZ()}}
+{\footnotesize\ttfamily \hyperlink{class_array_math}{Array\+Math}\& Array\+Math\+::select\+E\+QZ (\begin{DoxyParamCaption}\item[{\hyperlink{class_double_array}{Double\+Array}}]{decision\+Array = {\ttfamily \hyperlink{class_double_array}{Double\+Array}()},  }\item[{double}]{fill\+Value = {\ttfamily 0} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 3079 of file chartdir.\+h.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_array_math_a7c219ae5049b2a515025f24ae5428a83_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_array_math_adeaae3c00b4d38c471d5956d65861a48}\label{class_array_math_adeaae3c00b4d38c471d5956d65861a48}} 
+\index{Array\+Math@{Array\+Math}!select\+G\+EZ@{select\+G\+EZ}}
+\index{select\+G\+EZ@{select\+G\+EZ}!Array\+Math@{Array\+Math}}
+\subsubsection{\texorpdfstring{select\+G\+E\+Z()}{selectGEZ()}}
+{\footnotesize\ttfamily \hyperlink{class_array_math}{Array\+Math}\& Array\+Math\+::select\+G\+EZ (\begin{DoxyParamCaption}\item[{\hyperlink{class_double_array}{Double\+Array}}]{decision\+Array = {\ttfamily \hyperlink{class_double_array}{Double\+Array}()},  }\item[{double}]{fill\+Value = {\ttfamily 0} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 3073 of file chartdir.\+h.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_array_math_adeaae3c00b4d38c471d5956d65861a48_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_array_math_aadfd40e8527d58dc41cceec240d1f9b8}\label{class_array_math_aadfd40e8527d58dc41cceec240d1f9b8}} 
+\index{Array\+Math@{Array\+Math}!select\+G\+TZ@{select\+G\+TZ}}
+\index{select\+G\+TZ@{select\+G\+TZ}!Array\+Math@{Array\+Math}}
+\subsubsection{\texorpdfstring{select\+G\+T\+Z()}{selectGTZ()}}
+{\footnotesize\ttfamily \hyperlink{class_array_math}{Array\+Math}\& Array\+Math\+::select\+G\+TZ (\begin{DoxyParamCaption}\item[{\hyperlink{class_double_array}{Double\+Array}}]{decision\+Array = {\ttfamily \hyperlink{class_double_array}{Double\+Array}()},  }\item[{double}]{fill\+Value = {\ttfamily 0} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 3071 of file chartdir.\+h.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=349pt]{class_array_math_aadfd40e8527d58dc41cceec240d1f9b8_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=347pt]{class_array_math_aadfd40e8527d58dc41cceec240d1f9b8_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_array_math_a63ec8c97034104b0ede0227683583eac}\label{class_array_math_a63ec8c97034104b0ede0227683583eac}} 
+\index{Array\+Math@{Array\+Math}!select\+L\+EZ@{select\+L\+EZ}}
+\index{select\+L\+EZ@{select\+L\+EZ}!Array\+Math@{Array\+Math}}
+\subsubsection{\texorpdfstring{select\+L\+E\+Z()}{selectLEZ()}}
+{\footnotesize\ttfamily \hyperlink{class_array_math}{Array\+Math}\& Array\+Math\+::select\+L\+EZ (\begin{DoxyParamCaption}\item[{\hyperlink{class_double_array}{Double\+Array}}]{decision\+Array = {\ttfamily \hyperlink{class_double_array}{Double\+Array}()},  }\item[{double}]{fill\+Value = {\ttfamily 0} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 3077 of file chartdir.\+h.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=347pt]{class_array_math_a63ec8c97034104b0ede0227683583eac_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_array_math_ae10389934cacf3913e69b71c79fe5ae9}\label{class_array_math_ae10389934cacf3913e69b71c79fe5ae9}} 
+\index{Array\+Math@{Array\+Math}!select\+L\+TZ@{select\+L\+TZ}}
+\index{select\+L\+TZ@{select\+L\+TZ}!Array\+Math@{Array\+Math}}
+\subsubsection{\texorpdfstring{select\+L\+T\+Z()}{selectLTZ()}}
+{\footnotesize\ttfamily \hyperlink{class_array_math}{Array\+Math}\& Array\+Math\+::select\+L\+TZ (\begin{DoxyParamCaption}\item[{\hyperlink{class_double_array}{Double\+Array}}]{decision\+Array = {\ttfamily \hyperlink{class_double_array}{Double\+Array}()},  }\item[{double}]{fill\+Value = {\ttfamily 0} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 3075 of file chartdir.\+h.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=345pt]{class_array_math_ae10389934cacf3913e69b71c79fe5ae9_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=345pt]{class_array_math_ae10389934cacf3913e69b71c79fe5ae9_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_array_math_a0ec9ff9be8d0f829ba79bd1a53a791a5}\label{class_array_math_a0ec9ff9be8d0f829ba79bd1a53a791a5}} 
+\index{Array\+Math@{Array\+Math}!select\+N\+EZ@{select\+N\+EZ}}
+\index{select\+N\+EZ@{select\+N\+EZ}!Array\+Math@{Array\+Math}}
+\subsubsection{\texorpdfstring{select\+N\+E\+Z()}{selectNEZ()}}
+{\footnotesize\ttfamily \hyperlink{class_array_math}{Array\+Math}\& Array\+Math\+::select\+N\+EZ (\begin{DoxyParamCaption}\item[{\hyperlink{class_double_array}{Double\+Array}}]{decision\+Array = {\ttfamily \hyperlink{class_double_array}{Double\+Array}()},  }\item[{double}]{fill\+Value = {\ttfamily 0} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 3081 of file chartdir.\+h.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_array_math_a0ec9ff9be8d0f829ba79bd1a53a791a5_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_array_math_a7fa60f8da0b8448ec591ce7f4b95f251}\label{class_array_math_a7fa60f8da0b8448ec591ce7f4b95f251}} 
+\index{Array\+Math@{Array\+Math}!select\+Regular\+Spacing@{select\+Regular\+Spacing}}
+\index{select\+Regular\+Spacing@{select\+Regular\+Spacing}!Array\+Math@{Array\+Math}}
+\subsubsection{\texorpdfstring{select\+Regular\+Spacing()}{selectRegularSpacing()}}
+{\footnotesize\ttfamily \hyperlink{class_array_math}{Array\+Math}\& Array\+Math\+::select\+Regular\+Spacing (\begin{DoxyParamCaption}\item[{int}]{major\+Tick\+Step,  }\item[{int}]{minor\+Tick\+Step = {\ttfamily 0},  }\item[{int}]{initial\+Margin = {\ttfamily 0} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 3098 of file chartdir.\+h.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_array_math_a7fa60f8da0b8448ec591ce7f4b95f251_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_array_math_a5e6c8318cbc69a3bb9da3c1c0ca86c26}\label{class_array_math_a5e6c8318cbc69a3bb9da3c1c0ca86c26}} 
+\index{Array\+Math@{Array\+Math}!select\+Start\+Of\+Day@{select\+Start\+Of\+Day}}
+\index{select\+Start\+Of\+Day@{select\+Start\+Of\+Day}!Array\+Math@{Array\+Math}}
+\subsubsection{\texorpdfstring{select\+Start\+Of\+Day()}{selectStartOfDay()}}
+{\footnotesize\ttfamily \hyperlink{class_array_math}{Array\+Math}\& Array\+Math\+::select\+Start\+Of\+Day (\begin{DoxyParamCaption}\item[{int}]{major\+Tick\+Step = {\ttfamily 1},  }\item[{double}]{initial\+Margin = {\ttfamily 3~$\ast$~3600} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 3090 of file chartdir.\+h.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_array_math_a5e6c8318cbc69a3bb9da3c1c0ca86c26_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_array_math_a39fc6c03bb738f82e4f98daebb672dda}\label{class_array_math_a39fc6c03bb738f82e4f98daebb672dda}} 
+\index{Array\+Math@{Array\+Math}!select\+Start\+Of\+Hour@{select\+Start\+Of\+Hour}}
+\index{select\+Start\+Of\+Hour@{select\+Start\+Of\+Hour}!Array\+Math@{Array\+Math}}
+\subsubsection{\texorpdfstring{select\+Start\+Of\+Hour()}{selectStartOfHour()}}
+{\footnotesize\ttfamily \hyperlink{class_array_math}{Array\+Math}\& Array\+Math\+::select\+Start\+Of\+Hour (\begin{DoxyParamCaption}\item[{int}]{major\+Tick\+Step = {\ttfamily 1},  }\item[{double}]{initial\+Margin = {\ttfamily 300} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 3088 of file chartdir.\+h.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_array_math_a39fc6c03bb738f82e4f98daebb672dda_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_array_math_a56f6e1b492180694a2117d030858a41a}\label{class_array_math_a56f6e1b492180694a2117d030858a41a}} 
+\index{Array\+Math@{Array\+Math}!select\+Start\+Of\+Minute@{select\+Start\+Of\+Minute}}
+\index{select\+Start\+Of\+Minute@{select\+Start\+Of\+Minute}!Array\+Math@{Array\+Math}}
+\subsubsection{\texorpdfstring{select\+Start\+Of\+Minute()}{selectStartOfMinute()}}
+{\footnotesize\ttfamily \hyperlink{class_array_math}{Array\+Math}\& Array\+Math\+::select\+Start\+Of\+Minute (\begin{DoxyParamCaption}\item[{int}]{major\+Tick\+Step = {\ttfamily 1},  }\item[{double}]{initial\+Margin = {\ttfamily 5} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 3086 of file chartdir.\+h.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_array_math_a56f6e1b492180694a2117d030858a41a_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_array_math_a65c725e8229a4cba8072af77b23e2286}\label{class_array_math_a65c725e8229a4cba8072af77b23e2286}} 
+\index{Array\+Math@{Array\+Math}!select\+Start\+Of\+Month@{select\+Start\+Of\+Month}}
+\index{select\+Start\+Of\+Month@{select\+Start\+Of\+Month}!Array\+Math@{Array\+Math}}
+\subsubsection{\texorpdfstring{select\+Start\+Of\+Month()}{selectStartOfMonth()}}
+{\footnotesize\ttfamily \hyperlink{class_array_math}{Array\+Math}\& Array\+Math\+::select\+Start\+Of\+Month (\begin{DoxyParamCaption}\item[{int}]{major\+Tick\+Step = {\ttfamily 1},  }\item[{double}]{initial\+Margin = {\ttfamily 5~$\ast$~86400} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 3094 of file chartdir.\+h.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_array_math_a65c725e8229a4cba8072af77b23e2286_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_array_math_ab0253df48686370fccc34f3e286521d9}\label{class_array_math_ab0253df48686370fccc34f3e286521d9}} 
+\index{Array\+Math@{Array\+Math}!select\+Start\+Of\+Second@{select\+Start\+Of\+Second}}
+\index{select\+Start\+Of\+Second@{select\+Start\+Of\+Second}!Array\+Math@{Array\+Math}}
+\subsubsection{\texorpdfstring{select\+Start\+Of\+Second()}{selectStartOfSecond()}}
+{\footnotesize\ttfamily \hyperlink{class_array_math}{Array\+Math}\& Array\+Math\+::select\+Start\+Of\+Second (\begin{DoxyParamCaption}\item[{int}]{major\+Tick\+Step = {\ttfamily 1},  }\item[{double}]{initial\+Margin = {\ttfamily 0.1} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 3084 of file chartdir.\+h.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_array_math_ab0253df48686370fccc34f3e286521d9_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_array_math_a97c624b2c158da5bcea887bec88d8fd0}\label{class_array_math_a97c624b2c158da5bcea887bec88d8fd0}} 
+\index{Array\+Math@{Array\+Math}!select\+Start\+Of\+Week@{select\+Start\+Of\+Week}}
+\index{select\+Start\+Of\+Week@{select\+Start\+Of\+Week}!Array\+Math@{Array\+Math}}
+\subsubsection{\texorpdfstring{select\+Start\+Of\+Week()}{selectStartOfWeek()}}
+{\footnotesize\ttfamily \hyperlink{class_array_math}{Array\+Math}\& Array\+Math\+::select\+Start\+Of\+Week (\begin{DoxyParamCaption}\item[{int}]{major\+Tick\+Step = {\ttfamily 1},  }\item[{double}]{initial\+Margin = {\ttfamily 2~$\ast$~86400} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 3092 of file chartdir.\+h.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_array_math_a97c624b2c158da5bcea887bec88d8fd0_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_array_math_a49a76a80a68b10357db7f0189e3bfb2f}\label{class_array_math_a49a76a80a68b10357db7f0189e3bfb2f}} 
+\index{Array\+Math@{Array\+Math}!select\+Start\+Of\+Year@{select\+Start\+Of\+Year}}
+\index{select\+Start\+Of\+Year@{select\+Start\+Of\+Year}!Array\+Math@{Array\+Math}}
+\subsubsection{\texorpdfstring{select\+Start\+Of\+Year()}{selectStartOfYear()}}
+{\footnotesize\ttfamily \hyperlink{class_array_math}{Array\+Math}\& Array\+Math\+::select\+Start\+Of\+Year (\begin{DoxyParamCaption}\item[{int}]{major\+Tick\+Step = {\ttfamily 1},  }\item[{double}]{initial\+Margin = {\ttfamily 60~$\ast$~86400} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 3096 of file chartdir.\+h.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_array_math_a49a76a80a68b10357db7f0189e3bfb2f_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_array_math_a3448f6c81db45f84e63351a00f6d32b3}\label{class_array_math_a3448f6c81db45f84e63351a00f6d32b3}} 
+\index{Array\+Math@{Array\+Math}!shift@{shift}}
+\index{shift@{shift}!Array\+Math@{Array\+Math}}
+\subsubsection{\texorpdfstring{shift()}{shift()}}
+{\footnotesize\ttfamily \hyperlink{class_array_math}{Array\+Math}\& Array\+Math\+::shift (\begin{DoxyParamCaption}\item[{int}]{offset = {\ttfamily 1},  }\item[{double}]{fill\+Value = {\ttfamily Chart\+:\+:NoValue} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 3065 of file chartdir.\+h.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=295pt]{class_array_math_a3448f6c81db45f84e63351a00f6d32b3_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=342pt]{class_array_math_a3448f6c81db45f84e63351a00f6d32b3_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_array_math_a71fbcf5d93c40e840b4aa7fbea38e98e}\label{class_array_math_a71fbcf5d93c40e840b4aa7fbea38e98e}} 
+\index{Array\+Math@{Array\+Math}!std\+Dev@{std\+Dev}}
+\index{std\+Dev@{std\+Dev}!Array\+Math@{Array\+Math}}
+\subsubsection{\texorpdfstring{std\+Dev()}{stdDev()}}
+{\footnotesize\ttfamily double Array\+Math\+::std\+Dev (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 3142 of file chartdir.\+h.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=321pt]{class_array_math_a71fbcf5d93c40e840b4aa7fbea38e98e_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_array_math_a67bc79157b230866a8ed1eb5e6179de0}\label{class_array_math_a67bc79157b230866a8ed1eb5e6179de0}} 
+\index{Array\+Math@{Array\+Math}!sub@{sub}}
+\index{sub@{sub}!Array\+Math@{Array\+Math}}
+\subsubsection{\texorpdfstring{sub()}{sub()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \hyperlink{class_array_math}{Array\+Math}\& Array\+Math\+::sub (\begin{DoxyParamCaption}\item[{\hyperlink{class_double_array}{Double\+Array}}]{b }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 3058 of file chartdir.\+h.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=289pt]{class_array_math_a67bc79157b230866a8ed1eb5e6179de0_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{class_array_math_a67bc79157b230866a8ed1eb5e6179de0_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_array_math_a4c05dccafd9c44167c2e158427ce3099}\label{class_array_math_a4c05dccafd9c44167c2e158427ce3099}} 
+\index{Array\+Math@{Array\+Math}!sub@{sub}}
+\index{sub@{sub}!Array\+Math@{Array\+Math}}
+\subsubsection{\texorpdfstring{sub()}{sub()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \hyperlink{class_array_math}{Array\+Math}\& Array\+Math\+::sub (\begin{DoxyParamCaption}\item[{double}]{b }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 3059 of file chartdir.\+h.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=294pt]{class_array_math_a4c05dccafd9c44167c2e158427ce3099_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_array_math_a864604ac04b95fa04fcd511d1845ebbd}\label{class_array_math_a864604ac04b95fa04fcd511d1845ebbd}} 
+\index{Array\+Math@{Array\+Math}!sum@{sum}}
+\index{sum@{sum}!Array\+Math@{Array\+Math}}
+\subsubsection{\texorpdfstring{sum()}{sum()}}
+{\footnotesize\ttfamily double Array\+Math\+::sum (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 3141 of file chartdir.\+h.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=295pt]{class_array_math_a864604ac04b95fa04fcd511d1845ebbd_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_array_math_a07cdedd06b274fbd5a5be338cd507861}\label{class_array_math_a07cdedd06b274fbd5a5be338cd507861}} 
+\index{Array\+Math@{Array\+Math}!trim@{trim}}
+\index{trim@{trim}!Array\+Math@{Array\+Math}}
+\subsubsection{\texorpdfstring{trim()}{trim()}}
+{\footnotesize\ttfamily \hyperlink{class_array_math}{Array\+Math}\& Array\+Math\+::trim (\begin{DoxyParamCaption}\item[{int}]{start\+Index = {\ttfamily 0},  }\item[{int}]{len = {\ttfamily -\/1} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 3101 of file chartdir.\+h.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=291pt]{class_array_math_a07cdedd06b274fbd5a5be338cd507861_cgraph}
+\end{center}
+\end{figure}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+include/\hyperlink{chartdir_8h}{chartdir.\+h}\end{DoxyCompactItemize}

@@ -1,0 +1,237 @@
+\hypertarget{class_t_t_f_text}{}\section{T\+T\+F\+Text Class Reference}
+\label{class_t_t_f_text}\index{T\+T\+F\+Text@{T\+T\+F\+Text}}
+
+
+{\ttfamily \#include $<$chartdir.\+h$>$}
+
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+enum \hyperlink{class_t_t_f_text_af454c4b75744037f4231f4166b7ae614}{Anti\+Alias\+Mode} \{ \hyperlink{class_t_t_f_text_af454c4b75744037f4231f4166b7ae614a8b95d39bea86021217799d6428806086}{No\+Anti\+Alias}, 
+\hyperlink{class_t_t_f_text_af454c4b75744037f4231f4166b7ae614a43e26dc2088b1d6f7cbde93dda686b44}{Anti\+Alias}, 
+\hyperlink{class_t_t_f_text_af454c4b75744037f4231f4166b7ae614a153f2e7bf0b1759676fa5d6f4449f4a1}{Auto\+Anti\+Alias}
+ \}
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_t_t_f_text_a1a96ccfb11420cb0ec8a72665d58797d}{T\+T\+F\+Text} (T\+T\+F\+Text\+Internal $\ast$\+\_\+ptr)
+\item 
+\hyperlink{class_t_t_f_text_a5839927acde57372a22bfb427ebfda40}{$\sim$\+T\+T\+F\+Text} ()
+\item 
+void \hyperlink{class_t_t_f_text_ac5326f4aab2d131d28e22906ec95a793}{destroy} ()
+\item 
+int \hyperlink{class_t_t_f_text_a3d9fccb0597e54946f36987ae76327a1}{get\+Width} () const
+\item 
+int \hyperlink{class_t_t_f_text_a0b41f8472f607369f6a0eda4a6b5f84f}{get\+Height} () const
+\item 
+int \hyperlink{class_t_t_f_text_a3752a7851404645f3f541cf568855f3c}{get\+Line\+Height} () const
+\item 
+int \hyperlink{class_t_t_f_text_a8d6ad88e723107bfa033dc699310ce1d}{get\+Line\+Distance} () const
+\item 
+void \hyperlink{class_t_t_f_text_a28c985af7f82f03fd73747c5d565b8c1}{draw} (int x, int y, int color, int alignment=\hyperlink{namespace_chart_ae222e51ce11a254450b6ddfbc862680aa0bf92d1d2d6713aa62e92b86b9a8532f}{Chart\+::\+Top\+Left}) const
+\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static void \hyperlink{class_t_t_f_text_ad656abc050a6d082cf0f07fb5c519253}{destroy} (\hyperlink{class_t_t_f_text}{T\+T\+F\+Text} $\ast$t)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 552 of file chartdir.\+h.
+
+
+
+\subsection{Member Enumeration Documentation}
+\mbox{\Hypertarget{class_t_t_f_text_af454c4b75744037f4231f4166b7ae614}\label{class_t_t_f_text_af454c4b75744037f4231f4166b7ae614}} 
+\index{T\+T\+F\+Text@{T\+T\+F\+Text}!Anti\+Alias\+Mode@{Anti\+Alias\+Mode}}
+\index{Anti\+Alias\+Mode@{Anti\+Alias\+Mode}!T\+T\+F\+Text@{T\+T\+F\+Text}}
+\subsubsection{\texorpdfstring{Anti\+Alias\+Mode}{AntiAliasMode}}
+{\footnotesize\ttfamily enum \hyperlink{class_t_t_f_text_af454c4b75744037f4231f4166b7ae614}{T\+T\+F\+Text\+::\+Anti\+Alias\+Mode}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{No\+Anti\+Alias@{No\+Anti\+Alias}!T\+T\+F\+Text@{T\+T\+F\+Text}}\index{T\+T\+F\+Text@{T\+T\+F\+Text}!No\+Anti\+Alias@{No\+Anti\+Alias}}}\mbox{\Hypertarget{class_t_t_f_text_af454c4b75744037f4231f4166b7ae614a8b95d39bea86021217799d6428806086}\label{class_t_t_f_text_af454c4b75744037f4231f4166b7ae614a8b95d39bea86021217799d6428806086}} 
+No\+Anti\+Alias&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Anti\+Alias@{Anti\+Alias}!T\+T\+F\+Text@{T\+T\+F\+Text}}\index{T\+T\+F\+Text@{T\+T\+F\+Text}!Anti\+Alias@{Anti\+Alias}}}\mbox{\Hypertarget{class_t_t_f_text_af454c4b75744037f4231f4166b7ae614a43e26dc2088b1d6f7cbde93dda686b44}\label{class_t_t_f_text_af454c4b75744037f4231f4166b7ae614a43e26dc2088b1d6f7cbde93dda686b44}} 
+Anti\+Alias&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Auto\+Anti\+Alias@{Auto\+Anti\+Alias}!T\+T\+F\+Text@{T\+T\+F\+Text}}\index{T\+T\+F\+Text@{T\+T\+F\+Text}!Auto\+Anti\+Alias@{Auto\+Anti\+Alias}}}\mbox{\Hypertarget{class_t_t_f_text_af454c4b75744037f4231f4166b7ae614a153f2e7bf0b1759676fa5d6f4449f4a1}\label{class_t_t_f_text_af454c4b75744037f4231f4166b7ae614a153f2e7bf0b1759676fa5d6f4449f4a1}} 
+Auto\+Anti\+Alias&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+Definition at line 563 of file chartdir.\+h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_t_t_f_text_a1a96ccfb11420cb0ec8a72665d58797d}\label{class_t_t_f_text_a1a96ccfb11420cb0ec8a72665d58797d}} 
+\index{T\+T\+F\+Text@{T\+T\+F\+Text}!T\+T\+F\+Text@{T\+T\+F\+Text}}
+\index{T\+T\+F\+Text@{T\+T\+F\+Text}!T\+T\+F\+Text@{T\+T\+F\+Text}}
+\subsubsection{\texorpdfstring{T\+T\+F\+Text()}{TTFText()}}
+{\footnotesize\ttfamily T\+T\+F\+Text\+::\+T\+T\+F\+Text (\begin{DoxyParamCaption}\item[{T\+T\+F\+Text\+Internal $\ast$}]{\+\_\+ptr }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 567 of file chartdir.\+h.
+
+\mbox{\Hypertarget{class_t_t_f_text_a5839927acde57372a22bfb427ebfda40}\label{class_t_t_f_text_a5839927acde57372a22bfb427ebfda40}} 
+\index{T\+T\+F\+Text@{T\+T\+F\+Text}!````~T\+T\+F\+Text@{$\sim$\+T\+T\+F\+Text}}
+\index{````~T\+T\+F\+Text@{$\sim$\+T\+T\+F\+Text}!T\+T\+F\+Text@{T\+T\+F\+Text}}
+\subsubsection{\texorpdfstring{$\sim$\+T\+T\+F\+Text()}{~TTFText()}}
+{\footnotesize\ttfamily T\+T\+F\+Text\+::$\sim$\+T\+T\+F\+Text (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 568 of file chartdir.\+h.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=319pt]{class_t_t_f_text_a5839927acde57372a22bfb427ebfda40_cgraph}
+\end{center}
+\end{figure}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_t_t_f_text_ad656abc050a6d082cf0f07fb5c519253}\label{class_t_t_f_text_ad656abc050a6d082cf0f07fb5c519253}} 
+\index{T\+T\+F\+Text@{T\+T\+F\+Text}!destroy@{destroy}}
+\index{destroy@{destroy}!T\+T\+F\+Text@{T\+T\+F\+Text}}
+\subsubsection{\texorpdfstring{destroy()}{destroy()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily static void T\+T\+F\+Text\+::destroy (\begin{DoxyParamCaption}\item[{\hyperlink{class_t_t_f_text}{T\+T\+F\+Text} $\ast$}]{t }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Definition at line 565 of file chartdir.\+h.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=172pt]{class_t_t_f_text_ad656abc050a6d082cf0f07fb5c519253_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=172pt]{class_t_t_f_text_ad656abc050a6d082cf0f07fb5c519253_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_t_t_f_text_ac5326f4aab2d131d28e22906ec95a793}\label{class_t_t_f_text_ac5326f4aab2d131d28e22906ec95a793}} 
+\index{T\+T\+F\+Text@{T\+T\+F\+Text}!destroy@{destroy}}
+\index{destroy@{destroy}!T\+T\+F\+Text@{T\+T\+F\+Text}}
+\subsubsection{\texorpdfstring{destroy()}{destroy()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void T\+T\+F\+Text\+::destroy (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 569 of file chartdir.\+h.
+
+\mbox{\Hypertarget{class_t_t_f_text_a28c985af7f82f03fd73747c5d565b8c1}\label{class_t_t_f_text_a28c985af7f82f03fd73747c5d565b8c1}} 
+\index{T\+T\+F\+Text@{T\+T\+F\+Text}!draw@{draw}}
+\index{draw@{draw}!T\+T\+F\+Text@{T\+T\+F\+Text}}
+\subsubsection{\texorpdfstring{draw()}{draw()}}
+{\footnotesize\ttfamily void T\+T\+F\+Text\+::draw (\begin{DoxyParamCaption}\item[{int}]{x,  }\item[{int}]{y,  }\item[{int}]{color,  }\item[{int}]{alignment = {\ttfamily \hyperlink{namespace_chart_ae222e51ce11a254450b6ddfbc862680aa0bf92d1d2d6713aa62e92b86b9a8532f}{Chart\+::\+Top\+Left}} }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 576 of file chartdir.\+h.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=285pt]{class_t_t_f_text_a28c985af7f82f03fd73747c5d565b8c1_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_t_t_f_text_a0b41f8472f607369f6a0eda4a6b5f84f}\label{class_t_t_f_text_a0b41f8472f607369f6a0eda4a6b5f84f}} 
+\index{T\+T\+F\+Text@{T\+T\+F\+Text}!get\+Height@{get\+Height}}
+\index{get\+Height@{get\+Height}!T\+T\+F\+Text@{T\+T\+F\+Text}}
+\subsubsection{\texorpdfstring{get\+Height()}{getHeight()}}
+{\footnotesize\ttfamily int T\+T\+F\+Text\+::get\+Height (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 572 of file chartdir.\+h.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=327pt]{class_t_t_f_text_a0b41f8472f607369f6a0eda4a6b5f84f_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_t_t_f_text_a8d6ad88e723107bfa033dc699310ce1d}\label{class_t_t_f_text_a8d6ad88e723107bfa033dc699310ce1d}} 
+\index{T\+T\+F\+Text@{T\+T\+F\+Text}!get\+Line\+Distance@{get\+Line\+Distance}}
+\index{get\+Line\+Distance@{get\+Line\+Distance}!T\+T\+F\+Text@{T\+T\+F\+Text}}
+\subsubsection{\texorpdfstring{get\+Line\+Distance()}{getLineDistance()}}
+{\footnotesize\ttfamily int T\+T\+F\+Text\+::get\+Line\+Distance (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 574 of file chartdir.\+h.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_t_t_f_text_a8d6ad88e723107bfa033dc699310ce1d_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_t_t_f_text_a3752a7851404645f3f541cf568855f3c}\label{class_t_t_f_text_a3752a7851404645f3f541cf568855f3c}} 
+\index{T\+T\+F\+Text@{T\+T\+F\+Text}!get\+Line\+Height@{get\+Line\+Height}}
+\index{get\+Line\+Height@{get\+Line\+Height}!T\+T\+F\+Text@{T\+T\+F\+Text}}
+\subsubsection{\texorpdfstring{get\+Line\+Height()}{getLineHeight()}}
+{\footnotesize\ttfamily int T\+T\+F\+Text\+::get\+Line\+Height (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 573 of file chartdir.\+h.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_t_t_f_text_a3752a7851404645f3f541cf568855f3c_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_t_t_f_text_a3d9fccb0597e54946f36987ae76327a1}\label{class_t_t_f_text_a3d9fccb0597e54946f36987ae76327a1}} 
+\index{T\+T\+F\+Text@{T\+T\+F\+Text}!get\+Width@{get\+Width}}
+\index{get\+Width@{get\+Width}!T\+T\+F\+Text@{T\+T\+F\+Text}}
+\subsubsection{\texorpdfstring{get\+Width()}{getWidth()}}
+{\footnotesize\ttfamily int T\+T\+F\+Text\+::get\+Width (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 571 of file chartdir.\+h.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=321pt]{class_t_t_f_text_a3d9fccb0597e54946f36987ae76327a1_cgraph}
+\end{center}
+\end{figure}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+include/\hyperlink{chartdir_8h}{chartdir.\+h}\end{DoxyCompactItemize}

@@ -1,0 +1,5 @@
+<map id="PerturbationTabWidget::showTimer" name="PerturbationTabWidget::showTimer">
+<area shape="rect" id="node2" href="$class_send_setpoints.html#a35658d55d1dd98b53515c07eebc107a1" title="SendSetpoints::setAcceleration\lValue" alt="" coords="209,5,414,47"/>
+<area shape="rect" id="node3" href="$class_send_setpoints.html#a5993c64b755726a1b618fba58537aee6" title="SendSetpoints::setDeceleration\lValue" alt="" coords="208,71,415,112"/>
+<area shape="rect" id="node4" href="$class_send_setpoints.html#af592798b90015754fd11c7ae6493bed7" title="SendSetpoints::setLeftFront\lSpeedValue" alt="" coords="219,136,404,177"/>
+</map>

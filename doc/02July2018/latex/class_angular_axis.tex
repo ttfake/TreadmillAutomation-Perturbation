@@ -1,0 +1,292 @@
+\hypertarget{class_angular_axis}{}\section{Angular\+Axis Class Reference}
+\label{class_angular_axis}\index{Angular\+Axis@{Angular\+Axis}}
+
+
+{\ttfamily \#include $<$chartdir.\+h$>$}
+
+
+
+Inheritance diagram for Angular\+Axis\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=264pt]{class_angular_axis__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Angular\+Axis\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=264pt]{class_angular_axis__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_angular_axis_a5ea5e1163079a9decf8323a232d4210a}{Angular\+Axis} (Angular\+Axis\+Internal $\ast$\+\_\+ptr)
+\item 
+\hyperlink{class_angular_axis_a72ea8b4c42e00cddd9f1bfabd0bcae8c}{$\sim$\+Angular\+Axis} ()
+\item 
+\hyperlink{class_text_box}{Text\+Box} $\ast$ \hyperlink{class_angular_axis_a7cdca2dfe1200fdf2664d269dac585ba}{set\+Label\+Style} (const char $\ast$font=\char`\"{}bold\char`\"{}, double font\+Size=10, int font\+Color=\hyperlink{namespace_chart_abee0d882fdc9ad0b001245ad9fc64011a879e14f2f5024caccc047374342321ef}{Chart\+::\+Text\+Color}, double font\+Angle=0)
+\item 
+void \hyperlink{class_angular_axis_ae305f4e4b0d300b6b8e63a0f2645368c}{set\+Label\+Gap} (int d)
+\item 
+\hyperlink{class_text_box}{Text\+Box} $\ast$ \hyperlink{class_angular_axis_ae02899ce7abec02a96477811bd22c27e}{set\+Labels} (\hyperlink{class_string_array}{String\+Array} labels)
+\item 
+\hyperlink{class_text_box}{Text\+Box} $\ast$ \hyperlink{class_angular_axis_a3046d7450d5b1f01c00ae03668597bfb}{set\+Labels} (\hyperlink{class_double_array}{Double\+Array} labels, const char $\ast$format\+String=0)
+\item 
+void \hyperlink{class_angular_axis_a6f255a756fc6e9e19096618f9e34873f}{add\+Label} (double pos, const char $\ast$label)
+\item 
+void \hyperlink{class_angular_axis_a11fd9c97d2d76f01cec095a10edbe500}{set\+Linear\+Scale} (double lower\+Limit, double upper\+Limit, \hyperlink{class_string_array}{String\+Array} labels)
+\item 
+void \hyperlink{class_angular_axis_a69bb45da8256fc6999eb4a7fe789ee10}{set\+Linear\+Scale} (double lower\+Limit, double upper\+Limit, double major\+Tick\+Inc=0, double minor\+Tick\+Inc=0)
+\item 
+void \hyperlink{class_angular_axis_a0e99a07d920a902b3fa57e8a3c272004}{add\+Zone} (double start\+Value, double end\+Value, double start\+Radius, double end\+Radius, int fill\+Color, int edge\+Color=-\/1)
+\item 
+void \hyperlink{class_angular_axis_a53f7a154799715aa97d16d5140a7de17}{add\+Zone} (double start\+Value, double end\+Value, int fill\+Color, int edge\+Color=-\/1)
+\item 
+const char $\ast$ \hyperlink{class_angular_axis_a6d9609544b763a5af1f6eb4e24165ea6}{get\+Axis\+Image\+Map} (int no\+Of\+Segments, int map\+Width, const char $\ast$url, const char $\ast$query\+Format=0, const char $\ast$extra\+Attr=0, int offsetX=0, int offsetY=0) const
+\item 
+const char $\ast$ \hyperlink{class_angular_axis_ad7ee19adef39f7ce7fb1ce5bf2941b0d}{get\+H\+T\+M\+L\+Image\+Map} (const char $\ast$url, const char $\ast$query\+Format=0, const char $\ast$extra\+Attr=0, int offsetX=0, int offsetY=0) const
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 1527 of file chartdir.\+h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_angular_axis_a5ea5e1163079a9decf8323a232d4210a}\label{class_angular_axis_a5ea5e1163079a9decf8323a232d4210a}} 
+\index{Angular\+Axis@{Angular\+Axis}!Angular\+Axis@{Angular\+Axis}}
+\index{Angular\+Axis@{Angular\+Axis}!Angular\+Axis@{Angular\+Axis}}
+\subsubsection{\texorpdfstring{Angular\+Axis()}{AngularAxis()}}
+{\footnotesize\ttfamily Angular\+Axis\+::\+Angular\+Axis (\begin{DoxyParamCaption}\item[{Angular\+Axis\+Internal $\ast$}]{\+\_\+ptr }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 1537 of file chartdir.\+h.
+
+\mbox{\Hypertarget{class_angular_axis_a72ea8b4c42e00cddd9f1bfabd0bcae8c}\label{class_angular_axis_a72ea8b4c42e00cddd9f1bfabd0bcae8c}} 
+\index{Angular\+Axis@{Angular\+Axis}!````~Angular\+Axis@{$\sim$\+Angular\+Axis}}
+\index{````~Angular\+Axis@{$\sim$\+Angular\+Axis}!Angular\+Axis@{Angular\+Axis}}
+\subsubsection{\texorpdfstring{$\sim$\+Angular\+Axis()}{~AngularAxis()}}
+{\footnotesize\ttfamily Angular\+Axis\+::$\sim$\+Angular\+Axis (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 1538 of file chartdir.\+h.
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_angular_axis_a6f255a756fc6e9e19096618f9e34873f}\label{class_angular_axis_a6f255a756fc6e9e19096618f9e34873f}} 
+\index{Angular\+Axis@{Angular\+Axis}!add\+Label@{add\+Label}}
+\index{add\+Label@{add\+Label}!Angular\+Axis@{Angular\+Axis}}
+\subsubsection{\texorpdfstring{add\+Label()}{addLabel()}}
+{\footnotesize\ttfamily void Angular\+Axis\+::add\+Label (\begin{DoxyParamCaption}\item[{double}]{pos,  }\item[{const char $\ast$}]{label }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 1549 of file chartdir.\+h.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_angular_axis_a6f255a756fc6e9e19096618f9e34873f_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_angular_axis_a0e99a07d920a902b3fa57e8a3c272004}\label{class_angular_axis_a0e99a07d920a902b3fa57e8a3c272004}} 
+\index{Angular\+Axis@{Angular\+Axis}!add\+Zone@{add\+Zone}}
+\index{add\+Zone@{add\+Zone}!Angular\+Axis@{Angular\+Axis}}
+\subsubsection{\texorpdfstring{add\+Zone()}{addZone()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Angular\+Axis\+::add\+Zone (\begin{DoxyParamCaption}\item[{double}]{start\+Value,  }\item[{double}]{end\+Value,  }\item[{double}]{start\+Radius,  }\item[{double}]{end\+Radius,  }\item[{int}]{fill\+Color,  }\item[{int}]{edge\+Color = {\ttfamily -\/1} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 1557 of file chartdir.\+h.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=348pt]{class_angular_axis_a0e99a07d920a902b3fa57e8a3c272004_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_angular_axis_a53f7a154799715aa97d16d5140a7de17}\label{class_angular_axis_a53f7a154799715aa97d16d5140a7de17}} 
+\index{Angular\+Axis@{Angular\+Axis}!add\+Zone@{add\+Zone}}
+\index{add\+Zone@{add\+Zone}!Angular\+Axis@{Angular\+Axis}}
+\subsubsection{\texorpdfstring{add\+Zone()}{addZone()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Angular\+Axis\+::add\+Zone (\begin{DoxyParamCaption}\item[{double}]{start\+Value,  }\item[{double}]{end\+Value,  }\item[{int}]{fill\+Color,  }\item[{int}]{edge\+Color = {\ttfamily -\/1} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 1560 of file chartdir.\+h.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_angular_axis_a53f7a154799715aa97d16d5140a7de17_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_angular_axis_a6d9609544b763a5af1f6eb4e24165ea6}\label{class_angular_axis_a6d9609544b763a5af1f6eb4e24165ea6}} 
+\index{Angular\+Axis@{Angular\+Axis}!get\+Axis\+Image\+Map@{get\+Axis\+Image\+Map}}
+\index{get\+Axis\+Image\+Map@{get\+Axis\+Image\+Map}!Angular\+Axis@{Angular\+Axis}}
+\subsubsection{\texorpdfstring{get\+Axis\+Image\+Map()}{getAxisImageMap()}}
+{\footnotesize\ttfamily const char$\ast$ Angular\+Axis\+::get\+Axis\+Image\+Map (\begin{DoxyParamCaption}\item[{int}]{no\+Of\+Segments,  }\item[{int}]{map\+Width,  }\item[{const char $\ast$}]{url,  }\item[{const char $\ast$}]{query\+Format = {\ttfamily 0},  }\item[{const char $\ast$}]{extra\+Attr = {\ttfamily 0},  }\item[{int}]{offsetX = {\ttfamily 0},  }\item[{int}]{offsetY = {\ttfamily 0} }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 1563 of file chartdir.\+h.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_angular_axis_a6d9609544b763a5af1f6eb4e24165ea6_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_angular_axis_ad7ee19adef39f7ce7fb1ce5bf2941b0d}\label{class_angular_axis_ad7ee19adef39f7ce7fb1ce5bf2941b0d}} 
+\index{Angular\+Axis@{Angular\+Axis}!get\+H\+T\+M\+L\+Image\+Map@{get\+H\+T\+M\+L\+Image\+Map}}
+\index{get\+H\+T\+M\+L\+Image\+Map@{get\+H\+T\+M\+L\+Image\+Map}!Angular\+Axis@{Angular\+Axis}}
+\subsubsection{\texorpdfstring{get\+H\+T\+M\+L\+Image\+Map()}{getHTMLImageMap()}}
+{\footnotesize\ttfamily const char$\ast$ Angular\+Axis\+::get\+H\+T\+M\+L\+Image\+Map (\begin{DoxyParamCaption}\item[{const char $\ast$}]{url,  }\item[{const char $\ast$}]{query\+Format = {\ttfamily 0},  }\item[{const char $\ast$}]{extra\+Attr = {\ttfamily 0},  }\item[{int}]{offsetX = {\ttfamily 0},  }\item[{int}]{offsetY = {\ttfamily 0} }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 1566 of file chartdir.\+h.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_angular_axis_ad7ee19adef39f7ce7fb1ce5bf2941b0d_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_angular_axis_ae305f4e4b0d300b6b8e63a0f2645368c}\label{class_angular_axis_ae305f4e4b0d300b6b8e63a0f2645368c}} 
+\index{Angular\+Axis@{Angular\+Axis}!set\+Label\+Gap@{set\+Label\+Gap}}
+\index{set\+Label\+Gap@{set\+Label\+Gap}!Angular\+Axis@{Angular\+Axis}}
+\subsubsection{\texorpdfstring{set\+Label\+Gap()}{setLabelGap()}}
+{\footnotesize\ttfamily void Angular\+Axis\+::set\+Label\+Gap (\begin{DoxyParamCaption}\item[{int}]{d }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 1543 of file chartdir.\+h.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_angular_axis_ae305f4e4b0d300b6b8e63a0f2645368c_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_angular_axis_ae02899ce7abec02a96477811bd22c27e}\label{class_angular_axis_ae02899ce7abec02a96477811bd22c27e}} 
+\index{Angular\+Axis@{Angular\+Axis}!set\+Labels@{set\+Labels}}
+\index{set\+Labels@{set\+Labels}!Angular\+Axis@{Angular\+Axis}}
+\subsubsection{\texorpdfstring{set\+Labels()}{setLabels()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \hyperlink{class_text_box}{Text\+Box}$\ast$ Angular\+Axis\+::set\+Labels (\begin{DoxyParamCaption}\item[{\hyperlink{class_string_array}{String\+Array}}]{labels }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 1545 of file chartdir.\+h.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_angular_axis_ae02899ce7abec02a96477811bd22c27e_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_angular_axis_a3046d7450d5b1f01c00ae03668597bfb}\label{class_angular_axis_a3046d7450d5b1f01c00ae03668597bfb}} 
+\index{Angular\+Axis@{Angular\+Axis}!set\+Labels@{set\+Labels}}
+\index{set\+Labels@{set\+Labels}!Angular\+Axis@{Angular\+Axis}}
+\subsubsection{\texorpdfstring{set\+Labels()}{setLabels()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \hyperlink{class_text_box}{Text\+Box}$\ast$ Angular\+Axis\+::set\+Labels (\begin{DoxyParamCaption}\item[{\hyperlink{class_double_array}{Double\+Array}}]{labels,  }\item[{const char $\ast$}]{format\+String = {\ttfamily 0} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 1547 of file chartdir.\+h.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_angular_axis_a3046d7450d5b1f01c00ae03668597bfb_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_angular_axis_a7cdca2dfe1200fdf2664d269dac585ba}\label{class_angular_axis_a7cdca2dfe1200fdf2664d269dac585ba}} 
+\index{Angular\+Axis@{Angular\+Axis}!set\+Label\+Style@{set\+Label\+Style}}
+\index{set\+Label\+Style@{set\+Label\+Style}!Angular\+Axis@{Angular\+Axis}}
+\subsubsection{\texorpdfstring{set\+Label\+Style()}{setLabelStyle()}}
+{\footnotesize\ttfamily \hyperlink{class_text_box}{Text\+Box}$\ast$ Angular\+Axis\+::set\+Label\+Style (\begin{DoxyParamCaption}\item[{const char $\ast$}]{font = {\ttfamily \char`\"{}bold\char`\"{}},  }\item[{double}]{font\+Size = {\ttfamily 10},  }\item[{int}]{font\+Color = {\ttfamily \hyperlink{namespace_chart_abee0d882fdc9ad0b001245ad9fc64011a879e14f2f5024caccc047374342321ef}{Chart\+::\+Text\+Color}},  }\item[{double}]{font\+Angle = {\ttfamily 0} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 1540 of file chartdir.\+h.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_angular_axis_a7cdca2dfe1200fdf2664d269dac585ba_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_angular_axis_a11fd9c97d2d76f01cec095a10edbe500}\label{class_angular_axis_a11fd9c97d2d76f01cec095a10edbe500}} 
+\index{Angular\+Axis@{Angular\+Axis}!set\+Linear\+Scale@{set\+Linear\+Scale}}
+\index{set\+Linear\+Scale@{set\+Linear\+Scale}!Angular\+Axis@{Angular\+Axis}}
+\subsubsection{\texorpdfstring{set\+Linear\+Scale()}{setLinearScale()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Angular\+Axis\+::set\+Linear\+Scale (\begin{DoxyParamCaption}\item[{double}]{lower\+Limit,  }\item[{double}]{upper\+Limit,  }\item[{\hyperlink{class_string_array}{String\+Array}}]{labels }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 1552 of file chartdir.\+h.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_angular_axis_a11fd9c97d2d76f01cec095a10edbe500_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_angular_axis_a69bb45da8256fc6999eb4a7fe789ee10}\label{class_angular_axis_a69bb45da8256fc6999eb4a7fe789ee10}} 
+\index{Angular\+Axis@{Angular\+Axis}!set\+Linear\+Scale@{set\+Linear\+Scale}}
+\index{set\+Linear\+Scale@{set\+Linear\+Scale}!Angular\+Axis@{Angular\+Axis}}
+\subsubsection{\texorpdfstring{set\+Linear\+Scale()}{setLinearScale()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Angular\+Axis\+::set\+Linear\+Scale (\begin{DoxyParamCaption}\item[{double}]{lower\+Limit,  }\item[{double}]{upper\+Limit,  }\item[{double}]{major\+Tick\+Inc = {\ttfamily 0},  }\item[{double}]{minor\+Tick\+Inc = {\ttfamily 0} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 1554 of file chartdir.\+h.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_angular_axis_a69bb45da8256fc6999eb4a7fe789ee10_cgraph}
+\end{center}
+\end{figure}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+include/\hyperlink{chartdir_8h}{chartdir.\+h}\end{DoxyCompactItemize}

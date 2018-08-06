@@ -1,0 +1,919 @@
+\hypertarget{class_view_port_manager}{}\section{View\+Port\+Manager Class Reference}
+\label{class_view_port_manager}\index{View\+Port\+Manager@{View\+Port\+Manager}}
+
+
+{\ttfamily \#include $<$chartdir.\+h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_view_port_manager_aa1b652e4a2d4d11c50bcb6070506cc52}{View\+Port\+Manager} ()
+\item 
+\hyperlink{class_view_port_manager_a246382d798570dd477efd4da1946778d}{$\sim$\+View\+Port\+Manager} ()
+\item 
+View\+Port\+Manager\+Internal $\ast$ \hyperlink{class_view_port_manager_af3aa3a669ee164439737ea284c6c9cdf}{get\+Internal\+Ptr} ()
+\item 
+void \hyperlink{class_view_port_manager_af4bdc161db91ed516987f6a358f02bab}{set\+Chart\+Metrics} (const char $\ast$metrics)
+\item 
+int \hyperlink{class_view_port_manager_a244345729e7f3798f509031a72bf7362}{get\+Plot\+Area\+Left} ()
+\item 
+int \hyperlink{class_view_port_manager_a4f4797760398802b6cc12970f57e3039}{get\+Plot\+Area\+Top} ()
+\item 
+int \hyperlink{class_view_port_manager_a343ea77ab814cfbb1e47322d11eebf9e}{get\+Plot\+Area\+Width} ()
+\item 
+int \hyperlink{class_view_port_manager_a27afd05fac15bcaa4f06eb9bc675a6d0}{get\+Plot\+Area\+Height} ()
+\item 
+bool \hyperlink{class_view_port_manager_ae347d881f810430cc0b8a368c4a349c2}{in\+Plot\+Area} (int x, int y)
+\item 
+double \hyperlink{class_view_port_manager_a39d80abc4db236ff6657c5974e1a9fda}{get\+View\+Port\+Left} ()
+\item 
+void \hyperlink{class_view_port_manager_a1270422432f386ab1a0f3c94990c1567}{set\+View\+Port\+Left} (double left)
+\item 
+double \hyperlink{class_view_port_manager_a83c46dea64613c2e1939933eb6ae17c0}{get\+View\+Port\+Top} ()
+\item 
+void \hyperlink{class_view_port_manager_a367c1ca90319fd6f8261ca5d8fe4a0d3}{set\+View\+Port\+Top} (double top)
+\item 
+double \hyperlink{class_view_port_manager_a0a3555e1154cb34389ed2cf5b035e687}{get\+View\+Port\+Width} ()
+\item 
+void \hyperlink{class_view_port_manager_adf549fbcace60757aedebff857d9c0dc}{set\+View\+Port\+Width} (double width)
+\item 
+double \hyperlink{class_view_port_manager_ad1b3383ca3d0d4a87f1ca56bb8f1cb7e}{get\+View\+Port\+Height} ()
+\item 
+void \hyperlink{class_view_port_manager_a16729686407f7efaa7bf11e2f912409e}{set\+View\+Port\+Height} (double height)
+\item 
+void \hyperlink{class_view_port_manager_a5b6604b59e8c04fe2e32b67f12c4c002}{validate\+View\+Port} ()
+\item 
+double \hyperlink{class_view_port_manager_abb094171925d74b09ca34b4b5516d99a}{get\+Zoom\+In\+Width\+Limit} ()
+\item 
+void \hyperlink{class_view_port_manager_ab6ea404e7837addeb3d4cf8015adfa4c}{set\+Zoom\+In\+Width\+Limit} (double view\+Port\+Width)
+\item 
+double \hyperlink{class_view_port_manager_ac9cb2aed6dfbe6dcf2049e8ccf1b8b47}{get\+Zoom\+Out\+Width\+Limit} ()
+\item 
+void \hyperlink{class_view_port_manager_a05ecf60e99e7ccbc9f84061485d07543}{set\+Zoom\+Out\+Width\+Limit} (double view\+Port\+Width)
+\item 
+double \hyperlink{class_view_port_manager_a97ddd1d6300e677ae55fd3095c815f3f}{get\+Zoom\+In\+Height\+Limit} ()
+\item 
+void \hyperlink{class_view_port_manager_aa3522d8d5cccfc890922fcbbe12eb919}{set\+Zoom\+In\+Height\+Limit} (double view\+Port\+Height)
+\item 
+double \hyperlink{class_view_port_manager_aab5ba83002c831fef3831b883b0908ba}{get\+Zoom\+Out\+Height\+Limit} ()
+\item 
+void \hyperlink{class_view_port_manager_a050d927a278c1c37dc97ea2ccb00ca17}{set\+Zoom\+Out\+Height\+Limit} (double view\+Port\+Height)
+\item 
+bool \hyperlink{class_view_port_manager_a93ca31738c1840842ef7b66cd4037b8e}{can\+Zoom\+In} (int zoom\+Direction)
+\item 
+bool \hyperlink{class_view_port_manager_a34b7404aa68b4a172c9db29f09898637}{can\+Zoom\+Out} (int zoom\+Direction)
+\item 
+bool \hyperlink{class_view_port_manager_a91160303aebb6d58369175131022b3e6}{zoom\+At} (int zoom\+Direction, int x, int y, double zoom\+Ratio)
+\item 
+bool \hyperlink{class_view_port_manager_a50b30e900b4ca55321fb6d8cac99e2ee}{zoom\+To} (int zoom\+Direction, int x1, int y1, int x2, int y2)
+\item 
+bool \hyperlink{class_view_port_manager_ae1be85f3a163f841202bdc260d04f8f3}{zoom\+Around} (int x, int y, double x\+Zoom\+Ratio, double y\+Zoom\+Ratio)
+\item 
+void \hyperlink{class_view_port_manager_a2bfc533d7b307723e29ef03c45fb3237}{start\+Drag} ()
+\item 
+bool \hyperlink{class_view_port_manager_aeea4d7130197f70eb7ab453316e79c77}{drag\+To} (int scroll\+Direction, int deltaX, int deltaY)
+\item 
+void \hyperlink{class_view_port_manager_accd91f779d15c0e92e1021a1954697d8}{set\+Full\+Range} (const char $\ast$id, double min\+Value, double max\+Value)
+\item 
+bool \hyperlink{class_view_port_manager_a007141f50fa8ae8ad2f80bd10c5f097f}{update\+Full\+RangeH} (const char $\ast$id, double min\+Value, double max\+Value, int update\+Type)
+\item 
+bool \hyperlink{class_view_port_manager_ac54ae9b215ca55fc30cfe5cbacfe0865}{update\+Full\+RangeV} (const char $\ast$id, double min\+Value, double max\+Value, int update\+Type)
+\item 
+void \hyperlink{class_view_port_manager_a8b23a571e322e8e61066b9e2172ca4ac}{clear\+All\+Ranges} ()
+\item 
+double \hyperlink{class_view_port_manager_a9109a8e0fa981a9443205641d59bb409}{get\+Value\+At\+View\+Port} (const char $\ast$id, double ratio, bool is\+Log\+Scale=false)
+\item 
+double \hyperlink{class_view_port_manager_a74886ad36dd990d09a70fc480cf9d7d7}{get\+View\+Port\+At\+Value} (const char $\ast$id, double ratio, bool is\+Log\+Scale=false)
+\item 
+void \hyperlink{class_view_port_manager_a0c127c218b1dabc082644d5cc95f256d}{sync\+Linear\+Axis\+With\+View\+Port} (const char $\ast$id, \hyperlink{class_axis}{Axis} $\ast$axis)
+\item 
+void \hyperlink{class_view_port_manager_a8b2c7545c83751250c1239ec1f4e566d}{sync\+Log\+Axis\+With\+View\+Port} (const char $\ast$id, \hyperlink{class_axis}{Axis} $\ast$axis)
+\item 
+void \hyperlink{class_view_port_manager_a7fe758aa316bfaee4bcbc9f28de8c3f0}{sync\+Date\+Axis\+With\+View\+Port} (const char $\ast$id, \hyperlink{class_axis}{Axis} $\ast$axis)
+\item 
+void \hyperlink{class_view_port_manager_a08f479a4daff50e8a76cf2c11b796d15}{commit\+Pending\+Sync\+Axis} (\hyperlink{class_base_chart}{Base\+Chart} $\ast$c)
+\item 
+void \hyperlink{class_view_port_manager_aa42a66b39276ed7707524cc8d901caef}{set\+Plot\+Area\+Mouse\+Margin} (int left\+Margin, int right\+Margin, int top\+Margin, int bottom\+Margin)
+\item 
+bool \hyperlink{class_view_port_manager_a11b9ed53c57b96be9ef663200b64be87}{in\+Extended\+Plot\+Area} (int x, int y)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 3273 of file chartdir.\+h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_view_port_manager_aa1b652e4a2d4d11c50bcb6070506cc52}\label{class_view_port_manager_aa1b652e4a2d4d11c50bcb6070506cc52}} 
+\index{View\+Port\+Manager@{View\+Port\+Manager}!View\+Port\+Manager@{View\+Port\+Manager}}
+\index{View\+Port\+Manager@{View\+Port\+Manager}!View\+Port\+Manager@{View\+Port\+Manager}}
+\subsubsection{\texorpdfstring{View\+Port\+Manager()}{ViewPortManager()}}
+{\footnotesize\ttfamily View\+Port\+Manager\+::\+View\+Port\+Manager (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 3284 of file chartdir.\+h.
+
+\mbox{\Hypertarget{class_view_port_manager_a246382d798570dd477efd4da1946778d}\label{class_view_port_manager_a246382d798570dd477efd4da1946778d}} 
+\index{View\+Port\+Manager@{View\+Port\+Manager}!````~View\+Port\+Manager@{$\sim$\+View\+Port\+Manager}}
+\index{````~View\+Port\+Manager@{$\sim$\+View\+Port\+Manager}!View\+Port\+Manager@{View\+Port\+Manager}}
+\subsubsection{\texorpdfstring{$\sim$\+View\+Port\+Manager()}{~ViewPortManager()}}
+{\footnotesize\ttfamily View\+Port\+Manager\+::$\sim$\+View\+Port\+Manager (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 3285 of file chartdir.\+h.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_view_port_manager_a246382d798570dd477efd4da1946778d_cgraph}
+\end{center}
+\end{figure}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_view_port_manager_a93ca31738c1840842ef7b66cd4037b8e}\label{class_view_port_manager_a93ca31738c1840842ef7b66cd4037b8e}} 
+\index{View\+Port\+Manager@{View\+Port\+Manager}!can\+Zoom\+In@{can\+Zoom\+In}}
+\index{can\+Zoom\+In@{can\+Zoom\+In}!View\+Port\+Manager@{View\+Port\+Manager}}
+\subsubsection{\texorpdfstring{can\+Zoom\+In()}{canZoomIn()}}
+{\footnotesize\ttfamily bool View\+Port\+Manager\+::can\+Zoom\+In (\begin{DoxyParamCaption}\item[{int}]{zoom\+Direction }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 3313 of file chartdir.\+h.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_view_port_manager_a93ca31738c1840842ef7b66cd4037b8e_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_view_port_manager_a34b7404aa68b4a172c9db29f09898637}\label{class_view_port_manager_a34b7404aa68b4a172c9db29f09898637}} 
+\index{View\+Port\+Manager@{View\+Port\+Manager}!can\+Zoom\+Out@{can\+Zoom\+Out}}
+\index{can\+Zoom\+Out@{can\+Zoom\+Out}!View\+Port\+Manager@{View\+Port\+Manager}}
+\subsubsection{\texorpdfstring{can\+Zoom\+Out()}{canZoomOut()}}
+{\footnotesize\ttfamily bool View\+Port\+Manager\+::can\+Zoom\+Out (\begin{DoxyParamCaption}\item[{int}]{zoom\+Direction }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 3314 of file chartdir.\+h.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_view_port_manager_a34b7404aa68b4a172c9db29f09898637_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_view_port_manager_a8b23a571e322e8e61066b9e2172ca4ac}\label{class_view_port_manager_a8b23a571e322e8e61066b9e2172ca4ac}} 
+\index{View\+Port\+Manager@{View\+Port\+Manager}!clear\+All\+Ranges@{clear\+All\+Ranges}}
+\index{clear\+All\+Ranges@{clear\+All\+Ranges}!View\+Port\+Manager@{View\+Port\+Manager}}
+\subsubsection{\texorpdfstring{clear\+All\+Ranges()}{clearAllRanges()}}
+{\footnotesize\ttfamily void View\+Port\+Manager\+::clear\+All\+Ranges (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 3332 of file chartdir.\+h.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_view_port_manager_a8b23a571e322e8e61066b9e2172ca4ac_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_view_port_manager_a08f479a4daff50e8a76cf2c11b796d15}\label{class_view_port_manager_a08f479a4daff50e8a76cf2c11b796d15}} 
+\index{View\+Port\+Manager@{View\+Port\+Manager}!commit\+Pending\+Sync\+Axis@{commit\+Pending\+Sync\+Axis}}
+\index{commit\+Pending\+Sync\+Axis@{commit\+Pending\+Sync\+Axis}!View\+Port\+Manager@{View\+Port\+Manager}}
+\subsubsection{\texorpdfstring{commit\+Pending\+Sync\+Axis()}{commitPendingSyncAxis()}}
+{\footnotesize\ttfamily void View\+Port\+Manager\+::commit\+Pending\+Sync\+Axis (\begin{DoxyParamCaption}\item[{\hyperlink{class_base_chart}{Base\+Chart} $\ast$}]{c }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 3344 of file chartdir.\+h.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_view_port_manager_a08f479a4daff50e8a76cf2c11b796d15_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_view_port_manager_aeea4d7130197f70eb7ab453316e79c77}\label{class_view_port_manager_aeea4d7130197f70eb7ab453316e79c77}} 
+\index{View\+Port\+Manager@{View\+Port\+Manager}!drag\+To@{drag\+To}}
+\index{drag\+To@{drag\+To}!View\+Port\+Manager@{View\+Port\+Manager}}
+\subsubsection{\texorpdfstring{drag\+To()}{dragTo()}}
+{\footnotesize\ttfamily bool View\+Port\+Manager\+::drag\+To (\begin{DoxyParamCaption}\item[{int}]{scroll\+Direction,  }\item[{int}]{deltaX,  }\item[{int}]{deltaY }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 3323 of file chartdir.\+h.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_view_port_manager_aeea4d7130197f70eb7ab453316e79c77_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_view_port_manager_af3aa3a669ee164439737ea284c6c9cdf}\label{class_view_port_manager_af3aa3a669ee164439737ea284c6c9cdf}} 
+\index{View\+Port\+Manager@{View\+Port\+Manager}!get\+Internal\+Ptr@{get\+Internal\+Ptr}}
+\index{get\+Internal\+Ptr@{get\+Internal\+Ptr}!View\+Port\+Manager@{View\+Port\+Manager}}
+\subsubsection{\texorpdfstring{get\+Internal\+Ptr()}{getInternalPtr()}}
+{\footnotesize\ttfamily View\+Port\+Manager\+Internal$\ast$ View\+Port\+Manager\+::get\+Internal\+Ptr (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 3286 of file chartdir.\+h.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_view_port_manager_af3aa3a669ee164439737ea284c6c9cdf_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_view_port_manager_a27afd05fac15bcaa4f06eb9bc675a6d0}\label{class_view_port_manager_a27afd05fac15bcaa4f06eb9bc675a6d0}} 
+\index{View\+Port\+Manager@{View\+Port\+Manager}!get\+Plot\+Area\+Height@{get\+Plot\+Area\+Height}}
+\index{get\+Plot\+Area\+Height@{get\+Plot\+Area\+Height}!View\+Port\+Manager@{View\+Port\+Manager}}
+\subsubsection{\texorpdfstring{get\+Plot\+Area\+Height()}{getPlotAreaHeight()}}
+{\footnotesize\ttfamily int View\+Port\+Manager\+::get\+Plot\+Area\+Height (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 3292 of file chartdir.\+h.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_view_port_manager_a27afd05fac15bcaa4f06eb9bc675a6d0_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_view_port_manager_a244345729e7f3798f509031a72bf7362}\label{class_view_port_manager_a244345729e7f3798f509031a72bf7362}} 
+\index{View\+Port\+Manager@{View\+Port\+Manager}!get\+Plot\+Area\+Left@{get\+Plot\+Area\+Left}}
+\index{get\+Plot\+Area\+Left@{get\+Plot\+Area\+Left}!View\+Port\+Manager@{View\+Port\+Manager}}
+\subsubsection{\texorpdfstring{get\+Plot\+Area\+Left()}{getPlotAreaLeft()}}
+{\footnotesize\ttfamily int View\+Port\+Manager\+::get\+Plot\+Area\+Left (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 3289 of file chartdir.\+h.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_view_port_manager_a244345729e7f3798f509031a72bf7362_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_view_port_manager_a4f4797760398802b6cc12970f57e3039}\label{class_view_port_manager_a4f4797760398802b6cc12970f57e3039}} 
+\index{View\+Port\+Manager@{View\+Port\+Manager}!get\+Plot\+Area\+Top@{get\+Plot\+Area\+Top}}
+\index{get\+Plot\+Area\+Top@{get\+Plot\+Area\+Top}!View\+Port\+Manager@{View\+Port\+Manager}}
+\subsubsection{\texorpdfstring{get\+Plot\+Area\+Top()}{getPlotAreaTop()}}
+{\footnotesize\ttfamily int View\+Port\+Manager\+::get\+Plot\+Area\+Top (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 3290 of file chartdir.\+h.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_view_port_manager_a4f4797760398802b6cc12970f57e3039_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_view_port_manager_a343ea77ab814cfbb1e47322d11eebf9e}\label{class_view_port_manager_a343ea77ab814cfbb1e47322d11eebf9e}} 
+\index{View\+Port\+Manager@{View\+Port\+Manager}!get\+Plot\+Area\+Width@{get\+Plot\+Area\+Width}}
+\index{get\+Plot\+Area\+Width@{get\+Plot\+Area\+Width}!View\+Port\+Manager@{View\+Port\+Manager}}
+\subsubsection{\texorpdfstring{get\+Plot\+Area\+Width()}{getPlotAreaWidth()}}
+{\footnotesize\ttfamily int View\+Port\+Manager\+::get\+Plot\+Area\+Width (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 3291 of file chartdir.\+h.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_view_port_manager_a343ea77ab814cfbb1e47322d11eebf9e_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_view_port_manager_a9109a8e0fa981a9443205641d59bb409}\label{class_view_port_manager_a9109a8e0fa981a9443205641d59bb409}} 
+\index{View\+Port\+Manager@{View\+Port\+Manager}!get\+Value\+At\+View\+Port@{get\+Value\+At\+View\+Port}}
+\index{get\+Value\+At\+View\+Port@{get\+Value\+At\+View\+Port}!View\+Port\+Manager@{View\+Port\+Manager}}
+\subsubsection{\texorpdfstring{get\+Value\+At\+View\+Port()}{getValueAtViewPort()}}
+{\footnotesize\ttfamily double View\+Port\+Manager\+::get\+Value\+At\+View\+Port (\begin{DoxyParamCaption}\item[{const char $\ast$}]{id,  }\item[{double}]{ratio,  }\item[{bool}]{is\+Log\+Scale = {\ttfamily false} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 3334 of file chartdir.\+h.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_view_port_manager_a9109a8e0fa981a9443205641d59bb409_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_view_port_manager_a74886ad36dd990d09a70fc480cf9d7d7}\label{class_view_port_manager_a74886ad36dd990d09a70fc480cf9d7d7}} 
+\index{View\+Port\+Manager@{View\+Port\+Manager}!get\+View\+Port\+At\+Value@{get\+View\+Port\+At\+Value}}
+\index{get\+View\+Port\+At\+Value@{get\+View\+Port\+At\+Value}!View\+Port\+Manager@{View\+Port\+Manager}}
+\subsubsection{\texorpdfstring{get\+View\+Port\+At\+Value()}{getViewPortAtValue()}}
+{\footnotesize\ttfamily double View\+Port\+Manager\+::get\+View\+Port\+At\+Value (\begin{DoxyParamCaption}\item[{const char $\ast$}]{id,  }\item[{double}]{ratio,  }\item[{bool}]{is\+Log\+Scale = {\ttfamily false} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 3336 of file chartdir.\+h.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_view_port_manager_a74886ad36dd990d09a70fc480cf9d7d7_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_view_port_manager_ad1b3383ca3d0d4a87f1ca56bb8f1cb7e}\label{class_view_port_manager_ad1b3383ca3d0d4a87f1ca56bb8f1cb7e}} 
+\index{View\+Port\+Manager@{View\+Port\+Manager}!get\+View\+Port\+Height@{get\+View\+Port\+Height}}
+\index{get\+View\+Port\+Height@{get\+View\+Port\+Height}!View\+Port\+Manager@{View\+Port\+Manager}}
+\subsubsection{\texorpdfstring{get\+View\+Port\+Height()}{getViewPortHeight()}}
+{\footnotesize\ttfamily double View\+Port\+Manager\+::get\+View\+Port\+Height (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 3301 of file chartdir.\+h.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_view_port_manager_ad1b3383ca3d0d4a87f1ca56bb8f1cb7e_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_view_port_manager_a39d80abc4db236ff6657c5974e1a9fda}\label{class_view_port_manager_a39d80abc4db236ff6657c5974e1a9fda}} 
+\index{View\+Port\+Manager@{View\+Port\+Manager}!get\+View\+Port\+Left@{get\+View\+Port\+Left}}
+\index{get\+View\+Port\+Left@{get\+View\+Port\+Left}!View\+Port\+Manager@{View\+Port\+Manager}}
+\subsubsection{\texorpdfstring{get\+View\+Port\+Left()}{getViewPortLeft()}}
+{\footnotesize\ttfamily double View\+Port\+Manager\+::get\+View\+Port\+Left (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 3295 of file chartdir.\+h.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_view_port_manager_a39d80abc4db236ff6657c5974e1a9fda_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_view_port_manager_a83c46dea64613c2e1939933eb6ae17c0}\label{class_view_port_manager_a83c46dea64613c2e1939933eb6ae17c0}} 
+\index{View\+Port\+Manager@{View\+Port\+Manager}!get\+View\+Port\+Top@{get\+View\+Port\+Top}}
+\index{get\+View\+Port\+Top@{get\+View\+Port\+Top}!View\+Port\+Manager@{View\+Port\+Manager}}
+\subsubsection{\texorpdfstring{get\+View\+Port\+Top()}{getViewPortTop()}}
+{\footnotesize\ttfamily double View\+Port\+Manager\+::get\+View\+Port\+Top (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 3297 of file chartdir.\+h.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_view_port_manager_a83c46dea64613c2e1939933eb6ae17c0_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_view_port_manager_a0a3555e1154cb34389ed2cf5b035e687}\label{class_view_port_manager_a0a3555e1154cb34389ed2cf5b035e687}} 
+\index{View\+Port\+Manager@{View\+Port\+Manager}!get\+View\+Port\+Width@{get\+View\+Port\+Width}}
+\index{get\+View\+Port\+Width@{get\+View\+Port\+Width}!View\+Port\+Manager@{View\+Port\+Manager}}
+\subsubsection{\texorpdfstring{get\+View\+Port\+Width()}{getViewPortWidth()}}
+{\footnotesize\ttfamily double View\+Port\+Manager\+::get\+View\+Port\+Width (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 3299 of file chartdir.\+h.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_view_port_manager_a0a3555e1154cb34389ed2cf5b035e687_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_view_port_manager_a97ddd1d6300e677ae55fd3095c815f3f}\label{class_view_port_manager_a97ddd1d6300e677ae55fd3095c815f3f}} 
+\index{View\+Port\+Manager@{View\+Port\+Manager}!get\+Zoom\+In\+Height\+Limit@{get\+Zoom\+In\+Height\+Limit}}
+\index{get\+Zoom\+In\+Height\+Limit@{get\+Zoom\+In\+Height\+Limit}!View\+Port\+Manager@{View\+Port\+Manager}}
+\subsubsection{\texorpdfstring{get\+Zoom\+In\+Height\+Limit()}{getZoomInHeightLimit()}}
+{\footnotesize\ttfamily double View\+Port\+Manager\+::get\+Zoom\+In\+Height\+Limit (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 3309 of file chartdir.\+h.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_view_port_manager_a97ddd1d6300e677ae55fd3095c815f3f_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_view_port_manager_abb094171925d74b09ca34b4b5516d99a}\label{class_view_port_manager_abb094171925d74b09ca34b4b5516d99a}} 
+\index{View\+Port\+Manager@{View\+Port\+Manager}!get\+Zoom\+In\+Width\+Limit@{get\+Zoom\+In\+Width\+Limit}}
+\index{get\+Zoom\+In\+Width\+Limit@{get\+Zoom\+In\+Width\+Limit}!View\+Port\+Manager@{View\+Port\+Manager}}
+\subsubsection{\texorpdfstring{get\+Zoom\+In\+Width\+Limit()}{getZoomInWidthLimit()}}
+{\footnotesize\ttfamily double View\+Port\+Manager\+::get\+Zoom\+In\+Width\+Limit (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 3305 of file chartdir.\+h.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_view_port_manager_abb094171925d74b09ca34b4b5516d99a_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_view_port_manager_aab5ba83002c831fef3831b883b0908ba}\label{class_view_port_manager_aab5ba83002c831fef3831b883b0908ba}} 
+\index{View\+Port\+Manager@{View\+Port\+Manager}!get\+Zoom\+Out\+Height\+Limit@{get\+Zoom\+Out\+Height\+Limit}}
+\index{get\+Zoom\+Out\+Height\+Limit@{get\+Zoom\+Out\+Height\+Limit}!View\+Port\+Manager@{View\+Port\+Manager}}
+\subsubsection{\texorpdfstring{get\+Zoom\+Out\+Height\+Limit()}{getZoomOutHeightLimit()}}
+{\footnotesize\ttfamily double View\+Port\+Manager\+::get\+Zoom\+Out\+Height\+Limit (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 3311 of file chartdir.\+h.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_view_port_manager_aab5ba83002c831fef3831b883b0908ba_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_view_port_manager_ac9cb2aed6dfbe6dcf2049e8ccf1b8b47}\label{class_view_port_manager_ac9cb2aed6dfbe6dcf2049e8ccf1b8b47}} 
+\index{View\+Port\+Manager@{View\+Port\+Manager}!get\+Zoom\+Out\+Width\+Limit@{get\+Zoom\+Out\+Width\+Limit}}
+\index{get\+Zoom\+Out\+Width\+Limit@{get\+Zoom\+Out\+Width\+Limit}!View\+Port\+Manager@{View\+Port\+Manager}}
+\subsubsection{\texorpdfstring{get\+Zoom\+Out\+Width\+Limit()}{getZoomOutWidthLimit()}}
+{\footnotesize\ttfamily double View\+Port\+Manager\+::get\+Zoom\+Out\+Width\+Limit (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 3307 of file chartdir.\+h.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_view_port_manager_ac9cb2aed6dfbe6dcf2049e8ccf1b8b47_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_view_port_manager_a11b9ed53c57b96be9ef663200b64be87}\label{class_view_port_manager_a11b9ed53c57b96be9ef663200b64be87}} 
+\index{View\+Port\+Manager@{View\+Port\+Manager}!in\+Extended\+Plot\+Area@{in\+Extended\+Plot\+Area}}
+\index{in\+Extended\+Plot\+Area@{in\+Extended\+Plot\+Area}!View\+Port\+Manager@{View\+Port\+Manager}}
+\subsubsection{\texorpdfstring{in\+Extended\+Plot\+Area()}{inExtendedPlotArea()}}
+{\footnotesize\ttfamily bool View\+Port\+Manager\+::in\+Extended\+Plot\+Area (\begin{DoxyParamCaption}\item[{int}]{x,  }\item[{int}]{y }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 3349 of file chartdir.\+h.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_view_port_manager_a11b9ed53c57b96be9ef663200b64be87_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_view_port_manager_ae347d881f810430cc0b8a368c4a349c2}\label{class_view_port_manager_ae347d881f810430cc0b8a368c4a349c2}} 
+\index{View\+Port\+Manager@{View\+Port\+Manager}!in\+Plot\+Area@{in\+Plot\+Area}}
+\index{in\+Plot\+Area@{in\+Plot\+Area}!View\+Port\+Manager@{View\+Port\+Manager}}
+\subsubsection{\texorpdfstring{in\+Plot\+Area()}{inPlotArea()}}
+{\footnotesize\ttfamily bool View\+Port\+Manager\+::in\+Plot\+Area (\begin{DoxyParamCaption}\item[{int}]{x,  }\item[{int}]{y }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 3293 of file chartdir.\+h.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_view_port_manager_ae347d881f810430cc0b8a368c4a349c2_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_view_port_manager_af4bdc161db91ed516987f6a358f02bab}\label{class_view_port_manager_af4bdc161db91ed516987f6a358f02bab}} 
+\index{View\+Port\+Manager@{View\+Port\+Manager}!set\+Chart\+Metrics@{set\+Chart\+Metrics}}
+\index{set\+Chart\+Metrics@{set\+Chart\+Metrics}!View\+Port\+Manager@{View\+Port\+Manager}}
+\subsubsection{\texorpdfstring{set\+Chart\+Metrics()}{setChartMetrics()}}
+{\footnotesize\ttfamily void View\+Port\+Manager\+::set\+Chart\+Metrics (\begin{DoxyParamCaption}\item[{const char $\ast$}]{metrics }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 3288 of file chartdir.\+h.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_view_port_manager_af4bdc161db91ed516987f6a358f02bab_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_view_port_manager_accd91f779d15c0e92e1021a1954697d8}\label{class_view_port_manager_accd91f779d15c0e92e1021a1954697d8}} 
+\index{View\+Port\+Manager@{View\+Port\+Manager}!set\+Full\+Range@{set\+Full\+Range}}
+\index{set\+Full\+Range@{set\+Full\+Range}!View\+Port\+Manager@{View\+Port\+Manager}}
+\subsubsection{\texorpdfstring{set\+Full\+Range()}{setFullRange()}}
+{\footnotesize\ttfamily void View\+Port\+Manager\+::set\+Full\+Range (\begin{DoxyParamCaption}\item[{const char $\ast$}]{id,  }\item[{double}]{min\+Value,  }\item[{double}]{max\+Value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 3326 of file chartdir.\+h.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_view_port_manager_accd91f779d15c0e92e1021a1954697d8_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_view_port_manager_aa42a66b39276ed7707524cc8d901caef}\label{class_view_port_manager_aa42a66b39276ed7707524cc8d901caef}} 
+\index{View\+Port\+Manager@{View\+Port\+Manager}!set\+Plot\+Area\+Mouse\+Margin@{set\+Plot\+Area\+Mouse\+Margin}}
+\index{set\+Plot\+Area\+Mouse\+Margin@{set\+Plot\+Area\+Mouse\+Margin}!View\+Port\+Manager@{View\+Port\+Manager}}
+\subsubsection{\texorpdfstring{set\+Plot\+Area\+Mouse\+Margin()}{setPlotAreaMouseMargin()}}
+{\footnotesize\ttfamily void View\+Port\+Manager\+::set\+Plot\+Area\+Mouse\+Margin (\begin{DoxyParamCaption}\item[{int}]{left\+Margin,  }\item[{int}]{right\+Margin,  }\item[{int}]{top\+Margin,  }\item[{int}]{bottom\+Margin }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 3347 of file chartdir.\+h.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_view_port_manager_aa42a66b39276ed7707524cc8d901caef_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_view_port_manager_a16729686407f7efaa7bf11e2f912409e}\label{class_view_port_manager_a16729686407f7efaa7bf11e2f912409e}} 
+\index{View\+Port\+Manager@{View\+Port\+Manager}!set\+View\+Port\+Height@{set\+View\+Port\+Height}}
+\index{set\+View\+Port\+Height@{set\+View\+Port\+Height}!View\+Port\+Manager@{View\+Port\+Manager}}
+\subsubsection{\texorpdfstring{set\+View\+Port\+Height()}{setViewPortHeight()}}
+{\footnotesize\ttfamily void View\+Port\+Manager\+::set\+View\+Port\+Height (\begin{DoxyParamCaption}\item[{double}]{height }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 3302 of file chartdir.\+h.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_view_port_manager_a16729686407f7efaa7bf11e2f912409e_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_view_port_manager_a1270422432f386ab1a0f3c94990c1567}\label{class_view_port_manager_a1270422432f386ab1a0f3c94990c1567}} 
+\index{View\+Port\+Manager@{View\+Port\+Manager}!set\+View\+Port\+Left@{set\+View\+Port\+Left}}
+\index{set\+View\+Port\+Left@{set\+View\+Port\+Left}!View\+Port\+Manager@{View\+Port\+Manager}}
+\subsubsection{\texorpdfstring{set\+View\+Port\+Left()}{setViewPortLeft()}}
+{\footnotesize\ttfamily void View\+Port\+Manager\+::set\+View\+Port\+Left (\begin{DoxyParamCaption}\item[{double}]{left }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 3296 of file chartdir.\+h.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_view_port_manager_a1270422432f386ab1a0f3c94990c1567_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_view_port_manager_a367c1ca90319fd6f8261ca5d8fe4a0d3}\label{class_view_port_manager_a367c1ca90319fd6f8261ca5d8fe4a0d3}} 
+\index{View\+Port\+Manager@{View\+Port\+Manager}!set\+View\+Port\+Top@{set\+View\+Port\+Top}}
+\index{set\+View\+Port\+Top@{set\+View\+Port\+Top}!View\+Port\+Manager@{View\+Port\+Manager}}
+\subsubsection{\texorpdfstring{set\+View\+Port\+Top()}{setViewPortTop()}}
+{\footnotesize\ttfamily void View\+Port\+Manager\+::set\+View\+Port\+Top (\begin{DoxyParamCaption}\item[{double}]{top }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 3298 of file chartdir.\+h.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_view_port_manager_a367c1ca90319fd6f8261ca5d8fe4a0d3_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_view_port_manager_adf549fbcace60757aedebff857d9c0dc}\label{class_view_port_manager_adf549fbcace60757aedebff857d9c0dc}} 
+\index{View\+Port\+Manager@{View\+Port\+Manager}!set\+View\+Port\+Width@{set\+View\+Port\+Width}}
+\index{set\+View\+Port\+Width@{set\+View\+Port\+Width}!View\+Port\+Manager@{View\+Port\+Manager}}
+\subsubsection{\texorpdfstring{set\+View\+Port\+Width()}{setViewPortWidth()}}
+{\footnotesize\ttfamily void View\+Port\+Manager\+::set\+View\+Port\+Width (\begin{DoxyParamCaption}\item[{double}]{width }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 3300 of file chartdir.\+h.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_view_port_manager_adf549fbcace60757aedebff857d9c0dc_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_view_port_manager_aa3522d8d5cccfc890922fcbbe12eb919}\label{class_view_port_manager_aa3522d8d5cccfc890922fcbbe12eb919}} 
+\index{View\+Port\+Manager@{View\+Port\+Manager}!set\+Zoom\+In\+Height\+Limit@{set\+Zoom\+In\+Height\+Limit}}
+\index{set\+Zoom\+In\+Height\+Limit@{set\+Zoom\+In\+Height\+Limit}!View\+Port\+Manager@{View\+Port\+Manager}}
+\subsubsection{\texorpdfstring{set\+Zoom\+In\+Height\+Limit()}{setZoomInHeightLimit()}}
+{\footnotesize\ttfamily void View\+Port\+Manager\+::set\+Zoom\+In\+Height\+Limit (\begin{DoxyParamCaption}\item[{double}]{view\+Port\+Height }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 3310 of file chartdir.\+h.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_view_port_manager_aa3522d8d5cccfc890922fcbbe12eb919_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_view_port_manager_ab6ea404e7837addeb3d4cf8015adfa4c}\label{class_view_port_manager_ab6ea404e7837addeb3d4cf8015adfa4c}} 
+\index{View\+Port\+Manager@{View\+Port\+Manager}!set\+Zoom\+In\+Width\+Limit@{set\+Zoom\+In\+Width\+Limit}}
+\index{set\+Zoom\+In\+Width\+Limit@{set\+Zoom\+In\+Width\+Limit}!View\+Port\+Manager@{View\+Port\+Manager}}
+\subsubsection{\texorpdfstring{set\+Zoom\+In\+Width\+Limit()}{setZoomInWidthLimit()}}
+{\footnotesize\ttfamily void View\+Port\+Manager\+::set\+Zoom\+In\+Width\+Limit (\begin{DoxyParamCaption}\item[{double}]{view\+Port\+Width }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 3306 of file chartdir.\+h.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_view_port_manager_ab6ea404e7837addeb3d4cf8015adfa4c_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_view_port_manager_a050d927a278c1c37dc97ea2ccb00ca17}\label{class_view_port_manager_a050d927a278c1c37dc97ea2ccb00ca17}} 
+\index{View\+Port\+Manager@{View\+Port\+Manager}!set\+Zoom\+Out\+Height\+Limit@{set\+Zoom\+Out\+Height\+Limit}}
+\index{set\+Zoom\+Out\+Height\+Limit@{set\+Zoom\+Out\+Height\+Limit}!View\+Port\+Manager@{View\+Port\+Manager}}
+\subsubsection{\texorpdfstring{set\+Zoom\+Out\+Height\+Limit()}{setZoomOutHeightLimit()}}
+{\footnotesize\ttfamily void View\+Port\+Manager\+::set\+Zoom\+Out\+Height\+Limit (\begin{DoxyParamCaption}\item[{double}]{view\+Port\+Height }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 3312 of file chartdir.\+h.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_view_port_manager_a050d927a278c1c37dc97ea2ccb00ca17_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_view_port_manager_a05ecf60e99e7ccbc9f84061485d07543}\label{class_view_port_manager_a05ecf60e99e7ccbc9f84061485d07543}} 
+\index{View\+Port\+Manager@{View\+Port\+Manager}!set\+Zoom\+Out\+Width\+Limit@{set\+Zoom\+Out\+Width\+Limit}}
+\index{set\+Zoom\+Out\+Width\+Limit@{set\+Zoom\+Out\+Width\+Limit}!View\+Port\+Manager@{View\+Port\+Manager}}
+\subsubsection{\texorpdfstring{set\+Zoom\+Out\+Width\+Limit()}{setZoomOutWidthLimit()}}
+{\footnotesize\ttfamily void View\+Port\+Manager\+::set\+Zoom\+Out\+Width\+Limit (\begin{DoxyParamCaption}\item[{double}]{view\+Port\+Width }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 3308 of file chartdir.\+h.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_view_port_manager_a05ecf60e99e7ccbc9f84061485d07543_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_view_port_manager_a2bfc533d7b307723e29ef03c45fb3237}\label{class_view_port_manager_a2bfc533d7b307723e29ef03c45fb3237}} 
+\index{View\+Port\+Manager@{View\+Port\+Manager}!start\+Drag@{start\+Drag}}
+\index{start\+Drag@{start\+Drag}!View\+Port\+Manager@{View\+Port\+Manager}}
+\subsubsection{\texorpdfstring{start\+Drag()}{startDrag()}}
+{\footnotesize\ttfamily void View\+Port\+Manager\+::start\+Drag (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 3322 of file chartdir.\+h.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_view_port_manager_a2bfc533d7b307723e29ef03c45fb3237_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_view_port_manager_a7fe758aa316bfaee4bcbc9f28de8c3f0}\label{class_view_port_manager_a7fe758aa316bfaee4bcbc9f28de8c3f0}} 
+\index{View\+Port\+Manager@{View\+Port\+Manager}!sync\+Date\+Axis\+With\+View\+Port@{sync\+Date\+Axis\+With\+View\+Port}}
+\index{sync\+Date\+Axis\+With\+View\+Port@{sync\+Date\+Axis\+With\+View\+Port}!View\+Port\+Manager@{View\+Port\+Manager}}
+\subsubsection{\texorpdfstring{sync\+Date\+Axis\+With\+View\+Port()}{syncDateAxisWithViewPort()}}
+{\footnotesize\ttfamily void View\+Port\+Manager\+::sync\+Date\+Axis\+With\+View\+Port (\begin{DoxyParamCaption}\item[{const char $\ast$}]{id,  }\item[{\hyperlink{class_axis}{Axis} $\ast$}]{axis }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 3342 of file chartdir.\+h.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_view_port_manager_a7fe758aa316bfaee4bcbc9f28de8c3f0_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_view_port_manager_a0c127c218b1dabc082644d5cc95f256d}\label{class_view_port_manager_a0c127c218b1dabc082644d5cc95f256d}} 
+\index{View\+Port\+Manager@{View\+Port\+Manager}!sync\+Linear\+Axis\+With\+View\+Port@{sync\+Linear\+Axis\+With\+View\+Port}}
+\index{sync\+Linear\+Axis\+With\+View\+Port@{sync\+Linear\+Axis\+With\+View\+Port}!View\+Port\+Manager@{View\+Port\+Manager}}
+\subsubsection{\texorpdfstring{sync\+Linear\+Axis\+With\+View\+Port()}{syncLinearAxisWithViewPort()}}
+{\footnotesize\ttfamily void View\+Port\+Manager\+::sync\+Linear\+Axis\+With\+View\+Port (\begin{DoxyParamCaption}\item[{const char $\ast$}]{id,  }\item[{\hyperlink{class_axis}{Axis} $\ast$}]{axis }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 3338 of file chartdir.\+h.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_view_port_manager_a0c127c218b1dabc082644d5cc95f256d_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_view_port_manager_a8b2c7545c83751250c1239ec1f4e566d}\label{class_view_port_manager_a8b2c7545c83751250c1239ec1f4e566d}} 
+\index{View\+Port\+Manager@{View\+Port\+Manager}!sync\+Log\+Axis\+With\+View\+Port@{sync\+Log\+Axis\+With\+View\+Port}}
+\index{sync\+Log\+Axis\+With\+View\+Port@{sync\+Log\+Axis\+With\+View\+Port}!View\+Port\+Manager@{View\+Port\+Manager}}
+\subsubsection{\texorpdfstring{sync\+Log\+Axis\+With\+View\+Port()}{syncLogAxisWithViewPort()}}
+{\footnotesize\ttfamily void View\+Port\+Manager\+::sync\+Log\+Axis\+With\+View\+Port (\begin{DoxyParamCaption}\item[{const char $\ast$}]{id,  }\item[{\hyperlink{class_axis}{Axis} $\ast$}]{axis }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 3340 of file chartdir.\+h.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_view_port_manager_a8b2c7545c83751250c1239ec1f4e566d_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_view_port_manager_a007141f50fa8ae8ad2f80bd10c5f097f}\label{class_view_port_manager_a007141f50fa8ae8ad2f80bd10c5f097f}} 
+\index{View\+Port\+Manager@{View\+Port\+Manager}!update\+Full\+RangeH@{update\+Full\+RangeH}}
+\index{update\+Full\+RangeH@{update\+Full\+RangeH}!View\+Port\+Manager@{View\+Port\+Manager}}
+\subsubsection{\texorpdfstring{update\+Full\+Range\+H()}{updateFullRangeH()}}
+{\footnotesize\ttfamily bool View\+Port\+Manager\+::update\+Full\+RangeH (\begin{DoxyParamCaption}\item[{const char $\ast$}]{id,  }\item[{double}]{min\+Value,  }\item[{double}]{max\+Value,  }\item[{int}]{update\+Type }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 3328 of file chartdir.\+h.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_view_port_manager_a007141f50fa8ae8ad2f80bd10c5f097f_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_view_port_manager_ac54ae9b215ca55fc30cfe5cbacfe0865}\label{class_view_port_manager_ac54ae9b215ca55fc30cfe5cbacfe0865}} 
+\index{View\+Port\+Manager@{View\+Port\+Manager}!update\+Full\+RangeV@{update\+Full\+RangeV}}
+\index{update\+Full\+RangeV@{update\+Full\+RangeV}!View\+Port\+Manager@{View\+Port\+Manager}}
+\subsubsection{\texorpdfstring{update\+Full\+Range\+V()}{updateFullRangeV()}}
+{\footnotesize\ttfamily bool View\+Port\+Manager\+::update\+Full\+RangeV (\begin{DoxyParamCaption}\item[{const char $\ast$}]{id,  }\item[{double}]{min\+Value,  }\item[{double}]{max\+Value,  }\item[{int}]{update\+Type }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 3330 of file chartdir.\+h.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_view_port_manager_ac54ae9b215ca55fc30cfe5cbacfe0865_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_view_port_manager_a5b6604b59e8c04fe2e32b67f12c4c002}\label{class_view_port_manager_a5b6604b59e8c04fe2e32b67f12c4c002}} 
+\index{View\+Port\+Manager@{View\+Port\+Manager}!validate\+View\+Port@{validate\+View\+Port}}
+\index{validate\+View\+Port@{validate\+View\+Port}!View\+Port\+Manager@{View\+Port\+Manager}}
+\subsubsection{\texorpdfstring{validate\+View\+Port()}{validateViewPort()}}
+{\footnotesize\ttfamily void View\+Port\+Manager\+::validate\+View\+Port (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 3303 of file chartdir.\+h.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_view_port_manager_a5b6604b59e8c04fe2e32b67f12c4c002_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_view_port_manager_ae1be85f3a163f841202bdc260d04f8f3}\label{class_view_port_manager_ae1be85f3a163f841202bdc260d04f8f3}} 
+\index{View\+Port\+Manager@{View\+Port\+Manager}!zoom\+Around@{zoom\+Around}}
+\index{zoom\+Around@{zoom\+Around}!View\+Port\+Manager@{View\+Port\+Manager}}
+\subsubsection{\texorpdfstring{zoom\+Around()}{zoomAround()}}
+{\footnotesize\ttfamily bool View\+Port\+Manager\+::zoom\+Around (\begin{DoxyParamCaption}\item[{int}]{x,  }\item[{int}]{y,  }\item[{double}]{x\+Zoom\+Ratio,  }\item[{double}]{y\+Zoom\+Ratio }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 3319 of file chartdir.\+h.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_view_port_manager_ae1be85f3a163f841202bdc260d04f8f3_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_view_port_manager_a91160303aebb6d58369175131022b3e6}\label{class_view_port_manager_a91160303aebb6d58369175131022b3e6}} 
+\index{View\+Port\+Manager@{View\+Port\+Manager}!zoom\+At@{zoom\+At}}
+\index{zoom\+At@{zoom\+At}!View\+Port\+Manager@{View\+Port\+Manager}}
+\subsubsection{\texorpdfstring{zoom\+At()}{zoomAt()}}
+{\footnotesize\ttfamily bool View\+Port\+Manager\+::zoom\+At (\begin{DoxyParamCaption}\item[{int}]{zoom\+Direction,  }\item[{int}]{x,  }\item[{int}]{y,  }\item[{double}]{zoom\+Ratio }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 3315 of file chartdir.\+h.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_view_port_manager_a91160303aebb6d58369175131022b3e6_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_view_port_manager_a50b30e900b4ca55321fb6d8cac99e2ee}\label{class_view_port_manager_a50b30e900b4ca55321fb6d8cac99e2ee}} 
+\index{View\+Port\+Manager@{View\+Port\+Manager}!zoom\+To@{zoom\+To}}
+\index{zoom\+To@{zoom\+To}!View\+Port\+Manager@{View\+Port\+Manager}}
+\subsubsection{\texorpdfstring{zoom\+To()}{zoomTo()}}
+{\footnotesize\ttfamily bool View\+Port\+Manager\+::zoom\+To (\begin{DoxyParamCaption}\item[{int}]{zoom\+Direction,  }\item[{int}]{x1,  }\item[{int}]{y1,  }\item[{int}]{x2,  }\item[{int}]{y2 }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 3317 of file chartdir.\+h.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_view_port_manager_a50b30e900b4ca55321fb6d8cac99e2ee_cgraph}
+\end{center}
+\end{figure}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+include/\hyperlink{chartdir_8h}{chartdir.\+h}\end{DoxyCompactItemize}

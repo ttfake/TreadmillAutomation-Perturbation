@@ -56,12 +56,62 @@ MccDaqInterface::~MccDaqInterface()
 
 }
 
-void MccDaqInterface::beginDataCollection()
+void MccDaqInterface::beginDataCollectionOnChannel(int ch)
 {
-
     std::vector<short> ChanVector;
     std::vector<short> ChanTypeVector;
     std::vector<short> GainVector;
+    BoardNum = 0;
+    ULStat = 0;
+    rowCount = 0;
+    chs = 0;
+   
+    qDebug() << "beginning data collection";
+
+
+    forcePlateDataFile = new QFile(daqLogFileName);
+   
+    ULStat = cbDeclareRevision(&RevLevel);
+
+    qDebug("cbDeclareRevision ULStat: %d", ULStat);
+
+    ADData = static_cast<WORD*>(cbWinBufAlloc(NUMPOINTS * NUMCHANS));
+    if (!ADData)    /* Make sure it is a valid pointer */
+    {
+        std::cout << "\nout of memory\n" << std::endl;
+    }
+    
+    
+    /* Initiate error handling
+       Parameters:
+       PRINTALL :all warnings and errors encountered will be printed
+       DONTSTOP :program will continue even if error occurs.
+       Note that STOPALL and STOPFATAL are only effective in 
+       Windows applications, not Console applications. 
+    */
+    cbErrHandling (PRINTALL, DONTSTOP);
+
+    std::cout << "Continuous data collection has begun in the BACKGROUND.\n" << std::endl;
+
+    /* load the arrays with values */
+    if (!forcePlateDataFile->open(QIODevice::ReadWrite | QIODevice::Text | QIODevice::Append))
+            return;
+    QTextStream forcePlateDataStream(forcePlateDataFile);
+    forcePlateDataStream << "Timestamp,";
+
+}
+
+void MccDaqInterface::beginDataCollection()
+{
+    dateIndex = 0;
+    captureTime = 1;                    // Capture time in seconds. This will become configurable in 
+                                        // future iterations.
+    int globalIdxCurIdxDiff = 0;
+    
+    std::vector<short> ChanVector;
+    std::vector<short> ChanTypeVector;
+    std::vector<short> GainVector;
+    
     BoardNum = 0;
     ULStat = 0;
     rowCount = 0;
@@ -190,6 +240,8 @@ void MccDaqInterface::beginDataCollection()
 
 	if(ULStat == NOERRORS)
 		Status = RUNNING;
+    globalDaqDataIndex = 0;
+    dataPoints = 0;
 
     
     
@@ -208,31 +260,47 @@ void MccDaqInterface::beginDataCollection()
         /* check the current status of the background operation */
         if (Status == RUNNING)
         {
+
+            unixTime = QDateTime::currentSecsSinceEpoch();
             DataIndex = CurIndex -  CurIndex % NUMCHANS - NUMCHANS;
-            if(DataIndex>0)
+            //if(DataIndex>0)
+            
+            qDebug() << "CurIndex: " << CurIndex;
+            
+            if((globalDaqDataIndex != CurIndex) && (CurIndex > 0))
             {
-                emit updateRowCount(rowCount);
+//                emit updateRowCount(rowCount);
                 if (!forcePlateDataFile->open(QIODevice::ReadWrite | QIODevice::Text | QIODevice::Append))
                     return;
 
                 QTextStream forcePlateDataStream(forcePlateDataFile);
 
-                if(recordBool)
-                {
-                    forcePlateDataStream << QTime::currentTime().toString() << ",";
-                }
+//                if(recordBool)
+//                {
+//                    forcePlateDataStream << QTime::currentTime().toString() << ",";
+//                }
+
+                globalIdxCurIdxDiff = CurIndex - globalDaqDataIndex;
+
+
 
                 for(channel = 0; channel < NUMCHANS; channel++)
                 {
                     qDebug() << "Channel: " << channel;
-                    emit updateCol(channelVector[channel]);
+                    //emit updateCol(channelVector[channel]);
                     emit setCurrentChannel(channel);
                     double voltage = ((20.0 / pow(2.0,16)) * static_cast<double>(ADData[DataIndex])) - 10.0;
+                    qDebug() << "Voltage: " << voltage;
                     double force = channelCoefficientMap[channel] * (voltage / scale);
                     emit updateDaqDataBoxSignal(voltage);
-                    qDebug("Force: %f", force);
-                    QString dataPoint1String(QString::number(force,'f',4));
-                    qDebug("dataPoint1String: %f", dataPoint1String);
+                    daqVoltageMap[channel].append(voltage);
+                    daqForceMap[channel].append(force);
+                    dataPoints++;
+
+                    dateIndex++;
+                    //qDebug("Force: %f", force);
+                    dataPoint1String = QString::number(force,'f',4);
+                    //qDebug("dataPoint1String: %f", dataPoint1String);
                     if(recordBool)
                     {
                         forcePlateDataStream << dataPoint1String << ",";
@@ -250,6 +318,20 @@ void MccDaqInterface::beginDataCollection()
                     DataIndex++;
                 }
 
+                qDebug() << "dataPoints: " << dataPoints;
+                qDebug() << "Rate * NUMCHANS: " << (Rate * NUMCHANS);
+                    
+                if( dataPoints >= floor(Rate * NUMCHANS) )//unixTime - prevUnixTime) >= 1 )
+                {
+                    qDebug() << "Number of time points is: " << dataPoints;
+                    dataPoints = 0;
+                    tmpVoltageMap = daqVoltageMap;
+                    daqVoltageMap.clear();
+                    emit updateEmg();
+                }
+
+                prevUnixTime = unixTime;
+
                 if(recordBool)
                 {
                     forcePlateDataStream << "\n";
@@ -258,6 +340,8 @@ void MccDaqInterface::beginDataCollection()
                 forcePlateDataFile->close(); 
 
                 rowCount++;
+
+                globalDaqDataIndex = CurIndex;
             }
         }
     }
@@ -272,6 +356,11 @@ void MccDaqInterface::beginDataCollection()
 
     cbWinBufFree(ADData);
     
+}
+
+void MccDaqInterface::testDataCollection()
+{
+
 }
 
 void MccDaqInterface::setDaqButtonText(QString daqTitleText)
@@ -325,5 +414,17 @@ void MccDaqInterface::setDaqLogFileName(QString mfileName)
 {
     daqLogFileName = mfileName;
 }
+
+QMap<int,QVector<double>> MccDaqInterface::getVoltageMap()
+{
+    return tmpVoltageMap;
+}
+
+
+void MccDaqInterface::clearTmpVoltageMap()
+{
+    tmpDaqVoltageMap.clear();
+}
+
 
 #include "../include/moc_MccDaqInterface.cpp"

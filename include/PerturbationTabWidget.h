@@ -33,8 +33,7 @@
 #include <QRegExp>
 #include <chrono>
 #include <QHeaderView>
-#include <QtDataVisualization>
-#include <QtDataVisualization/qutils.h>
+
 #include <QtQml/QQmlContext>
 #include <QtQuick/QQuickView>
 #include <QtQml/QQmlEngine>
@@ -48,9 +47,8 @@
 #include "ReadTrialNameFile.h"
 #include "ParseRunProfile.h"
 #include "QmlInterface.h"
-#include "DataSource.h"
 #include "SubjectInterface.h"
-#include "InstrumentationPanel.h"
+
 #include "DS8library.h"
 
 class PerturbationTabWidget : public QWidget
@@ -61,59 +59,63 @@ class PerturbationTabWidget : public QWidget
         PerturbationTabWidget(QWidget* parent = 0, Qt::WindowFlags flags = 0);
         ~PerturbationTabWidget();
 
-        double getLeftFrontSpeedValue();
-        double getRightFrontSpeedValue();
-        double getAccelerationValue();
-        double getAccelerationTimeValue();
-        double getDecelerationValue();
-        double getDecelerationTimeValue();
-        void setLeftFrontSpeedValueFromIncoming(qint16 mleftFrontSpeedValue);
-        void setRightFrontSpeedValueFromIncoming(qint16 mrightFrontSpeedValue);
-        void setUseLibraryStatus(bool useLibCheckBox);
-        bool useLibraryCheckBoxStatus;
-        void setSocket(QAbstractSocket* socket);
-        void addDecelerationSpeedGroupBox();
-        double calculateSpeed();
-        void addTrialRunName();
-        void closeSubjectInterfaceWindow();
-        void closeInstrumentationPanel(); 
+        double                              getLeftFrontSpeedValue();
+        double                              getRightFrontSpeedValue();
+        double                              getAccelerationValue();
+        double                              getAccelerationTimeValue();
+        double                              getDecelerationValue();
+        double                              getDecelerationTimeValue();
+        void                                setLeftFrontSpeedValueFromIncoming(qint16 mleftFrontSpeedValue);
+        void                                setRightFrontSpeedValueFromIncoming(qint16 mrightFrontSpeedValue);
+        void                                setUseLibraryStatus(bool useLibCheckBox);
+        bool                                useLibraryCheckBoxStatus;
+        void                                setSocket(QAbstractSocket* socket);
+        void                                addDecelerationSpeedGroupBox();
+        double                              calculateSpeed();
+        void                                addTrialRunName();
+        void                                closeSubjectInterfaceWindow();
+        void                                closeInstrumentationPanel(); 
     public slots:
-        void showTimer(bool state);
-        void randomDelay();
-        void loadRunProfile();
-        void showSubjectView();
-        void checkFileExists();
-        void changeParticipantId(QString participantId);
-        void changeSessionId(QString session);
+        void                                showTimer(bool state);
+        void                                randomDelay();
+        void                                loadRunProfile();
+        void                                showSubjectView();
+        void                                checkFileExists();
+        void                                changeParticipantId(QString participantId);
+        void                                changeSessionId(QString session);
+        void                                daqReconnect();
     private slots:
-        void setLeftFrontSpeedValue(double mleftFrontSpeedValue);
-        void setRightFrontSpeedValue(double mrightFrontSpeedValue);
-        void setAccelerationValue(double maccelerationValue);
-        void setAccelerationTimeValue(double maccelTimeValue);
-        void setDecelerationValue(double mdecelValue);
-        void setDecelerationTimeValue(double mdecelTimeValue);
-        void startTreadmill();
-        void startDecelTimer();
-        void slotTimeout();
-        void treadmillWait();
-        void getTrialName();
-        void enableButton();
-        void disableButton();
-        void nextRun();
-        void prevRun();
-        void startStim();
-        void updateRun(int mCellRow, int mCellCol);
-        void setCellChangedTrue(int mCellRow, int mCellCol);
-        void setCellChangedTrue();
-        void setLeftStimCurrent();
-        void setRightStimCurrent();
-        void exportTable(QString mdefaultName = "");
-        void setPleaseStandQuietly();
-        void setTryNotToStep();
-        void setPositionFeet();
-        void resetRunTable();
-        void showPressEnterWarning();
-
+        void                                setLeftFrontSpeedValue(double mleftFrontSpeedValue);
+        void                                setRightFrontSpeedValue(double mrightFrontSpeedValue);
+        void                                setAccelerationValue(double maccelerationValue);
+        void                                setAccelerationTimeValue(double maccelTimeValue);
+        void                                setDecelerationValue(double mdecelValue);
+        void                                setDecelerationTimeValue(double mdecelTimeValue);
+        void                                startTreadmill();
+        void                                startDecelTimer();
+        void                                slotTimeout();
+        void                                treadmillWait();
+        void                                getTrialName();
+        void                                enableButton();
+        void                                disableButton();
+        void                                nextRun();
+        void                                prevRun();
+        void                                startStim();
+        void                                updateRun(int mCellRow, int mCellCol);
+        void                                setCellChangedTrue(int mCellRow, int mCellCol);
+        void                                setCellChangedTrue();
+        void                                setLeftStimCurrent();
+        void                                setRightStimCurrent();
+        void                                exportTable(QString mdefaultName = "");
+        void                                setPleaseStandQuietly();
+        void                                setTryNotToStep();
+        void                                setPositionFeet();
+        void                                resetRunTable();
+        void                                showPressEnterWarning();
+        void                                safetyStop();
+        void                                setSafetyTimeout(double time);
+        void                                setTimeoutBuffer(double timeout);
+        void                                activateStartButton(bool enable = false);
     private:
 
         enum COLUMN
@@ -127,58 +129,58 @@ class PerturbationTabWidget : public QWidget
             TRIAL = 6
         };
 
-        void setCellChangedFalse();
-        SendSetpoints* sendSetpoints;
-        ReadTrialNameFile* readTrialNameFile; 
+        void                                setCellChangedFalse();
+        SendSetpoints*                      sendSetpoints;
+        ReadTrialNameFile*                  readTrialNameFile; 
         //createRemoteTab
-        QWidget* perturbationTab;
-        QGridLayout* perturbationTabLayout;
-        void createTreadmillPerturbationTab();
-        void populateTreadmillPerturbationTab();
-        void addQuadrantOne();
-        void addSpeedGroupBox();
-        void addAccelDecelGroupBox();
-        void addTimerGroupBox();
-        void addStartPertRunGroupBox();
-        void addStartEndSpeedGroupBox();
-        void addQuadrantTwo();
-        void addQuadrantThree();
-        void addQuadrantFour();
+        QWidget*                            perturbationTab;
+        QGridLayout*                        perturbationTabLayout;
+        void                                createTreadmillPerturbationTab();
+        void                                populateTreadmillPerturbationTab();
+        void                                addQuadrantOne();
+        void                                addSpeedGroupBox();
+        void                                addAccelDecelGroupBox();
+        void                                addTimerGroupBox();
+        void                                addStartPertRunGroupBox();
+        void                                addStartEndSpeedGroupBox();
+        void                                addQuadrantTwo();
+        void                                addQuadrantThree();
+        void                                addQuadrantFour();
 
-        void addRunGroupBox();
-        QGroupBox* runGroupBox;
-        QVBoxLayout* runGroupBoxLayout;
-        QTextEdit* runTextBox;
+        void                                addRunGroupBox();
+        QGroupBox*                          runGroupBox;
+        QVBoxLayout*                        runGroupBoxLayout;
+        QTextEdit*                          runTextBox;
         
         //populateTreadmillPerturbationTab
-        QCheckBox* lftRghtTie;
-        QGroupBox* quadrantOneGroupBox;
-        QGroupBox* quadrantThreeGroupBox;
-        QGroupBox* quadrantFourGroupBox;
+        QCheckBox*                          lftRghtTie;
+        QGroupBox*                          quadrantOneGroupBox;
+        QGroupBox*                          quadrantThreeGroupBox;
+        QGroupBox*                          quadrantFourGroupBox;
 
-        QVBoxLayout* quadrantOneGroupBoxLayout;
-        QVBoxLayout* quadrantOnePerturbationLayout;
-        QVBoxLayout* quadrantTwoPerturbationLayout;
-        QVBoxLayout* quadrantThreePerturbationLayout;
-        QVBoxLayout* quadrantFourPerturbationLayout;
+        QVBoxLayout*                        quadrantOneGroupBoxLayout;
+        QVBoxLayout*                        quadrantOnePerturbationLayout;
+        QVBoxLayout*                        quadrantTwoPerturbationLayout;
+        QVBoxLayout*                        quadrantThreePerturbationLayout;
+        QVBoxLayout*                        quadrantFourPerturbationLayout;
         
-        QGroupBox* accelDecelGroupBox;
-        QGroupBox* accelDecelTimerGroupBox;
-        QHBoxLayout* accelDecelTimerGroupBoxHorizontalLayout;
-        QVBoxLayout* accelDecelGroupBoxVerticalLayout;
-        QGroupBox* accelGroupBox; 
-        QVBoxLayout* accelGroupBoxVerticalLayout; 
-        QGroupBox* decelGroupBox;
-        QVBoxLayout* decelGroupBoxVerticalLayout;
+        QGroupBox*                          accelDecelGroupBox;
+        QGroupBox*                          accelDecelTimerGroupBox;
+        QHBoxLayout*                        accelDecelTimerGroupBoxHorizontalLayout;
+        QVBoxLayout*                        accelDecelGroupBoxVerticalLayout;
+        QGroupBox*                          accelGroupBox; 
+        QVBoxLayout*                        accelGroupBoxVerticalLayout; 
+        QGroupBox*                          decelGroupBox;
+        QVBoxLayout*                        decelGroupBoxVerticalLayout;
 
-        QHBoxLayout* accelerationDecelerationHorizontalLayout;
+        QHBoxLayout*                        accelerationDecelerationHorizontalLayout;
         
-        QGroupBox* speedGroupBox;
-        QHBoxLayout* speedGroupBoxHorizontalLayout;
-        QLabel* speedLeftFrontLabel;
-        QFont speedLeftFrontLabelFont;
-        QDoubleSpinBox* leftFrontSpeedSetpoint;
-        QFont leftFrontSpeedSetpointFont;
+        QGroupBox*                          speedGroupBox;
+        QHBoxLayout*                        speedGroupBoxHorizontalLayout;
+        QLabel*                             speedLeftFrontLabel;
+        QFont                               speedLeftFrontLabelFont;
+        QDoubleSpinBox*                     leftFrontSpeedSetpoint;
+        QFont                               leftFrontSpeedSetpointFont;
  
 
         QGroupBox* maxSpeedGroupBox;
@@ -312,10 +314,8 @@ class PerturbationTabWidget : public QWidget
         bool tableFilled;
         int currentRunRowIndex;
         QFont tableRowsFont;
-        void addEmgDataVisualization();
         int statusCol;
         SubjectInterface* sInterface;
-        InstrumentationPanel* instPanel; 
         bool cellDoubleClicked;
         void showRunTableCol(int colNumber, bool showBool);
         
@@ -361,6 +361,15 @@ class PerturbationTabWidget : public QWidget
         QString defaultTmpPath;
         bool checkSocketConnection();
         QString APP_NAME;
+
+        int safetyTimeout;
+
+        bool slotTimeOutRunBool;
+
+        QFile* pertTriggerLog;
+        QString defaultTriggerPath;
+
+
 
 
 };

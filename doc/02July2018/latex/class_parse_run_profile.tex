@@ -1,0 +1,862 @@
+\hypertarget{class_parse_run_profile}{}\section{Parse\+Run\+Profile Class Reference}
+\label{class_parse_run_profile}\index{Parse\+Run\+Profile@{Parse\+Run\+Profile}}
+
+
+{\ttfamily \#include $<$Parse\+Run\+Profile.\+h$>$}
+
+
+
+Inheritance diagram for Parse\+Run\+Profile\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=168pt]{class_parse_run_profile__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Parse\+Run\+Profile\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=168pt]{class_parse_run_profile__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Slots}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{class_parse_run_profile_af1db7c8eb8b8710d98e19b8fd5c41caa}{start\+Stim} ()
+\end{DoxyCompactItemize}
+\subsection*{Signals}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_parse_run_profile_a633c71cd3f2610c84745c0d70695f45b}{start\+Stimulation} ()
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_parse_run_profile_aec4e56db3a472345a1460fc1e702cbec}{Parse\+Run\+Profile} ()
+\item 
+\hyperlink{class_parse_run_profile_abbd0d62620a0b7b1754843544e57b166}{$\sim$\+Parse\+Run\+Profile} ()
+\item 
+void \hyperlink{class_parse_run_profile_a4d7cec4c1bf3b5f2ca41edabb098ac45}{parse\+Run\+File} ()
+\item 
+double \hyperlink{class_parse_run_profile_a07cda302c0032d378d1b10d0045e25be}{get\+Accel\+Left} ()
+\item 
+double \hyperlink{class_parse_run_profile_af5cde00690cd8d72674d713890d2e5a1}{get\+Accel\+Right} ()
+\item 
+double \hyperlink{class_parse_run_profile_a9a53b91ed996a2730f84c93946576e6a}{get\+Accel\+Time} ()
+\item 
+double \hyperlink{class_parse_run_profile_a7ce3d630a0ea5925525ee902f25d44e1}{get\+Decel\+Left} ()
+\item 
+double \hyperlink{class_parse_run_profile_af21d7e6a341316569cf5905fe46a00b3}{get\+Decel\+Right} ()
+\item 
+double \hyperlink{class_parse_run_profile_a212d5f9f986c03745be41a5fe610ea8e}{get\+Decel\+Time} ()
+\item 
+void \hyperlink{class_parse_run_profile_a285a6e835fe873d2a88fa1415224c66a}{get\+Runs} ()
+\item 
+void \hyperlink{class_parse_run_profile_a1f064521af699320f5da111e9cb81625}{get\+Run} (int current\+Run\+Row\+Index, int run\+Index)
+\item 
+void \hyperlink{class_parse_run_profile_a4001ee3344847bda70e39cba1c14cd61}{truncate\+Table} (Q\+String table)
+\item 
+void \hyperlink{class_parse_run_profile_a7d1a1e31457aaac5f87067181588e8c7}{set\+Run\+File} (Q\+String m\+Run\+File)
+\item 
+Q\+Vector$<$ Q\+String $>$ \hyperlink{class_parse_run_profile_aa55bcd03acbae8ae4dbb93125982f7fc}{get\+Runs\+Vector} ()
+\item 
+Q\+Vector$<$ Q\+String $>$ \hyperlink{class_parse_run_profile_abb40056301c358e483699910dae9e83c}{get\+Run\+Profile\+Head} ()
+\item 
+void \hyperlink{class_parse_run_profile_a01b21a62fe9b4e334fe0718416510340}{update\+Run\+Table} (Q\+String table\+Name, Q\+String set\+String, Q\+String where\+String)
+\item 
+void \hyperlink{class_parse_run_profile_aa00fa199f81ef8745e8e2c1e086cdf00}{clear\+Run\+Results\+Vector} ()
+\item 
+double \hyperlink{class_parse_run_profile_a482223e0ef3037dc97ae244ef1a481ae}{get\+Accel\+Left\+Db} (Q\+String type\+No, Q\+String level\+No)
+\item 
+double \hyperlink{class_parse_run_profile_a526525e13096922f1523c2b6fb4ab802}{get\+Accel\+Right\+Db} (Q\+String type\+No, Q\+String level\+No)
+\item 
+double \hyperlink{class_parse_run_profile_a4b1aad790977725a7daf4fff854b0cb6}{get\+Decel\+Left\+Db} (Q\+String type\+No, Q\+String level\+No)
+\item 
+double \hyperlink{class_parse_run_profile_a2572529efbd0c733afb3a771223a859c}{get\+Decel\+Right\+Db} (Q\+String type\+No, Q\+String level\+No)
+\item 
+double \hyperlink{class_parse_run_profile_a94a349a23a034367a6bdf770a8e4514b}{get\+Accel\+Time\+Db} (Q\+String type\+No)
+\item 
+double \hyperlink{class_parse_run_profile_a02fea0744103223c7b7462a5a2054c52}{get\+Decel\+Time\+Db} (Q\+String type\+No)
+\item 
+int \hyperlink{class_parse_run_profile_a314fabde62110ee4da32de14e5b5c607}{get\+Direction\+From\+Db} (Q\+String type, Q\+String level)
+\item 
+Q\+String \hyperlink{class_parse_run_profile_a4778a2e2bc77c46a0686c548d218739b}{get\+Stim\+Seq} ()
+\item 
+bool \hyperlink{class_parse_run_profile_a474ddfd418805f06313732935611ac37}{compare\+Db\+With\+Run\+Table} (Q\+String type\+No, Q\+String level\+No)
+\item 
+void \hyperlink{class_parse_run_profile_aabc8065fa18e650ba1ed9eebd4c87938}{set\+Accel\+Decel\+From\+Accel\+Decel\+Spin\+Box} (double maccel\+Value, double mdecel\+Value)
+\item 
+void \hyperlink{class_parse_run_profile_aa5c2150a210598d9f14a04ff847ee0f3}{reset\+Runs\+Vector\+Index} ()
+\item 
+void \hyperlink{class_parse_run_profile_abd04ee7860c35aa5a87442c67ad38452}{set\+Accel\+Decel\+From\+Db} ()
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 10 of file Parse\+Run\+Profile.\+h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_parse_run_profile_aec4e56db3a472345a1460fc1e702cbec}\label{class_parse_run_profile_aec4e56db3a472345a1460fc1e702cbec}} 
+\index{Parse\+Run\+Profile@{Parse\+Run\+Profile}!Parse\+Run\+Profile@{Parse\+Run\+Profile}}
+\index{Parse\+Run\+Profile@{Parse\+Run\+Profile}!Parse\+Run\+Profile@{Parse\+Run\+Profile}}
+\subsubsection{\texorpdfstring{Parse\+Run\+Profile()}{ParseRunProfile()}}
+{\footnotesize\ttfamily Parse\+Run\+Profile\+::\+Parse\+Run\+Profile (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 3 of file Parse\+Run\+Profile.\+cpp.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_parse_run_profile_aec4e56db3a472345a1460fc1e702cbec_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_parse_run_profile_abbd0d62620a0b7b1754843544e57b166}\label{class_parse_run_profile_abbd0d62620a0b7b1754843544e57b166}} 
+\index{Parse\+Run\+Profile@{Parse\+Run\+Profile}!````~Parse\+Run\+Profile@{$\sim$\+Parse\+Run\+Profile}}
+\index{````~Parse\+Run\+Profile@{$\sim$\+Parse\+Run\+Profile}!Parse\+Run\+Profile@{Parse\+Run\+Profile}}
+\subsubsection{\texorpdfstring{$\sim$\+Parse\+Run\+Profile()}{~ParseRunProfile()}}
+{\footnotesize\ttfamily Parse\+Run\+Profile\+::$\sim$\+Parse\+Run\+Profile (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 10 of file Parse\+Run\+Profile.\+cpp.
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_parse_run_profile_aa00fa199f81ef8745e8e2c1e086cdf00}\label{class_parse_run_profile_aa00fa199f81ef8745e8e2c1e086cdf00}} 
+\index{Parse\+Run\+Profile@{Parse\+Run\+Profile}!clear\+Run\+Results\+Vector@{clear\+Run\+Results\+Vector}}
+\index{clear\+Run\+Results\+Vector@{clear\+Run\+Results\+Vector}!Parse\+Run\+Profile@{Parse\+Run\+Profile}}
+\subsubsection{\texorpdfstring{clear\+Run\+Results\+Vector()}{clearRunResultsVector()}}
+{\footnotesize\ttfamily void Parse\+Run\+Profile\+::clear\+Run\+Results\+Vector (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 204 of file Parse\+Run\+Profile.\+cpp.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_parse_run_profile_aa00fa199f81ef8745e8e2c1e086cdf00_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_parse_run_profile_aa00fa199f81ef8745e8e2c1e086cdf00_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_parse_run_profile_a474ddfd418805f06313732935611ac37}\label{class_parse_run_profile_a474ddfd418805f06313732935611ac37}} 
+\index{Parse\+Run\+Profile@{Parse\+Run\+Profile}!compare\+Db\+With\+Run\+Table@{compare\+Db\+With\+Run\+Table}}
+\index{compare\+Db\+With\+Run\+Table@{compare\+Db\+With\+Run\+Table}!Parse\+Run\+Profile@{Parse\+Run\+Profile}}
+\subsubsection{\texorpdfstring{compare\+Db\+With\+Run\+Table()}{compareDbWithRunTable()}}
+{\footnotesize\ttfamily bool Parse\+Run\+Profile\+::compare\+Db\+With\+Run\+Table (\begin{DoxyParamCaption}\item[{Q\+String}]{type\+No,  }\item[{Q\+String}]{level\+No }\end{DoxyParamCaption})}
+
+
+
+Definition at line 154 of file Parse\+Run\+Profile.\+cpp.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_parse_run_profile_a474ddfd418805f06313732935611ac37_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_parse_run_profile_a474ddfd418805f06313732935611ac37_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_parse_run_profile_a07cda302c0032d378d1b10d0045e25be}\label{class_parse_run_profile_a07cda302c0032d378d1b10d0045e25be}} 
+\index{Parse\+Run\+Profile@{Parse\+Run\+Profile}!get\+Accel\+Left@{get\+Accel\+Left}}
+\index{get\+Accel\+Left@{get\+Accel\+Left}!Parse\+Run\+Profile@{Parse\+Run\+Profile}}
+\subsubsection{\texorpdfstring{get\+Accel\+Left()}{getAccelLeft()}}
+{\footnotesize\ttfamily double Parse\+Run\+Profile\+::get\+Accel\+Left (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 53 of file Parse\+Run\+Profile.\+cpp.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_parse_run_profile_a07cda302c0032d378d1b10d0045e25be_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_parse_run_profile_a07cda302c0032d378d1b10d0045e25be_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_parse_run_profile_a482223e0ef3037dc97ae244ef1a481ae}\label{class_parse_run_profile_a482223e0ef3037dc97ae244ef1a481ae}} 
+\index{Parse\+Run\+Profile@{Parse\+Run\+Profile}!get\+Accel\+Left\+Db@{get\+Accel\+Left\+Db}}
+\index{get\+Accel\+Left\+Db@{get\+Accel\+Left\+Db}!Parse\+Run\+Profile@{Parse\+Run\+Profile}}
+\subsubsection{\texorpdfstring{get\+Accel\+Left\+Db()}{getAccelLeftDb()}}
+{\footnotesize\ttfamily double Parse\+Run\+Profile\+::get\+Accel\+Left\+Db (\begin{DoxyParamCaption}\item[{Q\+String}]{type\+No,  }\item[{Q\+String}]{level\+No }\end{DoxyParamCaption})}
+
+
+
+Definition at line 60 of file Parse\+Run\+Profile.\+cpp.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_parse_run_profile_a482223e0ef3037dc97ae244ef1a481ae_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_parse_run_profile_a482223e0ef3037dc97ae244ef1a481ae_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_parse_run_profile_af5cde00690cd8d72674d713890d2e5a1}\label{class_parse_run_profile_af5cde00690cd8d72674d713890d2e5a1}} 
+\index{Parse\+Run\+Profile@{Parse\+Run\+Profile}!get\+Accel\+Right@{get\+Accel\+Right}}
+\index{get\+Accel\+Right@{get\+Accel\+Right}!Parse\+Run\+Profile@{Parse\+Run\+Profile}}
+\subsubsection{\texorpdfstring{get\+Accel\+Right()}{getAccelRight()}}
+{\footnotesize\ttfamily double Parse\+Run\+Profile\+::get\+Accel\+Right (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 65 of file Parse\+Run\+Profile.\+cpp.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_parse_run_profile_af5cde00690cd8d72674d713890d2e5a1_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_parse_run_profile_af5cde00690cd8d72674d713890d2e5a1_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_parse_run_profile_a526525e13096922f1523c2b6fb4ab802}\label{class_parse_run_profile_a526525e13096922f1523c2b6fb4ab802}} 
+\index{Parse\+Run\+Profile@{Parse\+Run\+Profile}!get\+Accel\+Right\+Db@{get\+Accel\+Right\+Db}}
+\index{get\+Accel\+Right\+Db@{get\+Accel\+Right\+Db}!Parse\+Run\+Profile@{Parse\+Run\+Profile}}
+\subsubsection{\texorpdfstring{get\+Accel\+Right\+Db()}{getAccelRightDb()}}
+{\footnotesize\ttfamily double Parse\+Run\+Profile\+::get\+Accel\+Right\+Db (\begin{DoxyParamCaption}\item[{Q\+String}]{type\+No,  }\item[{Q\+String}]{level\+No }\end{DoxyParamCaption})}
+
+
+
+Definition at line 72 of file Parse\+Run\+Profile.\+cpp.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_parse_run_profile_a526525e13096922f1523c2b6fb4ab802_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_parse_run_profile_a526525e13096922f1523c2b6fb4ab802_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_parse_run_profile_a9a53b91ed996a2730f84c93946576e6a}\label{class_parse_run_profile_a9a53b91ed996a2730f84c93946576e6a}} 
+\index{Parse\+Run\+Profile@{Parse\+Run\+Profile}!get\+Accel\+Time@{get\+Accel\+Time}}
+\index{get\+Accel\+Time@{get\+Accel\+Time}!Parse\+Run\+Profile@{Parse\+Run\+Profile}}
+\subsubsection{\texorpdfstring{get\+Accel\+Time()}{getAccelTime()}}
+{\footnotesize\ttfamily double Parse\+Run\+Profile\+::get\+Accel\+Time (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 101 of file Parse\+Run\+Profile.\+cpp.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_parse_run_profile_a9a53b91ed996a2730f84c93946576e6a_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_parse_run_profile_a9a53b91ed996a2730f84c93946576e6a_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_parse_run_profile_a94a349a23a034367a6bdf770a8e4514b}\label{class_parse_run_profile_a94a349a23a034367a6bdf770a8e4514b}} 
+\index{Parse\+Run\+Profile@{Parse\+Run\+Profile}!get\+Accel\+Time\+Db@{get\+Accel\+Time\+Db}}
+\index{get\+Accel\+Time\+Db@{get\+Accel\+Time\+Db}!Parse\+Run\+Profile@{Parse\+Run\+Profile}}
+\subsubsection{\texorpdfstring{get\+Accel\+Time\+Db()}{getAccelTimeDb()}}
+{\footnotesize\ttfamily double Parse\+Run\+Profile\+::get\+Accel\+Time\+Db (\begin{DoxyParamCaption}\item[{Q\+String}]{type\+No }\end{DoxyParamCaption})}
+
+
+
+Definition at line 108 of file Parse\+Run\+Profile.\+cpp.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_parse_run_profile_a94a349a23a034367a6bdf770a8e4514b_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_parse_run_profile_a94a349a23a034367a6bdf770a8e4514b_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_parse_run_profile_a7ce3d630a0ea5925525ee902f25d44e1}\label{class_parse_run_profile_a7ce3d630a0ea5925525ee902f25d44e1}} 
+\index{Parse\+Run\+Profile@{Parse\+Run\+Profile}!get\+Decel\+Left@{get\+Decel\+Left}}
+\index{get\+Decel\+Left@{get\+Decel\+Left}!Parse\+Run\+Profile@{Parse\+Run\+Profile}}
+\subsubsection{\texorpdfstring{get\+Decel\+Left()}{getDecelLeft()}}
+{\footnotesize\ttfamily double Parse\+Run\+Profile\+::get\+Decel\+Left (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 89 of file Parse\+Run\+Profile.\+cpp.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_parse_run_profile_a7ce3d630a0ea5925525ee902f25d44e1_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_parse_run_profile_a7ce3d630a0ea5925525ee902f25d44e1_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_parse_run_profile_a4b1aad790977725a7daf4fff854b0cb6}\label{class_parse_run_profile_a4b1aad790977725a7daf4fff854b0cb6}} 
+\index{Parse\+Run\+Profile@{Parse\+Run\+Profile}!get\+Decel\+Left\+Db@{get\+Decel\+Left\+Db}}
+\index{get\+Decel\+Left\+Db@{get\+Decel\+Left\+Db}!Parse\+Run\+Profile@{Parse\+Run\+Profile}}
+\subsubsection{\texorpdfstring{get\+Decel\+Left\+Db()}{getDecelLeftDb()}}
+{\footnotesize\ttfamily double Parse\+Run\+Profile\+::get\+Decel\+Left\+Db (\begin{DoxyParamCaption}\item[{Q\+String}]{type\+No,  }\item[{Q\+String}]{level\+No }\end{DoxyParamCaption})}
+
+
+
+Definition at line 96 of file Parse\+Run\+Profile.\+cpp.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_parse_run_profile_a4b1aad790977725a7daf4fff854b0cb6_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_parse_run_profile_a4b1aad790977725a7daf4fff854b0cb6_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_parse_run_profile_af21d7e6a341316569cf5905fe46a00b3}\label{class_parse_run_profile_af21d7e6a341316569cf5905fe46a00b3}} 
+\index{Parse\+Run\+Profile@{Parse\+Run\+Profile}!get\+Decel\+Right@{get\+Decel\+Right}}
+\index{get\+Decel\+Right@{get\+Decel\+Right}!Parse\+Run\+Profile@{Parse\+Run\+Profile}}
+\subsubsection{\texorpdfstring{get\+Decel\+Right()}{getDecelRight()}}
+{\footnotesize\ttfamily double Parse\+Run\+Profile\+::get\+Decel\+Right (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 77 of file Parse\+Run\+Profile.\+cpp.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_parse_run_profile_af21d7e6a341316569cf5905fe46a00b3_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_parse_run_profile_af21d7e6a341316569cf5905fe46a00b3_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_parse_run_profile_a2572529efbd0c733afb3a771223a859c}\label{class_parse_run_profile_a2572529efbd0c733afb3a771223a859c}} 
+\index{Parse\+Run\+Profile@{Parse\+Run\+Profile}!get\+Decel\+Right\+Db@{get\+Decel\+Right\+Db}}
+\index{get\+Decel\+Right\+Db@{get\+Decel\+Right\+Db}!Parse\+Run\+Profile@{Parse\+Run\+Profile}}
+\subsubsection{\texorpdfstring{get\+Decel\+Right\+Db()}{getDecelRightDb()}}
+{\footnotesize\ttfamily double Parse\+Run\+Profile\+::get\+Decel\+Right\+Db (\begin{DoxyParamCaption}\item[{Q\+String}]{type\+No,  }\item[{Q\+String}]{level\+No }\end{DoxyParamCaption})}
+
+
+
+Definition at line 84 of file Parse\+Run\+Profile.\+cpp.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_parse_run_profile_a2572529efbd0c733afb3a771223a859c_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_parse_run_profile_a2572529efbd0c733afb3a771223a859c_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_parse_run_profile_a212d5f9f986c03745be41a5fe610ea8e}\label{class_parse_run_profile_a212d5f9f986c03745be41a5fe610ea8e}} 
+\index{Parse\+Run\+Profile@{Parse\+Run\+Profile}!get\+Decel\+Time@{get\+Decel\+Time}}
+\index{get\+Decel\+Time@{get\+Decel\+Time}!Parse\+Run\+Profile@{Parse\+Run\+Profile}}
+\subsubsection{\texorpdfstring{get\+Decel\+Time()}{getDecelTime()}}
+{\footnotesize\ttfamily double Parse\+Run\+Profile\+::get\+Decel\+Time (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 113 of file Parse\+Run\+Profile.\+cpp.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_parse_run_profile_a212d5f9f986c03745be41a5fe610ea8e_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_parse_run_profile_a212d5f9f986c03745be41a5fe610ea8e_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_parse_run_profile_a02fea0744103223c7b7462a5a2054c52}\label{class_parse_run_profile_a02fea0744103223c7b7462a5a2054c52}} 
+\index{Parse\+Run\+Profile@{Parse\+Run\+Profile}!get\+Decel\+Time\+Db@{get\+Decel\+Time\+Db}}
+\index{get\+Decel\+Time\+Db@{get\+Decel\+Time\+Db}!Parse\+Run\+Profile@{Parse\+Run\+Profile}}
+\subsubsection{\texorpdfstring{get\+Decel\+Time\+Db()}{getDecelTimeDb()}}
+{\footnotesize\ttfamily double Parse\+Run\+Profile\+::get\+Decel\+Time\+Db (\begin{DoxyParamCaption}\item[{Q\+String}]{type\+No }\end{DoxyParamCaption})}
+
+
+
+Definition at line 119 of file Parse\+Run\+Profile.\+cpp.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_parse_run_profile_a02fea0744103223c7b7462a5a2054c52_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_parse_run_profile_a314fabde62110ee4da32de14e5b5c607}\label{class_parse_run_profile_a314fabde62110ee4da32de14e5b5c607}} 
+\index{Parse\+Run\+Profile@{Parse\+Run\+Profile}!get\+Direction\+From\+Db@{get\+Direction\+From\+Db}}
+\index{get\+Direction\+From\+Db@{get\+Direction\+From\+Db}!Parse\+Run\+Profile@{Parse\+Run\+Profile}}
+\subsubsection{\texorpdfstring{get\+Direction\+From\+Db()}{getDirectionFromDb()}}
+{\footnotesize\ttfamily int Parse\+Run\+Profile\+::get\+Direction\+From\+Db (\begin{DoxyParamCaption}\item[{Q\+String}]{type,  }\item[{Q\+String}]{level }\end{DoxyParamCaption})}
+
+
+
+Definition at line 209 of file Parse\+Run\+Profile.\+cpp.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_parse_run_profile_a314fabde62110ee4da32de14e5b5c607_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_parse_run_profile_a314fabde62110ee4da32de14e5b5c607_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_parse_run_profile_a1f064521af699320f5da111e9cb81625}\label{class_parse_run_profile_a1f064521af699320f5da111e9cb81625}} 
+\index{Parse\+Run\+Profile@{Parse\+Run\+Profile}!get\+Run@{get\+Run}}
+\index{get\+Run@{get\+Run}!Parse\+Run\+Profile@{Parse\+Run\+Profile}}
+\subsubsection{\texorpdfstring{get\+Run()}{getRun()}}
+{\footnotesize\ttfamily void Parse\+Run\+Profile\+::get\+Run (\begin{DoxyParamCaption}\item[{int}]{current\+Run\+Row\+Index,  }\item[{int}]{run\+Index }\end{DoxyParamCaption})}
+
+
+
+Definition at line 129 of file Parse\+Run\+Profile.\+cpp.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_parse_run_profile_a1f064521af699320f5da111e9cb81625_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_parse_run_profile_a1f064521af699320f5da111e9cb81625_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_parse_run_profile_abb40056301c358e483699910dae9e83c}\label{class_parse_run_profile_abb40056301c358e483699910dae9e83c}} 
+\index{Parse\+Run\+Profile@{Parse\+Run\+Profile}!get\+Run\+Profile\+Head@{get\+Run\+Profile\+Head}}
+\index{get\+Run\+Profile\+Head@{get\+Run\+Profile\+Head}!Parse\+Run\+Profile@{Parse\+Run\+Profile}}
+\subsubsection{\texorpdfstring{get\+Run\+Profile\+Head()}{getRunProfileHead()}}
+{\footnotesize\ttfamily Q\+Vector$<$ Q\+String $>$ Parse\+Run\+Profile\+::get\+Run\+Profile\+Head (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 149 of file Parse\+Run\+Profile.\+cpp.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_parse_run_profile_abb40056301c358e483699910dae9e83c_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_parse_run_profile_abb40056301c358e483699910dae9e83c_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_parse_run_profile_a285a6e835fe873d2a88fa1415224c66a}\label{class_parse_run_profile_a285a6e835fe873d2a88fa1415224c66a}} 
+\index{Parse\+Run\+Profile@{Parse\+Run\+Profile}!get\+Runs@{get\+Runs}}
+\index{get\+Runs@{get\+Runs}!Parse\+Run\+Profile@{Parse\+Run\+Profile}}
+\subsubsection{\texorpdfstring{get\+Runs()}{getRuns()}}
+{\footnotesize\ttfamily void Parse\+Run\+Profile\+::get\+Runs (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 124 of file Parse\+Run\+Profile.\+cpp.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_parse_run_profile_a285a6e835fe873d2a88fa1415224c66a_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_parse_run_profile_a285a6e835fe873d2a88fa1415224c66a_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_parse_run_profile_aa55bcd03acbae8ae4dbb93125982f7fc}\label{class_parse_run_profile_aa55bcd03acbae8ae4dbb93125982f7fc}} 
+\index{Parse\+Run\+Profile@{Parse\+Run\+Profile}!get\+Runs\+Vector@{get\+Runs\+Vector}}
+\index{get\+Runs\+Vector@{get\+Runs\+Vector}!Parse\+Run\+Profile@{Parse\+Run\+Profile}}
+\subsubsection{\texorpdfstring{get\+Runs\+Vector()}{getRunsVector()}}
+{\footnotesize\ttfamily Q\+Vector$<$ Q\+String $>$ Parse\+Run\+Profile\+::get\+Runs\+Vector (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 144 of file Parse\+Run\+Profile.\+cpp.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_parse_run_profile_aa55bcd03acbae8ae4dbb93125982f7fc_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_parse_run_profile_aa55bcd03acbae8ae4dbb93125982f7fc_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_parse_run_profile_a4778a2e2bc77c46a0686c548d218739b}\label{class_parse_run_profile_a4778a2e2bc77c46a0686c548d218739b}} 
+\index{Parse\+Run\+Profile@{Parse\+Run\+Profile}!get\+Stim\+Seq@{get\+Stim\+Seq}}
+\index{get\+Stim\+Seq@{get\+Stim\+Seq}!Parse\+Run\+Profile@{Parse\+Run\+Profile}}
+\subsubsection{\texorpdfstring{get\+Stim\+Seq()}{getStimSeq()}}
+{\footnotesize\ttfamily Q\+String Parse\+Run\+Profile\+::get\+Stim\+Seq (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 214 of file Parse\+Run\+Profile.\+cpp.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_parse_run_profile_a4778a2e2bc77c46a0686c548d218739b_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_parse_run_profile_a4778a2e2bc77c46a0686c548d218739b_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_parse_run_profile_a4d7cec4c1bf3b5f2ca41edabb098ac45}\label{class_parse_run_profile_a4d7cec4c1bf3b5f2ca41edabb098ac45}} 
+\index{Parse\+Run\+Profile@{Parse\+Run\+Profile}!parse\+Run\+File@{parse\+Run\+File}}
+\index{parse\+Run\+File@{parse\+Run\+File}!Parse\+Run\+Profile@{Parse\+Run\+Profile}}
+\subsubsection{\texorpdfstring{parse\+Run\+File()}{parseRunFile()}}
+{\footnotesize\ttfamily void Parse\+Run\+Profile\+::parse\+Run\+File (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 30 of file Parse\+Run\+Profile.\+cpp.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_parse_run_profile_a4d7cec4c1bf3b5f2ca41edabb098ac45_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_parse_run_profile_a4d7cec4c1bf3b5f2ca41edabb098ac45_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_parse_run_profile_aa5c2150a210598d9f14a04ff847ee0f3}\label{class_parse_run_profile_aa5c2150a210598d9f14a04ff847ee0f3}} 
+\index{Parse\+Run\+Profile@{Parse\+Run\+Profile}!reset\+Runs\+Vector\+Index@{reset\+Runs\+Vector\+Index}}
+\index{reset\+Runs\+Vector\+Index@{reset\+Runs\+Vector\+Index}!Parse\+Run\+Profile@{Parse\+Run\+Profile}}
+\subsubsection{\texorpdfstring{reset\+Runs\+Vector\+Index()}{resetRunsVectorIndex()}}
+{\footnotesize\ttfamily void Parse\+Run\+Profile\+::reset\+Runs\+Vector\+Index (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 20 of file Parse\+Run\+Profile.\+cpp.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_parse_run_profile_aa5c2150a210598d9f14a04ff847ee0f3_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_parse_run_profile_aa5c2150a210598d9f14a04ff847ee0f3_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_parse_run_profile_aabc8065fa18e650ba1ed9eebd4c87938}\label{class_parse_run_profile_aabc8065fa18e650ba1ed9eebd4c87938}} 
+\index{Parse\+Run\+Profile@{Parse\+Run\+Profile}!set\+Accel\+Decel\+From\+Accel\+Decel\+Spin\+Box@{set\+Accel\+Decel\+From\+Accel\+Decel\+Spin\+Box}}
+\index{set\+Accel\+Decel\+From\+Accel\+Decel\+Spin\+Box@{set\+Accel\+Decel\+From\+Accel\+Decel\+Spin\+Box}!Parse\+Run\+Profile@{Parse\+Run\+Profile}}
+\subsubsection{\texorpdfstring{set\+Accel\+Decel\+From\+Accel\+Decel\+Spin\+Box()}{setAccelDecelFromAccelDecelSpinBox()}}
+{\footnotesize\ttfamily void Parse\+Run\+Profile\+::set\+Accel\+Decel\+From\+Accel\+Decel\+Spin\+Box (\begin{DoxyParamCaption}\item[{double}]{maccel\+Value,  }\item[{double}]{mdecel\+Value }\end{DoxyParamCaption})}
+
+
+
+Definition at line 187 of file Parse\+Run\+Profile.\+cpp.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_parse_run_profile_aabc8065fa18e650ba1ed9eebd4c87938_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_parse_run_profile_abd04ee7860c35aa5a87442c67ad38452}\label{class_parse_run_profile_abd04ee7860c35aa5a87442c67ad38452}} 
+\index{Parse\+Run\+Profile@{Parse\+Run\+Profile}!set\+Accel\+Decel\+From\+Db@{set\+Accel\+Decel\+From\+Db}}
+\index{set\+Accel\+Decel\+From\+Db@{set\+Accel\+Decel\+From\+Db}!Parse\+Run\+Profile@{Parse\+Run\+Profile}}
+\subsubsection{\texorpdfstring{set\+Accel\+Decel\+From\+Db()}{setAccelDecelFromDb()}}
+{\footnotesize\ttfamily void Parse\+Run\+Profile\+::set\+Accel\+Decel\+From\+Db (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 25 of file Parse\+Run\+Profile.\+cpp.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_parse_run_profile_abd04ee7860c35aa5a87442c67ad38452_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_parse_run_profile_abd04ee7860c35aa5a87442c67ad38452_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_parse_run_profile_a7d1a1e31457aaac5f87067181588e8c7}\label{class_parse_run_profile_a7d1a1e31457aaac5f87067181588e8c7}} 
+\index{Parse\+Run\+Profile@{Parse\+Run\+Profile}!set\+Run\+File@{set\+Run\+File}}
+\index{set\+Run\+File@{set\+Run\+File}!Parse\+Run\+Profile@{Parse\+Run\+Profile}}
+\subsubsection{\texorpdfstring{set\+Run\+File()}{setRunFile()}}
+{\footnotesize\ttfamily void Parse\+Run\+Profile\+::set\+Run\+File (\begin{DoxyParamCaption}\item[{Q\+String}]{m\+Run\+File }\end{DoxyParamCaption})}
+
+
+
+Definition at line 14 of file Parse\+Run\+Profile.\+cpp.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_parse_run_profile_a7d1a1e31457aaac5f87067181588e8c7_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_parse_run_profile_a7d1a1e31457aaac5f87067181588e8c7_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_parse_run_profile_af1db7c8eb8b8710d98e19b8fd5c41caa}\label{class_parse_run_profile_af1db7c8eb8b8710d98e19b8fd5c41caa}} 
+\index{Parse\+Run\+Profile@{Parse\+Run\+Profile}!start\+Stim@{start\+Stim}}
+\index{start\+Stim@{start\+Stim}!Parse\+Run\+Profile@{Parse\+Run\+Profile}}
+\subsubsection{\texorpdfstring{start\+Stim}{startStim}}
+{\footnotesize\ttfamily void Parse\+Run\+Profile\+::start\+Stim (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
+
+
+
+Definition at line 134 of file Parse\+Run\+Profile.\+cpp.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_parse_run_profile_af1db7c8eb8b8710d98e19b8fd5c41caa_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_parse_run_profile_a633c71cd3f2610c84745c0d70695f45b}\label{class_parse_run_profile_a633c71cd3f2610c84745c0d70695f45b}} 
+\index{Parse\+Run\+Profile@{Parse\+Run\+Profile}!start\+Stimulation@{start\+Stimulation}}
+\index{start\+Stimulation@{start\+Stimulation}!Parse\+Run\+Profile@{Parse\+Run\+Profile}}
+\subsubsection{\texorpdfstring{start\+Stimulation}{startStimulation}}
+{\footnotesize\ttfamily Parse\+Run\+Profile\+::start\+Stimulation (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_parse_run_profile_a633c71cd3f2610c84745c0d70695f45b_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_parse_run_profile_a4001ee3344847bda70e39cba1c14cd61}\label{class_parse_run_profile_a4001ee3344847bda70e39cba1c14cd61}} 
+\index{Parse\+Run\+Profile@{Parse\+Run\+Profile}!truncate\+Table@{truncate\+Table}}
+\index{truncate\+Table@{truncate\+Table}!Parse\+Run\+Profile@{Parse\+Run\+Profile}}
+\subsubsection{\texorpdfstring{truncate\+Table()}{truncateTable()}}
+{\footnotesize\ttfamily void Parse\+Run\+Profile\+::truncate\+Table (\begin{DoxyParamCaption}\item[{Q\+String}]{table }\end{DoxyParamCaption})}
+
+
+
+Definition at line 139 of file Parse\+Run\+Profile.\+cpp.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_parse_run_profile_a4001ee3344847bda70e39cba1c14cd61_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_parse_run_profile_a4001ee3344847bda70e39cba1c14cd61_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_parse_run_profile_a01b21a62fe9b4e334fe0718416510340}\label{class_parse_run_profile_a01b21a62fe9b4e334fe0718416510340}} 
+\index{Parse\+Run\+Profile@{Parse\+Run\+Profile}!update\+Run\+Table@{update\+Run\+Table}}
+\index{update\+Run\+Table@{update\+Run\+Table}!Parse\+Run\+Profile@{Parse\+Run\+Profile}}
+\subsubsection{\texorpdfstring{update\+Run\+Table()}{updateRunTable()}}
+{\footnotesize\ttfamily void Parse\+Run\+Profile\+::update\+Run\+Table (\begin{DoxyParamCaption}\item[{Q\+String}]{table\+Name,  }\item[{Q\+String}]{set\+String,  }\item[{Q\+String}]{where\+String }\end{DoxyParamCaption})}
+
+
+
+Definition at line 193 of file Parse\+Run\+Profile.\+cpp.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_parse_run_profile_a01b21a62fe9b4e334fe0718416510340_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_parse_run_profile_a01b21a62fe9b4e334fe0718416510340_icgraph}
+\end{center}
+\end{figure}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/\hyperlink{_parse_run_profile_8h}{Parse\+Run\+Profile.\+h}\item 
+src/\hyperlink{_parse_run_profile_8cpp}{Parse\+Run\+Profile.\+cpp}\end{DoxyCompactItemize}

@@ -1,0 +1,9 @@
+<map id="CArrayMath_expAvg" name="CArrayMath_expAvg">
+<area shape="rect" id="node2" href="$class_array_math.html#a2f9029cfd45e1094dd6aeb549bbcd107" title="ArrayMath::expAvg" alt="" coords="196,148,331,175"/>
+<area shape="rect" id="node3" href="$class_finance_chart.html#ad160627b8abe9c8c14175c93e4e54113" title="Add an Average Directional Index indicators chart. " alt="" coords="397,5,554,32"/>
+<area shape="rect" id="node4" href="$class_finance_chart.html#a413f41ac0d18c63ab6f3d4c4ba4baa6c" title="Add a Chaikin Oscillator indicator chart. " alt="" coords="389,57,562,98"/>
+<area shape="rect" id="node5" href="$class_finance_chart.html#a3f46f24c67ed7a2c4a5ffa77fbe7ba73" title="Add a MACD indicator chart. " alt="" coords="391,123,560,149"/>
+<area shape="rect" id="node6" href="$class_finance_chart.html#a452f5d65f747033467a62eb280babfdc" title="Add a Mass Index indicator chart. " alt="" coords="379,173,572,200"/>
+<area shape="rect" id="node7" href="$class_finance_chart.html#afece1b137b4d8b68e0be8255a2a914b9" title="Add a Percentage Price Oscillator indicator chart. " alt="" coords="397,224,554,251"/>
+<area shape="rect" id="node8" href="$class_finance_chart.html#ace44d0253016161a1bd17d9725fde444" title="Add a Percentage Volume Oscillator indicator chart. " alt="" coords="397,275,554,301"/>
+</map>

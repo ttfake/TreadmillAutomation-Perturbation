@@ -1,0 +1,272 @@
+\hypertarget{class_trend_layer}{}\section{Trend\+Layer Class Reference}
+\label{class_trend_layer}\index{Trend\+Layer@{Trend\+Layer}}
+
+
+{\ttfamily \#include $<$chartdir.\+h$>$}
+
+
+
+Inheritance diagram for Trend\+Layer\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=264pt]{class_trend_layer__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Trend\+Layer\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=264pt]{class_trend_layer__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_trend_layer_a2114c97aaf3fdf29a5dd62676563d456}{Trend\+Layer} (Trend\+Layer\+Internal $\ast$\+\_\+ptr)
+\item 
+\hyperlink{class_trend_layer_a046cc9cb64ea314e189fe679b68a0168}{$\sim$\+Trend\+Layer} ()
+\item 
+void \hyperlink{class_trend_layer_aa32739ea081068795e269705701ce944}{set\+Regression\+Type} (int regression\+Type)
+\item 
+void \hyperlink{class_trend_layer_a9fb641824e98e2626bd8ee253c5f906b}{add\+Confidence\+Band} (double confidence, int upper\+Fill\+Color, int upper\+Edge\+Color=\hyperlink{namespace_chart_abee0d882fdc9ad0b001245ad9fc64011afc6811800a9e2582dac0157b6279f836}{Chart\+::\+Transparent}, int upper\+Line\+Width=1, int lower\+Fill\+Color=-\/1, int lower\+Edge\+Color=-\/1, int lower\+Line\+Width=-\/1)
+\item 
+void \hyperlink{class_trend_layer_a9d6da57188ba79e09d52cd8064a9a6fb}{add\+Prediction\+Band} (double confidence, int upper\+Fill\+Color, int upper\+Edge\+Color=\hyperlink{namespace_chart_abee0d882fdc9ad0b001245ad9fc64011afc6811800a9e2582dac0157b6279f836}{Chart\+::\+Transparent}, int upper\+Line\+Width=1, int lower\+Fill\+Color=-\/1, int lower\+Edge\+Color=-\/1, int lower\+Line\+Width=-\/1)
+\item 
+double \hyperlink{class_trend_layer_a58989a5b0fc6ed23b5bb7433f792bc6c}{get\+Slope} ()
+\item 
+double \hyperlink{class_trend_layer_aed613d07e0863cacf976363ea5fe739f}{get\+Intercept} ()
+\item 
+double \hyperlink{class_trend_layer_a588bb389e19585344439f85423c614fc}{get\+Correlation} ()
+\item 
+double \hyperlink{class_trend_layer_a73c024bd734f3c65bfe706afab186bfe}{get\+Std\+Error} ()
+\item 
+double \hyperlink{class_trend_layer_a7ff42064c53aefd537e89fdc66e9bf79}{get\+Coefficient} (int i)
+\item 
+void \hyperlink{class_trend_layer_af0bec09b9dd8ed3fea44cd133addd76a}{set\+Image\+Map\+Width} (int width)
+\item 
+Line\+Obj $\ast$ \hyperlink{class_trend_layer_ad608d20a7d52b0262ceb0476e1db4a41}{get\+Line} ()
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 2025 of file chartdir.\+h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_trend_layer_a2114c97aaf3fdf29a5dd62676563d456}\label{class_trend_layer_a2114c97aaf3fdf29a5dd62676563d456}} 
+\index{Trend\+Layer@{Trend\+Layer}!Trend\+Layer@{Trend\+Layer}}
+\index{Trend\+Layer@{Trend\+Layer}!Trend\+Layer@{Trend\+Layer}}
+\subsubsection{\texorpdfstring{Trend\+Layer()}{TrendLayer()}}
+{\footnotesize\ttfamily Trend\+Layer\+::\+Trend\+Layer (\begin{DoxyParamCaption}\item[{Trend\+Layer\+Internal $\ast$}]{\+\_\+ptr }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 2035 of file chartdir.\+h.
+
+\mbox{\Hypertarget{class_trend_layer_a046cc9cb64ea314e189fe679b68a0168}\label{class_trend_layer_a046cc9cb64ea314e189fe679b68a0168}} 
+\index{Trend\+Layer@{Trend\+Layer}!````~Trend\+Layer@{$\sim$\+Trend\+Layer}}
+\index{````~Trend\+Layer@{$\sim$\+Trend\+Layer}!Trend\+Layer@{Trend\+Layer}}
+\subsubsection{\texorpdfstring{$\sim$\+Trend\+Layer()}{~TrendLayer()}}
+{\footnotesize\ttfamily Trend\+Layer\+::$\sim$\+Trend\+Layer (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 2036 of file chartdir.\+h.
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_trend_layer_a9fb641824e98e2626bd8ee253c5f906b}\label{class_trend_layer_a9fb641824e98e2626bd8ee253c5f906b}} 
+\index{Trend\+Layer@{Trend\+Layer}!add\+Confidence\+Band@{add\+Confidence\+Band}}
+\index{add\+Confidence\+Band@{add\+Confidence\+Band}!Trend\+Layer@{Trend\+Layer}}
+\subsubsection{\texorpdfstring{add\+Confidence\+Band()}{addConfidenceBand()}}
+{\footnotesize\ttfamily void Trend\+Layer\+::add\+Confidence\+Band (\begin{DoxyParamCaption}\item[{double}]{confidence,  }\item[{int}]{upper\+Fill\+Color,  }\item[{int}]{upper\+Edge\+Color = {\ttfamily \hyperlink{namespace_chart_abee0d882fdc9ad0b001245ad9fc64011afc6811800a9e2582dac0157b6279f836}{Chart\+::\+Transparent}},  }\item[{int}]{upper\+Line\+Width = {\ttfamily 1},  }\item[{int}]{lower\+Fill\+Color = {\ttfamily -\/1},  }\item[{int}]{lower\+Edge\+Color = {\ttfamily -\/1},  }\item[{int}]{lower\+Line\+Width = {\ttfamily -\/1} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 2040 of file chartdir.\+h.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_trend_layer_a9fb641824e98e2626bd8ee253c5f906b_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_trend_layer_a9d6da57188ba79e09d52cd8064a9a6fb}\label{class_trend_layer_a9d6da57188ba79e09d52cd8064a9a6fb}} 
+\index{Trend\+Layer@{Trend\+Layer}!add\+Prediction\+Band@{add\+Prediction\+Band}}
+\index{add\+Prediction\+Band@{add\+Prediction\+Band}!Trend\+Layer@{Trend\+Layer}}
+\subsubsection{\texorpdfstring{add\+Prediction\+Band()}{addPredictionBand()}}
+{\footnotesize\ttfamily void Trend\+Layer\+::add\+Prediction\+Band (\begin{DoxyParamCaption}\item[{double}]{confidence,  }\item[{int}]{upper\+Fill\+Color,  }\item[{int}]{upper\+Edge\+Color = {\ttfamily \hyperlink{namespace_chart_abee0d882fdc9ad0b001245ad9fc64011afc6811800a9e2582dac0157b6279f836}{Chart\+::\+Transparent}},  }\item[{int}]{upper\+Line\+Width = {\ttfamily 1},  }\item[{int}]{lower\+Fill\+Color = {\ttfamily -\/1},  }\item[{int}]{lower\+Edge\+Color = {\ttfamily -\/1},  }\item[{int}]{lower\+Line\+Width = {\ttfamily -\/1} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 2044 of file chartdir.\+h.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_trend_layer_a9d6da57188ba79e09d52cd8064a9a6fb_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_trend_layer_a7ff42064c53aefd537e89fdc66e9bf79}\label{class_trend_layer_a7ff42064c53aefd537e89fdc66e9bf79}} 
+\index{Trend\+Layer@{Trend\+Layer}!get\+Coefficient@{get\+Coefficient}}
+\index{get\+Coefficient@{get\+Coefficient}!Trend\+Layer@{Trend\+Layer}}
+\subsubsection{\texorpdfstring{get\+Coefficient()}{getCoefficient()}}
+{\footnotesize\ttfamily double Trend\+Layer\+::get\+Coefficient (\begin{DoxyParamCaption}\item[{int}]{i }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 2053 of file chartdir.\+h.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_trend_layer_a7ff42064c53aefd537e89fdc66e9bf79_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_trend_layer_a588bb389e19585344439f85423c614fc}\label{class_trend_layer_a588bb389e19585344439f85423c614fc}} 
+\index{Trend\+Layer@{Trend\+Layer}!get\+Correlation@{get\+Correlation}}
+\index{get\+Correlation@{get\+Correlation}!Trend\+Layer@{Trend\+Layer}}
+\subsubsection{\texorpdfstring{get\+Correlation()}{getCorrelation()}}
+{\footnotesize\ttfamily double Trend\+Layer\+::get\+Correlation (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 2051 of file chartdir.\+h.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_trend_layer_a588bb389e19585344439f85423c614fc_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_trend_layer_aed613d07e0863cacf976363ea5fe739f}\label{class_trend_layer_aed613d07e0863cacf976363ea5fe739f}} 
+\index{Trend\+Layer@{Trend\+Layer}!get\+Intercept@{get\+Intercept}}
+\index{get\+Intercept@{get\+Intercept}!Trend\+Layer@{Trend\+Layer}}
+\subsubsection{\texorpdfstring{get\+Intercept()}{getIntercept()}}
+{\footnotesize\ttfamily double Trend\+Layer\+::get\+Intercept (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 2050 of file chartdir.\+h.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_trend_layer_aed613d07e0863cacf976363ea5fe739f_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_trend_layer_ad608d20a7d52b0262ceb0476e1db4a41}\label{class_trend_layer_ad608d20a7d52b0262ceb0476e1db4a41}} 
+\index{Trend\+Layer@{Trend\+Layer}!get\+Line@{get\+Line}}
+\index{get\+Line@{get\+Line}!Trend\+Layer@{Trend\+Layer}}
+\subsubsection{\texorpdfstring{get\+Line()}{getLine()}}
+{\footnotesize\ttfamily Line\+Obj$\ast$ Trend\+Layer\+::get\+Line (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 2056 of file chartdir.\+h.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=329pt]{class_trend_layer_ad608d20a7d52b0262ceb0476e1db4a41_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_trend_layer_a58989a5b0fc6ed23b5bb7433f792bc6c}\label{class_trend_layer_a58989a5b0fc6ed23b5bb7433f792bc6c}} 
+\index{Trend\+Layer@{Trend\+Layer}!get\+Slope@{get\+Slope}}
+\index{get\+Slope@{get\+Slope}!Trend\+Layer@{Trend\+Layer}}
+\subsubsection{\texorpdfstring{get\+Slope()}{getSlope()}}
+{\footnotesize\ttfamily double Trend\+Layer\+::get\+Slope (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 2049 of file chartdir.\+h.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=342pt]{class_trend_layer_a58989a5b0fc6ed23b5bb7433f792bc6c_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_trend_layer_a73c024bd734f3c65bfe706afab186bfe}\label{class_trend_layer_a73c024bd734f3c65bfe706afab186bfe}} 
+\index{Trend\+Layer@{Trend\+Layer}!get\+Std\+Error@{get\+Std\+Error}}
+\index{get\+Std\+Error@{get\+Std\+Error}!Trend\+Layer@{Trend\+Layer}}
+\subsubsection{\texorpdfstring{get\+Std\+Error()}{getStdError()}}
+{\footnotesize\ttfamily double Trend\+Layer\+::get\+Std\+Error (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 2052 of file chartdir.\+h.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_trend_layer_a73c024bd734f3c65bfe706afab186bfe_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_trend_layer_af0bec09b9dd8ed3fea44cd133addd76a}\label{class_trend_layer_af0bec09b9dd8ed3fea44cd133addd76a}} 
+\index{Trend\+Layer@{Trend\+Layer}!set\+Image\+Map\+Width@{set\+Image\+Map\+Width}}
+\index{set\+Image\+Map\+Width@{set\+Image\+Map\+Width}!Trend\+Layer@{Trend\+Layer}}
+\subsubsection{\texorpdfstring{set\+Image\+Map\+Width()}{setImageMapWidth()}}
+{\footnotesize\ttfamily void Trend\+Layer\+::set\+Image\+Map\+Width (\begin{DoxyParamCaption}\item[{int}]{width }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 2055 of file chartdir.\+h.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_trend_layer_af0bec09b9dd8ed3fea44cd133addd76a_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_trend_layer_aa32739ea081068795e269705701ce944}\label{class_trend_layer_aa32739ea081068795e269705701ce944}} 
+\index{Trend\+Layer@{Trend\+Layer}!set\+Regression\+Type@{set\+Regression\+Type}}
+\index{set\+Regression\+Type@{set\+Regression\+Type}!Trend\+Layer@{Trend\+Layer}}
+\subsubsection{\texorpdfstring{set\+Regression\+Type()}{setRegressionType()}}
+{\footnotesize\ttfamily void Trend\+Layer\+::set\+Regression\+Type (\begin{DoxyParamCaption}\item[{int}]{regression\+Type }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 2038 of file chartdir.\+h.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_trend_layer_aa32739ea081068795e269705701ce944_cgraph}
+\end{center}
+\end{figure}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+include/\hyperlink{chartdir_8h}{chartdir.\+h}\end{DoxyCompactItemize}

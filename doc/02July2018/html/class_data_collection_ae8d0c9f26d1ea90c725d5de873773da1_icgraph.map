@@ -1,0 +1,5 @@
+<map id="DataCollection::startRecording" name="DataCollection::startRecording">
+<area shape="rect" id="node2" href="$class_data_collection.html#a340ae86497b8b0f29d4911cf7dc8d0da" title="DataCollection::setSocket" alt="" coords="255,46,429,73"/>
+<area shape="rect" id="node3" href="$class_record_treadmill_stream.html#a058913f2f5796ef722ee0270382cf5a4" title="RecordTreadmillStream\l::startDataCollection" alt="" coords="477,5,636,47"/>
+<area shape="rect" id="node4" href="$class_record_treadmill_stream.html#ae16198d0acd13cb4fa401ae1d00e2282" title="RecordTreadmillStream\l::setPort" alt="" coords="477,71,636,112"/>
+</map>

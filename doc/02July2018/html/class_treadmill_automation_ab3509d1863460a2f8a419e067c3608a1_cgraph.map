@@ -1,0 +1,8 @@
+<map id="TreadmillAutomation::setSocket" name="TreadmillAutomation::setSocket">
+<area shape="rect" id="node2" href="$class_network_tab_widget.html#a350dbedf09f3c1fb5bbcba75cc282eb8" title="NetworkTabWidget::getInstance" alt="" coords="195,5,405,32"/>
+<area shape="rect" id="node3" href="$class_network_tab_widget.html#ae12d4be4ad527d3b9fc0708b9dea6d3d" title="NetworkTabWidget::getSocket\lInstance" alt="" coords="199,57,401,98"/>
+<area shape="rect" id="node4" href="$class_network_tab_widget.html#afa716a54017a9cde31278525107da66e" title="NetworkTabWidget::getHost" alt="" coords="206,123,394,149"/>
+<area shape="rect" id="node5" href="$class_network_tab_widget.html#a6bca5b733737261fc4ee402324623e5b" title="NetworkTabWidget::getPort" alt="" coords="208,173,392,200"/>
+<area shape="rect" id="node6" href="$class_perturbation_tab_widget.html#a61e4292beb7e59e386bf73a724b2b308" title="PerturbationTabWidget\l::setSocket" alt="" coords="223,225,377,266"/>
+<area shape="rect" id="node7" href="$class_send_setpoints.html#a49070309da83f7bab87827915b0524f9" title="SendSetpoints::setSocket" alt="" coords="453,232,628,259"/>
+</map>

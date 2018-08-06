@@ -1,0 +1,388 @@
+\hypertarget{class_pyramid_chart}{}\section{Pyramid\+Chart Class Reference}
+\label{class_pyramid_chart}\index{Pyramid\+Chart@{Pyramid\+Chart}}
+
+
+{\ttfamily \#include $<$chartdir.\+h$>$}
+
+
+
+Inheritance diagram for Pyramid\+Chart\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=175pt]{class_pyramid_chart__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Pyramid\+Chart\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=175pt]{class_pyramid_chart__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_pyramid_chart_a67f11678a7a45f0293f06afd0bdacda5}{Pyramid\+Chart} (int width, int height, int bg\+Color=\hyperlink{namespace_chart_abee0d882fdc9ad0b001245ad9fc64011a134193bde693b9d152d0c6dc59fa7d7f}{Chart\+::\+Background\+Color}, int edge\+Color=\hyperlink{namespace_chart_abee0d882fdc9ad0b001245ad9fc64011afc6811800a9e2582dac0157b6279f836}{Chart\+::\+Transparent}, int raised\+Effect=0)
+\item 
+void \hyperlink{class_pyramid_chart_ad2e427bdcbcf4a555c9e5143c12f36b1}{set\+Pyramid\+Size} (int cx, int cy, int radius, int height)
+\item 
+void \hyperlink{class_pyramid_chart_ae46555e161427e9130b7996b38df11a2}{set\+Cone\+Size} (int cx, int cy, int radius, int height)
+\item 
+void \hyperlink{class_pyramid_chart_a17f068885ee414fc5113ae1063bf0e39}{set\+Funnel\+Size} (int cx, int cy, int radius, int height, double tube\+Radius=0.\+2, double tube\+Height=0.\+3)
+\item 
+void \hyperlink{class_pyramid_chart_aac92f3377d6e2a7241480a16ff775a5d}{set\+Data} (\hyperlink{class_double_array}{Double\+Array} data, \hyperlink{class_string_array}{String\+Array} labels=\hyperlink{class_string_array}{String\+Array}())
+\item 
+\hyperlink{class_text_box}{Text\+Box} $\ast$ \hyperlink{class_pyramid_chart_a90421ce47f83d9ae8ef001196e0d1712}{set\+Center\+Label} (const char $\ast$label\+Template=\char`\"{}\{skip\}\char`\"{}, const char $\ast$font=\char`\"{}\{skip\}\char`\"{}, double font\+Size=-\/1, int font\+Color=-\/1)
+\item 
+\hyperlink{class_text_box}{Text\+Box} $\ast$ \hyperlink{class_pyramid_chart_aee77f11172f6c4efa6d9715d43d05193}{set\+Right\+Label} (const char $\ast$label\+Template=\char`\"{}\{skip\}\char`\"{}, const char $\ast$font=\char`\"{}\{skip\}\char`\"{}, double font\+Size=-\/1, int font\+Color=-\/1)
+\item 
+\hyperlink{class_text_box}{Text\+Box} $\ast$ \hyperlink{class_pyramid_chart_a0ddce92ecb98662bdc6cb7c9538353ee}{set\+Left\+Label} (const char $\ast$label\+Template=\char`\"{}\{skip\}\char`\"{}, const char $\ast$font=\char`\"{}\{skip\}\char`\"{}, double font\+Size=-\/1, int font\+Color=-\/1)
+\item 
+void \hyperlink{class_pyramid_chart_af7e6a941c23f36996ee7e5aea4d3ba9b}{set\+Pyramid\+Sides} (int no\+Of\+Sides)
+\item 
+void \hyperlink{class_pyramid_chart_ac3dc9f4fac7f8ac89c6d2aa41af9542e}{set\+View\+Angle} (double elevation, double rotation=0, double twist=0)
+\item 
+void \hyperlink{class_pyramid_chart_ab18e5be206a8c7cc29bc1c79bdb5df2a}{set\+Gradient\+Shading} (double start\+Brightness, double end\+Brightness)
+\item 
+void \hyperlink{class_pyramid_chart_ad86b26cd02267eb566d402a0a1fafb80}{set\+Lighting} (double ambient\+Intensity=0.\+5, double diffuse\+Intensity=0.\+5, double specular\+Intensity=1, double shininess=8)
+\item 
+void \hyperlink{class_pyramid_chart_a61749b6cd05b439b66a00afe9ecca570}{set\+Join\+Line} (int color, int width=-\/1)
+\item 
+void \hyperlink{class_pyramid_chart_a62eee50bacc01aad83f2eee46817d2e4}{set\+Join\+Line\+Gap} (int pyramid\+Gap, int pyramid\+Margin=-\/0x7fffffff, int text\+Gap=-\/0x7fffffff)
+\item 
+void \hyperlink{class_pyramid_chart_a60f3d9e9230b779498d40c9b1a287fe5}{set\+Layer\+Border} (int color, int width=-\/1)
+\item 
+void \hyperlink{class_pyramid_chart_af3665fa72ba30465f59d2b8dc54eeaaf}{set\+Layer\+Gap} (double layer\+Gap)
+\item 
+\hyperlink{class_pyramid_layer}{Pyramid\+Layer} $\ast$ \hyperlink{class_pyramid_chart_abfcc75e4f7e3f2403701d1c824d85ffe}{get\+Layer} (int layer\+No)
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 2738 of file chartdir.\+h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_pyramid_chart_a67f11678a7a45f0293f06afd0bdacda5}\label{class_pyramid_chart_a67f11678a7a45f0293f06afd0bdacda5}} 
+\index{Pyramid\+Chart@{Pyramid\+Chart}!Pyramid\+Chart@{Pyramid\+Chart}}
+\index{Pyramid\+Chart@{Pyramid\+Chart}!Pyramid\+Chart@{Pyramid\+Chart}}
+\subsubsection{\texorpdfstring{Pyramid\+Chart()}{PyramidChart()}}
+{\footnotesize\ttfamily Pyramid\+Chart\+::\+Pyramid\+Chart (\begin{DoxyParamCaption}\item[{int}]{width,  }\item[{int}]{height,  }\item[{int}]{bg\+Color = {\ttfamily \hyperlink{namespace_chart_abee0d882fdc9ad0b001245ad9fc64011a134193bde693b9d152d0c6dc59fa7d7f}{Chart\+::\+Background\+Color}},  }\item[{int}]{edge\+Color = {\ttfamily \hyperlink{namespace_chart_abee0d882fdc9ad0b001245ad9fc64011afc6811800a9e2582dac0157b6279f836}{Chart\+::\+Transparent}},  }\item[{int}]{raised\+Effect = {\ttfamily 0} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 2748 of file chartdir.\+h.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_pyramid_chart_a67f11678a7a45f0293f06afd0bdacda5_cgraph}
+\end{center}
+\end{figure}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_pyramid_chart_abfcc75e4f7e3f2403701d1c824d85ffe}\label{class_pyramid_chart_abfcc75e4f7e3f2403701d1c824d85ffe}} 
+\index{Pyramid\+Chart@{Pyramid\+Chart}!get\+Layer@{get\+Layer}}
+\index{get\+Layer@{get\+Layer}!Pyramid\+Chart@{Pyramid\+Chart}}
+\subsubsection{\texorpdfstring{get\+Layer()}{getLayer()}}
+{\footnotesize\ttfamily \hyperlink{class_pyramid_layer}{Pyramid\+Layer}$\ast$ Pyramid\+Chart\+::get\+Layer (\begin{DoxyParamCaption}\item[{int}]{layer\+No }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 2787 of file chartdir.\+h.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_pyramid_chart_abfcc75e4f7e3f2403701d1c824d85ffe_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_pyramid_chart_a90421ce47f83d9ae8ef001196e0d1712}\label{class_pyramid_chart_a90421ce47f83d9ae8ef001196e0d1712}} 
+\index{Pyramid\+Chart@{Pyramid\+Chart}!set\+Center\+Label@{set\+Center\+Label}}
+\index{set\+Center\+Label@{set\+Center\+Label}!Pyramid\+Chart@{Pyramid\+Chart}}
+\subsubsection{\texorpdfstring{set\+Center\+Label()}{setCenterLabel()}}
+{\footnotesize\ttfamily \hyperlink{class_text_box}{Text\+Box}$\ast$ Pyramid\+Chart\+::set\+Center\+Label (\begin{DoxyParamCaption}\item[{const char $\ast$}]{label\+Template = {\ttfamily \char`\"{}\{skip\}\char`\"{}},  }\item[{const char $\ast$}]{font = {\ttfamily \char`\"{}\{skip\}\char`\"{}},  }\item[{double}]{font\+Size = {\ttfamily -\/1},  }\item[{int}]{font\+Color = {\ttfamily -\/1} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 2761 of file chartdir.\+h.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_pyramid_chart_a90421ce47f83d9ae8ef001196e0d1712_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_pyramid_chart_ae46555e161427e9130b7996b38df11a2}\label{class_pyramid_chart_ae46555e161427e9130b7996b38df11a2}} 
+\index{Pyramid\+Chart@{Pyramid\+Chart}!set\+Cone\+Size@{set\+Cone\+Size}}
+\index{set\+Cone\+Size@{set\+Cone\+Size}!Pyramid\+Chart@{Pyramid\+Chart}}
+\subsubsection{\texorpdfstring{set\+Cone\+Size()}{setConeSize()}}
+{\footnotesize\ttfamily void Pyramid\+Chart\+::set\+Cone\+Size (\begin{DoxyParamCaption}\item[{int}]{cx,  }\item[{int}]{cy,  }\item[{int}]{radius,  }\item[{int}]{height }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 2755 of file chartdir.\+h.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_pyramid_chart_ae46555e161427e9130b7996b38df11a2_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_pyramid_chart_aac92f3377d6e2a7241480a16ff775a5d}\label{class_pyramid_chart_aac92f3377d6e2a7241480a16ff775a5d}} 
+\index{Pyramid\+Chart@{Pyramid\+Chart}!set\+Data@{set\+Data}}
+\index{set\+Data@{set\+Data}!Pyramid\+Chart@{Pyramid\+Chart}}
+\subsubsection{\texorpdfstring{set\+Data()}{setData()}}
+{\footnotesize\ttfamily void Pyramid\+Chart\+::set\+Data (\begin{DoxyParamCaption}\item[{\hyperlink{class_double_array}{Double\+Array}}]{data,  }\item[{\hyperlink{class_string_array}{String\+Array}}]{labels = {\ttfamily \hyperlink{class_string_array}{String\+Array}()} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 2759 of file chartdir.\+h.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_pyramid_chart_aac92f3377d6e2a7241480a16ff775a5d_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_pyramid_chart_a17f068885ee414fc5113ae1063bf0e39}\label{class_pyramid_chart_a17f068885ee414fc5113ae1063bf0e39}} 
+\index{Pyramid\+Chart@{Pyramid\+Chart}!set\+Funnel\+Size@{set\+Funnel\+Size}}
+\index{set\+Funnel\+Size@{set\+Funnel\+Size}!Pyramid\+Chart@{Pyramid\+Chart}}
+\subsubsection{\texorpdfstring{set\+Funnel\+Size()}{setFunnelSize()}}
+{\footnotesize\ttfamily void Pyramid\+Chart\+::set\+Funnel\+Size (\begin{DoxyParamCaption}\item[{int}]{cx,  }\item[{int}]{cy,  }\item[{int}]{radius,  }\item[{int}]{height,  }\item[{double}]{tube\+Radius = {\ttfamily 0.2},  }\item[{double}]{tube\+Height = {\ttfamily 0.3} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 2757 of file chartdir.\+h.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_pyramid_chart_a17f068885ee414fc5113ae1063bf0e39_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_pyramid_chart_ab18e5be206a8c7cc29bc1c79bdb5df2a}\label{class_pyramid_chart_ab18e5be206a8c7cc29bc1c79bdb5df2a}} 
+\index{Pyramid\+Chart@{Pyramid\+Chart}!set\+Gradient\+Shading@{set\+Gradient\+Shading}}
+\index{set\+Gradient\+Shading@{set\+Gradient\+Shading}!Pyramid\+Chart@{Pyramid\+Chart}}
+\subsubsection{\texorpdfstring{set\+Gradient\+Shading()}{setGradientShading()}}
+{\footnotesize\ttfamily void Pyramid\+Chart\+::set\+Gradient\+Shading (\begin{DoxyParamCaption}\item[{double}]{start\+Brightness,  }\item[{double}]{end\+Brightness }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 2773 of file chartdir.\+h.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_pyramid_chart_ab18e5be206a8c7cc29bc1c79bdb5df2a_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_pyramid_chart_a61749b6cd05b439b66a00afe9ecca570}\label{class_pyramid_chart_a61749b6cd05b439b66a00afe9ecca570}} 
+\index{Pyramid\+Chart@{Pyramid\+Chart}!set\+Join\+Line@{set\+Join\+Line}}
+\index{set\+Join\+Line@{set\+Join\+Line}!Pyramid\+Chart@{Pyramid\+Chart}}
+\subsubsection{\texorpdfstring{set\+Join\+Line()}{setJoinLine()}}
+{\footnotesize\ttfamily void Pyramid\+Chart\+::set\+Join\+Line (\begin{DoxyParamCaption}\item[{int}]{color,  }\item[{int}]{width = {\ttfamily -\/1} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 2778 of file chartdir.\+h.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_pyramid_chart_a61749b6cd05b439b66a00afe9ecca570_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_pyramid_chart_a62eee50bacc01aad83f2eee46817d2e4}\label{class_pyramid_chart_a62eee50bacc01aad83f2eee46817d2e4}} 
+\index{Pyramid\+Chart@{Pyramid\+Chart}!set\+Join\+Line\+Gap@{set\+Join\+Line\+Gap}}
+\index{set\+Join\+Line\+Gap@{set\+Join\+Line\+Gap}!Pyramid\+Chart@{Pyramid\+Chart}}
+\subsubsection{\texorpdfstring{set\+Join\+Line\+Gap()}{setJoinLineGap()}}
+{\footnotesize\ttfamily void Pyramid\+Chart\+::set\+Join\+Line\+Gap (\begin{DoxyParamCaption}\item[{int}]{pyramid\+Gap,  }\item[{int}]{pyramid\+Margin = {\ttfamily -\/0x7fffffff},  }\item[{int}]{text\+Gap = {\ttfamily -\/0x7fffffff} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 2780 of file chartdir.\+h.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_pyramid_chart_a62eee50bacc01aad83f2eee46817d2e4_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_pyramid_chart_a60f3d9e9230b779498d40c9b1a287fe5}\label{class_pyramid_chart_a60f3d9e9230b779498d40c9b1a287fe5}} 
+\index{Pyramid\+Chart@{Pyramid\+Chart}!set\+Layer\+Border@{set\+Layer\+Border}}
+\index{set\+Layer\+Border@{set\+Layer\+Border}!Pyramid\+Chart@{Pyramid\+Chart}}
+\subsubsection{\texorpdfstring{set\+Layer\+Border()}{setLayerBorder()}}
+{\footnotesize\ttfamily void Pyramid\+Chart\+::set\+Layer\+Border (\begin{DoxyParamCaption}\item[{int}]{color,  }\item[{int}]{width = {\ttfamily -\/1} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 2782 of file chartdir.\+h.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_pyramid_chart_a60f3d9e9230b779498d40c9b1a287fe5_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_pyramid_chart_af3665fa72ba30465f59d2b8dc54eeaaf}\label{class_pyramid_chart_af3665fa72ba30465f59d2b8dc54eeaaf}} 
+\index{Pyramid\+Chart@{Pyramid\+Chart}!set\+Layer\+Gap@{set\+Layer\+Gap}}
+\index{set\+Layer\+Gap@{set\+Layer\+Gap}!Pyramid\+Chart@{Pyramid\+Chart}}
+\subsubsection{\texorpdfstring{set\+Layer\+Gap()}{setLayerGap()}}
+{\footnotesize\ttfamily void Pyramid\+Chart\+::set\+Layer\+Gap (\begin{DoxyParamCaption}\item[{double}]{layer\+Gap }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 2784 of file chartdir.\+h.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_pyramid_chart_af3665fa72ba30465f59d2b8dc54eeaaf_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_pyramid_chart_a0ddce92ecb98662bdc6cb7c9538353ee}\label{class_pyramid_chart_a0ddce92ecb98662bdc6cb7c9538353ee}} 
+\index{Pyramid\+Chart@{Pyramid\+Chart}!set\+Left\+Label@{set\+Left\+Label}}
+\index{set\+Left\+Label@{set\+Left\+Label}!Pyramid\+Chart@{Pyramid\+Chart}}
+\subsubsection{\texorpdfstring{set\+Left\+Label()}{setLeftLabel()}}
+{\footnotesize\ttfamily \hyperlink{class_text_box}{Text\+Box}$\ast$ Pyramid\+Chart\+::set\+Left\+Label (\begin{DoxyParamCaption}\item[{const char $\ast$}]{label\+Template = {\ttfamily \char`\"{}\{skip\}\char`\"{}},  }\item[{const char $\ast$}]{font = {\ttfamily \char`\"{}\{skip\}\char`\"{}},  }\item[{double}]{font\+Size = {\ttfamily -\/1},  }\item[{int}]{font\+Color = {\ttfamily -\/1} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 2765 of file chartdir.\+h.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_pyramid_chart_a0ddce92ecb98662bdc6cb7c9538353ee_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_pyramid_chart_ad86b26cd02267eb566d402a0a1fafb80}\label{class_pyramid_chart_ad86b26cd02267eb566d402a0a1fafb80}} 
+\index{Pyramid\+Chart@{Pyramid\+Chart}!set\+Lighting@{set\+Lighting}}
+\index{set\+Lighting@{set\+Lighting}!Pyramid\+Chart@{Pyramid\+Chart}}
+\subsubsection{\texorpdfstring{set\+Lighting()}{setLighting()}}
+{\footnotesize\ttfamily void Pyramid\+Chart\+::set\+Lighting (\begin{DoxyParamCaption}\item[{double}]{ambient\+Intensity = {\ttfamily 0.5},  }\item[{double}]{diffuse\+Intensity = {\ttfamily 0.5},  }\item[{double}]{specular\+Intensity = {\ttfamily 1},  }\item[{double}]{shininess = {\ttfamily 8} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 2775 of file chartdir.\+h.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_pyramid_chart_ad86b26cd02267eb566d402a0a1fafb80_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_pyramid_chart_af7e6a941c23f36996ee7e5aea4d3ba9b}\label{class_pyramid_chart_af7e6a941c23f36996ee7e5aea4d3ba9b}} 
+\index{Pyramid\+Chart@{Pyramid\+Chart}!set\+Pyramid\+Sides@{set\+Pyramid\+Sides}}
+\index{set\+Pyramid\+Sides@{set\+Pyramid\+Sides}!Pyramid\+Chart@{Pyramid\+Chart}}
+\subsubsection{\texorpdfstring{set\+Pyramid\+Sides()}{setPyramidSides()}}
+{\footnotesize\ttfamily void Pyramid\+Chart\+::set\+Pyramid\+Sides (\begin{DoxyParamCaption}\item[{int}]{no\+Of\+Sides }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 2768 of file chartdir.\+h.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_pyramid_chart_af7e6a941c23f36996ee7e5aea4d3ba9b_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_pyramid_chart_ad2e427bdcbcf4a555c9e5143c12f36b1}\label{class_pyramid_chart_ad2e427bdcbcf4a555c9e5143c12f36b1}} 
+\index{Pyramid\+Chart@{Pyramid\+Chart}!set\+Pyramid\+Size@{set\+Pyramid\+Size}}
+\index{set\+Pyramid\+Size@{set\+Pyramid\+Size}!Pyramid\+Chart@{Pyramid\+Chart}}
+\subsubsection{\texorpdfstring{set\+Pyramid\+Size()}{setPyramidSize()}}
+{\footnotesize\ttfamily void Pyramid\+Chart\+::set\+Pyramid\+Size (\begin{DoxyParamCaption}\item[{int}]{cx,  }\item[{int}]{cy,  }\item[{int}]{radius,  }\item[{int}]{height }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 2753 of file chartdir.\+h.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_pyramid_chart_ad2e427bdcbcf4a555c9e5143c12f36b1_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_pyramid_chart_aee77f11172f6c4efa6d9715d43d05193}\label{class_pyramid_chart_aee77f11172f6c4efa6d9715d43d05193}} 
+\index{Pyramid\+Chart@{Pyramid\+Chart}!set\+Right\+Label@{set\+Right\+Label}}
+\index{set\+Right\+Label@{set\+Right\+Label}!Pyramid\+Chart@{Pyramid\+Chart}}
+\subsubsection{\texorpdfstring{set\+Right\+Label()}{setRightLabel()}}
+{\footnotesize\ttfamily \hyperlink{class_text_box}{Text\+Box}$\ast$ Pyramid\+Chart\+::set\+Right\+Label (\begin{DoxyParamCaption}\item[{const char $\ast$}]{label\+Template = {\ttfamily \char`\"{}\{skip\}\char`\"{}},  }\item[{const char $\ast$}]{font = {\ttfamily \char`\"{}\{skip\}\char`\"{}},  }\item[{double}]{font\+Size = {\ttfamily -\/1},  }\item[{int}]{font\+Color = {\ttfamily -\/1} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 2763 of file chartdir.\+h.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_pyramid_chart_aee77f11172f6c4efa6d9715d43d05193_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_pyramid_chart_ac3dc9f4fac7f8ac89c6d2aa41af9542e}\label{class_pyramid_chart_ac3dc9f4fac7f8ac89c6d2aa41af9542e}} 
+\index{Pyramid\+Chart@{Pyramid\+Chart}!set\+View\+Angle@{set\+View\+Angle}}
+\index{set\+View\+Angle@{set\+View\+Angle}!Pyramid\+Chart@{Pyramid\+Chart}}
+\subsubsection{\texorpdfstring{set\+View\+Angle()}{setViewAngle()}}
+{\footnotesize\ttfamily void Pyramid\+Chart\+::set\+View\+Angle (\begin{DoxyParamCaption}\item[{double}]{elevation,  }\item[{double}]{rotation = {\ttfamily 0},  }\item[{double}]{twist = {\ttfamily 0} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 2770 of file chartdir.\+h.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_pyramid_chart_ac3dc9f4fac7f8ac89c6d2aa41af9542e_cgraph}
+\end{center}
+\end{figure}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+include/\hyperlink{chartdir_8h}{chartdir.\+h}\end{DoxyCompactItemize}

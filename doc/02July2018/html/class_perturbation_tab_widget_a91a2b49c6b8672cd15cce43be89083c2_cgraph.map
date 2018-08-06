@@ -1,0 +1,5 @@
+<map id="PerturbationTabWidget::daqReconnect" name="PerturbationTabWidget::daqReconnect">
+<area shape="rect" id="node2" href="$class_mouse_interface.html#a6f60ced71ed9ac307b019cb300e44a32" title="MouseInterface::SetupEvent\lTrigger" alt="" coords="208,23,396,65"/>
+<area shape="rect" id="node3" href="$_n_i_d_a_qmx_8h.html#a778abc10915e0a506b98a11ecbd7f1e3" title="DAQmxCreateTask" alt="" coords="486,5,623,32"/>
+<area shape="rect" id="node4" href="$_n_i_d_a_qmx_8h.html#af8f808683006d2892544be671ad82fcb" title="DAQmxCreateCOPulseChanTime" alt="" coords="444,56,665,83"/>
+</map>

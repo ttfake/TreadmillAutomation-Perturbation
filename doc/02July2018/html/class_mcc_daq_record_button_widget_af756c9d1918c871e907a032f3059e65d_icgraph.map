@@ -1,0 +1,8 @@
+<map id="MccDaqRecordButtonWidget::changeDaqRecordLight" name="MccDaqRecordButtonWidget::changeDaqRecordLight">
+<area shape="rect" id="node2" href="$class_config_tab_widget.html#a783fb40a272c4a2fb3053da07955db0d" title="ConfigTabWidget::getStim\lTimerValue" alt="" coords="245,5,421,47"/>
+<area shape="rect" id="node5" href="$class_record_treadmill_stream.html#acc6674f00b212bb11e642f9d54a2edb4" title="RecordTreadmillStream\l::setRecord" alt="" coords="254,71,413,112"/>
+<area shape="rect" id="node7" href="$class_record_treadmill_stream.html#a6829046db76436c6298b1cd21f33b6e7" title="RecordTreadmillStream\l::stopRecord" alt="" coords="254,136,413,177"/>
+<area shape="rect" id="node3" href="$class_treadmill_automation.html#affefe22059a06d2113ea25c5a4277f8d" title="TreadmillAutomation\l::setUseLibraryStatus" alt="" coords="474,5,623,47"/>
+<area shape="rect" id="node4" href="$class_treadmill_automation.html#a6328b65397f5d0553590f363d29ec9b7" title="TreadmillAutomation\l::TreadmillAutomation" alt="" coords="676,5,825,47"/>
+<area shape="rect" id="node6" href="$class_record_treadmill_stream.html#ae16198d0acd13cb4fa401ae1d00e2282" title="RecordTreadmillStream\l::setPort" alt="" coords="469,71,628,112"/>
+</map>

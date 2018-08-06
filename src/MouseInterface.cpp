@@ -16,6 +16,10 @@ MouseInterface::MouseInterface()
     //SetupChannelSelection();
     setPerturbationActiveBoolFalse();
     movementBool = false;
+    
+    defaultPath = "C:\\Users\\User\\Desktop\\HReflex_Binaries-master\\bin\\data\\";
+
+    pertTriggerLog = new QFile(defaultPath + "/" + "pertTriggerLog.log");
 
 /*    for (const QSerialPortInfo &serialPortInfo : serialPortInfos) {
         description = serialPortInfo.description();
@@ -46,7 +50,6 @@ MouseInterface::MouseInterface()
 MouseInterface::~MouseInterface()
 {
     StopTask();
-
 }
 
 int MouseInterface::openPort()
@@ -109,7 +112,11 @@ void MouseInterface::getRawInput()
       //      qDebug() << startingCoord;
             if(!movementDetectedBool)
             {
-                WriteEvent(); // Trigger 3
+                pertTriggerLog->open(QIODevice::Append);
+                pertTriggerLog->write("Trigger 2 (Mouse Movement) sent: Unix System Timestamp:" + QString::number(currentMsecsSinceEpoch).toUtf8() + "\n");
+                pertTriggerLog->close();
+
+                WriteEvent(); // Trigger 2
                 emit movement();
                 movementDetectedBool = true;
             }
@@ -289,4 +296,25 @@ void MouseInterface::StopTask()
 	DAQmxStopTask(ChannelSelectionHandle);
     DAQmxClearTask(ChannelSelectionHandle);
 }
+
+
+int MouseInterface::GetDevices()
+{
+    char	localDevices[ 32];
+
+    DAQmxGetSysDevNames( localDevices, 32 );
+
+    std::string lDevices = (localDevices); 
+
+    if (lDevices.length()  == 0)
+    {
+        return 0;
+    }
+    else
+    {
+        return 1;
+    }
+
+}
+
 #include "../include/moc_MouseInterface.cpp"

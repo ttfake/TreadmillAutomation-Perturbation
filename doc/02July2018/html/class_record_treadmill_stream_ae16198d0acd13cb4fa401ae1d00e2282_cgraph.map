@@ -1,0 +1,13 @@
+<map id="RecordTreadmillStream::setPort" name="RecordTreadmillStream::setPort">
+<area shape="rect" id="node2" href="$class_data_collection.html#a552bd8c19edeb3bed687a1ee8066ac4a" title="DataCollection::setRecord" alt="" coords="215,5,391,32"/>
+<area shape="rect" id="node3" href="$class_data_collection.html#a72136206b4b1232a442e2ce89c62837a" title="DataCollection::setDataFile" alt="" coords="212,56,395,83"/>
+<area shape="rect" id="node4" href="$class_data_collection.html#a9edfa021943d2cb01774ea5e2dfaa624" title="DataCollection::setHost" alt="" coords="222,107,385,133"/>
+<area shape="rect" id="node5" href="$class_data_collection.html#a6b3dc486f708a17e53df082dbe15c9eb" title="DataCollection::setPort" alt="" coords="224,157,383,184"/>
+<area shape="rect" id="node6" href="$class_data_collection.html#a340ae86497b8b0f29d4911cf7dc8d0da" title="DataCollection::setSocket" alt="" coords="216,208,391,235"/>
+<area shape="rect" id="node8" href="$class_record_treadmill_stream.html#a4ab55dd8bf6498780d3fc92a6ae545f1" title="RecordTreadmillStream\l::stopThread" alt="" coords="224,259,383,301"/>
+<area shape="rect" id="node9" href="$class_record_treadmill_stream.html#ac35d01f4cc74269eaecd732d60284e89" title="RecordTreadmillStream\l::treadmillStartedSlot" alt="" coords="224,325,383,366"/>
+<area shape="rect" id="node10" href="$class_record_treadmill_stream.html#acc6674f00b212bb11e642f9d54a2edb4" title="RecordTreadmillStream\l::setRecord" alt="" coords="224,390,383,431"/>
+<area shape="rect" id="node7" href="$class_data_collection.html#ae8d0c9f26d1ea90c725d5de873773da1" title="DataCollection::startRecording" alt="" coords="443,208,644,235"/>
+<area shape="rect" id="node11" href="$class_mcc_daq_record_button_widget.html#a9d3a8523e25ad34223a0ba94adbf61fb" title="MccDaqRecordButtonWidget\l::getDaqRecordLightColor" alt="" coords="447,357,639,398"/>
+<area shape="rect" id="node12" href="$class_mcc_daq_record_button_widget.html#af756c9d1918c871e907a032f3059e65d" title="MccDaqRecordButtonWidget\l::changeDaqRecordLight" alt="" coords="447,422,639,463"/>
+</map>

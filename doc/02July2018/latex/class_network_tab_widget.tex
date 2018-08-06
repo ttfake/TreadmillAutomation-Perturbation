@@ -1,0 +1,321 @@
+\hypertarget{class_network_tab_widget}{}\section{Network\+Tab\+Widget Class Reference}
+\label{class_network_tab_widget}\index{Network\+Tab\+Widget@{Network\+Tab\+Widget}}
+
+
+{\ttfamily \#include $<$Network\+Tab\+Widget.\+h$>$}
+
+
+
+Inheritance diagram for Network\+Tab\+Widget\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=181pt]{class_network_tab_widget__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Network\+Tab\+Widget\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=181pt]{class_network_tab_widget__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Slots}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{class_network_tab_widget_a852eff05d0a613eb7b8fc0e0bfdd0736}{on\+Click\+Connect} ()
+\item 
+void \hyperlink{class_network_tab_widget_a31b849f35ea3981762da5e7d5e951371}{on\+Click\+Disconnect} ()
+\item 
+void \hyperlink{class_network_tab_widget_ac9331d5677a53e58cef3c592e652c9cc}{connected} ()
+\item 
+void \hyperlink{class_network_tab_widget_a70744044832e441549355ff37cc9e47c}{disconnected} ()
+\item 
+void \hyperlink{class_network_tab_widget_ab1ce7580ab72e739357b7621788dd354}{ready\+Read} ()
+\item 
+void \hyperlink{class_network_tab_widget_ac1f26cd8a5af5253be312be5fc56c2ad}{error} (Q\+Abstract\+Socket\+::\+Socket\+Error)
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+Q\+Abstract\+Socket $\ast$ \hyperlink{class_network_tab_widget_ae12d4be4ad527d3b9fc0708b9dea6d3d}{get\+Socket\+Instance} ()
+\item 
+bool \hyperlink{class_network_tab_widget_a556f499076cd56a2090c007eb5f1e6be}{get\+Use\+Library\+Is\+Checked\+Status} ()
+\item 
+void \hyperlink{class_network_tab_widget_ae0bc81e20f98ac4cc7cd91da440e967f}{populate\+Network\+Tab} ()
+\item 
+void \hyperlink{class_network_tab_widget_aaaec9953ba986848054b308177d405cb}{create\+Network\+Tab\+Widget} ()
+\item 
+Q\+String \hyperlink{class_network_tab_widget_afa716a54017a9cde31278525107da66e}{get\+Host} ()
+\item 
+Q\+String \hyperlink{class_network_tab_widget_a6bca5b733737261fc4ee402324623e5b}{get\+Port} ()
+\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \hyperlink{class_network_tab_widget}{Network\+Tab\+Widget} $\ast$ \hyperlink{class_network_tab_widget_a350dbedf09f3c1fb5bbcba75cc282eb8}{get\+Instance} ()
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+Q\+Push\+Button $\ast$ \hyperlink{class_network_tab_widget_a55d24d14f272f78301d0f16a362b7fd4}{connect\+Btn}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 39 of file Network\+Tab\+Widget.\+h.
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_network_tab_widget_ac9331d5677a53e58cef3c592e652c9cc}\label{class_network_tab_widget_ac9331d5677a53e58cef3c592e652c9cc}} 
+\index{Network\+Tab\+Widget@{Network\+Tab\+Widget}!connected@{connected}}
+\index{connected@{connected}!Network\+Tab\+Widget@{Network\+Tab\+Widget}}
+\subsubsection{\texorpdfstring{connected}{connected}}
+{\footnotesize\ttfamily void Network\+Tab\+Widget\+::connected (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
+
+
+
+Definition at line 286 of file Network\+Tab\+Widget.\+cpp.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_network_tab_widget_ac9331d5677a53e58cef3c592e652c9cc_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_network_tab_widget_aaaec9953ba986848054b308177d405cb}\label{class_network_tab_widget_aaaec9953ba986848054b308177d405cb}} 
+\index{Network\+Tab\+Widget@{Network\+Tab\+Widget}!create\+Network\+Tab\+Widget@{create\+Network\+Tab\+Widget}}
+\index{create\+Network\+Tab\+Widget@{create\+Network\+Tab\+Widget}!Network\+Tab\+Widget@{Network\+Tab\+Widget}}
+\subsubsection{\texorpdfstring{create\+Network\+Tab\+Widget()}{createNetworkTabWidget()}}
+{\footnotesize\ttfamily void Network\+Tab\+Widget\+::create\+Network\+Tab\+Widget (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 47 of file Network\+Tab\+Widget.\+cpp.
+
+\mbox{\Hypertarget{class_network_tab_widget_a70744044832e441549355ff37cc9e47c}\label{class_network_tab_widget_a70744044832e441549355ff37cc9e47c}} 
+\index{Network\+Tab\+Widget@{Network\+Tab\+Widget}!disconnected@{disconnected}}
+\index{disconnected@{disconnected}!Network\+Tab\+Widget@{Network\+Tab\+Widget}}
+\subsubsection{\texorpdfstring{disconnected}{disconnected}}
+{\footnotesize\ttfamily void Network\+Tab\+Widget\+::disconnected (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
+
+
+
+Definition at line 327 of file Network\+Tab\+Widget.\+cpp.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_network_tab_widget_a70744044832e441549355ff37cc9e47c_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_network_tab_widget_ac1f26cd8a5af5253be312be5fc56c2ad}\label{class_network_tab_widget_ac1f26cd8a5af5253be312be5fc56c2ad}} 
+\index{Network\+Tab\+Widget@{Network\+Tab\+Widget}!error@{error}}
+\index{error@{error}!Network\+Tab\+Widget@{Network\+Tab\+Widget}}
+\subsubsection{\texorpdfstring{error}{error}}
+{\footnotesize\ttfamily void Network\+Tab\+Widget\+::error (\begin{DoxyParamCaption}\item[{Q\+Abstract\+Socket\+::\+Socket\+Error}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
+
+
+
+Definition at line 344 of file Network\+Tab\+Widget.\+cpp.
+
+\mbox{\Hypertarget{class_network_tab_widget_afa716a54017a9cde31278525107da66e}\label{class_network_tab_widget_afa716a54017a9cde31278525107da66e}} 
+\index{Network\+Tab\+Widget@{Network\+Tab\+Widget}!get\+Host@{get\+Host}}
+\index{get\+Host@{get\+Host}!Network\+Tab\+Widget@{Network\+Tab\+Widget}}
+\subsubsection{\texorpdfstring{get\+Host()}{getHost()}}
+{\footnotesize\ttfamily Q\+String Network\+Tab\+Widget\+::get\+Host (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 359 of file Network\+Tab\+Widget.\+cpp.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_network_tab_widget_afa716a54017a9cde31278525107da66e_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_network_tab_widget_a350dbedf09f3c1fb5bbcba75cc282eb8}\label{class_network_tab_widget_a350dbedf09f3c1fb5bbcba75cc282eb8}} 
+\index{Network\+Tab\+Widget@{Network\+Tab\+Widget}!get\+Instance@{get\+Instance}}
+\index{get\+Instance@{get\+Instance}!Network\+Tab\+Widget@{Network\+Tab\+Widget}}
+\subsubsection{\texorpdfstring{get\+Instance()}{getInstance()}}
+{\footnotesize\ttfamily \hyperlink{class_network_tab_widget}{Network\+Tab\+Widget} $\ast$ Network\+Tab\+Widget\+::get\+Instance (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line 37 of file Network\+Tab\+Widget.\+cpp.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_network_tab_widget_a350dbedf09f3c1fb5bbcba75cc282eb8_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_network_tab_widget_a6bca5b733737261fc4ee402324623e5b}\label{class_network_tab_widget_a6bca5b733737261fc4ee402324623e5b}} 
+\index{Network\+Tab\+Widget@{Network\+Tab\+Widget}!get\+Port@{get\+Port}}
+\index{get\+Port@{get\+Port}!Network\+Tab\+Widget@{Network\+Tab\+Widget}}
+\subsubsection{\texorpdfstring{get\+Port()}{getPort()}}
+{\footnotesize\ttfamily Q\+String Network\+Tab\+Widget\+::get\+Port (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 364 of file Network\+Tab\+Widget.\+cpp.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_network_tab_widget_a6bca5b733737261fc4ee402324623e5b_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_network_tab_widget_ae12d4be4ad527d3b9fc0708b9dea6d3d}\label{class_network_tab_widget_ae12d4be4ad527d3b9fc0708b9dea6d3d}} 
+\index{Network\+Tab\+Widget@{Network\+Tab\+Widget}!get\+Socket\+Instance@{get\+Socket\+Instance}}
+\index{get\+Socket\+Instance@{get\+Socket\+Instance}!Network\+Tab\+Widget@{Network\+Tab\+Widget}}
+\subsubsection{\texorpdfstring{get\+Socket\+Instance()}{getSocketInstance()}}
+{\footnotesize\ttfamily Q\+Abstract\+Socket $\ast$ Network\+Tab\+Widget\+::get\+Socket\+Instance (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 227 of file Network\+Tab\+Widget.\+cpp.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_network_tab_widget_ae12d4be4ad527d3b9fc0708b9dea6d3d_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_network_tab_widget_a556f499076cd56a2090c007eb5f1e6be}\label{class_network_tab_widget_a556f499076cd56a2090c007eb5f1e6be}} 
+\index{Network\+Tab\+Widget@{Network\+Tab\+Widget}!get\+Use\+Library\+Is\+Checked\+Status@{get\+Use\+Library\+Is\+Checked\+Status}}
+\index{get\+Use\+Library\+Is\+Checked\+Status@{get\+Use\+Library\+Is\+Checked\+Status}!Network\+Tab\+Widget@{Network\+Tab\+Widget}}
+\subsubsection{\texorpdfstring{get\+Use\+Library\+Is\+Checked\+Status()}{getUseLibraryIsCheckedStatus()}}
+{\footnotesize\ttfamily bool Network\+Tab\+Widget\+::get\+Use\+Library\+Is\+Checked\+Status (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 308 of file Network\+Tab\+Widget.\+cpp.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_network_tab_widget_a556f499076cd56a2090c007eb5f1e6be_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_network_tab_widget_a852eff05d0a613eb7b8fc0e0bfdd0736}\label{class_network_tab_widget_a852eff05d0a613eb7b8fc0e0bfdd0736}} 
+\index{Network\+Tab\+Widget@{Network\+Tab\+Widget}!on\+Click\+Connect@{on\+Click\+Connect}}
+\index{on\+Click\+Connect@{on\+Click\+Connect}!Network\+Tab\+Widget@{Network\+Tab\+Widget}}
+\subsubsection{\texorpdfstring{on\+Click\+Connect}{onClickConnect}}
+{\footnotesize\ttfamily void Network\+Tab\+Widget\+::on\+Click\+Connect (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
+
+
+
+Definition at line 233 of file Network\+Tab\+Widget.\+cpp.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_network_tab_widget_a852eff05d0a613eb7b8fc0e0bfdd0736_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_network_tab_widget_a852eff05d0a613eb7b8fc0e0bfdd0736_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_network_tab_widget_a31b849f35ea3981762da5e7d5e951371}\label{class_network_tab_widget_a31b849f35ea3981762da5e7d5e951371}} 
+\index{Network\+Tab\+Widget@{Network\+Tab\+Widget}!on\+Click\+Disconnect@{on\+Click\+Disconnect}}
+\index{on\+Click\+Disconnect@{on\+Click\+Disconnect}!Network\+Tab\+Widget@{Network\+Tab\+Widget}}
+\subsubsection{\texorpdfstring{on\+Click\+Disconnect}{onClickDisconnect}}
+{\footnotesize\ttfamily void Network\+Tab\+Widget\+::on\+Click\+Disconnect (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
+
+
+
+Definition at line 315 of file Network\+Tab\+Widget.\+cpp.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_network_tab_widget_a31b849f35ea3981762da5e7d5e951371_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_network_tab_widget_ae0bc81e20f98ac4cc7cd91da440e967f}\label{class_network_tab_widget_ae0bc81e20f98ac4cc7cd91da440e967f}} 
+\index{Network\+Tab\+Widget@{Network\+Tab\+Widget}!populate\+Network\+Tab@{populate\+Network\+Tab}}
+\index{populate\+Network\+Tab@{populate\+Network\+Tab}!Network\+Tab\+Widget@{Network\+Tab\+Widget}}
+\subsubsection{\texorpdfstring{populate\+Network\+Tab()}{populateNetworkTab()}}
+{\footnotesize\ttfamily void Network\+Tab\+Widget\+::populate\+Network\+Tab (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 55 of file Network\+Tab\+Widget.\+cpp.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_network_tab_widget_ae0bc81e20f98ac4cc7cd91da440e967f_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_network_tab_widget_ab1ce7580ab72e739357b7621788dd354}\label{class_network_tab_widget_ab1ce7580ab72e739357b7621788dd354}} 
+\index{Network\+Tab\+Widget@{Network\+Tab\+Widget}!ready\+Read@{ready\+Read}}
+\index{ready\+Read@{ready\+Read}!Network\+Tab\+Widget@{Network\+Tab\+Widget}}
+\subsubsection{\texorpdfstring{ready\+Read}{readyRead}}
+{\footnotesize\ttfamily void Network\+Tab\+Widget\+::ready\+Read (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
+
+
+
+Definition at line 339 of file Network\+Tab\+Widget.\+cpp.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_network_tab_widget_ab1ce7580ab72e739357b7621788dd354_icgraph}
+\end{center}
+\end{figure}
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{class_network_tab_widget_a55d24d14f272f78301d0f16a362b7fd4}\label{class_network_tab_widget_a55d24d14f272f78301d0f16a362b7fd4}} 
+\index{Network\+Tab\+Widget@{Network\+Tab\+Widget}!connect\+Btn@{connect\+Btn}}
+\index{connect\+Btn@{connect\+Btn}!Network\+Tab\+Widget@{Network\+Tab\+Widget}}
+\subsubsection{\texorpdfstring{connect\+Btn}{connectBtn}}
+{\footnotesize\ttfamily Q\+Push\+Button$\ast$ Network\+Tab\+Widget\+::connect\+Btn}
+
+
+
+Definition at line 50 of file Network\+Tab\+Widget.\+h.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/\hyperlink{_network_tab_widget_8h}{Network\+Tab\+Widget.\+h}\item 
+src/\hyperlink{_network_tab_widget_8cpp}{Network\+Tab\+Widget.\+cpp}\end{DoxyCompactItemize}

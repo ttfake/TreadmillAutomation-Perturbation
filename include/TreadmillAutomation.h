@@ -34,6 +34,7 @@
 #include "include/SendSetpoints.h"
 #include "include/MouseInterface.h"
 #include "include/ConfigTabWidget.h"
+#include "InstrumentationPanel.h"
 
 class TreadmillAutomation : public QMainWindow
 {
@@ -69,6 +70,7 @@ class TreadmillAutomation : public QMainWindow
         void showTimer();
         void errorString(QString s);
         void closeEvent(QCloseEvent *event);
+        void emgUpdated();
 
     private:
         QWidget* centralWidget;
@@ -106,34 +108,40 @@ class TreadmillAutomation : public QMainWindow
         double getLeftRearSpeedValue();
         double getRightRearSpeedValue();
 
-        void setLeftFrontSpeedValueFromIncoming(qint16 leftFrontSpeedValue);
-        void setLeftRearSpeedValueFromIncoming(qint16 leftRearSpeedValue);
-        void setRightFrontSpeedValueFromIncoming(qint16 rightFrontSpeedValue);
-        void setRightRearSpeedValueFromIncoming(qint16 rightRearSpeedValue);
-        void setAccelerationValueFromIncoming(qint16 accelerationValue);
-        void setDecelerationValueFromIncoming(qint16 decelerationValue);
+        void                                      setLeftFrontSpeedValueFromIncoming(qint16 leftFrontSpeedValue);
+        void                                      setLeftRearSpeedValueFromIncoming(qint16 leftRearSpeedValue);
+        void                                      setRightFrontSpeedValueFromIncoming(qint16 rightFrontSpeedValue);
+        void                                      setRightRearSpeedValueFromIncoming(qint16 rightRearSpeedValue);
+        void                                      setAccelerationValueFromIncoming(qint16 accelerationValue);
+        void                                      setDecelerationValueFromIncoming(qint16 decelerationValue);
+        
         template<typename T, typename U> void addWidgetToLayout(T* widget, U* layout)
         {
             layout->addWidget(widget);
 
         };
         
-        double accelerationTimeValue;
-        double decelerationTimeValue;
-        double accelerationValue;
-        double decelerationValue;
-        double leftSpeedFrontValue;
-        double leftSpeedRearValue;
-        double rightSpeedFrontValue;
-        double rightSpeedRearValue;
-        SubjectInterface* sInterface;
+        double                                    accelerationTimeValue;
+        double                                    decelerationTimeValue;
+        double                                    accelerationValue;
+        double                                    decelerationValue;
+        double                                    leftSpeedFrontValue;
+        double                                    leftSpeedRearValue;
+        double                                    rightSpeedFrontValue;
+        double                                    rightSpeedRearValue;
+        SubjectInterface*                         sInterface;
         
-        void uncheckDaqDataView();
+        void                                      uncheckDaqDataView();
 
-        void updateStimTimer();
-        double stimTimerValue;
+        void                                      updateStimTimer();
+        double                                    stimTimerValue;
 
-        QMenu* showRunProfileCol; 
+        QMenu*                                    showRunProfileCol;
+        QAction*                                  daqReconnectAction;
+        InstrumentationPanel*                     instPanel;
+
+        QAction*                                  viewInstrumentationPanelAct;
+        QMap<int,QVector<double>>                 emgMap;
 };
 
 #endif

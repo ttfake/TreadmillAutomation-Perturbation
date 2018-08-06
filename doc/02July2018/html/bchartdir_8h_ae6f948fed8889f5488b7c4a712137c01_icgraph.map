@@ -1,0 +1,5 @@
+<map id="CBaseBoxLayer_setDataGap" name="CBaseBoxLayer_setDataGap">
+<area shape="rect" id="node2" href="$class_base_box_layer.html#a1d7193833d5c13dda5fa30ca431c72f5" title="BaseBoxLayer::setDataGap" alt="" coords="248,31,433,57"/>
+<area shape="rect" id="node3" href="$class_finance_chart.html#a84a4d29a87d57f817b52387e8495a986" title="Add a candlestick layer to the main chart. " alt="" coords="481,5,681,32"/>
+<area shape="rect" id="node4" href="$class_finance_chart.html#ab54186072d9b48c643dfeeb824968d31" title="Add a HLOC layer to the main chart. " alt="" coords="498,56,665,83"/>
+</map>

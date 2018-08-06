@@ -1,0 +1,387 @@
+\hypertarget{class_send_setpoints}{}\section{Send\+Setpoints Class Reference}
+\label{class_send_setpoints}\index{Send\+Setpoints@{Send\+Setpoints}}
+
+
+{\ttfamily \#include $<$Send\+Setpoints.\+h$>$}
+
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+enum \hyperlink{class_send_setpoints_a1205563976ed70d7beace23697cd0b06}{Treadmill\+Property} \{ \newline
+\hyperlink{class_send_setpoints_a1205563976ed70d7beace23697cd0b06a2eb9b2d6da28dccc96fbbab36cdfc6b3}{Z\+E\+RO}, 
+\hyperlink{class_send_setpoints_a1205563976ed70d7beace23697cd0b06a7cdbb0abf495f41b75cff01301144364}{A\+C\+C\+EL}, 
+\hyperlink{class_send_setpoints_a1205563976ed70d7beace23697cd0b06ace9d9192627b6b15f72f096dce07326f}{D\+E\+C\+EL}, 
+\hyperlink{class_send_setpoints_a1205563976ed70d7beace23697cd0b06aa2c57f9454b108c1226620daa3a86493}{S\+P\+E\+ED}, 
+\newline
+\hyperlink{class_send_setpoints_a1205563976ed70d7beace23697cd0b06a860d8cc1cb03a74d48e7c0d7972902a7}{I\+N\+C\+L\+IN}
+ \}
+\item 
+enum \hyperlink{class_send_setpoints_a36f865e2cf8a800b6226ff7b6b03abcd}{Setpoint\+Type} \{ \hyperlink{class_send_setpoints_a36f865e2cf8a800b6226ff7b6b03abcdaa68dfe27deefd92f0a1548a7478780dc}{Normal\+Setpoint}, 
+\hyperlink{class_send_setpoints_a36f865e2cf8a800b6226ff7b6b03abcda8b11ecfc5573d2a58891d82542d7e52a}{Feedback\+Registration\+Setpoint}
+ \}
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{class_send_setpoints_acb1a31e0cd0938661034d3c1a4dad8c7}{set\+Use\+Library\+Status} (bool use\+Lib\+Check\+Box)
+\item 
+void \hyperlink{class_send_setpoints_a58e8637367147169467c7d17e1f03947}{send\+Setpoints} (\hyperlink{class_send_setpoints_a1205563976ed70d7beace23697cd0b06}{Treadmill\+Property} mproperty, \hyperlink{class_send_setpoints_a36f865e2cf8a800b6226ff7b6b03abcd}{Setpoint\+Type} mt)
+\item 
+void \hyperlink{class_send_setpoints_ae4415d646c6de144cad9682b7afa1026}{send\+Setpoints\+Directly} (\hyperlink{class_send_setpoints_a1205563976ed70d7beace23697cd0b06}{Treadmill\+Property} mproperty, \hyperlink{class_send_setpoints_a36f865e2cf8a800b6226ff7b6b03abcd}{Setpoint\+Type} mt)
+\item 
+void \hyperlink{class_send_setpoints_a8a8b8a1dbc121419b3708f359285394d}{send\+Setpoints\+Library} (bool use\+Lib\+Check\+Box)
+\item 
+void \hyperlink{class_send_setpoints_ac4a206b4a1b4847749c817bcb473f3bc}{set\+Right\+Front\+Speed\+Value} (double mright\+Front\+Speed\+Value)
+\item 
+void \hyperlink{class_send_setpoints_af592798b90015754fd11c7ae6493bed7}{set\+Left\+Front\+Speed\+Value} (double mleft\+Front\+Speed\+Value)
+\item 
+void \hyperlink{class_send_setpoints_a35658d55d1dd98b53515c07eebc107a1}{set\+Acceleration\+Value} (double m\+Accel\+Value)
+\item 
+void \hyperlink{class_send_setpoints_a5993c64b755726a1b618fba58537aee6}{set\+Deceleration\+Value} (double mdecel\+Value)
+\item 
+void \hyperlink{class_send_setpoints_a49070309da83f7bab87827915b0524f9}{set\+Socket} (Q\+Abstract\+Socket $\ast$m\+Socket)
+\item 
+void \hyperlink{class_send_setpoints_a74d189d69d54abd6dd502d6b6dca3cb5}{set\+Use\+Max\+Speed} (bool m\+Max\+Speed\+Checked)
+\item 
+void \hyperlink{class_send_setpoints_aa053b6ff914fbb8837ff5298f9b4e0f6}{set\+Max\+Right\+Speed} (double m\+Max\+Right\+Speed)
+\item 
+void \hyperlink{class_send_setpoints_af0a9adc63a95f5c4e3d462862864e0fb}{set\+Max\+Left\+Speed} (double m\+Max\+Left\+Speed)
+\item 
+double \hyperlink{class_send_setpoints_a5605c2a0ea2e4aa514074aad3ac829c0}{get\+Max\+Right\+Speed} ()
+\item 
+double \hyperlink{class_send_setpoints_aad40e8adf6a8eb9954ecadaeddab9c87}{get\+Max\+Left\+Speed} ()
+\item 
+bool \hyperlink{class_send_setpoints_a6adbd2459fda6c6e5fad428656ad68a4}{check\+Socket\+Connection} ()
+\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \hyperlink{class_send_setpoints}{Send\+Setpoints} $\ast$ \hyperlink{class_send_setpoints_ac69cc30ed614e18793b22ac9b63100fd}{get\+Instance} ()
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 10 of file Send\+Setpoints.\+h.
+
+
+
+\subsection{Member Enumeration Documentation}
+\mbox{\Hypertarget{class_send_setpoints_a36f865e2cf8a800b6226ff7b6b03abcd}\label{class_send_setpoints_a36f865e2cf8a800b6226ff7b6b03abcd}} 
+\index{Send\+Setpoints@{Send\+Setpoints}!Setpoint\+Type@{Setpoint\+Type}}
+\index{Setpoint\+Type@{Setpoint\+Type}!Send\+Setpoints@{Send\+Setpoints}}
+\subsubsection{\texorpdfstring{Setpoint\+Type}{SetpointType}}
+{\footnotesize\ttfamily enum \hyperlink{class_send_setpoints_a36f865e2cf8a800b6226ff7b6b03abcd}{Send\+Setpoints\+::\+Setpoint\+Type}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Normal\+Setpoint@{Normal\+Setpoint}!Send\+Setpoints@{Send\+Setpoints}}\index{Send\+Setpoints@{Send\+Setpoints}!Normal\+Setpoint@{Normal\+Setpoint}}}\mbox{\Hypertarget{class_send_setpoints_a36f865e2cf8a800b6226ff7b6b03abcdaa68dfe27deefd92f0a1548a7478780dc}\label{class_send_setpoints_a36f865e2cf8a800b6226ff7b6b03abcdaa68dfe27deefd92f0a1548a7478780dc}} 
+Normal\+Setpoint&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Feedback\+Registration\+Setpoint@{Feedback\+Registration\+Setpoint}!Send\+Setpoints@{Send\+Setpoints}}\index{Send\+Setpoints@{Send\+Setpoints}!Feedback\+Registration\+Setpoint@{Feedback\+Registration\+Setpoint}}}\mbox{\Hypertarget{class_send_setpoints_a36f865e2cf8a800b6226ff7b6b03abcda8b11ecfc5573d2a58891d82542d7e52a}\label{class_send_setpoints_a36f865e2cf8a800b6226ff7b6b03abcda8b11ecfc5573d2a58891d82542d7e52a}} 
+Feedback\+Registration\+Setpoint&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+Definition at line 26 of file Send\+Setpoints.\+h.
+
+\mbox{\Hypertarget{class_send_setpoints_a1205563976ed70d7beace23697cd0b06}\label{class_send_setpoints_a1205563976ed70d7beace23697cd0b06}} 
+\index{Send\+Setpoints@{Send\+Setpoints}!Treadmill\+Property@{Treadmill\+Property}}
+\index{Treadmill\+Property@{Treadmill\+Property}!Send\+Setpoints@{Send\+Setpoints}}
+\subsubsection{\texorpdfstring{Treadmill\+Property}{TreadmillProperty}}
+{\footnotesize\ttfamily enum \hyperlink{class_send_setpoints_a1205563976ed70d7beace23697cd0b06}{Send\+Setpoints\+::\+Treadmill\+Property}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Z\+E\+RO@{Z\+E\+RO}!Send\+Setpoints@{Send\+Setpoints}}\index{Send\+Setpoints@{Send\+Setpoints}!Z\+E\+RO@{Z\+E\+RO}}}\mbox{\Hypertarget{class_send_setpoints_a1205563976ed70d7beace23697cd0b06a2eb9b2d6da28dccc96fbbab36cdfc6b3}\label{class_send_setpoints_a1205563976ed70d7beace23697cd0b06a2eb9b2d6da28dccc96fbbab36cdfc6b3}} 
+Z\+E\+RO&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{A\+C\+C\+EL@{A\+C\+C\+EL}!Send\+Setpoints@{Send\+Setpoints}}\index{Send\+Setpoints@{Send\+Setpoints}!A\+C\+C\+EL@{A\+C\+C\+EL}}}\mbox{\Hypertarget{class_send_setpoints_a1205563976ed70d7beace23697cd0b06a7cdbb0abf495f41b75cff01301144364}\label{class_send_setpoints_a1205563976ed70d7beace23697cd0b06a7cdbb0abf495f41b75cff01301144364}} 
+A\+C\+C\+EL&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{D\+E\+C\+EL@{D\+E\+C\+EL}!Send\+Setpoints@{Send\+Setpoints}}\index{Send\+Setpoints@{Send\+Setpoints}!D\+E\+C\+EL@{D\+E\+C\+EL}}}\mbox{\Hypertarget{class_send_setpoints_a1205563976ed70d7beace23697cd0b06ace9d9192627b6b15f72f096dce07326f}\label{class_send_setpoints_a1205563976ed70d7beace23697cd0b06ace9d9192627b6b15f72f096dce07326f}} 
+D\+E\+C\+EL&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{S\+P\+E\+ED@{S\+P\+E\+ED}!Send\+Setpoints@{Send\+Setpoints}}\index{Send\+Setpoints@{Send\+Setpoints}!S\+P\+E\+ED@{S\+P\+E\+ED}}}\mbox{\Hypertarget{class_send_setpoints_a1205563976ed70d7beace23697cd0b06aa2c57f9454b108c1226620daa3a86493}\label{class_send_setpoints_a1205563976ed70d7beace23697cd0b06aa2c57f9454b108c1226620daa3a86493}} 
+S\+P\+E\+ED&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{I\+N\+C\+L\+IN@{I\+N\+C\+L\+IN}!Send\+Setpoints@{Send\+Setpoints}}\index{Send\+Setpoints@{Send\+Setpoints}!I\+N\+C\+L\+IN@{I\+N\+C\+L\+IN}}}\mbox{\Hypertarget{class_send_setpoints_a1205563976ed70d7beace23697cd0b06a860d8cc1cb03a74d48e7c0d7972902a7}\label{class_send_setpoints_a1205563976ed70d7beace23697cd0b06a860d8cc1cb03a74d48e7c0d7972902a7}} 
+I\+N\+C\+L\+IN&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+Definition at line 17 of file Send\+Setpoints.\+h.
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_send_setpoints_a6adbd2459fda6c6e5fad428656ad68a4}\label{class_send_setpoints_a6adbd2459fda6c6e5fad428656ad68a4}} 
+\index{Send\+Setpoints@{Send\+Setpoints}!check\+Socket\+Connection@{check\+Socket\+Connection}}
+\index{check\+Socket\+Connection@{check\+Socket\+Connection}!Send\+Setpoints@{Send\+Setpoints}}
+\subsubsection{\texorpdfstring{check\+Socket\+Connection()}{checkSocketConnection()}}
+{\footnotesize\ttfamily bool Send\+Setpoints\+::check\+Socket\+Connection (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 20 of file Send\+Setpoints.\+cpp.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_send_setpoints_a6adbd2459fda6c6e5fad428656ad68a4_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_send_setpoints_ac69cc30ed614e18793b22ac9b63100fd}\label{class_send_setpoints_ac69cc30ed614e18793b22ac9b63100fd}} 
+\index{Send\+Setpoints@{Send\+Setpoints}!get\+Instance@{get\+Instance}}
+\index{get\+Instance@{get\+Instance}!Send\+Setpoints@{Send\+Setpoints}}
+\subsubsection{\texorpdfstring{get\+Instance()}{getInstance()}}
+{\footnotesize\ttfamily \hyperlink{class_send_setpoints}{Send\+Setpoints} $\ast$ Send\+Setpoints\+::get\+Instance (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line 10 of file Send\+Setpoints.\+cpp.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_send_setpoints_ac69cc30ed614e18793b22ac9b63100fd_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_send_setpoints_aad40e8adf6a8eb9954ecadaeddab9c87}\label{class_send_setpoints_aad40e8adf6a8eb9954ecadaeddab9c87}} 
+\index{Send\+Setpoints@{Send\+Setpoints}!get\+Max\+Left\+Speed@{get\+Max\+Left\+Speed}}
+\index{get\+Max\+Left\+Speed@{get\+Max\+Left\+Speed}!Send\+Setpoints@{Send\+Setpoints}}
+\subsubsection{\texorpdfstring{get\+Max\+Left\+Speed()}{getMaxLeftSpeed()}}
+{\footnotesize\ttfamily double Send\+Setpoints\+::get\+Max\+Left\+Speed (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 276 of file Send\+Setpoints.\+cpp.
+
+\mbox{\Hypertarget{class_send_setpoints_a5605c2a0ea2e4aa514074aad3ac829c0}\label{class_send_setpoints_a5605c2a0ea2e4aa514074aad3ac829c0}} 
+\index{Send\+Setpoints@{Send\+Setpoints}!get\+Max\+Right\+Speed@{get\+Max\+Right\+Speed}}
+\index{get\+Max\+Right\+Speed@{get\+Max\+Right\+Speed}!Send\+Setpoints@{Send\+Setpoints}}
+\subsubsection{\texorpdfstring{get\+Max\+Right\+Speed()}{getMaxRightSpeed()}}
+{\footnotesize\ttfamily double Send\+Setpoints\+::get\+Max\+Right\+Speed (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 266 of file Send\+Setpoints.\+cpp.
+
+\mbox{\Hypertarget{class_send_setpoints_a58e8637367147169467c7d17e1f03947}\label{class_send_setpoints_a58e8637367147169467c7d17e1f03947}} 
+\index{Send\+Setpoints@{Send\+Setpoints}!send\+Setpoints@{send\+Setpoints}}
+\index{send\+Setpoints@{send\+Setpoints}!Send\+Setpoints@{Send\+Setpoints}}
+\subsubsection{\texorpdfstring{send\+Setpoints()}{sendSetpoints()}}
+{\footnotesize\ttfamily void Send\+Setpoints\+::send\+Setpoints (\begin{DoxyParamCaption}\item[{\hyperlink{class_send_setpoints_a1205563976ed70d7beace23697cd0b06}{Treadmill\+Property}}]{mproperty,  }\item[{\hyperlink{class_send_setpoints_a36f865e2cf8a800b6226ff7b6b03abcd}{Setpoint\+Type}}]{mt }\end{DoxyParamCaption})}
+
+
+
+Definition at line 92 of file Send\+Setpoints.\+cpp.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_send_setpoints_a58e8637367147169467c7d17e1f03947_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_send_setpoints_a58e8637367147169467c7d17e1f03947_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_send_setpoints_ae4415d646c6de144cad9682b7afa1026}\label{class_send_setpoints_ae4415d646c6de144cad9682b7afa1026}} 
+\index{Send\+Setpoints@{Send\+Setpoints}!send\+Setpoints\+Directly@{send\+Setpoints\+Directly}}
+\index{send\+Setpoints\+Directly@{send\+Setpoints\+Directly}!Send\+Setpoints@{Send\+Setpoints}}
+\subsubsection{\texorpdfstring{send\+Setpoints\+Directly()}{sendSetpointsDirectly()}}
+{\footnotesize\ttfamily void Send\+Setpoints\+::send\+Setpoints\+Directly (\begin{DoxyParamCaption}\item[{\hyperlink{class_send_setpoints_a1205563976ed70d7beace23697cd0b06}{Treadmill\+Property}}]{mproperty,  }\item[{\hyperlink{class_send_setpoints_a36f865e2cf8a800b6226ff7b6b03abcd}{Setpoint\+Type}}]{mt }\end{DoxyParamCaption})}
+
+
+
+Definition at line 110 of file Send\+Setpoints.\+cpp.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_send_setpoints_ae4415d646c6de144cad9682b7afa1026_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_send_setpoints_a8a8b8a1dbc121419b3708f359285394d}\label{class_send_setpoints_a8a8b8a1dbc121419b3708f359285394d}} 
+\index{Send\+Setpoints@{Send\+Setpoints}!send\+Setpoints\+Library@{send\+Setpoints\+Library}}
+\index{send\+Setpoints\+Library@{send\+Setpoints\+Library}!Send\+Setpoints@{Send\+Setpoints}}
+\subsubsection{\texorpdfstring{send\+Setpoints\+Library()}{sendSetpointsLibrary()}}
+{\footnotesize\ttfamily void Send\+Setpoints\+::send\+Setpoints\+Library (\begin{DoxyParamCaption}\item[{bool}]{use\+Lib\+Check\+Box }\end{DoxyParamCaption})}
+
+
+
+Definition at line 251 of file Send\+Setpoints.\+cpp.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_send_setpoints_a8a8b8a1dbc121419b3708f359285394d_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_send_setpoints_a35658d55d1dd98b53515c07eebc107a1}\label{class_send_setpoints_a35658d55d1dd98b53515c07eebc107a1}} 
+\index{Send\+Setpoints@{Send\+Setpoints}!set\+Acceleration\+Value@{set\+Acceleration\+Value}}
+\index{set\+Acceleration\+Value@{set\+Acceleration\+Value}!Send\+Setpoints@{Send\+Setpoints}}
+\subsubsection{\texorpdfstring{set\+Acceleration\+Value()}{setAccelerationValue()}}
+{\footnotesize\ttfamily void Send\+Setpoints\+::set\+Acceleration\+Value (\begin{DoxyParamCaption}\item[{double}]{m\+Accel\+Value }\end{DoxyParamCaption})}
+
+
+
+Definition at line 47 of file Send\+Setpoints.\+cpp.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_send_setpoints_a35658d55d1dd98b53515c07eebc107a1_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_send_setpoints_a5993c64b755726a1b618fba58537aee6}\label{class_send_setpoints_a5993c64b755726a1b618fba58537aee6}} 
+\index{Send\+Setpoints@{Send\+Setpoints}!set\+Deceleration\+Value@{set\+Deceleration\+Value}}
+\index{set\+Deceleration\+Value@{set\+Deceleration\+Value}!Send\+Setpoints@{Send\+Setpoints}}
+\subsubsection{\texorpdfstring{set\+Deceleration\+Value()}{setDecelerationValue()}}
+{\footnotesize\ttfamily void Send\+Setpoints\+::set\+Deceleration\+Value (\begin{DoxyParamCaption}\item[{double}]{mdecel\+Value }\end{DoxyParamCaption})}
+
+
+
+Definition at line 59 of file Send\+Setpoints.\+cpp.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_send_setpoints_a5993c64b755726a1b618fba58537aee6_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_send_setpoints_af592798b90015754fd11c7ae6493bed7}\label{class_send_setpoints_af592798b90015754fd11c7ae6493bed7}} 
+\index{Send\+Setpoints@{Send\+Setpoints}!set\+Left\+Front\+Speed\+Value@{set\+Left\+Front\+Speed\+Value}}
+\index{set\+Left\+Front\+Speed\+Value@{set\+Left\+Front\+Speed\+Value}!Send\+Setpoints@{Send\+Setpoints}}
+\subsubsection{\texorpdfstring{set\+Left\+Front\+Speed\+Value()}{setLeftFrontSpeedValue()}}
+{\footnotesize\ttfamily void Send\+Setpoints\+::set\+Left\+Front\+Speed\+Value (\begin{DoxyParamCaption}\item[{double}]{mleft\+Front\+Speed\+Value }\end{DoxyParamCaption})}
+
+
+
+Definition at line 78 of file Send\+Setpoints.\+cpp.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_send_setpoints_af592798b90015754fd11c7ae6493bed7_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_send_setpoints_af0a9adc63a95f5c4e3d462862864e0fb}\label{class_send_setpoints_af0a9adc63a95f5c4e3d462862864e0fb}} 
+\index{Send\+Setpoints@{Send\+Setpoints}!set\+Max\+Left\+Speed@{set\+Max\+Left\+Speed}}
+\index{set\+Max\+Left\+Speed@{set\+Max\+Left\+Speed}!Send\+Setpoints@{Send\+Setpoints}}
+\subsubsection{\texorpdfstring{set\+Max\+Left\+Speed()}{setMaxLeftSpeed()}}
+{\footnotesize\ttfamily void Send\+Setpoints\+::set\+Max\+Left\+Speed (\begin{DoxyParamCaption}\item[{double}]{m\+Max\+Left\+Speed }\end{DoxyParamCaption})}
+
+
+
+Definition at line 271 of file Send\+Setpoints.\+cpp.
+
+\mbox{\Hypertarget{class_send_setpoints_aa053b6ff914fbb8837ff5298f9b4e0f6}\label{class_send_setpoints_aa053b6ff914fbb8837ff5298f9b4e0f6}} 
+\index{Send\+Setpoints@{Send\+Setpoints}!set\+Max\+Right\+Speed@{set\+Max\+Right\+Speed}}
+\index{set\+Max\+Right\+Speed@{set\+Max\+Right\+Speed}!Send\+Setpoints@{Send\+Setpoints}}
+\subsubsection{\texorpdfstring{set\+Max\+Right\+Speed()}{setMaxRightSpeed()}}
+{\footnotesize\ttfamily void Send\+Setpoints\+::set\+Max\+Right\+Speed (\begin{DoxyParamCaption}\item[{double}]{m\+Max\+Right\+Speed }\end{DoxyParamCaption})}
+
+
+
+Definition at line 261 of file Send\+Setpoints.\+cpp.
+
+\mbox{\Hypertarget{class_send_setpoints_ac4a206b4a1b4847749c817bcb473f3bc}\label{class_send_setpoints_ac4a206b4a1b4847749c817bcb473f3bc}} 
+\index{Send\+Setpoints@{Send\+Setpoints}!set\+Right\+Front\+Speed\+Value@{set\+Right\+Front\+Speed\+Value}}
+\index{set\+Right\+Front\+Speed\+Value@{set\+Right\+Front\+Speed\+Value}!Send\+Setpoints@{Send\+Setpoints}}
+\subsubsection{\texorpdfstring{set\+Right\+Front\+Speed\+Value()}{setRightFrontSpeedValue()}}
+{\footnotesize\ttfamily void Send\+Setpoints\+::set\+Right\+Front\+Speed\+Value (\begin{DoxyParamCaption}\item[{double}]{mright\+Front\+Speed\+Value }\end{DoxyParamCaption})}
+
+
+
+Definition at line 64 of file Send\+Setpoints.\+cpp.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_send_setpoints_ac4a206b4a1b4847749c817bcb473f3bc_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_send_setpoints_a49070309da83f7bab87827915b0524f9}\label{class_send_setpoints_a49070309da83f7bab87827915b0524f9}} 
+\index{Send\+Setpoints@{Send\+Setpoints}!set\+Socket@{set\+Socket}}
+\index{set\+Socket@{set\+Socket}!Send\+Setpoints@{Send\+Setpoints}}
+\subsubsection{\texorpdfstring{set\+Socket()}{setSocket()}}
+{\footnotesize\ttfamily void Send\+Setpoints\+::set\+Socket (\begin{DoxyParamCaption}\item[{Q\+Abstract\+Socket $\ast$}]{m\+Socket }\end{DoxyParamCaption})}
+
+
+
+Definition at line 35 of file Send\+Setpoints.\+cpp.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_send_setpoints_a49070309da83f7bab87827915b0524f9_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_send_setpoints_acb1a31e0cd0938661034d3c1a4dad8c7}\label{class_send_setpoints_acb1a31e0cd0938661034d3c1a4dad8c7}} 
+\index{Send\+Setpoints@{Send\+Setpoints}!set\+Use\+Library\+Status@{set\+Use\+Library\+Status}}
+\index{set\+Use\+Library\+Status@{set\+Use\+Library\+Status}!Send\+Setpoints@{Send\+Setpoints}}
+\subsubsection{\texorpdfstring{set\+Use\+Library\+Status()}{setUseLibraryStatus()}}
+{\footnotesize\ttfamily void Send\+Setpoints\+::set\+Use\+Library\+Status (\begin{DoxyParamCaption}\item[{bool}]{use\+Lib\+Check\+Box }\end{DoxyParamCaption})}
+
+
+
+Definition at line 5 of file Send\+Setpoints.\+cpp.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_send_setpoints_acb1a31e0cd0938661034d3c1a4dad8c7_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_send_setpoints_a74d189d69d54abd6dd502d6b6dca3cb5}\label{class_send_setpoints_a74d189d69d54abd6dd502d6b6dca3cb5}} 
+\index{Send\+Setpoints@{Send\+Setpoints}!set\+Use\+Max\+Speed@{set\+Use\+Max\+Speed}}
+\index{set\+Use\+Max\+Speed@{set\+Use\+Max\+Speed}!Send\+Setpoints@{Send\+Setpoints}}
+\subsubsection{\texorpdfstring{set\+Use\+Max\+Speed()}{setUseMaxSpeed()}}
+{\footnotesize\ttfamily void Send\+Setpoints\+::set\+Use\+Max\+Speed (\begin{DoxyParamCaption}\item[{bool}]{m\+Max\+Speed\+Checked }\end{DoxyParamCaption})}
+
+
+
+Definition at line 256 of file Send\+Setpoints.\+cpp.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/\hyperlink{_send_setpoints_8h}{Send\+Setpoints.\+h}\item 
+src/\hyperlink{_send_setpoints_8cpp}{Send\+Setpoints.\+cpp}\end{DoxyCompactItemize}

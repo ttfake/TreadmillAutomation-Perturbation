@@ -1,0 +1,9 @@
+<map id="TreadmillAutomationDbIFace::clearRunResultsVector" name="TreadmillAutomationDbIFace::clearRunResultsVector">
+<area shape="rect" id="node2" href="$class_parse_run_profile.html#a4d7cec4c1bf3b5f2ca41edabb098ac45" title="ParseRunProfile::parseRunFile" alt="" coords="244,19,447,46"/>
+<area shape="rect" id="node7" href="$class_parse_run_profile.html#aa00fa199f81ef8745e8e2c1e086cdf00" title="ParseRunProfile::clearRun\lResultsVector" alt="" coords="500,68,677,109"/>
+<area shape="rect" id="node3" href="$class_parse_run_profile.html#a7d1a1e31457aaac5f87067181588e8c7" title="ParseRunProfile::setRunFile" alt="" coords="495,15,683,42"/>
+<area shape="rect" id="node4" href="$class_perturbation_tab_widget.html#aeecb373be32ddc6ea3c165d685b2a386" title="PerturbationTabWidget\l::loadRunProfile" alt="" coords="731,5,885,47"/>
+<area shape="rect" id="node5" href="$class_perturbation_tab_widget.html#a9d551ffcaf3d0ebe54015f5536d261ab" title="PerturbationTabWidget\l::changeSessionId" alt="" coords="933,8,1088,49"/>
+<area shape="rect" id="node6" href="$class_perturbation_tab_widget.html#ad9a685f191ca94bdc47f148273fdf1f4" title="PerturbationTabWidget\l::addDecelerationSpeedGroupBox" alt="" coords="1136,39,1355,80"/>
+<area shape="rect" id="node8" href="$class_perturbation_tab_widget.html#a67b4c15cd26d35da1eb09559e2136502" title="PerturbationTabWidget\l::changeParticipantId" alt="" coords="731,71,885,112"/>
+</map>

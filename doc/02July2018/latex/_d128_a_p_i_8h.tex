@@ -1,0 +1,159 @@
+\hypertarget{_d128_a_p_i_8h}{}\section{include/\+D128\+A\+PI.h File Reference}
+\label{_d128_a_p_i_8h}\index{include/\+D128\+A\+P\+I.\+h@{include/\+D128\+A\+P\+I.\+h}}
+This graph shows which files directly or indirectly include this file\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_d128_a_p_i_8h__dep__incl}
+\end{center}
+\end{figure}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{struct___s_t_a_t_e_f_l_a_g_s}{\+\_\+\+S\+T\+A\+T\+E\+F\+L\+A\+GS}
+\item 
+struct \hyperlink{struct___c_o_n_t_r_o_l_f_l_a_g_s}{\+\_\+\+C\+O\+N\+T\+R\+O\+L\+F\+L\+A\+GS}
+\item 
+struct \hyperlink{struct___d128_s_t_a_t_e}{\+\_\+\+D128\+S\+T\+A\+TE}
+\item 
+struct \hyperlink{struct___d128_d_e_v_i_c_e_s_t_a_t_e}{\+\_\+\+D128\+D\+E\+V\+I\+C\+E\+S\+T\+A\+TE}
+\item 
+struct \hyperlink{struct___d_e_v_h_d_r}{\+\_\+\+D\+E\+V\+H\+DR}
+\item 
+struct \hyperlink{struct___d128}{\+\_\+\+D128}
+\end{DoxyCompactItemize}
+\subsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef struct \hyperlink{struct___s_t_a_t_e_f_l_a_g_s}{\+\_\+\+S\+T\+A\+T\+E\+F\+L\+A\+GS} \hyperlink{_d128_a_p_i_8h_ab368deca56a74b4f97e27c53f957322f}{S\+T\+A\+T\+E\+F\+L\+A\+GS}
+\item 
+typedef struct \hyperlink{struct___c_o_n_t_r_o_l_f_l_a_g_s}{\+\_\+\+C\+O\+N\+T\+R\+O\+L\+F\+L\+A\+GS} \hyperlink{_d128_a_p_i_8h_a91215a38b4f52c701d673f5a9874cc1f}{C\+O\+N\+T\+R\+O\+L\+F\+L\+A\+GS}
+\item 
+typedef struct \hyperlink{struct___d128_s_t_a_t_e}{\+\_\+\+D128\+S\+T\+A\+TE} \hyperlink{_d128_a_p_i_8h_a37bd6b2ec1438a8cd6a28e7e6ff61885}{D128\+S\+T\+A\+TE}
+\item 
+typedef struct \hyperlink{struct___d128_d_e_v_i_c_e_s_t_a_t_e}{\+\_\+\+D128\+D\+E\+V\+I\+C\+E\+S\+T\+A\+TE} \hyperlink{_d128_a_p_i_8h_aec4b5617f0e6a151d0388c3c6f61c199}{D128\+D\+E\+V\+I\+C\+E\+S\+T\+A\+TE}
+\item 
+typedef struct \hyperlink{struct___d_e_v_h_d_r}{\+\_\+\+D\+E\+V\+H\+DR} \hyperlink{_d128_a_p_i_8h_ac4f7ac6f5a50549a97c064894bdcf244}{D\+E\+V\+H\+DR}
+\item 
+typedef struct \hyperlink{struct___d128}{\+\_\+\+D128} \hyperlink{_d128_a_p_i_8h_a1c15ac0f67f288e6b3fe2a6e3ac5c63d}{D128}
+\item 
+typedef struct \hyperlink{struct___d128}{\+\_\+\+D128} $\ast$ \hyperlink{_d128_a_p_i_8h_a6e052ed80d4bf43b520fef6c8d5e96be}{P\+D128}
+\item 
+typedef void(\+\_\+\+\_\+stdcall $\ast$ \hyperlink{_d128_a_p_i_8h_ab8c12b2889cb9bef5acca212e6f190f9}{D\+G\+Client\+Initialise\+Proc}) (int Result, void $\ast$Callback\+Param)
+\item 
+typedef void(\+\_\+\+\_\+stdcall $\ast$ \hyperlink{_d128_a_p_i_8h_aa2261ca715cad96da8c06e7df2ccfa66}{D\+G\+Client\+Update\+Proc}) (int Result, \hyperlink{_d128_a_p_i_8h_a1c15ac0f67f288e6b3fe2a6e3ac5c63d}{D128} $\ast$Current\+State, void $\ast$Callback\+Param)
+\item 
+typedef void(\+\_\+\+\_\+stdcall $\ast$ \hyperlink{_d128_a_p_i_8h_a74fedbe7be261903dddffb2d756f9878}{D\+G\+Client\+Close\+Proc}) (int Result, void $\ast$Callback\+Param)
+\item 
+typedef int(\+\_\+\+\_\+stdcall $\ast$ \hyperlink{_d128_a_p_i_8h_a2c6eefdf916f22107161e02860b1834e}{D\+G\+D128\+\_\+\+Initialise}) (int $\ast$Reference, int $\ast$Init\+Error, \hyperlink{_d128_a_p_i_8h_ab8c12b2889cb9bef5acca212e6f190f9}{D\+G\+Client\+Initialise\+Proc} Callback\+Proc, void $\ast$Callbask\+Param)
+\item 
+typedef int(\+\_\+\+\_\+stdcall $\ast$ \hyperlink{_d128_a_p_i_8h_aa2edfa4dd47868b0cdac4eca359bfdea}{D\+G\+D128\+\_\+\+Update}) (int Reference, int $\ast$Error, \hyperlink{_d128_a_p_i_8h_a6e052ed80d4bf43b520fef6c8d5e96be}{P\+D128} New\+State, int cb\+New\+State, \hyperlink{_d128_a_p_i_8h_a6e052ed80d4bf43b520fef6c8d5e96be}{P\+D128} Current\+State, int $\ast$cb\+Current\+State, \hyperlink{_d128_a_p_i_8h_aa2261ca715cad96da8c06e7df2ccfa66}{D\+G\+Client\+Update\+Proc} Callbac\+Proc, void $\ast$Callback\+Param)
+\item 
+typedef int(\+\_\+\+\_\+stdcall $\ast$ \hyperlink{_d128_a_p_i_8h_ac3fd3f1dc245e3f784c1264eddb7f0be}{D\+G\+D128\+\_\+\+Close}) (int $\ast$Reference, int $\ast$Error, \hyperlink{_d128_a_p_i_8h_a74fedbe7be261903dddffb2d756f9878}{D\+G\+Client\+Close\+Proc} Callback\+Proc, void $\ast$Callback\+Param)
+\end{DoxyCompactItemize}
+
+
+\subsection{Typedef Documentation}
+\mbox{\Hypertarget{_d128_a_p_i_8h_a91215a38b4f52c701d673f5a9874cc1f}\label{_d128_a_p_i_8h_a91215a38b4f52c701d673f5a9874cc1f}} 
+\index{D128\+A\+P\+I.\+h@{D128\+A\+P\+I.\+h}!C\+O\+N\+T\+R\+O\+L\+F\+L\+A\+GS@{C\+O\+N\+T\+R\+O\+L\+F\+L\+A\+GS}}
+\index{C\+O\+N\+T\+R\+O\+L\+F\+L\+A\+GS@{C\+O\+N\+T\+R\+O\+L\+F\+L\+A\+GS}!D128\+A\+P\+I.\+h@{D128\+A\+P\+I.\+h}}
+\subsubsection{\texorpdfstring{C\+O\+N\+T\+R\+O\+L\+F\+L\+A\+GS}{CONTROLFLAGS}}
+{\footnotesize\ttfamily typedef struct \hyperlink{struct___c_o_n_t_r_o_l_f_l_a_g_s}{\+\_\+\+C\+O\+N\+T\+R\+O\+L\+F\+L\+A\+GS}  \hyperlink{_d128_a_p_i_8h_a91215a38b4f52c701d673f5a9874cc1f}{C\+O\+N\+T\+R\+O\+L\+F\+L\+A\+GS}}
+
+\mbox{\Hypertarget{_d128_a_p_i_8h_a1c15ac0f67f288e6b3fe2a6e3ac5c63d}\label{_d128_a_p_i_8h_a1c15ac0f67f288e6b3fe2a6e3ac5c63d}} 
+\index{D128\+A\+P\+I.\+h@{D128\+A\+P\+I.\+h}!D128@{D128}}
+\index{D128@{D128}!D128\+A\+P\+I.\+h@{D128\+A\+P\+I.\+h}}
+\subsubsection{\texorpdfstring{D128}{D128}}
+{\footnotesize\ttfamily typedef struct \hyperlink{struct___d128}{\+\_\+\+D128}  \hyperlink{_d128_a_p_i_8h_a1c15ac0f67f288e6b3fe2a6e3ac5c63d}{D128}}
+
+\mbox{\Hypertarget{_d128_a_p_i_8h_aec4b5617f0e6a151d0388c3c6f61c199}\label{_d128_a_p_i_8h_aec4b5617f0e6a151d0388c3c6f61c199}} 
+\index{D128\+A\+P\+I.\+h@{D128\+A\+P\+I.\+h}!D128\+D\+E\+V\+I\+C\+E\+S\+T\+A\+TE@{D128\+D\+E\+V\+I\+C\+E\+S\+T\+A\+TE}}
+\index{D128\+D\+E\+V\+I\+C\+E\+S\+T\+A\+TE@{D128\+D\+E\+V\+I\+C\+E\+S\+T\+A\+TE}!D128\+A\+P\+I.\+h@{D128\+A\+P\+I.\+h}}
+\subsubsection{\texorpdfstring{D128\+D\+E\+V\+I\+C\+E\+S\+T\+A\+TE}{D128DEVICESTATE}}
+{\footnotesize\ttfamily typedef struct \hyperlink{struct___d128_d_e_v_i_c_e_s_t_a_t_e}{\+\_\+\+D128\+D\+E\+V\+I\+C\+E\+S\+T\+A\+TE}  \hyperlink{_d128_a_p_i_8h_aec4b5617f0e6a151d0388c3c6f61c199}{D128\+D\+E\+V\+I\+C\+E\+S\+T\+A\+TE}}
+
+\mbox{\Hypertarget{_d128_a_p_i_8h_a37bd6b2ec1438a8cd6a28e7e6ff61885}\label{_d128_a_p_i_8h_a37bd6b2ec1438a8cd6a28e7e6ff61885}} 
+\index{D128\+A\+P\+I.\+h@{D128\+A\+P\+I.\+h}!D128\+S\+T\+A\+TE@{D128\+S\+T\+A\+TE}}
+\index{D128\+S\+T\+A\+TE@{D128\+S\+T\+A\+TE}!D128\+A\+P\+I.\+h@{D128\+A\+P\+I.\+h}}
+\subsubsection{\texorpdfstring{D128\+S\+T\+A\+TE}{D128STATE}}
+{\footnotesize\ttfamily typedef struct \hyperlink{struct___d128_s_t_a_t_e}{\+\_\+\+D128\+S\+T\+A\+TE}  \hyperlink{_d128_a_p_i_8h_a37bd6b2ec1438a8cd6a28e7e6ff61885}{D128\+S\+T\+A\+TE}}
+
+\mbox{\Hypertarget{_d128_a_p_i_8h_ac4f7ac6f5a50549a97c064894bdcf244}\label{_d128_a_p_i_8h_ac4f7ac6f5a50549a97c064894bdcf244}} 
+\index{D128\+A\+P\+I.\+h@{D128\+A\+P\+I.\+h}!D\+E\+V\+H\+DR@{D\+E\+V\+H\+DR}}
+\index{D\+E\+V\+H\+DR@{D\+E\+V\+H\+DR}!D128\+A\+P\+I.\+h@{D128\+A\+P\+I.\+h}}
+\subsubsection{\texorpdfstring{D\+E\+V\+H\+DR}{DEVHDR}}
+{\footnotesize\ttfamily typedef struct \hyperlink{struct___d_e_v_h_d_r}{\+\_\+\+D\+E\+V\+H\+DR}  \hyperlink{_d128_a_p_i_8h_ac4f7ac6f5a50549a97c064894bdcf244}{D\+E\+V\+H\+DR}}
+
+\mbox{\Hypertarget{_d128_a_p_i_8h_a74fedbe7be261903dddffb2d756f9878}\label{_d128_a_p_i_8h_a74fedbe7be261903dddffb2d756f9878}} 
+\index{D128\+A\+P\+I.\+h@{D128\+A\+P\+I.\+h}!D\+G\+Client\+Close\+Proc@{D\+G\+Client\+Close\+Proc}}
+\index{D\+G\+Client\+Close\+Proc@{D\+G\+Client\+Close\+Proc}!D128\+A\+P\+I.\+h@{D128\+A\+P\+I.\+h}}
+\subsubsection{\texorpdfstring{D\+G\+Client\+Close\+Proc}{DGClientCloseProc}}
+{\footnotesize\ttfamily typedef void(\+\_\+\+\_\+stdcall $\ast$ D\+G\+Client\+Close\+Proc) (int Result, void $\ast$Callback\+Param)}
+
+
+
+Definition at line 73 of file D128\+A\+P\+I.\+h.
+
+\mbox{\Hypertarget{_d128_a_p_i_8h_ab8c12b2889cb9bef5acca212e6f190f9}\label{_d128_a_p_i_8h_ab8c12b2889cb9bef5acca212e6f190f9}} 
+\index{D128\+A\+P\+I.\+h@{D128\+A\+P\+I.\+h}!D\+G\+Client\+Initialise\+Proc@{D\+G\+Client\+Initialise\+Proc}}
+\index{D\+G\+Client\+Initialise\+Proc@{D\+G\+Client\+Initialise\+Proc}!D128\+A\+P\+I.\+h@{D128\+A\+P\+I.\+h}}
+\subsubsection{\texorpdfstring{D\+G\+Client\+Initialise\+Proc}{DGClientInitialiseProc}}
+{\footnotesize\ttfamily typedef void(\+\_\+\+\_\+stdcall $\ast$ D\+G\+Client\+Initialise\+Proc) (int Result, void $\ast$Callback\+Param)}
+
+
+
+Definition at line 62 of file D128\+A\+P\+I.\+h.
+
+\mbox{\Hypertarget{_d128_a_p_i_8h_aa2261ca715cad96da8c06e7df2ccfa66}\label{_d128_a_p_i_8h_aa2261ca715cad96da8c06e7df2ccfa66}} 
+\index{D128\+A\+P\+I.\+h@{D128\+A\+P\+I.\+h}!D\+G\+Client\+Update\+Proc@{D\+G\+Client\+Update\+Proc}}
+\index{D\+G\+Client\+Update\+Proc@{D\+G\+Client\+Update\+Proc}!D128\+A\+P\+I.\+h@{D128\+A\+P\+I.\+h}}
+\subsubsection{\texorpdfstring{D\+G\+Client\+Update\+Proc}{DGClientUpdateProc}}
+{\footnotesize\ttfamily typedef void(\+\_\+\+\_\+stdcall $\ast$ D\+G\+Client\+Update\+Proc) (int Result, \hyperlink{_d128_a_p_i_8h_a1c15ac0f67f288e6b3fe2a6e3ac5c63d}{D128} $\ast$Current\+State, void $\ast$Callback\+Param)}
+
+
+
+Definition at line 67 of file D128\+A\+P\+I.\+h.
+
+\mbox{\Hypertarget{_d128_a_p_i_8h_ac3fd3f1dc245e3f784c1264eddb7f0be}\label{_d128_a_p_i_8h_ac3fd3f1dc245e3f784c1264eddb7f0be}} 
+\index{D128\+A\+P\+I.\+h@{D128\+A\+P\+I.\+h}!D\+G\+D128\+\_\+\+Close@{D\+G\+D128\+\_\+\+Close}}
+\index{D\+G\+D128\+\_\+\+Close@{D\+G\+D128\+\_\+\+Close}!D128\+A\+P\+I.\+h@{D128\+A\+P\+I.\+h}}
+\subsubsection{\texorpdfstring{D\+G\+D128\+\_\+\+Close}{DGD128\_Close}}
+{\footnotesize\ttfamily typedef int(\+\_\+\+\_\+stdcall $\ast$ D\+G\+D128\+\_\+\+Close) (int $\ast$Reference, int $\ast$Error, \hyperlink{_d128_a_p_i_8h_a74fedbe7be261903dddffb2d756f9878}{D\+G\+Client\+Close\+Proc} Callback\+Proc, void $\ast$Callback\+Param)}
+
+
+
+Definition at line 96 of file D128\+A\+P\+I.\+h.
+
+\mbox{\Hypertarget{_d128_a_p_i_8h_a2c6eefdf916f22107161e02860b1834e}\label{_d128_a_p_i_8h_a2c6eefdf916f22107161e02860b1834e}} 
+\index{D128\+A\+P\+I.\+h@{D128\+A\+P\+I.\+h}!D\+G\+D128\+\_\+\+Initialise@{D\+G\+D128\+\_\+\+Initialise}}
+\index{D\+G\+D128\+\_\+\+Initialise@{D\+G\+D128\+\_\+\+Initialise}!D128\+A\+P\+I.\+h@{D128\+A\+P\+I.\+h}}
+\subsubsection{\texorpdfstring{D\+G\+D128\+\_\+\+Initialise}{DGD128\_Initialise}}
+{\footnotesize\ttfamily typedef int(\+\_\+\+\_\+stdcall $\ast$ D\+G\+D128\+\_\+\+Initialise) (int $\ast$Reference, int $\ast$Init\+Error, \hyperlink{_d128_a_p_i_8h_ab8c12b2889cb9bef5acca212e6f190f9}{D\+G\+Client\+Initialise\+Proc} Callback\+Proc, void $\ast$Callbask\+Param)}
+
+
+
+Definition at line 78 of file D128\+A\+P\+I.\+h.
+
+\mbox{\Hypertarget{_d128_a_p_i_8h_aa2edfa4dd47868b0cdac4eca359bfdea}\label{_d128_a_p_i_8h_aa2edfa4dd47868b0cdac4eca359bfdea}} 
+\index{D128\+A\+P\+I.\+h@{D128\+A\+P\+I.\+h}!D\+G\+D128\+\_\+\+Update@{D\+G\+D128\+\_\+\+Update}}
+\index{D\+G\+D128\+\_\+\+Update@{D\+G\+D128\+\_\+\+Update}!D128\+A\+P\+I.\+h@{D128\+A\+P\+I.\+h}}
+\subsubsection{\texorpdfstring{D\+G\+D128\+\_\+\+Update}{DGD128\_Update}}
+{\footnotesize\ttfamily typedef int(\+\_\+\+\_\+stdcall $\ast$ D\+G\+D128\+\_\+\+Update) (int Reference, int $\ast$Error, \hyperlink{_d128_a_p_i_8h_a6e052ed80d4bf43b520fef6c8d5e96be}{P\+D128} New\+State, int cb\+New\+State, \hyperlink{_d128_a_p_i_8h_a6e052ed80d4bf43b520fef6c8d5e96be}{P\+D128} Current\+State, int $\ast$cb\+Current\+State, \hyperlink{_d128_a_p_i_8h_aa2261ca715cad96da8c06e7df2ccfa66}{D\+G\+Client\+Update\+Proc} Callbac\+Proc, void $\ast$Callback\+Param)}
+
+
+
+Definition at line 85 of file D128\+A\+P\+I.\+h.
+
+\mbox{\Hypertarget{_d128_a_p_i_8h_a6e052ed80d4bf43b520fef6c8d5e96be}\label{_d128_a_p_i_8h_a6e052ed80d4bf43b520fef6c8d5e96be}} 
+\index{D128\+A\+P\+I.\+h@{D128\+A\+P\+I.\+h}!P\+D128@{P\+D128}}
+\index{P\+D128@{P\+D128}!D128\+A\+P\+I.\+h@{D128\+A\+P\+I.\+h}}
+\subsubsection{\texorpdfstring{P\+D128}{PD128}}
+{\footnotesize\ttfamily typedef struct \hyperlink{struct___d128}{\+\_\+\+D128} $\ast$ \hyperlink{_d128_a_p_i_8h_a6e052ed80d4bf43b520fef6c8d5e96be}{P\+D128}}
+
+\mbox{\Hypertarget{_d128_a_p_i_8h_ab368deca56a74b4f97e27c53f957322f}\label{_d128_a_p_i_8h_ab368deca56a74b4f97e27c53f957322f}} 
+\index{D128\+A\+P\+I.\+h@{D128\+A\+P\+I.\+h}!S\+T\+A\+T\+E\+F\+L\+A\+GS@{S\+T\+A\+T\+E\+F\+L\+A\+GS}}
+\index{S\+T\+A\+T\+E\+F\+L\+A\+GS@{S\+T\+A\+T\+E\+F\+L\+A\+GS}!D128\+A\+P\+I.\+h@{D128\+A\+P\+I.\+h}}
+\subsubsection{\texorpdfstring{S\+T\+A\+T\+E\+F\+L\+A\+GS}{STATEFLAGS}}
+{\footnotesize\ttfamily typedef struct \hyperlink{struct___s_t_a_t_e_f_l_a_g_s}{\+\_\+\+S\+T\+A\+T\+E\+F\+L\+A\+GS}  \hyperlink{_d128_a_p_i_8h_ab368deca56a74b4f97e27c53f957322f}{S\+T\+A\+T\+E\+F\+L\+A\+GS}}
+

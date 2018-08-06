@@ -1,0 +1,186 @@
+\hypertarget{class_ran_series}{}\section{Ran\+Series Class Reference}
+\label{class_ran_series}\index{Ran\+Series@{Ran\+Series}}
+
+
+{\ttfamily \#include $<$chartdir.\+h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_ran_series_a1fece73522edbaa98df15e97c88f249d}{Ran\+Series} (int seed)
+\item 
+\hyperlink{class_ran_series_a8c16907ca0d44d9a08d9bc58ec50faf6}{$\sim$\+Ran\+Series} ()
+\item 
+void \hyperlink{class_ran_series_aa320bcef53d02417fdb78efe9033c29d}{destroy} ()
+\item 
+\hyperlink{class_double_array}{Double\+Array} \hyperlink{class_ran_series_a2bfeae67f518cc2273f8aa3d8e6c8408}{get\+Series} (int len, double min\+Value, double max\+Value)
+\item 
+\hyperlink{class_double_array}{Double\+Array} \hyperlink{class_ran_series_a0bab27ee1b15bf4d19d7c4b14fd975de}{get\+Series} (int len, double min\+Value, double max\+Value, double max\+Delta, double lower\+Limit=-\/1\+E+308, double upper\+Limit=1\+E+308)
+\item 
+\hyperlink{class_double_array}{Double\+Array} \hyperlink{class_ran_series_ac538aef12148303005ef6af6a882af88}{get\+Gaussian\+Series} (int len, double mean, double std\+Dev)
+\item 
+\hyperlink{class_double_array}{Double\+Array} \hyperlink{class_ran_series_abfabe60593b246b272936f3e74a73673}{get2\+D\+Series} (int x\+Len, int y\+Len, double min\+Value, double max\+Value)
+\item 
+\hyperlink{class_double_array}{Double\+Array} \hyperlink{class_ran_series_a513311c8a995b7fd8885f89f90ea33d8}{get\+Date\+Series} (int len, double start\+Time, double tick\+Inc, bool week\+Day\+Only=false)
+\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \hyperlink{class_ran_series}{Ran\+Series} $\ast$ \hyperlink{class_ran_series_afddf071c89ed954534354ab536ccaf9a}{create} (int seed)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 3185 of file chartdir.\+h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_ran_series_a1fece73522edbaa98df15e97c88f249d}\label{class_ran_series_a1fece73522edbaa98df15e97c88f249d}} 
+\index{Ran\+Series@{Ran\+Series}!Ran\+Series@{Ran\+Series}}
+\index{Ran\+Series@{Ran\+Series}!Ran\+Series@{Ran\+Series}}
+\subsubsection{\texorpdfstring{Ran\+Series()}{RanSeries()}}
+{\footnotesize\ttfamily Ran\+Series\+::\+Ran\+Series (\begin{DoxyParamCaption}\item[{int}]{seed }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 3195 of file chartdir.\+h.
+
+\mbox{\Hypertarget{class_ran_series_a8c16907ca0d44d9a08d9bc58ec50faf6}\label{class_ran_series_a8c16907ca0d44d9a08d9bc58ec50faf6}} 
+\index{Ran\+Series@{Ran\+Series}!````~Ran\+Series@{$\sim$\+Ran\+Series}}
+\index{````~Ran\+Series@{$\sim$\+Ran\+Series}!Ran\+Series@{Ran\+Series}}
+\subsubsection{\texorpdfstring{$\sim$\+Ran\+Series()}{~RanSeries()}}
+{\footnotesize\ttfamily Ran\+Series\+::$\sim$\+Ran\+Series (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 3196 of file chartdir.\+h.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=343pt]{class_ran_series_a8c16907ca0d44d9a08d9bc58ec50faf6_cgraph}
+\end{center}
+\end{figure}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_ran_series_afddf071c89ed954534354ab536ccaf9a}\label{class_ran_series_afddf071c89ed954534354ab536ccaf9a}} 
+\index{Ran\+Series@{Ran\+Series}!create@{create}}
+\index{create@{create}!Ran\+Series@{Ran\+Series}}
+\subsubsection{\texorpdfstring{create()}{create()}}
+{\footnotesize\ttfamily static \hyperlink{class_ran_series}{Ran\+Series}$\ast$ Ran\+Series\+::create (\begin{DoxyParamCaption}\item[{int}]{seed }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Definition at line 3197 of file chartdir.\+h.
+
+\mbox{\Hypertarget{class_ran_series_aa320bcef53d02417fdb78efe9033c29d}\label{class_ran_series_aa320bcef53d02417fdb78efe9033c29d}} 
+\index{Ran\+Series@{Ran\+Series}!destroy@{destroy}}
+\index{destroy@{destroy}!Ran\+Series@{Ran\+Series}}
+\subsubsection{\texorpdfstring{destroy()}{destroy()}}
+{\footnotesize\ttfamily void Ran\+Series\+::destroy (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 3198 of file chartdir.\+h.
+
+\mbox{\Hypertarget{class_ran_series_abfabe60593b246b272936f3e74a73673}\label{class_ran_series_abfabe60593b246b272936f3e74a73673}} 
+\index{Ran\+Series@{Ran\+Series}!get2\+D\+Series@{get2\+D\+Series}}
+\index{get2\+D\+Series@{get2\+D\+Series}!Ran\+Series@{Ran\+Series}}
+\subsubsection{\texorpdfstring{get2\+D\+Series()}{get2DSeries()}}
+{\footnotesize\ttfamily \hyperlink{class_double_array}{Double\+Array} Ran\+Series\+::get2\+D\+Series (\begin{DoxyParamCaption}\item[{int}]{x\+Len,  }\item[{int}]{y\+Len,  }\item[{double}]{min\+Value,  }\item[{double}]{max\+Value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 3210 of file chartdir.\+h.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_ran_series_abfabe60593b246b272936f3e74a73673_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_ran_series_a513311c8a995b7fd8885f89f90ea33d8}\label{class_ran_series_a513311c8a995b7fd8885f89f90ea33d8}} 
+\index{Ran\+Series@{Ran\+Series}!get\+Date\+Series@{get\+Date\+Series}}
+\index{get\+Date\+Series@{get\+Date\+Series}!Ran\+Series@{Ran\+Series}}
+\subsubsection{\texorpdfstring{get\+Date\+Series()}{getDateSeries()}}
+{\footnotesize\ttfamily \hyperlink{class_double_array}{Double\+Array} Ran\+Series\+::get\+Date\+Series (\begin{DoxyParamCaption}\item[{int}]{len,  }\item[{double}]{start\+Time,  }\item[{double}]{tick\+Inc,  }\item[{bool}]{week\+Day\+Only = {\ttfamily false} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 3213 of file chartdir.\+h.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_ran_series_a513311c8a995b7fd8885f89f90ea33d8_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_ran_series_ac538aef12148303005ef6af6a882af88}\label{class_ran_series_ac538aef12148303005ef6af6a882af88}} 
+\index{Ran\+Series@{Ran\+Series}!get\+Gaussian\+Series@{get\+Gaussian\+Series}}
+\index{get\+Gaussian\+Series@{get\+Gaussian\+Series}!Ran\+Series@{Ran\+Series}}
+\subsubsection{\texorpdfstring{get\+Gaussian\+Series()}{getGaussianSeries()}}
+{\footnotesize\ttfamily \hyperlink{class_double_array}{Double\+Array} Ran\+Series\+::get\+Gaussian\+Series (\begin{DoxyParamCaption}\item[{int}]{len,  }\item[{double}]{mean,  }\item[{double}]{std\+Dev }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 3207 of file chartdir.\+h.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_ran_series_ac538aef12148303005ef6af6a882af88_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_ran_series_a2bfeae67f518cc2273f8aa3d8e6c8408}\label{class_ran_series_a2bfeae67f518cc2273f8aa3d8e6c8408}} 
+\index{Ran\+Series@{Ran\+Series}!get\+Series@{get\+Series}}
+\index{get\+Series@{get\+Series}!Ran\+Series@{Ran\+Series}}
+\subsubsection{\texorpdfstring{get\+Series()}{getSeries()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \hyperlink{class_double_array}{Double\+Array} Ran\+Series\+::get\+Series (\begin{DoxyParamCaption}\item[{int}]{len,  }\item[{double}]{min\+Value,  }\item[{double}]{max\+Value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 3200 of file chartdir.\+h.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=342pt]{class_ran_series_a2bfeae67f518cc2273f8aa3d8e6c8408_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_ran_series_a0bab27ee1b15bf4d19d7c4b14fd975de}\label{class_ran_series_a0bab27ee1b15bf4d19d7c4b14fd975de}} 
+\index{Ran\+Series@{Ran\+Series}!get\+Series@{get\+Series}}
+\index{get\+Series@{get\+Series}!Ran\+Series@{Ran\+Series}}
+\subsubsection{\texorpdfstring{get\+Series()}{getSeries()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \hyperlink{class_double_array}{Double\+Array} Ran\+Series\+::get\+Series (\begin{DoxyParamCaption}\item[{int}]{len,  }\item[{double}]{min\+Value,  }\item[{double}]{max\+Value,  }\item[{double}]{max\+Delta,  }\item[{double}]{lower\+Limit = {\ttfamily -\/1E+308},  }\item[{double}]{upper\+Limit = {\ttfamily 1E+308} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 3203 of file chartdir.\+h.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=348pt]{class_ran_series_a0bab27ee1b15bf4d19d7c4b14fd975de_cgraph}
+\end{center}
+\end{figure}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+include/\hyperlink{chartdir_8h}{chartdir.\+h}\end{DoxyCompactItemize}

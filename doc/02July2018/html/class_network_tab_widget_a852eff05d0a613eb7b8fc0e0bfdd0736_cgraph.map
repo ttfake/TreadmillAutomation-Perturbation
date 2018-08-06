@@ -1,0 +1,8 @@
+<map id="NetworkTabWidget::onClickConnect" name="NetworkTabWidget::onClickConnect">
+<area shape="rect" id="node2" href="$class_send_setpoints.html#acb1a31e0cd0938661034d3c1a4dad8c7" title="SendSetpoints::setUseLibrary\lStatus" alt="" coords="251,5,447,47"/>
+<area shape="rect" id="node3" href="$class_network_tab_widget.html#ac9331d5677a53e58cef3c592e652c9cc" title="NetworkTabWidget::connected" alt="" coords="248,71,451,98"/>
+<area shape="rect" id="node4" href="$class_network_tab_widget.html#a70744044832e441549355ff37cc9e47c" title="NetworkTabWidget::disconnected" alt="" coords="240,122,459,149"/>
+<area shape="rect" id="node5" href="$class_network_tab_widget.html#ab1ce7580ab72e739357b7621788dd354" title="NetworkTabWidget::readyRead" alt="" coords="247,173,452,199"/>
+<area shape="rect" id="node6" href="$treadmill-remote_8h.html#a9359937c6d3e08d705bc274f0f479032" title="TREADMILL_initialize" alt="" coords="274,223,425,250"/>
+<area shape="rect" id="node7" href="$treadmill-remote_8h.html#a01211c9d8d73f3013e38c822be71871b" title="TREADMILL_initializeUDP" alt="" coords="259,274,439,301"/>
+</map>

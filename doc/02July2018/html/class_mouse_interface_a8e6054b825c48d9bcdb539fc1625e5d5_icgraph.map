@@ -1,0 +1,6 @@
+<map id="MouseInterface::setMovementBool" name="MouseInterface::setMovementBool">
+<area shape="rect" id="node2" href="$class_perturbation_tab_widget.html#a09c65ab9737d61975cebc94fe843482d" title="PerturbationTabWidget\l::randomDelay" alt="" coords="279,5,433,47"/>
+<area shape="rect" id="node3" href="$class_perturbation_tab_widget.html#aeecb373be32ddc6ea3c165d685b2a386" title="PerturbationTabWidget\l::loadRunProfile" alt="" coords="481,5,636,47"/>
+<area shape="rect" id="node4" href="$class_perturbation_tab_widget.html#a9d551ffcaf3d0ebe54015f5536d261ab" title="PerturbationTabWidget\l::changeSessionId" alt="" coords="684,5,839,47"/>
+<area shape="rect" id="node5" href="$class_perturbation_tab_widget.html#ad9a685f191ca94bdc47f148273fdf1f4" title="PerturbationTabWidget\l::addDecelerationSpeedGroupBox" alt="" coords="887,5,1105,47"/>
+</map>

@@ -1,0 +1,7 @@
+<map id="FinanceChart::setLogScale" name="FinanceChart::setLogScale">
+<area shape="rect" id="node2" href="$class_x_y_chart.html#a22adca1189b6caa260d71fe4122033ab" title="XYChart::yAxis" alt="" coords="248,5,361,32"/>
+<area shape="rect" id="node4" href="$class_axis.html#a3222aeb4e534dbe9c1ffa68cb11a47b8" title="Axis::setLogScale" alt="" coords="241,56,369,83"/>
+<area shape="rect" id="node5" href="$class_axis.html#a69fe2919bd8bcf21a5139dc1e0a511c4" title="Axis::setLinearScale" alt="" coords="233,107,376,133"/>
+<area shape="rect" id="node3" href="$bchartdir_8h.html#a54ecabf524f0001341ceca5dbda8f3d2" title="CXYChart_yAxis" alt="" coords="442,5,565,32"/>
+<area shape="rect" id="node6" href="$bchartdir_8h.html#a6689aac8eb5d3706713cc4cd35e06095" title="CAxis_setLinearScale3" alt="" coords="424,107,583,133"/>
+</map>

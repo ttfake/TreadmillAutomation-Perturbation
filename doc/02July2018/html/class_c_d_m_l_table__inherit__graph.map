@@ -1,0 +1,5 @@
+<map id="CDMLTable" name="CDMLTable">
+<area shape="rect" id="node2" href="$class_draw_obj.html" title="DrawObj" alt="" coords="16,80,89,107"/>
+<area shape="rect" id="node3" href="$class_auto_destroy.html" title="AutoDestroy" alt="" coords="5,5,100,32"/>
+<area shape="rect" id="node4" href="$class_garbage_container.html" title="GarbageContainer" alt="" coords="113,80,240,107"/>
+</map>

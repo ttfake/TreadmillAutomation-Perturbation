@@ -1,0 +1,9 @@
+<map id="PolarLayer" name="PolarLayer">
+<area shape="rect" id="node4" href="$class_polar_area_layer.html" title="PolarAreaLayer" alt="" coords="41,155,151,181"/>
+<area shape="rect" id="node6" href="$class_polar_line_layer.html" title="PolarLineLayer" alt="" coords="185,155,293,181"/>
+<area shape="rect" id="node8" href="$class_polar_vector_layer.html" title="PolarVectorLayer" alt="" coords="317,155,440,181"/>
+<area shape="rect" id="node2" href="$class_auto_destroy.html" title="AutoDestroy" alt="" coords="125,5,219,32"/>
+<area shape="rect" id="node3" href="$class_garbage_container.html" title="GarbageContainer" alt="" coords="243,5,370,32"/>
+<area shape="rect" id="node5" href="$class_polar_spline_area_layer.html" title="PolarSplineAreaLayer" alt="" coords="5,229,152,256"/>
+<area shape="rect" id="node7" href="$class_polar_spline_line_layer.html" title="PolarSplineLineLayer" alt="" coords="176,229,320,256"/>
+</map>

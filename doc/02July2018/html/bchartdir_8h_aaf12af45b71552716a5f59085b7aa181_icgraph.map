@@ -1,0 +1,4 @@
+<map id="CBaseChart_addText" name="CBaseChart_addText">
+<area shape="rect" id="node2" href="$class_base_chart.html#a2a2016142a7036736cc0c3ffd43a5d80" title="BaseChart::addText" alt="" coords="201,13,340,39"/>
+<area shape="rect" id="node3" href="$class_finance_chart.html#acf483e2850387592ab861effcd443eb6" title="Add a text title above the plot area. You may add multiple title above the plot area by calling this ..." alt="" coords="388,5,567,47"/>
+</map>

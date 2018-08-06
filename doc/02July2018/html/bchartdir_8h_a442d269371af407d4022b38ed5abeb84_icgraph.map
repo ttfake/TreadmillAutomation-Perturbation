@@ -1,0 +1,6 @@
+<map id="CLayer_setHTMLImageMap" name="CLayer_setHTMLImageMap">
+<area shape="rect" id="node2" href="$class_layer.html#a236aba467e0154dcfff6541731dc9ec5" title="Layer::setHTMLImageMap" alt="" coords="240,56,417,83"/>
+<area shape="rect" id="node3" href="$class_finance_chart.html#a84a4d29a87d57f817b52387e8495a986" title="Add a candlestick layer to the main chart. " alt="" coords="465,5,665,32"/>
+<area shape="rect" id="node4" href="$class_finance_chart.html#ab54186072d9b48c643dfeeb824968d31" title="Add a HLOC layer to the main chart. " alt="" coords="482,56,649,83"/>
+<area shape="rect" id="node5" href="$class_finance_chart.html#a70070d425a15afa754f1d76e1d5f9dfc" title="Add a comparison line to the main price chart. " alt="" coords="466,107,665,133"/>
+</map>

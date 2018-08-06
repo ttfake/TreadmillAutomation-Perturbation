@@ -1,0 +1,380 @@
+\hypertarget{class_base_meter}{}\section{Base\+Meter Class Reference}
+\label{class_base_meter}\index{Base\+Meter@{Base\+Meter}}
+
+
+{\ttfamily \#include $<$chartdir.\+h$>$}
+
+
+
+Inheritance diagram for Base\+Meter\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=240pt]{class_base_meter__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Base\+Meter\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=175pt]{class_base_meter__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_base_meter_a2e8ea1110428a27c5e10cb859a573c9e}{Base\+Meter} ()
+\item 
+void \hyperlink{class_base_meter_a117c04249783d7acb72ed87dfa7ac92c}{init} (Base\+Meter\+Internal $\ast$\+\_\+ptr)
+\item 
+\hyperlink{class_meter_pointer}{Meter\+Pointer} $\ast$ \hyperlink{class_base_meter_afa1ed46d9fd3dfc852d170338929795f}{add\+Pointer} (double value, int fill\+Color=\hyperlink{namespace_chart_abee0d882fdc9ad0b001245ad9fc64011a04817a359476e87a5c572a7a69cdaaec}{Chart\+::\+Line\+Color}, int edge\+Color=-\/1)
+\item 
+void \hyperlink{class_base_meter_a60d236ad098cbca9b689bd7b42b35bd2}{set\+Scale} (double lower\+Limit, double upper\+Limit, double major\+Tick\+Inc=0, double minor\+Tick\+Inc=0, double micro\+Tick\+Inc=0)
+\item 
+void \hyperlink{class_base_meter_a8b3b33dbe680f892ba3d860b579e727f}{set\+Scale} (double lower\+Limit, double upper\+Limit, \hyperlink{class_string_array}{String\+Array} labels)
+\item 
+void \hyperlink{class_base_meter_a5bb7919cb0a67c0b578620644d3dc4ae}{set\+Scale} (double lower\+Limit, double upper\+Limit, \hyperlink{class_double_array}{Double\+Array} labels, const char $\ast$format\+String=0)
+\item 
+void \hyperlink{class_base_meter_ac46f3e2cde5c00a129bb23097d77215d}{add\+Color\+Scale} (\hyperlink{class_double_array}{Double\+Array} color\+Stops, int start\+Pos=-\/0x7fffffff, int start\+Width=-\/0x7fffffff, int end\+Pos=-\/0x7fffffff, int end\+Width=-\/0x7fffffff, int edge\+Color=-\/1)
+\item 
+void \hyperlink{class_base_meter_ac1509c1c45fab0484842553f81c97365}{add\+Label} (double pos, const char $\ast$label)
+\item 
+const char $\ast$ \hyperlink{class_base_meter_a2cbaf32dcf5bbec04d4e1ec52091692a}{get\+Label} (double i) const
+\item 
+\hyperlink{class_double_array}{Double\+Array} \hyperlink{class_base_meter_aaab196f6d5ca6712f2486cb07277269c}{get\+Ticks} () const
+\item 
+\hyperlink{class_text_box}{Text\+Box} $\ast$ \hyperlink{class_base_meter_af491dea34df9191d9d78abeb0a97172e}{set\+Label\+Style} (const char $\ast$font=\char`\"{}bold\char`\"{}, double font\+Size=-\/1, int font\+Color=\hyperlink{namespace_chart_abee0d882fdc9ad0b001245ad9fc64011a879e14f2f5024caccc047374342321ef}{Chart\+::\+Text\+Color}, double font\+Angle=0)
+\item 
+void \hyperlink{class_base_meter_ace5fe7e4565e651924666b02ae69da65}{set\+Label\+Pos} (bool label\+Inside, int label\+Offset=0)
+\item 
+void \hyperlink{class_base_meter_a1e93a1c74681f4fd32b93e068913efb7}{set\+Label\+Format} (const char $\ast$main\+Label\+Format)
+\item 
+void \hyperlink{class_base_meter_afc722de87aa05068cf28bce77c5a0d96}{set\+Tick\+Length} (int major\+Len, int minor\+Len=-\/0x7fffffff, int micro\+Len=-\/0x7fffffff)
+\item 
+void \hyperlink{class_base_meter_a356cadb2071ff42164974e5809840f5f}{set\+Line\+Width} (int axis\+Width, int major\+Tick\+Width=1, int minor\+Tick\+Width=1, int micro\+Tick\+Width=1)
+\item 
+void \hyperlink{class_base_meter_ab84e7d42596803b75cd15bd721ae96f1}{set\+Meter\+Colors} (int axis\+Color, int label\+Color=-\/1, int tick\+Color=-\/1)
+\item 
+int \hyperlink{class_base_meter_af6703e71691837360f4f3d408730c7d7}{get\+Coor} (double v) const
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 2910 of file chartdir.\+h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_base_meter_a2e8ea1110428a27c5e10cb859a573c9e}\label{class_base_meter_a2e8ea1110428a27c5e10cb859a573c9e}} 
+\index{Base\+Meter@{Base\+Meter}!Base\+Meter@{Base\+Meter}}
+\index{Base\+Meter@{Base\+Meter}!Base\+Meter@{Base\+Meter}}
+\subsubsection{\texorpdfstring{Base\+Meter()}{BaseMeter()}}
+{\footnotesize\ttfamily Base\+Meter\+::\+Base\+Meter (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 2920 of file chartdir.\+h.
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_base_meter_ac46f3e2cde5c00a129bb23097d77215d}\label{class_base_meter_ac46f3e2cde5c00a129bb23097d77215d}} 
+\index{Base\+Meter@{Base\+Meter}!add\+Color\+Scale@{add\+Color\+Scale}}
+\index{add\+Color\+Scale@{add\+Color\+Scale}!Base\+Meter@{Base\+Meter}}
+\subsubsection{\texorpdfstring{add\+Color\+Scale()}{addColorScale()}}
+{\footnotesize\ttfamily void Base\+Meter\+::add\+Color\+Scale (\begin{DoxyParamCaption}\item[{\hyperlink{class_double_array}{Double\+Array}}]{color\+Stops,  }\item[{int}]{start\+Pos = {\ttfamily -\/0x7fffffff},  }\item[{int}]{start\+Width = {\ttfamily -\/0x7fffffff},  }\item[{int}]{end\+Pos = {\ttfamily -\/0x7fffffff},  }\item[{int}]{end\+Width = {\ttfamily -\/0x7fffffff},  }\item[{int}]{edge\+Color = {\ttfamily -\/1} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 2933 of file chartdir.\+h.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_base_meter_ac46f3e2cde5c00a129bb23097d77215d_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_base_meter_ac1509c1c45fab0484842553f81c97365}\label{class_base_meter_ac1509c1c45fab0484842553f81c97365}} 
+\index{Base\+Meter@{Base\+Meter}!add\+Label@{add\+Label}}
+\index{add\+Label@{add\+Label}!Base\+Meter@{Base\+Meter}}
+\subsubsection{\texorpdfstring{add\+Label()}{addLabel()}}
+{\footnotesize\ttfamily void Base\+Meter\+::add\+Label (\begin{DoxyParamCaption}\item[{double}]{pos,  }\item[{const char $\ast$}]{label }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 2936 of file chartdir.\+h.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=341pt]{class_base_meter_ac1509c1c45fab0484842553f81c97365_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_base_meter_afa1ed46d9fd3dfc852d170338929795f}\label{class_base_meter_afa1ed46d9fd3dfc852d170338929795f}} 
+\index{Base\+Meter@{Base\+Meter}!add\+Pointer@{add\+Pointer}}
+\index{add\+Pointer@{add\+Pointer}!Base\+Meter@{Base\+Meter}}
+\subsubsection{\texorpdfstring{add\+Pointer()}{addPointer()}}
+{\footnotesize\ttfamily \hyperlink{class_meter_pointer}{Meter\+Pointer}$\ast$ Base\+Meter\+::add\+Pointer (\begin{DoxyParamCaption}\item[{double}]{value,  }\item[{int}]{fill\+Color = {\ttfamily \hyperlink{namespace_chart_abee0d882fdc9ad0b001245ad9fc64011a04817a359476e87a5c572a7a69cdaaec}{Chart\+::\+Line\+Color}},  }\item[{int}]{edge\+Color = {\ttfamily -\/1} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 2923 of file chartdir.\+h.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_base_meter_afa1ed46d9fd3dfc852d170338929795f_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_base_meter_af6703e71691837360f4f3d408730c7d7}\label{class_base_meter_af6703e71691837360f4f3d408730c7d7}} 
+\index{Base\+Meter@{Base\+Meter}!get\+Coor@{get\+Coor}}
+\index{get\+Coor@{get\+Coor}!Base\+Meter@{Base\+Meter}}
+\subsubsection{\texorpdfstring{get\+Coor()}{getCoor()}}
+{\footnotesize\ttfamily int Base\+Meter\+::get\+Coor (\begin{DoxyParamCaption}\item[{double}]{v }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 2952 of file chartdir.\+h.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=331pt]{class_base_meter_af6703e71691837360f4f3d408730c7d7_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_base_meter_a2cbaf32dcf5bbec04d4e1ec52091692a}\label{class_base_meter_a2cbaf32dcf5bbec04d4e1ec52091692a}} 
+\index{Base\+Meter@{Base\+Meter}!get\+Label@{get\+Label}}
+\index{get\+Label@{get\+Label}!Base\+Meter@{Base\+Meter}}
+\subsubsection{\texorpdfstring{get\+Label()}{getLabel()}}
+{\footnotesize\ttfamily const char$\ast$ Base\+Meter\+::get\+Label (\begin{DoxyParamCaption}\item[{double}]{i }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 2937 of file chartdir.\+h.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=336pt]{class_base_meter_a2cbaf32dcf5bbec04d4e1ec52091692a_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_base_meter_aaab196f6d5ca6712f2486cb07277269c}\label{class_base_meter_aaab196f6d5ca6712f2486cb07277269c}} 
+\index{Base\+Meter@{Base\+Meter}!get\+Ticks@{get\+Ticks}}
+\index{get\+Ticks@{get\+Ticks}!Base\+Meter@{Base\+Meter}}
+\subsubsection{\texorpdfstring{get\+Ticks()}{getTicks()}}
+{\footnotesize\ttfamily \hyperlink{class_double_array}{Double\+Array} Base\+Meter\+::get\+Ticks (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 2938 of file chartdir.\+h.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=337pt]{class_base_meter_aaab196f6d5ca6712f2486cb07277269c_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_base_meter_a117c04249783d7acb72ed87dfa7ac92c}\label{class_base_meter_a117c04249783d7acb72ed87dfa7ac92c}} 
+\index{Base\+Meter@{Base\+Meter}!init@{init}}
+\index{init@{init}!Base\+Meter@{Base\+Meter}}
+\subsubsection{\texorpdfstring{init()}{init()}}
+{\footnotesize\ttfamily void Base\+Meter\+::init (\begin{DoxyParamCaption}\item[{Base\+Meter\+Internal $\ast$}]{\+\_\+ptr }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 2921 of file chartdir.\+h.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=315pt]{class_base_meter_a117c04249783d7acb72ed87dfa7ac92c_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_base_meter_a1e93a1c74681f4fd32b93e068913efb7}\label{class_base_meter_a1e93a1c74681f4fd32b93e068913efb7}} 
+\index{Base\+Meter@{Base\+Meter}!set\+Label\+Format@{set\+Label\+Format}}
+\index{set\+Label\+Format@{set\+Label\+Format}!Base\+Meter@{Base\+Meter}}
+\subsubsection{\texorpdfstring{set\+Label\+Format()}{setLabelFormat()}}
+{\footnotesize\ttfamily void Base\+Meter\+::set\+Label\+Format (\begin{DoxyParamCaption}\item[{const char $\ast$}]{main\+Label\+Format }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 2944 of file chartdir.\+h.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_base_meter_a1e93a1c74681f4fd32b93e068913efb7_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_base_meter_ace5fe7e4565e651924666b02ae69da65}\label{class_base_meter_ace5fe7e4565e651924666b02ae69da65}} 
+\index{Base\+Meter@{Base\+Meter}!set\+Label\+Pos@{set\+Label\+Pos}}
+\index{set\+Label\+Pos@{set\+Label\+Pos}!Base\+Meter@{Base\+Meter}}
+\subsubsection{\texorpdfstring{set\+Label\+Pos()}{setLabelPos()}}
+{\footnotesize\ttfamily void Base\+Meter\+::set\+Label\+Pos (\begin{DoxyParamCaption}\item[{bool}]{label\+Inside,  }\item[{int}]{label\+Offset = {\ttfamily 0} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 2943 of file chartdir.\+h.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_base_meter_ace5fe7e4565e651924666b02ae69da65_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_base_meter_af491dea34df9191d9d78abeb0a97172e}\label{class_base_meter_af491dea34df9191d9d78abeb0a97172e}} 
+\index{Base\+Meter@{Base\+Meter}!set\+Label\+Style@{set\+Label\+Style}}
+\index{set\+Label\+Style@{set\+Label\+Style}!Base\+Meter@{Base\+Meter}}
+\subsubsection{\texorpdfstring{set\+Label\+Style()}{setLabelStyle()}}
+{\footnotesize\ttfamily \hyperlink{class_text_box}{Text\+Box}$\ast$ Base\+Meter\+::set\+Label\+Style (\begin{DoxyParamCaption}\item[{const char $\ast$}]{font = {\ttfamily \char`\"{}bold\char`\"{}},  }\item[{double}]{font\+Size = {\ttfamily -\/1},  }\item[{int}]{font\+Color = {\ttfamily \hyperlink{namespace_chart_abee0d882fdc9ad0b001245ad9fc64011a879e14f2f5024caccc047374342321ef}{Chart\+::\+Text\+Color}},  }\item[{double}]{font\+Angle = {\ttfamily 0} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 2941 of file chartdir.\+h.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_base_meter_af491dea34df9191d9d78abeb0a97172e_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_base_meter_a356cadb2071ff42164974e5809840f5f}\label{class_base_meter_a356cadb2071ff42164974e5809840f5f}} 
+\index{Base\+Meter@{Base\+Meter}!set\+Line\+Width@{set\+Line\+Width}}
+\index{set\+Line\+Width@{set\+Line\+Width}!Base\+Meter@{Base\+Meter}}
+\subsubsection{\texorpdfstring{set\+Line\+Width()}{setLineWidth()}}
+{\footnotesize\ttfamily void Base\+Meter\+::set\+Line\+Width (\begin{DoxyParamCaption}\item[{int}]{axis\+Width,  }\item[{int}]{major\+Tick\+Width = {\ttfamily 1},  }\item[{int}]{minor\+Tick\+Width = {\ttfamily 1},  }\item[{int}]{micro\+Tick\+Width = {\ttfamily 1} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 2947 of file chartdir.\+h.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_base_meter_a356cadb2071ff42164974e5809840f5f_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_base_meter_ab84e7d42596803b75cd15bd721ae96f1}\label{class_base_meter_ab84e7d42596803b75cd15bd721ae96f1}} 
+\index{Base\+Meter@{Base\+Meter}!set\+Meter\+Colors@{set\+Meter\+Colors}}
+\index{set\+Meter\+Colors@{set\+Meter\+Colors}!Base\+Meter@{Base\+Meter}}
+\subsubsection{\texorpdfstring{set\+Meter\+Colors()}{setMeterColors()}}
+{\footnotesize\ttfamily void Base\+Meter\+::set\+Meter\+Colors (\begin{DoxyParamCaption}\item[{int}]{axis\+Color,  }\item[{int}]{label\+Color = {\ttfamily -\/1},  }\item[{int}]{tick\+Color = {\ttfamily -\/1} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 2949 of file chartdir.\+h.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_base_meter_ab84e7d42596803b75cd15bd721ae96f1_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_base_meter_a60d236ad098cbca9b689bd7b42b35bd2}\label{class_base_meter_a60d236ad098cbca9b689bd7b42b35bd2}} 
+\index{Base\+Meter@{Base\+Meter}!set\+Scale@{set\+Scale}}
+\index{set\+Scale@{set\+Scale}!Base\+Meter@{Base\+Meter}}
+\subsubsection{\texorpdfstring{set\+Scale()}{setScale()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily void Base\+Meter\+::set\+Scale (\begin{DoxyParamCaption}\item[{double}]{lower\+Limit,  }\item[{double}]{upper\+Limit,  }\item[{double}]{major\+Tick\+Inc = {\ttfamily 0},  }\item[{double}]{minor\+Tick\+Inc = {\ttfamily 0},  }\item[{double}]{micro\+Tick\+Inc = {\ttfamily 0} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 2926 of file chartdir.\+h.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=339pt]{class_base_meter_a60d236ad098cbca9b689bd7b42b35bd2_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_base_meter_a8b3b33dbe680f892ba3d860b579e727f}\label{class_base_meter_a8b3b33dbe680f892ba3d860b579e727f}} 
+\index{Base\+Meter@{Base\+Meter}!set\+Scale@{set\+Scale}}
+\index{set\+Scale@{set\+Scale}!Base\+Meter@{Base\+Meter}}
+\subsubsection{\texorpdfstring{set\+Scale()}{setScale()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily void Base\+Meter\+::set\+Scale (\begin{DoxyParamCaption}\item[{double}]{lower\+Limit,  }\item[{double}]{upper\+Limit,  }\item[{\hyperlink{class_string_array}{String\+Array}}]{labels }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 2928 of file chartdir.\+h.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=344pt]{class_base_meter_a8b3b33dbe680f892ba3d860b579e727f_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_base_meter_a5bb7919cb0a67c0b578620644d3dc4ae}\label{class_base_meter_a5bb7919cb0a67c0b578620644d3dc4ae}} 
+\index{Base\+Meter@{Base\+Meter}!set\+Scale@{set\+Scale}}
+\index{set\+Scale@{set\+Scale}!Base\+Meter@{Base\+Meter}}
+\subsubsection{\texorpdfstring{set\+Scale()}{setScale()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily void Base\+Meter\+::set\+Scale (\begin{DoxyParamCaption}\item[{double}]{lower\+Limit,  }\item[{double}]{upper\+Limit,  }\item[{\hyperlink{class_double_array}{Double\+Array}}]{labels,  }\item[{const char $\ast$}]{format\+String = {\ttfamily 0} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 2930 of file chartdir.\+h.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=344pt]{class_base_meter_a5bb7919cb0a67c0b578620644d3dc4ae_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_base_meter_afc722de87aa05068cf28bce77c5a0d96}\label{class_base_meter_afc722de87aa05068cf28bce77c5a0d96}} 
+\index{Base\+Meter@{Base\+Meter}!set\+Tick\+Length@{set\+Tick\+Length}}
+\index{set\+Tick\+Length@{set\+Tick\+Length}!Base\+Meter@{Base\+Meter}}
+\subsubsection{\texorpdfstring{set\+Tick\+Length()}{setTickLength()}}
+{\footnotesize\ttfamily void Base\+Meter\+::set\+Tick\+Length (\begin{DoxyParamCaption}\item[{int}]{major\+Len,  }\item[{int}]{minor\+Len = {\ttfamily -\/0x7fffffff},  }\item[{int}]{micro\+Len = {\ttfamily -\/0x7fffffff} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 2945 of file chartdir.\+h.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_base_meter_afc722de87aa05068cf28bce77c5a0d96_cgraph}
+\end{center}
+\end{figure}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+include/\hyperlink{chartdir_8h}{chartdir.\+h}\end{DoxyCompactItemize}

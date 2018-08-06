@@ -1,0 +1,9 @@
+<map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
+<area shape="rect" id="node2" href="$class_config_tab_widget.html" title="ConfigTabWidget" alt="" coords="161,5,283,32"/>
+<area shape="rect" id="node3" href="$class_emg_channel.html" title="EmgChannel" alt="" coords="173,56,271,83"/>
+<area shape="rect" id="node4" href="$class_network_tab_widget.html" title="NetworkTabWidget" alt="" coords="155,107,289,133"/>
+<area shape="rect" id="node5" href="$class_parse_run_profile.html" title="ParseRunProfile" alt="" coords="163,157,281,184"/>
+<area shape="rect" id="node6" href="$class_perturbation_tab_widget.html" title="PerturbationTabWidget" alt="" coords="145,208,299,235"/>
+<area shape="rect" id="node7" href="$class_subject_interface_widget.html" title="SubjectInterfaceWidget" alt="" coords="143,259,301,285"/>
+<area shape="rect" id="node8" href="$class_treadmill_automation_db_i_face.html" title="TreadmillAutomationDbIFace" alt="" coords="127,309,317,336"/>
+</map>

@@ -1,0 +1,8 @@
+<map id="FinanceChart::addPlotAreaTitle" name="FinanceChart::addPlotAreaTitle">
+<area shape="rect" id="node2" href="$class_base_chart.html#a2a2016142a7036736cc0c3ffd43a5d80" title="BaseChart::addText" alt="" coords="232,5,371,32"/>
+<area shape="rect" id="node4" href="$class_box.html#a2ec3e1cb522c938cf6927fcb41389bc3" title="Box::setSize" alt="" coords="253,56,350,83"/>
+<area shape="rect" id="node6" href="$class_text_box.html#aaadf6bbde148a221869df43c11a0d623" title="TextBox::setMargin" alt="" coords="233,107,369,133"/>
+<area shape="rect" id="node3" href="$bchartdir_8h.html#aaf12af45b71552716a5f59085b7aa181" title="CBaseChart_addText" alt="" coords="419,5,567,32"/>
+<area shape="rect" id="node5" href="$bchartdir_8h.html#a34b5f73c4287f0194e24822193d6469b" title="CBox_setSize" alt="" coords="439,56,546,83"/>
+<area shape="rect" id="node7" href="$bchartdir_8h.html#a18164b04272d2b29dc48bb7bf4c3b180" title="CTextBox_setMargin" alt="" coords="420,107,565,133"/>
+</map>

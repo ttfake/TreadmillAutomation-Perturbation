@@ -1,0 +1,4 @@
+<map id="SendSetpoints::getInstance" name="SendSetpoints::getInstance">
+<area shape="rect" id="node2" href="$class_perturbation_tab_widget.html#a7a398b91c41f2f94b880909da745f29a" title="PerturbationTabWidget\l::PerturbationTabWidget" alt="" coords="236,5,399,47"/>
+<area shape="rect" id="node3" href="$class_treadmill_automation.html#a6328b65397f5d0553590f363d29ec9b7" title="TreadmillAutomation\l::TreadmillAutomation" alt="" coords="243,71,392,112"/>
+</map>

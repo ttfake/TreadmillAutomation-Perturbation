@@ -1,0 +1,4 @@
+<map id="MccDaqInterface::startChannelScan" name="MccDaqInterface::startChannelScan">
+<area shape="rect" id="node2" href="$class_mcc_daq_discovery.html#a9b2541fefb5156e2412f4e3eb34eed72" title="MccDaqDiscovery::discover\lDaqDevices" alt="" coords="288,5,475,47"/>
+<area shape="rect" id="node3" href="$class_mcc_daq_discovery.html#a658426719d9987f48626708d42397a9e" title="MccDaqDiscovery::selectDevice" alt="" coords="523,13,737,39"/>
+</map>

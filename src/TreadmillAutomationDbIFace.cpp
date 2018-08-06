@@ -370,15 +370,11 @@ void TreadmillAutomationDbIFace::setAccelDecelFromDb()
 }
 
 
-void TreadmillAutomationDbIFace::retrieveRun(int runAddIndex)
+void TreadmillAutomationDbIFace::retrieveRun(int currentRunsRowIndex, int runAddIndex)
 {
-    qDebug() << "Retrieving Run";
-    if(runAddIndex < 0)
-    {
-        runsVectorIndex_ = 0;
-    }
-    
-    if(runsVectorIndex_ < runResults.size() and runsVectorIndex_ >= 0)
+
+    runsVectorIndex_ = currentRunsRowIndex;
+    if(runsVectorIndex_ < runResults.size() && runsVectorIndex_ >= 0)
     {
         qDebug() << "runsVectorIndex_: " << runsVectorIndex_;
         QString type;
@@ -446,7 +442,7 @@ void TreadmillAutomationDbIFace::retrieveRun(int runAddIndex)
         }
         //if(runsVectorIndex_ != 0)
         //{
-        runsVectorIndex_++;
+        //runsVectorIndex_ += runAddIndex;
         //}
     }
 

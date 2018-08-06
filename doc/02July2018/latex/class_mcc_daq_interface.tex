@@ -1,0 +1,565 @@
+\hypertarget{class_mcc_daq_interface}{}\section{Mcc\+Daq\+Interface Class Reference}
+\label{class_mcc_daq_interface}\index{Mcc\+Daq\+Interface@{Mcc\+Daq\+Interface}}
+
+
+{\ttfamily \#include $<$Mcc\+Daq\+Interface.\+h$>$}
+
+
+
+Inheritance diagram for Mcc\+Daq\+Interface\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=172pt]{class_mcc_daq_interface__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Mcc\+Daq\+Interface\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=172pt]{class_mcc_daq_interface__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Slots}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{class_mcc_daq_interface_a5b50adc88a30d405b491cd50926d28ba}{begin\+Data\+Collection} ()
+\item 
+void \hyperlink{class_mcc_daq_interface_a19b0dfb99a23e5b296554d2a16f773b2}{test\+Data\+Collection} ()
+\item 
+void \hyperlink{class_mcc_daq_interface_a43bef970ad375bca8b4c5892346629b6}{set\+Daq\+Button\+Text} (Q\+String daq\+Title\+Text)
+\item 
+void \hyperlink{class_mcc_daq_interface_a45d83d2cf73a5375b7d477e18b672da4}{begin\+Data\+Collection\+On\+Channel} (int ch)
+\end{DoxyCompactItemize}
+\subsection*{Signals}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{class_mcc_daq_interface_a6bd42e5902e34571262f1fe1b1eb987c}{finished} ()
+\item 
+void \hyperlink{class_mcc_daq_interface_aaaf6dfded2d522b1310c7f7dc3171168}{set\+Daq\+Title\+Text} (Q\+String title)
+\item 
+void \hyperlink{class_mcc_daq_interface_a86cd2addd88adddadaccae76d3cf0b22}{update\+Daq\+Data\+Box\+Signal} (double data)
+\item 
+void \hyperlink{class_mcc_daq_interface_ac8075afce0aa1f4fc95a9fba13ac60ef}{update\+Row\+Count} (int m\+Row\+Count)
+\item 
+void \hyperlink{class_mcc_daq_interface_ad055cd5057d78af30c9f97ffef48f6bc}{update\+Col} (int m\+Col\+Count)
+\item 
+void \hyperlink{class_mcc_daq_interface_ac2e329b0d2d52885d1fe96c64df3331a}{get\+Active\+State} (int mchannel)
+\item 
+void \hyperlink{class_mcc_daq_interface_a42ca742cf207cb615c5b7f9a172dcb8b}{get\+Channel\+Type} (int mchannel)
+\item 
+void \hyperlink{class_mcc_daq_interface_a5df873d4cee50cf834fa7e5b3b65cab6}{get\+Gain\+Type} (int mchannel)
+\item 
+void \hyperlink{class_mcc_daq_interface_a3332c6e8afb289d24a23ef0c08596473}{set\+Current\+Channel} (int mchannel)
+\item 
+void \hyperlink{class_mcc_daq_interface_a66f961728aca729d4a93930d695b6cb9}{update\+Emg} ()
+\item 
+void \hyperlink{class_mcc_daq_interface_ac56b39d573200c4fe2f5b5935405fd6f}{update\+Force} (int channel)
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_mcc_daq_interface_a1dc6d2ded354eec0d0a702a8d4639147}{Mcc\+Daq\+Interface} ()
+\item 
+\hyperlink{class_mcc_daq_interface_a97a44a3991abe59439a33b47f2636ae1}{$\sim$\+Mcc\+Daq\+Interface} ()
+\item 
+void \hyperlink{class_mcc_daq_interface_a3036cbabc3a63737a96d0ff1fa9ce449}{start\+Channel\+Scan} (Q\+Menu $\ast$mmenu)
+\item 
+void \hyperlink{class_mcc_daq_interface_a64c1207013b4a2f6782131017658f527}{set\+Daq\+Button} (Q\+Push\+Button $\ast$mdaq\+Button)
+\item 
+void \hyperlink{class_mcc_daq_interface_af4fee75cc1637188c98bd7c1ddc745a2}{data\+Collection\+Setup} ()
+\item 
+void \hyperlink{class_mcc_daq_interface_a82ca01bbe3fcf58de7e4fdfc3d1aa379}{set\+Number\+Of\+Channels} (long chs)
+\item 
+void \hyperlink{class_mcc_daq_interface_a3024b53b897a0e7778fd5c2df7932999}{set\+Current\+Channel\+Active\+State} (bool mactive\+State)
+\item 
+void \hyperlink{class_mcc_daq_interface_a05186e503fb77fcecaf0748960d0d659}{set\+Running\+State} (int running\+State)
+\item 
+void \hyperlink{class_mcc_daq_interface_a02ca77cf28a12bafc03281c9b0792642}{set\+Perturbation\+Trigger} (bool mpert\+Trigger)
+\item 
+void \hyperlink{class_mcc_daq_interface_ae489ccc434b8f12e01cce99f3acb97bc}{set\+Record\+Bool} (bool mrecord\+Bool)
+\item 
+void \hyperlink{class_mcc_daq_interface_aac1bb00fead8900d77ea1fc732f8b7b7}{set\+Daq\+Log\+File\+Name} (Q\+String mfile\+Name)
+\item 
+Q\+Map$<$ int, Q\+Vector$<$ double $>$ $>$ \hyperlink{class_mcc_daq_interface_a2386ad8fa783fdb1dd53e8678ce0e7bb}{get\+Voltage\+Map} ()
+\item 
+Q\+Map$<$ int, Q\+Vector$<$ double $>$ $>$ \hyperlink{class_mcc_daq_interface_ad2609d22e8a5aa8a365c5fb875e82ada}{get\+Force\+Map} ()
+\item 
+void \hyperlink{class_mcc_daq_interface_adbcc5a67d3e2aaef7742883bc58e19a7}{clear\+Tmp\+Voltage\+Map} ()
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+Q\+Map$<$ int, Q\+Vector$<$ double $>$ $>$ \hyperlink{class_mcc_daq_interface_ae1c7212ef6250f2900a21029a8506a3e}{tmp\+Voltage\+Map}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 27 of file Mcc\+Daq\+Interface.\+h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_mcc_daq_interface_a1dc6d2ded354eec0d0a702a8d4639147}\label{class_mcc_daq_interface_a1dc6d2ded354eec0d0a702a8d4639147}} 
+\index{Mcc\+Daq\+Interface@{Mcc\+Daq\+Interface}!Mcc\+Daq\+Interface@{Mcc\+Daq\+Interface}}
+\index{Mcc\+Daq\+Interface@{Mcc\+Daq\+Interface}!Mcc\+Daq\+Interface@{Mcc\+Daq\+Interface}}
+\subsubsection{\texorpdfstring{Mcc\+Daq\+Interface()}{MccDaqInterface()}}
+{\footnotesize\ttfamily Mcc\+Daq\+Interface\+::\+Mcc\+Daq\+Interface (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 4 of file Mcc\+Daq\+Interface.\+cpp.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_mcc_daq_interface_a1dc6d2ded354eec0d0a702a8d4639147_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_mcc_daq_interface_a97a44a3991abe59439a33b47f2636ae1}\label{class_mcc_daq_interface_a97a44a3991abe59439a33b47f2636ae1}} 
+\index{Mcc\+Daq\+Interface@{Mcc\+Daq\+Interface}!````~Mcc\+Daq\+Interface@{$\sim$\+Mcc\+Daq\+Interface}}
+\index{````~Mcc\+Daq\+Interface@{$\sim$\+Mcc\+Daq\+Interface}!Mcc\+Daq\+Interface@{Mcc\+Daq\+Interface}}
+\subsubsection{\texorpdfstring{$\sim$\+Mcc\+Daq\+Interface()}{~MccDaqInterface()}}
+{\footnotesize\ttfamily Mcc\+Daq\+Interface\+::$\sim$\+Mcc\+Daq\+Interface (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 54 of file Mcc\+Daq\+Interface.\+cpp.
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_mcc_daq_interface_a5b50adc88a30d405b491cd50926d28ba}\label{class_mcc_daq_interface_a5b50adc88a30d405b491cd50926d28ba}} 
+\index{Mcc\+Daq\+Interface@{Mcc\+Daq\+Interface}!begin\+Data\+Collection@{begin\+Data\+Collection}}
+\index{begin\+Data\+Collection@{begin\+Data\+Collection}!Mcc\+Daq\+Interface@{Mcc\+Daq\+Interface}}
+\subsubsection{\texorpdfstring{begin\+Data\+Collection}{beginDataCollection}}
+{\footnotesize\ttfamily void Mcc\+Daq\+Interface\+::begin\+Data\+Collection (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
+
+
+
+Definition at line 104 of file Mcc\+Daq\+Interface.\+cpp.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_mcc_daq_interface_a5b50adc88a30d405b491cd50926d28ba_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_mcc_daq_interface_a45d83d2cf73a5375b7d477e18b672da4}\label{class_mcc_daq_interface_a45d83d2cf73a5375b7d477e18b672da4}} 
+\index{Mcc\+Daq\+Interface@{Mcc\+Daq\+Interface}!begin\+Data\+Collection\+On\+Channel@{begin\+Data\+Collection\+On\+Channel}}
+\index{begin\+Data\+Collection\+On\+Channel@{begin\+Data\+Collection\+On\+Channel}!Mcc\+Daq\+Interface@{Mcc\+Daq\+Interface}}
+\subsubsection{\texorpdfstring{begin\+Data\+Collection\+On\+Channel}{beginDataCollectionOnChannel}}
+{\footnotesize\ttfamily void Mcc\+Daq\+Interface\+::begin\+Data\+Collection\+On\+Channel (\begin{DoxyParamCaption}\item[{int}]{ch }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
+
+
+
+Definition at line 59 of file Mcc\+Daq\+Interface.\+cpp.
+
+\mbox{\Hypertarget{class_mcc_daq_interface_adbcc5a67d3e2aaef7742883bc58e19a7}\label{class_mcc_daq_interface_adbcc5a67d3e2aaef7742883bc58e19a7}} 
+\index{Mcc\+Daq\+Interface@{Mcc\+Daq\+Interface}!clear\+Tmp\+Voltage\+Map@{clear\+Tmp\+Voltage\+Map}}
+\index{clear\+Tmp\+Voltage\+Map@{clear\+Tmp\+Voltage\+Map}!Mcc\+Daq\+Interface@{Mcc\+Daq\+Interface}}
+\subsubsection{\texorpdfstring{clear\+Tmp\+Voltage\+Map()}{clearTmpVoltageMap()}}
+{\footnotesize\ttfamily void Mcc\+Daq\+Interface\+::clear\+Tmp\+Voltage\+Map (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 424 of file Mcc\+Daq\+Interface.\+cpp.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_mcc_daq_interface_adbcc5a67d3e2aaef7742883bc58e19a7_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_mcc_daq_interface_af4fee75cc1637188c98bd7c1ddc745a2}\label{class_mcc_daq_interface_af4fee75cc1637188c98bd7c1ddc745a2}} 
+\index{Mcc\+Daq\+Interface@{Mcc\+Daq\+Interface}!data\+Collection\+Setup@{data\+Collection\+Setup}}
+\index{data\+Collection\+Setup@{data\+Collection\+Setup}!Mcc\+Daq\+Interface@{Mcc\+Daq\+Interface}}
+\subsubsection{\texorpdfstring{data\+Collection\+Setup()}{dataCollectionSetup()}}
+{\footnotesize\ttfamily void Mcc\+Daq\+Interface\+::data\+Collection\+Setup (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 382 of file Mcc\+Daq\+Interface.\+cpp.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_mcc_daq_interface_af4fee75cc1637188c98bd7c1ddc745a2_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_mcc_daq_interface_a6bd42e5902e34571262f1fe1b1eb987c}\label{class_mcc_daq_interface_a6bd42e5902e34571262f1fe1b1eb987c}} 
+\index{Mcc\+Daq\+Interface@{Mcc\+Daq\+Interface}!finished@{finished}}
+\index{finished@{finished}!Mcc\+Daq\+Interface@{Mcc\+Daq\+Interface}}
+\subsubsection{\texorpdfstring{finished}{finished}}
+{\footnotesize\ttfamily void Mcc\+Daq\+Interface\+::finished (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
+
+
+
+Definition at line 236 of file moc\+\_\+\+Mcc\+Daq\+Interface.\+cpp.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_mcc_daq_interface_a6bd42e5902e34571262f1fe1b1eb987c_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_mcc_daq_interface_ac2e329b0d2d52885d1fe96c64df3331a}\label{class_mcc_daq_interface_ac2e329b0d2d52885d1fe96c64df3331a}} 
+\index{Mcc\+Daq\+Interface@{Mcc\+Daq\+Interface}!get\+Active\+State@{get\+Active\+State}}
+\index{get\+Active\+State@{get\+Active\+State}!Mcc\+Daq\+Interface@{Mcc\+Daq\+Interface}}
+\subsubsection{\texorpdfstring{get\+Active\+State}{getActiveState}}
+{\footnotesize\ttfamily void Mcc\+Daq\+Interface\+::get\+Active\+State (\begin{DoxyParamCaption}\item[{int}]{mchannel }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
+
+
+
+Definition at line 270 of file moc\+\_\+\+Mcc\+Daq\+Interface.\+cpp.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_mcc_daq_interface_ac2e329b0d2d52885d1fe96c64df3331a_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_mcc_daq_interface_a42ca742cf207cb615c5b7f9a172dcb8b}\label{class_mcc_daq_interface_a42ca742cf207cb615c5b7f9a172dcb8b}} 
+\index{Mcc\+Daq\+Interface@{Mcc\+Daq\+Interface}!get\+Channel\+Type@{get\+Channel\+Type}}
+\index{get\+Channel\+Type@{get\+Channel\+Type}!Mcc\+Daq\+Interface@{Mcc\+Daq\+Interface}}
+\subsubsection{\texorpdfstring{get\+Channel\+Type}{getChannelType}}
+{\footnotesize\ttfamily void Mcc\+Daq\+Interface\+::get\+Channel\+Type (\begin{DoxyParamCaption}\item[{int}]{mchannel }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
+
+
+
+Definition at line 277 of file moc\+\_\+\+Mcc\+Daq\+Interface.\+cpp.
+
+\mbox{\Hypertarget{class_mcc_daq_interface_ad2609d22e8a5aa8a365c5fb875e82ada}\label{class_mcc_daq_interface_ad2609d22e8a5aa8a365c5fb875e82ada}} 
+\index{Mcc\+Daq\+Interface@{Mcc\+Daq\+Interface}!get\+Force\+Map@{get\+Force\+Map}}
+\index{get\+Force\+Map@{get\+Force\+Map}!Mcc\+Daq\+Interface@{Mcc\+Daq\+Interface}}
+\subsubsection{\texorpdfstring{get\+Force\+Map()}{getForceMap()}}
+{\footnotesize\ttfamily Q\+Map$<$int,Q\+Vector$<$double$>$ $>$ Mcc\+Daq\+Interface\+::get\+Force\+Map (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_mcc_daq_interface_a5df873d4cee50cf834fa7e5b3b65cab6}\label{class_mcc_daq_interface_a5df873d4cee50cf834fa7e5b3b65cab6}} 
+\index{Mcc\+Daq\+Interface@{Mcc\+Daq\+Interface}!get\+Gain\+Type@{get\+Gain\+Type}}
+\index{get\+Gain\+Type@{get\+Gain\+Type}!Mcc\+Daq\+Interface@{Mcc\+Daq\+Interface}}
+\subsubsection{\texorpdfstring{get\+Gain\+Type}{getGainType}}
+{\footnotesize\ttfamily void Mcc\+Daq\+Interface\+::get\+Gain\+Type (\begin{DoxyParamCaption}\item[{int}]{mchannel }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
+
+
+
+Definition at line 284 of file moc\+\_\+\+Mcc\+Daq\+Interface.\+cpp.
+
+\mbox{\Hypertarget{class_mcc_daq_interface_a2386ad8fa783fdb1dd53e8678ce0e7bb}\label{class_mcc_daq_interface_a2386ad8fa783fdb1dd53e8678ce0e7bb}} 
+\index{Mcc\+Daq\+Interface@{Mcc\+Daq\+Interface}!get\+Voltage\+Map@{get\+Voltage\+Map}}
+\index{get\+Voltage\+Map@{get\+Voltage\+Map}!Mcc\+Daq\+Interface@{Mcc\+Daq\+Interface}}
+\subsubsection{\texorpdfstring{get\+Voltage\+Map()}{getVoltageMap()}}
+{\footnotesize\ttfamily Q\+Map$<$ int, Q\+Vector$<$ double $>$ $>$ Mcc\+Daq\+Interface\+::get\+Voltage\+Map (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 418 of file Mcc\+Daq\+Interface.\+cpp.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_mcc_daq_interface_a2386ad8fa783fdb1dd53e8678ce0e7bb_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_mcc_daq_interface_a3332c6e8afb289d24a23ef0c08596473}\label{class_mcc_daq_interface_a3332c6e8afb289d24a23ef0c08596473}} 
+\index{Mcc\+Daq\+Interface@{Mcc\+Daq\+Interface}!set\+Current\+Channel@{set\+Current\+Channel}}
+\index{set\+Current\+Channel@{set\+Current\+Channel}!Mcc\+Daq\+Interface@{Mcc\+Daq\+Interface}}
+\subsubsection{\texorpdfstring{set\+Current\+Channel}{setCurrentChannel}}
+{\footnotesize\ttfamily void Mcc\+Daq\+Interface\+::set\+Current\+Channel (\begin{DoxyParamCaption}\item[{int}]{mchannel }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
+
+
+
+Definition at line 291 of file moc\+\_\+\+Mcc\+Daq\+Interface.\+cpp.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_mcc_daq_interface_a3332c6e8afb289d24a23ef0c08596473_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_mcc_daq_interface_a3024b53b897a0e7778fd5c2df7932999}\label{class_mcc_daq_interface_a3024b53b897a0e7778fd5c2df7932999}} 
+\index{Mcc\+Daq\+Interface@{Mcc\+Daq\+Interface}!set\+Current\+Channel\+Active\+State@{set\+Current\+Channel\+Active\+State}}
+\index{set\+Current\+Channel\+Active\+State@{set\+Current\+Channel\+Active\+State}!Mcc\+Daq\+Interface@{Mcc\+Daq\+Interface}}
+\subsubsection{\texorpdfstring{set\+Current\+Channel\+Active\+State()}{setCurrentChannelActiveState()}}
+{\footnotesize\ttfamily void Mcc\+Daq\+Interface\+::set\+Current\+Channel\+Active\+State (\begin{DoxyParamCaption}\item[{bool}]{mactive\+State }\end{DoxyParamCaption})}
+
+
+
+Definition at line 393 of file Mcc\+Daq\+Interface.\+cpp.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_mcc_daq_interface_a3024b53b897a0e7778fd5c2df7932999_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_mcc_daq_interface_a64c1207013b4a2f6782131017658f527}\label{class_mcc_daq_interface_a64c1207013b4a2f6782131017658f527}} 
+\index{Mcc\+Daq\+Interface@{Mcc\+Daq\+Interface}!set\+Daq\+Button@{set\+Daq\+Button}}
+\index{set\+Daq\+Button@{set\+Daq\+Button}!Mcc\+Daq\+Interface@{Mcc\+Daq\+Interface}}
+\subsubsection{\texorpdfstring{set\+Daq\+Button()}{setDaqButton()}}
+{\footnotesize\ttfamily void Mcc\+Daq\+Interface\+::set\+Daq\+Button (\begin{DoxyParamCaption}\item[{Q\+Push\+Button $\ast$}]{mdaq\+Button }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_mcc_daq_interface_a43bef970ad375bca8b4c5892346629b6}\label{class_mcc_daq_interface_a43bef970ad375bca8b4c5892346629b6}} 
+\index{Mcc\+Daq\+Interface@{Mcc\+Daq\+Interface}!set\+Daq\+Button\+Text@{set\+Daq\+Button\+Text}}
+\index{set\+Daq\+Button\+Text@{set\+Daq\+Button\+Text}!Mcc\+Daq\+Interface@{Mcc\+Daq\+Interface}}
+\subsubsection{\texorpdfstring{set\+Daq\+Button\+Text}{setDaqButtonText}}
+{\footnotesize\ttfamily void Mcc\+Daq\+Interface\+::set\+Daq\+Button\+Text (\begin{DoxyParamCaption}\item[{Q\+String}]{daq\+Title\+Text }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
+
+
+
+Definition at line 366 of file Mcc\+Daq\+Interface.\+cpp.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_mcc_daq_interface_a43bef970ad375bca8b4c5892346629b6_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_mcc_daq_interface_aac1bb00fead8900d77ea1fc732f8b7b7}\label{class_mcc_daq_interface_aac1bb00fead8900d77ea1fc732f8b7b7}} 
+\index{Mcc\+Daq\+Interface@{Mcc\+Daq\+Interface}!set\+Daq\+Log\+File\+Name@{set\+Daq\+Log\+File\+Name}}
+\index{set\+Daq\+Log\+File\+Name@{set\+Daq\+Log\+File\+Name}!Mcc\+Daq\+Interface@{Mcc\+Daq\+Interface}}
+\subsubsection{\texorpdfstring{set\+Daq\+Log\+File\+Name()}{setDaqLogFileName()}}
+{\footnotesize\ttfamily void Mcc\+Daq\+Interface\+::set\+Daq\+Log\+File\+Name (\begin{DoxyParamCaption}\item[{Q\+String}]{mfile\+Name }\end{DoxyParamCaption})}
+
+
+
+Definition at line 413 of file Mcc\+Daq\+Interface.\+cpp.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_mcc_daq_interface_aac1bb00fead8900d77ea1fc732f8b7b7_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_mcc_daq_interface_aaaf6dfded2d522b1310c7f7dc3171168}\label{class_mcc_daq_interface_aaaf6dfded2d522b1310c7f7dc3171168}} 
+\index{Mcc\+Daq\+Interface@{Mcc\+Daq\+Interface}!set\+Daq\+Title\+Text@{set\+Daq\+Title\+Text}}
+\index{set\+Daq\+Title\+Text@{set\+Daq\+Title\+Text}!Mcc\+Daq\+Interface@{Mcc\+Daq\+Interface}}
+\subsubsection{\texorpdfstring{set\+Daq\+Title\+Text}{setDaqTitleText}}
+{\footnotesize\ttfamily void Mcc\+Daq\+Interface\+::set\+Daq\+Title\+Text (\begin{DoxyParamCaption}\item[{Q\+String}]{title }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
+
+
+
+Definition at line 242 of file moc\+\_\+\+Mcc\+Daq\+Interface.\+cpp.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_mcc_daq_interface_aaaf6dfded2d522b1310c7f7dc3171168_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_mcc_daq_interface_a82ca01bbe3fcf58de7e4fdfc3d1aa379}\label{class_mcc_daq_interface_a82ca01bbe3fcf58de7e4fdfc3d1aa379}} 
+\index{Mcc\+Daq\+Interface@{Mcc\+Daq\+Interface}!set\+Number\+Of\+Channels@{set\+Number\+Of\+Channels}}
+\index{set\+Number\+Of\+Channels@{set\+Number\+Of\+Channels}!Mcc\+Daq\+Interface@{Mcc\+Daq\+Interface}}
+\subsubsection{\texorpdfstring{set\+Number\+Of\+Channels()}{setNumberOfChannels()}}
+{\footnotesize\ttfamily void Mcc\+Daq\+Interface\+::set\+Number\+Of\+Channels (\begin{DoxyParamCaption}\item[{long}]{chs }\end{DoxyParamCaption})}
+
+
+
+Definition at line 387 of file Mcc\+Daq\+Interface.\+cpp.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_mcc_daq_interface_a82ca01bbe3fcf58de7e4fdfc3d1aa379_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_mcc_daq_interface_a02ca77cf28a12bafc03281c9b0792642}\label{class_mcc_daq_interface_a02ca77cf28a12bafc03281c9b0792642}} 
+\index{Mcc\+Daq\+Interface@{Mcc\+Daq\+Interface}!set\+Perturbation\+Trigger@{set\+Perturbation\+Trigger}}
+\index{set\+Perturbation\+Trigger@{set\+Perturbation\+Trigger}!Mcc\+Daq\+Interface@{Mcc\+Daq\+Interface}}
+\subsubsection{\texorpdfstring{set\+Perturbation\+Trigger()}{setPerturbationTrigger()}}
+{\footnotesize\ttfamily void Mcc\+Daq\+Interface\+::set\+Perturbation\+Trigger (\begin{DoxyParamCaption}\item[{bool}]{mpert\+Trigger }\end{DoxyParamCaption})}
+
+
+
+Definition at line 403 of file Mcc\+Daq\+Interface.\+cpp.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_mcc_daq_interface_a02ca77cf28a12bafc03281c9b0792642_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_mcc_daq_interface_ae489ccc434b8f12e01cce99f3acb97bc}\label{class_mcc_daq_interface_ae489ccc434b8f12e01cce99f3acb97bc}} 
+\index{Mcc\+Daq\+Interface@{Mcc\+Daq\+Interface}!set\+Record\+Bool@{set\+Record\+Bool}}
+\index{set\+Record\+Bool@{set\+Record\+Bool}!Mcc\+Daq\+Interface@{Mcc\+Daq\+Interface}}
+\subsubsection{\texorpdfstring{set\+Record\+Bool()}{setRecordBool()}}
+{\footnotesize\ttfamily void Mcc\+Daq\+Interface\+::set\+Record\+Bool (\begin{DoxyParamCaption}\item[{bool}]{mrecord\+Bool }\end{DoxyParamCaption})}
+
+
+
+Definition at line 408 of file Mcc\+Daq\+Interface.\+cpp.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_mcc_daq_interface_ae489ccc434b8f12e01cce99f3acb97bc_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_mcc_daq_interface_a05186e503fb77fcecaf0748960d0d659}\label{class_mcc_daq_interface_a05186e503fb77fcecaf0748960d0d659}} 
+\index{Mcc\+Daq\+Interface@{Mcc\+Daq\+Interface}!set\+Running\+State@{set\+Running\+State}}
+\index{set\+Running\+State@{set\+Running\+State}!Mcc\+Daq\+Interface@{Mcc\+Daq\+Interface}}
+\subsubsection{\texorpdfstring{set\+Running\+State()}{setRunningState()}}
+{\footnotesize\ttfamily void Mcc\+Daq\+Interface\+::set\+Running\+State (\begin{DoxyParamCaption}\item[{int}]{running\+State }\end{DoxyParamCaption})}
+
+
+
+Definition at line 398 of file Mcc\+Daq\+Interface.\+cpp.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_mcc_daq_interface_a05186e503fb77fcecaf0748960d0d659_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_mcc_daq_interface_a3036cbabc3a63737a96d0ff1fa9ce449}\label{class_mcc_daq_interface_a3036cbabc3a63737a96d0ff1fa9ce449}} 
+\index{Mcc\+Daq\+Interface@{Mcc\+Daq\+Interface}!start\+Channel\+Scan@{start\+Channel\+Scan}}
+\index{start\+Channel\+Scan@{start\+Channel\+Scan}!Mcc\+Daq\+Interface@{Mcc\+Daq\+Interface}}
+\subsubsection{\texorpdfstring{start\+Channel\+Scan()}{startChannelScan()}}
+{\footnotesize\ttfamily void Mcc\+Daq\+Interface\+::start\+Channel\+Scan (\begin{DoxyParamCaption}\item[{Q\+Menu $\ast$}]{mmenu }\end{DoxyParamCaption})}
+
+
+
+Definition at line 377 of file Mcc\+Daq\+Interface.\+cpp.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_mcc_daq_interface_a3036cbabc3a63737a96d0ff1fa9ce449_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_mcc_daq_interface_a3036cbabc3a63737a96d0ff1fa9ce449_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_mcc_daq_interface_a19b0dfb99a23e5b296554d2a16f773b2}\label{class_mcc_daq_interface_a19b0dfb99a23e5b296554d2a16f773b2}} 
+\index{Mcc\+Daq\+Interface@{Mcc\+Daq\+Interface}!test\+Data\+Collection@{test\+Data\+Collection}}
+\index{test\+Data\+Collection@{test\+Data\+Collection}!Mcc\+Daq\+Interface@{Mcc\+Daq\+Interface}}
+\subsubsection{\texorpdfstring{test\+Data\+Collection}{testDataCollection}}
+{\footnotesize\ttfamily void Mcc\+Daq\+Interface\+::test\+Data\+Collection (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
+
+
+
+Definition at line 361 of file Mcc\+Daq\+Interface.\+cpp.
+
+\mbox{\Hypertarget{class_mcc_daq_interface_ad055cd5057d78af30c9f97ffef48f6bc}\label{class_mcc_daq_interface_ad055cd5057d78af30c9f97ffef48f6bc}} 
+\index{Mcc\+Daq\+Interface@{Mcc\+Daq\+Interface}!update\+Col@{update\+Col}}
+\index{update\+Col@{update\+Col}!Mcc\+Daq\+Interface@{Mcc\+Daq\+Interface}}
+\subsubsection{\texorpdfstring{update\+Col}{updateCol}}
+{\footnotesize\ttfamily void Mcc\+Daq\+Interface\+::update\+Col (\begin{DoxyParamCaption}\item[{int}]{m\+Col\+Count }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
+
+
+
+Definition at line 263 of file moc\+\_\+\+Mcc\+Daq\+Interface.\+cpp.
+
+\mbox{\Hypertarget{class_mcc_daq_interface_a86cd2addd88adddadaccae76d3cf0b22}\label{class_mcc_daq_interface_a86cd2addd88adddadaccae76d3cf0b22}} 
+\index{Mcc\+Daq\+Interface@{Mcc\+Daq\+Interface}!update\+Daq\+Data\+Box\+Signal@{update\+Daq\+Data\+Box\+Signal}}
+\index{update\+Daq\+Data\+Box\+Signal@{update\+Daq\+Data\+Box\+Signal}!Mcc\+Daq\+Interface@{Mcc\+Daq\+Interface}}
+\subsubsection{\texorpdfstring{update\+Daq\+Data\+Box\+Signal}{updateDaqDataBoxSignal}}
+{\footnotesize\ttfamily void Mcc\+Daq\+Interface\+::update\+Daq\+Data\+Box\+Signal (\begin{DoxyParamCaption}\item[{double}]{data }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
+
+
+
+Definition at line 249 of file moc\+\_\+\+Mcc\+Daq\+Interface.\+cpp.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_mcc_daq_interface_a86cd2addd88adddadaccae76d3cf0b22_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_mcc_daq_interface_a66f961728aca729d4a93930d695b6cb9}\label{class_mcc_daq_interface_a66f961728aca729d4a93930d695b6cb9}} 
+\index{Mcc\+Daq\+Interface@{Mcc\+Daq\+Interface}!update\+Emg@{update\+Emg}}
+\index{update\+Emg@{update\+Emg}!Mcc\+Daq\+Interface@{Mcc\+Daq\+Interface}}
+\subsubsection{\texorpdfstring{update\+Emg}{updateEmg}}
+{\footnotesize\ttfamily void Mcc\+Daq\+Interface\+::update\+Emg (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_mcc_daq_interface_a66f961728aca729d4a93930d695b6cb9_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_mcc_daq_interface_ac56b39d573200c4fe2f5b5935405fd6f}\label{class_mcc_daq_interface_ac56b39d573200c4fe2f5b5935405fd6f}} 
+\index{Mcc\+Daq\+Interface@{Mcc\+Daq\+Interface}!update\+Force@{update\+Force}}
+\index{update\+Force@{update\+Force}!Mcc\+Daq\+Interface@{Mcc\+Daq\+Interface}}
+\subsubsection{\texorpdfstring{update\+Force}{updateForce}}
+{\footnotesize\ttfamily void Mcc\+Daq\+Interface\+::update\+Force (\begin{DoxyParamCaption}\item[{int}]{channel }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
+
+\mbox{\Hypertarget{class_mcc_daq_interface_ac8075afce0aa1f4fc95a9fba13ac60ef}\label{class_mcc_daq_interface_ac8075afce0aa1f4fc95a9fba13ac60ef}} 
+\index{Mcc\+Daq\+Interface@{Mcc\+Daq\+Interface}!update\+Row\+Count@{update\+Row\+Count}}
+\index{update\+Row\+Count@{update\+Row\+Count}!Mcc\+Daq\+Interface@{Mcc\+Daq\+Interface}}
+\subsubsection{\texorpdfstring{update\+Row\+Count}{updateRowCount}}
+{\footnotesize\ttfamily void Mcc\+Daq\+Interface\+::update\+Row\+Count (\begin{DoxyParamCaption}\item[{int}]{m\+Row\+Count }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
+
+
+
+Definition at line 256 of file moc\+\_\+\+Mcc\+Daq\+Interface.\+cpp.
+
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{class_mcc_daq_interface_ae1c7212ef6250f2900a21029a8506a3e}\label{class_mcc_daq_interface_ae1c7212ef6250f2900a21029a8506a3e}} 
+\index{Mcc\+Daq\+Interface@{Mcc\+Daq\+Interface}!tmp\+Voltage\+Map@{tmp\+Voltage\+Map}}
+\index{tmp\+Voltage\+Map@{tmp\+Voltage\+Map}!Mcc\+Daq\+Interface@{Mcc\+Daq\+Interface}}
+\subsubsection{\texorpdfstring{tmp\+Voltage\+Map}{tmpVoltageMap}}
+{\footnotesize\ttfamily Q\+Map$<$int,Q\+Vector$<$double$>$ $>$ Mcc\+Daq\+Interface\+::tmp\+Voltage\+Map}
+
+
+
+Definition at line 45 of file Mcc\+Daq\+Interface.\+h.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/\hyperlink{_mcc_daq_interface_8h}{Mcc\+Daq\+Interface.\+h}\item 
+build/\+Treadmill\+Automation\+\_\+autogen/include/\hyperlink{moc___mcc_daq_interface_8cpp}{moc\+\_\+\+Mcc\+Daq\+Interface.\+cpp}\item 
+src/\hyperlink{_mcc_daq_interface_8cpp}{Mcc\+Daq\+Interface.\+cpp}\end{DoxyCompactItemize}

@@ -1,0 +1,5 @@
+<map id="SendSetpoints::setDecelerationValue" name="SendSetpoints::setDecelerationValue">
+<area shape="rect" id="node2" href="$class_perturbation_tab_widget.html#a2b0878675fa56a11049173a0a8230cfe" title="PerturbationTabWidget\l::showTimer" alt="" coords="260,5,415,47"/>
+<area shape="rect" id="node3" href="$class_treadmill_automation.html#abd35d06ba9806ec23cfcbb217eece9b2" title="TreadmillAutomation\l::createFileMenu" alt="" coords="463,5,604,47"/>
+<area shape="rect" id="node4" href="$class_treadmill_automation.html#a6328b65397f5d0553590f363d29ec9b7" title="TreadmillAutomation\l::TreadmillAutomation" alt="" coords="652,5,801,47"/>
+</map>

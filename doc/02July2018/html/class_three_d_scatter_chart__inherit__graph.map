@@ -1,0 +1,5 @@
+<map id="ThreeDScatterChart" name="ThreeDScatterChart">
+<area shape="rect" id="node2" href="$class_three_d_chart.html" title="ThreeDChart" alt="" coords="26,155,123,181"/>
+<area shape="rect" id="node3" href="$class_base_chart.html" title="BaseChart" alt="" coords="33,80,117,107"/>
+<area shape="rect" id="node4" href="$class_garbage_container.html" title="GarbageContainer" alt="" coords="11,5,138,32"/>
+</map>

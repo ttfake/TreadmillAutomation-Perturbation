@@ -11,7 +11,13 @@ TreadmillAutomation::TreadmillAutomation(QWidget *parent, Qt::WindowFlags flags)
     perturbationTabWidget = new PerturbationTabWidget;
     configTabWidget = new ConfigTabWidget;
     connect(configTabWidget, SIGNAL(timerUpdatedSignal()), SLOT(updateStimTimer()));
-
+    connect(configTabWidget, SIGNAL(emgUpdated()), SLOT(emgUpdated()));
+    
+    
+    instPanel = new InstrumentationPanel;
+    instPanel->setAttribute(Qt::WA_QuitOnClose, true);
+    instPanel->setAttribute(Qt::WA_DeleteOnClose,true);
+    
     
     sendSetpointObject = SendSetpoints::getInstance();
     createFileMenu();
@@ -23,10 +29,12 @@ TreadmillAutomation::TreadmillAutomation(QWidget *parent, Qt::WindowFlags flags)
     
     centralTabWidget->addTab(perturbationTabWidget, "Perturbation");
     centralTabWidget->addTab(configTabWidget, "Configuration");
+
 }
 
 TreadmillAutomation::~TreadmillAutomation()
 {
+    delete perturbationTabWidget;
 }
 
 void TreadmillAutomation::closeEvent(QCloseEvent *event)
@@ -60,11 +68,16 @@ void TreadmillAutomation::createFileMenu()
     menuFile->addAction(loadRunProfileAction);
     loadRunProfileAction->setText("Load Run Profile");
     connect(loadRunProfileAction, SIGNAL(triggered()), perturbationTabWidget, SLOT(loadRunProfile()));
+    daqReconnectAction = new QAction;
+    menuFile->addAction(daqReconnectAction);
+    daqReconnectAction->setText("Reconnect Camera Trigger DAQ");
+    connect(daqReconnectAction, SIGNAL(triggered()), perturbationTabWidget, SLOT(daqReconnect()));
     exitAct = new QAction();
     menuFile->addAction(exitAct);
     exitAct->setText("Exit");
     menuBar->addMenu(menuFile);
     connect(exitAct, SIGNAL(triggered()), this, SLOT(close()));
+    connect(exitAct, SIGNAL(triggered()), instPanel, SLOT(close()));
     //connect(exitAct, SIGNAL(triggered()), perturbationTabWidget, SLOT(checkFileExists()));
     
     menuView = new QMenu(menuBar);
@@ -81,6 +94,11 @@ void TreadmillAutomation::createFileMenu()
     menuView->addAction(viewSubjectInterfaceAct);
     viewSubjectInterfaceAct->setText("Subject Interface");
     connect(viewSubjectInterfaceAct, SIGNAL(triggered()), perturbationTabWidget, SLOT(showSubjectView()));
+
+    viewInstrumentationPanelAct = new QAction;
+    menuView->addAction(viewInstrumentationPanelAct);
+    viewInstrumentationPanelAct->setText("Instrumentation Panel");
+    connect(viewInstrumentationPanelAct, SIGNAL(triggered()), instPanel, SLOT(showInstPanel())); 
 
     daqViewAct = new QAction();
     daqViewAct->setCheckable(true);
@@ -179,6 +197,29 @@ void TreadmillAutomation::updateStimTimer()
 {
     stimTimerValue = configTabWidget->getStimTimerValue();
 }
+
+
+void TreadmillAutomation::emgUpdated()
+{
+    //qDebug() << "TreadmillAutomation::emgUpdated slot triggered.";
+    try 
+    {
+        emgMap = configTabWidget->getEmgData();
+    }
+    catch (...)
+    {
+        qDebug() << "TreadmillAutomation::emgUpdated >> configTabWidget->getEmgData error";
+    }
+    try
+    {
+        instPanel->setChannelDataPoints(emgMap);
+    }
+    catch (...)
+    {
+        qDebug() << "TreadmillAutomation::emgUpdated >> instPanel->setChannelDataPoints error";
+    }
+}
+
 
 static void showWarning(QWidget * mparent, const QString & mtitle, const QString & mtext)
 {

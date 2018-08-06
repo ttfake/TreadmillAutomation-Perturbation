@@ -1,0 +1,14 @@
+<map id="CXYChart_addInterLineLayer" name="CXYChart_addInterLineLayer">
+<area shape="rect" id="node2" href="$class_x_y_chart.html#ae674c8d52d32574672d845c5f154f9d3" title="XYChart::addInterLineLayer" alt="" coords="245,199,428,225"/>
+<area shape="rect" id="node3" href="$class_finance_chart.html#a821e548e8833d123ba447479959fbe7a" title="Add a generic band to the main finance chart. This method is used internally by other methods to add ..." alt="" coords="490,93,649,120"/>
+<area shape="rect" id="node7" href="$class_finance_chart.html#ae08738c0df88ccd4d75ed3860f353839" title="Add an upper/lower threshold range to an existing indicator chart. " alt="" coords="476,275,663,301"/>
+<area shape="rect" id="node4" href="$class_finance_chart.html#aa1698c472254b430e501324024725cfb" title="Add a Bollinger band on the main chart. " alt="" coords="711,5,920,32"/>
+<area shape="rect" id="node5" href="$class_finance_chart.html#af42c518b1f7caa9d73169153fced5bd9" title="Add a Donchian channel on the main chart. " alt="" coords="723,57,907,98"/>
+<area shape="rect" id="node6" href="$class_finance_chart.html#a92bd5e67f5eaeb0fd801614c4ede9c43" title="Add a price envelop on the main chart. The price envelop is a defined as a ratio around a moving aver..." alt="" coords="727,123,903,149"/>
+<area shape="rect" id="node8" href="$class_finance_chart.html#a1841d99b6f71cafd6207f18a57d5b5d7" title="Add a Community Channel Index indicator chart. " alt="" coords="739,173,892,200"/>
+<area shape="rect" id="node9" href="$class_finance_chart.html#ab6f774100ffc593f93eed25c98facf6f" title="Add a Money Flow Index indicator chart. " alt="" coords="739,224,891,251"/>
+<area shape="rect" id="node10" href="$class_finance_chart.html#aba175ac4bc80577bad0767bcd75109c7" title="Add a Relative Strength Index indicator chart. " alt="" coords="739,275,891,301"/>
+<area shape="rect" id="node11" href="$class_finance_chart.html#a8c44b07a3a6dcf2e3feb09960dfa9770" title="Add a Stochastic RSI indicator chart. " alt="" coords="722,325,909,352"/>
+<area shape="rect" id="node12" href="$class_finance_chart.html#aa7a2bc1fab9c1ec538ff293c107d6cc4" title="Add an Ultimate Oscillator indicator chart. " alt="" coords="726,377,905,418"/>
+<area shape="rect" id="node13" href="$class_finance_chart.html#aa0f6a518a8fb451cc645f10e3e947ff0" title="Add a William R indicator chart. " alt="" coords="724,443,907,469"/>
+</map>

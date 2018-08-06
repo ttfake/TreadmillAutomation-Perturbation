@@ -1,0 +1,14 @@
+<map id="FinanceChart::addThreshold" name="FinanceChart::addThreshold">
+<area shape="rect" id="node2" href="$class_x_y_chart.html#a22adca1189b6caa260d71fe4122033ab" title="XYChart::yAxis" alt="" coords="275,5,388,32"/>
+<area shape="rect" id="node4" href="$class_axis.html#afd32537a0ccccbef0efea8c28a285530" title="Axis::addMark" alt="" coords="278,56,385,83"/>
+<area shape="rect" id="node6" href="$class_base_chart.html#a4d416306451019458d6de5dbc3dd952f" title="BaseChart::formatValue" alt="" coords="250,107,413,133"/>
+<area shape="rect" id="node8" href="$class_x_y_chart.html#ae674c8d52d32574672d845c5f154f9d3" title="XYChart::addInterLineLayer" alt="" coords="240,157,423,184"/>
+<area shape="rect" id="node10" href="$class_line_layer.html#a478b1ce70dc1ddc37f675ab8d2a158fc" title="LineLayer::getLine" alt="" coords="267,208,395,235"/>
+<area shape="rect" id="node12" href="$class_mark.html#a7e623a0eef4340850fd13605f95b65d4" title="Mark::getLine" alt="" coords="281,259,382,285"/>
+<area shape="rect" id="node3" href="$bchartdir_8h.html#a54ecabf524f0001341ceca5dbda8f3d2" title="CXYChart_yAxis" alt="" coords="505,5,628,32"/>
+<area shape="rect" id="node5" href="$bchartdir_8h.html#a7e3b55c53212d5d4a138b70a2070f355" title="CAxis_addMark" alt="" coords="509,56,624,83"/>
+<area shape="rect" id="node7" href="$bchartdir_8h.html#a58e83909ac261b001230b0972b765245" title="CBaseChart_formatValue" alt="" coords="481,107,652,133"/>
+<area shape="rect" id="node9" href="$bchartdir_8h.html#a0293d75701fae93406472429b791ce2a" title="CXYChart_addInterLineLayer" alt="" coords="471,157,663,184"/>
+<area shape="rect" id="node11" href="$bchartdir_8h.html#aecf6f9f127c2139b84556ce0aa202d46" title="CLineLayer_getLine" alt="" coords="498,208,635,235"/>
+<area shape="rect" id="node13" href="$bchartdir_8h.html#ab1cc3a2fd1321dc5ffaa232cb54747fb" title="CMark_getLine" alt="" coords="511,259,622,285"/>
+</map>

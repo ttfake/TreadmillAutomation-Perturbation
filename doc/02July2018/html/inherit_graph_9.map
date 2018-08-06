@@ -1,0 +1,9 @@
+<map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
+<area shape="rect" id="node2" href="$class_data_collection.html" title="DataCollection" alt="" coords="154,5,262,32"/>
+<area shape="rect" id="node3" href="$class_data_source.html" title="DataSource" alt="" coords="163,56,253,83"/>
+<area shape="rect" id="node4" href="$class_manage_profile_tab_widget.html" title="ManageProfileTabWidget" alt="" coords="124,107,292,133"/>
+<area shape="rect" id="node5" href="$class_mcc_daq_discovery.html" title="MccDaqDiscovery" alt="" coords="143,157,273,184"/>
+<area shape="rect" id="node6" href="$class_mcc_daq_interface.html" title="MccDaqInterface" alt="" coords="147,208,269,235"/>
+<area shape="rect" id="node7" href="$class_mouse_interface.html" title="MouseInterface" alt="" coords="152,259,264,285"/>
+<area shape="rect" id="node8" href="$class_qml_interface.html" title="QmlInterface" alt="" coords="159,309,257,336"/>
+</map>

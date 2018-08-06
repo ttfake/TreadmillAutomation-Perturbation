@@ -1,0 +1,7 @@
+<map id="Box" name="Box">
+<area shape="rect" id="node4" href="$class_text_box.html" title="TextBox" alt="" coords="60,229,131,256"/>
+<area shape="rect" id="node2" href="$class_draw_obj.html" title="DrawObj" alt="" coords="59,80,132,107"/>
+<area shape="rect" id="node3" href="$class_auto_destroy.html" title="AutoDestroy" alt="" coords="48,5,143,32"/>
+<area shape="rect" id="node5" href="$class_legend_box.html" title="LegendBox" alt="" coords="5,304,92,331"/>
+<area shape="rect" id="node6" href="$class_mark.html" title="Mark" alt="" coords="117,304,167,331"/>
+</map>

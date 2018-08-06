@@ -1,0 +1,565 @@
+\hypertarget{class_perturbation_tab_widget}{}\section{Perturbation\+Tab\+Widget Class Reference}
+\label{class_perturbation_tab_widget}\index{Perturbation\+Tab\+Widget@{Perturbation\+Tab\+Widget}}
+
+
+{\ttfamily \#include $<$Perturbation\+Tab\+Widget.\+h$>$}
+
+
+
+Inheritance diagram for Perturbation\+Tab\+Widget\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=196pt]{class_perturbation_tab_widget__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Perturbation\+Tab\+Widget\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=196pt]{class_perturbation_tab_widget__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Slots}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{class_perturbation_tab_widget_a2b0878675fa56a11049173a0a8230cfe}{show\+Timer} (bool state)
+\item 
+void \hyperlink{class_perturbation_tab_widget_a09c65ab9737d61975cebc94fe843482d}{random\+Delay} ()
+\item 
+void \hyperlink{class_perturbation_tab_widget_aeecb373be32ddc6ea3c165d685b2a386}{load\+Run\+Profile} ()
+\item 
+void \hyperlink{class_perturbation_tab_widget_a7cfe137c13f1e9c2e98cbd7580c671ec}{show\+Subject\+View} ()
+\item 
+void \hyperlink{class_perturbation_tab_widget_a2bd4fa89c8315386ed15cd04f9b5ec84}{check\+File\+Exists} ()
+\item 
+void \hyperlink{class_perturbation_tab_widget_a67b4c15cd26d35da1eb09559e2136502}{change\+Participant\+Id} (Q\+String participant\+Id)
+\item 
+void \hyperlink{class_perturbation_tab_widget_a9d551ffcaf3d0ebe54015f5536d261ab}{change\+Session\+Id} (Q\+String session)
+\item 
+void \hyperlink{class_perturbation_tab_widget_a91a2b49c6b8672cd15cce43be89083c2}{daq\+Reconnect} ()
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_perturbation_tab_widget_a7a398b91c41f2f94b880909da745f29a}{Perturbation\+Tab\+Widget} (Q\+Widget $\ast$parent=0, Qt\+::\+Window\+Flags flags=0)
+\item 
+\hyperlink{class_perturbation_tab_widget_a8c2ec5ad166d2a5bac3f383210b24fbf}{$\sim$\+Perturbation\+Tab\+Widget} ()
+\item 
+double \hyperlink{class_perturbation_tab_widget_a1c595f54d7528bd69f949849b3cb9312}{get\+Left\+Front\+Speed\+Value} ()
+\item 
+double \hyperlink{class_perturbation_tab_widget_a11a37b5600c3003608515a8be459128c}{get\+Right\+Front\+Speed\+Value} ()
+\item 
+double \hyperlink{class_perturbation_tab_widget_a2c1a491c8fc908d030f763d675e31d70}{get\+Acceleration\+Value} ()
+\item 
+double \hyperlink{class_perturbation_tab_widget_a69d99f18f946cd72a3e1963cbc5196f9}{get\+Acceleration\+Time\+Value} ()
+\item 
+double \hyperlink{class_perturbation_tab_widget_a4f4d6f185008895f009dd49163225604}{get\+Deceleration\+Value} ()
+\item 
+double \hyperlink{class_perturbation_tab_widget_aa367d865074bb173bc3b9599eb11e10e}{get\+Deceleration\+Time\+Value} ()
+\item 
+void \hyperlink{class_perturbation_tab_widget_ad623552392a607d427df1e76c3b0d110}{set\+Left\+Front\+Speed\+Value\+From\+Incoming} (qint16 mleft\+Front\+Speed\+Value)
+\item 
+void \hyperlink{class_perturbation_tab_widget_a8f35140d106abf45d144a1fc6b08f423}{set\+Right\+Front\+Speed\+Value\+From\+Incoming} (qint16 mright\+Front\+Speed\+Value)
+\item 
+void \hyperlink{class_perturbation_tab_widget_af54ddc95a7f3738b9083ff9ca5934d22}{set\+Use\+Library\+Status} (bool use\+Lib\+Check\+Box)
+\item 
+void \hyperlink{class_perturbation_tab_widget_a61e4292beb7e59e386bf73a724b2b308}{set\+Socket} (Q\+Abstract\+Socket $\ast$socket)
+\item 
+void \hyperlink{class_perturbation_tab_widget_ad9a685f191ca94bdc47f148273fdf1f4}{add\+Deceleration\+Speed\+Group\+Box} ()
+\item 
+double \hyperlink{class_perturbation_tab_widget_aa79aeeb2da8075a4cd6ac6c08e0fb135}{calculate\+Speed} ()
+\item 
+void \hyperlink{class_perturbation_tab_widget_a237937a4a9bd3724fe615d0b5a7b5638}{add\+Trial\+Run\+Name} ()
+\item 
+void \hyperlink{class_perturbation_tab_widget_a133aa07dacbf905b3f8575cae27c1c4b}{close\+Subject\+Interface\+Window} ()
+\item 
+void \hyperlink{class_perturbation_tab_widget_a9484f325434396eee32d49cacd8ed357}{close\+Instrumentation\+Panel} ()
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+bool \hyperlink{class_perturbation_tab_widget_ae2cc24f378f8f95e47c80325e026a9d0}{use\+Library\+Check\+Box\+Status}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 54 of file Perturbation\+Tab\+Widget.\+h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_perturbation_tab_widget_a7a398b91c41f2f94b880909da745f29a}\label{class_perturbation_tab_widget_a7a398b91c41f2f94b880909da745f29a}} 
+\index{Perturbation\+Tab\+Widget@{Perturbation\+Tab\+Widget}!Perturbation\+Tab\+Widget@{Perturbation\+Tab\+Widget}}
+\index{Perturbation\+Tab\+Widget@{Perturbation\+Tab\+Widget}!Perturbation\+Tab\+Widget@{Perturbation\+Tab\+Widget}}
+\subsubsection{\texorpdfstring{Perturbation\+Tab\+Widget()}{PerturbationTabWidget()}}
+{\footnotesize\ttfamily Perturbation\+Tab\+Widget\+::\+Perturbation\+Tab\+Widget (\begin{DoxyParamCaption}\item[{Q\+Widget $\ast$}]{parent = {\ttfamily 0},  }\item[{Qt\+::\+Window\+Flags}]{flags = {\ttfamily 0} }\end{DoxyParamCaption})}
+
+
+
+Definition at line 4 of file Perturbation\+Tab\+Widget.\+cpp.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_perturbation_tab_widget_a7a398b91c41f2f94b880909da745f29a_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_perturbation_tab_widget_a8c2ec5ad166d2a5bac3f383210b24fbf}\label{class_perturbation_tab_widget_a8c2ec5ad166d2a5bac3f383210b24fbf}} 
+\index{Perturbation\+Tab\+Widget@{Perturbation\+Tab\+Widget}!````~Perturbation\+Tab\+Widget@{$\sim$\+Perturbation\+Tab\+Widget}}
+\index{````~Perturbation\+Tab\+Widget@{$\sim$\+Perturbation\+Tab\+Widget}!Perturbation\+Tab\+Widget@{Perturbation\+Tab\+Widget}}
+\subsubsection{\texorpdfstring{$\sim$\+Perturbation\+Tab\+Widget()}{~PerturbationTabWidget()}}
+{\footnotesize\ttfamily Perturbation\+Tab\+Widget\+::$\sim$\+Perturbation\+Tab\+Widget (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 25 of file Perturbation\+Tab\+Widget.\+cpp.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_perturbation_tab_widget_a8c2ec5ad166d2a5bac3f383210b24fbf_cgraph}
+\end{center}
+\end{figure}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_perturbation_tab_widget_ad9a685f191ca94bdc47f148273fdf1f4}\label{class_perturbation_tab_widget_ad9a685f191ca94bdc47f148273fdf1f4}} 
+\index{Perturbation\+Tab\+Widget@{Perturbation\+Tab\+Widget}!add\+Deceleration\+Speed\+Group\+Box@{add\+Deceleration\+Speed\+Group\+Box}}
+\index{add\+Deceleration\+Speed\+Group\+Box@{add\+Deceleration\+Speed\+Group\+Box}!Perturbation\+Tab\+Widget@{Perturbation\+Tab\+Widget}}
+\subsubsection{\texorpdfstring{add\+Deceleration\+Speed\+Group\+Box()}{addDecelerationSpeedGroupBox()}}
+{\footnotesize\ttfamily void Perturbation\+Tab\+Widget\+::add\+Deceleration\+Speed\+Group\+Box (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 170 of file Perturbation\+Tab\+Widget.\+cpp.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{class_perturbation_tab_widget_ad9a685f191ca94bdc47f148273fdf1f4_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_perturbation_tab_widget_a237937a4a9bd3724fe615d0b5a7b5638}\label{class_perturbation_tab_widget_a237937a4a9bd3724fe615d0b5a7b5638}} 
+\index{Perturbation\+Tab\+Widget@{Perturbation\+Tab\+Widget}!add\+Trial\+Run\+Name@{add\+Trial\+Run\+Name}}
+\index{add\+Trial\+Run\+Name@{add\+Trial\+Run\+Name}!Perturbation\+Tab\+Widget@{Perturbation\+Tab\+Widget}}
+\subsubsection{\texorpdfstring{add\+Trial\+Run\+Name()}{addTrialRunName()}}
+{\footnotesize\ttfamily void Perturbation\+Tab\+Widget\+::add\+Trial\+Run\+Name (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 446 of file Perturbation\+Tab\+Widget.\+cpp.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_perturbation_tab_widget_a237937a4a9bd3724fe615d0b5a7b5638_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_perturbation_tab_widget_aa79aeeb2da8075a4cd6ac6c08e0fb135}\label{class_perturbation_tab_widget_aa79aeeb2da8075a4cd6ac6c08e0fb135}} 
+\index{Perturbation\+Tab\+Widget@{Perturbation\+Tab\+Widget}!calculate\+Speed@{calculate\+Speed}}
+\index{calculate\+Speed@{calculate\+Speed}!Perturbation\+Tab\+Widget@{Perturbation\+Tab\+Widget}}
+\subsubsection{\texorpdfstring{calculate\+Speed()}{calculateSpeed()}}
+{\footnotesize\ttfamily double Perturbation\+Tab\+Widget\+::calculate\+Speed (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 979 of file Perturbation\+Tab\+Widget.\+cpp.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_perturbation_tab_widget_aa79aeeb2da8075a4cd6ac6c08e0fb135_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_perturbation_tab_widget_aa79aeeb2da8075a4cd6ac6c08e0fb135_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_perturbation_tab_widget_a67b4c15cd26d35da1eb09559e2136502}\label{class_perturbation_tab_widget_a67b4c15cd26d35da1eb09559e2136502}} 
+\index{Perturbation\+Tab\+Widget@{Perturbation\+Tab\+Widget}!change\+Participant\+Id@{change\+Participant\+Id}}
+\index{change\+Participant\+Id@{change\+Participant\+Id}!Perturbation\+Tab\+Widget@{Perturbation\+Tab\+Widget}}
+\subsubsection{\texorpdfstring{change\+Participant\+Id}{changeParticipantId}}
+{\footnotesize\ttfamily void Perturbation\+Tab\+Widget\+::change\+Participant\+Id (\begin{DoxyParamCaption}\item[{Q\+String}]{participant\+Id }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
+
+
+
+Definition at line 1406 of file Perturbation\+Tab\+Widget.\+cpp.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_perturbation_tab_widget_a67b4c15cd26d35da1eb09559e2136502_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_perturbation_tab_widget_a67b4c15cd26d35da1eb09559e2136502_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_perturbation_tab_widget_a9d551ffcaf3d0ebe54015f5536d261ab}\label{class_perturbation_tab_widget_a9d551ffcaf3d0ebe54015f5536d261ab}} 
+\index{Perturbation\+Tab\+Widget@{Perturbation\+Tab\+Widget}!change\+Session\+Id@{change\+Session\+Id}}
+\index{change\+Session\+Id@{change\+Session\+Id}!Perturbation\+Tab\+Widget@{Perturbation\+Tab\+Widget}}
+\subsubsection{\texorpdfstring{change\+Session\+Id}{changeSessionId}}
+{\footnotesize\ttfamily void Perturbation\+Tab\+Widget\+::change\+Session\+Id (\begin{DoxyParamCaption}\item[{Q\+String}]{session }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
+
+
+
+Definition at line 252 of file Perturbation\+Tab\+Widget.\+cpp.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{class_perturbation_tab_widget_a9d551ffcaf3d0ebe54015f5536d261ab_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_perturbation_tab_widget_a9d551ffcaf3d0ebe54015f5536d261ab_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_perturbation_tab_widget_a2bd4fa89c8315386ed15cd04f9b5ec84}\label{class_perturbation_tab_widget_a2bd4fa89c8315386ed15cd04f9b5ec84}} 
+\index{Perturbation\+Tab\+Widget@{Perturbation\+Tab\+Widget}!check\+File\+Exists@{check\+File\+Exists}}
+\index{check\+File\+Exists@{check\+File\+Exists}!Perturbation\+Tab\+Widget@{Perturbation\+Tab\+Widget}}
+\subsubsection{\texorpdfstring{check\+File\+Exists}{checkFileExists}}
+{\footnotesize\ttfamily void Perturbation\+Tab\+Widget\+::check\+File\+Exists (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
+
+
+
+Definition at line 1806 of file Perturbation\+Tab\+Widget.\+cpp.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_perturbation_tab_widget_a2bd4fa89c8315386ed15cd04f9b5ec84_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_perturbation_tab_widget_a9484f325434396eee32d49cacd8ed357}\label{class_perturbation_tab_widget_a9484f325434396eee32d49cacd8ed357}} 
+\index{Perturbation\+Tab\+Widget@{Perturbation\+Tab\+Widget}!close\+Instrumentation\+Panel@{close\+Instrumentation\+Panel}}
+\index{close\+Instrumentation\+Panel@{close\+Instrumentation\+Panel}!Perturbation\+Tab\+Widget@{Perturbation\+Tab\+Widget}}
+\subsubsection{\texorpdfstring{close\+Instrumentation\+Panel()}{closeInstrumentationPanel()}}
+{\footnotesize\ttfamily void Perturbation\+Tab\+Widget\+::close\+Instrumentation\+Panel (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_perturbation_tab_widget_a133aa07dacbf905b3f8575cae27c1c4b}\label{class_perturbation_tab_widget_a133aa07dacbf905b3f8575cae27c1c4b}} 
+\index{Perturbation\+Tab\+Widget@{Perturbation\+Tab\+Widget}!close\+Subject\+Interface\+Window@{close\+Subject\+Interface\+Window}}
+\index{close\+Subject\+Interface\+Window@{close\+Subject\+Interface\+Window}!Perturbation\+Tab\+Widget@{Perturbation\+Tab\+Widget}}
+\subsubsection{\texorpdfstring{close\+Subject\+Interface\+Window()}{closeSubjectInterfaceWindow()}}
+{\footnotesize\ttfamily void Perturbation\+Tab\+Widget\+::close\+Subject\+Interface\+Window (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 1905 of file Perturbation\+Tab\+Widget.\+cpp.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_perturbation_tab_widget_a133aa07dacbf905b3f8575cae27c1c4b_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_perturbation_tab_widget_a91a2b49c6b8672cd15cce43be89083c2}\label{class_perturbation_tab_widget_a91a2b49c6b8672cd15cce43be89083c2}} 
+\index{Perturbation\+Tab\+Widget@{Perturbation\+Tab\+Widget}!daq\+Reconnect@{daq\+Reconnect}}
+\index{daq\+Reconnect@{daq\+Reconnect}!Perturbation\+Tab\+Widget@{Perturbation\+Tab\+Widget}}
+\subsubsection{\texorpdfstring{daq\+Reconnect}{daqReconnect}}
+{\footnotesize\ttfamily void Perturbation\+Tab\+Widget\+::daq\+Reconnect (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
+
+
+
+Definition at line 1911 of file Perturbation\+Tab\+Widget.\+cpp.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_perturbation_tab_widget_a91a2b49c6b8672cd15cce43be89083c2_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_perturbation_tab_widget_a69d99f18f946cd72a3e1963cbc5196f9}\label{class_perturbation_tab_widget_a69d99f18f946cd72a3e1963cbc5196f9}} 
+\index{Perturbation\+Tab\+Widget@{Perturbation\+Tab\+Widget}!get\+Acceleration\+Time\+Value@{get\+Acceleration\+Time\+Value}}
+\index{get\+Acceleration\+Time\+Value@{get\+Acceleration\+Time\+Value}!Perturbation\+Tab\+Widget@{Perturbation\+Tab\+Widget}}
+\subsubsection{\texorpdfstring{get\+Acceleration\+Time\+Value()}{getAccelerationTimeValue()}}
+{\footnotesize\ttfamily double Perturbation\+Tab\+Widget\+::get\+Acceleration\+Time\+Value (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 680 of file Perturbation\+Tab\+Widget.\+cpp.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_perturbation_tab_widget_a69d99f18f946cd72a3e1963cbc5196f9_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_perturbation_tab_widget_a2c1a491c8fc908d030f763d675e31d70}\label{class_perturbation_tab_widget_a2c1a491c8fc908d030f763d675e31d70}} 
+\index{Perturbation\+Tab\+Widget@{Perturbation\+Tab\+Widget}!get\+Acceleration\+Value@{get\+Acceleration\+Value}}
+\index{get\+Acceleration\+Value@{get\+Acceleration\+Value}!Perturbation\+Tab\+Widget@{Perturbation\+Tab\+Widget}}
+\subsubsection{\texorpdfstring{get\+Acceleration\+Value()}{getAccelerationValue()}}
+{\footnotesize\ttfamily double Perturbation\+Tab\+Widget\+::get\+Acceleration\+Value (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 690 of file Perturbation\+Tab\+Widget.\+cpp.
+
+\mbox{\Hypertarget{class_perturbation_tab_widget_aa367d865074bb173bc3b9599eb11e10e}\label{class_perturbation_tab_widget_aa367d865074bb173bc3b9599eb11e10e}} 
+\index{Perturbation\+Tab\+Widget@{Perturbation\+Tab\+Widget}!get\+Deceleration\+Time\+Value@{get\+Deceleration\+Time\+Value}}
+\index{get\+Deceleration\+Time\+Value@{get\+Deceleration\+Time\+Value}!Perturbation\+Tab\+Widget@{Perturbation\+Tab\+Widget}}
+\subsubsection{\texorpdfstring{get\+Deceleration\+Time\+Value()}{getDecelerationTimeValue()}}
+{\footnotesize\ttfamily double Perturbation\+Tab\+Widget\+::get\+Deceleration\+Time\+Value (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 685 of file Perturbation\+Tab\+Widget.\+cpp.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_perturbation_tab_widget_aa367d865074bb173bc3b9599eb11e10e_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_perturbation_tab_widget_a4f4d6f185008895f009dd49163225604}\label{class_perturbation_tab_widget_a4f4d6f185008895f009dd49163225604}} 
+\index{Perturbation\+Tab\+Widget@{Perturbation\+Tab\+Widget}!get\+Deceleration\+Value@{get\+Deceleration\+Value}}
+\index{get\+Deceleration\+Value@{get\+Deceleration\+Value}!Perturbation\+Tab\+Widget@{Perturbation\+Tab\+Widget}}
+\subsubsection{\texorpdfstring{get\+Deceleration\+Value()}{getDecelerationValue()}}
+{\footnotesize\ttfamily double Perturbation\+Tab\+Widget\+::get\+Deceleration\+Value (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 694 of file Perturbation\+Tab\+Widget.\+cpp.
+
+\mbox{\Hypertarget{class_perturbation_tab_widget_a1c595f54d7528bd69f949849b3cb9312}\label{class_perturbation_tab_widget_a1c595f54d7528bd69f949849b3cb9312}} 
+\index{Perturbation\+Tab\+Widget@{Perturbation\+Tab\+Widget}!get\+Left\+Front\+Speed\+Value@{get\+Left\+Front\+Speed\+Value}}
+\index{get\+Left\+Front\+Speed\+Value@{get\+Left\+Front\+Speed\+Value}!Perturbation\+Tab\+Widget@{Perturbation\+Tab\+Widget}}
+\subsubsection{\texorpdfstring{get\+Left\+Front\+Speed\+Value()}{getLeftFrontSpeedValue()}}
+{\footnotesize\ttfamily double Perturbation\+Tab\+Widget\+::get\+Left\+Front\+Speed\+Value (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 698 of file Perturbation\+Tab\+Widget.\+cpp.
+
+\mbox{\Hypertarget{class_perturbation_tab_widget_a11a37b5600c3003608515a8be459128c}\label{class_perturbation_tab_widget_a11a37b5600c3003608515a8be459128c}} 
+\index{Perturbation\+Tab\+Widget@{Perturbation\+Tab\+Widget}!get\+Right\+Front\+Speed\+Value@{get\+Right\+Front\+Speed\+Value}}
+\index{get\+Right\+Front\+Speed\+Value@{get\+Right\+Front\+Speed\+Value}!Perturbation\+Tab\+Widget@{Perturbation\+Tab\+Widget}}
+\subsubsection{\texorpdfstring{get\+Right\+Front\+Speed\+Value()}{getRightFrontSpeedValue()}}
+{\footnotesize\ttfamily double Perturbation\+Tab\+Widget\+::get\+Right\+Front\+Speed\+Value (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 702 of file Perturbation\+Tab\+Widget.\+cpp.
+
+\mbox{\Hypertarget{class_perturbation_tab_widget_aeecb373be32ddc6ea3c165d685b2a386}\label{class_perturbation_tab_widget_aeecb373be32ddc6ea3c165d685b2a386}} 
+\index{Perturbation\+Tab\+Widget@{Perturbation\+Tab\+Widget}!load\+Run\+Profile@{load\+Run\+Profile}}
+\index{load\+Run\+Profile@{load\+Run\+Profile}!Perturbation\+Tab\+Widget@{Perturbation\+Tab\+Widget}}
+\subsubsection{\texorpdfstring{load\+Run\+Profile}{loadRunProfile}}
+{\footnotesize\ttfamily void Perturbation\+Tab\+Widget\+::load\+Run\+Profile (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
+
+
+
+Definition at line 987 of file Perturbation\+Tab\+Widget.\+cpp.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{class_perturbation_tab_widget_aeecb373be32ddc6ea3c165d685b2a386_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_perturbation_tab_widget_aeecb373be32ddc6ea3c165d685b2a386_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_perturbation_tab_widget_a09c65ab9737d61975cebc94fe843482d}\label{class_perturbation_tab_widget_a09c65ab9737d61975cebc94fe843482d}} 
+\index{Perturbation\+Tab\+Widget@{Perturbation\+Tab\+Widget}!random\+Delay@{random\+Delay}}
+\index{random\+Delay@{random\+Delay}!Perturbation\+Tab\+Widget@{Perturbation\+Tab\+Widget}}
+\subsubsection{\texorpdfstring{random\+Delay}{randomDelay}}
+{\footnotesize\ttfamily void Perturbation\+Tab\+Widget\+::random\+Delay (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
+
+
+
+Definition at line 712 of file Perturbation\+Tab\+Widget.\+cpp.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_perturbation_tab_widget_a09c65ab9737d61975cebc94fe843482d_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_perturbation_tab_widget_a09c65ab9737d61975cebc94fe843482d_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_perturbation_tab_widget_ad623552392a607d427df1e76c3b0d110}\label{class_perturbation_tab_widget_ad623552392a607d427df1e76c3b0d110}} 
+\index{Perturbation\+Tab\+Widget@{Perturbation\+Tab\+Widget}!set\+Left\+Front\+Speed\+Value\+From\+Incoming@{set\+Left\+Front\+Speed\+Value\+From\+Incoming}}
+\index{set\+Left\+Front\+Speed\+Value\+From\+Incoming@{set\+Left\+Front\+Speed\+Value\+From\+Incoming}!Perturbation\+Tab\+Widget@{Perturbation\+Tab\+Widget}}
+\subsubsection{\texorpdfstring{set\+Left\+Front\+Speed\+Value\+From\+Incoming()}{setLeftFrontSpeedValueFromIncoming()}}
+{\footnotesize\ttfamily void Perturbation\+Tab\+Widget\+::set\+Left\+Front\+Speed\+Value\+From\+Incoming (\begin{DoxyParamCaption}\item[{qint16}]{mleft\+Front\+Speed\+Value }\end{DoxyParamCaption})}
+
+
+
+Definition at line 662 of file Perturbation\+Tab\+Widget.\+cpp.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_perturbation_tab_widget_ad623552392a607d427df1e76c3b0d110_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_perturbation_tab_widget_a8f35140d106abf45d144a1fc6b08f423}\label{class_perturbation_tab_widget_a8f35140d106abf45d144a1fc6b08f423}} 
+\index{Perturbation\+Tab\+Widget@{Perturbation\+Tab\+Widget}!set\+Right\+Front\+Speed\+Value\+From\+Incoming@{set\+Right\+Front\+Speed\+Value\+From\+Incoming}}
+\index{set\+Right\+Front\+Speed\+Value\+From\+Incoming@{set\+Right\+Front\+Speed\+Value\+From\+Incoming}!Perturbation\+Tab\+Widget@{Perturbation\+Tab\+Widget}}
+\subsubsection{\texorpdfstring{set\+Right\+Front\+Speed\+Value\+From\+Incoming()}{setRightFrontSpeedValueFromIncoming()}}
+{\footnotesize\ttfamily void Perturbation\+Tab\+Widget\+::set\+Right\+Front\+Speed\+Value\+From\+Incoming (\begin{DoxyParamCaption}\item[{qint16}]{mright\+Front\+Speed\+Value }\end{DoxyParamCaption})}
+
+
+
+Definition at line 675 of file Perturbation\+Tab\+Widget.\+cpp.
+
+\mbox{\Hypertarget{class_perturbation_tab_widget_a61e4292beb7e59e386bf73a724b2b308}\label{class_perturbation_tab_widget_a61e4292beb7e59e386bf73a724b2b308}} 
+\index{Perturbation\+Tab\+Widget@{Perturbation\+Tab\+Widget}!set\+Socket@{set\+Socket}}
+\index{set\+Socket@{set\+Socket}!Perturbation\+Tab\+Widget@{Perturbation\+Tab\+Widget}}
+\subsubsection{\texorpdfstring{set\+Socket()}{setSocket()}}
+{\footnotesize\ttfamily void Perturbation\+Tab\+Widget\+::set\+Socket (\begin{DoxyParamCaption}\item[{Q\+Abstract\+Socket $\ast$}]{socket }\end{DoxyParamCaption})}
+
+
+
+Definition at line 973 of file Perturbation\+Tab\+Widget.\+cpp.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_perturbation_tab_widget_a61e4292beb7e59e386bf73a724b2b308_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_perturbation_tab_widget_a61e4292beb7e59e386bf73a724b2b308_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_perturbation_tab_widget_af54ddc95a7f3738b9083ff9ca5934d22}\label{class_perturbation_tab_widget_af54ddc95a7f3738b9083ff9ca5934d22}} 
+\index{Perturbation\+Tab\+Widget@{Perturbation\+Tab\+Widget}!set\+Use\+Library\+Status@{set\+Use\+Library\+Status}}
+\index{set\+Use\+Library\+Status@{set\+Use\+Library\+Status}!Perturbation\+Tab\+Widget@{Perturbation\+Tab\+Widget}}
+\subsubsection{\texorpdfstring{set\+Use\+Library\+Status()}{setUseLibraryStatus()}}
+{\footnotesize\ttfamily void Perturbation\+Tab\+Widget\+::set\+Use\+Library\+Status (\begin{DoxyParamCaption}\item[{bool}]{use\+Lib\+Check\+Box }\end{DoxyParamCaption})}
+
+
+
+Definition at line 707 of file Perturbation\+Tab\+Widget.\+cpp.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_perturbation_tab_widget_af54ddc95a7f3738b9083ff9ca5934d22_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_perturbation_tab_widget_a7cfe137c13f1e9c2e98cbd7580c671ec}\label{class_perturbation_tab_widget_a7cfe137c13f1e9c2e98cbd7580c671ec}} 
+\index{Perturbation\+Tab\+Widget@{Perturbation\+Tab\+Widget}!show\+Subject\+View@{show\+Subject\+View}}
+\index{show\+Subject\+View@{show\+Subject\+View}!Perturbation\+Tab\+Widget@{Perturbation\+Tab\+Widget}}
+\subsubsection{\texorpdfstring{show\+Subject\+View}{showSubjectView}}
+{\footnotesize\ttfamily void Perturbation\+Tab\+Widget\+::show\+Subject\+View (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
+
+
+
+Definition at line 1896 of file Perturbation\+Tab\+Widget.\+cpp.
+
+\mbox{\Hypertarget{class_perturbation_tab_widget_a2b0878675fa56a11049173a0a8230cfe}\label{class_perturbation_tab_widget_a2b0878675fa56a11049173a0a8230cfe}} 
+\index{Perturbation\+Tab\+Widget@{Perturbation\+Tab\+Widget}!show\+Timer@{show\+Timer}}
+\index{show\+Timer@{show\+Timer}!Perturbation\+Tab\+Widget@{Perturbation\+Tab\+Widget}}
+\subsubsection{\texorpdfstring{show\+Timer}{showTimer}}
+{\footnotesize\ttfamily void Perturbation\+Tab\+Widget\+::show\+Timer (\begin{DoxyParamCaption}\item[{bool}]{state }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
+
+
+
+Definition at line 600 of file Perturbation\+Tab\+Widget.\+cpp.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_perturbation_tab_widget_a2b0878675fa56a11049173a0a8230cfe_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_perturbation_tab_widget_a2b0878675fa56a11049173a0a8230cfe_icgraph}
+\end{center}
+\end{figure}
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{class_perturbation_tab_widget_ae2cc24f378f8f95e47c80325e026a9d0}\label{class_perturbation_tab_widget_ae2cc24f378f8f95e47c80325e026a9d0}} 
+\index{Perturbation\+Tab\+Widget@{Perturbation\+Tab\+Widget}!use\+Library\+Check\+Box\+Status@{use\+Library\+Check\+Box\+Status}}
+\index{use\+Library\+Check\+Box\+Status@{use\+Library\+Check\+Box\+Status}!Perturbation\+Tab\+Widget@{Perturbation\+Tab\+Widget}}
+\subsubsection{\texorpdfstring{use\+Library\+Check\+Box\+Status}{useLibraryCheckBoxStatus}}
+{\footnotesize\ttfamily bool Perturbation\+Tab\+Widget\+::use\+Library\+Check\+Box\+Status}
+
+
+
+Definition at line 71 of file Perturbation\+Tab\+Widget.\+h.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/\hyperlink{_perturbation_tab_widget_8h}{Perturbation\+Tab\+Widget.\+h}\item 
+src/\hyperlink{_perturbation_tab_widget_8cpp}{Perturbation\+Tab\+Widget.\+cpp}\end{DoxyCompactItemize}

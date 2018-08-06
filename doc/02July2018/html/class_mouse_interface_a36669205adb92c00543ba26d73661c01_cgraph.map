@@ -1,0 +1,7 @@
+<map id="MouseInterface::MouseInterface" name="MouseInterface::MouseInterface">
+<area shape="rect" id="node2" href="$class_mouse_interface.html#a6f60ced71ed9ac307b019cb300e44a32" title="MouseInterface::SetupEvent\lTrigger" alt="" coords="274,71,462,112"/>
+<area shape="rect" id="node5" href="$class_mouse_interface.html#a913cdae50fddc45ee67131d762735dbc" title="MouseInterface::SetupStim\lTrigger" alt="" coords="277,5,459,47"/>
+<area shape="rect" id="node6" href="$class_mouse_interface.html#a6c0c368eecb5642747fab25d426fb774" title="MouseInterface::setPerturbation\lActiveBoolFalse" alt="" coords="264,136,472,177"/>
+<area shape="rect" id="node3" href="$_n_i_d_a_qmx_8h.html#a778abc10915e0a506b98a11ecbd7f1e3" title="DAQmxCreateTask" alt="" coords="562,17,699,43"/>
+<area shape="rect" id="node4" href="$_n_i_d_a_qmx_8h.html#af8f808683006d2892544be671ad82fcb" title="DAQmxCreateCOPulseChanTime" alt="" coords="520,71,741,98"/>
+</map>

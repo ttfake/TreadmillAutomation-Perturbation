@@ -1,0 +1,363 @@
+\hypertarget{class_polar_chart}{}\section{Polar\+Chart Class Reference}
+\label{class_polar_chart}\index{Polar\+Chart@{Polar\+Chart}}
+
+
+{\ttfamily \#include $<$chartdir.\+h$>$}
+
+
+
+Inheritance diagram for Polar\+Chart\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=175pt]{class_polar_chart__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Polar\+Chart\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=175pt]{class_polar_chart__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_polar_chart_a7269b9fccbcc87f5590c6310b67b195b}{Polar\+Chart} (int width, int height, int bg\+Color=\hyperlink{namespace_chart_abee0d882fdc9ad0b001245ad9fc64011a134193bde693b9d152d0c6dc59fa7d7f}{Chart\+::\+Background\+Color}, int edge\+Color=\hyperlink{namespace_chart_abee0d882fdc9ad0b001245ad9fc64011afc6811800a9e2582dac0157b6279f836}{Chart\+::\+Transparent}, int raised\+Effect=0)
+\item 
+void \hyperlink{class_polar_chart_adc36a42598e36330c451bab063739494}{set\+Plot\+Area} (int x, int y, int r, int bg\+Color=\hyperlink{namespace_chart_abee0d882fdc9ad0b001245ad9fc64011afc6811800a9e2582dac0157b6279f836}{Chart\+::\+Transparent}, int edge\+Color=\hyperlink{namespace_chart_abee0d882fdc9ad0b001245ad9fc64011afc6811800a9e2582dac0157b6279f836}{Chart\+::\+Transparent}, int edge\+Width=1)
+\item 
+void \hyperlink{class_polar_chart_a4bb79336412c5a0407ca057713926ac8}{set\+Plot\+Area\+Bg} (int bg\+Color1, int bg\+Color2=-\/1, bool alt\+Rings=true)
+\item 
+void \hyperlink{class_polar_chart_a781271d5381dfe4fe6164384ebbed7a1}{set\+Grid\+Color} (int r\+Grid\+Color=0x80000000, int r\+Grid\+Width=1, int a\+Grid\+Color=0x80000000, int a\+Grid\+Width=1)
+\item 
+void \hyperlink{class_polar_chart_a088600a8966e89904181d33842077e15}{set\+Grid\+Style} (bool polygon\+Grid, bool grid\+On\+Top=true)
+\item 
+void \hyperlink{class_polar_chart_a46183032bdf951a3b7b940c38aceb30a}{set\+Start\+Angle} (double start\+Angle, bool clockwise=true)
+\item 
+\hyperlink{class_angular_axis}{Angular\+Axis} $\ast$ \hyperlink{class_polar_chart_ab8bf9e2fdc266ee0e8a5e878e3e80cde}{angular\+Axis} ()
+\item 
+\hyperlink{chartdir_8h_a4e17084867bb8e096e6e13b956e538ce}{Radial\+Axis} $\ast$ \hyperlink{class_polar_chart_ab29bc179de261a048e3c493324ff85f1}{radial\+Axis} ()
+\item 
+int \hyperlink{class_polar_chart_a948b023559d129d515adf187526262eb}{get\+X\+Coor} (double r, double a) const
+\item 
+int \hyperlink{class_polar_chart_a1f64ec407df2fdd1c80bbc7fd9fb018b}{get\+Y\+Coor} (double r, double a) const
+\item 
+\hyperlink{class_polar_area_layer}{Polar\+Area\+Layer} $\ast$ \hyperlink{class_polar_chart_a36a592c0473d015113d9add78d9dfbad}{add\+Area\+Layer} (\hyperlink{class_double_array}{Double\+Array} data, int color=-\/1, const char $\ast$name=0)
+\item 
+\hyperlink{class_polar_line_layer}{Polar\+Line\+Layer} $\ast$ \hyperlink{class_polar_chart_a5d54191f10884a95b52f3098a4e33c3c}{add\+Line\+Layer} (\hyperlink{class_double_array}{Double\+Array} data, int color=-\/1, const char $\ast$name=0)
+\item 
+\hyperlink{class_polar_spline_line_layer}{Polar\+Spline\+Line\+Layer} $\ast$ \hyperlink{class_polar_chart_a7f51e9599161df80a632fcb512a9c4fc}{add\+Spline\+Line\+Layer} (\hyperlink{class_double_array}{Double\+Array} data, int color=-\/1, const char $\ast$name=0)
+\item 
+\hyperlink{class_polar_spline_area_layer}{Polar\+Spline\+Area\+Layer} $\ast$ \hyperlink{class_polar_chart_a490b2bb4cc48418f66065fa2ba1dd005}{add\+Spline\+Area\+Layer} (\hyperlink{class_double_array}{Double\+Array} data, int color=-\/1, const char $\ast$name=0)
+\item 
+\hyperlink{class_polar_vector_layer}{Polar\+Vector\+Layer} $\ast$ \hyperlink{class_polar_chart_a23fe6742c905e05ba49aaca646aef921}{add\+Vector\+Layer} (\hyperlink{class_double_array}{Double\+Array} r\+Data, \hyperlink{class_double_array}{Double\+Array} a\+Data, \hyperlink{class_double_array}{Double\+Array} lengths, \hyperlink{class_double_array}{Double\+Array} directions, int length\+Scale=\hyperlink{namespace_chart_af8005281e1fb57d737e9f89b13605808afebebf69a28e58958dc5f9da3ece2147}{Chart\+::\+Pixel\+Scale}, int color=-\/1, const char $\ast$name=0)
+\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \hyperlink{class_polar_chart}{Polar\+Chart} $\ast$ \hyperlink{class_polar_chart_a0535130cd8a43ad6398f04acaf9d0614}{create} (int width, int height, int bg\+Color=\hyperlink{namespace_chart_abee0d882fdc9ad0b001245ad9fc64011a134193bde693b9d152d0c6dc59fa7d7f}{Chart\+::\+Background\+Color}, int edge\+Color=\hyperlink{namespace_chart_abee0d882fdc9ad0b001245ad9fc64011afc6811800a9e2582dac0157b6279f836}{Chart\+::\+Transparent}, int raised\+Effect=0)
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 2652 of file chartdir.\+h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_polar_chart_a7269b9fccbcc87f5590c6310b67b195b}\label{class_polar_chart_a7269b9fccbcc87f5590c6310b67b195b}} 
+\index{Polar\+Chart@{Polar\+Chart}!Polar\+Chart@{Polar\+Chart}}
+\index{Polar\+Chart@{Polar\+Chart}!Polar\+Chart@{Polar\+Chart}}
+\subsubsection{\texorpdfstring{Polar\+Chart()}{PolarChart()}}
+{\footnotesize\ttfamily Polar\+Chart\+::\+Polar\+Chart (\begin{DoxyParamCaption}\item[{int}]{width,  }\item[{int}]{height,  }\item[{int}]{bg\+Color = {\ttfamily \hyperlink{namespace_chart_abee0d882fdc9ad0b001245ad9fc64011a134193bde693b9d152d0c6dc59fa7d7f}{Chart\+::\+Background\+Color}},  }\item[{int}]{edge\+Color = {\ttfamily \hyperlink{namespace_chart_abee0d882fdc9ad0b001245ad9fc64011afc6811800a9e2582dac0157b6279f836}{Chart\+::\+Transparent}},  }\item[{int}]{raised\+Effect = {\ttfamily 0} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 2662 of file chartdir.\+h.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=347pt]{class_polar_chart_a7269b9fccbcc87f5590c6310b67b195b_cgraph}
+\end{center}
+\end{figure}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_polar_chart_a36a592c0473d015113d9add78d9dfbad}\label{class_polar_chart_a36a592c0473d015113d9add78d9dfbad}} 
+\index{Polar\+Chart@{Polar\+Chart}!add\+Area\+Layer@{add\+Area\+Layer}}
+\index{add\+Area\+Layer@{add\+Area\+Layer}!Polar\+Chart@{Polar\+Chart}}
+\subsubsection{\texorpdfstring{add\+Area\+Layer()}{addAreaLayer()}}
+{\footnotesize\ttfamily \hyperlink{class_polar_area_layer}{Polar\+Area\+Layer}$\ast$ Polar\+Chart\+::add\+Area\+Layer (\begin{DoxyParamCaption}\item[{\hyperlink{class_double_array}{Double\+Array}}]{data,  }\item[{int}]{color = {\ttfamily -\/1},  }\item[{const char $\ast$}]{name = {\ttfamily 0} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 2689 of file chartdir.\+h.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_polar_chart_a36a592c0473d015113d9add78d9dfbad_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_polar_chart_a5d54191f10884a95b52f3098a4e33c3c}\label{class_polar_chart_a5d54191f10884a95b52f3098a4e33c3c}} 
+\index{Polar\+Chart@{Polar\+Chart}!add\+Line\+Layer@{add\+Line\+Layer}}
+\index{add\+Line\+Layer@{add\+Line\+Layer}!Polar\+Chart@{Polar\+Chart}}
+\subsubsection{\texorpdfstring{add\+Line\+Layer()}{addLineLayer()}}
+{\footnotesize\ttfamily \hyperlink{class_polar_line_layer}{Polar\+Line\+Layer}$\ast$ Polar\+Chart\+::add\+Line\+Layer (\begin{DoxyParamCaption}\item[{\hyperlink{class_double_array}{Double\+Array}}]{data,  }\item[{int}]{color = {\ttfamily -\/1},  }\item[{const char $\ast$}]{name = {\ttfamily 0} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 2691 of file chartdir.\+h.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_polar_chart_a5d54191f10884a95b52f3098a4e33c3c_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_polar_chart_a490b2bb4cc48418f66065fa2ba1dd005}\label{class_polar_chart_a490b2bb4cc48418f66065fa2ba1dd005}} 
+\index{Polar\+Chart@{Polar\+Chart}!add\+Spline\+Area\+Layer@{add\+Spline\+Area\+Layer}}
+\index{add\+Spline\+Area\+Layer@{add\+Spline\+Area\+Layer}!Polar\+Chart@{Polar\+Chart}}
+\subsubsection{\texorpdfstring{add\+Spline\+Area\+Layer()}{addSplineAreaLayer()}}
+{\footnotesize\ttfamily \hyperlink{class_polar_spline_area_layer}{Polar\+Spline\+Area\+Layer}$\ast$ Polar\+Chart\+::add\+Spline\+Area\+Layer (\begin{DoxyParamCaption}\item[{\hyperlink{class_double_array}{Double\+Array}}]{data,  }\item[{int}]{color = {\ttfamily -\/1},  }\item[{const char $\ast$}]{name = {\ttfamily 0} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 2695 of file chartdir.\+h.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_polar_chart_a490b2bb4cc48418f66065fa2ba1dd005_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_polar_chart_a7f51e9599161df80a632fcb512a9c4fc}\label{class_polar_chart_a7f51e9599161df80a632fcb512a9c4fc}} 
+\index{Polar\+Chart@{Polar\+Chart}!add\+Spline\+Line\+Layer@{add\+Spline\+Line\+Layer}}
+\index{add\+Spline\+Line\+Layer@{add\+Spline\+Line\+Layer}!Polar\+Chart@{Polar\+Chart}}
+\subsubsection{\texorpdfstring{add\+Spline\+Line\+Layer()}{addSplineLineLayer()}}
+{\footnotesize\ttfamily \hyperlink{class_polar_spline_line_layer}{Polar\+Spline\+Line\+Layer}$\ast$ Polar\+Chart\+::add\+Spline\+Line\+Layer (\begin{DoxyParamCaption}\item[{\hyperlink{class_double_array}{Double\+Array}}]{data,  }\item[{int}]{color = {\ttfamily -\/1},  }\item[{const char $\ast$}]{name = {\ttfamily 0} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 2693 of file chartdir.\+h.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_polar_chart_a7f51e9599161df80a632fcb512a9c4fc_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_polar_chart_a23fe6742c905e05ba49aaca646aef921}\label{class_polar_chart_a23fe6742c905e05ba49aaca646aef921}} 
+\index{Polar\+Chart@{Polar\+Chart}!add\+Vector\+Layer@{add\+Vector\+Layer}}
+\index{add\+Vector\+Layer@{add\+Vector\+Layer}!Polar\+Chart@{Polar\+Chart}}
+\subsubsection{\texorpdfstring{add\+Vector\+Layer()}{addVectorLayer()}}
+{\footnotesize\ttfamily \hyperlink{class_polar_vector_layer}{Polar\+Vector\+Layer}$\ast$ Polar\+Chart\+::add\+Vector\+Layer (\begin{DoxyParamCaption}\item[{\hyperlink{class_double_array}{Double\+Array}}]{r\+Data,  }\item[{\hyperlink{class_double_array}{Double\+Array}}]{a\+Data,  }\item[{\hyperlink{class_double_array}{Double\+Array}}]{lengths,  }\item[{\hyperlink{class_double_array}{Double\+Array}}]{directions,  }\item[{int}]{length\+Scale = {\ttfamily \hyperlink{namespace_chart_af8005281e1fb57d737e9f89b13605808afebebf69a28e58958dc5f9da3ece2147}{Chart\+::\+Pixel\+Scale}},  }\item[{int}]{color = {\ttfamily -\/1},  }\item[{const char $\ast$}]{name = {\ttfamily 0} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 2697 of file chartdir.\+h.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_polar_chart_a23fe6742c905e05ba49aaca646aef921_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_polar_chart_ab8bf9e2fdc266ee0e8a5e878e3e80cde}\label{class_polar_chart_ab8bf9e2fdc266ee0e8a5e878e3e80cde}} 
+\index{Polar\+Chart@{Polar\+Chart}!angular\+Axis@{angular\+Axis}}
+\index{angular\+Axis@{angular\+Axis}!Polar\+Chart@{Polar\+Chart}}
+\subsubsection{\texorpdfstring{angular\+Axis()}{angularAxis()}}
+{\footnotesize\ttfamily \hyperlink{class_angular_axis}{Angular\+Axis}$\ast$ Polar\+Chart\+::angular\+Axis (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 2683 of file chartdir.\+h.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_polar_chart_ab8bf9e2fdc266ee0e8a5e878e3e80cde_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_polar_chart_a0535130cd8a43ad6398f04acaf9d0614}\label{class_polar_chart_a0535130cd8a43ad6398f04acaf9d0614}} 
+\index{Polar\+Chart@{Polar\+Chart}!create@{create}}
+\index{create@{create}!Polar\+Chart@{Polar\+Chart}}
+\subsubsection{\texorpdfstring{create()}{create()}}
+{\footnotesize\ttfamily static \hyperlink{class_polar_chart}{Polar\+Chart}$\ast$ Polar\+Chart\+::create (\begin{DoxyParamCaption}\item[{int}]{width,  }\item[{int}]{height,  }\item[{int}]{bg\+Color = {\ttfamily \hyperlink{namespace_chart_abee0d882fdc9ad0b001245ad9fc64011a134193bde693b9d152d0c6dc59fa7d7f}{Chart\+::\+Background\+Color}},  }\item[{int}]{edge\+Color = {\ttfamily \hyperlink{namespace_chart_abee0d882fdc9ad0b001245ad9fc64011afc6811800a9e2582dac0157b6279f836}{Chart\+::\+Transparent}},  }\item[{int}]{raised\+Effect = {\ttfamily 0} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Definition at line 2666 of file chartdir.\+h.
+
+\mbox{\Hypertarget{class_polar_chart_a948b023559d129d515adf187526262eb}\label{class_polar_chart_a948b023559d129d515adf187526262eb}} 
+\index{Polar\+Chart@{Polar\+Chart}!get\+X\+Coor@{get\+X\+Coor}}
+\index{get\+X\+Coor@{get\+X\+Coor}!Polar\+Chart@{Polar\+Chart}}
+\subsubsection{\texorpdfstring{get\+X\+Coor()}{getXCoor()}}
+{\footnotesize\ttfamily int Polar\+Chart\+::get\+X\+Coor (\begin{DoxyParamCaption}\item[{double}]{r,  }\item[{double}]{a }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 2686 of file chartdir.\+h.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=343pt]{class_polar_chart_a948b023559d129d515adf187526262eb_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_polar_chart_a1f64ec407df2fdd1c80bbc7fd9fb018b}\label{class_polar_chart_a1f64ec407df2fdd1c80bbc7fd9fb018b}} 
+\index{Polar\+Chart@{Polar\+Chart}!get\+Y\+Coor@{get\+Y\+Coor}}
+\index{get\+Y\+Coor@{get\+Y\+Coor}!Polar\+Chart@{Polar\+Chart}}
+\subsubsection{\texorpdfstring{get\+Y\+Coor()}{getYCoor()}}
+{\footnotesize\ttfamily int Polar\+Chart\+::get\+Y\+Coor (\begin{DoxyParamCaption}\item[{double}]{r,  }\item[{double}]{a }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 2687 of file chartdir.\+h.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=343pt]{class_polar_chart_a1f64ec407df2fdd1c80bbc7fd9fb018b_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_polar_chart_ab29bc179de261a048e3c493324ff85f1}\label{class_polar_chart_ab29bc179de261a048e3c493324ff85f1}} 
+\index{Polar\+Chart@{Polar\+Chart}!radial\+Axis@{radial\+Axis}}
+\index{radial\+Axis@{radial\+Axis}!Polar\+Chart@{Polar\+Chart}}
+\subsubsection{\texorpdfstring{radial\+Axis()}{radialAxis()}}
+{\footnotesize\ttfamily \hyperlink{chartdir_8h_a4e17084867bb8e096e6e13b956e538ce}{Radial\+Axis}$\ast$ Polar\+Chart\+::radial\+Axis (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 2684 of file chartdir.\+h.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=347pt]{class_polar_chart_ab29bc179de261a048e3c493324ff85f1_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_polar_chart_a781271d5381dfe4fe6164384ebbed7a1}\label{class_polar_chart_a781271d5381dfe4fe6164384ebbed7a1}} 
+\index{Polar\+Chart@{Polar\+Chart}!set\+Grid\+Color@{set\+Grid\+Color}}
+\index{set\+Grid\+Color@{set\+Grid\+Color}!Polar\+Chart@{Polar\+Chart}}
+\subsubsection{\texorpdfstring{set\+Grid\+Color()}{setGridColor()}}
+{\footnotesize\ttfamily void Polar\+Chart\+::set\+Grid\+Color (\begin{DoxyParamCaption}\item[{int}]{r\+Grid\+Color = {\ttfamily 0x80000000},  }\item[{int}]{r\+Grid\+Width = {\ttfamily 1},  }\item[{int}]{a\+Grid\+Color = {\ttfamily 0x80000000},  }\item[{int}]{a\+Grid\+Width = {\ttfamily 1} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 2675 of file chartdir.\+h.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_polar_chart_a781271d5381dfe4fe6164384ebbed7a1_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_polar_chart_a088600a8966e89904181d33842077e15}\label{class_polar_chart_a088600a8966e89904181d33842077e15}} 
+\index{Polar\+Chart@{Polar\+Chart}!set\+Grid\+Style@{set\+Grid\+Style}}
+\index{set\+Grid\+Style@{set\+Grid\+Style}!Polar\+Chart@{Polar\+Chart}}
+\subsubsection{\texorpdfstring{set\+Grid\+Style()}{setGridStyle()}}
+{\footnotesize\ttfamily void Polar\+Chart\+::set\+Grid\+Style (\begin{DoxyParamCaption}\item[{bool}]{polygon\+Grid,  }\item[{bool}]{grid\+On\+Top = {\ttfamily true} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 2678 of file chartdir.\+h.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_polar_chart_a088600a8966e89904181d33842077e15_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_polar_chart_adc36a42598e36330c451bab063739494}\label{class_polar_chart_adc36a42598e36330c451bab063739494}} 
+\index{Polar\+Chart@{Polar\+Chart}!set\+Plot\+Area@{set\+Plot\+Area}}
+\index{set\+Plot\+Area@{set\+Plot\+Area}!Polar\+Chart@{Polar\+Chart}}
+\subsubsection{\texorpdfstring{set\+Plot\+Area()}{setPlotArea()}}
+{\footnotesize\ttfamily void Polar\+Chart\+::set\+Plot\+Area (\begin{DoxyParamCaption}\item[{int}]{x,  }\item[{int}]{y,  }\item[{int}]{r,  }\item[{int}]{bg\+Color = {\ttfamily \hyperlink{namespace_chart_abee0d882fdc9ad0b001245ad9fc64011afc6811800a9e2582dac0157b6279f836}{Chart\+::\+Transparent}},  }\item[{int}]{edge\+Color = {\ttfamily \hyperlink{namespace_chart_abee0d882fdc9ad0b001245ad9fc64011afc6811800a9e2582dac0157b6279f836}{Chart\+::\+Transparent}},  }\item[{int}]{edge\+Width = {\ttfamily 1} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 2670 of file chartdir.\+h.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_polar_chart_adc36a42598e36330c451bab063739494_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_polar_chart_a4bb79336412c5a0407ca057713926ac8}\label{class_polar_chart_a4bb79336412c5a0407ca057713926ac8}} 
+\index{Polar\+Chart@{Polar\+Chart}!set\+Plot\+Area\+Bg@{set\+Plot\+Area\+Bg}}
+\index{set\+Plot\+Area\+Bg@{set\+Plot\+Area\+Bg}!Polar\+Chart@{Polar\+Chart}}
+\subsubsection{\texorpdfstring{set\+Plot\+Area\+Bg()}{setPlotAreaBg()}}
+{\footnotesize\ttfamily void Polar\+Chart\+::set\+Plot\+Area\+Bg (\begin{DoxyParamCaption}\item[{int}]{bg\+Color1,  }\item[{int}]{bg\+Color2 = {\ttfamily -\/1},  }\item[{bool}]{alt\+Rings = {\ttfamily true} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 2673 of file chartdir.\+h.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_polar_chart_a4bb79336412c5a0407ca057713926ac8_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_polar_chart_a46183032bdf951a3b7b940c38aceb30a}\label{class_polar_chart_a46183032bdf951a3b7b940c38aceb30a}} 
+\index{Polar\+Chart@{Polar\+Chart}!set\+Start\+Angle@{set\+Start\+Angle}}
+\index{set\+Start\+Angle@{set\+Start\+Angle}!Polar\+Chart@{Polar\+Chart}}
+\subsubsection{\texorpdfstring{set\+Start\+Angle()}{setStartAngle()}}
+{\footnotesize\ttfamily void Polar\+Chart\+::set\+Start\+Angle (\begin{DoxyParamCaption}\item[{double}]{start\+Angle,  }\item[{bool}]{clockwise = {\ttfamily true} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 2680 of file chartdir.\+h.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_polar_chart_a46183032bdf951a3b7b940c38aceb30a_cgraph}
+\end{center}
+\end{figure}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+include/\hyperlink{chartdir_8h}{chartdir.\+h}\end{DoxyCompactItemize}

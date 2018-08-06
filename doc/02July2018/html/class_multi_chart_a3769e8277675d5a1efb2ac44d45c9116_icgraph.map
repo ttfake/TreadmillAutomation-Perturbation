@@ -1,0 +1,4 @@
+<map id="MultiChart::setMainChart" name="MultiChart::setMainChart">
+<area shape="rect" id="node2" href="$class_finance_chart.html#a044a1d55c37501ea29ed2b5916faf0e1" title="Create a FinanceChart with a given width. The height will be automatically determined as the chart is..." alt="" coords="221,5,408,32"/>
+<area shape="rect" id="node3" href="$class_finance_chart.html#a1e7439001aaf137a55e33a1add07f1eb" title="FinanceChart::~FinanceChart" alt="" coords="456,5,651,32"/>
+</map>

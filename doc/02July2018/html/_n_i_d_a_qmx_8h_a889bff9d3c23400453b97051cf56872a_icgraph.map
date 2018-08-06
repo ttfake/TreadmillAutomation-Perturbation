@@ -1,0 +1,11 @@
+<map id="DAQmxWaitUntilTaskDone" name="DAQmxWaitUntilTaskDone">
+<area shape="rect" id="node2" href="$class_mouse_interface.html#aa70911c968ecc9ac8b6ce7de752d3689" title="MouseInterface::WriteEvent" alt="" coords="236,71,421,98"/>
+<area shape="rect" id="node10" href="$class_mouse_interface.html#a292f829bcd243f2b462b20b83b5dc273" title="MouseInterface::WriteStim" alt="" coords="239,122,418,149"/>
+<area shape="rect" id="node3" href="$class_mouse_interface.html#ac1ad8eb6785b8a18c368faa8610494a7" title="MouseInterface::getRawInput" alt="" coords="469,13,664,39"/>
+<area shape="rect" id="node6" href="$class_perturbation_tab_widget.html#a09c65ab9737d61975cebc94fe843482d" title="PerturbationTabWidget\l::randomDelay" alt="" coords="489,64,644,105"/>
+<area shape="rect" id="node7" href="$class_perturbation_tab_widget.html#aeecb373be32ddc6ea3c165d685b2a386" title="PerturbationTabWidget\l::loadRunProfile" alt="" coords="721,96,875,137"/>
+<area shape="rect" id="node4" href="$class_mouse_interface.html#afffa2b2ea4250fc392451c51497cf99a" title="MouseInterface::openPort" alt="" coords="712,13,884,39"/>
+<area shape="rect" id="node5" href="$class_perturbation_tab_widget.html#a237937a4a9bd3724fe615d0b5a7b5638" title="PerturbationTabWidget\l::addTrialRunName" alt="" coords="932,5,1087,47"/>
+<area shape="rect" id="node8" href="$class_perturbation_tab_widget.html#a9d551ffcaf3d0ebe54015f5536d261ab" title="PerturbationTabWidget\l::changeSessionId" alt="" coords="932,96,1087,137"/>
+<area shape="rect" id="node9" href="$class_perturbation_tab_widget.html#ad9a685f191ca94bdc47f148273fdf1f4" title="PerturbationTabWidget\l::addDecelerationSpeedGroupBox" alt="" coords="1135,96,1353,137"/>
+</map>

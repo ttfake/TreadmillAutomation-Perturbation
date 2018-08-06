@@ -10,18 +10,27 @@ PerturbationTabWidget::PerturbationTabWidget(QWidget* parent, Qt::WindowFlags fl
     trialRun = 1;
     prp = new ParseRunProfile;
     cellDoubleClicked = false;
-    InstrumentationPanel* instPanel = new InstrumentationPanel;
+
+    safetyTimeout = 1000;
+    addToSpeed = 0;
+
     updateCounter = 0;
     defaultPath = "C:\\Users\\User\\Desktop\\HReflex_Binaries-master\\RunProfiles\\";
+    defaultTriggerPath = "C:\\Users\\User\\Desktop\\HReflex_Binaries-master\\bin\\data\\";
+
     defaultTmpPath = "C:\\Users\\User\\Desktop\\HReflex_Binaries-master\\RunProfiles\\tmp\\";
     firstLoadComplete = false;
     statusCol = 7;
-    timeoutBuffer = 400.00; //in milliseconds
+    timeoutBuffer = 6000.00; //in milliseconds
     APP_NAME = "Treadmill Automation";
+
+    pertTriggerLog = new QFile(defaultTriggerPath + "/" + "pertTriggerLog.log");
+
 }
 
 PerturbationTabWidget::~PerturbationTabWidget()
 {
+    delete mouseInterface;
 }
 
 bool PerturbationTabWidget::checkSocketConnection()
@@ -65,7 +74,6 @@ void PerturbationTabWidget::addQuadrantTwo()
     perturbationTabLayout->addWidget(quadrantTwoGroupBox, 0,1);
     addPersonStimGroupBox();
 //    quadrantTwoGroupBox->hide();
-    //addEmgDataVisualization();
 }
 
 void PerturbationTabWidget::addQuadrantThree()
@@ -81,7 +89,6 @@ void PerturbationTabWidget::addQuadrantThree()
     addAccelDecelGroupBox();
     addTimerGroupBox();
     addStartPertRunGroupBox();
-
 }
 
 void PerturbationTabWidget::addQuadrantFour()
@@ -98,24 +105,30 @@ void PerturbationTabWidget::addFudgeFactorGroupBox()
     fudgeFactorGroupBox = new QGroupBox;
     fudgeFactorGroupBoxHorizontalLayout = new QHBoxLayout;
     fudgeFactorGroupBox->setSizePolicy(QSizePolicy::Minimum, QSizePolicy::Fixed);
+    fudgeFactorGroupBox->setFixedSize(60,40);
     fudgeFactorGroupBox->setLayout(fudgeFactorGroupBoxHorizontalLayout);
-    fudgeFactorLabel = new QLabel;
-    fudgeFactorLabel->setFixedSize(180,180);
-    fudgeFactorLabelFont.setFamily("Times");
-    fudgeFactorLabelFont.setWeight(75);
-    fudgeFactorLabelFont.setPointSize(12);
-    fudgeFactorLabel->setFont(fudgeFactorLabelFont);
-    fudgeFactorLabel->setText("Added Time: ");
-    fudgeFactorGroupBoxHorizontalLayout->addWidget(fudgeFactorLabel);
+    //fudgeFactorLabel = new QLabel;
+    //fudgeFactorLabel->setFixedSize(180,30);
+    //fudgeFactorLabelFont.setFamily("Times");
+    //fudgeFactorLabelFont.setWeight(75);
+    //fudgeFactorLabelFont.setPointSize(12);
+    //fudgeFactorLabel->setFont(fudgeFactorLabelFont);
+    //fudgeFactorLabel->setText("Added Time: ");
+    //fudgeFactorGroupBoxHorizontalLayout->addWidget(fudgeFactorLabel);
     fudgeFactorDoubleSpinBox = new QDoubleSpinBox;
     fudgeFactorDoubleSpinBox->setRange(0.00, 100000000.00);
     fudgeFactorDoubleSpinBox->setFont(fudgeFactorLabelFont);
     fudgeFactorDoubleSpinBox->setSuffix(" ms");
-    fudgeFactorDoubleSpinBox->setFixedSize(160, 40);
+    fudgeFactorDoubleSpinBox->setFixedSize(60, 20);
     fudgeFactorGroupBoxHorizontalLayout->addWidget(fudgeFactorDoubleSpinBox);
 
-    quadrantThreePerturbationLayout->addWidget(fudgeFactorGroupBox);
+    connect(fudgeFactorDoubleSpinBox, SIGNAL(valueChanged(double)), this, SLOT(setTimeoutBuffer(double)));//SLOT(setSafetyTimeout(double)));
+
     fudgeFactorGroupBox->hide();
+    setSafetyTimeout(500.00);
+    
+    quadrantThreePerturbationLayout->addWidget(fudgeFactorGroupBox);
+
 }
 
 void PerturbationTabWidget::addSpeedGroupBox()
@@ -215,19 +228,6 @@ void PerturbationTabWidget::addDecelerationSpeedGroupBox()
 
 void PerturbationTabWidget::addPersonStimGroupBox()
 {
-    personStimGroupBox = new QGroupBox;
-    personStimGroupBoxHBoxLayout = new QHBoxLayout;
-    personStimGroupBox->setLayout(personStimGroupBoxHBoxLayout);
-    personSessionGroupBox = new QGroupBox;
-    personSessionVBoxLayout = new QVBoxLayout;
-    personSessionGroupBox->setLayout(personSessionVBoxLayout);
-    rightSoleusStimGroupBox = new QGroupBox;
-    rightSoleusStimVerticalGroupBoxLayout = new QVBoxLayout;
-    rightSoleusStimGroupBox->setLayout(rightSoleusStimVerticalGroupBoxLayout);
-    leftSoleusStimGroupBox = new QGroupBox;
-    leftSoleusStimVerticalGroupBoxLayout = new QVBoxLayout;
-    leftSoleusStimGroupBox->setLayout(leftSoleusStimVerticalGroupBoxLayout);
-
     personSessionStimQuickView = new QQuickView;
     personSessionStimQuickViewContainer = QWidget::createWindowContainer(personSessionStimQuickView, this);
 #ifdef Q_OS_WIN
@@ -252,7 +252,6 @@ void PerturbationTabWidget::addPersonStimGroupBox()
     connect(personSessionStimQuickViewItem, SIGNAL(changeSessionId(QString)), SLOT(changeSessionId(QString)));
 
     quadrantTwoPerturbationLayout->addWidget(personSessionStimQuickViewContainer);
-
 }
 
 void PerturbationTabWidget::showPressEnterWarning()
@@ -300,6 +299,7 @@ void PerturbationTabWidget::addRunGroupBox()
     resetButton->setFont(importExportButtonFont);
     resetButton->setFixedSize(200,40);
     resetButton->setText("Reset");
+    resetButton->setEnabled(false);
 
 
 
@@ -373,6 +373,7 @@ void PerturbationTabWidget::addTimerGroupBox()
     timeAccelSpinBox->setFixedSize(160,40);
     timeAccelSpinBox->setSuffix("  ms");
     timeAccelSpinBox->setRange(0.00, 100000000.00);
+    timeAccelSpinBox->setEnabled(false);
 
     timeAccelSpinBox->setSizePolicy(QSizePolicy::Minimum, QSizePolicy::Fixed); 
     timerGroupBoxVerticalLayout->addWidget(timeAccelSpinBox);
@@ -458,6 +459,7 @@ void PerturbationTabWidget::addTrialRunName()
 {
 
 }
+
 
 void PerturbationTabWidget::addAccelDecelGroupBox()
 {
@@ -551,6 +553,7 @@ void PerturbationTabWidget::addStartPertRunGroupBox()
     startStimRunBtn->setSizePolicy(QSizePolicy::Minimum, QSizePolicy::Fixed);
     startStimRunBtn->setFixedSize(200,40);
     startStimRunBtn->setText("Start Stimulation");
+    startStimRunBtn->setEnabled(false);
 
     startPertRunGroupBoxLayout->addWidget(startPertRunBtn);
     startPertRunGroupBoxLayout->addWidget(prevPertRunBtn);
@@ -583,7 +586,7 @@ void PerturbationTabWidget::addStartPertRunGroupBox()
     //    connect(startPertRunBtn, SIGNAL(clicked()), SLOT(randomDelay()));
     connect(startPertRunBtn, SIGNAL(clicked()), SLOT(setTryNotToStep()));
     //connect(startPertRunBtn, SIGNAL(clicked()), mouseInterface, SLOT(WriteEvent()));  // Trigger 1
-    connect(startPertRunBtn, SIGNAL(clicked()), mouseInterface, SLOT(setPerturbationActiveBoolTrue()));
+    //connect(startPertRunBtn, SIGNAL(clicked()), mouseInterface, SLOT(setPerturbationActiveBoolTrue()));
     connect(mouseInterface, SIGNAL(movement()), SLOT(treadmillWait()));
     connect(mouseInterface, SIGNAL(movementStopped()), SLOT(slotTimeout()));
 
@@ -592,35 +595,6 @@ void PerturbationTabWidget::addStartPertRunGroupBox()
     connect(startStimRunBtn, SIGNAL(clicked()), SLOT(startStim()));
 }
 
-void PerturbationTabWidget::addEmgDataVisualization()
-{
-    QQuickView* viewer = new QQuickView;
-    QWidget *container = QWidget::createWindowContainer(viewer, this);
-    container->setMinimumSize(700, 800);
-    container->setMaximumSize(700, 800);
-    viewer->setFormat(QtDataVisualization::qDefaultSurfaceFormat());
-#ifdef Q_OS_WIN
-    QString extraImportPath(QStringLiteral("%1/../../../../%2"));
-#else
-    QString extraImportPath(QStringLiteral("%1/../../../%2"));
-#endif
-    viewer->engine()->addImportPath(extraImportPath.arg(QGuiApplication::applicationDirPath(),
-                QString::fromLatin1("qml")));
-    QObject::connect(viewer->engine(), &QQmlEngine::quit, viewer, &QWindow::close);
-
-    viewer->setTitle(QStringLiteral("Oscilloscope example"));
-
-    DataSource* dataSource = new DataSource;
-    viewer->rootContext()->setContextProperty("dataSource", dataSource);
-
-    viewer->setSource(QUrl("main.qml"));
-    viewer->setResizeMode(QQuickView::SizeRootObjectToView);
-    /*    qmlRegisterType<QmlInterface>("io.qt.examples.backend", 1, 0, "QmlInterface");
-          QQmlApplicationEngine engine;
-          engine.load(QUrl(QStringLiteral("QmlInterface.qml")));
-          */
-    //    quadrantTwoPerturbationLayout->addWidget(container);
-}
 
 /*void PerturbationTabWidget::addRecordDataStreamVelocityBox()
   {
@@ -750,13 +724,12 @@ void PerturbationTabWidget::setUseLibraryStatus(bool useLibCheckBox)
 void PerturbationTabWidget::randomDelay()
 {
     sInterface->changeToCircle();
-    startPertRunBtn->setDisabled(true);
-    nextPertRunBtn->setDisabled(true);
-    prevPertRunBtn->setDisabled(true);
     int randomTime = rand() % 2000 + 2000;
     qDebug("Random Time: %i", randomTime);
     QFile randomDelayLog(logPath + "/" + "randomDelayLog.log");
     randomDelayLog.open(QIODevice::Append);
+    qint64 currentMsecsSinceEpoch = QDateTime::currentMSecsSinceEpoch();
+    randomDelayLog.write("Unix System Timestamp:" + QString::number(currentMsecsSinceEpoch).toUtf8() + "\n");
     randomDelayLog.write(QString::number(randomTime).toUtf8() + "\n");
     randomDelayLog.close();
     //    mouseInterface->WriteLine();
@@ -766,6 +739,8 @@ void PerturbationTabWidget::randomDelay()
 void PerturbationTabWidget::startTreadmill()
 {
     try {
+        mouseInterface->setPerturbationActiveBoolTrue();
+        slotTimeOutRunBool = false;
         QFile accelerationSignalSentLog(logPath + "/" + "accelerationSignalSentLog.log");
         accelerationSignalSentLog.open(QIODevice::Append);
         //    recTreadmillStream->setRecord();
@@ -773,7 +748,7 @@ void PerturbationTabWidget::startTreadmill()
         setDecelerationValue(deceleration->value());
         setAccelerationTimeValue(timeAccelSpinBox->value());
         setDecelerationTimeValue(timeDecelSpinBox->value());
-        setAddToSpeed(fudgeFactorDoubleSpinBox->value());
+        //setAddToSpeed(fudgeFactorDoubleSpinBox->value());
         qDebug() << addToSpeed;
         setLeftFrontSpeedValue(calculateSpeed());
         setRightFrontSpeedValue(calculateSpeed());
@@ -794,9 +769,15 @@ void PerturbationTabWidget::startTreadmill()
         //-----------------------------------------------------------------------
 
         accelerationSignalSentLog.close();
-        mouseInterface->WriteEvent(); // Trigger 2
+        mouseInterface->WriteEvent(); // Trigger 1
+        pertTriggerLog->open(QIODevice::Append);
+        pertTriggerLog->write("Trigger 1 (QTM) sent: Unix System Timestamp:" + QString::number(currentMsecsSinceEpoch).toUtf8() + "\n");
+        pertTriggerLog->close();
         sendSetpoints->sendSetpoints(SendSetpoints::TreadmillProperty::ACCEL, SendSetpoints::NormalSetpoint);
-        treadmillWait();
+       
+        QTimer::singleShot(safetyTimeout, this, SLOT(safetyStop()));
+
+        //treadmillWait();
     } catch (...) 
     {
         QMessageBox::StandardButton criticalErr = QMessageBox::critical( this, APP_NAME,
@@ -839,7 +820,12 @@ void PerturbationTabWidget::treadmillWait()
         //-----------------------------------------------------------------------
 
         accelerationTimerStartedLog.close();
-        mouseInterface->WriteEvent(); // Trigger 4
+        
+        pertTriggerLog->open(QIODevice::Append);
+        pertTriggerLog->write("Trigger 3 (treadmillWait) sent: Unix System Timestamp:" + QString::number(currentMsecsSinceEpoch).toUtf8() + "\n");
+        pertTriggerLog->close();
+
+        mouseInterface->WriteEvent(); // Trigger 3
         QTimer::singleShot(retAccelValue, this, SLOT(startDecelTimer()));
     } catch(...)
     {
@@ -909,7 +895,12 @@ void PerturbationTabWidget::startDecelTimer()
         //-----------------------------------------------------------------------
 
         decelerationTimerStartedLog.close();
-        mouseInterface->WriteEvent(); // Trigger 5
+        
+        pertTriggerLog->open(QIODevice::Append);
+        pertTriggerLog->write("Trigger 4 (startDecelTimer) sent: Unix System Timestamp:" + QString::number(currentMsecsSinceEpoch).toUtf8() + "\n");
+        pertTriggerLog->close();
+
+        mouseInterface->WriteEvent(); // Trigger 4
         //    mouseInterface->setPerturbationActiveBoolFalse();
         //    mouseInterface->setMovementDetectedBool(false);
 
@@ -928,7 +919,10 @@ void PerturbationTabWidget::startDecelTimer()
 void PerturbationTabWidget::slotTimeout()
 {
     try {
+
         mouseInterface->setMovementDetectedBool(false);
+        slotTimeOutRunBool = true;
+
         QString complete("Complete");
 
         runTableWidget->setItem(currentRunRowIndex, statusCol, 
@@ -936,13 +930,12 @@ void PerturbationTabWidget::slotTimeout()
         runTableWidget->item(currentRunRowIndex, statusCol)->setFont(tableRowsFont);
         sInterface->setTrialComplete(true);
         mouseInterface->setPerturbationActiveBoolFalse();
-        mouseInterface->setMovementDetectedBool(false);
-        startPertRunBtn->setDisabled(false);
-        nextPertRunBtn->setDisabled(false);
-        prevPertRunBtn->setDisabled(false);
 
+        
         int repoFeetTimeout = 3000;
         saveRunTmp();
+
+        sendSetpoints->sendSetpoints(SendSetpoints::ZERO, SendSetpoints::NormalSetpoint);
 
         QTimer::singleShot(repoFeetTimeout, this, SLOT(setPositionFeet()));
     } catch (...)
@@ -951,6 +944,8 @@ void PerturbationTabWidget::slotTimeout()
                 tr("There was an error in PerturbationTabWidget::slotTimeout().")
                 );
     }
+    
+
 
     //-----------------------------------------------------------------------
     /*    auto uptime = std::chrono::milliseconds(GetTickCount());
@@ -981,6 +976,21 @@ void PerturbationTabWidget::slotTimeout()
     */
 }
 
+void PerturbationTabWidget::safetyStop()
+{
+    if(!mouseInterface->movementDetectedBool && !slotTimeOutRunBool)
+    {
+        mouseInterface->setMovementBool(true);
+        mouseInterface->setMovementDetectedBool(true);
+        startDecelTimer();
+        QMessageBox::StandardButton criticalErr = QMessageBox::critical( this, APP_NAME,
+                tr("Treadmill movement was not detected by the tachometer; perturbation has been stopped.")
+                );
+
+        slotTimeOutRunBool = false;
+    }
+}
+
 
 
 void PerturbationTabWidget::setSocket(QAbstractSocket* socket)
@@ -995,7 +1005,6 @@ double PerturbationTabWidget::calculateSpeed()
     return ((acceleration->value() * ((getAccelerationTimeValue()/millisecondConversion) + 
                     (addToSpeed / 1000)))); 
 }
-
 
 
 void PerturbationTabWidget::loadRunProfile()
@@ -1030,7 +1039,7 @@ void PerturbationTabWidget::loadRunProfile()
                 prp->setRunFile(fileName);
                 tableFilled = false;
                 prp->getRuns();
-                prp->getRun(1);
+                prp->getRun(currentRunRowIndex, 1);
                 mouseInterface->SetupChannelSelection();
                 setAccelerationValue(prp->getAccelLeft());
                 acceleration->setValue(prp->getAccelLeft());
@@ -1048,7 +1057,7 @@ void PerturbationTabWidget::loadRunProfile()
                 //setPleaseStandQuietly();
                 setStimChannel();
             }
-            double decelTime = timeoutBuffer + prp->getDecelTime();
+            double decelTime = prp->getDecelTime();
             timeDecelSpinBox->setValue(decelTime);
 
             firstLoadComplete = true;
@@ -1073,7 +1082,7 @@ void PerturbationTabWidget::resetRunTable()
     checkFileExists();
     prp->resetRunsVectorIndex();
     prp->getRuns();
-    prp->getRun(1);
+    prp->getRun(currentRunRowIndex, 1);
     prp->setAccelDecelFromDb();
     currentRunRowIndex = 0;
     runTableWidget->selectRow(currentRunRowIndex);
@@ -1183,23 +1192,6 @@ void PerturbationTabWidget::enableButton()
     startPertRunBtn->setEnabled(true);
 }
 
-void PerturbationTabWidget::nextRun()
-{
-    //    int pleaseStandQuietly = 2000;
-    //sInterface->setRunOver(true);
-    //sInterface->startTrialRun(true);
-    //    QTimer::singleShot(pleaseStandQuietly, this, SLOT(setPleaseStandQuietly()));
-    setPleaseStandQuietly();
-    currentRunRowIndex++;
-    prp->getRun(1);
-    setAccelerationValue(prp->getAccelLeft());
-    acceleration->setValue(prp->getAccelLeft());
-    setDecelerationValue(prp->getDecelLeft());
-    deceleration->setValue(prp->getDecelLeft());
-    timeAccelSpinBox->setValue(prp->getAccelTime());
-    setAccelerationTimeValue(prp->getAccelTime());
-    runTableWidget->selectRow(currentRunRowIndex);
-}
 
 void PerturbationTabWidget::setPleaseStandQuietly()
 {
@@ -1215,6 +1207,13 @@ void PerturbationTabWidget::setPositionFeet()
     QString posFeet("REPOSITION FEET");
     sInterface->updateTextField(posFeet);
     sInterface->updateTextColor("yellow");
+
+    nextPertRunBtn->setDisabled(false);
+    prevPertRunBtn->setDisabled(false);
+    acceleration->setEnabled(true);
+    deceleration->setEnabled(true);
+
+    QTimer::singleShot(timeoutBuffer, this, SLOT(activateStartButton()));
 }
 
 void PerturbationTabWidget::setTryNotToStep()
@@ -1223,13 +1222,19 @@ void PerturbationTabWidget::setTryNotToStep()
     int levelCol = 4;
     prp->setAccelDecelFromAccelDecelSpinBox(acceleration->value(), deceleration->value());
 
-    if(checkSocketConnection())
+    if(checkSocketConnection() && mouseInterface->GetDevices())
     {
 
         if(prp->compareDbWithRunTable(returnTypeNum(runTableWidget->item(currentRunRowIndex, typeCol)->text()), 
                     returnTypeNum(runTableWidget->item(currentRunRowIndex, levelCol)->text())))
         {
-            mouseInterface->WriteEvent();
+            startPertRunBtn->setDisabled(true);
+            nextPertRunBtn->setDisabled(true);
+            prevPertRunBtn->setDisabled(true);
+            acceleration->setEnabled(false);
+            deceleration->setEnabled(false);
+
+            mouseInterface->WriteEvent();      //Starts Cameras
             int tryNotToStepTimeout = 2000;
             QString tryNotToStep("TRY NOT TO STEP");
             sInterface->updateTextField(tryNotToStep);
@@ -1243,11 +1248,18 @@ void PerturbationTabWidget::setTryNotToStep()
                     );
         }
     }
-    else
+    else if(!checkSocketConnection())
     {
         QMessageBox::StandardButton criticalErr = QMessageBox::critical(this, APP_NAME,
                 tr("Network connection between treadmill application and this software has either been lost or has never been established. Go to network tab and click connect. Verify that connection has been established by looking for the words \"Remotely Controlled\" on the bottom of the treadmill application."));
     }
+    else if(!mouseInterface->GetDevices())
+    {
+        QMessageBox::StandardButton criticalErr = QMessageBox::critical(this, APP_NAME,
+                tr("The National Instruments DAQ Board is not turned on. This board triggers the cameras. Perturbations cannot be run unless this board is turned on."));
+
+    }
+
 }
 
 void PerturbationTabWidget::prevRun()
@@ -1260,11 +1272,11 @@ void PerturbationTabWidget::prevRun()
     {
         currentRunRowIndex--;
     }
-    else 
+    else if(currentRunRowIndex <= 0) 
     {
         currentRunRowIndex = 0;
     }
-    prp->getRun(-2);
+    prp->getRun(currentRunRowIndex, -1);
     QString empty("");
     qDebug() << "currentRunRowIndex: " << currentRunRowIndex;
     qDebug() << "statusCol: " << statusCol;
@@ -1277,6 +1289,37 @@ void PerturbationTabWidget::prevRun()
     timeAccelSpinBox->setValue(prp->getAccelTime());
     setAccelerationTimeValue(prp->getAccelTime());
     runTableWidget->selectRow(currentRunRowIndex);
+}
+
+void PerturbationTabWidget::nextRun()
+{
+    //    int pleaseStandQuietly = 2000;
+    //sInterface->setRunOver(true);
+    //sInterface->startTrialRun(true);
+    //    QTimer::singleShot(pleaseStandQuietly, this, SLOT(setPleaseStandQuietly()));
+    setPleaseStandQuietly();
+
+    if(currentRunRowIndex < runTableWidget->rowCount())
+    {
+        currentRunRowIndex++;
+    }
+    else if(currentRunRowIndex == runTableWidget->rowCount())
+    {
+        currentRunRowIndex = runTableWidget->rowCount() - 1;
+    }
+    prp->getRun(currentRunRowIndex, 1);
+    setAccelerationValue(prp->getAccelLeft());
+    acceleration->setValue(prp->getAccelLeft());
+    setDecelerationValue(prp->getDecelLeft());
+    deceleration->setValue(prp->getDecelLeft());
+    timeAccelSpinBox->setValue(prp->getAccelTime());
+    setAccelerationTimeValue(prp->getAccelTime());
+    runTableWidget->selectRow(currentRunRowIndex);
+}
+
+void PerturbationTabWidget::activateStartButton(bool enable)
+{
+    startPertRunBtn->setDisabled(enable);
 }
 
 void PerturbationTabWidget::setLeftStimCurrent()
@@ -1672,7 +1715,7 @@ void PerturbationTabWidget::updateRun(int cellRow, int cellCol)
         prp->clearRunResultsVector();
 
         prp->getRuns();
-        prp->getRun(1);
+        prp->getRun(currentRunRowIndex, 1);
     }
 
     updateCounter = 0;
@@ -1904,8 +1947,23 @@ void PerturbationTabWidget::closeSubjectInterfaceWindow()
     sInterface->close();
 }
 
-void PerturbationTabWidget::closeInstrumentationPanel()
+
+void PerturbationTabWidget::daqReconnect()
 {
+    mouseInterface->SetupEventTrigger();
+}
+
+void PerturbationTabWidget::setSafetyTimeout(double time)
+{
+    safetyTimeout = time;
+    qDebug() << safetyTimeout;
+}
+
+void PerturbationTabWidget::setTimeoutBuffer(double timeout)
+{
+    timeoutBuffer = timeout;
+    double decelTime = timeoutBuffer + prp->getDecelTime();
+    timeDecelSpinBox->setValue(decelTime);
 }
 
 #include "../include/moc_PerturbationTabWidget.cpp"

@@ -1,0 +1,5 @@
+<map id="FinanceChart::addBarIndicator2" name="FinanceChart::addBarIndicator2">
+<area shape="rect" id="node2" href="$class_x_y_chart.html#afb3bb487fa8f9ea3c2d142cb7fed7eab" title="XYChart::addBarLayer" alt="" coords="260,5,413,32"/>
+<area shape="rect" id="node3" href="$class_layer.html#a5ca95189af8b33edce8e9a6bf28259b1" title="Layer::setBorderColor" alt="" coords="262,56,411,83"/>
+<area shape="rect" id="node4" href="$bchartdir_8h.html#ae80cf8b18611b7571ffc460d310b2632" title="CLayer_setBorderColor" alt="" coords="461,56,620,83"/>
+</map>

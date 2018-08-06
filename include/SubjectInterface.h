@@ -20,26 +20,23 @@ class SubjectInterface : public QDialog
         SubjectInterface(QWidget* parent = 0, Qt::WindowFlags flags = 0);
         ~SubjectInterface();
 
-        void changeCircleColor(QColor circleColor);
-        void setTrialComplete(bool mTrialComplete);
-        void startTrialRun(bool runStartedBool);
-        void setRunOver(bool mRunOver);
-        QObject *subjectIfaceItem;
-        void updateTextField(QString newText);
-        void updateTextColor(QString color);
+        void                          changeCircleColor(QColor circleColor);
+        void                          setTrialComplete(bool mTrialComplete);
+        void                          startTrialRun(bool runStartedBool);
+        void                          setRunOver(bool mRunOver);
+        QObject                       *subjectIfaceItem;
+        void                          updateTextField(QString newText);
+        void                          updateTextColor(QString color);
 
         public slots:
-            void changeToCircle();
-            void hideRedCircle();
-            void hideGreenCircle();
+            void                      changeToCircle();
+            void                      hideRedCircle();
+            void                      hideGreenCircle();
 
     private:
-        QVBoxLayout* SubjectInterfaceLayout;
-        QQuickView* subjectQuickView;
-        QWidget* subjectQuickViewContainer;
+        QVBoxLayout*                  SubjectInterfaceLayout;
+        QQuickView*                   subjectQuickView;
+        QWidget*                      subjectQuickViewContainer;
 
 };
 #endif
-
-
-

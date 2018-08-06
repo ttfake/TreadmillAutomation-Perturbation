@@ -1,0 +1,12 @@
+<map id="PerturbationTabWidget::addTrialRunName" name="PerturbationTabWidget::addTrialRunName">
+<area shape="rect" id="node2" href="$class_mouse_interface.html#afffa2b2ea4250fc392451c51497cf99a" title="MouseInterface::openPort" alt="" coords="216,56,388,83"/>
+<area shape="rect" id="node8" href="$class_mouse_interface.html#a6f60ced71ed9ac307b019cb300e44a32" title="MouseInterface::SetupEvent\lTrigger" alt="" coords="208,173,396,214"/>
+<area shape="rect" id="node11" href="$class_mouse_interface.html#a913cdae50fddc45ee67131d762735dbc" title="MouseInterface::SetupStim\lTrigger" alt="" coords="211,107,393,149"/>
+<area shape="rect" id="node3" href="$class_mouse_interface.html#ac1ad8eb6785b8a18c368faa8610494a7" title="MouseInterface::getRawInput" alt="" coords="457,56,652,83"/>
+<area shape="rect" id="node4" href="$class_mouse_interface.html#aa70911c968ecc9ac8b6ce7de752d3689" title="MouseInterface::WriteEvent" alt="" coords="713,56,899,83"/>
+<area shape="rect" id="node5" href="$_n_i_d_a_qmx_8h.html#ad8cfe18834963aa261b1f8ca9277daaa" title="DAQmxStartTask" alt="" coords="975,5,1101,32"/>
+<area shape="rect" id="node6" href="$_n_i_d_a_qmx_8h.html#a889bff9d3c23400453b97051cf56872a" title="DAQmxWaitUntilTaskDone" alt="" coords="947,56,1129,83"/>
+<area shape="rect" id="node7" href="$_n_i_d_a_qmx_8h.html#a85d6ee7f3518c1eb26ec0f01de160392" title="DAQmxStopTask" alt="" coords="975,107,1101,133"/>
+<area shape="rect" id="node9" href="$_n_i_d_a_qmx_8h.html#a778abc10915e0a506b98a11ecbd7f1e3" title="DAQmxCreateTask" alt="" coords="486,176,623,203"/>
+<area shape="rect" id="node10" href="$_n_i_d_a_qmx_8h.html#af8f808683006d2892544be671ad82fcb" title="DAQmxCreateCOPulseChanTime" alt="" coords="444,121,665,148"/>
+</map>

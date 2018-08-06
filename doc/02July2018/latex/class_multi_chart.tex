@@ -1,0 +1,175 @@
+\hypertarget{class_multi_chart}{}\section{Multi\+Chart Class Reference}
+\label{class_multi_chart}\index{Multi\+Chart@{Multi\+Chart}}
+
+
+{\ttfamily \#include $<$chartdir.\+h$>$}
+
+
+
+Inheritance diagram for Multi\+Chart\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=175pt]{class_multi_chart__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Multi\+Chart\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=175pt]{class_multi_chart__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_multi_chart_abf2c503949698fbc07de9eab84ac5fdc}{Multi\+Chart} (int width, int height, int bg\+Color=\hyperlink{namespace_chart_abee0d882fdc9ad0b001245ad9fc64011a134193bde693b9d152d0c6dc59fa7d7f}{Chart\+::\+Background\+Color}, int edge\+Color=\hyperlink{namespace_chart_abee0d882fdc9ad0b001245ad9fc64011afc6811800a9e2582dac0157b6279f836}{Chart\+::\+Transparent}, int raised\+Effect=0)
+\item 
+\hyperlink{class_multi_chart_a72022b64771bd6dd61f4a69a12262c34}{$\sim$\+Multi\+Chart} ()
+\item 
+void \hyperlink{class_multi_chart_a8a41f5565f6914264044ddd99af9a6e9}{add\+Chart} (int x, int y, \hyperlink{class_base_chart}{Base\+Chart} $\ast$c)
+\item 
+\hyperlink{class_base_chart}{Base\+Chart} $\ast$ \hyperlink{class_multi_chart_a17712a61c4b4687e374049b3ea502d98}{get\+Chart} (int i=0)
+\item 
+int \hyperlink{class_multi_chart_a2e04657227a59f55f04433c0e0df1a2f}{get\+Chart\+Count} ()
+\item 
+void \hyperlink{class_multi_chart_a3769e8277675d5a1efb2ac44d45c9116}{set\+Main\+Chart} (const \hyperlink{class_base_chart}{Base\+Chart} $\ast$c)
+\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \hyperlink{class_multi_chart}{Multi\+Chart} $\ast$ \hyperlink{class_multi_chart_ad32164a35e145d046fbcf5ccd9c839de}{create} (int width, int height, int bg\+Color=\hyperlink{namespace_chart_abee0d882fdc9ad0b001245ad9fc64011a134193bde693b9d152d0c6dc59fa7d7f}{Chart\+::\+Background\+Color}, int edge\+Color=\hyperlink{namespace_chart_abee0d882fdc9ad0b001245ad9fc64011afc6811800a9e2582dac0157b6279f836}{Chart\+::\+Transparent}, int raised\+Effect=0)
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 1191 of file chartdir.\+h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_multi_chart_abf2c503949698fbc07de9eab84ac5fdc}\label{class_multi_chart_abf2c503949698fbc07de9eab84ac5fdc}} 
+\index{Multi\+Chart@{Multi\+Chart}!Multi\+Chart@{Multi\+Chart}}
+\index{Multi\+Chart@{Multi\+Chart}!Multi\+Chart@{Multi\+Chart}}
+\subsubsection{\texorpdfstring{Multi\+Chart()}{MultiChart()}}
+{\footnotesize\ttfamily Multi\+Chart\+::\+Multi\+Chart (\begin{DoxyParamCaption}\item[{int}]{width,  }\item[{int}]{height,  }\item[{int}]{bg\+Color = {\ttfamily \hyperlink{namespace_chart_abee0d882fdc9ad0b001245ad9fc64011a134193bde693b9d152d0c6dc59fa7d7f}{Chart\+::\+Background\+Color}},  }\item[{int}]{edge\+Color = {\ttfamily \hyperlink{namespace_chart_abee0d882fdc9ad0b001245ad9fc64011afc6811800a9e2582dac0157b6279f836}{Chart\+::\+Transparent}},  }\item[{int}]{raised\+Effect = {\ttfamily 0} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 1206 of file chartdir.\+h.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=342pt]{class_multi_chart_abf2c503949698fbc07de9eab84ac5fdc_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_multi_chart_a72022b64771bd6dd61f4a69a12262c34}\label{class_multi_chart_a72022b64771bd6dd61f4a69a12262c34}} 
+\index{Multi\+Chart@{Multi\+Chart}!````~Multi\+Chart@{$\sim$\+Multi\+Chart}}
+\index{````~Multi\+Chart@{$\sim$\+Multi\+Chart}!Multi\+Chart@{Multi\+Chart}}
+\subsubsection{\texorpdfstring{$\sim$\+Multi\+Chart()}{~MultiChart()}}
+{\footnotesize\ttfamily Multi\+Chart\+::$\sim$\+Multi\+Chart (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 1214 of file chartdir.\+h.
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_multi_chart_a8a41f5565f6914264044ddd99af9a6e9}\label{class_multi_chart_a8a41f5565f6914264044ddd99af9a6e9}} 
+\index{Multi\+Chart@{Multi\+Chart}!add\+Chart@{add\+Chart}}
+\index{add\+Chart@{add\+Chart}!Multi\+Chart@{Multi\+Chart}}
+\subsubsection{\texorpdfstring{add\+Chart()}{addChart()}}
+{\footnotesize\ttfamily void Multi\+Chart\+::add\+Chart (\begin{DoxyParamCaption}\item[{int}]{x,  }\item[{int}]{y,  }\item[{\hyperlink{class_base_chart}{Base\+Chart} $\ast$}]{c }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 1215 of file chartdir.\+h.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_multi_chart_a8a41f5565f6914264044ddd99af9a6e9_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{class_multi_chart_a8a41f5565f6914264044ddd99af9a6e9_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_multi_chart_ad32164a35e145d046fbcf5ccd9c839de}\label{class_multi_chart_ad32164a35e145d046fbcf5ccd9c839de}} 
+\index{Multi\+Chart@{Multi\+Chart}!create@{create}}
+\index{create@{create}!Multi\+Chart@{Multi\+Chart}}
+\subsubsection{\texorpdfstring{create()}{create()}}
+{\footnotesize\ttfamily static \hyperlink{class_multi_chart}{Multi\+Chart}$\ast$ Multi\+Chart\+::create (\begin{DoxyParamCaption}\item[{int}]{width,  }\item[{int}]{height,  }\item[{int}]{bg\+Color = {\ttfamily \hyperlink{namespace_chart_abee0d882fdc9ad0b001245ad9fc64011a134193bde693b9d152d0c6dc59fa7d7f}{Chart\+::\+Background\+Color}},  }\item[{int}]{edge\+Color = {\ttfamily \hyperlink{namespace_chart_abee0d882fdc9ad0b001245ad9fc64011afc6811800a9e2582dac0157b6279f836}{Chart\+::\+Transparent}},  }\item[{int}]{raised\+Effect = {\ttfamily 0} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Definition at line 1211 of file chartdir.\+h.
+
+\mbox{\Hypertarget{class_multi_chart_a17712a61c4b4687e374049b3ea502d98}\label{class_multi_chart_a17712a61c4b4687e374049b3ea502d98}} 
+\index{Multi\+Chart@{Multi\+Chart}!get\+Chart@{get\+Chart}}
+\index{get\+Chart@{get\+Chart}!Multi\+Chart@{Multi\+Chart}}
+\subsubsection{\texorpdfstring{get\+Chart()}{getChart()}}
+{\footnotesize\ttfamily \hyperlink{class_base_chart}{Base\+Chart}$\ast$ Multi\+Chart\+::get\+Chart (\begin{DoxyParamCaption}\item[{int}]{i = {\ttfamily 0} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 1227 of file chartdir.\+h.
+
+\mbox{\Hypertarget{class_multi_chart_a2e04657227a59f55f04433c0e0df1a2f}\label{class_multi_chart_a2e04657227a59f55f04433c0e0df1a2f}} 
+\index{Multi\+Chart@{Multi\+Chart}!get\+Chart\+Count@{get\+Chart\+Count}}
+\index{get\+Chart\+Count@{get\+Chart\+Count}!Multi\+Chart@{Multi\+Chart}}
+\subsubsection{\texorpdfstring{get\+Chart\+Count()}{getChartCount()}}
+{\footnotesize\ttfamily int Multi\+Chart\+::get\+Chart\+Count (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 1234 of file chartdir.\+h.
+
+\mbox{\Hypertarget{class_multi_chart_a3769e8277675d5a1efb2ac44d45c9116}\label{class_multi_chart_a3769e8277675d5a1efb2ac44d45c9116}} 
+\index{Multi\+Chart@{Multi\+Chart}!set\+Main\+Chart@{set\+Main\+Chart}}
+\index{set\+Main\+Chart@{set\+Main\+Chart}!Multi\+Chart@{Multi\+Chart}}
+\subsubsection{\texorpdfstring{set\+Main\+Chart()}{setMainChart()}}
+{\footnotesize\ttfamily void Multi\+Chart\+::set\+Main\+Chart (\begin{DoxyParamCaption}\item[{const \hyperlink{class_base_chart}{Base\+Chart} $\ast$}]{c }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 1237 of file chartdir.\+h.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_multi_chart_a3769e8277675d5a1efb2ac44d45c9116_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_multi_chart_a3769e8277675d5a1efb2ac44d45c9116_icgraph}
+\end{center}
+\end{figure}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+include/\hyperlink{chartdir_8h}{chartdir.\+h}\end{DoxyCompactItemize}

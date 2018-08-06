@@ -1,0 +1,5 @@
+<map id="MouseInterface::WriteStim" name="MouseInterface::WriteStim">
+<area shape="rect" id="node2" href="$_n_i_d_a_qmx_8h.html#ad8cfe18834963aa261b1f8ca9277daaa" title="DAQmxStartTask" alt="" coords="260,5,387,32"/>
+<area shape="rect" id="node3" href="$_n_i_d_a_qmx_8h.html#a889bff9d3c23400453b97051cf56872a" title="DAQmxWaitUntilTaskDone" alt="" coords="232,56,415,83"/>
+<area shape="rect" id="node4" href="$_n_i_d_a_qmx_8h.html#a85d6ee7f3518c1eb26ec0f01de160392" title="DAQmxStopTask" alt="" coords="261,107,386,133"/>
+</map>

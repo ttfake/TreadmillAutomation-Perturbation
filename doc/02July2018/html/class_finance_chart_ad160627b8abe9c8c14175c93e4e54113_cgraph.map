@@ -1,0 +1,51 @@
+<map id="FinanceChart::addADX" name="FinanceChart::addADX">
+<area shape="rect" id="node2" href="$class_array_math.html#a63280677d4282215230467eadb0ff3ca" title="ArrayMath::delta" alt="" coords="257,5,375,32"/>
+<area shape="rect" id="node4" href="$class_array_math.html#aadfd40e8527d58dc41cceec240d1f9b8" title="ArrayMath::selectGTZ" alt="" coords="241,56,391,83"/>
+<area shape="rect" id="node6" href="$class_array_math.html#a4fb34b6f319e7f3b2a5440d426832889" title="ArrayMath::mul" alt="" coords="261,107,371,133"/>
+<area shape="rect" id="node8" href="$class_array_math.html#a67bc79157b230866a8ed1eb5e6179de0" title="ArrayMath::sub" alt="" coords="261,157,371,184"/>
+<area shape="rect" id="node10" href="$class_array_math.html#ae10389934cacf3913e69b71c79fe5ae9" title="ArrayMath::selectLTZ" alt="" coords="242,208,390,235"/>
+<area shape="rect" id="node12" href="$class_array_math.html#a2c81268f37eb5e4ab9c1c8e18bb22fa3" title="ArrayMath::result" alt="" coords="255,259,377,285"/>
+<area shape="rect" id="node14" href="$class_array_math.html#a2f9029cfd45e1094dd6aeb549bbcd107" title="ArrayMath::expAvg" alt="" coords="249,309,383,336"/>
+<area shape="rect" id="node16" href="$class_array_math.html#a854177572cefc64f20462ad56e74038e" title="ArrayMath::financeDiv" alt="" coords="240,360,392,387"/>
+<area shape="rect" id="node18" href="$class_array_math.html#a0523eb1e6ea490c1a298a8b9bca05833" title="ArrayMath::add" alt="" coords="261,411,371,437"/>
+<area shape="rect" id="node20" href="$class_array_math.html#a95ff8e9bce7b34d36cde3186e3f8d886" title="ArrayMath::abs" alt="" coords="261,461,371,488"/>
+<area shape="rect" id="node22" href="$class_finance_chart.html#a2e27a54f9787005383604fe1ebac4c58" title="Add a blank indicator chart to the finance chart. Used internally to add other indicators. Override to change the default formatting (eg. axis fonts, etc.) of the various indicators. " alt="" coords="227,1019,405,1045"/>
+<area shape="rect" id="node49" href="$class_finance_chart.html#af7000f18368de197ff56bf5dba1f711c" title="Add a line to an existing indicator chart. " alt="" coords="211,1348,421,1375"/>
+<area shape="rect" id="node3" href="$bchartdir_8h.html#a47ce4fb9fc106ae25239f49a3df8647c" title="CArrayMath_delta" alt="" coords="497,5,623,32"/>
+<area shape="rect" id="node5" href="$bchartdir_8h.html#aeb02a1fc9d41a5fa157cda635ed53869" title="CArrayMath_selectGTZ" alt="" coords="480,56,640,83"/>
+<area shape="rect" id="node7" href="$bchartdir_8h.html#ab88f12f25b5bdb566ea58f1aa08be958" title="CArrayMath_mul" alt="" coords="500,107,620,133"/>
+<area shape="rect" id="node9" href="$bchartdir_8h.html#ad06523b767942db9497fa957b90b76a7" title="CArrayMath_sub" alt="" coords="500,157,620,184"/>
+<area shape="rect" id="node11" href="$bchartdir_8h.html#a6e80fb6d5be15082460cc72029983fde" title="CArrayMath_selectLTZ" alt="" coords="481,208,639,235"/>
+<area shape="rect" id="node13" href="$bchartdir_8h.html#a00e5bc1596053be2b61e6f9f8e1b95f9" title="CArrayMath_result" alt="" coords="495,259,625,285"/>
+<area shape="rect" id="node15" href="$bchartdir_8h.html#a032e53cfb17263b1825e41a2ce4fc355" title="CArrayMath_expAvg" alt="" coords="489,309,631,336"/>
+<area shape="rect" id="node17" href="$bchartdir_8h.html#a9ecf06c6b2d92f6ec069c68b76e64744" title="CArrayMath_financeDiv" alt="" coords="479,360,641,387"/>
+<area shape="rect" id="node19" href="$bchartdir_8h.html#a09dcf9ac1adfaae34a6fa3aa82f291f6" title="CArrayMath_add" alt="" coords="500,411,620,437"/>
+<area shape="rect" id="node21" href="$bchartdir_8h.html#aa1ac2b4a736c8991094e827c97454d4b" title="CArrayMath_abs" alt="" coords="500,461,620,488"/>
+<area shape="rect" id="node23" href="$class_x_y_chart.html#a3fed05334f9e4b6e0a9487dadd8cc5dd" title="XYChart::setTrimData" alt="" coords="484,512,636,539"/>
+<area shape="rect" id="node25" href="$class_x_y_chart.html#a4ae44126c336029899db3b70ee92b5f8" title="XYChart::xAxis" alt="" coords="503,563,617,589"/>
+<area shape="rect" id="node27" href="$class_axis.html#a54d88ba3d4791b92a3efb757b3ea5c48" title="Axis::setColors" alt="" coords="504,613,616,640"/>
+<area shape="rect" id="node29" href="$class_axis.html#a66990afb53a3c4b709178d1cb019092c" title="Axis::copyAxis" alt="" coords="505,664,615,691"/>
+<area shape="rect" id="node31" href="$class_multi_chart.html#a8a41f5565f6914264044ddd99af9a6e9" title="MultiChart::addChart" alt="" coords="489,715,631,741"/>
+<area shape="rect" id="node32" href="$class_base_chart.html#a094bfc84860d6671e638ccd2c96bd364" title="BaseChart::setSize" alt="" coords="492,765,628,792"/>
+<area shape="rect" id="node33" href="$class_x_y_chart.html#ae33eba813b2503538a2f359ed08d81a5" title="XYChart::setPlotArea" alt="" coords="486,816,634,843"/>
+<area shape="rect" id="node34" href="$class_plot_area.html#a5f02a40eeaf5fbde3332d5c6188f4556" title="PlotArea::setGridColor" alt="" coords="483,867,637,893"/>
+<area shape="rect" id="node35" href="$class_base_chart.html#a04c6e9606f39ad2dfbabb7d3d6b147e6" title="BaseChart::setAntiAlias" alt="" coords="479,917,641,944"/>
+<area shape="rect" id="node36" href="$class_base_chart.html#ad204c676b75a5e1527dcd01066c1aab4" title="BaseChart::addLegend" alt="" coords="483,968,637,995"/>
+<area shape="rect" id="node37" href="$class_text_box.html#a991aea7906f9a570f47804b35206fe3a" title="TextBox::setFontColor" alt="" coords="483,1019,637,1045"/>
+<area shape="rect" id="node38" href="$class_box.html#ac1dd2cb9848de34cf3687a25821fd228" title="Box::setBackground" alt="" coords="490,1069,630,1096"/>
+<area shape="rect" id="node39" href="$class_text_box.html#aaadf6bbde148a221869df43c11a0d623" title="TextBox::setMargin" alt="" coords="492,1120,628,1147"/>
+<area shape="rect" id="node40" href="$class_box.html#a2ec3e1cb522c938cf6927fcb41389bc3" title="Box::setSize" alt="" coords="511,1171,609,1197"/>
+<area shape="rect" id="node41" href="$class_axis.html#a906b0e90dca1e327107739ed120bec67" title="Axis::setIndent" alt="" coords="505,1221,615,1248"/>
+<area shape="rect" id="node42" href="$class_axis.html#aa74e4bc19a6a83b0f8dc6d3f815dd64e" title="Axis::setTickLength" alt="" coords="491,1272,629,1299"/>
+<area shape="rect" id="node43" href="$class_axis.html#ab524e166c981420e6de22979fd695bb6" title="Axis::setLabelStyle" alt="" coords="493,1323,627,1349"/>
+<area shape="rect" id="node44" href="$class_x_y_chart.html#ad21b25e04ddc8979e85967c5f6659610" title="XYChart::setYAxisOnRight" alt="" coords="469,1373,651,1400"/>
+<area shape="rect" id="node45" href="$class_x_y_chart.html#a22adca1189b6caa260d71fe4122033ab" title="XYChart::yAxis" alt="" coords="503,1424,617,1451"/>
+<area shape="rect" id="node46" href="$class_axis.html#a1be77ee03032a57d8a032fa118821b74" title="Axis::setAutoScale" alt="" coords="493,1475,627,1501"/>
+<area shape="rect" id="node47" href="$class_axis.html#abdb7eae83d8e09c6eb9583a9cabf00d2" title="Axis::setTickDensity" alt="" coords="488,1525,632,1552"/>
+<area shape="rect" id="node48" href="$class_axis.html#a03b7110aeda343e1c17567741dc47a1d" title="Axis::setMargin" alt="" coords="503,1576,617,1603"/>
+<area shape="rect" id="node24" href="$bchartdir_8h.html#a33badef21effe4d8bf7bd6b10b967ca6" title="CXYChart_setTrimData" alt="" coords="699,512,860,539"/>
+<area shape="rect" id="node26" href="$bchartdir_8h.html#afabac70973ef29eae0e961eda4c0a239" title="CXYChart_xAxis" alt="" coords="718,563,841,589"/>
+<area shape="rect" id="node28" href="$bchartdir_8h.html#a8695e3b107ceb04bb5f46eb800af513e" title="CAxis_setColors" alt="" coords="719,613,840,640"/>
+<area shape="rect" id="node30" href="$bchartdir_8h.html#ac137ac555bcfaf8a7f00617e06b053b4" title="CAxis_copyAxis" alt="" coords="720,664,839,691"/>
+<area shape="rect" id="node50" href="$class_x_y_chart.html#aea36113ca810376bd55e2d836b0fe7e5" title="XYChart::addLineLayer" alt="" coords="481,1627,639,1653"/>
+</map>

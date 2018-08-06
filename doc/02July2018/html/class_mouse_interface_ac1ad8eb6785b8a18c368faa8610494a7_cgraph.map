@@ -1,0 +1,6 @@
+<map id="MouseInterface::getRawInput" name="MouseInterface::getRawInput">
+<area shape="rect" id="node2" href="$class_mouse_interface.html#aa70911c968ecc9ac8b6ce7de752d3689" title="MouseInterface::WriteEvent" alt="" coords="248,56,433,83"/>
+<area shape="rect" id="node3" href="$_n_i_d_a_qmx_8h.html#ad8cfe18834963aa261b1f8ca9277daaa" title="DAQmxStartTask" alt="" coords="509,5,636,32"/>
+<area shape="rect" id="node4" href="$_n_i_d_a_qmx_8h.html#a889bff9d3c23400453b97051cf56872a" title="DAQmxWaitUntilTaskDone" alt="" coords="481,56,664,83"/>
+<area shape="rect" id="node5" href="$_n_i_d_a_qmx_8h.html#a85d6ee7f3518c1eb26ec0f01de160392" title="DAQmxStopTask" alt="" coords="510,107,635,133"/>
+</map>

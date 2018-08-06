@@ -1,0 +1,4 @@
+<map id="TreeMapChart" name="TreeMapChart">
+<area shape="rect" id="node2" href="$class_base_chart.html" title="BaseChart" alt="" coords="27,80,111,107"/>
+<area shape="rect" id="node3" href="$class_garbage_container.html" title="GarbageContainer" alt="" coords="5,5,132,32"/>
+</map>

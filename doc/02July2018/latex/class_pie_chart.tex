@@ -1,0 +1,427 @@
+\hypertarget{class_pie_chart}{}\section{Pie\+Chart Class Reference}
+\label{class_pie_chart}\index{Pie\+Chart@{Pie\+Chart}}
+
+
+{\ttfamily \#include $<$chartdir.\+h$>$}
+
+
+
+Inheritance diagram for Pie\+Chart\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=175pt]{class_pie_chart__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Pie\+Chart\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=175pt]{class_pie_chart__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_pie_chart_a3d19f7488d8cb9ffea3a112ad689d15c}{Pie\+Chart} (int width, int height, int bg\+Color=\hyperlink{namespace_chart_abee0d882fdc9ad0b001245ad9fc64011a134193bde693b9d152d0c6dc59fa7d7f}{Chart\+::\+Background\+Color}, int edge\+Color=\hyperlink{namespace_chart_abee0d882fdc9ad0b001245ad9fc64011afc6811800a9e2582dac0157b6279f836}{Chart\+::\+Transparent}, int raised\+Effect=0)
+\item 
+void \hyperlink{class_pie_chart_a6e1938c8559b2eee0b3a0f97708105fc}{set\+Pie\+Size} (int x, int y, int r)
+\item 
+void \hyperlink{class_pie_chart_a142e2140586f2462f74a4eaf9ee6739c}{set\+Donut\+Size} (int x, int y, int r, int r2)
+\item 
+void \hyperlink{class_pie_chart_aea66f80b6f025b2abdff9c768de1d32c}{set3D} (int depth=-\/1, double angle=-\/1, bool shadow\+Mode=false)
+\item 
+void \hyperlink{class_pie_chart_abf15c0001e392b137edb80397a2af0a4}{set3D} (\hyperlink{class_double_array}{Double\+Array} depths, double angle=45, bool shadow\+Mode=false)
+\item 
+void \hyperlink{class_pie_chart_aafa4b3350c1242f624c99fad5fbb3883}{set\+Sector\+Style} (int shading\+Method, int edge\+Color=-\/1, int edge\+Width=-\/1)
+\item 
+void \hyperlink{class_pie_chart_a3a0283233ab280df46c79c25d0770437}{set\+Start\+Angle} (double start\+Angle, bool clock\+Wise=true)
+\item 
+void \hyperlink{class_pie_chart_a0c4c811dad237d549fc5461a51109a1a}{set\+Explode} (int sector\+No=-\/1, int distance=-\/1)
+\item 
+void \hyperlink{class_pie_chart_a48bc655eb7a303cf3083da3a494b60d9}{set\+Explode\+Group} (int start\+Sector, int end\+Sector, int distance=-\/1)
+\item 
+void \hyperlink{class_pie_chart_adc0379ce4654443993084784745bf3ad}{set\+Label\+Format} (const char $\ast$format\+String)
+\item 
+\hyperlink{class_text_box}{Text\+Box} $\ast$ \hyperlink{class_pie_chart_a7881b5842d44d84aed560a1da2b33126}{set\+Label\+Style} (const char $\ast$font=0, double font\+Size=8, int font\+Color=\hyperlink{namespace_chart_abee0d882fdc9ad0b001245ad9fc64011a879e14f2f5024caccc047374342321ef}{Chart\+::\+Text\+Color})
+\item 
+void \hyperlink{class_pie_chart_ac4b3730538d6f8dffea410599d1bae20}{set\+Label\+Pos} (int pos, int join\+Line\+Color=-\/1)
+\item 
+void \hyperlink{class_pie_chart_a3ddab403bbb5211e5af0aa9b9118b126}{set\+Label\+Layout} (int layout\+Method, int pos=-\/1, int top\+Bound=-\/1, int bottom\+Bound=-\/1)
+\item 
+void \hyperlink{class_pie_chart_ac78c35a17fa478ad58e4e3c19141778d}{set\+Join\+Line} (int join\+Line\+Color, int join\+Line\+Width=1)
+\item 
+void \hyperlink{class_pie_chart_a85321c33d5e247ee6bffddadbfa11c43}{set\+Line\+Color} (int edge\+Color, int join\+Line\+Color=-\/1)
+\item 
+void \hyperlink{class_pie_chart_a83b93ed30618333fcb4d2bd669e5fb0f}{set\+Data} (int no\+Of\+Points, const double $\ast$data, const char $\ast$const $\ast$labels=0)
+\item 
+void \hyperlink{class_pie_chart_ae79f9956e6e0f80469d9c750c2bceb7d}{set\+Data} (\hyperlink{class_double_array}{Double\+Array} data, \hyperlink{class_string_array}{String\+Array} labels=\hyperlink{class_string_array}{String\+Array}())
+\item 
+\hyperlink{class_sector}{Sector} $\ast$ \hyperlink{class_pie_chart_a2fabcab450f4eddf29566a2fbbe3c67d}{get\+Sector} (int sector\+No)
+\item 
+\hyperlink{class_sector}{Sector} $\ast$ \hyperlink{class_pie_chart_afe2a0e5754abdd92bf9c03262a20568a}{sector} (int sector\+No)
+\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \hyperlink{class_pie_chart}{Pie\+Chart} $\ast$ \hyperlink{class_pie_chart_abede1a66c46dfa9d3a8c0490e8190a4c}{create} (int width, int height, int bg\+Color=\hyperlink{namespace_chart_abee0d882fdc9ad0b001245ad9fc64011a134193bde693b9d152d0c6dc59fa7d7f}{Chart\+::\+Background\+Color}, int edge\+Color=\hyperlink{namespace_chart_abee0d882fdc9ad0b001245ad9fc64011afc6811800a9e2582dac0157b6279f836}{Chart\+::\+Transparent}, int raised\+Effect=0)
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 1279 of file chartdir.\+h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_pie_chart_a3d19f7488d8cb9ffea3a112ad689d15c}\label{class_pie_chart_a3d19f7488d8cb9ffea3a112ad689d15c}} 
+\index{Pie\+Chart@{Pie\+Chart}!Pie\+Chart@{Pie\+Chart}}
+\index{Pie\+Chart@{Pie\+Chart}!Pie\+Chart@{Pie\+Chart}}
+\subsubsection{\texorpdfstring{Pie\+Chart()}{PieChart()}}
+{\footnotesize\ttfamily Pie\+Chart\+::\+Pie\+Chart (\begin{DoxyParamCaption}\item[{int}]{width,  }\item[{int}]{height,  }\item[{int}]{bg\+Color = {\ttfamily \hyperlink{namespace_chart_abee0d882fdc9ad0b001245ad9fc64011a134193bde693b9d152d0c6dc59fa7d7f}{Chart\+::\+Background\+Color}},  }\item[{int}]{edge\+Color = {\ttfamily \hyperlink{namespace_chart_abee0d882fdc9ad0b001245ad9fc64011afc6811800a9e2582dac0157b6279f836}{Chart\+::\+Transparent}},  }\item[{int}]{raised\+Effect = {\ttfamily 0} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 1289 of file chartdir.\+h.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=322pt]{class_pie_chart_a3d19f7488d8cb9ffea3a112ad689d15c_cgraph}
+\end{center}
+\end{figure}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_pie_chart_abede1a66c46dfa9d3a8c0490e8190a4c}\label{class_pie_chart_abede1a66c46dfa9d3a8c0490e8190a4c}} 
+\index{Pie\+Chart@{Pie\+Chart}!create@{create}}
+\index{create@{create}!Pie\+Chart@{Pie\+Chart}}
+\subsubsection{\texorpdfstring{create()}{create()}}
+{\footnotesize\ttfamily static \hyperlink{class_pie_chart}{Pie\+Chart}$\ast$ Pie\+Chart\+::create (\begin{DoxyParamCaption}\item[{int}]{width,  }\item[{int}]{height,  }\item[{int}]{bg\+Color = {\ttfamily \hyperlink{namespace_chart_abee0d882fdc9ad0b001245ad9fc64011a134193bde693b9d152d0c6dc59fa7d7f}{Chart\+::\+Background\+Color}},  }\item[{int}]{edge\+Color = {\ttfamily \hyperlink{namespace_chart_abee0d882fdc9ad0b001245ad9fc64011afc6811800a9e2582dac0157b6279f836}{Chart\+::\+Transparent}},  }\item[{int}]{raised\+Effect = {\ttfamily 0} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Definition at line 1293 of file chartdir.\+h.
+
+\mbox{\Hypertarget{class_pie_chart_a2fabcab450f4eddf29566a2fbbe3c67d}\label{class_pie_chart_a2fabcab450f4eddf29566a2fbbe3c67d}} 
+\index{Pie\+Chart@{Pie\+Chart}!get\+Sector@{get\+Sector}}
+\index{get\+Sector@{get\+Sector}!Pie\+Chart@{Pie\+Chart}}
+\subsubsection{\texorpdfstring{get\+Sector()}{getSector()}}
+{\footnotesize\ttfamily \hyperlink{class_sector}{Sector}$\ast$ Pie\+Chart\+::get\+Sector (\begin{DoxyParamCaption}\item[{int}]{sector\+No }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 1333 of file chartdir.\+h.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=314pt]{class_pie_chart_a2fabcab450f4eddf29566a2fbbe3c67d_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_pie_chart_afe2a0e5754abdd92bf9c03262a20568a}\label{class_pie_chart_afe2a0e5754abdd92bf9c03262a20568a}} 
+\index{Pie\+Chart@{Pie\+Chart}!sector@{sector}}
+\index{sector@{sector}!Pie\+Chart@{Pie\+Chart}}
+\subsubsection{\texorpdfstring{sector()}{sector()}}
+{\footnotesize\ttfamily \hyperlink{class_sector}{Sector}$\ast$ Pie\+Chart\+::sector (\begin{DoxyParamCaption}\item[{int}]{sector\+No }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 1336 of file chartdir.\+h.
+
+\mbox{\Hypertarget{class_pie_chart_aea66f80b6f025b2abdff9c768de1d32c}\label{class_pie_chart_aea66f80b6f025b2abdff9c768de1d32c}} 
+\index{Pie\+Chart@{Pie\+Chart}!set3D@{set3D}}
+\index{set3D@{set3D}!Pie\+Chart@{Pie\+Chart}}
+\subsubsection{\texorpdfstring{set3\+D()}{set3D()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Pie\+Chart\+::set3D (\begin{DoxyParamCaption}\item[{int}]{depth = {\ttfamily -\/1},  }\item[{double}]{angle = {\ttfamily -\/1},  }\item[{bool}]{shadow\+Mode = {\ttfamily false} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 1301 of file chartdir.\+h.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=297pt]{class_pie_chart_aea66f80b6f025b2abdff9c768de1d32c_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_pie_chart_abf15c0001e392b137edb80397a2af0a4}\label{class_pie_chart_abf15c0001e392b137edb80397a2af0a4}} 
+\index{Pie\+Chart@{Pie\+Chart}!set3D@{set3D}}
+\index{set3D@{set3D}!Pie\+Chart@{Pie\+Chart}}
+\subsubsection{\texorpdfstring{set3\+D()}{set3D()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Pie\+Chart\+::set3D (\begin{DoxyParamCaption}\item[{\hyperlink{class_double_array}{Double\+Array}}]{depths,  }\item[{double}]{angle = {\ttfamily 45},  }\item[{bool}]{shadow\+Mode = {\ttfamily false} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 1303 of file chartdir.\+h.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=302pt]{class_pie_chart_abf15c0001e392b137edb80397a2af0a4_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_pie_chart_a83b93ed30618333fcb4d2bd669e5fb0f}\label{class_pie_chart_a83b93ed30618333fcb4d2bd669e5fb0f}} 
+\index{Pie\+Chart@{Pie\+Chart}!set\+Data@{set\+Data}}
+\index{set\+Data@{set\+Data}!Pie\+Chart@{Pie\+Chart}}
+\subsubsection{\texorpdfstring{set\+Data()}{setData()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Pie\+Chart\+::set\+Data (\begin{DoxyParamCaption}\item[{int}]{no\+Of\+Points,  }\item[{const double $\ast$}]{data,  }\item[{const char $\ast$const $\ast$}]{labels = {\ttfamily 0} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 1328 of file chartdir.\+h.
+
+\mbox{\Hypertarget{class_pie_chart_ae79f9956e6e0f80469d9c750c2bceb7d}\label{class_pie_chart_ae79f9956e6e0f80469d9c750c2bceb7d}} 
+\index{Pie\+Chart@{Pie\+Chart}!set\+Data@{set\+Data}}
+\index{set\+Data@{set\+Data}!Pie\+Chart@{Pie\+Chart}}
+\subsubsection{\texorpdfstring{set\+Data()}{setData()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Pie\+Chart\+::set\+Data (\begin{DoxyParamCaption}\item[{\hyperlink{class_double_array}{Double\+Array}}]{data,  }\item[{\hyperlink{class_string_array}{String\+Array}}]{labels = {\ttfamily \hyperlink{class_string_array}{String\+Array}()} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 1330 of file chartdir.\+h.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=313pt]{class_pie_chart_ae79f9956e6e0f80469d9c750c2bceb7d_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_pie_chart_a142e2140586f2462f74a4eaf9ee6739c}\label{class_pie_chart_a142e2140586f2462f74a4eaf9ee6739c}} 
+\index{Pie\+Chart@{Pie\+Chart}!set\+Donut\+Size@{set\+Donut\+Size}}
+\index{set\+Donut\+Size@{set\+Donut\+Size}!Pie\+Chart@{Pie\+Chart}}
+\subsubsection{\texorpdfstring{set\+Donut\+Size()}{setDonutSize()}}
+{\footnotesize\ttfamily void Pie\+Chart\+::set\+Donut\+Size (\begin{DoxyParamCaption}\item[{int}]{x,  }\item[{int}]{y,  }\item[{int}]{r,  }\item[{int}]{r2 }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 1299 of file chartdir.\+h.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_pie_chart_a142e2140586f2462f74a4eaf9ee6739c_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_pie_chart_a0c4c811dad237d549fc5461a51109a1a}\label{class_pie_chart_a0c4c811dad237d549fc5461a51109a1a}} 
+\index{Pie\+Chart@{Pie\+Chart}!set\+Explode@{set\+Explode}}
+\index{set\+Explode@{set\+Explode}!Pie\+Chart@{Pie\+Chart}}
+\subsubsection{\texorpdfstring{set\+Explode()}{setExplode()}}
+{\footnotesize\ttfamily void Pie\+Chart\+::set\+Explode (\begin{DoxyParamCaption}\item[{int}]{sector\+No = {\ttfamily -\/1},  }\item[{int}]{distance = {\ttfamily -\/1} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 1309 of file chartdir.\+h.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=342pt]{class_pie_chart_a0c4c811dad237d549fc5461a51109a1a_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_pie_chart_a48bc655eb7a303cf3083da3a494b60d9}\label{class_pie_chart_a48bc655eb7a303cf3083da3a494b60d9}} 
+\index{Pie\+Chart@{Pie\+Chart}!set\+Explode\+Group@{set\+Explode\+Group}}
+\index{set\+Explode\+Group@{set\+Explode\+Group}!Pie\+Chart@{Pie\+Chart}}
+\subsubsection{\texorpdfstring{set\+Explode\+Group()}{setExplodeGroup()}}
+{\footnotesize\ttfamily void Pie\+Chart\+::set\+Explode\+Group (\begin{DoxyParamCaption}\item[{int}]{start\+Sector,  }\item[{int}]{end\+Sector,  }\item[{int}]{distance = {\ttfamily -\/1} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 1311 of file chartdir.\+h.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_pie_chart_a48bc655eb7a303cf3083da3a494b60d9_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_pie_chart_ac78c35a17fa478ad58e4e3c19141778d}\label{class_pie_chart_ac78c35a17fa478ad58e4e3c19141778d}} 
+\index{Pie\+Chart@{Pie\+Chart}!set\+Join\+Line@{set\+Join\+Line}}
+\index{set\+Join\+Line@{set\+Join\+Line}!Pie\+Chart@{Pie\+Chart}}
+\subsubsection{\texorpdfstring{set\+Join\+Line()}{setJoinLine()}}
+{\footnotesize\ttfamily void Pie\+Chart\+::set\+Join\+Line (\begin{DoxyParamCaption}\item[{int}]{join\+Line\+Color,  }\item[{int}]{join\+Line\+Width = {\ttfamily 1} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 1323 of file chartdir.\+h.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=343pt]{class_pie_chart_ac78c35a17fa478ad58e4e3c19141778d_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_pie_chart_adc0379ce4654443993084784745bf3ad}\label{class_pie_chart_adc0379ce4654443993084784745bf3ad}} 
+\index{Pie\+Chart@{Pie\+Chart}!set\+Label\+Format@{set\+Label\+Format}}
+\index{set\+Label\+Format@{set\+Label\+Format}!Pie\+Chart@{Pie\+Chart}}
+\subsubsection{\texorpdfstring{set\+Label\+Format()}{setLabelFormat()}}
+{\footnotesize\ttfamily void Pie\+Chart\+::set\+Label\+Format (\begin{DoxyParamCaption}\item[{const char $\ast$}]{format\+String }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 1314 of file chartdir.\+h.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_pie_chart_adc0379ce4654443993084784745bf3ad_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_pie_chart_a3ddab403bbb5211e5af0aa9b9118b126}\label{class_pie_chart_a3ddab403bbb5211e5af0aa9b9118b126}} 
+\index{Pie\+Chart@{Pie\+Chart}!set\+Label\+Layout@{set\+Label\+Layout}}
+\index{set\+Label\+Layout@{set\+Label\+Layout}!Pie\+Chart@{Pie\+Chart}}
+\subsubsection{\texorpdfstring{set\+Label\+Layout()}{setLabelLayout()}}
+{\footnotesize\ttfamily void Pie\+Chart\+::set\+Label\+Layout (\begin{DoxyParamCaption}\item[{int}]{layout\+Method,  }\item[{int}]{pos = {\ttfamily -\/1},  }\item[{int}]{top\+Bound = {\ttfamily -\/1},  }\item[{int}]{bottom\+Bound = {\ttfamily -\/1} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 1321 of file chartdir.\+h.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_pie_chart_a3ddab403bbb5211e5af0aa9b9118b126_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_pie_chart_ac4b3730538d6f8dffea410599d1bae20}\label{class_pie_chart_ac4b3730538d6f8dffea410599d1bae20}} 
+\index{Pie\+Chart@{Pie\+Chart}!set\+Label\+Pos@{set\+Label\+Pos}}
+\index{set\+Label\+Pos@{set\+Label\+Pos}!Pie\+Chart@{Pie\+Chart}}
+\subsubsection{\texorpdfstring{set\+Label\+Pos()}{setLabelPos()}}
+{\footnotesize\ttfamily void Pie\+Chart\+::set\+Label\+Pos (\begin{DoxyParamCaption}\item[{int}]{pos,  }\item[{int}]{join\+Line\+Color = {\ttfamily -\/1} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 1319 of file chartdir.\+h.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_pie_chart_ac4b3730538d6f8dffea410599d1bae20_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_pie_chart_a7881b5842d44d84aed560a1da2b33126}\label{class_pie_chart_a7881b5842d44d84aed560a1da2b33126}} 
+\index{Pie\+Chart@{Pie\+Chart}!set\+Label\+Style@{set\+Label\+Style}}
+\index{set\+Label\+Style@{set\+Label\+Style}!Pie\+Chart@{Pie\+Chart}}
+\subsubsection{\texorpdfstring{set\+Label\+Style()}{setLabelStyle()}}
+{\footnotesize\ttfamily \hyperlink{class_text_box}{Text\+Box}$\ast$ Pie\+Chart\+::set\+Label\+Style (\begin{DoxyParamCaption}\item[{const char $\ast$}]{font = {\ttfamily 0},  }\item[{double}]{font\+Size = {\ttfamily 8},  }\item[{int}]{font\+Color = {\ttfamily \hyperlink{namespace_chart_abee0d882fdc9ad0b001245ad9fc64011a879e14f2f5024caccc047374342321ef}{Chart\+::\+Text\+Color}} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 1316 of file chartdir.\+h.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_pie_chart_a7881b5842d44d84aed560a1da2b33126_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_pie_chart_a85321c33d5e247ee6bffddadbfa11c43}\label{class_pie_chart_a85321c33d5e247ee6bffddadbfa11c43}} 
+\index{Pie\+Chart@{Pie\+Chart}!set\+Line\+Color@{set\+Line\+Color}}
+\index{set\+Line\+Color@{set\+Line\+Color}!Pie\+Chart@{Pie\+Chart}}
+\subsubsection{\texorpdfstring{set\+Line\+Color()}{setLineColor()}}
+{\footnotesize\ttfamily void Pie\+Chart\+::set\+Line\+Color (\begin{DoxyParamCaption}\item[{int}]{edge\+Color,  }\item[{int}]{join\+Line\+Color = {\ttfamily -\/1} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 1325 of file chartdir.\+h.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_pie_chart_a85321c33d5e247ee6bffddadbfa11c43_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_pie_chart_a6e1938c8559b2eee0b3a0f97708105fc}\label{class_pie_chart_a6e1938c8559b2eee0b3a0f97708105fc}} 
+\index{Pie\+Chart@{Pie\+Chart}!set\+Pie\+Size@{set\+Pie\+Size}}
+\index{set\+Pie\+Size@{set\+Pie\+Size}!Pie\+Chart@{Pie\+Chart}}
+\subsubsection{\texorpdfstring{set\+Pie\+Size()}{setPieSize()}}
+{\footnotesize\ttfamily void Pie\+Chart\+::set\+Pie\+Size (\begin{DoxyParamCaption}\item[{int}]{x,  }\item[{int}]{y,  }\item[{int}]{r }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 1297 of file chartdir.\+h.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=339pt]{class_pie_chart_a6e1938c8559b2eee0b3a0f97708105fc_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_pie_chart_aafa4b3350c1242f624c99fad5fbb3883}\label{class_pie_chart_aafa4b3350c1242f624c99fad5fbb3883}} 
+\index{Pie\+Chart@{Pie\+Chart}!set\+Sector\+Style@{set\+Sector\+Style}}
+\index{set\+Sector\+Style@{set\+Sector\+Style}!Pie\+Chart@{Pie\+Chart}}
+\subsubsection{\texorpdfstring{set\+Sector\+Style()}{setSectorStyle()}}
+{\footnotesize\ttfamily void Pie\+Chart\+::set\+Sector\+Style (\begin{DoxyParamCaption}\item[{int}]{shading\+Method,  }\item[{int}]{edge\+Color = {\ttfamily -\/1},  }\item[{int}]{edge\+Width = {\ttfamily -\/1} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 1305 of file chartdir.\+h.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_pie_chart_aafa4b3350c1242f624c99fad5fbb3883_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_pie_chart_a3a0283233ab280df46c79c25d0770437}\label{class_pie_chart_a3a0283233ab280df46c79c25d0770437}} 
+\index{Pie\+Chart@{Pie\+Chart}!set\+Start\+Angle@{set\+Start\+Angle}}
+\index{set\+Start\+Angle@{set\+Start\+Angle}!Pie\+Chart@{Pie\+Chart}}
+\subsubsection{\texorpdfstring{set\+Start\+Angle()}{setStartAngle()}}
+{\footnotesize\ttfamily void Pie\+Chart\+::set\+Start\+Angle (\begin{DoxyParamCaption}\item[{double}]{start\+Angle,  }\item[{bool}]{clock\+Wise = {\ttfamily true} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 1307 of file chartdir.\+h.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_pie_chart_a3a0283233ab280df46c79c25d0770437_cgraph}
+\end{center}
+\end{figure}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+include/\hyperlink{chartdir_8h}{chartdir.\+h}\end{DoxyCompactItemize}

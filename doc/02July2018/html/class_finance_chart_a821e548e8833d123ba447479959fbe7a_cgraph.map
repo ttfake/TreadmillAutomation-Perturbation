@@ -1,0 +1,10 @@
+<map id="FinanceChart::addBand" name="FinanceChart::addBand">
+<area shape="rect" id="node2" href="$class_base_chart.html#a4d416306451019458d6de5dbc3dd952f" title="BaseChart::formatValue" alt="" coords="222,5,385,32"/>
+<area shape="rect" id="node4" href="$class_x_y_chart.html#aea36113ca810376bd55e2d836b0fe7e5" title="XYChart::addLineLayer" alt="" coords="225,56,382,83"/>
+<area shape="rect" id="node5" href="$class_layer.html#a6a53587a5c2a6800573fb4c7a782887b" title="Layer::addDataSet" alt="" coords="238,107,369,133"/>
+<area shape="rect" id="node6" href="$class_x_y_chart.html#ae674c8d52d32574672d845c5f154f9d3" title="XYChart::addInterLineLayer" alt="" coords="212,157,395,184"/>
+<area shape="rect" id="node8" href="$class_line_layer.html#a478b1ce70dc1ddc37f675ab8d2a158fc" title="LineLayer::getLine" alt="" coords="239,208,367,235"/>
+<area shape="rect" id="node3" href="$bchartdir_8h.html#a58e83909ac261b001230b0972b765245" title="CBaseChart_formatValue" alt="" coords="453,5,624,32"/>
+<area shape="rect" id="node7" href="$bchartdir_8h.html#a0293d75701fae93406472429b791ce2a" title="CXYChart_addInterLineLayer" alt="" coords="443,157,635,184"/>
+<area shape="rect" id="node9" href="$bchartdir_8h.html#aecf6f9f127c2139b84556ce0aa202d46" title="CLineLayer_getLine" alt="" coords="470,208,607,235"/>
+</map>

@@ -1,0 +1,7 @@
+<map id="FinanceChart::addBarIndicator2" name="FinanceChart::addBarIndicator2">
+<area shape="rect" id="node2" href="$class_finance_chart.html#accbcf43fbdc88401416addefeaf06124" title="Add a generic bar indicator chart. " alt="" coords="260,13,459,39"/>
+<area shape="rect" id="node4" href="$class_finance_chart.html#a3f46f24c67ed7a2c4a5ffa77fbe7ba73" title="Add a MACD indicator chart. " alt="" coords="275,63,444,90"/>
+<area shape="rect" id="node5" href="$class_finance_chart.html#afece1b137b4d8b68e0be8255a2a914b9" title="Add a Percentage Price Oscillator indicator chart. " alt="" coords="281,114,438,141"/>
+<area shape="rect" id="node6" href="$class_finance_chart.html#ace44d0253016161a1bd17d9725fde444" title="Add a Percentage Volume Oscillator indicator chart. " alt="" coords="281,165,438,191"/>
+<area shape="rect" id="node3" href="$class_finance_chart.html#a1f09c095f7013a3e8d9e6d97009e1d26" title="Add a Chaikin Money Flow indicator chart. " alt="" coords="507,5,680,47"/>
+</map>

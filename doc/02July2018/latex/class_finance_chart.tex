@@ -1,0 +1,2837 @@
+\hypertarget{class_finance_chart}{}\section{Finance\+Chart Class Reference}
+\label{class_finance_chart}\index{Finance\+Chart@{Finance\+Chart}}
+
+
+Represents a Financial \hyperlink{namespace_chart}{Chart}  
+
+
+
+
+{\ttfamily \#include $<$Finance\+Chart.\+h$>$}
+
+
+
+Inheritance diagram for Finance\+Chart\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=175pt]{class_finance_chart__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Finance\+Chart\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=175pt]{class_finance_chart__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_finance_chart_a044a1d55c37501ea29ed2b5916faf0e1}{Finance\+Chart} (int width)
+\begin{DoxyCompactList}\small\item\em Create a \hyperlink{class_finance_chart}{Finance\+Chart} with a given width. The height will be automatically determined as the chart is built. \end{DoxyCompactList}\item 
+\hyperlink{class_finance_chart_a1e7439001aaf137a55e33a1add07f1eb}{$\sim$\+Finance\+Chart} ()
+\item 
+void \hyperlink{class_finance_chart_aa6caba757aea3f8bd1fd2a6c978a563d}{enable\+Anti\+Alias} (bool anti\+Alias)
+\begin{DoxyCompactList}\small\item\em Enable/\+Disable anti-\/alias. Enabling anti-\/alias makes the line smoother. Disabling anti-\/alias make the chart file size smaller, and so can be downloaded faster through the Internet. The default is to enable anti-\/alias. \end{DoxyCompactList}\item 
+void \hyperlink{class_finance_chart_a1d9be7f4a5ed8fc3a755028e9ba8a514}{set\+Margins} (int left\+Margin, int top\+Margin, int right\+Margin, int bottom\+Margin)
+\begin{DoxyCompactList}\small\item\em Set the margins around the plot area. \end{DoxyCompactList}\item 
+\hyperlink{class_text_box}{Text\+Box} $\ast$ \hyperlink{class_finance_chart_acf483e2850387592ab861effcd443eb6}{add\+Plot\+Area\+Title} (int alignment, const char $\ast$text)
+\begin{DoxyCompactList}\small\item\em Add a text title above the plot area. You may add multiple title above the plot area by calling this method multiple times. \end{DoxyCompactList}\item 
+void \hyperlink{class_finance_chart_ac11e35407682216b469143d64b0a22a5}{set\+Plot\+Area\+Style} (int bg\+Color, int major\+H\+Grid\+Color, int major\+V\+Grid\+Color, int minor\+H\+Grid\+Color, int minor\+V\+Grid\+Color)
+\begin{DoxyCompactList}\small\item\em Set the plot area style. The default is to use pale yellow 0xfffff0 as the background, and light grey 0xdddddd as the grid lines. \end{DoxyCompactList}\item 
+void \hyperlink{class_finance_chart_a8bd04e96ef80bda7605b7797ec93f9d7}{set\+Plot\+Area\+Border} (int border\+Color, int border\+Gap)
+\begin{DoxyCompactList}\small\item\em Set the plot area border style. The default is grey color (888888), with a gap of 2 pixels between charts. \end{DoxyCompactList}\item 
+void \hyperlink{class_finance_chart_ad84cdcdbddfa16a2441ff1e835d18a88}{set\+Legend\+Style} (const char $\ast$font, double font\+Size, int font\+Color, int bg\+Color)
+\begin{DoxyCompactList}\small\item\em Set legend style. The default is Arial 8 pt black color, with light grey background. \end{DoxyCompactList}\item 
+void \hyperlink{class_finance_chart_a7a122e42103adee8a4567ef67d498366}{set\+X\+Axis\+Style} (const char $\ast$font, double font\+Size, int font\+Color, double font\+Angle)
+\begin{DoxyCompactList}\small\item\em Set x-\/axis label style. The default is Arial 8 pt black color no rotation. \end{DoxyCompactList}\item 
+void \hyperlink{class_finance_chart_aceb042502a4a86f3eff7fb21dd443251}{set\+Y\+Axis\+Style} (const char $\ast$font, double font\+Size, int font\+Color, int axis\+Margin)
+\begin{DoxyCompactList}\small\item\em Set y-\/axis label style. The default is Arial 8 pt black color, with 13 pixels margin. \end{DoxyCompactList}\item 
+void \hyperlink{class_finance_chart_a603fc3911e3fc85c69ff9340f85c3d85}{set\+Axis\+On\+Right} (bool b)
+\begin{DoxyCompactList}\small\item\em Set whether the main y-\/axis is on right of left side of the plot area. The default is on right. \end{DoxyCompactList}\item 
+void \hyperlink{class_finance_chart_a8a0f9c954f14c12dbf8e56eb2ce472de}{set\+Log\+Scale} (bool b)
+\begin{DoxyCompactList}\small\item\em Determines if log scale should be used for the main chart. The default is linear scale. \end{DoxyCompactList}\item 
+void \hyperlink{class_finance_chart_a8897f2ca59cf825d9f56319342ac21b1}{set\+Date\+Label\+Format} (const char $\ast$year\+Format, const char $\ast$first\+Month\+Format, const char $\ast$other\+Month\+Format, const char $\ast$first\+Day\+Format, const char $\ast$other\+Day\+Format, const char $\ast$first\+Hour\+Format, const char $\ast$other\+Hour\+Format)
+\begin{DoxyCompactList}\small\item\em Set the date/time formats to use for the x-\/axis labels under various cases. \end{DoxyCompactList}\item 
+void \hyperlink{class_finance_chart_a5a1a5cc70635560627b25f8c84a7fb84}{set\+Date\+Label\+Spacing} (int label\+Spacing)
+\begin{DoxyCompactList}\small\item\em Set the minimum label spacing between two labels on the time axis \end{DoxyCompactList}\item 
+void \hyperlink{class_finance_chart_a1e92e3f65cb168efded2c008b1a6c8ed}{set\+Tool\+Tip\+Date\+Format} (const char $\ast$month\+Format, const char $\ast$day\+Format, const char $\ast$hour\+Format)
+\begin{DoxyCompactList}\small\item\em Set the tool tip formats for display date/time \end{DoxyCompactList}\item 
+const char $\ast$ \hyperlink{class_finance_chart_ad9bb91fe15acd6895f4586742db4e0b1}{get\+Tool\+Tip\+Date\+Format} ()
+\begin{DoxyCompactList}\small\item\em Get the tool tip format for display date/time \end{DoxyCompactList}\item 
+void \hyperlink{class_finance_chart_abc4de6b32c4cfb3ea99b0becd05fc11c}{set\+Number\+Label\+Format} (const char $\ast$format\+String)
+\begin{DoxyCompactList}\small\item\em Set the number format for use in displaying values in legend keys and tool tips. \end{DoxyCompactList}\item 
+void \hyperlink{class_finance_chart_ad3897a3d0352b7380a54c958bf0b67a7}{set\+Data} (\hyperlink{class_double_array}{Double\+Array} time\+Stamps, \hyperlink{class_double_array}{Double\+Array} high\+Data, \hyperlink{class_double_array}{Double\+Array} low\+Data, \hyperlink{class_double_array}{Double\+Array} open\+Data, \hyperlink{class_double_array}{Double\+Array} close\+Data, \hyperlink{class_double_array}{Double\+Array} vol\+Data, int extra\+Points)
+\begin{DoxyCompactList}\small\item\em Set the data used in the chart. If some of the data are not available, some artifical values should be used. For example, if the high and low values are not available, you may use close\+Data as high\+Data and low\+Data. \end{DoxyCompactList}\item 
+\hyperlink{class_x_y_chart}{X\+Y\+Chart} $\ast$ \hyperlink{class_finance_chart_a69ac5aca5d2d232184398b43fee6eb13}{add\+Main\+Chart} (int height)
+\begin{DoxyCompactList}\small\item\em Add the main chart -\/ the chart that shows the H\+L\+OC data. \end{DoxyCompactList}\item 
+\hyperlink{class_candle_stick_layer}{Candle\+Stick\+Layer} $\ast$ \hyperlink{class_finance_chart_a84a4d29a87d57f817b52387e8495a986}{add\+Candle\+Stick} (int up\+Color, int down\+Color)
+\begin{DoxyCompactList}\small\item\em Add a candlestick layer to the main chart. \end{DoxyCompactList}\item 
+\hyperlink{class_h_l_o_c_layer}{H\+L\+O\+C\+Layer} $\ast$ \hyperlink{class_finance_chart_ab54186072d9b48c643dfeeb824968d31}{add\+H\+L\+OC} (int up\+Color, int down\+Color)
+\begin{DoxyCompactList}\small\item\em Add a H\+L\+OC layer to the main chart. \end{DoxyCompactList}\item 
+\hyperlink{class_line_layer}{Line\+Layer} $\ast$ \hyperlink{class_finance_chart_a2404e8f142be11179a1f41480e14d245}{add\+Close\+Line} (int color)
+\begin{DoxyCompactList}\small\item\em Add a closing price line on the main chart. \end{DoxyCompactList}\item 
+\hyperlink{class_line_layer}{Line\+Layer} $\ast$ \hyperlink{class_finance_chart_a667247474a92a187877d74ee674f1250}{add\+Weighted\+Close} (int color)
+\begin{DoxyCompactList}\small\item\em Add a weight close line on the main chart. \end{DoxyCompactList}\item 
+\hyperlink{class_line_layer}{Line\+Layer} $\ast$ \hyperlink{class_finance_chart_a5ca57264dde9060ca5a59f60303f1e75}{add\+Typical\+Price} (int color)
+\begin{DoxyCompactList}\small\item\em Add a typical price line on the main chart. \end{DoxyCompactList}\item 
+\hyperlink{class_line_layer}{Line\+Layer} $\ast$ \hyperlink{class_finance_chart_a3957929ae30662dcfa410c1a2263bb92}{add\+Median\+Price} (int color)
+\begin{DoxyCompactList}\small\item\em Add a median price line on the main chart. \end{DoxyCompactList}\item 
+\hyperlink{class_line_layer}{Line\+Layer} $\ast$ \hyperlink{class_finance_chart_a7fdf86b7ceb129bd035612be20fbe6ba}{add\+Simple\+Moving\+Avg} (int period, int color)
+\begin{DoxyCompactList}\small\item\em Add a simple moving average line on the main chart. \end{DoxyCompactList}\item 
+\hyperlink{class_line_layer}{Line\+Layer} $\ast$ \hyperlink{class_finance_chart_a54fbce37c95280f028de248eb6681ea0}{add\+Exp\+Moving\+Avg} (int period, int color)
+\begin{DoxyCompactList}\small\item\em Add an exponential moving average line on the main chart. \end{DoxyCompactList}\item 
+\hyperlink{class_line_layer}{Line\+Layer} $\ast$ \hyperlink{class_finance_chart_a1cc644d76bda3086c2c9bf1fbd98d8cd}{add\+Tri\+Moving\+Avg} (int period, int color)
+\begin{DoxyCompactList}\small\item\em Add a triangular moving average line on the main chart. \end{DoxyCompactList}\item 
+\hyperlink{class_line_layer}{Line\+Layer} $\ast$ \hyperlink{class_finance_chart_a9358bbba0b86affbe33cf44fa8cfe824}{add\+Weighted\+Moving\+Avg} (int period, int color)
+\begin{DoxyCompactList}\small\item\em Add a weighted moving average line on the main chart. \end{DoxyCompactList}\item 
+\hyperlink{class_line_layer}{Line\+Layer} $\ast$ \hyperlink{class_finance_chart_a1f8317ff1ee6936114a408c7139e64d1}{add\+Parabolic\+S\+AR} (double acc\+Initial, double acc\+Increment, double acc\+Maximum, int symbol\+Type, int symbol\+Size, int fill\+Color, int edge\+Color)
+\item 
+\hyperlink{class_line_layer}{Line\+Layer} $\ast$ \hyperlink{class_finance_chart_a70070d425a15afa754f1d76e1d5f9dfc}{add\+Comparison} (\hyperlink{class_double_array}{Double\+Array} data, int color, const char $\ast$name)
+\begin{DoxyCompactList}\small\item\em Add a comparison line to the main price chart. \end{DoxyCompactList}\item 
+\hyperlink{class_axis}{Axis} $\ast$ \hyperlink{class_finance_chart_aae20ef522feef3ab61e8b8639c15275e}{set\+Percentage\+Axis} ()
+\begin{DoxyCompactList}\small\item\em Display percentage axis scale \end{DoxyCompactList}\item 
+\hyperlink{class_inter_line_layer}{Inter\+Line\+Layer} $\ast$ \hyperlink{class_finance_chart_a821e548e8833d123ba447479959fbe7a}{add\+Band} (\hyperlink{class_double_array}{Double\+Array} upper\+Line, \hyperlink{class_double_array}{Double\+Array} lower\+Line, int line\+Color, int fill\+Color, const char $\ast$name)
+\begin{DoxyCompactList}\small\item\em Add a generic band to the main finance chart. This method is used internally by other methods to add various bands (eg. Bollinger band, Donchian channels, etc). \end{DoxyCompactList}\item 
+\hyperlink{class_inter_line_layer}{Inter\+Line\+Layer} $\ast$ \hyperlink{class_finance_chart_aa1698c472254b430e501324024725cfb}{add\+Bollinger\+Band} (int period, double band\+Width, int line\+Color, int fill\+Color)
+\begin{DoxyCompactList}\small\item\em Add a Bollinger band on the main chart. \end{DoxyCompactList}\item 
+\hyperlink{class_inter_line_layer}{Inter\+Line\+Layer} $\ast$ \hyperlink{class_finance_chart_af42c518b1f7caa9d73169153fced5bd9}{add\+Donchian\+Channel} (int period, int line\+Color, int fill\+Color)
+\begin{DoxyCompactList}\small\item\em Add a Donchian channel on the main chart. \end{DoxyCompactList}\item 
+\hyperlink{class_inter_line_layer}{Inter\+Line\+Layer} $\ast$ \hyperlink{class_finance_chart_a92bd5e67f5eaeb0fd801614c4ede9c43}{add\+Envelop} (int period, double range, int line\+Color, int fill\+Color)
+\begin{DoxyCompactList}\small\item\em Add a price envelop on the main chart. The price envelop is a defined as a ratio around a moving average. For example, a ratio of 0.\+2 means 20\% above and below the moving average. \end{DoxyCompactList}\item 
+\hyperlink{class_bar_layer}{Bar\+Layer} $\ast$ \hyperlink{class_finance_chart_aa1405175c2d8761adcf41c5529ef4613}{add\+Vol\+Bars} (int height, int up\+Color, int down\+Color, int flat\+Color)
+\begin{DoxyCompactList}\small\item\em Add a volume bar chart layer on the main chart. \end{DoxyCompactList}\item 
+\hyperlink{class_x_y_chart}{X\+Y\+Chart} $\ast$ \hyperlink{class_finance_chart_a2e27a54f9787005383604fe1ebac4c58}{add\+Indicator} (int height)
+\begin{DoxyCompactList}\small\item\em Add a blank indicator chart to the finance chart. Used internally to add other indicators. Override to change the default formatting (eg. axis fonts, etc.) of the various indicators. \end{DoxyCompactList}\item 
+\hyperlink{class_x_y_chart}{X\+Y\+Chart} $\ast$ \hyperlink{class_finance_chart_a799daf3775d8e100cd771eba230252ff}{add\+Line\+Indicator} (int height, \hyperlink{class_double_array}{Double\+Array} data, int color, const char $\ast$name)
+\begin{DoxyCompactList}\small\item\em Add a generic line indicator chart. \end{DoxyCompactList}\item 
+\hyperlink{class_line_layer}{Line\+Layer} $\ast$ \hyperlink{class_finance_chart_af7000f18368de197ff56bf5dba1f711c}{add\+Line\+Indicator2} (\hyperlink{class_x_y_chart}{X\+Y\+Chart} $\ast$c, \hyperlink{class_double_array}{Double\+Array} data, int color, const char $\ast$name)
+\begin{DoxyCompactList}\small\item\em Add a line to an existing indicator chart. \end{DoxyCompactList}\item 
+\hyperlink{class_x_y_chart}{X\+Y\+Chart} $\ast$ \hyperlink{class_finance_chart_accbcf43fbdc88401416addefeaf06124}{add\+Bar\+Indicator} (int height, \hyperlink{class_double_array}{Double\+Array} data, int color, const char $\ast$name)
+\begin{DoxyCompactList}\small\item\em Add a generic bar indicator chart. \end{DoxyCompactList}\item 
+\hyperlink{class_bar_layer}{Bar\+Layer} $\ast$ \hyperlink{class_finance_chart_a0578e0d86422fa48ffc07a54c2216d94}{add\+Bar\+Indicator2} (\hyperlink{class_x_y_chart}{X\+Y\+Chart} $\ast$c, \hyperlink{class_double_array}{Double\+Array} data, int color, const char $\ast$name)
+\begin{DoxyCompactList}\small\item\em Add a bar layer to an existing indicator chart. \end{DoxyCompactList}\item 
+void \hyperlink{class_finance_chart_ae08738c0df88ccd4d75ed3860f353839}{add\+Threshold} (\hyperlink{class_x_y_chart}{X\+Y\+Chart} $\ast$c, \hyperlink{class_line_layer}{Line\+Layer} $\ast$layer, double top\+Range, int top\+Color, double bottom\+Range, int bottom\+Color)
+\begin{DoxyCompactList}\small\item\em Add an upper/lower threshold range to an existing indicator chart. \end{DoxyCompactList}\item 
+\hyperlink{class_x_y_chart}{X\+Y\+Chart} $\ast$ \hyperlink{class_finance_chart_ae5545f015ca900f2b1300c675f249186}{add\+Acc\+Dist} (int height, int color)
+\begin{DoxyCompactList}\small\item\em Add an Accumulation/\+Distribution indicator chart. \end{DoxyCompactList}\item 
+\hyperlink{class_x_y_chart}{X\+Y\+Chart} $\ast$ \hyperlink{class_finance_chart_a69096a6af74055fee5f1ae5fc0588a3b}{add\+Aroon} (int height, int period, int up\+Color, int down\+Color)
+\begin{DoxyCompactList}\small\item\em Add an Aroon Up/\+Down indicators chart. \end{DoxyCompactList}\item 
+\hyperlink{class_x_y_chart}{X\+Y\+Chart} $\ast$ \hyperlink{class_finance_chart_a259aa83c1222608df3f6d95410a97ea4}{add\+Aroon\+Osc} (int height, int period, int color)
+\begin{DoxyCompactList}\small\item\em Add an Aroon Oscillator indicator chart. \end{DoxyCompactList}\item 
+\hyperlink{class_x_y_chart}{X\+Y\+Chart} $\ast$ \hyperlink{class_finance_chart_ad160627b8abe9c8c14175c93e4e54113}{add\+A\+DX} (int height, int period, int pos\+Color, int neg\+Color, int color)
+\begin{DoxyCompactList}\small\item\em Add an Average Directional Index indicators chart. \end{DoxyCompactList}\item 
+\hyperlink{class_x_y_chart}{X\+Y\+Chart} $\ast$ \hyperlink{class_finance_chart_a0eaad6d3d543f42315791022bde7bbb3}{add\+A\+TR} (int height, int period, int color1, int color2)
+\begin{DoxyCompactList}\small\item\em Add an Average True Range indicators chart. \end{DoxyCompactList}\item 
+\hyperlink{class_x_y_chart}{X\+Y\+Chart} $\ast$ \hyperlink{class_finance_chart_abb8be388a034086215ef7c53409469b0}{add\+Bollinger\+Width} (int height, int period, double width, int color)
+\begin{DoxyCompactList}\small\item\em Add a Bollinger Band Width indicator chart. \end{DoxyCompactList}\item 
+\hyperlink{class_x_y_chart}{X\+Y\+Chart} $\ast$ \hyperlink{class_finance_chart_a1841d99b6f71cafd6207f18a57d5b5d7}{add\+C\+CI} (int height, int period, int color, double deviation, int up\+Color, int down\+Color)
+\begin{DoxyCompactList}\small\item\em Add a Community Channel Index indicator chart. \end{DoxyCompactList}\item 
+\hyperlink{class_x_y_chart}{X\+Y\+Chart} $\ast$ \hyperlink{class_finance_chart_a1f09c095f7013a3e8d9e6d97009e1d26}{add\+Chaikin\+Money\+Flow} (int height, int period, int color)
+\begin{DoxyCompactList}\small\item\em Add a Chaikin Money Flow indicator chart. \end{DoxyCompactList}\item 
+\hyperlink{class_x_y_chart}{X\+Y\+Chart} $\ast$ \hyperlink{class_finance_chart_a413f41ac0d18c63ab6f3d4c4ba4baa6c}{add\+Chaikin\+Oscillator} (int height, int color)
+\begin{DoxyCompactList}\small\item\em Add a Chaikin Oscillator indicator chart. \end{DoxyCompactList}\item 
+\hyperlink{class_x_y_chart}{X\+Y\+Chart} $\ast$ \hyperlink{class_finance_chart_a45b334a8ddef874d6e152e347a9e725e}{add\+Chaikin\+Volatility} (int height, int period1, int period2, int color)
+\begin{DoxyCompactList}\small\item\em Add a Chaikin Volatility indicator chart. \end{DoxyCompactList}\item 
+\hyperlink{class_x_y_chart}{X\+Y\+Chart} $\ast$ \hyperlink{class_finance_chart_a1541d5239c097f1f35b426830d569bc8}{add\+C\+LV} (int height, int color)
+\begin{DoxyCompactList}\small\item\em Add a Close Location Value indicator chart. \end{DoxyCompactList}\item 
+\hyperlink{class_x_y_chart}{X\+Y\+Chart} $\ast$ \hyperlink{class_finance_chart_ad1f0a674349a991edc1cfe4197b75860}{add\+D\+PO} (int height, int period, int color)
+\begin{DoxyCompactList}\small\item\em Add a Detrended Price Oscillator indicator chart. \end{DoxyCompactList}\item 
+\hyperlink{class_x_y_chart}{X\+Y\+Chart} $\ast$ \hyperlink{class_finance_chart_a0cb226ad13bc836d8b5731d280e2201c}{add\+Donchian\+Width} (int height, int period, int color)
+\begin{DoxyCompactList}\small\item\em Add a Donchian Channel Width indicator chart. \end{DoxyCompactList}\item 
+\hyperlink{class_x_y_chart}{X\+Y\+Chart} $\ast$ \hyperlink{class_finance_chart_af821cff5482c9414a74be29646564d71}{add\+Ease\+Of\+Movement} (int height, int period, int color1, int color2)
+\begin{DoxyCompactList}\small\item\em Add a Ease of Movement indicator chart. \end{DoxyCompactList}\item 
+\hyperlink{class_x_y_chart}{X\+Y\+Chart} $\ast$ \hyperlink{class_finance_chart_aaf35dc123849c0ad4a959f2e1667360c}{add\+Fast\+Stochastic} (int height, int period1, int period2, int color1, int color2)
+\begin{DoxyCompactList}\small\item\em Add a Fast Stochastic indicator chart. \end{DoxyCompactList}\item 
+\hyperlink{class_x_y_chart}{X\+Y\+Chart} $\ast$ \hyperlink{class_finance_chart_a3f46f24c67ed7a2c4a5ffa77fbe7ba73}{add\+M\+A\+CD} (int height, int period1, int period2, int period3, int color, int signal\+Color, int div\+Color)
+\begin{DoxyCompactList}\small\item\em Add a M\+A\+CD indicator chart. \end{DoxyCompactList}\item 
+\hyperlink{class_x_y_chart}{X\+Y\+Chart} $\ast$ \hyperlink{class_finance_chart_a452f5d65f747033467a62eb280babfdc}{add\+Mass\+Index} (int height, int color, int up\+Color, int down\+Color)
+\begin{DoxyCompactList}\small\item\em Add a Mass Index indicator chart. \end{DoxyCompactList}\item 
+\hyperlink{class_x_y_chart}{X\+Y\+Chart} $\ast$ \hyperlink{class_finance_chart_ab6f774100ffc593f93eed25c98facf6f}{add\+M\+FI} (int height, int period, int color, double range, int up\+Color, int down\+Color)
+\begin{DoxyCompactList}\small\item\em Add a Money Flow Index indicator chart. \end{DoxyCompactList}\item 
+\hyperlink{class_x_y_chart}{X\+Y\+Chart} $\ast$ \hyperlink{class_finance_chart_afbdc6d4410549928b041060bfb03b126}{add\+Momentum} (int height, int period, int color)
+\begin{DoxyCompactList}\small\item\em Add a Momentum indicator chart. \end{DoxyCompactList}\item 
+\hyperlink{class_x_y_chart}{X\+Y\+Chart} $\ast$ \hyperlink{class_finance_chart_a388881982244585b53d8a318ad4e6254}{add\+N\+VI} (int height, int period, int color, int signal\+Color)
+\begin{DoxyCompactList}\small\item\em Add a Negative Volume Index indicator chart. \end{DoxyCompactList}\item 
+\hyperlink{class_x_y_chart}{X\+Y\+Chart} $\ast$ \hyperlink{class_finance_chart_a68954d093f52671623132c5fb35c261b}{add\+O\+BV} (int height, int color)
+\begin{DoxyCompactList}\small\item\em Add an On Balance Volume indicator chart. \end{DoxyCompactList}\item 
+\hyperlink{class_x_y_chart}{X\+Y\+Chart} $\ast$ \hyperlink{class_finance_chart_a86b3b47168753b4876b38464ecc5ab33}{add\+Performance} (int height, int color)
+\begin{DoxyCompactList}\small\item\em Add a Performance indicator chart. \end{DoxyCompactList}\item 
+\hyperlink{class_x_y_chart}{X\+Y\+Chart} $\ast$ \hyperlink{class_finance_chart_afece1b137b4d8b68e0be8255a2a914b9}{add\+P\+PO} (int height, int period1, int period2, int period3, int color, int signal\+Color, int div\+Color)
+\begin{DoxyCompactList}\small\item\em Add a Percentage Price Oscillator indicator chart. \end{DoxyCompactList}\item 
+\hyperlink{class_x_y_chart}{X\+Y\+Chart} $\ast$ \hyperlink{class_finance_chart_a69528f7f5ec33d01dacee72fd0fe2357}{add\+P\+VI} (int height, int period, int color, int signal\+Color)
+\begin{DoxyCompactList}\small\item\em Add a Positive Volume Index indicator chart. \end{DoxyCompactList}\item 
+\hyperlink{class_x_y_chart}{X\+Y\+Chart} $\ast$ \hyperlink{class_finance_chart_ace44d0253016161a1bd17d9725fde444}{add\+P\+VO} (int height, int period1, int period2, int period3, int color, int signal\+Color, int div\+Color)
+\begin{DoxyCompactList}\small\item\em Add a Percentage Volume Oscillator indicator chart. \end{DoxyCompactList}\item 
+\hyperlink{class_x_y_chart}{X\+Y\+Chart} $\ast$ \hyperlink{class_finance_chart_a3434485481a3f184521145874a62224a}{add\+P\+VT} (int height, int color)
+\begin{DoxyCompactList}\small\item\em Add a Price Volumne Trend indicator chart. \end{DoxyCompactList}\item 
+\hyperlink{class_x_y_chart}{X\+Y\+Chart} $\ast$ \hyperlink{class_finance_chart_ac8ca50e0764d729d0591d1baace193de}{add\+R\+OC} (int height, int period, int color)
+\begin{DoxyCompactList}\small\item\em Add a Rate of Change indicator chart. \end{DoxyCompactList}\item 
+\hyperlink{class_x_y_chart}{X\+Y\+Chart} $\ast$ \hyperlink{class_finance_chart_aba175ac4bc80577bad0767bcd75109c7}{add\+R\+SI} (int height, int period, int color, double range, int up\+Color, int down\+Color)
+\begin{DoxyCompactList}\small\item\em Add a Relative Strength Index indicator chart. \end{DoxyCompactList}\item 
+\hyperlink{class_x_y_chart}{X\+Y\+Chart} $\ast$ \hyperlink{class_finance_chart_a2f1d675f9a5e8f280b4f16d3a36eb204}{add\+Slow\+Stochastic} (int height, int period1, int period2, int color1, int color2)
+\begin{DoxyCompactList}\small\item\em Add a Slow Stochastic indicator chart. \end{DoxyCompactList}\item 
+\hyperlink{class_x_y_chart}{X\+Y\+Chart} $\ast$ \hyperlink{class_finance_chart_abee75e01f567badfa4da74c92a60d00c}{add\+Std\+Dev} (int height, int period, int color)
+\begin{DoxyCompactList}\small\item\em Add a Moving Standard Deviation indicator chart. \end{DoxyCompactList}\item 
+\hyperlink{class_x_y_chart}{X\+Y\+Chart} $\ast$ \hyperlink{class_finance_chart_a8c44b07a3a6dcf2e3feb09960dfa9770}{add\+Stoch\+R\+SI} (int height, int period, int color, double range, int up\+Color, int down\+Color)
+\begin{DoxyCompactList}\small\item\em Add a Stochastic R\+SI indicator chart. \end{DoxyCompactList}\item 
+\hyperlink{class_x_y_chart}{X\+Y\+Chart} $\ast$ \hyperlink{class_finance_chart_a54ec3c32375abf620ca16208f24717ce}{add\+T\+R\+IX} (int height, int period, int color)
+\begin{DoxyCompactList}\small\item\em Add a T\+R\+IX indicator chart. \end{DoxyCompactList}\item 
+\hyperlink{class_x_y_chart}{X\+Y\+Chart} $\ast$ \hyperlink{class_finance_chart_aa7a2bc1fab9c1ec538ff293c107d6cc4}{add\+Ultimate\+Oscillator} (int height, int period1, int period2, int period3, int color, double range, int up\+Color, int down\+Color)
+\begin{DoxyCompactList}\small\item\em Add an Ultimate Oscillator indicator chart. \end{DoxyCompactList}\item 
+\hyperlink{class_x_y_chart}{X\+Y\+Chart} $\ast$ \hyperlink{class_finance_chart_a51ceb77140f73f49707d526dafe643fe}{add\+Vol\+Indicator} (int height, int up\+Color, int down\+Color, int flat\+Color)
+\begin{DoxyCompactList}\small\item\em Add a Volume indicator chart. \end{DoxyCompactList}\item 
+\hyperlink{class_x_y_chart}{X\+Y\+Chart} $\ast$ \hyperlink{class_finance_chart_aa0f6a518a8fb451cc645f10e3e947ff0}{add\+WilliamR} (int height, int period, int color, double range, int up\+Color, int down\+Color)
+\begin{DoxyCompactList}\small\item\em Add a William R indicator chart. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+Represents a Financial \hyperlink{namespace_chart}{Chart} 
+
+
+
+Definition at line 30 of file Finance\+Chart.\+h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_finance_chart_a044a1d55c37501ea29ed2b5916faf0e1}\label{class_finance_chart_a044a1d55c37501ea29ed2b5916faf0e1}} 
+\index{Finance\+Chart@{Finance\+Chart}!Finance\+Chart@{Finance\+Chart}}
+\index{Finance\+Chart@{Finance\+Chart}!Finance\+Chart@{Finance\+Chart}}
+\subsubsection{\texorpdfstring{Finance\+Chart()}{FinanceChart()}}
+{\footnotesize\ttfamily Finance\+Chart\+::\+Finance\+Chart (\begin{DoxyParamCaption}\item[{int}]{width }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Create a \hyperlink{class_finance_chart}{Finance\+Chart} with a given width. The height will be automatically determined as the chart is built. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em width} & Width of the chart in pixels\\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 159 of file Finance\+Chart.\+h.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_finance_chart_a044a1d55c37501ea29ed2b5916faf0e1_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_finance_chart_a044a1d55c37501ea29ed2b5916faf0e1_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_finance_chart_a1e7439001aaf137a55e33a1add07f1eb}\label{class_finance_chart_a1e7439001aaf137a55e33a1add07f1eb}} 
+\index{Finance\+Chart@{Finance\+Chart}!````~Finance\+Chart@{$\sim$\+Finance\+Chart}}
+\index{````~Finance\+Chart@{$\sim$\+Finance\+Chart}!Finance\+Chart@{Finance\+Chart}}
+\subsubsection{\texorpdfstring{$\sim$\+Finance\+Chart()}{~FinanceChart()}}
+{\footnotesize\ttfamily Finance\+Chart\+::$\sim$\+Finance\+Chart (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 167 of file Finance\+Chart.\+h.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_finance_chart_a1e7439001aaf137a55e33a1add07f1eb_cgraph}
+\end{center}
+\end{figure}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_finance_chart_ae5545f015ca900f2b1300c675f249186}\label{class_finance_chart_ae5545f015ca900f2b1300c675f249186}} 
+\index{Finance\+Chart@{Finance\+Chart}!add\+Acc\+Dist@{add\+Acc\+Dist}}
+\index{add\+Acc\+Dist@{add\+Acc\+Dist}!Finance\+Chart@{Finance\+Chart}}
+\subsubsection{\texorpdfstring{add\+Acc\+Dist()}{addAccDist()}}
+{\footnotesize\ttfamily \hyperlink{class_x_y_chart}{X\+Y\+Chart}$\ast$ Finance\+Chart\+::add\+Acc\+Dist (\begin{DoxyParamCaption}\item[{int}]{height,  }\item[{int}]{color }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Add an Accumulation/\+Distribution indicator chart. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em height} & The height of the indicator chart in pixels.\\
+\hline
+{\em color} & The color of the indicator line.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The \hyperlink{class_x_y_chart}{X\+Y\+Chart} object representing the chart created.
+\end{DoxyReturn}
+
+
+Definition at line 1356 of file Finance\+Chart.\+h.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_finance_chart_ae5545f015ca900f2b1300c675f249186_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_finance_chart_ad160627b8abe9c8c14175c93e4e54113}\label{class_finance_chart_ad160627b8abe9c8c14175c93e4e54113}} 
+\index{Finance\+Chart@{Finance\+Chart}!add\+A\+DX@{add\+A\+DX}}
+\index{add\+A\+DX@{add\+A\+DX}!Finance\+Chart@{Finance\+Chart}}
+\subsubsection{\texorpdfstring{add\+A\+D\+X()}{addADX()}}
+{\footnotesize\ttfamily \hyperlink{class_x_y_chart}{X\+Y\+Chart}$\ast$ Finance\+Chart\+::add\+A\+DX (\begin{DoxyParamCaption}\item[{int}]{height,  }\item[{int}]{period,  }\item[{int}]{pos\+Color,  }\item[{int}]{neg\+Color,  }\item[{int}]{color }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Add an Average Directional Index indicators chart. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em height} & The height of the indicator chart in pixels.\\
+\hline
+{\em period} & The period to compute the indicator.\\
+\hline
+{\em pos\+Color} & The color of the Positive Directional Index line.\\
+\hline
+{\em neg\+Color} & The color of the Negatuve Directional Index line.\\
+\hline
+{\em color} & The color of the Average Directional Index line.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The \hyperlink{class_x_y_chart}{X\+Y\+Chart} object representing the chart created.
+\end{DoxyReturn}
+
+
+Definition at line 1512 of file Finance\+Chart.\+h.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{class_finance_chart_ad160627b8abe9c8c14175c93e4e54113_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_finance_chart_a69096a6af74055fee5f1ae5fc0588a3b}\label{class_finance_chart_a69096a6af74055fee5f1ae5fc0588a3b}} 
+\index{Finance\+Chart@{Finance\+Chart}!add\+Aroon@{add\+Aroon}}
+\index{add\+Aroon@{add\+Aroon}!Finance\+Chart@{Finance\+Chart}}
+\subsubsection{\texorpdfstring{add\+Aroon()}{addAroon()}}
+{\footnotesize\ttfamily \hyperlink{class_x_y_chart}{X\+Y\+Chart}$\ast$ Finance\+Chart\+::add\+Aroon (\begin{DoxyParamCaption}\item[{int}]{height,  }\item[{int}]{period,  }\item[{int}]{up\+Color,  }\item[{int}]{down\+Color }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Add an Aroon Up/\+Down indicators chart. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em height} & The height of the indicator chart in pixels.\\
+\hline
+{\em period} & The period to compute the indicators.\\
+\hline
+{\em up\+Color} & The color of the Aroon Up indicator line.\\
+\hline
+{\em down\+Color} & The color of the Aroon Down indicator line.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The \hyperlink{class_x_y_chart}{X\+Y\+Chart} object representing the chart created.
+\end{DoxyReturn}
+
+
+Definition at line 1449 of file Finance\+Chart.\+h.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_finance_chart_a69096a6af74055fee5f1ae5fc0588a3b_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_finance_chart_a259aa83c1222608df3f6d95410a97ea4}\label{class_finance_chart_a259aa83c1222608df3f6d95410a97ea4}} 
+\index{Finance\+Chart@{Finance\+Chart}!add\+Aroon\+Osc@{add\+Aroon\+Osc}}
+\index{add\+Aroon\+Osc@{add\+Aroon\+Osc}!Finance\+Chart@{Finance\+Chart}}
+\subsubsection{\texorpdfstring{add\+Aroon\+Osc()}{addAroonOsc()}}
+{\footnotesize\ttfamily \hyperlink{class_x_y_chart}{X\+Y\+Chart}$\ast$ Finance\+Chart\+::add\+Aroon\+Osc (\begin{DoxyParamCaption}\item[{int}]{height,  }\item[{int}]{period,  }\item[{int}]{color }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Add an Aroon Oscillator indicator chart. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em height} & The height of the indicator chart in pixels.\\
+\hline
+{\em period} & The period to compute the indicator.\\
+\hline
+{\em color} & The color of the indicator line.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The \hyperlink{class_x_y_chart}{X\+Y\+Chart} object representing the chart created.
+\end{DoxyReturn}
+
+
+Definition at line 1465 of file Finance\+Chart.\+h.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_finance_chart_a259aa83c1222608df3f6d95410a97ea4_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_finance_chart_a0eaad6d3d543f42315791022bde7bbb3}\label{class_finance_chart_a0eaad6d3d543f42315791022bde7bbb3}} 
+\index{Finance\+Chart@{Finance\+Chart}!add\+A\+TR@{add\+A\+TR}}
+\index{add\+A\+TR@{add\+A\+TR}!Finance\+Chart@{Finance\+Chart}}
+\subsubsection{\texorpdfstring{add\+A\+T\+R()}{addATR()}}
+{\footnotesize\ttfamily \hyperlink{class_x_y_chart}{X\+Y\+Chart}$\ast$ Finance\+Chart\+::add\+A\+TR (\begin{DoxyParamCaption}\item[{int}]{height,  }\item[{int}]{period,  }\item[{int}]{color1,  }\item[{int}]{color2 }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Add an Average True Range indicators chart. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em height} & The height of the indicator chart in pixels.\\
+\hline
+{\em period} & The period to compute the indicator.\\
+\hline
+{\em color1} & The color of the True Range line.\\
+\hline
+{\em color2} & The color of the Average True Range line.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The \hyperlink{class_x_y_chart}{X\+Y\+Chart} object representing the chart created.
+\end{DoxyReturn}
+
+
+Definition at line 1564 of file Finance\+Chart.\+h.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_finance_chart_a0eaad6d3d543f42315791022bde7bbb3_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_finance_chart_a821e548e8833d123ba447479959fbe7a}\label{class_finance_chart_a821e548e8833d123ba447479959fbe7a}} 
+\index{Finance\+Chart@{Finance\+Chart}!add\+Band@{add\+Band}}
+\index{add\+Band@{add\+Band}!Finance\+Chart@{Finance\+Chart}}
+\subsubsection{\texorpdfstring{add\+Band()}{addBand()}}
+{\footnotesize\ttfamily \hyperlink{class_inter_line_layer}{Inter\+Line\+Layer}$\ast$ Finance\+Chart\+::add\+Band (\begin{DoxyParamCaption}\item[{\hyperlink{class_double_array}{Double\+Array}}]{upper\+Line,  }\item[{\hyperlink{class_double_array}{Double\+Array}}]{lower\+Line,  }\item[{int}]{line\+Color,  }\item[{int}]{fill\+Color,  }\item[{const char $\ast$}]{name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Add a generic band to the main finance chart. This method is used internally by other methods to add various bands (eg. Bollinger band, Donchian channels, etc). 
+
+
+\begin{DoxyParams}{Parameters}
+{\em upper\+Line} & The data series for the upper band line.\\
+\hline
+{\em lower\+Line} & The data series for the lower band line.\\
+\hline
+{\em line\+Color} & The color of the upper and lower band line.\\
+\hline
+{\em fill\+Color} & The color to fill the region between the upper and lower band lines.\\
+\hline
+{\em name} & The name of the band.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+An \hyperlink{class_inter_line_layer}{Inter\+Line\+Layer} object representing the filled region.
+\end{DoxyReturn}
+
+
+Definition at line 1023 of file Finance\+Chart.\+h.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_finance_chart_a821e548e8833d123ba447479959fbe7a_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_finance_chart_a821e548e8833d123ba447479959fbe7a_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_finance_chart_accbcf43fbdc88401416addefeaf06124}\label{class_finance_chart_accbcf43fbdc88401416addefeaf06124}} 
+\index{Finance\+Chart@{Finance\+Chart}!add\+Bar\+Indicator@{add\+Bar\+Indicator}}
+\index{add\+Bar\+Indicator@{add\+Bar\+Indicator}!Finance\+Chart@{Finance\+Chart}}
+\subsubsection{\texorpdfstring{add\+Bar\+Indicator()}{addBarIndicator()}}
+{\footnotesize\ttfamily \hyperlink{class_x_y_chart}{X\+Y\+Chart}$\ast$ Finance\+Chart\+::add\+Bar\+Indicator (\begin{DoxyParamCaption}\item[{int}]{height,  }\item[{\hyperlink{class_double_array}{Double\+Array}}]{data,  }\item[{int}]{color,  }\item[{const char $\ast$}]{name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Add a generic bar indicator chart. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em height} & The height of the indicator chart in pixels.\\
+\hline
+{\em data} & The data series of the indicator bars.\\
+\hline
+{\em color} & The color of the indicator bars.\\
+\hline
+{\em name} & The name of the indicator.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The \hyperlink{class_x_y_chart}{X\+Y\+Chart} object representing the chart created.
+\end{DoxyReturn}
+
+
+Definition at line 1289 of file Finance\+Chart.\+h.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_finance_chart_accbcf43fbdc88401416addefeaf06124_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_finance_chart_accbcf43fbdc88401416addefeaf06124_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_finance_chart_a0578e0d86422fa48ffc07a54c2216d94}\label{class_finance_chart_a0578e0d86422fa48ffc07a54c2216d94}} 
+\index{Finance\+Chart@{Finance\+Chart}!add\+Bar\+Indicator2@{add\+Bar\+Indicator2}}
+\index{add\+Bar\+Indicator2@{add\+Bar\+Indicator2}!Finance\+Chart@{Finance\+Chart}}
+\subsubsection{\texorpdfstring{add\+Bar\+Indicator2()}{addBarIndicator2()}}
+{\footnotesize\ttfamily \hyperlink{class_bar_layer}{Bar\+Layer}$\ast$ Finance\+Chart\+::add\+Bar\+Indicator2 (\begin{DoxyParamCaption}\item[{\hyperlink{class_x_y_chart}{X\+Y\+Chart} $\ast$}]{c,  }\item[{\hyperlink{class_double_array}{Double\+Array}}]{data,  }\item[{int}]{color,  }\item[{const char $\ast$}]{name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Add a bar layer to an existing indicator chart. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em c} & The indicator chart to add the bar layer to.\\
+\hline
+{\em data} & The data series of the indicator bars.\\
+\hline
+{\em color} & The color of the indicator bars.\\
+\hline
+{\em name} & The name of the indicator.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The \hyperlink{class_bar_layer}{Bar\+Layer} object representing the bar layer created.
+\end{DoxyReturn}
+
+
+Definition at line 1304 of file Finance\+Chart.\+h.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_finance_chart_a0578e0d86422fa48ffc07a54c2216d94_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_finance_chart_a0578e0d86422fa48ffc07a54c2216d94_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_finance_chart_aa1698c472254b430e501324024725cfb}\label{class_finance_chart_aa1698c472254b430e501324024725cfb}} 
+\index{Finance\+Chart@{Finance\+Chart}!add\+Bollinger\+Band@{add\+Bollinger\+Band}}
+\index{add\+Bollinger\+Band@{add\+Bollinger\+Band}!Finance\+Chart@{Finance\+Chart}}
+\subsubsection{\texorpdfstring{add\+Bollinger\+Band()}{addBollingerBand()}}
+{\footnotesize\ttfamily \hyperlink{class_inter_line_layer}{Inter\+Line\+Layer}$\ast$ Finance\+Chart\+::add\+Bollinger\+Band (\begin{DoxyParamCaption}\item[{int}]{period,  }\item[{double}]{band\+Width,  }\item[{int}]{line\+Color,  }\item[{int}]{fill\+Color }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Add a Bollinger band on the main chart. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em period} & The period to compute the band.\\
+\hline
+{\em band\+Width} & The half-\/width of the band in terms multiples of standard deviation. Typically 2 is used.\\
+\hline
+{\em line\+Color} & The color of the lines defining the upper and lower limits.\\
+\hline
+{\em fill\+Color} & The color to fill the regional within the band.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The \hyperlink{class_inter_line_layer}{Inter\+Line\+Layer} object representing the band created.
+\end{DoxyReturn}
+
+
+Definition at line 1055 of file Finance\+Chart.\+h.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_finance_chart_aa1698c472254b430e501324024725cfb_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_finance_chart_abb8be388a034086215ef7c53409469b0}\label{class_finance_chart_abb8be388a034086215ef7c53409469b0}} 
+\index{Finance\+Chart@{Finance\+Chart}!add\+Bollinger\+Width@{add\+Bollinger\+Width}}
+\index{add\+Bollinger\+Width@{add\+Bollinger\+Width}!Finance\+Chart@{Finance\+Chart}}
+\subsubsection{\texorpdfstring{add\+Bollinger\+Width()}{addBollingerWidth()}}
+{\footnotesize\ttfamily \hyperlink{class_x_y_chart}{X\+Y\+Chart}$\ast$ Finance\+Chart\+::add\+Bollinger\+Width (\begin{DoxyParamCaption}\item[{int}]{height,  }\item[{int}]{period,  }\item[{double}]{width,  }\item[{int}]{color }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Add a Bollinger Band Width indicator chart. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em height} & The height of the indicator chart in pixels.\\
+\hline
+{\em period} & The period to compute the indicator.\\
+\hline
+{\em width} & The band width to compute the indicator.\\
+\hline
+{\em color} & The color of the indicator line.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The \hyperlink{class_x_y_chart}{X\+Y\+Chart} object representing the chart created.
+\end{DoxyReturn}
+
+
+Definition at line 1582 of file Finance\+Chart.\+h.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_finance_chart_abb8be388a034086215ef7c53409469b0_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_finance_chart_a84a4d29a87d57f817b52387e8495a986}\label{class_finance_chart_a84a4d29a87d57f817b52387e8495a986}} 
+\index{Finance\+Chart@{Finance\+Chart}!add\+Candle\+Stick@{add\+Candle\+Stick}}
+\index{add\+Candle\+Stick@{add\+Candle\+Stick}!Finance\+Chart@{Finance\+Chart}}
+\subsubsection{\texorpdfstring{add\+Candle\+Stick()}{addCandleStick()}}
+{\footnotesize\ttfamily \hyperlink{class_candle_stick_layer}{Candle\+Stick\+Layer}$\ast$ Finance\+Chart\+::add\+Candle\+Stick (\begin{DoxyParamCaption}\item[{int}]{up\+Color,  }\item[{int}]{down\+Color }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Add a candlestick layer to the main chart. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em up\+Color} & The candle color for an up day.\\
+\hline
+{\em down\+Color} & The candle color for a down day.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The \hyperlink{class_candle_stick_layer}{Candle\+Stick\+Layer} created.
+\end{DoxyReturn}
+
+
+Definition at line 642 of file Finance\+Chart.\+h.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_finance_chart_a84a4d29a87d57f817b52387e8495a986_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_finance_chart_a1841d99b6f71cafd6207f18a57d5b5d7}\label{class_finance_chart_a1841d99b6f71cafd6207f18a57d5b5d7}} 
+\index{Finance\+Chart@{Finance\+Chart}!add\+C\+CI@{add\+C\+CI}}
+\index{add\+C\+CI@{add\+C\+CI}!Finance\+Chart@{Finance\+Chart}}
+\subsubsection{\texorpdfstring{add\+C\+C\+I()}{addCCI()}}
+{\footnotesize\ttfamily \hyperlink{class_x_y_chart}{X\+Y\+Chart}$\ast$ Finance\+Chart\+::add\+C\+CI (\begin{DoxyParamCaption}\item[{int}]{height,  }\item[{int}]{period,  }\item[{int}]{color,  }\item[{double}]{deviation,  }\item[{int}]{up\+Color,  }\item[{int}]{down\+Color }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Add a Community Channel Index indicator chart. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em height} & The height of the indicator chart in pixels.\\
+\hline
+{\em period} & The period to compute the indicator.\\
+\hline
+{\em color} & The color of the indicator line.\\
+\hline
+{\em deviation} & The distance beween the middle line and the upper and lower threshold lines.\\
+\hline
+{\em up\+Color} & The fill color when the indicator exceeds the upper threshold line.\\
+\hline
+{\em down\+Color} & The fill color when the indicator falls below the lower threshold line.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The \hyperlink{class_x_y_chart}{X\+Y\+Chart} object representing the chart created.
+\end{DoxyReturn}
+
+
+Definition at line 1600 of file Finance\+Chart.\+h.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{class_finance_chart_a1841d99b6f71cafd6207f18a57d5b5d7_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_finance_chart_a1f09c095f7013a3e8d9e6d97009e1d26}\label{class_finance_chart_a1f09c095f7013a3e8d9e6d97009e1d26}} 
+\index{Finance\+Chart@{Finance\+Chart}!add\+Chaikin\+Money\+Flow@{add\+Chaikin\+Money\+Flow}}
+\index{add\+Chaikin\+Money\+Flow@{add\+Chaikin\+Money\+Flow}!Finance\+Chart@{Finance\+Chart}}
+\subsubsection{\texorpdfstring{add\+Chaikin\+Money\+Flow()}{addChaikinMoneyFlow()}}
+{\footnotesize\ttfamily \hyperlink{class_x_y_chart}{X\+Y\+Chart}$\ast$ Finance\+Chart\+::add\+Chaikin\+Money\+Flow (\begin{DoxyParamCaption}\item[{int}]{height,  }\item[{int}]{period,  }\item[{int}]{color }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Add a Chaikin Money Flow indicator chart. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em height} & The height of the indicator chart in pixels.\\
+\hline
+{\em period} & The period to compute the indicator.\\
+\hline
+{\em color} & The color of the indicator line.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The \hyperlink{class_x_y_chart}{X\+Y\+Chart} object representing the chart created.
+\end{DoxyReturn}
+
+
+Definition at line 1658 of file Finance\+Chart.\+h.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_finance_chart_a1f09c095f7013a3e8d9e6d97009e1d26_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_finance_chart_a413f41ac0d18c63ab6f3d4c4ba4baa6c}\label{class_finance_chart_a413f41ac0d18c63ab6f3d4c4ba4baa6c}} 
+\index{Finance\+Chart@{Finance\+Chart}!add\+Chaikin\+Oscillator@{add\+Chaikin\+Oscillator}}
+\index{add\+Chaikin\+Oscillator@{add\+Chaikin\+Oscillator}!Finance\+Chart@{Finance\+Chart}}
+\subsubsection{\texorpdfstring{add\+Chaikin\+Oscillator()}{addChaikinOscillator()}}
+{\footnotesize\ttfamily \hyperlink{class_x_y_chart}{X\+Y\+Chart}$\ast$ Finance\+Chart\+::add\+Chaikin\+Oscillator (\begin{DoxyParamCaption}\item[{int}]{height,  }\item[{int}]{color }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Add a Chaikin Oscillator indicator chart. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em height} & The height of the indicator chart in pixels.\\
+\hline
+{\em color} & The color of the indicator line.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The \hyperlink{class_x_y_chart}{X\+Y\+Chart} object representing the chart created.
+\end{DoxyReturn}
+
+
+Definition at line 1675 of file Finance\+Chart.\+h.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_finance_chart_a413f41ac0d18c63ab6f3d4c4ba4baa6c_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_finance_chart_a45b334a8ddef874d6e152e347a9e725e}\label{class_finance_chart_a45b334a8ddef874d6e152e347a9e725e}} 
+\index{Finance\+Chart@{Finance\+Chart}!add\+Chaikin\+Volatility@{add\+Chaikin\+Volatility}}
+\index{add\+Chaikin\+Volatility@{add\+Chaikin\+Volatility}!Finance\+Chart@{Finance\+Chart}}
+\subsubsection{\texorpdfstring{add\+Chaikin\+Volatility()}{addChaikinVolatility()}}
+{\footnotesize\ttfamily \hyperlink{class_x_y_chart}{X\+Y\+Chart}$\ast$ Finance\+Chart\+::add\+Chaikin\+Volatility (\begin{DoxyParamCaption}\item[{int}]{height,  }\item[{int}]{period1,  }\item[{int}]{period2,  }\item[{int}]{color }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Add a Chaikin Volatility indicator chart. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em height} & The height of the indicator chart in pixels.\\
+\hline
+{\em period1} & The period to smooth the range.\\
+\hline
+{\em period2} & The period to compute the rate of change of the smoothed range.\\
+\hline
+{\em color} & The color of the indicator line.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The \hyperlink{class_x_y_chart}{X\+Y\+Chart} object representing the chart created.
+\end{DoxyReturn}
+
+
+Definition at line 1696 of file Finance\+Chart.\+h.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_finance_chart_a45b334a8ddef874d6e152e347a9e725e_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_finance_chart_a2404e8f142be11179a1f41480e14d245}\label{class_finance_chart_a2404e8f142be11179a1f41480e14d245}} 
+\index{Finance\+Chart@{Finance\+Chart}!add\+Close\+Line@{add\+Close\+Line}}
+\index{add\+Close\+Line@{add\+Close\+Line}!Finance\+Chart@{Finance\+Chart}}
+\subsubsection{\texorpdfstring{add\+Close\+Line()}{addCloseLine()}}
+{\footnotesize\ttfamily \hyperlink{class_line_layer}{Line\+Layer}$\ast$ Finance\+Chart\+::add\+Close\+Line (\begin{DoxyParamCaption}\item[{int}]{color }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Add a closing price line on the main chart. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em color} & The color of the line.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The \hyperlink{class_line_layer}{Line\+Layer} object representing the line created.
+\end{DoxyReturn}
+
+
+Definition at line 751 of file Finance\+Chart.\+h.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_finance_chart_a2404e8f142be11179a1f41480e14d245_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_finance_chart_a1541d5239c097f1f35b426830d569bc8}\label{class_finance_chart_a1541d5239c097f1f35b426830d569bc8}} 
+\index{Finance\+Chart@{Finance\+Chart}!add\+C\+LV@{add\+C\+LV}}
+\index{add\+C\+LV@{add\+C\+LV}!Finance\+Chart@{Finance\+Chart}}
+\subsubsection{\texorpdfstring{add\+C\+L\+V()}{addCLV()}}
+{\footnotesize\ttfamily \hyperlink{class_x_y_chart}{X\+Y\+Chart}$\ast$ Finance\+Chart\+::add\+C\+LV (\begin{DoxyParamCaption}\item[{int}]{height,  }\item[{int}]{color }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Add a Close Location Value indicator chart. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em height} & The height of the indicator chart in pixels.\\
+\hline
+{\em color} & The color of the indicator line.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The \hyperlink{class_x_y_chart}{X\+Y\+Chart} object representing the chart created.
+\end{DoxyReturn}
+
+
+Definition at line 1710 of file Finance\+Chart.\+h.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_finance_chart_a1541d5239c097f1f35b426830d569bc8_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_finance_chart_a70070d425a15afa754f1d76e1d5f9dfc}\label{class_finance_chart_a70070d425a15afa754f1d76e1d5f9dfc}} 
+\index{Finance\+Chart@{Finance\+Chart}!add\+Comparison@{add\+Comparison}}
+\index{add\+Comparison@{add\+Comparison}!Finance\+Chart@{Finance\+Chart}}
+\subsubsection{\texorpdfstring{add\+Comparison()}{addComparison()}}
+{\footnotesize\ttfamily \hyperlink{class_line_layer}{Line\+Layer}$\ast$ Finance\+Chart\+::add\+Comparison (\begin{DoxyParamCaption}\item[{\hyperlink{class_double_array}{Double\+Array}}]{data,  }\item[{int}]{color,  }\item[{const char $\ast$}]{name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Add a comparison line to the main price chart. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em data} & The data series to compare to\\
+\hline
+{\em color} & The color of the comparison line\\
+\hline
+{\em name} & The name of the comparison line\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The \hyperlink{class_line_layer}{Line\+Layer} object representing the line layer created.
+\end{DoxyReturn}
+
+
+Definition at line 959 of file Finance\+Chart.\+h.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_finance_chart_a70070d425a15afa754f1d76e1d5f9dfc_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_finance_chart_af42c518b1f7caa9d73169153fced5bd9}\label{class_finance_chart_af42c518b1f7caa9d73169153fced5bd9}} 
+\index{Finance\+Chart@{Finance\+Chart}!add\+Donchian\+Channel@{add\+Donchian\+Channel}}
+\index{add\+Donchian\+Channel@{add\+Donchian\+Channel}!Finance\+Chart@{Finance\+Chart}}
+\subsubsection{\texorpdfstring{add\+Donchian\+Channel()}{addDonchianChannel()}}
+{\footnotesize\ttfamily \hyperlink{class_inter_line_layer}{Inter\+Line\+Layer}$\ast$ Finance\+Chart\+::add\+Donchian\+Channel (\begin{DoxyParamCaption}\item[{int}]{period,  }\item[{int}]{line\+Color,  }\item[{int}]{fill\+Color }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Add a Donchian channel on the main chart. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em period} & The period to compute the band.\\
+\hline
+{\em line\+Color} & The color of the lines defining the upper and lower limits.\\
+\hline
+{\em fill\+Color} & The color to fill the regional within the band.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The \hyperlink{class_inter_line_layer}{Inter\+Line\+Layer} object representing the band created.
+\end{DoxyReturn}
+
+
+Definition at line 1074 of file Finance\+Chart.\+h.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_finance_chart_af42c518b1f7caa9d73169153fced5bd9_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_finance_chart_a0cb226ad13bc836d8b5731d280e2201c}\label{class_finance_chart_a0cb226ad13bc836d8b5731d280e2201c}} 
+\index{Finance\+Chart@{Finance\+Chart}!add\+Donchian\+Width@{add\+Donchian\+Width}}
+\index{add\+Donchian\+Width@{add\+Donchian\+Width}!Finance\+Chart@{Finance\+Chart}}
+\subsubsection{\texorpdfstring{add\+Donchian\+Width()}{addDonchianWidth()}}
+{\footnotesize\ttfamily \hyperlink{class_x_y_chart}{X\+Y\+Chart}$\ast$ Finance\+Chart\+::add\+Donchian\+Width (\begin{DoxyParamCaption}\item[{int}]{height,  }\item[{int}]{period,  }\item[{int}]{color }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Add a Donchian Channel Width indicator chart. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em height} & The height of the indicator chart in pixels.\\
+\hline
+{\em period} & The period to compute the indicator.\\
+\hline
+{\em color} & The color of the indicator line.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The \hyperlink{class_x_y_chart}{X\+Y\+Chart} object representing the chart created.
+\end{DoxyReturn}
+
+
+Definition at line 1740 of file Finance\+Chart.\+h.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_finance_chart_a0cb226ad13bc836d8b5731d280e2201c_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_finance_chart_ad1f0a674349a991edc1cfe4197b75860}\label{class_finance_chart_ad1f0a674349a991edc1cfe4197b75860}} 
+\index{Finance\+Chart@{Finance\+Chart}!add\+D\+PO@{add\+D\+PO}}
+\index{add\+D\+PO@{add\+D\+PO}!Finance\+Chart@{Finance\+Chart}}
+\subsubsection{\texorpdfstring{add\+D\+P\+O()}{addDPO()}}
+{\footnotesize\ttfamily \hyperlink{class_x_y_chart}{X\+Y\+Chart}$\ast$ Finance\+Chart\+::add\+D\+PO (\begin{DoxyParamCaption}\item[{int}]{height,  }\item[{int}]{period,  }\item[{int}]{color }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Add a Detrended Price Oscillator indicator chart. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em height} & The height of the indicator chart in pixels.\\
+\hline
+{\em period} & The period to compute the indicator.\\
+\hline
+{\em color} & The color of the indicator line.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The \hyperlink{class_x_y_chart}{X\+Y\+Chart} object representing the chart created.
+\end{DoxyReturn}
+
+
+Definition at line 1725 of file Finance\+Chart.\+h.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_finance_chart_ad1f0a674349a991edc1cfe4197b75860_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_finance_chart_af821cff5482c9414a74be29646564d71}\label{class_finance_chart_af821cff5482c9414a74be29646564d71}} 
+\index{Finance\+Chart@{Finance\+Chart}!add\+Ease\+Of\+Movement@{add\+Ease\+Of\+Movement}}
+\index{add\+Ease\+Of\+Movement@{add\+Ease\+Of\+Movement}!Finance\+Chart@{Finance\+Chart}}
+\subsubsection{\texorpdfstring{add\+Ease\+Of\+Movement()}{addEaseOfMovement()}}
+{\footnotesize\ttfamily \hyperlink{class_x_y_chart}{X\+Y\+Chart}$\ast$ Finance\+Chart\+::add\+Ease\+Of\+Movement (\begin{DoxyParamCaption}\item[{int}]{height,  }\item[{int}]{period,  }\item[{int}]{color1,  }\item[{int}]{color2 }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Add a Ease of Movement indicator chart. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em height} & The height of the indicator chart in pixels.\\
+\hline
+{\em period} & The period to smooth the indicator.\\
+\hline
+{\em color1} & The color of the indicator line.\\
+\hline
+{\em color2} & The color of the smoothed indicator line.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The \hyperlink{class_x_y_chart}{X\+Y\+Chart} object representing the chart created.
+\end{DoxyReturn}
+
+
+Definition at line 1756 of file Finance\+Chart.\+h.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_finance_chart_af821cff5482c9414a74be29646564d71_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_finance_chart_a92bd5e67f5eaeb0fd801614c4ede9c43}\label{class_finance_chart_a92bd5e67f5eaeb0fd801614c4ede9c43}} 
+\index{Finance\+Chart@{Finance\+Chart}!add\+Envelop@{add\+Envelop}}
+\index{add\+Envelop@{add\+Envelop}!Finance\+Chart@{Finance\+Chart}}
+\subsubsection{\texorpdfstring{add\+Envelop()}{addEnvelop()}}
+{\footnotesize\ttfamily \hyperlink{class_inter_line_layer}{Inter\+Line\+Layer}$\ast$ Finance\+Chart\+::add\+Envelop (\begin{DoxyParamCaption}\item[{int}]{period,  }\item[{double}]{range,  }\item[{int}]{line\+Color,  }\item[{int}]{fill\+Color }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Add a price envelop on the main chart. The price envelop is a defined as a ratio around a moving average. For example, a ratio of 0.\+2 means 20\% above and below the moving average. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em period} & The period for the moving average.\\
+\hline
+{\em range} & The ratio above and below the moving average.\\
+\hline
+{\em line\+Color} & The color of the lines defining the upper and lower limits.\\
+\hline
+{\em fill\+Color} & The color to fill the regional within the band.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The \hyperlink{class_inter_line_layer}{Inter\+Line\+Layer} object representing the band created.
+\end{DoxyReturn}
+
+
+Definition at line 1092 of file Finance\+Chart.\+h.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_finance_chart_a92bd5e67f5eaeb0fd801614c4ede9c43_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_finance_chart_a54fbce37c95280f028de248eb6681ea0}\label{class_finance_chart_a54fbce37c95280f028de248eb6681ea0}} 
+\index{Finance\+Chart@{Finance\+Chart}!add\+Exp\+Moving\+Avg@{add\+Exp\+Moving\+Avg}}
+\index{add\+Exp\+Moving\+Avg@{add\+Exp\+Moving\+Avg}!Finance\+Chart@{Finance\+Chart}}
+\subsubsection{\texorpdfstring{add\+Exp\+Moving\+Avg()}{addExpMovingAvg()}}
+{\footnotesize\ttfamily \hyperlink{class_line_layer}{Line\+Layer}$\ast$ Finance\+Chart\+::add\+Exp\+Moving\+Avg (\begin{DoxyParamCaption}\item[{int}]{period,  }\item[{int}]{color }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Add an exponential moving average line on the main chart. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em period} & The moving average period\\
+\hline
+{\em color} & The color of the line.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The \hyperlink{class_line_layer}{Line\+Layer} object representing the line created.
+\end{DoxyReturn}
+
+
+Definition at line 808 of file Finance\+Chart.\+h.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_finance_chart_a54fbce37c95280f028de248eb6681ea0_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_finance_chart_aaf35dc123849c0ad4a959f2e1667360c}\label{class_finance_chart_aaf35dc123849c0ad4a959f2e1667360c}} 
+\index{Finance\+Chart@{Finance\+Chart}!add\+Fast\+Stochastic@{add\+Fast\+Stochastic}}
+\index{add\+Fast\+Stochastic@{add\+Fast\+Stochastic}!Finance\+Chart@{Finance\+Chart}}
+\subsubsection{\texorpdfstring{add\+Fast\+Stochastic()}{addFastStochastic()}}
+{\footnotesize\ttfamily \hyperlink{class_x_y_chart}{X\+Y\+Chart}$\ast$ Finance\+Chart\+::add\+Fast\+Stochastic (\begin{DoxyParamCaption}\item[{int}]{height,  }\item[{int}]{period1,  }\item[{int}]{period2,  }\item[{int}]{color1,  }\item[{int}]{color2 }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Add a Fast Stochastic indicator chart. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em height} & The height of the indicator chart in pixels.\\
+\hline
+{\em period1} & The period to compute the K line.\\
+\hline
+{\em period2} & The period to compute the D line.\\
+\hline
+{\em color1} & The color of the K line.\\
+\hline
+{\em color2} & The color of the D line.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The \hyperlink{class_x_y_chart}{X\+Y\+Chart} object representing the chart created.
+\end{DoxyReturn}
+
+
+Definition at line 1778 of file Finance\+Chart.\+h.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_finance_chart_aaf35dc123849c0ad4a959f2e1667360c_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_finance_chart_ab54186072d9b48c643dfeeb824968d31}\label{class_finance_chart_ab54186072d9b48c643dfeeb824968d31}} 
+\index{Finance\+Chart@{Finance\+Chart}!add\+H\+L\+OC@{add\+H\+L\+OC}}
+\index{add\+H\+L\+OC@{add\+H\+L\+OC}!Finance\+Chart@{Finance\+Chart}}
+\subsubsection{\texorpdfstring{add\+H\+L\+O\+C()}{addHLOC()}}
+{\footnotesize\ttfamily \hyperlink{class_h_l_o_c_layer}{H\+L\+O\+C\+Layer}$\ast$ Finance\+Chart\+::add\+H\+L\+OC (\begin{DoxyParamCaption}\item[{int}]{up\+Color,  }\item[{int}]{down\+Color }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Add a H\+L\+OC layer to the main chart. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em up\+Color} & The color of the H\+L\+OC symbol for an up day.\\
+\hline
+{\em down\+Color} & The color of the H\+L\+OC symbol for a down day.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The \hyperlink{class_h_l_o_c_layer}{H\+L\+O\+C\+Layer} created.
+\end{DoxyReturn}
+
+
+Definition at line 667 of file Finance\+Chart.\+h.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_finance_chart_ab54186072d9b48c643dfeeb824968d31_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_finance_chart_a2e27a54f9787005383604fe1ebac4c58}\label{class_finance_chart_a2e27a54f9787005383604fe1ebac4c58}} 
+\index{Finance\+Chart@{Finance\+Chart}!add\+Indicator@{add\+Indicator}}
+\index{add\+Indicator@{add\+Indicator}!Finance\+Chart@{Finance\+Chart}}
+\subsubsection{\texorpdfstring{add\+Indicator()}{addIndicator()}}
+{\footnotesize\ttfamily \hyperlink{class_x_y_chart}{X\+Y\+Chart}$\ast$ Finance\+Chart\+::add\+Indicator (\begin{DoxyParamCaption}\item[{int}]{height }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Add a blank indicator chart to the finance chart. Used internally to add other indicators. Override to change the default formatting (eg. axis fonts, etc.) of the various indicators. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em height} & The height of the chart in pixels.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The \hyperlink{class_x_y_chart}{X\+Y\+Chart} object representing the chart created.
+\end{DoxyReturn}
+
+
+Definition at line 1178 of file Finance\+Chart.\+h.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{class_finance_chart_a2e27a54f9787005383604fe1ebac4c58_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{class_finance_chart_a2e27a54f9787005383604fe1ebac4c58_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_finance_chart_a799daf3775d8e100cd771eba230252ff}\label{class_finance_chart_a799daf3775d8e100cd771eba230252ff}} 
+\index{Finance\+Chart@{Finance\+Chart}!add\+Line\+Indicator@{add\+Line\+Indicator}}
+\index{add\+Line\+Indicator@{add\+Line\+Indicator}!Finance\+Chart@{Finance\+Chart}}
+\subsubsection{\texorpdfstring{add\+Line\+Indicator()}{addLineIndicator()}}
+{\footnotesize\ttfamily \hyperlink{class_x_y_chart}{X\+Y\+Chart}$\ast$ Finance\+Chart\+::add\+Line\+Indicator (\begin{DoxyParamCaption}\item[{int}]{height,  }\item[{\hyperlink{class_double_array}{Double\+Array}}]{data,  }\item[{int}]{color,  }\item[{const char $\ast$}]{name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Add a generic line indicator chart. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em height} & The height of the indicator chart in pixels.\\
+\hline
+{\em data} & The data series of the indicator line.\\
+\hline
+{\em color} & The color of the indicator line.\\
+\hline
+{\em name} & The name of the indicator.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The \hyperlink{class_x_y_chart}{X\+Y\+Chart} object representing the chart created.
+\end{DoxyReturn}
+
+
+Definition at line 1261 of file Finance\+Chart.\+h.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_finance_chart_a799daf3775d8e100cd771eba230252ff_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{class_finance_chart_a799daf3775d8e100cd771eba230252ff_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_finance_chart_af7000f18368de197ff56bf5dba1f711c}\label{class_finance_chart_af7000f18368de197ff56bf5dba1f711c}} 
+\index{Finance\+Chart@{Finance\+Chart}!add\+Line\+Indicator2@{add\+Line\+Indicator2}}
+\index{add\+Line\+Indicator2@{add\+Line\+Indicator2}!Finance\+Chart@{Finance\+Chart}}
+\subsubsection{\texorpdfstring{add\+Line\+Indicator2()}{addLineIndicator2()}}
+{\footnotesize\ttfamily \hyperlink{class_line_layer}{Line\+Layer}$\ast$ Finance\+Chart\+::add\+Line\+Indicator2 (\begin{DoxyParamCaption}\item[{\hyperlink{class_x_y_chart}{X\+Y\+Chart} $\ast$}]{c,  }\item[{\hyperlink{class_double_array}{Double\+Array}}]{data,  }\item[{int}]{color,  }\item[{const char $\ast$}]{name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Add a line to an existing indicator chart. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em c} & The indicator chart to add the line to.\\
+\hline
+{\em data} & The data series of the indicator line.\\
+\hline
+{\em color} & The color of the indicator line.\\
+\hline
+{\em name} & The name of the indicator.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The \hyperlink{class_line_layer}{Line\+Layer} object representing the line created.
+\end{DoxyReturn}
+
+
+Definition at line 1276 of file Finance\+Chart.\+h.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_finance_chart_af7000f18368de197ff56bf5dba1f711c_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{class_finance_chart_af7000f18368de197ff56bf5dba1f711c_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_finance_chart_a3f46f24c67ed7a2c4a5ffa77fbe7ba73}\label{class_finance_chart_a3f46f24c67ed7a2c4a5ffa77fbe7ba73}} 
+\index{Finance\+Chart@{Finance\+Chart}!add\+M\+A\+CD@{add\+M\+A\+CD}}
+\index{add\+M\+A\+CD@{add\+M\+A\+CD}!Finance\+Chart@{Finance\+Chart}}
+\subsubsection{\texorpdfstring{add\+M\+A\+C\+D()}{addMACD()}}
+{\footnotesize\ttfamily \hyperlink{class_x_y_chart}{X\+Y\+Chart}$\ast$ Finance\+Chart\+::add\+M\+A\+CD (\begin{DoxyParamCaption}\item[{int}]{height,  }\item[{int}]{period1,  }\item[{int}]{period2,  }\item[{int}]{period3,  }\item[{int}]{color,  }\item[{int}]{signal\+Color,  }\item[{int}]{div\+Color }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Add a M\+A\+CD indicator chart. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em height} & The height of the indicator chart in pixels.\\
+\hline
+{\em period1} & The first moving average period to compute the indicator.\\
+\hline
+{\em period2} & The second moving average period to compute the indicator.\\
+\hline
+{\em period3} & The moving average period of the signal line.\\
+\hline
+{\em color} & The color of the indicator line.\\
+\hline
+{\em signal\+Color} & The color of the signal line.\\
+\hline
+{\em div\+Color} & The color of the divergent bars.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The \hyperlink{class_x_y_chart}{X\+Y\+Chart} object representing the chart created.
+\end{DoxyReturn}
+
+
+Definition at line 1806 of file Finance\+Chart.\+h.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_finance_chart_a3f46f24c67ed7a2c4a5ffa77fbe7ba73_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_finance_chart_a69ac5aca5d2d232184398b43fee6eb13}\label{class_finance_chart_a69ac5aca5d2d232184398b43fee6eb13}} 
+\index{Finance\+Chart@{Finance\+Chart}!add\+Main\+Chart@{add\+Main\+Chart}}
+\index{add\+Main\+Chart@{add\+Main\+Chart}!Finance\+Chart@{Finance\+Chart}}
+\subsubsection{\texorpdfstring{add\+Main\+Chart()}{addMainChart()}}
+{\footnotesize\ttfamily \hyperlink{class_x_y_chart}{X\+Y\+Chart}$\ast$ Finance\+Chart\+::add\+Main\+Chart (\begin{DoxyParamCaption}\item[{int}]{height }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Add the main chart -\/ the chart that shows the H\+L\+OC data. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em height} & The height of the main chart in pixels.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+An \hyperlink{class_x_y_chart}{X\+Y\+Chart} object representing the main chart created.
+\end{DoxyReturn}
+
+
+Definition at line 624 of file Finance\+Chart.\+h.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_finance_chart_a69ac5aca5d2d232184398b43fee6eb13_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_finance_chart_a452f5d65f747033467a62eb280babfdc}\label{class_finance_chart_a452f5d65f747033467a62eb280babfdc}} 
+\index{Finance\+Chart@{Finance\+Chart}!add\+Mass\+Index@{add\+Mass\+Index}}
+\index{add\+Mass\+Index@{add\+Mass\+Index}!Finance\+Chart@{Finance\+Chart}}
+\subsubsection{\texorpdfstring{add\+Mass\+Index()}{addMassIndex()}}
+{\footnotesize\ttfamily \hyperlink{class_x_y_chart}{X\+Y\+Chart}$\ast$ Finance\+Chart\+::add\+Mass\+Index (\begin{DoxyParamCaption}\item[{int}]{height,  }\item[{int}]{color,  }\item[{int}]{up\+Color,  }\item[{int}]{down\+Color }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Add a Mass Index indicator chart. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em height} & The height of the indicator chart in pixels.\\
+\hline
+{\em color} & The color of the indicator line.\\
+\hline
+{\em up\+Color} & The fill color when the indicator exceeds the upper threshold line.\\
+\hline
+{\em down\+Color} & The fill color when the indicator falls below the lower threshold line.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The \hyperlink{class_x_y_chart}{X\+Y\+Chart} object representing the chart created.
+\end{DoxyReturn}
+
+
+Definition at line 1839 of file Finance\+Chart.\+h.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_finance_chart_a452f5d65f747033467a62eb280babfdc_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_finance_chart_a3957929ae30662dcfa410c1a2263bb92}\label{class_finance_chart_a3957929ae30662dcfa410c1a2263bb92}} 
+\index{Finance\+Chart@{Finance\+Chart}!add\+Median\+Price@{add\+Median\+Price}}
+\index{add\+Median\+Price@{add\+Median\+Price}!Finance\+Chart@{Finance\+Chart}}
+\subsubsection{\texorpdfstring{add\+Median\+Price()}{addMedianPrice()}}
+{\footnotesize\ttfamily \hyperlink{class_line_layer}{Line\+Layer}$\ast$ Finance\+Chart\+::add\+Median\+Price (\begin{DoxyParamCaption}\item[{int}]{color }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Add a median price line on the main chart. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em color} & The color of the line.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The \hyperlink{class_line_layer}{Line\+Layer} object representing the line created.
+\end{DoxyReturn}
+
+
+Definition at line 783 of file Finance\+Chart.\+h.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_finance_chart_a3957929ae30662dcfa410c1a2263bb92_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_finance_chart_ab6f774100ffc593f93eed25c98facf6f}\label{class_finance_chart_ab6f774100ffc593f93eed25c98facf6f}} 
+\index{Finance\+Chart@{Finance\+Chart}!add\+M\+FI@{add\+M\+FI}}
+\index{add\+M\+FI@{add\+M\+FI}!Finance\+Chart@{Finance\+Chart}}
+\subsubsection{\texorpdfstring{add\+M\+F\+I()}{addMFI()}}
+{\footnotesize\ttfamily \hyperlink{class_x_y_chart}{X\+Y\+Chart}$\ast$ Finance\+Chart\+::add\+M\+FI (\begin{DoxyParamCaption}\item[{int}]{height,  }\item[{int}]{period,  }\item[{int}]{color,  }\item[{double}]{range,  }\item[{int}]{up\+Color,  }\item[{int}]{down\+Color }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Add a Money Flow Index indicator chart. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em height} & The height of the indicator chart in pixels.\\
+\hline
+{\em period} & The period to compute the indicator.\\
+\hline
+{\em color} & The color of the indicator line.\\
+\hline
+{\em range} & The distance beween the middle line and the upper and lower threshold lines.\\
+\hline
+{\em up\+Color} & The fill color when the indicator exceeds the upper threshold line.\\
+\hline
+{\em down\+Color} & The fill color when the indicator falls below the lower threshold line.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The \hyperlink{class_x_y_chart}{X\+Y\+Chart} object representing the chart created.
+\end{DoxyReturn}
+
+
+Definition at line 1863 of file Finance\+Chart.\+h.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{class_finance_chart_ab6f774100ffc593f93eed25c98facf6f_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_finance_chart_afbdc6d4410549928b041060bfb03b126}\label{class_finance_chart_afbdc6d4410549928b041060bfb03b126}} 
+\index{Finance\+Chart@{Finance\+Chart}!add\+Momentum@{add\+Momentum}}
+\index{add\+Momentum@{add\+Momentum}!Finance\+Chart@{Finance\+Chart}}
+\subsubsection{\texorpdfstring{add\+Momentum()}{addMomentum()}}
+{\footnotesize\ttfamily \hyperlink{class_x_y_chart}{X\+Y\+Chart}$\ast$ Finance\+Chart\+::add\+Momentum (\begin{DoxyParamCaption}\item[{int}]{height,  }\item[{int}]{period,  }\item[{int}]{color }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Add a Momentum indicator chart. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em height} & The height of the indicator chart in pixels.\\
+\hline
+{\em period} & The period to compute the indicator.\\
+\hline
+{\em color} & The color of the indicator line.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The \hyperlink{class_x_y_chart}{X\+Y\+Chart} object representing the chart created.
+\end{DoxyReturn}
+
+
+Definition at line 1893 of file Finance\+Chart.\+h.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_finance_chart_afbdc6d4410549928b041060bfb03b126_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_finance_chart_a388881982244585b53d8a318ad4e6254}\label{class_finance_chart_a388881982244585b53d8a318ad4e6254}} 
+\index{Finance\+Chart@{Finance\+Chart}!add\+N\+VI@{add\+N\+VI}}
+\index{add\+N\+VI@{add\+N\+VI}!Finance\+Chart@{Finance\+Chart}}
+\subsubsection{\texorpdfstring{add\+N\+V\+I()}{addNVI()}}
+{\footnotesize\ttfamily \hyperlink{class_x_y_chart}{X\+Y\+Chart}$\ast$ Finance\+Chart\+::add\+N\+VI (\begin{DoxyParamCaption}\item[{int}]{height,  }\item[{int}]{period,  }\item[{int}]{color,  }\item[{int}]{signal\+Color }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Add a Negative Volume Index indicator chart. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em height} & The height of the indicator chart in pixels.\\
+\hline
+{\em period} & The period to compute the signal line.\\
+\hline
+{\em color} & The color of the indicator line.\\
+\hline
+{\em signal\+Color} & The color of the signal line.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The \hyperlink{class_x_y_chart}{X\+Y\+Chart} object representing the chart created.
+\end{DoxyReturn}
+
+
+Definition at line 1908 of file Finance\+Chart.\+h.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_finance_chart_a388881982244585b53d8a318ad4e6254_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_finance_chart_a68954d093f52671623132c5fb35c261b}\label{class_finance_chart_a68954d093f52671623132c5fb35c261b}} 
+\index{Finance\+Chart@{Finance\+Chart}!add\+O\+BV@{add\+O\+BV}}
+\index{add\+O\+BV@{add\+O\+BV}!Finance\+Chart@{Finance\+Chart}}
+\subsubsection{\texorpdfstring{add\+O\+B\+V()}{addOBV()}}
+{\footnotesize\ttfamily \hyperlink{class_x_y_chart}{X\+Y\+Chart}$\ast$ Finance\+Chart\+::add\+O\+BV (\begin{DoxyParamCaption}\item[{int}]{height,  }\item[{int}]{color }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Add an On Balance Volume indicator chart. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em height} & The height of the indicator chart in pixels.\\
+\hline
+{\em color} & The color of the indicator line.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The \hyperlink{class_x_y_chart}{X\+Y\+Chart} object representing the chart created.
+\end{DoxyReturn}
+
+
+Definition at line 1952 of file Finance\+Chart.\+h.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_finance_chart_a68954d093f52671623132c5fb35c261b_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_finance_chart_a1f8317ff1ee6936114a408c7139e64d1}\label{class_finance_chart_a1f8317ff1ee6936114a408c7139e64d1}} 
+\index{Finance\+Chart@{Finance\+Chart}!add\+Parabolic\+S\+AR@{add\+Parabolic\+S\+AR}}
+\index{add\+Parabolic\+S\+AR@{add\+Parabolic\+S\+AR}!Finance\+Chart@{Finance\+Chart}}
+\subsubsection{\texorpdfstring{add\+Parabolic\+S\+A\+R()}{addParabolicSAR()}}
+{\footnotesize\ttfamily \hyperlink{class_line_layer}{Line\+Layer}$\ast$ Finance\+Chart\+::add\+Parabolic\+S\+AR (\begin{DoxyParamCaption}\item[{double}]{acc\+Initial,  }\item[{double}]{acc\+Increment,  }\item[{double}]{acc\+Maximum,  }\item[{int}]{symbol\+Type,  }\item[{int}]{symbol\+Size,  }\item[{int}]{fill\+Color,  }\item[{int}]{edge\+Color }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+
+
+Add a parabolic S\+AR indicator to the main chart. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em acc\+Initial} & Initial acceleration factor\\
+\hline
+{\em acc\+Increment} & Acceleration factor increment\\
+\hline
+{\em acc\+Maximum} & Maximum acceleration factor\\
+\hline
+{\em symbol\+Type} & The symbol used to plot the parabolic S\+AR\\
+\hline
+{\em symbol\+Size} & The symbol size in pixels\\
+\hline
+{\em fill\+Color} & The fill color of the symbol\\
+\hline
+{\em edge\+Color} & The edge color of the symbol\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The \hyperlink{class_line_layer}{Line\+Layer} object representing the layer created.
+\end{DoxyReturn}
+
+
+Definition at line 855 of file Finance\+Chart.\+h.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_finance_chart_a1f8317ff1ee6936114a408c7139e64d1_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_finance_chart_a86b3b47168753b4876b38464ecc5ab33}\label{class_finance_chart_a86b3b47168753b4876b38464ecc5ab33}} 
+\index{Finance\+Chart@{Finance\+Chart}!add\+Performance@{add\+Performance}}
+\index{add\+Performance@{add\+Performance}!Finance\+Chart@{Finance\+Chart}}
+\subsubsection{\texorpdfstring{add\+Performance()}{addPerformance()}}
+{\footnotesize\ttfamily \hyperlink{class_x_y_chart}{X\+Y\+Chart}$\ast$ Finance\+Chart\+::add\+Performance (\begin{DoxyParamCaption}\item[{int}]{height,  }\item[{int}]{color }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Add a Performance indicator chart. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em height} & The height of the indicator chart in pixels.\\
+\hline
+{\em color} & The color of the indicator line.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The \hyperlink{class_x_y_chart}{X\+Y\+Chart} object representing the chart created.
+\end{DoxyReturn}
+
+
+Definition at line 1967 of file Finance\+Chart.\+h.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_finance_chart_a86b3b47168753b4876b38464ecc5ab33_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_finance_chart_acf483e2850387592ab861effcd443eb6}\label{class_finance_chart_acf483e2850387592ab861effcd443eb6}} 
+\index{Finance\+Chart@{Finance\+Chart}!add\+Plot\+Area\+Title@{add\+Plot\+Area\+Title}}
+\index{add\+Plot\+Area\+Title@{add\+Plot\+Area\+Title}!Finance\+Chart@{Finance\+Chart}}
+\subsubsection{\texorpdfstring{add\+Plot\+Area\+Title()}{addPlotAreaTitle()}}
+{\footnotesize\ttfamily \hyperlink{class_text_box}{Text\+Box}$\ast$ Finance\+Chart\+::add\+Plot\+Area\+Title (\begin{DoxyParamCaption}\item[{int}]{alignment,  }\item[{const char $\ast$}]{text }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Add a text title above the plot area. You may add multiple title above the plot area by calling this method multiple times. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em alignment} & The alignment with respect to the region that is on top of the plot area.\\
+\hline
+{\em text} & The text to add.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The \hyperlink{class_text_box}{Text\+Box} object representing the text box above the plot area.
+\end{DoxyReturn}
+
+
+Definition at line 218 of file Finance\+Chart.\+h.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_finance_chart_acf483e2850387592ab861effcd443eb6_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_finance_chart_afece1b137b4d8b68e0be8255a2a914b9}\label{class_finance_chart_afece1b137b4d8b68e0be8255a2a914b9}} 
+\index{Finance\+Chart@{Finance\+Chart}!add\+P\+PO@{add\+P\+PO}}
+\index{add\+P\+PO@{add\+P\+PO}!Finance\+Chart@{Finance\+Chart}}
+\subsubsection{\texorpdfstring{add\+P\+P\+O()}{addPPO()}}
+{\footnotesize\ttfamily \hyperlink{class_x_y_chart}{X\+Y\+Chart}$\ast$ Finance\+Chart\+::add\+P\+PO (\begin{DoxyParamCaption}\item[{int}]{height,  }\item[{int}]{period1,  }\item[{int}]{period2,  }\item[{int}]{period3,  }\item[{int}]{color,  }\item[{int}]{signal\+Color,  }\item[{int}]{div\+Color }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Add a Percentage Price Oscillator indicator chart. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em height} & The height of the indicator chart in pixels.\\
+\hline
+{\em period1} & The first moving average period to compute the indicator.\\
+\hline
+{\em period2} & The second moving average period to compute the indicator.\\
+\hline
+{\em period3} & The moving average period of the signal line.\\
+\hline
+{\em color} & The color of the indicator line.\\
+\hline
+{\em signal\+Color} & The color of the signal line.\\
+\hline
+{\em div\+Color} & The color of the divergent bars.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The \hyperlink{class_x_y_chart}{X\+Y\+Chart} object representing the chart created.
+\end{DoxyReturn}
+
+
+Definition at line 1990 of file Finance\+Chart.\+h.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_finance_chart_afece1b137b4d8b68e0be8255a2a914b9_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_finance_chart_a69528f7f5ec33d01dacee72fd0fe2357}\label{class_finance_chart_a69528f7f5ec33d01dacee72fd0fe2357}} 
+\index{Finance\+Chart@{Finance\+Chart}!add\+P\+VI@{add\+P\+VI}}
+\index{add\+P\+VI@{add\+P\+VI}!Finance\+Chart@{Finance\+Chart}}
+\subsubsection{\texorpdfstring{add\+P\+V\+I()}{addPVI()}}
+{\footnotesize\ttfamily \hyperlink{class_x_y_chart}{X\+Y\+Chart}$\ast$ Finance\+Chart\+::add\+P\+VI (\begin{DoxyParamCaption}\item[{int}]{height,  }\item[{int}]{period,  }\item[{int}]{color,  }\item[{int}]{signal\+Color }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Add a Positive Volume Index indicator chart. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em height} & The height of the indicator chart in pixels.\\
+\hline
+{\em period} & The period to compute the signal line.\\
+\hline
+{\em color} & The color of the indicator line.\\
+\hline
+{\em signal\+Color} & The color of the signal line.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The \hyperlink{class_x_y_chart}{X\+Y\+Chart} object representing the chart created.
+\end{DoxyReturn}
+
+
+Definition at line 2015 of file Finance\+Chart.\+h.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_finance_chart_a69528f7f5ec33d01dacee72fd0fe2357_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_finance_chart_ace44d0253016161a1bd17d9725fde444}\label{class_finance_chart_ace44d0253016161a1bd17d9725fde444}} 
+\index{Finance\+Chart@{Finance\+Chart}!add\+P\+VO@{add\+P\+VO}}
+\index{add\+P\+VO@{add\+P\+VO}!Finance\+Chart@{Finance\+Chart}}
+\subsubsection{\texorpdfstring{add\+P\+V\+O()}{addPVO()}}
+{\footnotesize\ttfamily \hyperlink{class_x_y_chart}{X\+Y\+Chart}$\ast$ Finance\+Chart\+::add\+P\+VO (\begin{DoxyParamCaption}\item[{int}]{height,  }\item[{int}]{period1,  }\item[{int}]{period2,  }\item[{int}]{period3,  }\item[{int}]{color,  }\item[{int}]{signal\+Color,  }\item[{int}]{div\+Color }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Add a Percentage Volume Oscillator indicator chart. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em height} & The height of the indicator chart in pixels.\\
+\hline
+{\em period1} & The first moving average period to compute the indicator.\\
+\hline
+{\em period2} & The second moving average period to compute the indicator.\\
+\hline
+{\em period3} & The moving average period of the signal line.\\
+\hline
+{\em color} & The color of the indicator line.\\
+\hline
+{\em signal\+Color} & The color of the signal line.\\
+\hline
+{\em div\+Color} & The color of the divergent bars.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The \hyperlink{class_x_y_chart}{X\+Y\+Chart} object representing the chart created.
+\end{DoxyReturn}
+
+
+Definition at line 2065 of file Finance\+Chart.\+h.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_finance_chart_ace44d0253016161a1bd17d9725fde444_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_finance_chart_a3434485481a3f184521145874a62224a}\label{class_finance_chart_a3434485481a3f184521145874a62224a}} 
+\index{Finance\+Chart@{Finance\+Chart}!add\+P\+VT@{add\+P\+VT}}
+\index{add\+P\+VT@{add\+P\+VT}!Finance\+Chart@{Finance\+Chart}}
+\subsubsection{\texorpdfstring{add\+P\+V\+T()}{addPVT()}}
+{\footnotesize\ttfamily \hyperlink{class_x_y_chart}{X\+Y\+Chart}$\ast$ Finance\+Chart\+::add\+P\+VT (\begin{DoxyParamCaption}\item[{int}]{height,  }\item[{int}]{color }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Add a Price Volumne Trend indicator chart. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em height} & The height of the indicator chart in pixels.\\
+\hline
+{\em color} & The color of the indicator line.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The \hyperlink{class_x_y_chart}{X\+Y\+Chart} object representing the chart created.
+\end{DoxyReturn}
+
+
+Definition at line 2088 of file Finance\+Chart.\+h.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_finance_chart_a3434485481a3f184521145874a62224a_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_finance_chart_ac8ca50e0764d729d0591d1baace193de}\label{class_finance_chart_ac8ca50e0764d729d0591d1baace193de}} 
+\index{Finance\+Chart@{Finance\+Chart}!add\+R\+OC@{add\+R\+OC}}
+\index{add\+R\+OC@{add\+R\+OC}!Finance\+Chart@{Finance\+Chart}}
+\subsubsection{\texorpdfstring{add\+R\+O\+C()}{addROC()}}
+{\footnotesize\ttfamily \hyperlink{class_x_y_chart}{X\+Y\+Chart}$\ast$ Finance\+Chart\+::add\+R\+OC (\begin{DoxyParamCaption}\item[{int}]{height,  }\item[{int}]{period,  }\item[{int}]{color }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Add a Rate of Change indicator chart. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em height} & The height of the indicator chart in pixels.\\
+\hline
+{\em period} & The period to compute the indicator.\\
+\hline
+{\em color} & The color of the indicator line.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The \hyperlink{class_x_y_chart}{X\+Y\+Chart} object representing the chart created.
+\end{DoxyReturn}
+
+
+Definition at line 2101 of file Finance\+Chart.\+h.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_finance_chart_ac8ca50e0764d729d0591d1baace193de_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_finance_chart_aba175ac4bc80577bad0767bcd75109c7}\label{class_finance_chart_aba175ac4bc80577bad0767bcd75109c7}} 
+\index{Finance\+Chart@{Finance\+Chart}!add\+R\+SI@{add\+R\+SI}}
+\index{add\+R\+SI@{add\+R\+SI}!Finance\+Chart@{Finance\+Chart}}
+\subsubsection{\texorpdfstring{add\+R\+S\+I()}{addRSI()}}
+{\footnotesize\ttfamily \hyperlink{class_x_y_chart}{X\+Y\+Chart}$\ast$ Finance\+Chart\+::add\+R\+SI (\begin{DoxyParamCaption}\item[{int}]{height,  }\item[{int}]{period,  }\item[{int}]{color,  }\item[{double}]{range,  }\item[{int}]{up\+Color,  }\item[{int}]{down\+Color }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Add a Relative Strength Index indicator chart. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em height} & The height of the indicator chart in pixels.\\
+\hline
+{\em period} & The period to compute the indicator.\\
+\hline
+{\em color} & The color of the indicator line.\\
+\hline
+{\em range} & The distance beween the middle line and the upper and lower threshold lines.\\
+\hline
+{\em up\+Color} & The fill color when the indicator exceeds the upper threshold line.\\
+\hline
+{\em down\+Color} & The fill color when the indicator falls below the lower threshold line.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The \hyperlink{class_x_y_chart}{X\+Y\+Chart} object representing the chart created.
+\end{DoxyReturn}
+
+
+Definition at line 2156 of file Finance\+Chart.\+h.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{class_finance_chart_aba175ac4bc80577bad0767bcd75109c7_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_finance_chart_a7fdf86b7ceb129bd035612be20fbe6ba}\label{class_finance_chart_a7fdf86b7ceb129bd035612be20fbe6ba}} 
+\index{Finance\+Chart@{Finance\+Chart}!add\+Simple\+Moving\+Avg@{add\+Simple\+Moving\+Avg}}
+\index{add\+Simple\+Moving\+Avg@{add\+Simple\+Moving\+Avg}!Finance\+Chart@{Finance\+Chart}}
+\subsubsection{\texorpdfstring{add\+Simple\+Moving\+Avg()}{addSimpleMovingAvg()}}
+{\footnotesize\ttfamily \hyperlink{class_line_layer}{Line\+Layer}$\ast$ Finance\+Chart\+::add\+Simple\+Moving\+Avg (\begin{DoxyParamCaption}\item[{int}]{period,  }\item[{int}]{color }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Add a simple moving average line on the main chart. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em period} & The moving average period\\
+\hline
+{\em color} & The color of the line.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The \hyperlink{class_line_layer}{Line\+Layer} object representing the line created.
+\end{DoxyReturn}
+
+
+Definition at line 795 of file Finance\+Chart.\+h.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_finance_chart_a7fdf86b7ceb129bd035612be20fbe6ba_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_finance_chart_a2f1d675f9a5e8f280b4f16d3a36eb204}\label{class_finance_chart_a2f1d675f9a5e8f280b4f16d3a36eb204}} 
+\index{Finance\+Chart@{Finance\+Chart}!add\+Slow\+Stochastic@{add\+Slow\+Stochastic}}
+\index{add\+Slow\+Stochastic@{add\+Slow\+Stochastic}!Finance\+Chart@{Finance\+Chart}}
+\subsubsection{\texorpdfstring{add\+Slow\+Stochastic()}{addSlowStochastic()}}
+{\footnotesize\ttfamily \hyperlink{class_x_y_chart}{X\+Y\+Chart}$\ast$ Finance\+Chart\+::add\+Slow\+Stochastic (\begin{DoxyParamCaption}\item[{int}]{height,  }\item[{int}]{period1,  }\item[{int}]{period2,  }\item[{int}]{color1,  }\item[{int}]{color2 }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Add a Slow Stochastic indicator chart. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em height} & The height of the indicator chart in pixels.\\
+\hline
+{\em period1} & The period to compute the K line.\\
+\hline
+{\em period2} & The period to compute the D line.\\
+\hline
+{\em color1} & The color of the K line.\\
+\hline
+{\em color2} & The color of the D line.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The \hyperlink{class_x_y_chart}{X\+Y\+Chart} object representing the chart created.
+\end{DoxyReturn}
+
+
+Definition at line 2181 of file Finance\+Chart.\+h.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_finance_chart_a2f1d675f9a5e8f280b4f16d3a36eb204_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_finance_chart_abee75e01f567badfa4da74c92a60d00c}\label{class_finance_chart_abee75e01f567badfa4da74c92a60d00c}} 
+\index{Finance\+Chart@{Finance\+Chart}!add\+Std\+Dev@{add\+Std\+Dev}}
+\index{add\+Std\+Dev@{add\+Std\+Dev}!Finance\+Chart@{Finance\+Chart}}
+\subsubsection{\texorpdfstring{add\+Std\+Dev()}{addStdDev()}}
+{\footnotesize\ttfamily \hyperlink{class_x_y_chart}{X\+Y\+Chart}$\ast$ Finance\+Chart\+::add\+Std\+Dev (\begin{DoxyParamCaption}\item[{int}]{height,  }\item[{int}]{period,  }\item[{int}]{color }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Add a Moving Standard Deviation indicator chart. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em height} & The height of the indicator chart in pixels.\\
+\hline
+{\em period} & The period to compute the indicator.\\
+\hline
+{\em color} & The color of the indicator line.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The \hyperlink{class_x_y_chart}{X\+Y\+Chart} object representing the chart created.
+\end{DoxyReturn}
+
+
+Definition at line 2205 of file Finance\+Chart.\+h.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_finance_chart_abee75e01f567badfa4da74c92a60d00c_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_finance_chart_a8c44b07a3a6dcf2e3feb09960dfa9770}\label{class_finance_chart_a8c44b07a3a6dcf2e3feb09960dfa9770}} 
+\index{Finance\+Chart@{Finance\+Chart}!add\+Stoch\+R\+SI@{add\+Stoch\+R\+SI}}
+\index{add\+Stoch\+R\+SI@{add\+Stoch\+R\+SI}!Finance\+Chart@{Finance\+Chart}}
+\subsubsection{\texorpdfstring{add\+Stoch\+R\+S\+I()}{addStochRSI()}}
+{\footnotesize\ttfamily \hyperlink{class_x_y_chart}{X\+Y\+Chart}$\ast$ Finance\+Chart\+::add\+Stoch\+R\+SI (\begin{DoxyParamCaption}\item[{int}]{height,  }\item[{int}]{period,  }\item[{int}]{color,  }\item[{double}]{range,  }\item[{int}]{up\+Color,  }\item[{int}]{down\+Color }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Add a Stochastic R\+SI indicator chart. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em height} & The height of the indicator chart in pixels.\\
+\hline
+{\em period} & The period to compute the indicator.\\
+\hline
+{\em color} & The color of the indicator line.\\
+\hline
+{\em range} & The distance beween the middle line and the upper and lower threshold lines.\\
+\hline
+{\em up\+Color} & The fill color when the indicator exceeds the upper threshold line.\\
+\hline
+{\em down\+Color} & The fill color when the indicator falls below the lower threshold line.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The \hyperlink{class_x_y_chart}{X\+Y\+Chart} object representing the chart created.
+\end{DoxyReturn}
+
+
+Definition at line 2222 of file Finance\+Chart.\+h.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{class_finance_chart_a8c44b07a3a6dcf2e3feb09960dfa9770_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_finance_chart_ae08738c0df88ccd4d75ed3860f353839}\label{class_finance_chart_ae08738c0df88ccd4d75ed3860f353839}} 
+\index{Finance\+Chart@{Finance\+Chart}!add\+Threshold@{add\+Threshold}}
+\index{add\+Threshold@{add\+Threshold}!Finance\+Chart@{Finance\+Chart}}
+\subsubsection{\texorpdfstring{add\+Threshold()}{addThreshold()}}
+{\footnotesize\ttfamily void Finance\+Chart\+::add\+Threshold (\begin{DoxyParamCaption}\item[{\hyperlink{class_x_y_chart}{X\+Y\+Chart} $\ast$}]{c,  }\item[{\hyperlink{class_line_layer}{Line\+Layer} $\ast$}]{layer,  }\item[{double}]{top\+Range,  }\item[{int}]{top\+Color,  }\item[{double}]{bottom\+Range,  }\item[{int}]{bottom\+Color }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Add an upper/lower threshold range to an existing indicator chart. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em c} & The indicator chart to add the threshold range to.\\
+\hline
+{\em layer} & The line layer that the threshold range applies to.\\
+\hline
+{\em top\+Range} & The upper threshold.\\
+\hline
+{\em top\+Color} & The color to fill the region of the line that is above the upper threshold.\\
+\hline
+{\em bottom\+Range} & The lower threshold.\\
+\hline
+{\em bottom\+Color} & The color to fill the region of the line that is below the lower threshold.\\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 1322 of file Finance\+Chart.\+h.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_finance_chart_ae08738c0df88ccd4d75ed3860f353839_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_finance_chart_ae08738c0df88ccd4d75ed3860f353839_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_finance_chart_a1cc644d76bda3086c2c9bf1fbd98d8cd}\label{class_finance_chart_a1cc644d76bda3086c2c9bf1fbd98d8cd}} 
+\index{Finance\+Chart@{Finance\+Chart}!add\+Tri\+Moving\+Avg@{add\+Tri\+Moving\+Avg}}
+\index{add\+Tri\+Moving\+Avg@{add\+Tri\+Moving\+Avg}!Finance\+Chart@{Finance\+Chart}}
+\subsubsection{\texorpdfstring{add\+Tri\+Moving\+Avg()}{addTriMovingAvg()}}
+{\footnotesize\ttfamily \hyperlink{class_line_layer}{Line\+Layer}$\ast$ Finance\+Chart\+::add\+Tri\+Moving\+Avg (\begin{DoxyParamCaption}\item[{int}]{period,  }\item[{int}]{color }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Add a triangular moving average line on the main chart. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em period} & The moving average period\\
+\hline
+{\em color} & The color of the line.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The \hyperlink{class_line_layer}{Line\+Layer} object representing the line created.
+\end{DoxyReturn}
+
+
+Definition at line 822 of file Finance\+Chart.\+h.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_finance_chart_a1cc644d76bda3086c2c9bf1fbd98d8cd_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_finance_chart_a54ec3c32375abf620ca16208f24717ce}\label{class_finance_chart_a54ec3c32375abf620ca16208f24717ce}} 
+\index{Finance\+Chart@{Finance\+Chart}!add\+T\+R\+IX@{add\+T\+R\+IX}}
+\index{add\+T\+R\+IX@{add\+T\+R\+IX}!Finance\+Chart@{Finance\+Chart}}
+\subsubsection{\texorpdfstring{add\+T\+R\+I\+X()}{addTRIX()}}
+{\footnotesize\ttfamily \hyperlink{class_x_y_chart}{X\+Y\+Chart}$\ast$ Finance\+Chart\+::add\+T\+R\+IX (\begin{DoxyParamCaption}\item[{int}]{height,  }\item[{int}]{period,  }\item[{int}]{color }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Add a T\+R\+IX indicator chart. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em height} & The height of the indicator chart in pixels.\\
+\hline
+{\em period} & The period to compute the indicator.\\
+\hline
+{\em color} & The color of the indicator line.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The \hyperlink{class_x_y_chart}{X\+Y\+Chart} object representing the chart created.
+\end{DoxyReturn}
+
+
+Definition at line 2250 of file Finance\+Chart.\+h.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_finance_chart_a54ec3c32375abf620ca16208f24717ce_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_finance_chart_a5ca57264dde9060ca5a59f60303f1e75}\label{class_finance_chart_a5ca57264dde9060ca5a59f60303f1e75}} 
+\index{Finance\+Chart@{Finance\+Chart}!add\+Typical\+Price@{add\+Typical\+Price}}
+\index{add\+Typical\+Price@{add\+Typical\+Price}!Finance\+Chart@{Finance\+Chart}}
+\subsubsection{\texorpdfstring{add\+Typical\+Price()}{addTypicalPrice()}}
+{\footnotesize\ttfamily \hyperlink{class_line_layer}{Line\+Layer}$\ast$ Finance\+Chart\+::add\+Typical\+Price (\begin{DoxyParamCaption}\item[{int}]{color }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Add a typical price line on the main chart. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em color} & The color of the line.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The \hyperlink{class_line_layer}{Line\+Layer} object representing the line created.
+\end{DoxyReturn}
+
+
+Definition at line 772 of file Finance\+Chart.\+h.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_finance_chart_a5ca57264dde9060ca5a59f60303f1e75_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_finance_chart_aa7a2bc1fab9c1ec538ff293c107d6cc4}\label{class_finance_chart_aa7a2bc1fab9c1ec538ff293c107d6cc4}} 
+\index{Finance\+Chart@{Finance\+Chart}!add\+Ultimate\+Oscillator@{add\+Ultimate\+Oscillator}}
+\index{add\+Ultimate\+Oscillator@{add\+Ultimate\+Oscillator}!Finance\+Chart@{Finance\+Chart}}
+\subsubsection{\texorpdfstring{add\+Ultimate\+Oscillator()}{addUltimateOscillator()}}
+{\footnotesize\ttfamily \hyperlink{class_x_y_chart}{X\+Y\+Chart}$\ast$ Finance\+Chart\+::add\+Ultimate\+Oscillator (\begin{DoxyParamCaption}\item[{int}]{height,  }\item[{int}]{period1,  }\item[{int}]{period2,  }\item[{int}]{period3,  }\item[{int}]{color,  }\item[{double}]{range,  }\item[{int}]{up\+Color,  }\item[{int}]{down\+Color }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Add an Ultimate Oscillator indicator chart. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em height} & The height of the indicator chart in pixels.\\
+\hline
+{\em period1} & The first moving average period to compute the indicator.\\
+\hline
+{\em period2} & The second moving average period to compute the indicator.\\
+\hline
+{\em period3} & The third moving average period to compute the indicator.\\
+\hline
+{\em color} & The color of the indicator line.\\
+\hline
+{\em range} & The distance beween the middle line and the upper and lower threshold lines.\\
+\hline
+{\em up\+Color} & The fill color when the indicator exceeds the upper threshold line.\\
+\hline
+{\em down\+Color} & The fill color when the indicator falls below the lower threshold line.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The \hyperlink{class_x_y_chart}{X\+Y\+Chart} object representing the chart created.
+\end{DoxyReturn}
+
+
+Definition at line 2295 of file Finance\+Chart.\+h.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{class_finance_chart_aa7a2bc1fab9c1ec538ff293c107d6cc4_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_finance_chart_aa1405175c2d8761adcf41c5529ef4613}\label{class_finance_chart_aa1405175c2d8761adcf41c5529ef4613}} 
+\index{Finance\+Chart@{Finance\+Chart}!add\+Vol\+Bars@{add\+Vol\+Bars}}
+\index{add\+Vol\+Bars@{add\+Vol\+Bars}!Finance\+Chart@{Finance\+Chart}}
+\subsubsection{\texorpdfstring{add\+Vol\+Bars()}{addVolBars()}}
+{\footnotesize\ttfamily \hyperlink{class_bar_layer}{Bar\+Layer}$\ast$ Finance\+Chart\+::add\+Vol\+Bars (\begin{DoxyParamCaption}\item[{int}]{height,  }\item[{int}]{up\+Color,  }\item[{int}]{down\+Color,  }\item[{int}]{flat\+Color }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Add a volume bar chart layer on the main chart. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em height} & The height of the bar chart layer in pixels.\\
+\hline
+{\em up\+Color} & The color to used on an \textquotesingle{}up\textquotesingle{} day. An \textquotesingle{}up\textquotesingle{} day is a day where the closing price is higher than that of the previous day.\\
+\hline
+{\em down\+Color} & The color to used on a \textquotesingle{}down\textquotesingle{} day. A \textquotesingle{}down\textquotesingle{} day is a day where the closing price is lower than that of the previous day.\\
+\hline
+{\em flat\+Color} & The color to used on a \textquotesingle{}flat\textquotesingle{} day. A \textquotesingle{}flat\textquotesingle{} day is a day where the closing price is the same as that of the previous day.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The \hyperlink{class_x_y_chart}{X\+Y\+Chart} object representing the chart created.
+\end{DoxyReturn}
+
+
+Definition at line 1113 of file Finance\+Chart.\+h.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_finance_chart_aa1405175c2d8761adcf41c5529ef4613_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_finance_chart_a51ceb77140f73f49707d526dafe643fe}\label{class_finance_chart_a51ceb77140f73f49707d526dafe643fe}} 
+\index{Finance\+Chart@{Finance\+Chart}!add\+Vol\+Indicator@{add\+Vol\+Indicator}}
+\index{add\+Vol\+Indicator@{add\+Vol\+Indicator}!Finance\+Chart@{Finance\+Chart}}
+\subsubsection{\texorpdfstring{add\+Vol\+Indicator()}{addVolIndicator()}}
+{\footnotesize\ttfamily \hyperlink{class_x_y_chart}{X\+Y\+Chart}$\ast$ Finance\+Chart\+::add\+Vol\+Indicator (\begin{DoxyParamCaption}\item[{int}]{height,  }\item[{int}]{up\+Color,  }\item[{int}]{down\+Color,  }\item[{int}]{flat\+Color }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Add a Volume indicator chart. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em height} & The height of the indicator chart in pixels.\\
+\hline
+{\em up\+Color} & The color to used on an \textquotesingle{}up\textquotesingle{} day. An \textquotesingle{}up\textquotesingle{} day is a day where the closing price is higher than that of the previous day.\\
+\hline
+{\em down\+Color} & The color to used on a \textquotesingle{}down\textquotesingle{} day. A \textquotesingle{}down\textquotesingle{} day is a day where the closing price is lower than that of the previous day.\\
+\hline
+{\em flat\+Color} & The color to used on a \textquotesingle{}flat\textquotesingle{} day. A \textquotesingle{}flat\textquotesingle{} day is a day where the closing price is the same as that of the previous day.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The \hyperlink{class_x_y_chart}{X\+Y\+Chart} object representing the chart created.
+\end{DoxyReturn}
+
+
+Definition at line 2331 of file Finance\+Chart.\+h.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_finance_chart_a51ceb77140f73f49707d526dafe643fe_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_finance_chart_a667247474a92a187877d74ee674f1250}\label{class_finance_chart_a667247474a92a187877d74ee674f1250}} 
+\index{Finance\+Chart@{Finance\+Chart}!add\+Weighted\+Close@{add\+Weighted\+Close}}
+\index{add\+Weighted\+Close@{add\+Weighted\+Close}!Finance\+Chart@{Finance\+Chart}}
+\subsubsection{\texorpdfstring{add\+Weighted\+Close()}{addWeightedClose()}}
+{\footnotesize\ttfamily \hyperlink{class_line_layer}{Line\+Layer}$\ast$ Finance\+Chart\+::add\+Weighted\+Close (\begin{DoxyParamCaption}\item[{int}]{color }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Add a weight close line on the main chart. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em color} & The color of the line.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The \hyperlink{class_line_layer}{Line\+Layer} object representing the line created.
+\end{DoxyReturn}
+
+
+Definition at line 761 of file Finance\+Chart.\+h.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_finance_chart_a667247474a92a187877d74ee674f1250_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_finance_chart_a9358bbba0b86affbe33cf44fa8cfe824}\label{class_finance_chart_a9358bbba0b86affbe33cf44fa8cfe824}} 
+\index{Finance\+Chart@{Finance\+Chart}!add\+Weighted\+Moving\+Avg@{add\+Weighted\+Moving\+Avg}}
+\index{add\+Weighted\+Moving\+Avg@{add\+Weighted\+Moving\+Avg}!Finance\+Chart@{Finance\+Chart}}
+\subsubsection{\texorpdfstring{add\+Weighted\+Moving\+Avg()}{addWeightedMovingAvg()}}
+{\footnotesize\ttfamily \hyperlink{class_line_layer}{Line\+Layer}$\ast$ Finance\+Chart\+::add\+Weighted\+Moving\+Avg (\begin{DoxyParamCaption}\item[{int}]{period,  }\item[{int}]{color }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Add a weighted moving average line on the main chart. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em period} & The moving average period\\
+\hline
+{\em color} & The color of the line.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The \hyperlink{class_line_layer}{Line\+Layer} object representing the line created.
+\end{DoxyReturn}
+
+
+Definition at line 836 of file Finance\+Chart.\+h.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_finance_chart_a9358bbba0b86affbe33cf44fa8cfe824_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_finance_chart_aa0f6a518a8fb451cc645f10e3e947ff0}\label{class_finance_chart_aa0f6a518a8fb451cc645f10e3e947ff0}} 
+\index{Finance\+Chart@{Finance\+Chart}!add\+WilliamR@{add\+WilliamR}}
+\index{add\+WilliamR@{add\+WilliamR}!Finance\+Chart@{Finance\+Chart}}
+\subsubsection{\texorpdfstring{add\+William\+R()}{addWilliamR()}}
+{\footnotesize\ttfamily \hyperlink{class_x_y_chart}{X\+Y\+Chart}$\ast$ Finance\+Chart\+::add\+WilliamR (\begin{DoxyParamCaption}\item[{int}]{height,  }\item[{int}]{period,  }\item[{int}]{color,  }\item[{double}]{range,  }\item[{int}]{up\+Color,  }\item[{int}]{down\+Color }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Add a William R indicator chart. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em height} & The height of the indicator chart in pixels.\\
+\hline
+{\em period} & The period to compute the indicator.\\
+\hline
+{\em color} & The color of the indicator line.\\
+\hline
+{\em range} & The distance beween the middle line and the upper and lower threshold lines.\\
+\hline
+{\em up\+Color} & The fill color when the indicator exceeds the upper threshold line.\\
+\hline
+{\em down\+Color} & The fill color when the indicator falls below the lower threshold line.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The \hyperlink{class_x_y_chart}{X\+Y\+Chart} object representing the chart created.
+\end{DoxyReturn}
+
+
+Definition at line 2348 of file Finance\+Chart.\+h.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{class_finance_chart_aa0f6a518a8fb451cc645f10e3e947ff0_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_finance_chart_aa6caba757aea3f8bd1fd2a6c978a563d}\label{class_finance_chart_aa6caba757aea3f8bd1fd2a6c978a563d}} 
+\index{Finance\+Chart@{Finance\+Chart}!enable\+Anti\+Alias@{enable\+Anti\+Alias}}
+\index{enable\+Anti\+Alias@{enable\+Anti\+Alias}!Finance\+Chart@{Finance\+Chart}}
+\subsubsection{\texorpdfstring{enable\+Anti\+Alias()}{enableAntiAlias()}}
+{\footnotesize\ttfamily void Finance\+Chart\+::enable\+Anti\+Alias (\begin{DoxyParamCaption}\item[{bool}]{anti\+Alias }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Enable/\+Disable anti-\/alias. Enabling anti-\/alias makes the line smoother. Disabling anti-\/alias make the chart file size smaller, and so can be downloaded faster through the Internet. The default is to enable anti-\/alias. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em anti\+Alias} & True to enable anti-\/alias. False to disable anti-\/alias.\\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 190 of file Finance\+Chart.\+h.
+
+\mbox{\Hypertarget{class_finance_chart_ad9bb91fe15acd6895f4586742db4e0b1}\label{class_finance_chart_ad9bb91fe15acd6895f4586742db4e0b1}} 
+\index{Finance\+Chart@{Finance\+Chart}!get\+Tool\+Tip\+Date\+Format@{get\+Tool\+Tip\+Date\+Format}}
+\index{get\+Tool\+Tip\+Date\+Format@{get\+Tool\+Tip\+Date\+Format}!Finance\+Chart@{Finance\+Chart}}
+\subsubsection{\texorpdfstring{get\+Tool\+Tip\+Date\+Format()}{getToolTipDateFormat()}}
+{\footnotesize\ttfamily const char$\ast$ Finance\+Chart\+::get\+Tool\+Tip\+Date\+Format (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Get the tool tip format for display date/time 
+
+\begin{DoxyReturn}{Returns}
+The tool tip format string.
+\end{DoxyReturn}
+
+
+Definition at line 418 of file Finance\+Chart.\+h.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_finance_chart_ad9bb91fe15acd6895f4586742db4e0b1_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_finance_chart_a603fc3911e3fc85c69ff9340f85c3d85}\label{class_finance_chart_a603fc3911e3fc85c69ff9340f85c3d85}} 
+\index{Finance\+Chart@{Finance\+Chart}!set\+Axis\+On\+Right@{set\+Axis\+On\+Right}}
+\index{set\+Axis\+On\+Right@{set\+Axis\+On\+Right}!Finance\+Chart@{Finance\+Chart}}
+\subsubsection{\texorpdfstring{set\+Axis\+On\+Right()}{setAxisOnRight()}}
+{\footnotesize\ttfamily void Finance\+Chart\+::set\+Axis\+On\+Right (\begin{DoxyParamCaption}\item[{bool}]{b }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Set whether the main y-\/axis is on right of left side of the plot area. The default is on right. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em b} & True if the y-\/axis is on right. False if the y-\/axis is on left.\\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 309 of file Finance\+Chart.\+h.
+
+\mbox{\Hypertarget{class_finance_chart_ad3897a3d0352b7380a54c958bf0b67a7}\label{class_finance_chart_ad3897a3d0352b7380a54c958bf0b67a7}} 
+\index{Finance\+Chart@{Finance\+Chart}!set\+Data@{set\+Data}}
+\index{set\+Data@{set\+Data}!Finance\+Chart@{Finance\+Chart}}
+\subsubsection{\texorpdfstring{set\+Data()}{setData()}}
+{\footnotesize\ttfamily void Finance\+Chart\+::set\+Data (\begin{DoxyParamCaption}\item[{\hyperlink{class_double_array}{Double\+Array}}]{time\+Stamps,  }\item[{\hyperlink{class_double_array}{Double\+Array}}]{high\+Data,  }\item[{\hyperlink{class_double_array}{Double\+Array}}]{low\+Data,  }\item[{\hyperlink{class_double_array}{Double\+Array}}]{open\+Data,  }\item[{\hyperlink{class_double_array}{Double\+Array}}]{close\+Data,  }\item[{\hyperlink{class_double_array}{Double\+Array}}]{vol\+Data,  }\item[{int}]{extra\+Points }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Set the data used in the chart. If some of the data are not available, some artifical values should be used. For example, if the high and low values are not available, you may use close\+Data as high\+Data and low\+Data. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em time\+Stamps} & An array of dates/times for the time intervals.\\
+\hline
+{\em high\+Data} & The high values in the time intervals.\\
+\hline
+{\em low\+Data} & The low values in the time intervals.\\
+\hline
+{\em open\+Data} & The open values in the time intervals.\\
+\hline
+{\em close\+Data} & The close values in the time intervals.\\
+\hline
+{\em vol\+Data} & The volume values in the time intervals.\\
+\hline
+{\em extra\+Points} & The number of leading time intervals that are not displayed in the chart. These intervals are typically used for computing indicators that require extra leading data, such as moving averages.\\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 536 of file Finance\+Chart.\+h.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_finance_chart_ad3897a3d0352b7380a54c958bf0b67a7_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_finance_chart_a8897f2ca59cf825d9f56319342ac21b1}\label{class_finance_chart_a8897f2ca59cf825d9f56319342ac21b1}} 
+\index{Finance\+Chart@{Finance\+Chart}!set\+Date\+Label\+Format@{set\+Date\+Label\+Format}}
+\index{set\+Date\+Label\+Format@{set\+Date\+Label\+Format}!Finance\+Chart@{Finance\+Chart}}
+\subsubsection{\texorpdfstring{set\+Date\+Label\+Format()}{setDateLabelFormat()}}
+{\footnotesize\ttfamily void Finance\+Chart\+::set\+Date\+Label\+Format (\begin{DoxyParamCaption}\item[{const char $\ast$}]{year\+Format,  }\item[{const char $\ast$}]{first\+Month\+Format,  }\item[{const char $\ast$}]{other\+Month\+Format,  }\item[{const char $\ast$}]{first\+Day\+Format,  }\item[{const char $\ast$}]{other\+Day\+Format,  }\item[{const char $\ast$}]{first\+Hour\+Format,  }\item[{const char $\ast$}]{other\+Hour\+Format }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Set the date/time formats to use for the x-\/axis labels under various cases. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em year\+Format} & The format for displaying labels on an axis with yearly ticks. The default is \char`\"{}yyyy\char`\"{}.\\
+\hline
+{\em first\+Month\+Format} & The format for displaying labels on an axis with monthly ticks. This parameter applies to the first available month of a year (usually January) only, so it can be formatted differently from the other labels.\\
+\hline
+{\em other\+Month\+Format} & The format for displaying labels on an axis with monthly ticks. This parameter applies to months other than the first available month of a year.\\
+\hline
+{\em first\+Day\+Format} & The format for displaying labels on an axis with daily ticks. This parameter applies to the first available day of a month only, so it can be formatted differently from the other labels.\\
+\hline
+{\em other\+Day\+Format} & The format for displaying labels on an axis with daily ticks. This parameter applies to days other than the first available day of a month.\\
+\hline
+{\em first\+Hour\+Format} & The format for displaying labels on an axis with hourly resolution. This parameter applies to the first tick of a day only, so it can be formatted differently from the other labels.\\
+\hline
+{\em other\+Hour\+Format} & The format for displaying labels on an axis with hourly. resolution. This parameter applies to ticks at hourly boundaries, except the first tick of a day.\\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 351 of file Finance\+Chart.\+h.
+
+\mbox{\Hypertarget{class_finance_chart_a5a1a5cc70635560627b25f8c84a7fb84}\label{class_finance_chart_a5a1a5cc70635560627b25f8c84a7fb84}} 
+\index{Finance\+Chart@{Finance\+Chart}!set\+Date\+Label\+Spacing@{set\+Date\+Label\+Spacing}}
+\index{set\+Date\+Label\+Spacing@{set\+Date\+Label\+Spacing}!Finance\+Chart@{Finance\+Chart}}
+\subsubsection{\texorpdfstring{set\+Date\+Label\+Spacing()}{setDateLabelSpacing()}}
+{\footnotesize\ttfamily void Finance\+Chart\+::set\+Date\+Label\+Spacing (\begin{DoxyParamCaption}\item[{int}]{label\+Spacing }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Set the minimum label spacing between two labels on the time axis 
+
+
+\begin{DoxyParams}{Parameters}
+{\em label\+Spacing} & The minimum label spacing in pixels.\\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 382 of file Finance\+Chart.\+h.
+
+\mbox{\Hypertarget{class_finance_chart_ad84cdcdbddfa16a2441ff1e835d18a88}\label{class_finance_chart_ad84cdcdbddfa16a2441ff1e835d18a88}} 
+\index{Finance\+Chart@{Finance\+Chart}!set\+Legend\+Style@{set\+Legend\+Style}}
+\index{set\+Legend\+Style@{set\+Legend\+Style}!Finance\+Chart@{Finance\+Chart}}
+\subsubsection{\texorpdfstring{set\+Legend\+Style()}{setLegendStyle()}}
+{\footnotesize\ttfamily void Finance\+Chart\+::set\+Legend\+Style (\begin{DoxyParamCaption}\item[{const char $\ast$}]{font,  }\item[{double}]{font\+Size,  }\item[{int}]{font\+Color,  }\item[{int}]{bg\+Color }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Set legend style. The default is Arial 8 pt black color, with light grey background. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em font} & The font of the legend text.\\
+\hline
+{\em font\+Size} & The font size of the legend text in points.\\
+\hline
+{\em font\+Color} & The color of the legend text.\\
+\hline
+{\em bg\+Color} & The background color of the legend box.\\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 265 of file Finance\+Chart.\+h.
+
+\mbox{\Hypertarget{class_finance_chart_a8a0f9c954f14c12dbf8e56eb2ce472de}\label{class_finance_chart_a8a0f9c954f14c12dbf8e56eb2ce472de}} 
+\index{Finance\+Chart@{Finance\+Chart}!set\+Log\+Scale@{set\+Log\+Scale}}
+\index{set\+Log\+Scale@{set\+Log\+Scale}!Finance\+Chart@{Finance\+Chart}}
+\subsubsection{\texorpdfstring{set\+Log\+Scale()}{setLogScale()}}
+{\footnotesize\ttfamily void Finance\+Chart\+::set\+Log\+Scale (\begin{DoxyParamCaption}\item[{bool}]{b }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Determines if log scale should be used for the main chart. The default is linear scale. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em b} & True for using log scale. False for using linear scale.\\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 318 of file Finance\+Chart.\+h.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_finance_chart_a8a0f9c954f14c12dbf8e56eb2ce472de_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_finance_chart_a1d9be7f4a5ed8fc3a755028e9ba8a514}\label{class_finance_chart_a1d9be7f4a5ed8fc3a755028e9ba8a514}} 
+\index{Finance\+Chart@{Finance\+Chart}!set\+Margins@{set\+Margins}}
+\index{set\+Margins@{set\+Margins}!Finance\+Chart@{Finance\+Chart}}
+\subsubsection{\texorpdfstring{set\+Margins()}{setMargins()}}
+{\footnotesize\ttfamily void Finance\+Chart\+::set\+Margins (\begin{DoxyParamCaption}\item[{int}]{left\+Margin,  }\item[{int}]{top\+Margin,  }\item[{int}]{right\+Margin,  }\item[{int}]{bottom\+Margin }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Set the margins around the plot area. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em m\+\_\+left\+Margin} & The distance between the plot area and the chart left edge.\\
+\hline
+{\em m\+\_\+top\+Margin} & The distance between the plot area and the chart top edge.\\
+\hline
+{\em m\+\_\+right\+Margin} & The distance between the plot area and the chart right edge.\\
+\hline
+{\em m\+\_\+bottom\+Margin} & The distance between the plot area and the chart bottom edge.\\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 202 of file Finance\+Chart.\+h.
+
+\mbox{\Hypertarget{class_finance_chart_abc4de6b32c4cfb3ea99b0becd05fc11c}\label{class_finance_chart_abc4de6b32c4cfb3ea99b0becd05fc11c}} 
+\index{Finance\+Chart@{Finance\+Chart}!set\+Number\+Label\+Format@{set\+Number\+Label\+Format}}
+\index{set\+Number\+Label\+Format@{set\+Number\+Label\+Format}!Finance\+Chart@{Finance\+Chart}}
+\subsubsection{\texorpdfstring{set\+Number\+Label\+Format()}{setNumberLabelFormat()}}
+{\footnotesize\ttfamily void Finance\+Chart\+::set\+Number\+Label\+Format (\begin{DoxyParamCaption}\item[{const char $\ast$}]{format\+String }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Set the number format for use in displaying values in legend keys and tool tips. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em format\+String} & The default number format.\\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 441 of file Finance\+Chart.\+h.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_finance_chart_abc4de6b32c4cfb3ea99b0becd05fc11c_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_finance_chart_aae20ef522feef3ab61e8b8639c15275e}\label{class_finance_chart_aae20ef522feef3ab61e8b8639c15275e}} 
+\index{Finance\+Chart@{Finance\+Chart}!set\+Percentage\+Axis@{set\+Percentage\+Axis}}
+\index{set\+Percentage\+Axis@{set\+Percentage\+Axis}!Finance\+Chart@{Finance\+Chart}}
+\subsubsection{\texorpdfstring{set\+Percentage\+Axis()}{setPercentageAxis()}}
+{\footnotesize\ttfamily \hyperlink{class_axis}{Axis}$\ast$ Finance\+Chart\+::set\+Percentage\+Axis (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Display percentage axis scale 
+
+\begin{DoxyReturn}{Returns}
+The \hyperlink{class_axis}{Axis} object representing the percentage axis.
+\end{DoxyReturn}
+
+
+Definition at line 991 of file Finance\+Chart.\+h.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_finance_chart_aae20ef522feef3ab61e8b8639c15275e_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_finance_chart_a8bd04e96ef80bda7605b7797ec93f9d7}\label{class_finance_chart_a8bd04e96ef80bda7605b7797ec93f9d7}} 
+\index{Finance\+Chart@{Finance\+Chart}!set\+Plot\+Area\+Border@{set\+Plot\+Area\+Border}}
+\index{set\+Plot\+Area\+Border@{set\+Plot\+Area\+Border}!Finance\+Chart@{Finance\+Chart}}
+\subsubsection{\texorpdfstring{set\+Plot\+Area\+Border()}{setPlotAreaBorder()}}
+{\footnotesize\ttfamily void Finance\+Chart\+::set\+Plot\+Area\+Border (\begin{DoxyParamCaption}\item[{int}]{border\+Color,  }\item[{int}]{border\+Gap }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Set the plot area border style. The default is grey color (888888), with a gap of 2 pixels between charts. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em border\+Color} & The color of the border.\\
+\hline
+{\em border\+Gap} & The gap between two charts.\\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 252 of file Finance\+Chart.\+h.
+
+\mbox{\Hypertarget{class_finance_chart_ac11e35407682216b469143d64b0a22a5}\label{class_finance_chart_ac11e35407682216b469143d64b0a22a5}} 
+\index{Finance\+Chart@{Finance\+Chart}!set\+Plot\+Area\+Style@{set\+Plot\+Area\+Style}}
+\index{set\+Plot\+Area\+Style@{set\+Plot\+Area\+Style}!Finance\+Chart@{Finance\+Chart}}
+\subsubsection{\texorpdfstring{set\+Plot\+Area\+Style()}{setPlotAreaStyle()}}
+{\footnotesize\ttfamily void Finance\+Chart\+::set\+Plot\+Area\+Style (\begin{DoxyParamCaption}\item[{int}]{bg\+Color,  }\item[{int}]{major\+H\+Grid\+Color,  }\item[{int}]{major\+V\+Grid\+Color,  }\item[{int}]{minor\+H\+Grid\+Color,  }\item[{int}]{minor\+V\+Grid\+Color }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Set the plot area style. The default is to use pale yellow 0xfffff0 as the background, and light grey 0xdddddd as the grid lines. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em bg\+Color} & The plot area background color.\\
+\hline
+{\em major\+H\+Grid\+Color} & Major horizontal grid color.\\
+\hline
+{\em major\+V\+Grid\+Color} & Major vertical grid color.\\
+\hline
+{\em minor\+H\+Grid\+Color} & Minor horizontal grid color. In current version, minor horizontal grid is not used.\\
+\hline
+{\em minor\+V\+Grid\+Color} & Minor vertical grid color.\\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 236 of file Finance\+Chart.\+h.
+
+\mbox{\Hypertarget{class_finance_chart_a1e92e3f65cb168efded2c008b1a6c8ed}\label{class_finance_chart_a1e92e3f65cb168efded2c008b1a6c8ed}} 
+\index{Finance\+Chart@{Finance\+Chart}!set\+Tool\+Tip\+Date\+Format@{set\+Tool\+Tip\+Date\+Format}}
+\index{set\+Tool\+Tip\+Date\+Format@{set\+Tool\+Tip\+Date\+Format}!Finance\+Chart@{Finance\+Chart}}
+\subsubsection{\texorpdfstring{set\+Tool\+Tip\+Date\+Format()}{setToolTipDateFormat()}}
+{\footnotesize\ttfamily void Finance\+Chart\+::set\+Tool\+Tip\+Date\+Format (\begin{DoxyParamCaption}\item[{const char $\ast$}]{month\+Format,  }\item[{const char $\ast$}]{day\+Format,  }\item[{const char $\ast$}]{hour\+Format }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Set the tool tip formats for display date/time 
+
+
+\begin{DoxyParams}{Parameters}
+{\em month\+Format} & The tool tip format to use if the data point spacing is one or more months (more than 30 days).\\
+\hline
+{\em day\+Format} & The tool tip format to use if the data point spacing is 1 day to less than 30 days.\\
+\hline
+{\em hour\+Format} & The tool tip format to use if the data point spacing is less than 1 day.\\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 400 of file Finance\+Chart.\+h.
+
+\mbox{\Hypertarget{class_finance_chart_a7a122e42103adee8a4567ef67d498366}\label{class_finance_chart_a7a122e42103adee8a4567ef67d498366}} 
+\index{Finance\+Chart@{Finance\+Chart}!set\+X\+Axis\+Style@{set\+X\+Axis\+Style}}
+\index{set\+X\+Axis\+Style@{set\+X\+Axis\+Style}!Finance\+Chart@{Finance\+Chart}}
+\subsubsection{\texorpdfstring{set\+X\+Axis\+Style()}{setXAxisStyle()}}
+{\footnotesize\ttfamily void Finance\+Chart\+::set\+X\+Axis\+Style (\begin{DoxyParamCaption}\item[{const char $\ast$}]{font,  }\item[{double}]{font\+Size,  }\item[{int}]{font\+Color,  }\item[{double}]{font\+Angle }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Set x-\/axis label style. The default is Arial 8 pt black color no rotation. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em font} & The font of the axis labels.\\
+\hline
+{\em font\+Size} & The font size of the axis labels in points.\\
+\hline
+{\em font\+Color} & The color of the axis labels.\\
+\hline
+{\em font\+Angle} & The rotation of the axis labels.\\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 280 of file Finance\+Chart.\+h.
+
+\mbox{\Hypertarget{class_finance_chart_aceb042502a4a86f3eff7fb21dd443251}\label{class_finance_chart_aceb042502a4a86f3eff7fb21dd443251}} 
+\index{Finance\+Chart@{Finance\+Chart}!set\+Y\+Axis\+Style@{set\+Y\+Axis\+Style}}
+\index{set\+Y\+Axis\+Style@{set\+Y\+Axis\+Style}!Finance\+Chart@{Finance\+Chart}}
+\subsubsection{\texorpdfstring{set\+Y\+Axis\+Style()}{setYAxisStyle()}}
+{\footnotesize\ttfamily void Finance\+Chart\+::set\+Y\+Axis\+Style (\begin{DoxyParamCaption}\item[{const char $\ast$}]{font,  }\item[{double}]{font\+Size,  }\item[{int}]{font\+Color,  }\item[{int}]{axis\+Margin }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Set y-\/axis label style. The default is Arial 8 pt black color, with 13 pixels margin. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em font} & The font of the axis labels.\\
+\hline
+{\em font\+Size} & The font size of the axis labels in points.\\
+\hline
+{\em font\+Color} & The color of the axis labels.\\
+\hline
+{\em axis\+Margin} & The margin at the top of the y-\/axis in pixels (to leave space for the legend box).\\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 296 of file Finance\+Chart.\+h.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+include/\hyperlink{_finance_chart_8h}{Finance\+Chart.\+h}\end{DoxyCompactItemize}

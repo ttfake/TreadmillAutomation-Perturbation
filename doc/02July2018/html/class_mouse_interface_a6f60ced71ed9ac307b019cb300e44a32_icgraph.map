@@ -1,0 +1,5 @@
+<map id="MouseInterface::SetupEventTrigger" name="MouseInterface::SetupEventTrigger">
+<area shape="rect" id="node2" href="$class_mouse_interface.html#a36669205adb92c00543ba26d73661c01" title="MouseInterface::MouseInterface" alt="" coords="241,5,452,32"/>
+<area shape="rect" id="node3" href="$class_perturbation_tab_widget.html#a237937a4a9bd3724fe615d0b5a7b5638" title="PerturbationTabWidget\l::addTrialRunName" alt="" coords="269,57,424,98"/>
+<area shape="rect" id="node4" href="$class_perturbation_tab_widget.html#a91a2b49c6b8672cd15cce43be89083c2" title="PerturbationTabWidget\l::daqReconnect" alt="" coords="269,122,424,163"/>
+</map>

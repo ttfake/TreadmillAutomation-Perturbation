@@ -46,7 +46,7 @@ class TreadmillAutomationDbIFace : public QWidget
         QSqlQuery selectQueryDb(QString columns, QString table, bool whereBool=false, QString where="empty");
         void truncateTable(QString table);
         void retrieveRuns();
-        void retrieveRun(int runAddIndex);
+        void retrieveRun(int currentRunsRowIndex, int runAddIndex);
         QSqlQuery runsQuery;
         QVector<QString> getRunProfileHead();
         void updateRunTable(QString tableName, QString setString, QString whereString);

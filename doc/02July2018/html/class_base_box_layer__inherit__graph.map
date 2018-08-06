@@ -1,0 +1,8 @@
+<map id="BaseBoxLayer" name="BaseBoxLayer">
+<area shape="rect" id="node5" href="$class_box_whisker_layer.html" title="BoxWhiskerLayer" alt="" coords="5,229,131,256"/>
+<area shape="rect" id="node6" href="$class_candle_stick_layer.html" title="CandleStickLayer" alt="" coords="155,229,280,256"/>
+<area shape="rect" id="node7" href="$class_h_l_o_c_layer.html" title="HLOCLayer" alt="" coords="304,229,395,256"/>
+<area shape="rect" id="node2" href="$class_layer.html" title="Layer" alt="" coords="190,80,245,107"/>
+<area shape="rect" id="node3" href="$class_auto_destroy.html" title="AutoDestroy" alt="" coords="103,5,198,32"/>
+<area shape="rect" id="node4" href="$class_garbage_container.html" title="GarbageContainer" alt="" coords="222,5,349,32"/>
+</map>

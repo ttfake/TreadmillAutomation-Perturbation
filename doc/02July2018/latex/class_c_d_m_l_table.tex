@@ -1,0 +1,432 @@
+\hypertarget{class_c_d_m_l_table}{}\section{C\+D\+M\+L\+Table Class Reference}
+\label{class_c_d_m_l_table}\index{C\+D\+M\+L\+Table@{C\+D\+M\+L\+Table}}
+
+
+{\ttfamily \#include $<$chartdir.\+h$>$}
+
+
+
+Inheritance diagram for C\+D\+M\+L\+Table\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=256pt]{class_c_d_m_l_table__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for C\+D\+M\+L\+Table\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=256pt]{class_c_d_m_l_table__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_c_d_m_l_table_a88e819b536ce3deca496ff54224bc939}{C\+D\+M\+L\+Table} (C\+D\+M\+L\+Table\+Internal $\ast$\+\_\+ptr)
+\item 
+\hyperlink{class_c_d_m_l_table_a1d115374895e7594e70e25b45816c29d}{$\sim$\+C\+D\+M\+L\+Table} ()
+\item 
+void \hyperlink{class_c_d_m_l_table_ae3601809a2a92183ceb02a33644cfd89}{set\+Pos} (int x, int y, int alignment=\hyperlink{namespace_chart_ae222e51ce11a254450b6ddfbc862680aa0bf92d1d2d6713aa62e92b86b9a8532f}{Chart\+::\+Top\+Left})
+\item 
+\hyperlink{class_text_box}{Text\+Box} $\ast$ \hyperlink{class_c_d_m_l_table_afe0bd5a4fac2fbdb0e496c0012d4a851}{insert\+Col} (int col)
+\item 
+\hyperlink{class_text_box}{Text\+Box} $\ast$ \hyperlink{class_c_d_m_l_table_ab81a2b5f80d3feac37249426a12fdabf}{append\+Col} ()
+\item 
+int \hyperlink{class_c_d_m_l_table_a5e8f4f631d3b13d12f02126232762630}{get\+Col\+Count} () const
+\item 
+\hyperlink{class_text_box}{Text\+Box} $\ast$ \hyperlink{class_c_d_m_l_table_aff5435de1e1d2a179c50030267feac49}{insert\+Row} (int row)
+\item 
+\hyperlink{class_text_box}{Text\+Box} $\ast$ \hyperlink{class_c_d_m_l_table_a1ce86017996573f4c00571e59be500e1}{append\+Row} ()
+\item 
+int \hyperlink{class_c_d_m_l_table_aef39ffb95d09fd1cf91e9c982e5d835f}{get\+Row\+Count} () const
+\item 
+\hyperlink{class_text_box}{Text\+Box} $\ast$ \hyperlink{class_c_d_m_l_table_afc130341376816bb3a668f8cb3124cad}{set\+Text} (int col, int row, const char $\ast$text)
+\item 
+\hyperlink{class_text_box}{Text\+Box} $\ast$ \hyperlink{class_c_d_m_l_table_a0721f5e22efe702444137302cb8a0eeb}{set\+Cell} (int col, int row, int width, int height, const char $\ast$text)
+\item 
+\hyperlink{class_text_box}{Text\+Box} $\ast$ \hyperlink{class_c_d_m_l_table_ae4d272ac2aeaaadea380aff21500a176}{get\+Cell} (int col, int row)
+\item 
+\hyperlink{class_text_box}{Text\+Box} $\ast$ \hyperlink{class_c_d_m_l_table_a66421a52cef917dcf33ab52dcde819af}{get\+Col\+Style} (int col)
+\item 
+\hyperlink{class_text_box}{Text\+Box} $\ast$ \hyperlink{class_c_d_m_l_table_a02ec17c1c346f6da4e61d17147aa90a2}{get\+Row\+Style} (int row)
+\item 
+\hyperlink{class_text_box}{Text\+Box} $\ast$ \hyperlink{class_c_d_m_l_table_af43e533e15a7d7af5699bb7b695f30ba}{get\+Style} ()
+\item 
+void \hyperlink{class_c_d_m_l_table_a78682ffb191bc413e1d1790399e4aeed}{layout} ()
+\item 
+int \hyperlink{class_c_d_m_l_table_a9f6a813b023cbce808d94adef12533e6}{get\+Col\+Width} (int col) const
+\item 
+int \hyperlink{class_c_d_m_l_table_a3cf2436c72b48dd1f97fb9ffd26c96be}{get\+Row\+Height} (int row) const
+\item 
+int \hyperlink{class_c_d_m_l_table_abe6213c358907a33d677ee3c18c74199}{get\+Width} () const
+\item 
+int \hyperlink{class_c_d_m_l_table_a9783be404eca3a6685dd0ea58dcbb27d}{get\+Height} () const
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 921 of file chartdir.\+h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_c_d_m_l_table_a88e819b536ce3deca496ff54224bc939}\label{class_c_d_m_l_table_a88e819b536ce3deca496ff54224bc939}} 
+\index{C\+D\+M\+L\+Table@{C\+D\+M\+L\+Table}!C\+D\+M\+L\+Table@{C\+D\+M\+L\+Table}}
+\index{C\+D\+M\+L\+Table@{C\+D\+M\+L\+Table}!C\+D\+M\+L\+Table@{C\+D\+M\+L\+Table}}
+\subsubsection{\texorpdfstring{C\+D\+M\+L\+Table()}{CDMLTable()}}
+{\footnotesize\ttfamily C\+D\+M\+L\+Table\+::\+C\+D\+M\+L\+Table (\begin{DoxyParamCaption}\item[{C\+D\+M\+L\+Table\+Internal $\ast$}]{\+\_\+ptr }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 934 of file chartdir.\+h.
+
+\mbox{\Hypertarget{class_c_d_m_l_table_a1d115374895e7594e70e25b45816c29d}\label{class_c_d_m_l_table_a1d115374895e7594e70e25b45816c29d}} 
+\index{C\+D\+M\+L\+Table@{C\+D\+M\+L\+Table}!````~C\+D\+M\+L\+Table@{$\sim$\+C\+D\+M\+L\+Table}}
+\index{````~C\+D\+M\+L\+Table@{$\sim$\+C\+D\+M\+L\+Table}!C\+D\+M\+L\+Table@{C\+D\+M\+L\+Table}}
+\subsubsection{\texorpdfstring{$\sim$\+C\+D\+M\+L\+Table()}{~CDMLTable()}}
+{\footnotesize\ttfamily C\+D\+M\+L\+Table\+::$\sim$\+C\+D\+M\+L\+Table (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 935 of file chartdir.\+h.
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_c_d_m_l_table_ab81a2b5f80d3feac37249426a12fdabf}\label{class_c_d_m_l_table_ab81a2b5f80d3feac37249426a12fdabf}} 
+\index{C\+D\+M\+L\+Table@{C\+D\+M\+L\+Table}!append\+Col@{append\+Col}}
+\index{append\+Col@{append\+Col}!C\+D\+M\+L\+Table@{C\+D\+M\+L\+Table}}
+\subsubsection{\texorpdfstring{append\+Col()}{appendCol()}}
+{\footnotesize\ttfamily \hyperlink{class_text_box}{Text\+Box}$\ast$ C\+D\+M\+L\+Table\+::append\+Col (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 941 of file chartdir.\+h.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_c_d_m_l_table_ab81a2b5f80d3feac37249426a12fdabf_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_c_d_m_l_table_a1ce86017996573f4c00571e59be500e1}\label{class_c_d_m_l_table_a1ce86017996573f4c00571e59be500e1}} 
+\index{C\+D\+M\+L\+Table@{C\+D\+M\+L\+Table}!append\+Row@{append\+Row}}
+\index{append\+Row@{append\+Row}!C\+D\+M\+L\+Table@{C\+D\+M\+L\+Table}}
+\subsubsection{\texorpdfstring{append\+Row()}{appendRow()}}
+{\footnotesize\ttfamily \hyperlink{class_text_box}{Text\+Box}$\ast$ C\+D\+M\+L\+Table\+::append\+Row (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 945 of file chartdir.\+h.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_c_d_m_l_table_a1ce86017996573f4c00571e59be500e1_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_c_d_m_l_table_ae4d272ac2aeaaadea380aff21500a176}\label{class_c_d_m_l_table_ae4d272ac2aeaaadea380aff21500a176}} 
+\index{C\+D\+M\+L\+Table@{C\+D\+M\+L\+Table}!get\+Cell@{get\+Cell}}
+\index{get\+Cell@{get\+Cell}!C\+D\+M\+L\+Table@{C\+D\+M\+L\+Table}}
+\subsubsection{\texorpdfstring{get\+Cell()}{getCell()}}
+{\footnotesize\ttfamily \hyperlink{class_text_box}{Text\+Box}$\ast$ C\+D\+M\+L\+Table\+::get\+Cell (\begin{DoxyParamCaption}\item[{int}]{col,  }\item[{int}]{row }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 952 of file chartdir.\+h.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=335pt]{class_c_d_m_l_table_ae4d272ac2aeaaadea380aff21500a176_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_c_d_m_l_table_a5e8f4f631d3b13d12f02126232762630}\label{class_c_d_m_l_table_a5e8f4f631d3b13d12f02126232762630}} 
+\index{C\+D\+M\+L\+Table@{C\+D\+M\+L\+Table}!get\+Col\+Count@{get\+Col\+Count}}
+\index{get\+Col\+Count@{get\+Col\+Count}!C\+D\+M\+L\+Table@{C\+D\+M\+L\+Table}}
+\subsubsection{\texorpdfstring{get\+Col\+Count()}{getColCount()}}
+{\footnotesize\ttfamily int C\+D\+M\+L\+Table\+::get\+Col\+Count (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 942 of file chartdir.\+h.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_c_d_m_l_table_a5e8f4f631d3b13d12f02126232762630_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_c_d_m_l_table_a66421a52cef917dcf33ab52dcde819af}\label{class_c_d_m_l_table_a66421a52cef917dcf33ab52dcde819af}} 
+\index{C\+D\+M\+L\+Table@{C\+D\+M\+L\+Table}!get\+Col\+Style@{get\+Col\+Style}}
+\index{get\+Col\+Style@{get\+Col\+Style}!C\+D\+M\+L\+Table@{C\+D\+M\+L\+Table}}
+\subsubsection{\texorpdfstring{get\+Col\+Style()}{getColStyle()}}
+{\footnotesize\ttfamily \hyperlink{class_text_box}{Text\+Box}$\ast$ C\+D\+M\+L\+Table\+::get\+Col\+Style (\begin{DoxyParamCaption}\item[{int}]{col }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 955 of file chartdir.\+h.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_c_d_m_l_table_a66421a52cef917dcf33ab52dcde819af_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_c_d_m_l_table_a9f6a813b023cbce808d94adef12533e6}\label{class_c_d_m_l_table_a9f6a813b023cbce808d94adef12533e6}} 
+\index{C\+D\+M\+L\+Table@{C\+D\+M\+L\+Table}!get\+Col\+Width@{get\+Col\+Width}}
+\index{get\+Col\+Width@{get\+Col\+Width}!C\+D\+M\+L\+Table@{C\+D\+M\+L\+Table}}
+\subsubsection{\texorpdfstring{get\+Col\+Width()}{getColWidth()}}
+{\footnotesize\ttfamily int C\+D\+M\+L\+Table\+::get\+Col\+Width (\begin{DoxyParamCaption}\item[{int}]{col }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 961 of file chartdir.\+h.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_c_d_m_l_table_a9f6a813b023cbce808d94adef12533e6_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_c_d_m_l_table_a9783be404eca3a6685dd0ea58dcbb27d}\label{class_c_d_m_l_table_a9783be404eca3a6685dd0ea58dcbb27d}} 
+\index{C\+D\+M\+L\+Table@{C\+D\+M\+L\+Table}!get\+Height@{get\+Height}}
+\index{get\+Height@{get\+Height}!C\+D\+M\+L\+Table@{C\+D\+M\+L\+Table}}
+\subsubsection{\texorpdfstring{get\+Height()}{getHeight()}}
+{\footnotesize\ttfamily int C\+D\+M\+L\+Table\+::get\+Height (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 964 of file chartdir.\+h.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_c_d_m_l_table_a9783be404eca3a6685dd0ea58dcbb27d_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_c_d_m_l_table_aef39ffb95d09fd1cf91e9c982e5d835f}\label{class_c_d_m_l_table_aef39ffb95d09fd1cf91e9c982e5d835f}} 
+\index{C\+D\+M\+L\+Table@{C\+D\+M\+L\+Table}!get\+Row\+Count@{get\+Row\+Count}}
+\index{get\+Row\+Count@{get\+Row\+Count}!C\+D\+M\+L\+Table@{C\+D\+M\+L\+Table}}
+\subsubsection{\texorpdfstring{get\+Row\+Count()}{getRowCount()}}
+{\footnotesize\ttfamily int C\+D\+M\+L\+Table\+::get\+Row\+Count (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 946 of file chartdir.\+h.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_c_d_m_l_table_aef39ffb95d09fd1cf91e9c982e5d835f_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_c_d_m_l_table_a3cf2436c72b48dd1f97fb9ffd26c96be}\label{class_c_d_m_l_table_a3cf2436c72b48dd1f97fb9ffd26c96be}} 
+\index{C\+D\+M\+L\+Table@{C\+D\+M\+L\+Table}!get\+Row\+Height@{get\+Row\+Height}}
+\index{get\+Row\+Height@{get\+Row\+Height}!C\+D\+M\+L\+Table@{C\+D\+M\+L\+Table}}
+\subsubsection{\texorpdfstring{get\+Row\+Height()}{getRowHeight()}}
+{\footnotesize\ttfamily int C\+D\+M\+L\+Table\+::get\+Row\+Height (\begin{DoxyParamCaption}\item[{int}]{row }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 962 of file chartdir.\+h.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_c_d_m_l_table_a3cf2436c72b48dd1f97fb9ffd26c96be_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_c_d_m_l_table_a02ec17c1c346f6da4e61d17147aa90a2}\label{class_c_d_m_l_table_a02ec17c1c346f6da4e61d17147aa90a2}} 
+\index{C\+D\+M\+L\+Table@{C\+D\+M\+L\+Table}!get\+Row\+Style@{get\+Row\+Style}}
+\index{get\+Row\+Style@{get\+Row\+Style}!C\+D\+M\+L\+Table@{C\+D\+M\+L\+Table}}
+\subsubsection{\texorpdfstring{get\+Row\+Style()}{getRowStyle()}}
+{\footnotesize\ttfamily \hyperlink{class_text_box}{Text\+Box}$\ast$ C\+D\+M\+L\+Table\+::get\+Row\+Style (\begin{DoxyParamCaption}\item[{int}]{row }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 956 of file chartdir.\+h.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_c_d_m_l_table_a02ec17c1c346f6da4e61d17147aa90a2_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_c_d_m_l_table_af43e533e15a7d7af5699bb7b695f30ba}\label{class_c_d_m_l_table_af43e533e15a7d7af5699bb7b695f30ba}} 
+\index{C\+D\+M\+L\+Table@{C\+D\+M\+L\+Table}!get\+Style@{get\+Style}}
+\index{get\+Style@{get\+Style}!C\+D\+M\+L\+Table@{C\+D\+M\+L\+Table}}
+\subsubsection{\texorpdfstring{get\+Style()}{getStyle()}}
+{\footnotesize\ttfamily \hyperlink{class_text_box}{Text\+Box}$\ast$ C\+D\+M\+L\+Table\+::get\+Style (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 957 of file chartdir.\+h.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=345pt]{class_c_d_m_l_table_af43e533e15a7d7af5699bb7b695f30ba_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_c_d_m_l_table_abe6213c358907a33d677ee3c18c74199}\label{class_c_d_m_l_table_abe6213c358907a33d677ee3c18c74199}} 
+\index{C\+D\+M\+L\+Table@{C\+D\+M\+L\+Table}!get\+Width@{get\+Width}}
+\index{get\+Width@{get\+Width}!C\+D\+M\+L\+Table@{C\+D\+M\+L\+Table}}
+\subsubsection{\texorpdfstring{get\+Width()}{getWidth()}}
+{\footnotesize\ttfamily int C\+D\+M\+L\+Table\+::get\+Width (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 963 of file chartdir.\+h.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_c_d_m_l_table_abe6213c358907a33d677ee3c18c74199_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_c_d_m_l_table_afe0bd5a4fac2fbdb0e496c0012d4a851}\label{class_c_d_m_l_table_afe0bd5a4fac2fbdb0e496c0012d4a851}} 
+\index{C\+D\+M\+L\+Table@{C\+D\+M\+L\+Table}!insert\+Col@{insert\+Col}}
+\index{insert\+Col@{insert\+Col}!C\+D\+M\+L\+Table@{C\+D\+M\+L\+Table}}
+\subsubsection{\texorpdfstring{insert\+Col()}{insertCol()}}
+{\footnotesize\ttfamily \hyperlink{class_text_box}{Text\+Box}$\ast$ C\+D\+M\+L\+Table\+::insert\+Col (\begin{DoxyParamCaption}\item[{int}]{col }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 940 of file chartdir.\+h.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_c_d_m_l_table_afe0bd5a4fac2fbdb0e496c0012d4a851_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_c_d_m_l_table_aff5435de1e1d2a179c50030267feac49}\label{class_c_d_m_l_table_aff5435de1e1d2a179c50030267feac49}} 
+\index{C\+D\+M\+L\+Table@{C\+D\+M\+L\+Table}!insert\+Row@{insert\+Row}}
+\index{insert\+Row@{insert\+Row}!C\+D\+M\+L\+Table@{C\+D\+M\+L\+Table}}
+\subsubsection{\texorpdfstring{insert\+Row()}{insertRow()}}
+{\footnotesize\ttfamily \hyperlink{class_text_box}{Text\+Box}$\ast$ C\+D\+M\+L\+Table\+::insert\+Row (\begin{DoxyParamCaption}\item[{int}]{row }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 944 of file chartdir.\+h.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_c_d_m_l_table_aff5435de1e1d2a179c50030267feac49_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_c_d_m_l_table_a78682ffb191bc413e1d1790399e4aeed}\label{class_c_d_m_l_table_a78682ffb191bc413e1d1790399e4aeed}} 
+\index{C\+D\+M\+L\+Table@{C\+D\+M\+L\+Table}!layout@{layout}}
+\index{layout@{layout}!C\+D\+M\+L\+Table@{C\+D\+M\+L\+Table}}
+\subsubsection{\texorpdfstring{layout()}{layout()}}
+{\footnotesize\ttfamily void C\+D\+M\+L\+Table\+::layout (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 959 of file chartdir.\+h.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=325pt]{class_c_d_m_l_table_a78682ffb191bc413e1d1790399e4aeed_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_c_d_m_l_table_a0721f5e22efe702444137302cb8a0eeb}\label{class_c_d_m_l_table_a0721f5e22efe702444137302cb8a0eeb}} 
+\index{C\+D\+M\+L\+Table@{C\+D\+M\+L\+Table}!set\+Cell@{set\+Cell}}
+\index{set\+Cell@{set\+Cell}!C\+D\+M\+L\+Table@{C\+D\+M\+L\+Table}}
+\subsubsection{\texorpdfstring{set\+Cell()}{setCell()}}
+{\footnotesize\ttfamily \hyperlink{class_text_box}{Text\+Box}$\ast$ C\+D\+M\+L\+Table\+::set\+Cell (\begin{DoxyParamCaption}\item[{int}]{col,  }\item[{int}]{row,  }\item[{int}]{width,  }\item[{int}]{height,  }\item[{const char $\ast$}]{text }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 950 of file chartdir.\+h.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=335pt]{class_c_d_m_l_table_a0721f5e22efe702444137302cb8a0eeb_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_c_d_m_l_table_ae3601809a2a92183ceb02a33644cfd89}\label{class_c_d_m_l_table_ae3601809a2a92183ceb02a33644cfd89}} 
+\index{C\+D\+M\+L\+Table@{C\+D\+M\+L\+Table}!set\+Pos@{set\+Pos}}
+\index{set\+Pos@{set\+Pos}!C\+D\+M\+L\+Table@{C\+D\+M\+L\+Table}}
+\subsubsection{\texorpdfstring{set\+Pos()}{setPos()}}
+{\footnotesize\ttfamily void C\+D\+M\+L\+Table\+::set\+Pos (\begin{DoxyParamCaption}\item[{int}]{x,  }\item[{int}]{y,  }\item[{int}]{alignment = {\ttfamily \hyperlink{namespace_chart_ae222e51ce11a254450b6ddfbc862680aa0bf92d1d2d6713aa62e92b86b9a8532f}{Chart\+::\+Top\+Left}} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 937 of file chartdir.\+h.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=335pt]{class_c_d_m_l_table_ae3601809a2a92183ceb02a33644cfd89_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_c_d_m_l_table_afc130341376816bb3a668f8cb3124cad}\label{class_c_d_m_l_table_afc130341376816bb3a668f8cb3124cad}} 
+\index{C\+D\+M\+L\+Table@{C\+D\+M\+L\+Table}!set\+Text@{set\+Text}}
+\index{set\+Text@{set\+Text}!C\+D\+M\+L\+Table@{C\+D\+M\+L\+Table}}
+\subsubsection{\texorpdfstring{set\+Text()}{setText()}}
+{\footnotesize\ttfamily \hyperlink{class_text_box}{Text\+Box}$\ast$ C\+D\+M\+L\+Table\+::set\+Text (\begin{DoxyParamCaption}\item[{int}]{col,  }\item[{int}]{row,  }\item[{const char $\ast$}]{text }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 948 of file chartdir.\+h.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=339pt]{class_c_d_m_l_table_afc130341376816bb3a668f8cb3124cad_cgraph}
+\end{center}
+\end{figure}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+include/\hyperlink{chartdir_8h}{chartdir.\+h}\end{DoxyCompactItemize}

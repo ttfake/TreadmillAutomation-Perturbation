@@ -1,0 +1,9 @@
+<map id="TreadmillAutomationDbIFace::getDecelTimeFromDb" name="TreadmillAutomationDbIFace::getDecelTimeFromDb">
+<area shape="rect" id="node2" href="$class_parse_run_profile.html#a02fea0744103223c7b7462a5a2054c52" title="ParseRunProfile::getDecel\lTimeDb" alt="" coords="251,5,428,47"/>
+<area shape="rect" id="node3" href="$class_treadmill_automation_db_i_face.html#ab18ea9e92e892e01393d6d9a597b4b13" title="TreadmillAutomationDbIFace\l::retrieveRun" alt="" coords="244,71,435,112"/>
+<area shape="rect" id="node4" href="$class_parse_run_profile.html#a1f064521af699320f5da111e9cb81625" title="ParseRunProfile::getRun" alt="" coords="483,78,649,105"/>
+<area shape="rect" id="node5" href="$class_perturbation_tab_widget.html#aeecb373be32ddc6ea3c165d685b2a386" title="PerturbationTabWidget\l::loadRunProfile" alt="" coords="697,40,852,81"/>
+<area shape="rect" id="node8" href="$class_perturbation_tab_widget.html#a67b4c15cd26d35da1eb09559e2136502" title="PerturbationTabWidget\l::changeParticipantId" alt="" coords="900,103,1055,144"/>
+<area shape="rect" id="node6" href="$class_perturbation_tab_widget.html#a9d551ffcaf3d0ebe54015f5536d261ab" title="PerturbationTabWidget\l::changeSessionId" alt="" coords="900,37,1055,79"/>
+<area shape="rect" id="node7" href="$class_perturbation_tab_widget.html#ad9a685f191ca94bdc47f148273fdf1f4" title="PerturbationTabWidget\l::addDecelerationSpeedGroupBox" alt="" coords="1103,71,1321,112"/>
+</map>

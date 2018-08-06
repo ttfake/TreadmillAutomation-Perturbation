@@ -1,0 +1,660 @@
+\hypertarget{utility_8h}{}\section{include/utility.h File Reference}
+\label{utility_8h}\index{include/utility.\+h@{include/utility.\+h}}
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$unistd.\+h$>$}\newline
+{\ttfamily \#include $<$memory.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}uldaq.\+h\char`\"{}}\newline
+Include dependency graph for utility.\+h\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=340pt]{utility_8h__incl}
+\end{center}
+\end{figure}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{utility_8h_aa98700b0ad6d711ef943777bd93c94ff}{Convert\+Input\+Mode\+To\+String} (Ai\+Input\+Mode input\+Mode, char $\ast$mode\+Str)
+\item 
+void \hyperlink{utility_8h_a6ac324f1c2fe1cb46d2259170ad682c0}{Convert\+Range\+To\+String} (Range range, char $\ast$range\+Str)
+\item 
+void \hyperlink{utility_8h_a4b77ca3bd0d6b2935e45cc40cbbce0b5}{Convert\+Range\+To\+Min\+Max} (Range range, double $\ast$min, double $\ast$max)
+\item 
+void \hyperlink{utility_8h_aaae31a82443d2c84cbdd2ba3ae07dd36}{Convert\+Trigger\+Type\+To\+String} (Trigger\+Type trigger\+Type, char $\ast$trigger\+Type\+Str)
+\item 
+void \hyperlink{utility_8h_a62db5f0a657fec5b1626ecd477157e76}{Convert\+Port\+Type\+To\+String} (Digital\+Port\+Type port\+Type, char $\ast$port\+Type\+Str)
+\item 
+void \hyperlink{utility_8h_a5c57726c0d3cc2ac6ea0ec05dad05eb6}{Convert\+Port\+Io\+Type\+To\+String} (Digital\+Port\+Io\+Type port\+Io\+Type, char $\ast$port\+Io\+Type\+Str)
+\item 
+void \hyperlink{utility_8h_aae9d1770be0ac087ef04d26c681c63a6}{Convert\+Event\+Types\+To\+String} (Daq\+Event\+Type event\+Type, char $\ast$event\+Type\+Str)
+\item 
+void \hyperlink{utility_8h_a9ba4893c112e0c1c3ed13ee42ef3a4e6}{Convert\+Scan\+Options\+To\+String} (Scan\+Option scan\+Options, char $\ast$scan\+Options\+Str)
+\item 
+void \hyperlink{utility_8h_a8d477130325c404df280980635155b23}{Convert\+Daq\+I\+Chan\+Type\+To\+String} (Daq\+In\+Chan\+Type daqi\+Chan\+Type, char $\ast$daqi\+Chan\+Type\+Str)
+\item 
+void \hyperlink{utility_8h_a9a429a9af870abc3ce9c01092c4f915f}{Convert\+Daq\+O\+Chan\+Type\+To\+String} (Daq\+Out\+Chan\+Type daqo\+Chan\+Type, char $\ast$daqo\+Chan\+Type\+Str)
+\item 
+Ul\+Error \hyperlink{utility_8h_a1586bd203ec4d2c6e1a86b71e994273c}{get\+Dev\+Info\+Has\+Ai} (Daq\+Device\+Handle daq\+Device\+Handle, int $\ast$has\+Ai)
+\item 
+Ul\+Error \hyperlink{utility_8h_aab130b9ba36b56bb5ee74a0eda5a2a8c}{get\+Dev\+Info\+Has\+Ao} (Daq\+Device\+Handle daq\+Device\+Handle, int $\ast$has\+Ao)
+\item 
+Ul\+Error \hyperlink{utility_8h_a3635f7b2ec22bcb7e385b95b06b362f4}{get\+Dev\+Info\+Has\+Dio} (Daq\+Device\+Handle daq\+Device\+Handle, int $\ast$has\+Dio)
+\item 
+Ul\+Error \hyperlink{utility_8h_a3771c9f8417b1b0c485e67a5a6ee457e}{get\+Dev\+Info\+Has\+Ctr} (Daq\+Device\+Handle daq\+Device\+Handle, int $\ast$has\+Ctr)
+\item 
+Ul\+Error \hyperlink{utility_8h_adf2d082d5363aafed4386d3410281b25}{get\+Dev\+Info\+Has\+Tmr} (Daq\+Device\+Handle daq\+Device\+Handle, int $\ast$has\+Tmr)
+\item 
+Ul\+Error \hyperlink{utility_8h_a705e5c3870f54a4d5224610fc0d7e93e}{get\+Dev\+Info\+Has\+Daqi} (Daq\+Device\+Handle daq\+Device\+Handle, int $\ast$has\+Daqi)
+\item 
+Ul\+Error \hyperlink{utility_8h_a4adf8643838f551d32614d4dd8863a4c}{get\+Dev\+Info\+Has\+Daqo} (Daq\+Device\+Handle daq\+Device\+Handle, int $\ast$has\+Daqo)
+\item 
+Ul\+Error \hyperlink{utility_8h_a6fb44ad6150c339bec928101f09ac2b8}{get\+Ai\+Info\+Has\+Pacer} (Daq\+Device\+Handle daq\+Device\+Handle, int $\ast$has\+Pacer)
+\item 
+Ul\+Error \hyperlink{utility_8h_ace2a852c056e90b1b769e37c9bb6b90a}{get\+Ai\+Info\+First\+Trigger\+Type} (Daq\+Device\+Handle daq\+Device\+Handle, Trigger\+Type $\ast$trigger\+Type, char $\ast$trigger\+Type\+Str)
+\item 
+Ul\+Error \hyperlink{utility_8h_a61e1f046b716d6eea190817af49651a5}{get\+Ai\+Info\+Ranges} (Daq\+Device\+Handle daq\+Device\+Handle, Ai\+Input\+Mode input\+Mode, int $\ast$number\+Of\+Ranges, Range $\ast$ranges)
+\item 
+Ul\+Error \hyperlink{utility_8h_aa41dcb26f29f4e2f9f03d3230e04a4ce}{get\+Ai\+Info\+First\+Supported\+Input\+Mode} (Daq\+Device\+Handle daq\+Device\+Handle, int $\ast$number\+Of\+Channels, Ai\+Input\+Mode $\ast$input\+Mode, char $\ast$input\+Mode\+Str)
+\item 
+Ul\+Error \hyperlink{utility_8h_ac0fe69378fb44bfea645b43bec56ed3f}{get\+Ai\+Info\+First\+Supported\+Range} (Daq\+Device\+Handle daq\+Device\+Handle, Ai\+Input\+Mode input\+Mode, Range $\ast$range, char $\ast$range\+Str)
+\item 
+Ul\+Error \hyperlink{utility_8h_a5f91b686e47ff72da3a006ece35eeb05}{get\+Ai\+Info\+Queue\+Types} (Daq\+Device\+Handle daq\+Device\+Handle, int $\ast$queue\+Types)
+\item 
+Ul\+Error \hyperlink{utility_8h_a045421ea96c1e133d1edef086311300d}{get\+Ao\+Info\+Has\+Pacer} (Daq\+Device\+Handle daq\+Device\+Handle, int $\ast$has\+Pacer)
+\item 
+Ul\+Error \hyperlink{utility_8h_ad1cad37c74c0dabf125d642cd8f1df8c}{get\+Ao\+Info\+First\+Supported\+Range} (Daq\+Device\+Handle daq\+Device\+Handle, Range $\ast$range, char $\ast$range\+Str)
+\item 
+Ul\+Error \hyperlink{utility_8h_a5d7cee22aa76efeeb9fbe896bb90bda7}{get\+Dio\+Info\+Has\+Pacer} (Daq\+Device\+Handle daq\+Device\+Handle, Digital\+Direction direction, int $\ast$has\+Pacer)
+\item 
+Ul\+Error \hyperlink{utility_8h_a558efe9db9a170ae96d2c7c6918ca408}{get\+Dio\+Info\+First\+Supported\+Port\+Type} (Daq\+Device\+Handle daq\+Device\+Handle, Digital\+Port\+Type $\ast$port\+Type, char $\ast$port\+Type\+Str)
+\item 
+Ul\+Error \hyperlink{utility_8h_a6405c76a8af14377b3225fd08209fe35}{get\+Dio\+Info\+Number\+Of\+Bits\+For\+First\+Port} (Daq\+Device\+Handle daq\+Device\+Handle, int $\ast$bits\+Per\+Port)
+\item 
+Ul\+Error \hyperlink{utility_8h_a3cf21db22296052ae2e3f206fbe270f3}{get\+Dio\+Info\+Port\+Io\+Type} (Daq\+Device\+Handle daq\+Device\+Handle, Digital\+Port\+Io\+Type $\ast$port\+Io\+Type, char $\ast$port\+Io\+Type\+Str)
+\item 
+Ul\+Error \hyperlink{utility_8h_afcfb967b1a09a621561d8bdcd8fab6bf}{get\+Ctr\+Info\+Number\+Of\+Channels} (Daq\+Device\+Handle daq\+Device\+Handle, int $\ast$number\+Of\+Ctr\+Channels)
+\item 
+Ul\+Error \hyperlink{utility_8h_a1c5a85e2133ea82b81e36645975b9e8a}{get\+Ctr\+Info\+Has\+Pacer} (Daq\+Device\+Handle daq\+Device\+Handle, int $\ast$has\+Pacer)
+\item 
+Ul\+Error \hyperlink{utility_8h_a6e06065344678ca2b0f87833aa76e98a}{get\+Ctr\+Info\+Supported\+Event\+Counters} (Daq\+Device\+Handle daq\+Device\+Handle, int $\ast$event\+Counters, int $\ast$number\+Of\+Event\+Counters)
+\item 
+Ul\+Error \hyperlink{utility_8h_ac02df1a450a2b7fb493f6b61c2b15e5f}{get\+Ctr\+Info\+Supported\+Encoder\+Counters} (Daq\+Device\+Handle daq\+Device\+Handle, int $\ast$encoders, int $\ast$number\+Of\+Encoders)
+\item 
+Ul\+Error \hyperlink{utility_8h_a05d9e15aa5998e143658ce097cc121fe}{get\+Ctr\+Info\+Measurement\+Types} (Daq\+Device\+Handle daq\+Device\+Handle, long long counter\+Number, int $\ast$measurement\+Types)
+\item 
+Ul\+Error \hyperlink{utility_8h_a46cf65cb2647f4a6d9721cd9d0f16b1a}{get\+Daqi\+Channel\+Types} (Daq\+Device\+Handle daq\+Device\+Handle, int $\ast$chan\+Types\+Mask)
+\item 
+Ul\+Error \hyperlink{utility_8h_ae5c6c09db407f51035b885a24807ce38}{get\+Daqi\+Info\+First\+Trigger\+Type} (Daq\+Device\+Handle daq\+Device\+Handle, Trigger\+Type $\ast$trigger\+Type, char $\ast$trigger\+Type\+Str)
+\item 
+Ul\+Error \hyperlink{utility_8h_a91a2686de4bf0a89241f61ada870aaab}{get\+Daqo\+Channel\+Types} (Daq\+Device\+Handle daq\+Device\+Handle, int $\ast$chan\+Types\+Mask)
+\item 
+void \hyperlink{utility_8h_a47117fdbef6b3a112c25f0856190e970}{reset\+Cursor} ()
+\item 
+void \hyperlink{utility_8h_a1ad27012a039373b553a7fa9bdd2c622}{clear\+E\+OL} ()
+\item 
+void \hyperlink{utility_8h_ade18e8ae61e350cd9668f0db8628953c}{cursor\+Up} ()
+\item 
+void \hyperlink{utility_8h_adf17b341779b9789342406caff250d2d}{flush\+\_\+stdin} (void)
+\item 
+int \hyperlink{utility_8h_a017066a9c367b56a5d2002aef260379c}{enter\+\_\+press} ()
+\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{utility_8h_a1ad27012a039373b553a7fa9bdd2c622}\label{utility_8h_a1ad27012a039373b553a7fa9bdd2c622}} 
+\index{utility.\+h@{utility.\+h}!clear\+E\+OL@{clear\+E\+OL}}
+\index{clear\+E\+OL@{clear\+E\+OL}!utility.\+h@{utility.\+h}}
+\subsubsection{\texorpdfstring{clear\+E\+O\+L()}{clearEOL()}}
+{\footnotesize\ttfamily void clear\+E\+OL (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 1097 of file utility.\+h.
+
+\mbox{\Hypertarget{utility_8h_a8d477130325c404df280980635155b23}\label{utility_8h_a8d477130325c404df280980635155b23}} 
+\index{utility.\+h@{utility.\+h}!Convert\+Daq\+I\+Chan\+Type\+To\+String@{Convert\+Daq\+I\+Chan\+Type\+To\+String}}
+\index{Convert\+Daq\+I\+Chan\+Type\+To\+String@{Convert\+Daq\+I\+Chan\+Type\+To\+String}!utility.\+h@{utility.\+h}}
+\subsubsection{\texorpdfstring{Convert\+Daq\+I\+Chan\+Type\+To\+String()}{ConvertDaqIChanTypeToString()}}
+{\footnotesize\ttfamily void Convert\+Daq\+I\+Chan\+Type\+To\+String (\begin{DoxyParamCaption}\item[{Daq\+In\+Chan\+Type}]{daqi\+Chan\+Type,  }\item[{char $\ast$}]{daqi\+Chan\+Type\+Str }\end{DoxyParamCaption})}
+
+
+
+Definition at line 604 of file utility.\+h.
+
+\mbox{\Hypertarget{utility_8h_a9a429a9af870abc3ce9c01092c4f915f}\label{utility_8h_a9a429a9af870abc3ce9c01092c4f915f}} 
+\index{utility.\+h@{utility.\+h}!Convert\+Daq\+O\+Chan\+Type\+To\+String@{Convert\+Daq\+O\+Chan\+Type\+To\+String}}
+\index{Convert\+Daq\+O\+Chan\+Type\+To\+String@{Convert\+Daq\+O\+Chan\+Type\+To\+String}!utility.\+h@{utility.\+h}}
+\subsubsection{\texorpdfstring{Convert\+Daq\+O\+Chan\+Type\+To\+String()}{ConvertDaqOChanTypeToString()}}
+{\footnotesize\ttfamily void Convert\+Daq\+O\+Chan\+Type\+To\+String (\begin{DoxyParamCaption}\item[{Daq\+Out\+Chan\+Type}]{daqo\+Chan\+Type,  }\item[{char $\ast$}]{daqo\+Chan\+Type\+Str }\end{DoxyParamCaption})}
+
+
+
+Definition at line 630 of file utility.\+h.
+
+\mbox{\Hypertarget{utility_8h_aae9d1770be0ac087ef04d26c681c63a6}\label{utility_8h_aae9d1770be0ac087ef04d26c681c63a6}} 
+\index{utility.\+h@{utility.\+h}!Convert\+Event\+Types\+To\+String@{Convert\+Event\+Types\+To\+String}}
+\index{Convert\+Event\+Types\+To\+String@{Convert\+Event\+Types\+To\+String}!utility.\+h@{utility.\+h}}
+\subsubsection{\texorpdfstring{Convert\+Event\+Types\+To\+String()}{ConvertEventTypesToString()}}
+{\footnotesize\ttfamily void Convert\+Event\+Types\+To\+String (\begin{DoxyParamCaption}\item[{Daq\+Event\+Type}]{event\+Type,  }\item[{char $\ast$}]{event\+Type\+Str }\end{DoxyParamCaption})}
+
+
+
+Definition at line 550 of file utility.\+h.
+
+\mbox{\Hypertarget{utility_8h_aa98700b0ad6d711ef943777bd93c94ff}\label{utility_8h_aa98700b0ad6d711ef943777bd93c94ff}} 
+\index{utility.\+h@{utility.\+h}!Convert\+Input\+Mode\+To\+String@{Convert\+Input\+Mode\+To\+String}}
+\index{Convert\+Input\+Mode\+To\+String@{Convert\+Input\+Mode\+To\+String}!utility.\+h@{utility.\+h}}
+\subsubsection{\texorpdfstring{Convert\+Input\+Mode\+To\+String()}{ConvertInputModeToString()}}
+{\footnotesize\ttfamily void Convert\+Input\+Mode\+To\+String (\begin{DoxyParamCaption}\item[{Ai\+Input\+Mode}]{input\+Mode,  }\item[{char $\ast$}]{mode\+Str }\end{DoxyParamCaption})}
+
+
+
+Definition at line 22 of file utility.\+h.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{utility_8h_aa98700b0ad6d711ef943777bd93c94ff_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{utility_8h_a5c57726c0d3cc2ac6ea0ec05dad05eb6}\label{utility_8h_a5c57726c0d3cc2ac6ea0ec05dad05eb6}} 
+\index{utility.\+h@{utility.\+h}!Convert\+Port\+Io\+Type\+To\+String@{Convert\+Port\+Io\+Type\+To\+String}}
+\index{Convert\+Port\+Io\+Type\+To\+String@{Convert\+Port\+Io\+Type\+To\+String}!utility.\+h@{utility.\+h}}
+\subsubsection{\texorpdfstring{Convert\+Port\+Io\+Type\+To\+String()}{ConvertPortIoTypeToString()}}
+{\footnotesize\ttfamily void Convert\+Port\+Io\+Type\+To\+String (\begin{DoxyParamCaption}\item[{Digital\+Port\+Io\+Type}]{port\+Io\+Type,  }\item[{char $\ast$}]{port\+Io\+Type\+Str }\end{DoxyParamCaption})}
+
+
+
+Definition at line 527 of file utility.\+h.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{utility_8h_a5c57726c0d3cc2ac6ea0ec05dad05eb6_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{utility_8h_a62db5f0a657fec5b1626ecd477157e76}\label{utility_8h_a62db5f0a657fec5b1626ecd477157e76}} 
+\index{utility.\+h@{utility.\+h}!Convert\+Port\+Type\+To\+String@{Convert\+Port\+Type\+To\+String}}
+\index{Convert\+Port\+Type\+To\+String@{Convert\+Port\+Type\+To\+String}!utility.\+h@{utility.\+h}}
+\subsubsection{\texorpdfstring{Convert\+Port\+Type\+To\+String()}{ConvertPortTypeToString()}}
+{\footnotesize\ttfamily void Convert\+Port\+Type\+To\+String (\begin{DoxyParamCaption}\item[{Digital\+Port\+Type}]{port\+Type,  }\item[{char $\ast$}]{port\+Type\+Str }\end{DoxyParamCaption})}
+
+
+
+Definition at line 414 of file utility.\+h.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{utility_8h_a62db5f0a657fec5b1626ecd477157e76_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{utility_8h_a4b77ca3bd0d6b2935e45cc40cbbce0b5}\label{utility_8h_a4b77ca3bd0d6b2935e45cc40cbbce0b5}} 
+\index{utility.\+h@{utility.\+h}!Convert\+Range\+To\+Min\+Max@{Convert\+Range\+To\+Min\+Max}}
+\index{Convert\+Range\+To\+Min\+Max@{Convert\+Range\+To\+Min\+Max}!utility.\+h@{utility.\+h}}
+\subsubsection{\texorpdfstring{Convert\+Range\+To\+Min\+Max()}{ConvertRangeToMinMax()}}
+{\footnotesize\ttfamily void Convert\+Range\+To\+Min\+Max (\begin{DoxyParamCaption}\item[{Range}]{range,  }\item[{double $\ast$}]{min,  }\item[{double $\ast$}]{max }\end{DoxyParamCaption})}
+
+
+
+Definition at line 173 of file utility.\+h.
+
+\mbox{\Hypertarget{utility_8h_a6ac324f1c2fe1cb46d2259170ad682c0}\label{utility_8h_a6ac324f1c2fe1cb46d2259170ad682c0}} 
+\index{utility.\+h@{utility.\+h}!Convert\+Range\+To\+String@{Convert\+Range\+To\+String}}
+\index{Convert\+Range\+To\+String@{Convert\+Range\+To\+String}!utility.\+h@{utility.\+h}}
+\subsubsection{\texorpdfstring{Convert\+Range\+To\+String()}{ConvertRangeToString()}}
+{\footnotesize\ttfamily void Convert\+Range\+To\+String (\begin{DoxyParamCaption}\item[{Range}]{range,  }\item[{char $\ast$}]{range\+Str }\end{DoxyParamCaption})}
+
+
+
+Definition at line 39 of file utility.\+h.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{utility_8h_a6ac324f1c2fe1cb46d2259170ad682c0_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{utility_8h_a9ba4893c112e0c1c3ed13ee42ef3a4e6}\label{utility_8h_a9ba4893c112e0c1c3ed13ee42ef3a4e6}} 
+\index{utility.\+h@{utility.\+h}!Convert\+Scan\+Options\+To\+String@{Convert\+Scan\+Options\+To\+String}}
+\index{Convert\+Scan\+Options\+To\+String@{Convert\+Scan\+Options\+To\+String}!utility.\+h@{utility.\+h}}
+\subsubsection{\texorpdfstring{Convert\+Scan\+Options\+To\+String()}{ConvertScanOptionsToString()}}
+{\footnotesize\ttfamily void Convert\+Scan\+Options\+To\+String (\begin{DoxyParamCaption}\item[{Scan\+Option}]{scan\+Options,  }\item[{char $\ast$}]{scan\+Options\+Str }\end{DoxyParamCaption})}
+
+
+
+Definition at line 575 of file utility.\+h.
+
+\mbox{\Hypertarget{utility_8h_aaae31a82443d2c84cbdd2ba3ae07dd36}\label{utility_8h_aaae31a82443d2c84cbdd2ba3ae07dd36}} 
+\index{utility.\+h@{utility.\+h}!Convert\+Trigger\+Type\+To\+String@{Convert\+Trigger\+Type\+To\+String}}
+\index{Convert\+Trigger\+Type\+To\+String@{Convert\+Trigger\+Type\+To\+String}!utility.\+h@{utility.\+h}}
+\subsubsection{\texorpdfstring{Convert\+Trigger\+Type\+To\+String()}{ConvertTriggerTypeToString()}}
+{\footnotesize\ttfamily void Convert\+Trigger\+Type\+To\+String (\begin{DoxyParamCaption}\item[{Trigger\+Type}]{trigger\+Type,  }\item[{char $\ast$}]{trigger\+Type\+Str }\end{DoxyParamCaption})}
+
+
+
+Definition at line 349 of file utility.\+h.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{utility_8h_aaae31a82443d2c84cbdd2ba3ae07dd36_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{utility_8h_ade18e8ae61e350cd9668f0db8628953c}\label{utility_8h_ade18e8ae61e350cd9668f0db8628953c}} 
+\index{utility.\+h@{utility.\+h}!cursor\+Up@{cursor\+Up}}
+\index{cursor\+Up@{cursor\+Up}!utility.\+h@{utility.\+h}}
+\subsubsection{\texorpdfstring{cursor\+Up()}{cursorUp()}}
+{\footnotesize\ttfamily void cursor\+Up (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 1098 of file utility.\+h.
+
+\mbox{\Hypertarget{utility_8h_a017066a9c367b56a5d2002aef260379c}\label{utility_8h_a017066a9c367b56a5d2002aef260379c}} 
+\index{utility.\+h@{utility.\+h}!enter\+\_\+press@{enter\+\_\+press}}
+\index{enter\+\_\+press@{enter\+\_\+press}!utility.\+h@{utility.\+h}}
+\subsubsection{\texorpdfstring{enter\+\_\+press()}{enter\_press()}}
+{\footnotesize\ttfamily int enter\+\_\+press (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 1108 of file utility.\+h.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=248pt]{utility_8h_a017066a9c367b56a5d2002aef260379c_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{utility_8h_adf17b341779b9789342406caff250d2d}\label{utility_8h_adf17b341779b9789342406caff250d2d}} 
+\index{utility.\+h@{utility.\+h}!flush\+\_\+stdin@{flush\+\_\+stdin}}
+\index{flush\+\_\+stdin@{flush\+\_\+stdin}!utility.\+h@{utility.\+h}}
+\subsubsection{\texorpdfstring{flush\+\_\+stdin()}{flush\_stdin()}}
+{\footnotesize\ttfamily void flush\+\_\+stdin (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 1100 of file utility.\+h.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=248pt]{utility_8h_adf17b341779b9789342406caff250d2d_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{utility_8h_aa41dcb26f29f4e2f9f03d3230e04a4ce}\label{utility_8h_aa41dcb26f29f4e2f9f03d3230e04a4ce}} 
+\index{utility.\+h@{utility.\+h}!get\+Ai\+Info\+First\+Supported\+Input\+Mode@{get\+Ai\+Info\+First\+Supported\+Input\+Mode}}
+\index{get\+Ai\+Info\+First\+Supported\+Input\+Mode@{get\+Ai\+Info\+First\+Supported\+Input\+Mode}!utility.\+h@{utility.\+h}}
+\subsubsection{\texorpdfstring{get\+Ai\+Info\+First\+Supported\+Input\+Mode()}{getAiInfoFirstSupportedInputMode()}}
+{\footnotesize\ttfamily Ul\+Error get\+Ai\+Info\+First\+Supported\+Input\+Mode (\begin{DoxyParamCaption}\item[{Daq\+Device\+Handle}]{daq\+Device\+Handle,  }\item[{int $\ast$}]{number\+Of\+Channels,  }\item[{Ai\+Input\+Mode $\ast$}]{input\+Mode,  }\item[{char $\ast$}]{input\+Mode\+Str }\end{DoxyParamCaption})}
+
+
+
+Definition at line 805 of file utility.\+h.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{utility_8h_aa41dcb26f29f4e2f9f03d3230e04a4ce_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{utility_8h_ac0fe69378fb44bfea645b43bec56ed3f}\label{utility_8h_ac0fe69378fb44bfea645b43bec56ed3f}} 
+\index{utility.\+h@{utility.\+h}!get\+Ai\+Info\+First\+Supported\+Range@{get\+Ai\+Info\+First\+Supported\+Range}}
+\index{get\+Ai\+Info\+First\+Supported\+Range@{get\+Ai\+Info\+First\+Supported\+Range}!utility.\+h@{utility.\+h}}
+\subsubsection{\texorpdfstring{get\+Ai\+Info\+First\+Supported\+Range()}{getAiInfoFirstSupportedRange()}}
+{\footnotesize\ttfamily Ul\+Error get\+Ai\+Info\+First\+Supported\+Range (\begin{DoxyParamCaption}\item[{Daq\+Device\+Handle}]{daq\+Device\+Handle,  }\item[{Ai\+Input\+Mode}]{input\+Mode,  }\item[{Range $\ast$}]{range,  }\item[{char $\ast$}]{range\+Str }\end{DoxyParamCaption})}
+
+
+
+Definition at line 824 of file utility.\+h.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{utility_8h_ac0fe69378fb44bfea645b43bec56ed3f_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{utility_8h_ace2a852c056e90b1b769e37c9bb6b90a}\label{utility_8h_ace2a852c056e90b1b769e37c9bb6b90a}} 
+\index{utility.\+h@{utility.\+h}!get\+Ai\+Info\+First\+Trigger\+Type@{get\+Ai\+Info\+First\+Trigger\+Type}}
+\index{get\+Ai\+Info\+First\+Trigger\+Type@{get\+Ai\+Info\+First\+Trigger\+Type}!utility.\+h@{utility.\+h}}
+\subsubsection{\texorpdfstring{get\+Ai\+Info\+First\+Trigger\+Type()}{getAiInfoFirstTriggerType()}}
+{\footnotesize\ttfamily Ul\+Error get\+Ai\+Info\+First\+Trigger\+Type (\begin{DoxyParamCaption}\item[{Daq\+Device\+Handle}]{daq\+Device\+Handle,  }\item[{Trigger\+Type $\ast$}]{trigger\+Type,  }\item[{char $\ast$}]{trigger\+Type\+Str }\end{DoxyParamCaption})}
+
+
+
+Definition at line 748 of file utility.\+h.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{utility_8h_ace2a852c056e90b1b769e37c9bb6b90a_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{utility_8h_a6fb44ad6150c339bec928101f09ac2b8}\label{utility_8h_a6fb44ad6150c339bec928101f09ac2b8}} 
+\index{utility.\+h@{utility.\+h}!get\+Ai\+Info\+Has\+Pacer@{get\+Ai\+Info\+Has\+Pacer}}
+\index{get\+Ai\+Info\+Has\+Pacer@{get\+Ai\+Info\+Has\+Pacer}!utility.\+h@{utility.\+h}}
+\subsubsection{\texorpdfstring{get\+Ai\+Info\+Has\+Pacer()}{getAiInfoHasPacer()}}
+{\footnotesize\ttfamily Ul\+Error get\+Ai\+Info\+Has\+Pacer (\begin{DoxyParamCaption}\item[{Daq\+Device\+Handle}]{daq\+Device\+Handle,  }\item[{int $\ast$}]{has\+Pacer }\end{DoxyParamCaption})}
+
+
+
+Definition at line 735 of file utility.\+h.
+
+\mbox{\Hypertarget{utility_8h_a5f91b686e47ff72da3a006ece35eeb05}\label{utility_8h_a5f91b686e47ff72da3a006ece35eeb05}} 
+\index{utility.\+h@{utility.\+h}!get\+Ai\+Info\+Queue\+Types@{get\+Ai\+Info\+Queue\+Types}}
+\index{get\+Ai\+Info\+Queue\+Types@{get\+Ai\+Info\+Queue\+Types}!utility.\+h@{utility.\+h}}
+\subsubsection{\texorpdfstring{get\+Ai\+Info\+Queue\+Types()}{getAiInfoQueueTypes()}}
+{\footnotesize\ttfamily Ul\+Error get\+Ai\+Info\+Queue\+Types (\begin{DoxyParamCaption}\item[{Daq\+Device\+Handle}]{daq\+Device\+Handle,  }\item[{int $\ast$}]{queue\+Types }\end{DoxyParamCaption})}
+
+
+
+Definition at line 845 of file utility.\+h.
+
+\mbox{\Hypertarget{utility_8h_a61e1f046b716d6eea190817af49651a5}\label{utility_8h_a61e1f046b716d6eea190817af49651a5}} 
+\index{utility.\+h@{utility.\+h}!get\+Ai\+Info\+Ranges@{get\+Ai\+Info\+Ranges}}
+\index{get\+Ai\+Info\+Ranges@{get\+Ai\+Info\+Ranges}!utility.\+h@{utility.\+h}}
+\subsubsection{\texorpdfstring{get\+Ai\+Info\+Ranges()}{getAiInfoRanges()}}
+{\footnotesize\ttfamily Ul\+Error get\+Ai\+Info\+Ranges (\begin{DoxyParamCaption}\item[{Daq\+Device\+Handle}]{daq\+Device\+Handle,  }\item[{Ai\+Input\+Mode}]{input\+Mode,  }\item[{int $\ast$}]{number\+Of\+Ranges,  }\item[{Range $\ast$}]{ranges }\end{DoxyParamCaption})}
+
+
+
+Definition at line 770 of file utility.\+h.
+
+\mbox{\Hypertarget{utility_8h_ad1cad37c74c0dabf125d642cd8f1df8c}\label{utility_8h_ad1cad37c74c0dabf125d642cd8f1df8c}} 
+\index{utility.\+h@{utility.\+h}!get\+Ao\+Info\+First\+Supported\+Range@{get\+Ao\+Info\+First\+Supported\+Range}}
+\index{get\+Ao\+Info\+First\+Supported\+Range@{get\+Ao\+Info\+First\+Supported\+Range}!utility.\+h@{utility.\+h}}
+\subsubsection{\texorpdfstring{get\+Ao\+Info\+First\+Supported\+Range()}{getAoInfoFirstSupportedRange()}}
+{\footnotesize\ttfamily Ul\+Error get\+Ao\+Info\+First\+Supported\+Range (\begin{DoxyParamCaption}\item[{Daq\+Device\+Handle}]{daq\+Device\+Handle,  }\item[{Range $\ast$}]{range,  }\item[{char $\ast$}]{range\+Str }\end{DoxyParamCaption})}
+
+
+
+Definition at line 873 of file utility.\+h.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{utility_8h_ad1cad37c74c0dabf125d642cd8f1df8c_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{utility_8h_a045421ea96c1e133d1edef086311300d}\label{utility_8h_a045421ea96c1e133d1edef086311300d}} 
+\index{utility.\+h@{utility.\+h}!get\+Ao\+Info\+Has\+Pacer@{get\+Ao\+Info\+Has\+Pacer}}
+\index{get\+Ao\+Info\+Has\+Pacer@{get\+Ao\+Info\+Has\+Pacer}!utility.\+h@{utility.\+h}}
+\subsubsection{\texorpdfstring{get\+Ao\+Info\+Has\+Pacer()}{getAoInfoHasPacer()}}
+{\footnotesize\ttfamily Ul\+Error get\+Ao\+Info\+Has\+Pacer (\begin{DoxyParamCaption}\item[{Daq\+Device\+Handle}]{daq\+Device\+Handle,  }\item[{int $\ast$}]{has\+Pacer }\end{DoxyParamCaption})}
+
+
+
+Definition at line 861 of file utility.\+h.
+
+\mbox{\Hypertarget{utility_8h_a1c5a85e2133ea82b81e36645975b9e8a}\label{utility_8h_a1c5a85e2133ea82b81e36645975b9e8a}} 
+\index{utility.\+h@{utility.\+h}!get\+Ctr\+Info\+Has\+Pacer@{get\+Ctr\+Info\+Has\+Pacer}}
+\index{get\+Ctr\+Info\+Has\+Pacer@{get\+Ctr\+Info\+Has\+Pacer}!utility.\+h@{utility.\+h}}
+\subsubsection{\texorpdfstring{get\+Ctr\+Info\+Has\+Pacer()}{getCtrInfoHasPacer()}}
+{\footnotesize\ttfamily Ul\+Error get\+Ctr\+Info\+Has\+Pacer (\begin{DoxyParamCaption}\item[{Daq\+Device\+Handle}]{daq\+Device\+Handle,  }\item[{int $\ast$}]{has\+Pacer }\end{DoxyParamCaption})}
+
+
+
+Definition at line 959 of file utility.\+h.
+
+\mbox{\Hypertarget{utility_8h_a05d9e15aa5998e143658ce097cc121fe}\label{utility_8h_a05d9e15aa5998e143658ce097cc121fe}} 
+\index{utility.\+h@{utility.\+h}!get\+Ctr\+Info\+Measurement\+Types@{get\+Ctr\+Info\+Measurement\+Types}}
+\index{get\+Ctr\+Info\+Measurement\+Types@{get\+Ctr\+Info\+Measurement\+Types}!utility.\+h@{utility.\+h}}
+\subsubsection{\texorpdfstring{get\+Ctr\+Info\+Measurement\+Types()}{getCtrInfoMeasurementTypes()}}
+{\footnotesize\ttfamily Ul\+Error get\+Ctr\+Info\+Measurement\+Types (\begin{DoxyParamCaption}\item[{Daq\+Device\+Handle}]{daq\+Device\+Handle,  }\item[{long long}]{counter\+Number,  }\item[{int $\ast$}]{measurement\+Types }\end{DoxyParamCaption})}
+
+
+
+Definition at line 1029 of file utility.\+h.
+
+\mbox{\Hypertarget{utility_8h_afcfb967b1a09a621561d8bdcd8fab6bf}\label{utility_8h_afcfb967b1a09a621561d8bdcd8fab6bf}} 
+\index{utility.\+h@{utility.\+h}!get\+Ctr\+Info\+Number\+Of\+Channels@{get\+Ctr\+Info\+Number\+Of\+Channels}}
+\index{get\+Ctr\+Info\+Number\+Of\+Channels@{get\+Ctr\+Info\+Number\+Of\+Channels}!utility.\+h@{utility.\+h}}
+\subsubsection{\texorpdfstring{get\+Ctr\+Info\+Number\+Of\+Channels()}{getCtrInfoNumberOfChannels()}}
+{\footnotesize\ttfamily Ul\+Error get\+Ctr\+Info\+Number\+Of\+Channels (\begin{DoxyParamCaption}\item[{Daq\+Device\+Handle}]{daq\+Device\+Handle,  }\item[{int $\ast$}]{number\+Of\+Ctr\+Channels }\end{DoxyParamCaption})}
+
+
+
+Definition at line 947 of file utility.\+h.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{utility_8h_afcfb967b1a09a621561d8bdcd8fab6bf_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{utility_8h_ac02df1a450a2b7fb493f6b61c2b15e5f}\label{utility_8h_ac02df1a450a2b7fb493f6b61c2b15e5f}} 
+\index{utility.\+h@{utility.\+h}!get\+Ctr\+Info\+Supported\+Encoder\+Counters@{get\+Ctr\+Info\+Supported\+Encoder\+Counters}}
+\index{get\+Ctr\+Info\+Supported\+Encoder\+Counters@{get\+Ctr\+Info\+Supported\+Encoder\+Counters}!utility.\+h@{utility.\+h}}
+\subsubsection{\texorpdfstring{get\+Ctr\+Info\+Supported\+Encoder\+Counters()}{getCtrInfoSupportedEncoderCounters()}}
+{\footnotesize\ttfamily Ul\+Error get\+Ctr\+Info\+Supported\+Encoder\+Counters (\begin{DoxyParamCaption}\item[{Daq\+Device\+Handle}]{daq\+Device\+Handle,  }\item[{int $\ast$}]{encoders,  }\item[{int $\ast$}]{number\+Of\+Encoders }\end{DoxyParamCaption})}
+
+
+
+Definition at line 1000 of file utility.\+h.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{utility_8h_ac02df1a450a2b7fb493f6b61c2b15e5f_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{utility_8h_a6e06065344678ca2b0f87833aa76e98a}\label{utility_8h_a6e06065344678ca2b0f87833aa76e98a}} 
+\index{utility.\+h@{utility.\+h}!get\+Ctr\+Info\+Supported\+Event\+Counters@{get\+Ctr\+Info\+Supported\+Event\+Counters}}
+\index{get\+Ctr\+Info\+Supported\+Event\+Counters@{get\+Ctr\+Info\+Supported\+Event\+Counters}!utility.\+h@{utility.\+h}}
+\subsubsection{\texorpdfstring{get\+Ctr\+Info\+Supported\+Event\+Counters()}{getCtrInfoSupportedEventCounters()}}
+{\footnotesize\ttfamily Ul\+Error get\+Ctr\+Info\+Supported\+Event\+Counters (\begin{DoxyParamCaption}\item[{Daq\+Device\+Handle}]{daq\+Device\+Handle,  }\item[{int $\ast$}]{event\+Counters,  }\item[{int $\ast$}]{number\+Of\+Event\+Counters }\end{DoxyParamCaption})}
+
+
+
+Definition at line 971 of file utility.\+h.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{utility_8h_a6e06065344678ca2b0f87833aa76e98a_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{utility_8h_a46cf65cb2647f4a6d9721cd9d0f16b1a}\label{utility_8h_a46cf65cb2647f4a6d9721cd9d0f16b1a}} 
+\index{utility.\+h@{utility.\+h}!get\+Daqi\+Channel\+Types@{get\+Daqi\+Channel\+Types}}
+\index{get\+Daqi\+Channel\+Types@{get\+Daqi\+Channel\+Types}!utility.\+h@{utility.\+h}}
+\subsubsection{\texorpdfstring{get\+Daqi\+Channel\+Types()}{getDaqiChannelTypes()}}
+{\footnotesize\ttfamily Ul\+Error get\+Daqi\+Channel\+Types (\begin{DoxyParamCaption}\item[{Daq\+Device\+Handle}]{daq\+Device\+Handle,  }\item[{int $\ast$}]{chan\+Types\+Mask }\end{DoxyParamCaption})}
+
+
+
+Definition at line 1045 of file utility.\+h.
+
+\mbox{\Hypertarget{utility_8h_ae5c6c09db407f51035b885a24807ce38}\label{utility_8h_ae5c6c09db407f51035b885a24807ce38}} 
+\index{utility.\+h@{utility.\+h}!get\+Daqi\+Info\+First\+Trigger\+Type@{get\+Daqi\+Info\+First\+Trigger\+Type}}
+\index{get\+Daqi\+Info\+First\+Trigger\+Type@{get\+Daqi\+Info\+First\+Trigger\+Type}!utility.\+h@{utility.\+h}}
+\subsubsection{\texorpdfstring{get\+Daqi\+Info\+First\+Trigger\+Type()}{getDaqiInfoFirstTriggerType()}}
+{\footnotesize\ttfamily Ul\+Error get\+Daqi\+Info\+First\+Trigger\+Type (\begin{DoxyParamCaption}\item[{Daq\+Device\+Handle}]{daq\+Device\+Handle,  }\item[{Trigger\+Type $\ast$}]{trigger\+Type,  }\item[{char $\ast$}]{trigger\+Type\+Str }\end{DoxyParamCaption})}
+
+
+
+Definition at line 1058 of file utility.\+h.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{utility_8h_ae5c6c09db407f51035b885a24807ce38_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{utility_8h_a91a2686de4bf0a89241f61ada870aaab}\label{utility_8h_a91a2686de4bf0a89241f61ada870aaab}} 
+\index{utility.\+h@{utility.\+h}!get\+Daqo\+Channel\+Types@{get\+Daqo\+Channel\+Types}}
+\index{get\+Daqo\+Channel\+Types@{get\+Daqo\+Channel\+Types}!utility.\+h@{utility.\+h}}
+\subsubsection{\texorpdfstring{get\+Daqo\+Channel\+Types()}{getDaqoChannelTypes()}}
+{\footnotesize\ttfamily Ul\+Error get\+Daqo\+Channel\+Types (\begin{DoxyParamCaption}\item[{Daq\+Device\+Handle}]{daq\+Device\+Handle,  }\item[{int $\ast$}]{chan\+Types\+Mask }\end{DoxyParamCaption})}
+
+
+
+Definition at line 1084 of file utility.\+h.
+
+\mbox{\Hypertarget{utility_8h_a1586bd203ec4d2c6e1a86b71e994273c}\label{utility_8h_a1586bd203ec4d2c6e1a86b71e994273c}} 
+\index{utility.\+h@{utility.\+h}!get\+Dev\+Info\+Has\+Ai@{get\+Dev\+Info\+Has\+Ai}}
+\index{get\+Dev\+Info\+Has\+Ai@{get\+Dev\+Info\+Has\+Ai}!utility.\+h@{utility.\+h}}
+\subsubsection{\texorpdfstring{get\+Dev\+Info\+Has\+Ai()}{getDevInfoHasAi()}}
+{\footnotesize\ttfamily Ul\+Error get\+Dev\+Info\+Has\+Ai (\begin{DoxyParamCaption}\item[{Daq\+Device\+Handle}]{daq\+Device\+Handle,  }\item[{int $\ast$}]{has\+Ai }\end{DoxyParamCaption})}
+
+
+
+Definition at line 646 of file utility.\+h.
+
+\mbox{\Hypertarget{utility_8h_aab130b9ba36b56bb5ee74a0eda5a2a8c}\label{utility_8h_aab130b9ba36b56bb5ee74a0eda5a2a8c}} 
+\index{utility.\+h@{utility.\+h}!get\+Dev\+Info\+Has\+Ao@{get\+Dev\+Info\+Has\+Ao}}
+\index{get\+Dev\+Info\+Has\+Ao@{get\+Dev\+Info\+Has\+Ao}!utility.\+h@{utility.\+h}}
+\subsubsection{\texorpdfstring{get\+Dev\+Info\+Has\+Ao()}{getDevInfoHasAo()}}
+{\footnotesize\ttfamily Ul\+Error get\+Dev\+Info\+Has\+Ao (\begin{DoxyParamCaption}\item[{Daq\+Device\+Handle}]{daq\+Device\+Handle,  }\item[{int $\ast$}]{has\+Ao }\end{DoxyParamCaption})}
+
+
+
+Definition at line 658 of file utility.\+h.
+
+\mbox{\Hypertarget{utility_8h_a3771c9f8417b1b0c485e67a5a6ee457e}\label{utility_8h_a3771c9f8417b1b0c485e67a5a6ee457e}} 
+\index{utility.\+h@{utility.\+h}!get\+Dev\+Info\+Has\+Ctr@{get\+Dev\+Info\+Has\+Ctr}}
+\index{get\+Dev\+Info\+Has\+Ctr@{get\+Dev\+Info\+Has\+Ctr}!utility.\+h@{utility.\+h}}
+\subsubsection{\texorpdfstring{get\+Dev\+Info\+Has\+Ctr()}{getDevInfoHasCtr()}}
+{\footnotesize\ttfamily Ul\+Error get\+Dev\+Info\+Has\+Ctr (\begin{DoxyParamCaption}\item[{Daq\+Device\+Handle}]{daq\+Device\+Handle,  }\item[{int $\ast$}]{has\+Ctr }\end{DoxyParamCaption})}
+
+
+
+Definition at line 682 of file utility.\+h.
+
+\mbox{\Hypertarget{utility_8h_a705e5c3870f54a4d5224610fc0d7e93e}\label{utility_8h_a705e5c3870f54a4d5224610fc0d7e93e}} 
+\index{utility.\+h@{utility.\+h}!get\+Dev\+Info\+Has\+Daqi@{get\+Dev\+Info\+Has\+Daqi}}
+\index{get\+Dev\+Info\+Has\+Daqi@{get\+Dev\+Info\+Has\+Daqi}!utility.\+h@{utility.\+h}}
+\subsubsection{\texorpdfstring{get\+Dev\+Info\+Has\+Daqi()}{getDevInfoHasDaqi()}}
+{\footnotesize\ttfamily Ul\+Error get\+Dev\+Info\+Has\+Daqi (\begin{DoxyParamCaption}\item[{Daq\+Device\+Handle}]{daq\+Device\+Handle,  }\item[{int $\ast$}]{has\+Daqi }\end{DoxyParamCaption})}
+
+
+
+Definition at line 706 of file utility.\+h.
+
+\mbox{\Hypertarget{utility_8h_a4adf8643838f551d32614d4dd8863a4c}\label{utility_8h_a4adf8643838f551d32614d4dd8863a4c}} 
+\index{utility.\+h@{utility.\+h}!get\+Dev\+Info\+Has\+Daqo@{get\+Dev\+Info\+Has\+Daqo}}
+\index{get\+Dev\+Info\+Has\+Daqo@{get\+Dev\+Info\+Has\+Daqo}!utility.\+h@{utility.\+h}}
+\subsubsection{\texorpdfstring{get\+Dev\+Info\+Has\+Daqo()}{getDevInfoHasDaqo()}}
+{\footnotesize\ttfamily Ul\+Error get\+Dev\+Info\+Has\+Daqo (\begin{DoxyParamCaption}\item[{Daq\+Device\+Handle}]{daq\+Device\+Handle,  }\item[{int $\ast$}]{has\+Daqo }\end{DoxyParamCaption})}
+
+
+
+Definition at line 718 of file utility.\+h.
+
+\mbox{\Hypertarget{utility_8h_a3635f7b2ec22bcb7e385b95b06b362f4}\label{utility_8h_a3635f7b2ec22bcb7e385b95b06b362f4}} 
+\index{utility.\+h@{utility.\+h}!get\+Dev\+Info\+Has\+Dio@{get\+Dev\+Info\+Has\+Dio}}
+\index{get\+Dev\+Info\+Has\+Dio@{get\+Dev\+Info\+Has\+Dio}!utility.\+h@{utility.\+h}}
+\subsubsection{\texorpdfstring{get\+Dev\+Info\+Has\+Dio()}{getDevInfoHasDio()}}
+{\footnotesize\ttfamily Ul\+Error get\+Dev\+Info\+Has\+Dio (\begin{DoxyParamCaption}\item[{Daq\+Device\+Handle}]{daq\+Device\+Handle,  }\item[{int $\ast$}]{has\+Dio }\end{DoxyParamCaption})}
+
+
+
+Definition at line 670 of file utility.\+h.
+
+\mbox{\Hypertarget{utility_8h_adf2d082d5363aafed4386d3410281b25}\label{utility_8h_adf2d082d5363aafed4386d3410281b25}} 
+\index{utility.\+h@{utility.\+h}!get\+Dev\+Info\+Has\+Tmr@{get\+Dev\+Info\+Has\+Tmr}}
+\index{get\+Dev\+Info\+Has\+Tmr@{get\+Dev\+Info\+Has\+Tmr}!utility.\+h@{utility.\+h}}
+\subsubsection{\texorpdfstring{get\+Dev\+Info\+Has\+Tmr()}{getDevInfoHasTmr()}}
+{\footnotesize\ttfamily Ul\+Error get\+Dev\+Info\+Has\+Tmr (\begin{DoxyParamCaption}\item[{Daq\+Device\+Handle}]{daq\+Device\+Handle,  }\item[{int $\ast$}]{has\+Tmr }\end{DoxyParamCaption})}
+
+
+
+Definition at line 694 of file utility.\+h.
+
+\mbox{\Hypertarget{utility_8h_a558efe9db9a170ae96d2c7c6918ca408}\label{utility_8h_a558efe9db9a170ae96d2c7c6918ca408}} 
+\index{utility.\+h@{utility.\+h}!get\+Dio\+Info\+First\+Supported\+Port\+Type@{get\+Dio\+Info\+First\+Supported\+Port\+Type}}
+\index{get\+Dio\+Info\+First\+Supported\+Port\+Type@{get\+Dio\+Info\+First\+Supported\+Port\+Type}!utility.\+h@{utility.\+h}}
+\subsubsection{\texorpdfstring{get\+Dio\+Info\+First\+Supported\+Port\+Type()}{getDioInfoFirstSupportedPortType()}}
+{\footnotesize\ttfamily Ul\+Error get\+Dio\+Info\+First\+Supported\+Port\+Type (\begin{DoxyParamCaption}\item[{Daq\+Device\+Handle}]{daq\+Device\+Handle,  }\item[{Digital\+Port\+Type $\ast$}]{port\+Type,  }\item[{char $\ast$}]{port\+Type\+Str }\end{DoxyParamCaption})}
+
+
+
+Definition at line 903 of file utility.\+h.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{utility_8h_a558efe9db9a170ae96d2c7c6918ca408_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{utility_8h_a5d7cee22aa76efeeb9fbe896bb90bda7}\label{utility_8h_a5d7cee22aa76efeeb9fbe896bb90bda7}} 
+\index{utility.\+h@{utility.\+h}!get\+Dio\+Info\+Has\+Pacer@{get\+Dio\+Info\+Has\+Pacer}}
+\index{get\+Dio\+Info\+Has\+Pacer@{get\+Dio\+Info\+Has\+Pacer}!utility.\+h@{utility.\+h}}
+\subsubsection{\texorpdfstring{get\+Dio\+Info\+Has\+Pacer()}{getDioInfoHasPacer()}}
+{\footnotesize\ttfamily Ul\+Error get\+Dio\+Info\+Has\+Pacer (\begin{DoxyParamCaption}\item[{Daq\+Device\+Handle}]{daq\+Device\+Handle,  }\item[{Digital\+Direction}]{direction,  }\item[{int $\ast$}]{has\+Pacer }\end{DoxyParamCaption})}
+
+
+
+Definition at line 891 of file utility.\+h.
+
+\mbox{\Hypertarget{utility_8h_a6405c76a8af14377b3225fd08209fe35}\label{utility_8h_a6405c76a8af14377b3225fd08209fe35}} 
+\index{utility.\+h@{utility.\+h}!get\+Dio\+Info\+Number\+Of\+Bits\+For\+First\+Port@{get\+Dio\+Info\+Number\+Of\+Bits\+For\+First\+Port}}
+\index{get\+Dio\+Info\+Number\+Of\+Bits\+For\+First\+Port@{get\+Dio\+Info\+Number\+Of\+Bits\+For\+First\+Port}!utility.\+h@{utility.\+h}}
+\subsubsection{\texorpdfstring{get\+Dio\+Info\+Number\+Of\+Bits\+For\+First\+Port()}{getDioInfoNumberOfBitsForFirstPort()}}
+{\footnotesize\ttfamily Ul\+Error get\+Dio\+Info\+Number\+Of\+Bits\+For\+First\+Port (\begin{DoxyParamCaption}\item[{Daq\+Device\+Handle}]{daq\+Device\+Handle,  }\item[{int $\ast$}]{bits\+Per\+Port }\end{DoxyParamCaption})}
+
+
+
+Definition at line 917 of file utility.\+h.
+
+\mbox{\Hypertarget{utility_8h_a3cf21db22296052ae2e3f206fbe270f3}\label{utility_8h_a3cf21db22296052ae2e3f206fbe270f3}} 
+\index{utility.\+h@{utility.\+h}!get\+Dio\+Info\+Port\+Io\+Type@{get\+Dio\+Info\+Port\+Io\+Type}}
+\index{get\+Dio\+Info\+Port\+Io\+Type@{get\+Dio\+Info\+Port\+Io\+Type}!utility.\+h@{utility.\+h}}
+\subsubsection{\texorpdfstring{get\+Dio\+Info\+Port\+Io\+Type()}{getDioInfoPortIoType()}}
+{\footnotesize\ttfamily Ul\+Error get\+Dio\+Info\+Port\+Io\+Type (\begin{DoxyParamCaption}\item[{Daq\+Device\+Handle}]{daq\+Device\+Handle,  }\item[{Digital\+Port\+Io\+Type $\ast$}]{port\+Io\+Type,  }\item[{char $\ast$}]{port\+Io\+Type\+Str }\end{DoxyParamCaption})}
+
+
+
+Definition at line 929 of file utility.\+h.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{utility_8h_a3cf21db22296052ae2e3f206fbe270f3_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{utility_8h_a47117fdbef6b3a112c25f0856190e970}\label{utility_8h_a47117fdbef6b3a112c25f0856190e970}} 
+\index{utility.\+h@{utility.\+h}!reset\+Cursor@{reset\+Cursor}}
+\index{reset\+Cursor@{reset\+Cursor}!utility.\+h@{utility.\+h}}
+\subsubsection{\texorpdfstring{reset\+Cursor()}{resetCursor()}}
+{\footnotesize\ttfamily void reset\+Cursor (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 1096 of file utility.\+h.
+
