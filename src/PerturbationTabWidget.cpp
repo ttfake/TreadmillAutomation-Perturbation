@@ -11,7 +11,7 @@ PerturbationTabWidget::PerturbationTabWidget(QWidget* parent, Qt::WindowFlags fl
     prp = new ParseRunProfile;
     cellDoubleClicked = false;
 
-    safetyTimeout = 1000;
+    safetyTimeout = 500;
     addToSpeed = 0;
 
     updateCounter = 0;

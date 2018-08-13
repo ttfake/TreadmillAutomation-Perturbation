@@ -1,0 +1,19 @@
+1. Unit Testing: All methods in each class are individually tested.
+
+2. Integration Testing: Units, that work together, are combined and overall logic is tested.
+
+3. End-to-End Testing: The entire application is tested; includes compilation
+   on multiple systems, simulated button clicks and testing all functionality.
+
+4. Code Re-Factoring: Code is cleaned up, variable and function names are made
+   consistent, large classes are broken down into smaller and more manageable
+   classes, global variables are replaced by local variables with functions
+   that modify those variables, remove redundancies with proper design
+   patterns.
+
+5. Incorporate EMG into code.
+
+6. Incorporate Stimulus into code.
+
+Note: All testing involves writing code to automate the testing procedure.
+This allows for consistant testing.
