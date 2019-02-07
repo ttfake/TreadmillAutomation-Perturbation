@@ -1,6 +1,6 @@
 file(REMOVE_RECURSE
-  "CMakeFiles/TreadmillAutomation_autogen.dir//AutogenOldSettings.cmake"
-  "TreadmillAutomation_autogen/"
+  "TreadmillAutomation_autogen"
+  "CMakeFiles/TreadmillAutomation_autogen.dir/AutogenOldSettings.cmake"
   "CMakeFiles/TreadmillAutomation_autogen"
 )
 

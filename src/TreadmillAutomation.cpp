@@ -106,6 +106,12 @@ void TreadmillAutomation::createFileMenu()
     daqViewAct->setText("Show DAQ Data View");
     connect(daqViewAct, SIGNAL(changed()), SLOT(showDaqDataBox()));
 
+    viewAddDecelTime = new QAction();
+    viewAddDecelTime->setCheckable(true);
+    menuView->addAction(viewAddDecelTime);
+    viewAddDecelTime->setText("Add Time to Deceleration");
+    connect(viewAddDecelTime, SIGNAL(triggered()), SLOT(showAddTimeToDecel()));
+
     showRunProfileCol = menuView->addMenu(tr("&Show Column"));
 
 
@@ -141,6 +147,22 @@ void TreadmillAutomation::showTimer()
         checked = false;
         perturbationTabWidget->showTimer(checked);
     }
+}
+
+void TreadmillAutomation::showAddTimeToDecel()
+{
+    bool checked = false;
+    if(viewAddDecelTime->isChecked())
+    {
+        checked = true;
+        perturbationTabWidget->showFudgeFactorGroupBox(checked);
+    }
+    else
+    {
+        checked = false;
+        perturbationTabWidget->showFudgeFactorGroupBox(checked);
+    }
+
 }
 
 void TreadmillAutomation::showDaqDataBox()

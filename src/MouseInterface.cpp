@@ -57,9 +57,17 @@ int MouseInterface::openPort()
 
     QTextStream standardOutput(stdout);
 
+    QFile file("comport");
+    if (!file.open(QIODevice::ReadOnly | QIODevice::Text))
+        return 1;
+
+    QTextStream in(&file);
+    QString serialPortName = in.readLine();   
+    
+    
     serialPort = new QSerialPort;
-    QString serialPortName = "com4"; //argumentList.at(1);
-    qDebug() << serialPortName;
+    //QString serialPortName = "com4"; //argumentList.at(1);
+    qDebug() << "Serial Port: " << serialPortName;
     serialPort->setPortName(serialPortName);
 
     int numRead = 0, numReadTotal = 0;

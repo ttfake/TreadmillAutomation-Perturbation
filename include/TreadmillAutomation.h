@@ -71,6 +71,7 @@ class TreadmillAutomation : public QMainWindow
         void errorString(QString s);
         void closeEvent(QCloseEvent *event);
         void emgUpdated();
+        void showAddTimeToDecel();
 
     private:
         QWidget* centralWidget;
@@ -92,6 +93,7 @@ class TreadmillAutomation : public QMainWindow
         QAction* daqViewAct;
         QAction* viewSubjectInterfaceAct;
         QAction* loadRunProfileAction;
+        QAction* viewAddDecelTime;
         
         //createTabWidget
         QTabWidget* centralTabWidget;
@@ -99,14 +101,14 @@ class TreadmillAutomation : public QMainWindow
 
         QSignalMapper* daqSignalMapper;
             
-        double getAccelerationValue();
-        double getAccelerationTimeValue();
-        double getDecelerationValue();
-        double getDecelerationTimeValue();
-        double getLeftFrontSpeedValue();
-        double getRightFrontSpeedValue();
-        double getLeftRearSpeedValue();
-        double getRightRearSpeedValue();
+        double                                    getAccelerationValue();
+        double                                    getAccelerationTimeValue();
+        double                                    getDecelerationValue();
+        double                                    getDecelerationTimeValue();
+        double                                    getLeftFrontSpeedValue();
+        double                                    getRightFrontSpeedValue();
+        double                                    getLeftRearSpeedValue();
+        double                                    getRightRearSpeedValue();
 
         void                                      setLeftFrontSpeedValueFromIncoming(qint16 leftFrontSpeedValue);
         void                                      setLeftRearSpeedValueFromIncoming(qint16 leftRearSpeedValue);

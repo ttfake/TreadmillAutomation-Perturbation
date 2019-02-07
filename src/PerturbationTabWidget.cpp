@@ -103,26 +103,48 @@ void PerturbationTabWidget::addQuadrantFour()
 void PerturbationTabWidget::addFudgeFactorGroupBox()
 {
     fudgeFactorGroupBox = new QGroupBox;
-    fudgeFactorGroupBoxHorizontalLayout = new QHBoxLayout;
+    fudgeFactorGroupBoxVerticalLayout = new QVBoxLayout;
     fudgeFactorGroupBox->setSizePolicy(QSizePolicy::Minimum, QSizePolicy::Fixed);
-    fudgeFactorGroupBox->setFixedSize(60,40);
-    fudgeFactorGroupBox->setLayout(fudgeFactorGroupBoxHorizontalLayout);
-    //fudgeFactorLabel = new QLabel;
-    //fudgeFactorLabel->setFixedSize(180,30);
-    //fudgeFactorLabelFont.setFamily("Times");
-    //fudgeFactorLabelFont.setWeight(75);
-    //fudgeFactorLabelFont.setPointSize(12);
-    //fudgeFactorLabel->setFont(fudgeFactorLabelFont);
-    //fudgeFactorLabel->setText("Added Time: ");
-    //fudgeFactorGroupBoxHorizontalLayout->addWidget(fudgeFactorLabel);
-    fudgeFactorDoubleSpinBox = new QDoubleSpinBox;
-    fudgeFactorDoubleSpinBox->setRange(0.00, 100000000.00);
-    fudgeFactorDoubleSpinBox->setFont(fudgeFactorLabelFont);
-    fudgeFactorDoubleSpinBox->setSuffix(" ms");
-    fudgeFactorDoubleSpinBox->setFixedSize(60, 20);
-    fudgeFactorGroupBoxHorizontalLayout->addWidget(fudgeFactorDoubleSpinBox);
+    fudgeFactorGroupBox->setFixedSize(1000,100);
+    fudgeFactorGroupBox->setLayout(fudgeFactorGroupBoxVerticalLayout);
 
-    connect(fudgeFactorDoubleSpinBox, SIGNAL(valueChanged(double)), this, SLOT(setTimeoutBuffer(double)));//SLOT(setSafetyTimeout(double)));
+    fudgeFactorDecelGroupBox = new QGroupBox;
+    fudgeFactorDecelGroupBox->setSizePolicy(QSizePolicy::Minimum, QSizePolicy::Fixed);
+    fudgeFactorDecelGroupBox->setFixedSize(900,70);
+    fudgeFactorDecelGroupBoxHorizontalLayout = new QHBoxLayout;
+    fudgeFactorDecelGroupBox->setLayout(fudgeFactorDecelGroupBoxHorizontalLayout);
+    fudgeFactorDecelLabel = new QLabel;
+    fudgeFactorDecelLabel->setFixedSize(200,40);
+    fudgeFactorDecelLabelFont.setFamily("Times");
+    fudgeFactorDecelLabelFont.setWeight(75);
+    fudgeFactorDecelLabelFont.setPointSize(12);
+    fudgeFactorDecelLabel->setFont(fudgeFactorDecelLabelFont);
+    fudgeFactorDecelLabel->setText("Added Time: ");
+    fudgeFactorDecelGroupBoxHorizontalLayout->addWidget(fudgeFactorDecelLabel);
+    fudgeFactorDecelDoubleSpinBox = new QDoubleSpinBox;
+    fudgeFactorDecelDoubleSpinBox->setRange(-10000.00, 100000000.00);
+    fudgeFactorDecelDoubleSpinBox->setFont(fudgeFactorDecelLabelFont);
+    fudgeFactorDecelDoubleSpinBox->setSuffix(" ms");
+    fudgeFactorDecelDoubleSpinBox->setFixedSize(200, 40);
+    fudgeFactorDecelGroupBoxHorizontalLayout->addWidget(fudgeFactorDecelDoubleSpinBox);
+    addTimeToAccelRadioButton = new QRadioButton;
+    addTimeToDecelRadioButton = new QRadioButton;
+    addTimeToAccelRadioButtonLabel = new QLabel;
+    addTimeToDecelRadioButtonLabel = new QLabel;
+    addTimeToAccelRadioButtonLabel->setFixedSize(160,40);
+    addTimeToAccelRadioButtonLabel->setFont(fudgeFactorDecelLabelFont);
+    addTimeToAccelRadioButtonLabel->setText("To Accel (Trigger2): ");
+    fudgeFactorDecelGroupBoxHorizontalLayout->addWidget(addTimeToAccelRadioButtonLabel);
+    fudgeFactorDecelGroupBoxHorizontalLayout->addWidget(addTimeToAccelRadioButton);
+    addTimeToDecelRadioButtonLabel->setFixedSize(160,40);
+    addTimeToDecelRadioButtonLabel->setFont(fudgeFactorDecelLabelFont);
+    addTimeToDecelRadioButtonLabel->setText("To Decel( Trigger3): ");
+    fudgeFactorDecelGroupBoxHorizontalLayout->addWidget(addTimeToDecelRadioButtonLabel);
+    fudgeFactorDecelGroupBoxHorizontalLayout->addWidget(addTimeToDecelRadioButton);
+
+    fudgeFactorGroupBoxVerticalLayout->addWidget(fudgeFactorDecelGroupBox);
+
+    connect(fudgeFactorDecelDoubleSpinBox, SIGNAL(valueChanged(double)), this, SLOT(setTimeoutBuffer(double)));//SLOT(setSafetyTimeout(double)));
 
     fudgeFactorGroupBox->hide();
     setSafetyTimeout(500.00);
@@ -1002,8 +1024,14 @@ void PerturbationTabWidget::setSocket(QAbstractSocket* socket)
 double PerturbationTabWidget::calculateSpeed()
 {
     //double addToSpeed = 100;    //Added to compensate for flat top
-    return ((acceleration->value() * ((getAccelerationTimeValue()/millisecondConversion) + 
+
+    double hardCodedAccelerationTimeValue = 200;
+
+    return ((acceleration->value() * ((hardCodedAccelerationTimeValue/millisecondConversion) + 
                     (addToSpeed / 1000)))); 
+
+//    return ((acceleration->value() * ((getAccelerationTimeValue()/millisecondConversion) + 
+//                    (addToSpeed / 1000)))); 
 }
 
 
@@ -1962,8 +1990,17 @@ void PerturbationTabWidget::setSafetyTimeout(double time)
 void PerturbationTabWidget::setTimeoutBuffer(double timeout)
 {
     timeoutBuffer = timeout;
-    double decelTime = timeoutBuffer + prp->getDecelTime();
-    timeDecelSpinBox->setValue(decelTime);
+    if(addTimeToAccelRadioButton->isChecked())
+    {
+        double accelTime = timeoutBuffer + prp->getAccelTime();
+        timeAccelSpinBox->setValue(accelTime);
+
+    }
+    if(addTimeToDecelRadioButton->isChecked())
+    {
+        double decelTime = timeoutBuffer + prp->getDecelTime();
+        timeDecelSpinBox->setValue(decelTime);
+    }
 }
 
 #include "../include/moc_PerturbationTabWidget.cpp"

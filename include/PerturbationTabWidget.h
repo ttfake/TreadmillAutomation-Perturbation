@@ -33,6 +33,7 @@
 #include <QRegExp>
 #include <chrono>
 #include <QHeaderView>
+#include <QRadioButton>
 
 #include <QtQml/QQmlContext>
 #include <QtQuick/QQuickView>
@@ -84,6 +85,7 @@ class PerturbationTabWidget : public QWidget
         void                                changeParticipantId(QString participantId);
         void                                changeSessionId(QString session);
         void                                daqReconnect();
+        void                                showFudgeFactorGroupBox(bool state);
     private slots:
         void                                setLeftFrontSpeedValue(double mleftFrontSpeedValue);
         void                                setRightFrontSpeedValue(double mrightFrontSpeedValue);
@@ -116,6 +118,7 @@ class PerturbationTabWidget : public QWidget
         void                                setSafetyTimeout(double time);
         void                                setTimeoutBuffer(double timeout);
         void                                activateStartButton(bool enable = false);
+
     private:
 
         enum COLUMN
@@ -296,18 +299,28 @@ class PerturbationTabWidget : public QWidget
 
         //createFudgeFactorGroupBox
         QGroupBox* fudgeFactorGroupBox;
-        QHBoxLayout* fudgeFactorGroupBoxHorizontalLayout; 
-        QLabel* fudgeFactorLabel;
-        QFont fudgeFactorLabelFont;
-        QDoubleSpinBox* fudgeFactorDoubleSpinBox;
+        QGroupBox* fudgeFactorDecelGroupBox;
+        QVBoxLayout* fudgeFactorGroupBoxVerticalLayout;
+        QHBoxLayout* fudgeFactorDecelGroupBoxHorizontalLayout;
+        QLabel* addTimeToAccelRadioButtonLabel;
+        QLabel* addTimeToDecelRadioButtonLabel;
+        QRadioButton* addTimeToAccelRadioButton;
+        QRadioButton* addTimeToDecelRadioButton;
+        QLabel* fudgeFactorDecelLabel;
+        QFont fudgeFactorDecelLabelFont;
+        QDoubleSpinBox* fudgeFactorDecelDoubleSpinBox;
         void addFudgeFactorGroupBox();
+        
+        
+        
+        
         double addToSpeed;
         void setAddToSpeed(double mAddToSpeed);
         QPushButton* prevPertRunBtn;
         QPushButton* nextPertRunBtn;
         QPushButton* startStimRunBtn;
         ParseRunProfile* prp;
-        void showFudgeFactorGroupBox(bool state);
+
         void populateRunsTextBox();
         QTableWidget* runTableWidget;
         QFont runTableHeaderFont;

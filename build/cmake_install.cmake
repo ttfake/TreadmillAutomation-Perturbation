@@ -1,4 +1,4 @@
-# Install script for directory: C:/msys64/home/user/TreadmillAutomation
+# Install script for directory: E:/projects/C_+_+/hreflex/TreadmillAutomation
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -35,5 +35,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "C:/msys64/home/user/TreadmillAutomation/build/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "E:/projects/C_+_+/hreflex/TreadmillAutomation/build/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")
