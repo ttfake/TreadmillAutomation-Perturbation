@@ -21,8 +21,7 @@ EmgChannel::EmgChannel(QWidget* parent, Qt::WindowFlags flags, QString qmlFile, 
     QObject::connect(channelQuickView->engine(), &QQmlEngine::quit, channelQuickView, &QWindow::close);
 
     channelQuickView->setTitle(channelNo);
-//    channelQuickView->setSource(QUrl(qmlFile));
-    channelQuickView->setSource(QUrl::fromLocalFile( QFileInfo( qmlFile ).absoluteFilePath())); 
+    channelQuickView->setSource(QUrl(qmlFile));
     channelQuickView->setResizeMode(QQuickView::SizeViewToRootObject);
     channelQuickViewContainer->setSizePolicy(QSizePolicy::Maximum, QSizePolicy::Fixed);
     channelQuickViewContainer->setFixedSize(600,250);

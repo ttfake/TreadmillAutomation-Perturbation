@@ -28,30 +28,36 @@ The CXX compiler identification is GNU, found in "E:/projects/C_+_+/hreflex/Trea
 Determining if the C compiler works passed with the following output:
 Change Dir: E:/projects/C_+_+/hreflex/TreadmillAutomation/build/CMakeFiles/CMakeTmp
 
-Run Build Command:"C:/msys64/usr/bin/make.exe" "cmTC_d4ed3/fast"
-/usr/bin/make -f CMakeFiles/cmTC_d4ed3.dir/build.make CMakeFiles/cmTC_d4ed3.dir/build
+Run Build Command:"C:/msys64/usr/bin/make.exe" "cmTC_fb268/fast"
+make: Warning: File 'Makefile' has modification time 0.042 s in the future
+/usr/bin/make -f CMakeFiles/cmTC_fb268.dir/build.make CMakeFiles/cmTC_fb268.dir/build
 make[1]: Entering directory '/e/projects/C_+_+/hreflex/TreadmillAutomation/build/CMakeFiles/CMakeTmp'
-Building C object CMakeFiles/cmTC_d4ed3.dir/testCCompiler.c.obj
-/C/msys64/mingw64/bin/gcc.exe    -o CMakeFiles/cmTC_d4ed3.dir/testCCompiler.c.obj   -c /E/projects/C_+_+/hreflex/TreadmillAutomation/build/CMakeFiles/CMakeTmp/testCCompiler.c
-Linking C executable cmTC_d4ed3.exe
-/C/msys64/mingw64/bin/cmake.exe -E remove -f CMakeFiles/cmTC_d4ed3.dir/objects.a
-/C/msys64/mingw64/bin/ar.exe cr CMakeFiles/cmTC_d4ed3.dir/objects.a "CMakeFiles/cmTC_d4ed3.dir/testCCompiler.c.obj" 
-/C/msys64/mingw64/bin/gcc.exe      -Wl,--whole-archive CMakeFiles/cmTC_d4ed3.dir/objects.a -Wl,--no-whole-archive  -o cmTC_d4ed3.exe -Wl,--major-image-version,0,--minor-image-version,0 -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32 
+make[1]: Warning: File 'CMakeFiles/cmTC_fb268.dir/flags.make' has modification time 0.02 s in the future
+Building C object CMakeFiles/cmTC_fb268.dir/testCCompiler.c.obj
+/C/msys64/mingw64/bin/gcc.exe    -o CMakeFiles/cmTC_fb268.dir/testCCompiler.c.obj   -c /E/projects/C_+_+/hreflex/TreadmillAutomation/build/CMakeFiles/CMakeTmp/testCCompiler.c
+Linking C executable cmTC_fb268.exe
+/C/msys64/mingw64/bin/cmake.exe -E remove -f CMakeFiles/cmTC_fb268.dir/objects.a
+/C/msys64/mingw64/bin/ar.exe cr CMakeFiles/cmTC_fb268.dir/objects.a "CMakeFiles/cmTC_fb268.dir/testCCompiler.c.obj" 
+/C/msys64/mingw64/bin/gcc.exe      -Wl,--whole-archive CMakeFiles/cmTC_fb268.dir/objects.a -Wl,--no-whole-archive  -o cmTC_fb268.exe -Wl,--major-image-version,0,--minor-image-version,0 -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32 
+make[1]: warning:  Clock skew detected.  Your build may be incomplete.
 make[1]: Leaving directory '/e/projects/C_+_+/hreflex/TreadmillAutomation/build/CMakeFiles/CMakeTmp'
+make: warning:  Clock skew detected.  Your build may be incomplete.
 
 
 Detecting C compiler ABI info compiled with the following output:
 Change Dir: E:/projects/C_+_+/hreflex/TreadmillAutomation/build/CMakeFiles/CMakeTmp
 
-Run Build Command:"C:/msys64/usr/bin/make.exe" "cmTC_264a3/fast"
-/usr/bin/make -f CMakeFiles/cmTC_264a3.dir/build.make CMakeFiles/cmTC_264a3.dir/build
+Run Build Command:"C:/msys64/usr/bin/make.exe" "cmTC_570da/fast"
+make: Warning: File 'Makefile' has modification time 0.039 s in the future
+/usr/bin/make -f CMakeFiles/cmTC_570da.dir/build.make CMakeFiles/cmTC_570da.dir/build
 make[1]: Entering directory '/e/projects/C_+_+/hreflex/TreadmillAutomation/build/CMakeFiles/CMakeTmp'
-Building C object CMakeFiles/cmTC_264a3.dir/CMakeCCompilerABI.c.obj
-/C/msys64/mingw64/bin/gcc.exe    -o CMakeFiles/cmTC_264a3.dir/CMakeCCompilerABI.c.obj   -c /C/msys64/mingw64/share/cmake-3.9/Modules/CMakeCCompilerABI.c
-Linking C executable cmTC_264a3.exe
-/C/msys64/mingw64/bin/cmake.exe -E remove -f CMakeFiles/cmTC_264a3.dir/objects.a
-/C/msys64/mingw64/bin/ar.exe cr CMakeFiles/cmTC_264a3.dir/objects.a "CMakeFiles/cmTC_264a3.dir/CMakeCCompilerABI.c.obj" 
-/C/msys64/mingw64/bin/gcc.exe     -v -Wl,--whole-archive CMakeFiles/cmTC_264a3.dir/objects.a -Wl,--no-whole-archive  -o cmTC_264a3.exe -Wl,--major-image-version,0,--minor-image-version,0 
+make[1]: Warning: File 'CMakeFiles/cmTC_570da.dir/flags.make' has modification time 0.02 s in the future
+Building C object CMakeFiles/cmTC_570da.dir/CMakeCCompilerABI.c.obj
+/C/msys64/mingw64/bin/gcc.exe    -o CMakeFiles/cmTC_570da.dir/CMakeCCompilerABI.c.obj   -c /C/msys64/mingw64/share/cmake-3.9/Modules/CMakeCCompilerABI.c
+Linking C executable cmTC_570da.exe
+/C/msys64/mingw64/bin/cmake.exe -E remove -f CMakeFiles/cmTC_570da.dir/objects.a
+/C/msys64/mingw64/bin/ar.exe cr CMakeFiles/cmTC_570da.dir/objects.a "CMakeFiles/cmTC_570da.dir/CMakeCCompilerABI.c.obj" 
+/C/msys64/mingw64/bin/gcc.exe     -v -Wl,--whole-archive CMakeFiles/cmTC_570da.dir/objects.a -Wl,--no-whole-archive  -o cmTC_570da.exe -Wl,--major-image-version,0,--minor-image-version,0 
 Using built-in specs.
 COLLECT_GCC=C:\msys64\mingw64\bin\gcc.exe
 COLLECT_LTO_WRAPPER=C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/7.2.0/lto-wrapper.exe
@@ -61,25 +67,29 @@ Thread model: posix
 gcc version 7.2.0 (Rev1, Built by MSYS2 project) 
 COMPILER_PATH=C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/7.2.0/;C:/msys64/mingw64/bin/../lib/gcc/;C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/7.2.0/../../../../x86_64-w64-mingw32/bin/
 LIBRARY_PATH=C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/7.2.0/;C:/msys64/mingw64/bin/../lib/gcc/;C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/7.2.0/../../../../x86_64-w64-mingw32/lib/../lib/;C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/7.2.0/../../../../lib/;C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/7.2.0/../../../../x86_64-w64-mingw32/lib/;C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/7.2.0/../../../
-COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_264a3.exe' '-mtune=generic' '-march=x86-64'
- C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/7.2.0/collect2.exe -plugin C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/7.2.0/liblto_plugin-0.dll -plugin-opt=C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/7.2.0/lto-wrapper.exe -plugin-opt=-fresolution=C:\Users\user\AppData\Local\Temp\ccXn3c1C.res -plugin-opt=-pass-through=-lmingw32 -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_eh -plugin-opt=-pass-through=-lmoldname -plugin-opt=-pass-through=-lmingwex -plugin-opt=-pass-through=-lmsvcrt -plugin-opt=-pass-through=-lpthread -plugin-opt=-pass-through=-ladvapi32 -plugin-opt=-pass-through=-lshell32 -plugin-opt=-pass-through=-luser32 -plugin-opt=-pass-through=-lkernel32 -plugin-opt=-pass-through=-lmingw32 -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_eh -plugin-opt=-pass-through=-lmoldname -plugin-opt=-pass-through=-lmingwex -plugin-opt=-pass-through=-lmsvcrt -m i386pep -Bdynamic -o cmTC_264a3.exe C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/7.2.0/../../../../x86_64-w64-mingw32/lib/../lib/crt2.o C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/7.2.0/crtbegin.o -LC:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/7.2.0 -LC:/msys64/mingw64/bin/../lib/gcc -LC:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/7.2.0/../../../../x86_64-w64-mingw32/lib/../lib -LC:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/7.2.0/../../../../lib -LC:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/7.2.0/../../../../x86_64-w64-mingw32/lib -LC:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/7.2.0/../../.. --whole-archive CMakeFiles/cmTC_264a3.dir/objects.a --no-whole-archive --major-image-version 0 --minor-image-version 0 -lmingw32 -lgcc -lgcc_eh -lmoldname -lmingwex -lmsvcrt -lpthread -ladvapi32 -lshell32 -luser32 -lkernel32 -lmingw32 -lgcc -lgcc_eh -lmoldname -lmingwex -lmsvcrt C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/7.2.0/../../../../x86_64-w64-mingw32/lib/../lib/default-manifest.o C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/7.2.0/crtend.o
-COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_264a3.exe' '-mtune=generic' '-march=x86-64'
+COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_570da.exe' '-mtune=generic' '-march=x86-64'
+ C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/7.2.0/collect2.exe -plugin C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/7.2.0/liblto_plugin-0.dll -plugin-opt=C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/7.2.0/lto-wrapper.exe -plugin-opt=-fresolution=C:\Users\user\AppData\Local\Temp\cc0PUPdh.res -plugin-opt=-pass-through=-lmingw32 -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_eh -plugin-opt=-pass-through=-lmoldname -plugin-opt=-pass-through=-lmingwex -plugin-opt=-pass-through=-lmsvcrt -plugin-opt=-pass-through=-lpthread -plugin-opt=-pass-through=-ladvapi32 -plugin-opt=-pass-through=-lshell32 -plugin-opt=-pass-through=-luser32 -plugin-opt=-pass-through=-lkernel32 -plugin-opt=-pass-through=-lmingw32 -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_eh -plugin-opt=-pass-through=-lmoldname -plugin-opt=-pass-through=-lmingwex -plugin-opt=-pass-through=-lmsvcrt -m i386pep -Bdynamic -o cmTC_570da.exe C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/7.2.0/../../../../x86_64-w64-mingw32/lib/../lib/crt2.o C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/7.2.0/crtbegin.o -LC:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/7.2.0 -LC:/msys64/mingw64/bin/../lib/gcc -LC:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/7.2.0/../../../../x86_64-w64-mingw32/lib/../lib -LC:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/7.2.0/../../../../lib -LC:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/7.2.0/../../../../x86_64-w64-mingw32/lib -LC:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/7.2.0/../../.. --whole-archive CMakeFiles/cmTC_570da.dir/objects.a --no-whole-archive --major-image-version 0 --minor-image-version 0 -lmingw32 -lgcc -lgcc_eh -lmoldname -lmingwex -lmsvcrt -lpthread -ladvapi32 -lshell32 -luser32 -lkernel32 -lmingw32 -lgcc -lgcc_eh -lmoldname -lmingwex -lmsvcrt C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/7.2.0/../../../../x86_64-w64-mingw32/lib/../lib/default-manifest.o C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/7.2.0/crtend.o
+COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_570da.exe' '-mtune=generic' '-march=x86-64'
+make[1]: warning:  Clock skew detected.  Your build may be incomplete.
 make[1]: Leaving directory '/e/projects/C_+_+/hreflex/TreadmillAutomation/build/CMakeFiles/CMakeTmp'
+make: warning:  Clock skew detected.  Your build may be incomplete.
 
 
 Parsed C implicit link information from above output:
   link line regex: [^( *|.*[/\])(ld\.exe|CMAKE_LINK_STARTFILE-NOTFOUND|([^/\]+-)?ld|collect2)[^/\]*( |$)]
   ignore line: [Change Dir: E:/projects/C_+_+/hreflex/TreadmillAutomation/build/CMakeFiles/CMakeTmp]
   ignore line: []
-  ignore line: [Run Build Command:"C:/msys64/usr/bin/make.exe" "cmTC_264a3/fast"]
-  ignore line: [/usr/bin/make -f CMakeFiles/cmTC_264a3.dir/build.make CMakeFiles/cmTC_264a3.dir/build]
+  ignore line: [Run Build Command:"C:/msys64/usr/bin/make.exe" "cmTC_570da/fast"]
+  ignore line: [make: Warning: File 'Makefile' has modification time 0.039 s in the future]
+  ignore line: [/usr/bin/make -f CMakeFiles/cmTC_570da.dir/build.make CMakeFiles/cmTC_570da.dir/build]
   ignore line: [make[1]: Entering directory '/e/projects/C_+_+/hreflex/TreadmillAutomation/build/CMakeFiles/CMakeTmp']
-  ignore line: [Building C object CMakeFiles/cmTC_264a3.dir/CMakeCCompilerABI.c.obj]
-  ignore line: [/C/msys64/mingw64/bin/gcc.exe    -o CMakeFiles/cmTC_264a3.dir/CMakeCCompilerABI.c.obj   -c /C/msys64/mingw64/share/cmake-3.9/Modules/CMakeCCompilerABI.c]
-  ignore line: [Linking C executable cmTC_264a3.exe]
-  ignore line: [/C/msys64/mingw64/bin/cmake.exe -E remove -f CMakeFiles/cmTC_264a3.dir/objects.a]
-  ignore line: [/C/msys64/mingw64/bin/ar.exe cr CMakeFiles/cmTC_264a3.dir/objects.a "CMakeFiles/cmTC_264a3.dir/CMakeCCompilerABI.c.obj" ]
-  ignore line: [/C/msys64/mingw64/bin/gcc.exe     -v -Wl,--whole-archive CMakeFiles/cmTC_264a3.dir/objects.a -Wl,--no-whole-archive  -o cmTC_264a3.exe -Wl,--major-image-version,0,--minor-image-version,0 ]
+  ignore line: [make[1]: Warning: File 'CMakeFiles/cmTC_570da.dir/flags.make' has modification time 0.02 s in the future]
+  ignore line: [Building C object CMakeFiles/cmTC_570da.dir/CMakeCCompilerABI.c.obj]
+  ignore line: [/C/msys64/mingw64/bin/gcc.exe    -o CMakeFiles/cmTC_570da.dir/CMakeCCompilerABI.c.obj   -c /C/msys64/mingw64/share/cmake-3.9/Modules/CMakeCCompilerABI.c]
+  ignore line: [Linking C executable cmTC_570da.exe]
+  ignore line: [/C/msys64/mingw64/bin/cmake.exe -E remove -f CMakeFiles/cmTC_570da.dir/objects.a]
+  ignore line: [/C/msys64/mingw64/bin/ar.exe cr CMakeFiles/cmTC_570da.dir/objects.a "CMakeFiles/cmTC_570da.dir/CMakeCCompilerABI.c.obj" ]
+  ignore line: [/C/msys64/mingw64/bin/gcc.exe     -v -Wl,--whole-archive CMakeFiles/cmTC_570da.dir/objects.a -Wl,--no-whole-archive  -o cmTC_570da.exe -Wl,--major-image-version,0,--minor-image-version,0 ]
   ignore line: [Using built-in specs.]
   ignore line: [COLLECT_GCC=C:\msys64\mingw64\bin\gcc.exe]
   ignore line: [COLLECT_LTO_WRAPPER=C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/7.2.0/lto-wrapper.exe]
@@ -96,13 +106,13 @@ Parsed C implicit link information from above output:
   ignore line: [C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/7.2.0/../../../../lib/]
   ignore line: [C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/7.2.0/../../../../x86_64-w64-mingw32/lib/]
   ignore line: [C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/7.2.0/../../../]
-  ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_264a3.exe' '-mtune=generic' '-march=x86-64']
-  link line: [ C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/7.2.0/collect2.exe -plugin C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/7.2.0/liblto_plugin-0.dll -plugin-opt=C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/7.2.0/lto-wrapper.exe -plugin-opt=-fresolution=C:\Users\user\AppData\Local\Temp\ccXn3c1C.res -plugin-opt=-pass-through=-lmingw32 -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_eh -plugin-opt=-pass-through=-lmoldname -plugin-opt=-pass-through=-lmingwex -plugin-opt=-pass-through=-lmsvcrt -plugin-opt=-pass-through=-lpthread -plugin-opt=-pass-through=-ladvapi32 -plugin-opt=-pass-through=-lshell32 -plugin-opt=-pass-through=-luser32 -plugin-opt=-pass-through=-lkernel32 -plugin-opt=-pass-through=-lmingw32 -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_eh -plugin-opt=-pass-through=-lmoldname -plugin-opt=-pass-through=-lmingwex -plugin-opt=-pass-through=-lmsvcrt -m i386pep -Bdynamic -o cmTC_264a3.exe C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/7.2.0/../../../../x86_64-w64-mingw32/lib/../lib/crt2.o C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/7.2.0/crtbegin.o -LC:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/7.2.0 -LC:/msys64/mingw64/bin/../lib/gcc -LC:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/7.2.0/../../../../x86_64-w64-mingw32/lib/../lib -LC:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/7.2.0/../../../../lib -LC:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/7.2.0/../../../../x86_64-w64-mingw32/lib -LC:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/7.2.0/../../.. --whole-archive CMakeFiles/cmTC_264a3.dir/objects.a --no-whole-archive --major-image-version 0 --minor-image-version 0 -lmingw32 -lgcc -lgcc_eh -lmoldname -lmingwex -lmsvcrt -lpthread -ladvapi32 -lshell32 -luser32 -lkernel32 -lmingw32 -lgcc -lgcc_eh -lmoldname -lmingwex -lmsvcrt C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/7.2.0/../../../../x86_64-w64-mingw32/lib/../lib/default-manifest.o C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/7.2.0/crtend.o]
+  ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_570da.exe' '-mtune=generic' '-march=x86-64']
+  link line: [ C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/7.2.0/collect2.exe -plugin C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/7.2.0/liblto_plugin-0.dll -plugin-opt=C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/7.2.0/lto-wrapper.exe -plugin-opt=-fresolution=C:\Users\user\AppData\Local\Temp\cc0PUPdh.res -plugin-opt=-pass-through=-lmingw32 -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_eh -plugin-opt=-pass-through=-lmoldname -plugin-opt=-pass-through=-lmingwex -plugin-opt=-pass-through=-lmsvcrt -plugin-opt=-pass-through=-lpthread -plugin-opt=-pass-through=-ladvapi32 -plugin-opt=-pass-through=-lshell32 -plugin-opt=-pass-through=-luser32 -plugin-opt=-pass-through=-lkernel32 -plugin-opt=-pass-through=-lmingw32 -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_eh -plugin-opt=-pass-through=-lmoldname -plugin-opt=-pass-through=-lmingwex -plugin-opt=-pass-through=-lmsvcrt -m i386pep -Bdynamic -o cmTC_570da.exe C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/7.2.0/../../../../x86_64-w64-mingw32/lib/../lib/crt2.o C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/7.2.0/crtbegin.o -LC:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/7.2.0 -LC:/msys64/mingw64/bin/../lib/gcc -LC:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/7.2.0/../../../../x86_64-w64-mingw32/lib/../lib -LC:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/7.2.0/../../../../lib -LC:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/7.2.0/../../../../x86_64-w64-mingw32/lib -LC:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/7.2.0/../../.. --whole-archive CMakeFiles/cmTC_570da.dir/objects.a --no-whole-archive --major-image-version 0 --minor-image-version 0 -lmingw32 -lgcc -lgcc_eh -lmoldname -lmingwex -lmsvcrt -lpthread -ladvapi32 -lshell32 -luser32 -lkernel32 -lmingw32 -lgcc -lgcc_eh -lmoldname -lmingwex -lmsvcrt C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/7.2.0/../../../../x86_64-w64-mingw32/lib/../lib/default-manifest.o C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/7.2.0/crtend.o]
     arg [C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/7.2.0/collect2.exe] ==> ignore
     arg [-plugin] ==> ignore
     arg [C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/7.2.0/liblto_plugin-0.dll] ==> ignore
     arg [-plugin-opt=C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/7.2.0/lto-wrapper.exe] ==> ignore
-    arg [-plugin-opt=-fresolution=C:\Users\user\AppData\Local\Temp\ccXn3c1C.res] ==> ignore
+    arg [-plugin-opt=-fresolution=C:\Users\user\AppData\Local\Temp\cc0PUPdh.res] ==> ignore
     arg [-plugin-opt=-pass-through=-lmingw32] ==> ignore
     arg [-plugin-opt=-pass-through=-lgcc] ==> ignore
     arg [-plugin-opt=-pass-through=-lgcc_eh] ==> ignore
@@ -124,7 +134,7 @@ Parsed C implicit link information from above output:
     arg [i386pep] ==> ignore
     arg [-Bdynamic] ==> ignore
     arg [-o] ==> ignore
-    arg [cmTC_264a3.exe] ==> ignore
+    arg [cmTC_570da.exe] ==> ignore
     arg [C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/7.2.0/../../../../x86_64-w64-mingw32/lib/../lib/crt2.o] ==> ignore
     arg [C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/7.2.0/crtbegin.o] ==> ignore
     arg [-LC:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/7.2.0] ==> dir [C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/7.2.0]
@@ -134,7 +144,7 @@ Parsed C implicit link information from above output:
     arg [-LC:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/7.2.0/../../../../x86_64-w64-mingw32/lib] ==> dir [C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/7.2.0/../../../../x86_64-w64-mingw32/lib]
     arg [-LC:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/7.2.0/../../..] ==> dir [C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/7.2.0/../../..]
     arg [--whole-archive] ==> ignore
-    arg [CMakeFiles/cmTC_264a3.dir/objects.a] ==> ignore
+    arg [CMakeFiles/cmTC_570da.dir/objects.a] ==> ignore
     arg [--no-whole-archive] ==> ignore
     arg [--major-image-version] ==> ignore
     arg [0] ==> ignore
@@ -179,15 +189,15 @@ Parsed C implicit link information from above output:
 Detecting C [-std=c11] compiler features compiled with the following output:
 Change Dir: E:/projects/C_+_+/hreflex/TreadmillAutomation/build/CMakeFiles/CMakeTmp
 
-Run Build Command:"C:/msys64/usr/bin/make.exe" "cmTC_85093/fast"
-/usr/bin/make -f CMakeFiles/cmTC_85093.dir/build.make CMakeFiles/cmTC_85093.dir/build
+Run Build Command:"C:/msys64/usr/bin/make.exe" "cmTC_3b7ce/fast"
+/usr/bin/make -f CMakeFiles/cmTC_3b7ce.dir/build.make CMakeFiles/cmTC_3b7ce.dir/build
 make[1]: Entering directory '/e/projects/C_+_+/hreflex/TreadmillAutomation/build/CMakeFiles/CMakeTmp'
-Building C object CMakeFiles/cmTC_85093.dir/feature_tests.c.obj
-/C/msys64/mingw64/bin/gcc.exe   -std=c11 -o CMakeFiles/cmTC_85093.dir/feature_tests.c.obj   -c /E/projects/C_+_+/hreflex/TreadmillAutomation/build/CMakeFiles/feature_tests.c
-Linking C executable cmTC_85093.exe
-/C/msys64/mingw64/bin/cmake.exe -E remove -f CMakeFiles/cmTC_85093.dir/objects.a
-/C/msys64/mingw64/bin/ar.exe cr CMakeFiles/cmTC_85093.dir/objects.a "CMakeFiles/cmTC_85093.dir/feature_tests.c.obj" 
-/C/msys64/mingw64/bin/gcc.exe      -Wl,--whole-archive CMakeFiles/cmTC_85093.dir/objects.a -Wl,--no-whole-archive  -o cmTC_85093.exe -Wl,--major-image-version,0,--minor-image-version,0 -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32 
+Building C object CMakeFiles/cmTC_3b7ce.dir/feature_tests.c.obj
+/C/msys64/mingw64/bin/gcc.exe   -std=c11 -o CMakeFiles/cmTC_3b7ce.dir/feature_tests.c.obj   -c /E/projects/C_+_+/hreflex/TreadmillAutomation/build/CMakeFiles/feature_tests.c
+Linking C executable cmTC_3b7ce.exe
+/C/msys64/mingw64/bin/cmake.exe -E remove -f CMakeFiles/cmTC_3b7ce.dir/objects.a
+/C/msys64/mingw64/bin/ar.exe cr CMakeFiles/cmTC_3b7ce.dir/objects.a "CMakeFiles/cmTC_3b7ce.dir/feature_tests.c.obj" 
+/C/msys64/mingw64/bin/gcc.exe      -Wl,--whole-archive CMakeFiles/cmTC_3b7ce.dir/objects.a -Wl,--no-whole-archive  -o cmTC_3b7ce.exe -Wl,--major-image-version,0,--minor-image-version,0 -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32 
 make[1]: Leaving directory '/e/projects/C_+_+/hreflex/TreadmillAutomation/build/CMakeFiles/CMakeTmp'
 
 
@@ -200,16 +210,20 @@ make[1]: Leaving directory '/e/projects/C_+_+/hreflex/TreadmillAutomation/build/
 Detecting C [-std=c99] compiler features compiled with the following output:
 Change Dir: E:/projects/C_+_+/hreflex/TreadmillAutomation/build/CMakeFiles/CMakeTmp
 
-Run Build Command:"C:/msys64/usr/bin/make.exe" "cmTC_161cc/fast"
-/usr/bin/make -f CMakeFiles/cmTC_161cc.dir/build.make CMakeFiles/cmTC_161cc.dir/build
+Run Build Command:"C:/msys64/usr/bin/make.exe" "cmTC_6fa9e/fast"
+make: Warning: File 'Makefile' has modification time 0.046 s in the future
+/usr/bin/make -f CMakeFiles/cmTC_6fa9e.dir/build.make CMakeFiles/cmTC_6fa9e.dir/build
 make[1]: Entering directory '/e/projects/C_+_+/hreflex/TreadmillAutomation/build/CMakeFiles/CMakeTmp'
-Building C object CMakeFiles/cmTC_161cc.dir/feature_tests.c.obj
-/C/msys64/mingw64/bin/gcc.exe   -std=c99 -o CMakeFiles/cmTC_161cc.dir/feature_tests.c.obj   -c /E/projects/C_+_+/hreflex/TreadmillAutomation/build/CMakeFiles/feature_tests.c
-Linking C executable cmTC_161cc.exe
-/C/msys64/mingw64/bin/cmake.exe -E remove -f CMakeFiles/cmTC_161cc.dir/objects.a
-/C/msys64/mingw64/bin/ar.exe cr CMakeFiles/cmTC_161cc.dir/objects.a "CMakeFiles/cmTC_161cc.dir/feature_tests.c.obj" 
-/C/msys64/mingw64/bin/gcc.exe      -Wl,--whole-archive CMakeFiles/cmTC_161cc.dir/objects.a -Wl,--no-whole-archive  -o cmTC_161cc.exe -Wl,--major-image-version,0,--minor-image-version,0 -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32 
+make[1]: Warning: File 'CMakeFiles/cmTC_6fa9e.dir/flags.make' has modification time 0.026 s in the future
+Building C object CMakeFiles/cmTC_6fa9e.dir/feature_tests.c.obj
+/C/msys64/mingw64/bin/gcc.exe   -std=c99 -o CMakeFiles/cmTC_6fa9e.dir/feature_tests.c.obj   -c /E/projects/C_+_+/hreflex/TreadmillAutomation/build/CMakeFiles/feature_tests.c
+Linking C executable cmTC_6fa9e.exe
+/C/msys64/mingw64/bin/cmake.exe -E remove -f CMakeFiles/cmTC_6fa9e.dir/objects.a
+/C/msys64/mingw64/bin/ar.exe cr CMakeFiles/cmTC_6fa9e.dir/objects.a "CMakeFiles/cmTC_6fa9e.dir/feature_tests.c.obj" 
+/C/msys64/mingw64/bin/gcc.exe      -Wl,--whole-archive CMakeFiles/cmTC_6fa9e.dir/objects.a -Wl,--no-whole-archive  -o cmTC_6fa9e.exe -Wl,--major-image-version,0,--minor-image-version,0 -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32 
+make[1]: warning:  Clock skew detected.  Your build may be incomplete.
 make[1]: Leaving directory '/e/projects/C_+_+/hreflex/TreadmillAutomation/build/CMakeFiles/CMakeTmp'
+make: warning:  Clock skew detected.  Your build may be incomplete.
 
 
     Feature record: C_FEATURE:1c_function_prototypes
@@ -221,16 +235,20 @@ make[1]: Leaving directory '/e/projects/C_+_+/hreflex/TreadmillAutomation/build/
 Detecting C [-std=c90] compiler features compiled with the following output:
 Change Dir: E:/projects/C_+_+/hreflex/TreadmillAutomation/build/CMakeFiles/CMakeTmp
 
-Run Build Command:"C:/msys64/usr/bin/make.exe" "cmTC_5ab1d/fast"
-/usr/bin/make -f CMakeFiles/cmTC_5ab1d.dir/build.make CMakeFiles/cmTC_5ab1d.dir/build
+Run Build Command:"C:/msys64/usr/bin/make.exe" "cmTC_96e42/fast"
+make: Warning: File 'Makefile' has modification time 0.014 s in the future
+/usr/bin/make -f CMakeFiles/cmTC_96e42.dir/build.make CMakeFiles/cmTC_96e42.dir/build
 make[1]: Entering directory '/e/projects/C_+_+/hreflex/TreadmillAutomation/build/CMakeFiles/CMakeTmp'
-Building C object CMakeFiles/cmTC_5ab1d.dir/feature_tests.c.obj
-/C/msys64/mingw64/bin/gcc.exe   -std=c90 -o CMakeFiles/cmTC_5ab1d.dir/feature_tests.c.obj   -c /E/projects/C_+_+/hreflex/TreadmillAutomation/build/CMakeFiles/feature_tests.c
-Linking C executable cmTC_5ab1d.exe
-/C/msys64/mingw64/bin/cmake.exe -E remove -f CMakeFiles/cmTC_5ab1d.dir/objects.a
-/C/msys64/mingw64/bin/ar.exe cr CMakeFiles/cmTC_5ab1d.dir/objects.a "CMakeFiles/cmTC_5ab1d.dir/feature_tests.c.obj" 
-/C/msys64/mingw64/bin/gcc.exe      -Wl,--whole-archive CMakeFiles/cmTC_5ab1d.dir/objects.a -Wl,--no-whole-archive  -o cmTC_5ab1d.exe -Wl,--major-image-version,0,--minor-image-version,0 -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32 
+make[1]: Warning: File 'CMakeFiles/cmTC_96e42.dir/progress.make' has modification time 0.0069 s in the future
+Building C object CMakeFiles/cmTC_96e42.dir/feature_tests.c.obj
+/C/msys64/mingw64/bin/gcc.exe   -std=c90 -o CMakeFiles/cmTC_96e42.dir/feature_tests.c.obj   -c /E/projects/C_+_+/hreflex/TreadmillAutomation/build/CMakeFiles/feature_tests.c
+Linking C executable cmTC_96e42.exe
+/C/msys64/mingw64/bin/cmake.exe -E remove -f CMakeFiles/cmTC_96e42.dir/objects.a
+/C/msys64/mingw64/bin/ar.exe cr CMakeFiles/cmTC_96e42.dir/objects.a "CMakeFiles/cmTC_96e42.dir/feature_tests.c.obj" 
+/C/msys64/mingw64/bin/gcc.exe      -Wl,--whole-archive CMakeFiles/cmTC_96e42.dir/objects.a -Wl,--no-whole-archive  -o cmTC_96e42.exe -Wl,--major-image-version,0,--minor-image-version,0 -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32 
+make[1]: warning:  Clock skew detected.  Your build may be incomplete.
 make[1]: Leaving directory '/e/projects/C_+_+/hreflex/TreadmillAutomation/build/CMakeFiles/CMakeTmp'
+make: warning:  Clock skew detected.  Your build may be incomplete.
 
 
     Feature record: C_FEATURE:1c_function_prototypes
@@ -240,30 +258,36 @@ make[1]: Leaving directory '/e/projects/C_+_+/hreflex/TreadmillAutomation/build/
 Determining if the CXX compiler works passed with the following output:
 Change Dir: E:/projects/C_+_+/hreflex/TreadmillAutomation/build/CMakeFiles/CMakeTmp
 
-Run Build Command:"C:/msys64/usr/bin/make.exe" "cmTC_4dc63/fast"
-/usr/bin/make -f CMakeFiles/cmTC_4dc63.dir/build.make CMakeFiles/cmTC_4dc63.dir/build
+Run Build Command:"C:/msys64/usr/bin/make.exe" "cmTC_fcf06/fast"
+make: Warning: File 'Makefile' has modification time 0.04 s in the future
+/usr/bin/make -f CMakeFiles/cmTC_fcf06.dir/build.make CMakeFiles/cmTC_fcf06.dir/build
 make[1]: Entering directory '/e/projects/C_+_+/hreflex/TreadmillAutomation/build/CMakeFiles/CMakeTmp'
-Building CXX object CMakeFiles/cmTC_4dc63.dir/testCXXCompiler.cxx.obj
-/C/msys64/mingw64/bin/g++.exe     -o CMakeFiles/cmTC_4dc63.dir/testCXXCompiler.cxx.obj -c /E/projects/C_+_+/hreflex/TreadmillAutomation/build/CMakeFiles/CMakeTmp/testCXXCompiler.cxx
-Linking CXX executable cmTC_4dc63.exe
-/C/msys64/mingw64/bin/cmake.exe -E remove -f CMakeFiles/cmTC_4dc63.dir/objects.a
-/C/msys64/mingw64/bin/ar.exe cr CMakeFiles/cmTC_4dc63.dir/objects.a "CMakeFiles/cmTC_4dc63.dir/testCXXCompiler.cxx.obj" 
-/C/msys64/mingw64/bin/g++.exe      -Wl,--whole-archive CMakeFiles/cmTC_4dc63.dir/objects.a -Wl,--no-whole-archive  -o cmTC_4dc63.exe -Wl,--major-image-version,0,--minor-image-version,0 -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32 
+make[1]: Warning: File 'CMakeFiles/cmTC_fcf06.dir/flags.make' has modification time 0.02 s in the future
+Building CXX object CMakeFiles/cmTC_fcf06.dir/testCXXCompiler.cxx.obj
+/C/msys64/mingw64/bin/g++.exe     -o CMakeFiles/cmTC_fcf06.dir/testCXXCompiler.cxx.obj -c /E/projects/C_+_+/hreflex/TreadmillAutomation/build/CMakeFiles/CMakeTmp/testCXXCompiler.cxx
+Linking CXX executable cmTC_fcf06.exe
+/C/msys64/mingw64/bin/cmake.exe -E remove -f CMakeFiles/cmTC_fcf06.dir/objects.a
+/C/msys64/mingw64/bin/ar.exe cr CMakeFiles/cmTC_fcf06.dir/objects.a "CMakeFiles/cmTC_fcf06.dir/testCXXCompiler.cxx.obj" 
+/C/msys64/mingw64/bin/g++.exe      -Wl,--whole-archive CMakeFiles/cmTC_fcf06.dir/objects.a -Wl,--no-whole-archive  -o cmTC_fcf06.exe -Wl,--major-image-version,0,--minor-image-version,0 -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32 
+make[1]: warning:  Clock skew detected.  Your build may be incomplete.
 make[1]: Leaving directory '/e/projects/C_+_+/hreflex/TreadmillAutomation/build/CMakeFiles/CMakeTmp'
+make: warning:  Clock skew detected.  Your build may be incomplete.
 
 
 Detecting CXX compiler ABI info compiled with the following output:
 Change Dir: E:/projects/C_+_+/hreflex/TreadmillAutomation/build/CMakeFiles/CMakeTmp
 
-Run Build Command:"C:/msys64/usr/bin/make.exe" "cmTC_2111e/fast"
-/usr/bin/make -f CMakeFiles/cmTC_2111e.dir/build.make CMakeFiles/cmTC_2111e.dir/build
+Run Build Command:"C:/msys64/usr/bin/make.exe" "cmTC_75fe0/fast"
+make: Warning: File 'Makefile' has modification time 0.039 s in the future
+/usr/bin/make -f CMakeFiles/cmTC_75fe0.dir/build.make CMakeFiles/cmTC_75fe0.dir/build
 make[1]: Entering directory '/e/projects/C_+_+/hreflex/TreadmillAutomation/build/CMakeFiles/CMakeTmp'
-Building CXX object CMakeFiles/cmTC_2111e.dir/CMakeCXXCompilerABI.cpp.obj
-/C/msys64/mingw64/bin/g++.exe     -o CMakeFiles/cmTC_2111e.dir/CMakeCXXCompilerABI.cpp.obj -c /C/msys64/mingw64/share/cmake-3.9/Modules/CMakeCXXCompilerABI.cpp
-Linking CXX executable cmTC_2111e.exe
-/C/msys64/mingw64/bin/cmake.exe -E remove -f CMakeFiles/cmTC_2111e.dir/objects.a
-/C/msys64/mingw64/bin/ar.exe cr CMakeFiles/cmTC_2111e.dir/objects.a "CMakeFiles/cmTC_2111e.dir/CMakeCXXCompilerABI.cpp.obj" 
-/C/msys64/mingw64/bin/g++.exe     -v -Wl,--whole-archive CMakeFiles/cmTC_2111e.dir/objects.a -Wl,--no-whole-archive  -o cmTC_2111e.exe -Wl,--major-image-version,0,--minor-image-version,0 
+make[1]: Warning: File 'CMakeFiles/cmTC_75fe0.dir/flags.make' has modification time 0.012 s in the future
+Building CXX object CMakeFiles/cmTC_75fe0.dir/CMakeCXXCompilerABI.cpp.obj
+/C/msys64/mingw64/bin/g++.exe     -o CMakeFiles/cmTC_75fe0.dir/CMakeCXXCompilerABI.cpp.obj -c /C/msys64/mingw64/share/cmake-3.9/Modules/CMakeCXXCompilerABI.cpp
+Linking CXX executable cmTC_75fe0.exe
+/C/msys64/mingw64/bin/cmake.exe -E remove -f CMakeFiles/cmTC_75fe0.dir/objects.a
+/C/msys64/mingw64/bin/ar.exe cr CMakeFiles/cmTC_75fe0.dir/objects.a "CMakeFiles/cmTC_75fe0.dir/CMakeCXXCompilerABI.cpp.obj" 
+/C/msys64/mingw64/bin/g++.exe     -v -Wl,--whole-archive CMakeFiles/cmTC_75fe0.dir/objects.a -Wl,--no-whole-archive  -o cmTC_75fe0.exe -Wl,--major-image-version,0,--minor-image-version,0 
 Using built-in specs.
 COLLECT_GCC=C:\msys64\mingw64\bin\g++.exe
 COLLECT_LTO_WRAPPER=C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/7.2.0/lto-wrapper.exe
@@ -273,25 +297,29 @@ Thread model: posix
 gcc version 7.2.0 (Rev1, Built by MSYS2 project) 
 COMPILER_PATH=C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/7.2.0/;C:/msys64/mingw64/bin/../lib/gcc/;C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/7.2.0/../../../../x86_64-w64-mingw32/bin/
 LIBRARY_PATH=C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/7.2.0/;C:/msys64/mingw64/bin/../lib/gcc/;C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/7.2.0/../../../../x86_64-w64-mingw32/lib/../lib/;C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/7.2.0/../../../../lib/;C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/7.2.0/../../../../x86_64-w64-mingw32/lib/;C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/7.2.0/../../../
-COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_2111e.exe' '-shared-libgcc' '-mtune=generic' '-march=x86-64'
- C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/7.2.0/collect2.exe -plugin C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/7.2.0/liblto_plugin-0.dll -plugin-opt=C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/7.2.0/lto-wrapper.exe -plugin-opt=-fresolution=C:\Users\user\AppData\Local\Temp\ccy34dwZ.res -plugin-opt=-pass-through=-lmingw32 -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lmoldname -plugin-opt=-pass-through=-lmingwex -plugin-opt=-pass-through=-lmsvcrt -plugin-opt=-pass-through=-lpthread -plugin-opt=-pass-through=-ladvapi32 -plugin-opt=-pass-through=-lshell32 -plugin-opt=-pass-through=-luser32 -plugin-opt=-pass-through=-lkernel32 -plugin-opt=-pass-through=-lmingw32 -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lmoldname -plugin-opt=-pass-through=-lmingwex -plugin-opt=-pass-through=-lmsvcrt -m i386pep -Bdynamic -o cmTC_2111e.exe C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/7.2.0/../../../../x86_64-w64-mingw32/lib/../lib/crt2.o C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/7.2.0/crtbegin.o -LC:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/7.2.0 -LC:/msys64/mingw64/bin/../lib/gcc -LC:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/7.2.0/../../../../x86_64-w64-mingw32/lib/../lib -LC:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/7.2.0/../../../../lib -LC:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/7.2.0/../../../../x86_64-w64-mingw32/lib -LC:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/7.2.0/../../.. --whole-archive CMakeFiles/cmTC_2111e.dir/objects.a --no-whole-archive --major-image-version 0 --minor-image-version 0 -lstdc++ -lmingw32 -lgcc_s -lgcc -lmoldname -lmingwex -lmsvcrt -lpthread -ladvapi32 -lshell32 -luser32 -lkernel32 -lmingw32 -lgcc_s -lgcc -lmoldname -lmingwex -lmsvcrt C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/7.2.0/../../../../x86_64-w64-mingw32/lib/../lib/default-manifest.o C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/7.2.0/crtend.o
-COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_2111e.exe' '-shared-libgcc' '-mtune=generic' '-march=x86-64'
+COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_75fe0.exe' '-shared-libgcc' '-mtune=generic' '-march=x86-64'
+ C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/7.2.0/collect2.exe -plugin C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/7.2.0/liblto_plugin-0.dll -plugin-opt=C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/7.2.0/lto-wrapper.exe -plugin-opt=-fresolution=C:\Users\user\AppData\Local\Temp\ccTmNCUc.res -plugin-opt=-pass-through=-lmingw32 -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lmoldname -plugin-opt=-pass-through=-lmingwex -plugin-opt=-pass-through=-lmsvcrt -plugin-opt=-pass-through=-lpthread -plugin-opt=-pass-through=-ladvapi32 -plugin-opt=-pass-through=-lshell32 -plugin-opt=-pass-through=-luser32 -plugin-opt=-pass-through=-lkernel32 -plugin-opt=-pass-through=-lmingw32 -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lmoldname -plugin-opt=-pass-through=-lmingwex -plugin-opt=-pass-through=-lmsvcrt -m i386pep -Bdynamic -o cmTC_75fe0.exe C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/7.2.0/../../../../x86_64-w64-mingw32/lib/../lib/crt2.o C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/7.2.0/crtbegin.o -LC:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/7.2.0 -LC:/msys64/mingw64/bin/../lib/gcc -LC:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/7.2.0/../../../../x86_64-w64-mingw32/lib/../lib -LC:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/7.2.0/../../../../lib -LC:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/7.2.0/../../../../x86_64-w64-mingw32/lib -LC:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/7.2.0/../../.. --whole-archive CMakeFiles/cmTC_75fe0.dir/objects.a --no-whole-archive --major-image-version 0 --minor-image-version 0 -lstdc++ -lmingw32 -lgcc_s -lgcc -lmoldname -lmingwex -lmsvcrt -lpthread -ladvapi32 -lshell32 -luser32 -lkernel32 -lmingw32 -lgcc_s -lgcc -lmoldname -lmingwex -lmsvcrt C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/7.2.0/../../../../x86_64-w64-mingw32/lib/../lib/default-manifest.o C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/7.2.0/crtend.o
+COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_75fe0.exe' '-shared-libgcc' '-mtune=generic' '-march=x86-64'
+make[1]: warning:  Clock skew detected.  Your build may be incomplete.
 make[1]: Leaving directory '/e/projects/C_+_+/hreflex/TreadmillAutomation/build/CMakeFiles/CMakeTmp'
+make: warning:  Clock skew detected.  Your build may be incomplete.
 
 
 Parsed CXX implicit link information from above output:
   link line regex: [^( *|.*[/\])(ld\.exe|CMAKE_LINK_STARTFILE-NOTFOUND|([^/\]+-)?ld|collect2)[^/\]*( |$)]
   ignore line: [Change Dir: E:/projects/C_+_+/hreflex/TreadmillAutomation/build/CMakeFiles/CMakeTmp]
   ignore line: []
-  ignore line: [Run Build Command:"C:/msys64/usr/bin/make.exe" "cmTC_2111e/fast"]
-  ignore line: [/usr/bin/make -f CMakeFiles/cmTC_2111e.dir/build.make CMakeFiles/cmTC_2111e.dir/build]
+  ignore line: [Run Build Command:"C:/msys64/usr/bin/make.exe" "cmTC_75fe0/fast"]
+  ignore line: [make: Warning: File 'Makefile' has modification time 0.039 s in the future]
+  ignore line: [/usr/bin/make -f CMakeFiles/cmTC_75fe0.dir/build.make CMakeFiles/cmTC_75fe0.dir/build]
   ignore line: [make[1]: Entering directory '/e/projects/C_+_+/hreflex/TreadmillAutomation/build/CMakeFiles/CMakeTmp']
-  ignore line: [Building CXX object CMakeFiles/cmTC_2111e.dir/CMakeCXXCompilerABI.cpp.obj]
-  ignore line: [/C/msys64/mingw64/bin/g++.exe     -o CMakeFiles/cmTC_2111e.dir/CMakeCXXCompilerABI.cpp.obj -c /C/msys64/mingw64/share/cmake-3.9/Modules/CMakeCXXCompilerABI.cpp]
-  ignore line: [Linking CXX executable cmTC_2111e.exe]
-  ignore line: [/C/msys64/mingw64/bin/cmake.exe -E remove -f CMakeFiles/cmTC_2111e.dir/objects.a]
-  ignore line: [/C/msys64/mingw64/bin/ar.exe cr CMakeFiles/cmTC_2111e.dir/objects.a "CMakeFiles/cmTC_2111e.dir/CMakeCXXCompilerABI.cpp.obj" ]
-  ignore line: [/C/msys64/mingw64/bin/g++.exe     -v -Wl,--whole-archive CMakeFiles/cmTC_2111e.dir/objects.a -Wl,--no-whole-archive  -o cmTC_2111e.exe -Wl,--major-image-version,0,--minor-image-version,0 ]
+  ignore line: [make[1]: Warning: File 'CMakeFiles/cmTC_75fe0.dir/flags.make' has modification time 0.012 s in the future]
+  ignore line: [Building CXX object CMakeFiles/cmTC_75fe0.dir/CMakeCXXCompilerABI.cpp.obj]
+  ignore line: [/C/msys64/mingw64/bin/g++.exe     -o CMakeFiles/cmTC_75fe0.dir/CMakeCXXCompilerABI.cpp.obj -c /C/msys64/mingw64/share/cmake-3.9/Modules/CMakeCXXCompilerABI.cpp]
+  ignore line: [Linking CXX executable cmTC_75fe0.exe]
+  ignore line: [/C/msys64/mingw64/bin/cmake.exe -E remove -f CMakeFiles/cmTC_75fe0.dir/objects.a]
+  ignore line: [/C/msys64/mingw64/bin/ar.exe cr CMakeFiles/cmTC_75fe0.dir/objects.a "CMakeFiles/cmTC_75fe0.dir/CMakeCXXCompilerABI.cpp.obj" ]
+  ignore line: [/C/msys64/mingw64/bin/g++.exe     -v -Wl,--whole-archive CMakeFiles/cmTC_75fe0.dir/objects.a -Wl,--no-whole-archive  -o cmTC_75fe0.exe -Wl,--major-image-version,0,--minor-image-version,0 ]
   ignore line: [Using built-in specs.]
   ignore line: [COLLECT_GCC=C:\msys64\mingw64\bin\g++.exe]
   ignore line: [COLLECT_LTO_WRAPPER=C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/7.2.0/lto-wrapper.exe]
@@ -308,13 +336,13 @@ Parsed CXX implicit link information from above output:
   ignore line: [C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/7.2.0/../../../../lib/]
   ignore line: [C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/7.2.0/../../../../x86_64-w64-mingw32/lib/]
   ignore line: [C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/7.2.0/../../../]
-  ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_2111e.exe' '-shared-libgcc' '-mtune=generic' '-march=x86-64']
-  link line: [ C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/7.2.0/collect2.exe -plugin C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/7.2.0/liblto_plugin-0.dll -plugin-opt=C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/7.2.0/lto-wrapper.exe -plugin-opt=-fresolution=C:\Users\user\AppData\Local\Temp\ccy34dwZ.res -plugin-opt=-pass-through=-lmingw32 -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lmoldname -plugin-opt=-pass-through=-lmingwex -plugin-opt=-pass-through=-lmsvcrt -plugin-opt=-pass-through=-lpthread -plugin-opt=-pass-through=-ladvapi32 -plugin-opt=-pass-through=-lshell32 -plugin-opt=-pass-through=-luser32 -plugin-opt=-pass-through=-lkernel32 -plugin-opt=-pass-through=-lmingw32 -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lmoldname -plugin-opt=-pass-through=-lmingwex -plugin-opt=-pass-through=-lmsvcrt -m i386pep -Bdynamic -o cmTC_2111e.exe C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/7.2.0/../../../../x86_64-w64-mingw32/lib/../lib/crt2.o C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/7.2.0/crtbegin.o -LC:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/7.2.0 -LC:/msys64/mingw64/bin/../lib/gcc -LC:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/7.2.0/../../../../x86_64-w64-mingw32/lib/../lib -LC:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/7.2.0/../../../../lib -LC:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/7.2.0/../../../../x86_64-w64-mingw32/lib -LC:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/7.2.0/../../.. --whole-archive CMakeFiles/cmTC_2111e.dir/objects.a --no-whole-archive --major-image-version 0 --minor-image-version 0 -lstdc++ -lmingw32 -lgcc_s -lgcc -lmoldname -lmingwex -lmsvcrt -lpthread -ladvapi32 -lshell32 -luser32 -lkernel32 -lmingw32 -lgcc_s -lgcc -lmoldname -lmingwex -lmsvcrt C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/7.2.0/../../../../x86_64-w64-mingw32/lib/../lib/default-manifest.o C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/7.2.0/crtend.o]
+  ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_75fe0.exe' '-shared-libgcc' '-mtune=generic' '-march=x86-64']
+  link line: [ C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/7.2.0/collect2.exe -plugin C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/7.2.0/liblto_plugin-0.dll -plugin-opt=C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/7.2.0/lto-wrapper.exe -plugin-opt=-fresolution=C:\Users\user\AppData\Local\Temp\ccTmNCUc.res -plugin-opt=-pass-through=-lmingw32 -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lmoldname -plugin-opt=-pass-through=-lmingwex -plugin-opt=-pass-through=-lmsvcrt -plugin-opt=-pass-through=-lpthread -plugin-opt=-pass-through=-ladvapi32 -plugin-opt=-pass-through=-lshell32 -plugin-opt=-pass-through=-luser32 -plugin-opt=-pass-through=-lkernel32 -plugin-opt=-pass-through=-lmingw32 -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lmoldname -plugin-opt=-pass-through=-lmingwex -plugin-opt=-pass-through=-lmsvcrt -m i386pep -Bdynamic -o cmTC_75fe0.exe C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/7.2.0/../../../../x86_64-w64-mingw32/lib/../lib/crt2.o C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/7.2.0/crtbegin.o -LC:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/7.2.0 -LC:/msys64/mingw64/bin/../lib/gcc -LC:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/7.2.0/../../../../x86_64-w64-mingw32/lib/../lib -LC:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/7.2.0/../../../../lib -LC:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/7.2.0/../../../../x86_64-w64-mingw32/lib -LC:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/7.2.0/../../.. --whole-archive CMakeFiles/cmTC_75fe0.dir/objects.a --no-whole-archive --major-image-version 0 --minor-image-version 0 -lstdc++ -lmingw32 -lgcc_s -lgcc -lmoldname -lmingwex -lmsvcrt -lpthread -ladvapi32 -lshell32 -luser32 -lkernel32 -lmingw32 -lgcc_s -lgcc -lmoldname -lmingwex -lmsvcrt C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/7.2.0/../../../../x86_64-w64-mingw32/lib/../lib/default-manifest.o C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/7.2.0/crtend.o]
     arg [C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/7.2.0/collect2.exe] ==> ignore
     arg [-plugin] ==> ignore
     arg [C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/7.2.0/liblto_plugin-0.dll] ==> ignore
     arg [-plugin-opt=C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/7.2.0/lto-wrapper.exe] ==> ignore
-    arg [-plugin-opt=-fresolution=C:\Users\user\AppData\Local\Temp\ccy34dwZ.res] ==> ignore
+    arg [-plugin-opt=-fresolution=C:\Users\user\AppData\Local\Temp\ccTmNCUc.res] ==> ignore
     arg [-plugin-opt=-pass-through=-lmingw32] ==> ignore
     arg [-plugin-opt=-pass-through=-lgcc_s] ==> ignore
     arg [-plugin-opt=-pass-through=-lgcc] ==> ignore
@@ -336,7 +364,7 @@ Parsed CXX implicit link information from above output:
     arg [i386pep] ==> ignore
     arg [-Bdynamic] ==> ignore
     arg [-o] ==> ignore
-    arg [cmTC_2111e.exe] ==> ignore
+    arg [cmTC_75fe0.exe] ==> ignore
     arg [C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/7.2.0/../../../../x86_64-w64-mingw32/lib/../lib/crt2.o] ==> ignore
     arg [C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/7.2.0/crtbegin.o] ==> ignore
     arg [-LC:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/7.2.0] ==> dir [C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/7.2.0]
@@ -346,7 +374,7 @@ Parsed CXX implicit link information from above output:
     arg [-LC:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/7.2.0/../../../../x86_64-w64-mingw32/lib] ==> dir [C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/7.2.0/../../../../x86_64-w64-mingw32/lib]
     arg [-LC:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/7.2.0/../../..] ==> dir [C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/7.2.0/../../..]
     arg [--whole-archive] ==> ignore
-    arg [CMakeFiles/cmTC_2111e.dir/objects.a] ==> ignore
+    arg [CMakeFiles/cmTC_75fe0.dir/objects.a] ==> ignore
     arg [--no-whole-archive] ==> ignore
     arg [--major-image-version] ==> ignore
     arg [0] ==> ignore
@@ -390,16 +418,20 @@ Parsed CXX implicit link information from above output:
 Detecting CXX [-std=c++1z] compiler features compiled with the following output:
 Change Dir: E:/projects/C_+_+/hreflex/TreadmillAutomation/build/CMakeFiles/CMakeTmp
 
-Run Build Command:"C:/msys64/usr/bin/make.exe" "cmTC_96a9b/fast"
-/usr/bin/make -f CMakeFiles/cmTC_96a9b.dir/build.make CMakeFiles/cmTC_96a9b.dir/build
+Run Build Command:"C:/msys64/usr/bin/make.exe" "cmTC_3c1da/fast"
+make: Warning: File 'Makefile' has modification time 0.041 s in the future
+/usr/bin/make -f CMakeFiles/cmTC_3c1da.dir/build.make CMakeFiles/cmTC_3c1da.dir/build
 make[1]: Entering directory '/e/projects/C_+_+/hreflex/TreadmillAutomation/build/CMakeFiles/CMakeTmp'
-Building CXX object CMakeFiles/cmTC_96a9b.dir/feature_tests.cxx.obj
-/C/msys64/mingw64/bin/g++.exe    -std=c++1z -o CMakeFiles/cmTC_96a9b.dir/feature_tests.cxx.obj -c /E/projects/C_+_+/hreflex/TreadmillAutomation/build/CMakeFiles/feature_tests.cxx
-Linking CXX executable cmTC_96a9b.exe
-/C/msys64/mingw64/bin/cmake.exe -E remove -f CMakeFiles/cmTC_96a9b.dir/objects.a
-/C/msys64/mingw64/bin/ar.exe cr CMakeFiles/cmTC_96a9b.dir/objects.a "CMakeFiles/cmTC_96a9b.dir/feature_tests.cxx.obj" 
-/C/msys64/mingw64/bin/g++.exe      -Wl,--whole-archive CMakeFiles/cmTC_96a9b.dir/objects.a -Wl,--no-whole-archive  -o cmTC_96a9b.exe -Wl,--major-image-version,0,--minor-image-version,0 -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32 
+make[1]: Warning: File 'CMakeFiles/cmTC_3c1da.dir/flags.make' has modification time 0.022 s in the future
+Building CXX object CMakeFiles/cmTC_3c1da.dir/feature_tests.cxx.obj
+/C/msys64/mingw64/bin/g++.exe    -std=c++1z -o CMakeFiles/cmTC_3c1da.dir/feature_tests.cxx.obj -c /E/projects/C_+_+/hreflex/TreadmillAutomation/build/CMakeFiles/feature_tests.cxx
+Linking CXX executable cmTC_3c1da.exe
+/C/msys64/mingw64/bin/cmake.exe -E remove -f CMakeFiles/cmTC_3c1da.dir/objects.a
+/C/msys64/mingw64/bin/ar.exe cr CMakeFiles/cmTC_3c1da.dir/objects.a "CMakeFiles/cmTC_3c1da.dir/feature_tests.cxx.obj" 
+/C/msys64/mingw64/bin/g++.exe      -Wl,--whole-archive CMakeFiles/cmTC_3c1da.dir/objects.a -Wl,--no-whole-archive  -o cmTC_3c1da.exe -Wl,--major-image-version,0,--minor-image-version,0 -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32 
+make[1]: warning:  Clock skew detected.  Your build may be incomplete.
 make[1]: Leaving directory '/e/projects/C_+_+/hreflex/TreadmillAutomation/build/CMakeFiles/CMakeTmp'
+make: warning:  Clock skew detected.  Your build may be incomplete.
 
 
     Feature record: CXX_FEATURE:1cxx_aggregate_default_initializers
@@ -464,16 +496,20 @@ make[1]: Leaving directory '/e/projects/C_+_+/hreflex/TreadmillAutomation/build/
 Detecting CXX [-std=c++14] compiler features compiled with the following output:
 Change Dir: E:/projects/C_+_+/hreflex/TreadmillAutomation/build/CMakeFiles/CMakeTmp
 
-Run Build Command:"C:/msys64/usr/bin/make.exe" "cmTC_0d0a8/fast"
-/usr/bin/make -f CMakeFiles/cmTC_0d0a8.dir/build.make CMakeFiles/cmTC_0d0a8.dir/build
+Run Build Command:"C:/msys64/usr/bin/make.exe" "cmTC_3e222/fast"
+make: Warning: File 'Makefile' has modification time 0.037 s in the future
+/usr/bin/make -f CMakeFiles/cmTC_3e222.dir/build.make CMakeFiles/cmTC_3e222.dir/build
 make[1]: Entering directory '/e/projects/C_+_+/hreflex/TreadmillAutomation/build/CMakeFiles/CMakeTmp'
-Building CXX object CMakeFiles/cmTC_0d0a8.dir/feature_tests.cxx.obj
-/C/msys64/mingw64/bin/g++.exe    -std=c++14 -o CMakeFiles/cmTC_0d0a8.dir/feature_tests.cxx.obj -c /E/projects/C_+_+/hreflex/TreadmillAutomation/build/CMakeFiles/feature_tests.cxx
-Linking CXX executable cmTC_0d0a8.exe
-/C/msys64/mingw64/bin/cmake.exe -E remove -f CMakeFiles/cmTC_0d0a8.dir/objects.a
-/C/msys64/mingw64/bin/ar.exe cr CMakeFiles/cmTC_0d0a8.dir/objects.a "CMakeFiles/cmTC_0d0a8.dir/feature_tests.cxx.obj" 
-/C/msys64/mingw64/bin/g++.exe      -Wl,--whole-archive CMakeFiles/cmTC_0d0a8.dir/objects.a -Wl,--no-whole-archive  -o cmTC_0d0a8.exe -Wl,--major-image-version,0,--minor-image-version,0 -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32 
+make[1]: Warning: File 'CMakeFiles/cmTC_3e222.dir/flags.make' has modification time 0.018 s in the future
+Building CXX object CMakeFiles/cmTC_3e222.dir/feature_tests.cxx.obj
+/C/msys64/mingw64/bin/g++.exe    -std=c++14 -o CMakeFiles/cmTC_3e222.dir/feature_tests.cxx.obj -c /E/projects/C_+_+/hreflex/TreadmillAutomation/build/CMakeFiles/feature_tests.cxx
+Linking CXX executable cmTC_3e222.exe
+/C/msys64/mingw64/bin/cmake.exe -E remove -f CMakeFiles/cmTC_3e222.dir/objects.a
+/C/msys64/mingw64/bin/ar.exe cr CMakeFiles/cmTC_3e222.dir/objects.a "CMakeFiles/cmTC_3e222.dir/feature_tests.cxx.obj" 
+/C/msys64/mingw64/bin/g++.exe      -Wl,--whole-archive CMakeFiles/cmTC_3e222.dir/objects.a -Wl,--no-whole-archive  -o cmTC_3e222.exe -Wl,--major-image-version,0,--minor-image-version,0 -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32 
+make[1]: warning:  Clock skew detected.  Your build may be incomplete.
 make[1]: Leaving directory '/e/projects/C_+_+/hreflex/TreadmillAutomation/build/CMakeFiles/CMakeTmp'
+make: warning:  Clock skew detected.  Your build may be incomplete.
 
 
     Feature record: CXX_FEATURE:1cxx_aggregate_default_initializers
@@ -538,16 +574,20 @@ make[1]: Leaving directory '/e/projects/C_+_+/hreflex/TreadmillAutomation/build/
 Detecting CXX [-std=c++11] compiler features compiled with the following output:
 Change Dir: E:/projects/C_+_+/hreflex/TreadmillAutomation/build/CMakeFiles/CMakeTmp
 
-Run Build Command:"C:/msys64/usr/bin/make.exe" "cmTC_a2075/fast"
-/usr/bin/make -f CMakeFiles/cmTC_a2075.dir/build.make CMakeFiles/cmTC_a2075.dir/build
+Run Build Command:"C:/msys64/usr/bin/make.exe" "cmTC_33f82/fast"
+make: Warning: File 'Makefile' has modification time 0.042 s in the future
+/usr/bin/make -f CMakeFiles/cmTC_33f82.dir/build.make CMakeFiles/cmTC_33f82.dir/build
 make[1]: Entering directory '/e/projects/C_+_+/hreflex/TreadmillAutomation/build/CMakeFiles/CMakeTmp'
-Building CXX object CMakeFiles/cmTC_a2075.dir/feature_tests.cxx.obj
-/C/msys64/mingw64/bin/g++.exe    -std=c++11 -o CMakeFiles/cmTC_a2075.dir/feature_tests.cxx.obj -c /E/projects/C_+_+/hreflex/TreadmillAutomation/build/CMakeFiles/feature_tests.cxx
-Linking CXX executable cmTC_a2075.exe
-/C/msys64/mingw64/bin/cmake.exe -E remove -f CMakeFiles/cmTC_a2075.dir/objects.a
-/C/msys64/mingw64/bin/ar.exe cr CMakeFiles/cmTC_a2075.dir/objects.a "CMakeFiles/cmTC_a2075.dir/feature_tests.cxx.obj" 
-/C/msys64/mingw64/bin/g++.exe      -Wl,--whole-archive CMakeFiles/cmTC_a2075.dir/objects.a -Wl,--no-whole-archive  -o cmTC_a2075.exe -Wl,--major-image-version,0,--minor-image-version,0 -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32 
+make[1]: Warning: File 'CMakeFiles/cmTC_33f82.dir/flags.make' has modification time 0.023 s in the future
+Building CXX object CMakeFiles/cmTC_33f82.dir/feature_tests.cxx.obj
+/C/msys64/mingw64/bin/g++.exe    -std=c++11 -o CMakeFiles/cmTC_33f82.dir/feature_tests.cxx.obj -c /E/projects/C_+_+/hreflex/TreadmillAutomation/build/CMakeFiles/feature_tests.cxx
+Linking CXX executable cmTC_33f82.exe
+/C/msys64/mingw64/bin/cmake.exe -E remove -f CMakeFiles/cmTC_33f82.dir/objects.a
+/C/msys64/mingw64/bin/ar.exe cr CMakeFiles/cmTC_33f82.dir/objects.a "CMakeFiles/cmTC_33f82.dir/feature_tests.cxx.obj" 
+/C/msys64/mingw64/bin/g++.exe      -Wl,--whole-archive CMakeFiles/cmTC_33f82.dir/objects.a -Wl,--no-whole-archive  -o cmTC_33f82.exe -Wl,--major-image-version,0,--minor-image-version,0 -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32 
+make[1]: warning:  Clock skew detected.  Your build may be incomplete.
 make[1]: Leaving directory '/e/projects/C_+_+/hreflex/TreadmillAutomation/build/CMakeFiles/CMakeTmp'
+make: warning:  Clock skew detected.  Your build may be incomplete.
 
 
     Feature record: CXX_FEATURE:0cxx_aggregate_default_initializers
@@ -612,16 +652,20 @@ make[1]: Leaving directory '/e/projects/C_+_+/hreflex/TreadmillAutomation/build/
 Detecting CXX [-std=c++98] compiler features compiled with the following output:
 Change Dir: E:/projects/C_+_+/hreflex/TreadmillAutomation/build/CMakeFiles/CMakeTmp
 
-Run Build Command:"C:/msys64/usr/bin/make.exe" "cmTC_d530f/fast"
-/usr/bin/make -f CMakeFiles/cmTC_d530f.dir/build.make CMakeFiles/cmTC_d530f.dir/build
+Run Build Command:"C:/msys64/usr/bin/make.exe" "cmTC_be769/fast"
+make: Warning: File 'Makefile' has modification time 0.043 s in the future
+/usr/bin/make -f CMakeFiles/cmTC_be769.dir/build.make CMakeFiles/cmTC_be769.dir/build
 make[1]: Entering directory '/e/projects/C_+_+/hreflex/TreadmillAutomation/build/CMakeFiles/CMakeTmp'
-Building CXX object CMakeFiles/cmTC_d530f.dir/feature_tests.cxx.obj
-/C/msys64/mingw64/bin/g++.exe    -std=c++98 -o CMakeFiles/cmTC_d530f.dir/feature_tests.cxx.obj -c /E/projects/C_+_+/hreflex/TreadmillAutomation/build/CMakeFiles/feature_tests.cxx
-Linking CXX executable cmTC_d530f.exe
-/C/msys64/mingw64/bin/cmake.exe -E remove -f CMakeFiles/cmTC_d530f.dir/objects.a
-/C/msys64/mingw64/bin/ar.exe cr CMakeFiles/cmTC_d530f.dir/objects.a "CMakeFiles/cmTC_d530f.dir/feature_tests.cxx.obj" 
-/C/msys64/mingw64/bin/g++.exe      -Wl,--whole-archive CMakeFiles/cmTC_d530f.dir/objects.a -Wl,--no-whole-archive  -o cmTC_d530f.exe -Wl,--major-image-version,0,--minor-image-version,0 -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32 
+make[1]: Warning: File 'CMakeFiles/cmTC_be769.dir/flags.make' has modification time 0.025 s in the future
+Building CXX object CMakeFiles/cmTC_be769.dir/feature_tests.cxx.obj
+/C/msys64/mingw64/bin/g++.exe    -std=c++98 -o CMakeFiles/cmTC_be769.dir/feature_tests.cxx.obj -c /E/projects/C_+_+/hreflex/TreadmillAutomation/build/CMakeFiles/feature_tests.cxx
+Linking CXX executable cmTC_be769.exe
+/C/msys64/mingw64/bin/cmake.exe -E remove -f CMakeFiles/cmTC_be769.dir/objects.a
+/C/msys64/mingw64/bin/ar.exe cr CMakeFiles/cmTC_be769.dir/objects.a "CMakeFiles/cmTC_be769.dir/feature_tests.cxx.obj" 
+/C/msys64/mingw64/bin/g++.exe      -Wl,--whole-archive CMakeFiles/cmTC_be769.dir/objects.a -Wl,--no-whole-archive  -o cmTC_be769.exe -Wl,--major-image-version,0,--minor-image-version,0 -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32 
+make[1]: warning:  Clock skew detected.  Your build may be incomplete.
 make[1]: Leaving directory '/e/projects/C_+_+/hreflex/TreadmillAutomation/build/CMakeFiles/CMakeTmp'
+make: warning:  Clock skew detected.  Your build may be incomplete.
 
 
     Feature record: CXX_FEATURE:0cxx_aggregate_default_initializers
