@@ -2,4 +2,4 @@ This software is designed for use with a Bertec Split-belt Treadmill,
 a National Instruments Data Acquisition device, an Arduino-based custom 
 tachometer, and a Qualisys Motion Capture System. With some work, the 
 code could be modified to support hardware and software that isn't listed above.
-This software is covered under Gnu GPL v3. 
+This software is covered under GNU GPL v3. 
